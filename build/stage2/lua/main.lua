@@ -19,7 +19,11 @@ local function main()
         SILVER_CHAIN_NAME,
         { "bear", DECLARE_NAME, DEFINE_NAME }
     )
-    dtw.copy_any_merging("BearSSLModel", single_unit_dir)
+    local one_file_path = dtw.concat_path(single_unit_dir, ONE_FILE)
+    dtw.copy_any_overwriting("one.c", one_file_path)
     Create_summary(modifiers)
+   -- final_amalgamation = Generate_amalgamation_recursive(one_file_path)
+   -- local amalgamation_path = dtw.concat_path(RELEASE_FODER, AMALGAMATION_NAME)
+    --dtw.write_file(amalgamation_path, final_amalgamation)
 end
 main()
