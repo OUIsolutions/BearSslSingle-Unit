@@ -3,7 +3,9 @@ function Create_summary(modifiers)
     all = {}
     for i = 1, #modifiers do
         local current = modifiers[i]
-        all[#all + 1] = current.create_sumary()
+        if current.has_replace() then
+            all[#all + 1] = current.create_sumary()
+        end
     end
 
     json.dumps_to_file(all, dtw.concat_path(RELEASE_FODER, "sumary_src.json"))

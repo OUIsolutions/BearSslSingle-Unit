@@ -1,21 +1,38 @@
 ---@param part DtwTreePart
 ---@return Modifier
 function NewModifier(part)
-    local self     = {}
-    self.tree_part = part
-    local path     = part.path.get_full_path()
-    print(ANSI_BLUE .. "Creating Modifier for " .. path)
-    self.tokens                      = Collect_tokens(path)
-    self.macros                      = Collect_macros(path)
+    local self         = {}
+    self.tree_part     = part
+    self.original_path = part.path.get_full_path()
+    print(ANSI_BLUE .. "Creating Modifier for " .. self.original_path)
+    self.tokens        = Collect_tokens(self.original_path)
+    self.macros        = Collect_macros(self.original_path)
 
-    self.create_sumary               = function()
+    self.create_sumary = function()
+        local filtrage_tokens = {}
+        for i = 1, #self.tokens do
+            local current = self.tokens[i]
+            if current.replace then
+                filtrage_tokens[#filtrage_tokens + 1] = current
+            end
+        end
         return {
-            original_path = self.tree_part.path.get_full_path(),
+            original_path = self.original_path,
             modified_path = self.modified_path,
-            tokens = self.tokens
+            tokens = filtrage_tokens
         }
     end
 
+
+    self.has_replace                 = function()
+        for i = 1, #self.tokens do
+            local current = self.tokens[i]
+            if current.replace then
+                return true
+            end
+        end
+        return false
+    end
     self.is_defined                  = function(token)
         for i = 1, #self.tokens do
             local current = self.tokens[i]
