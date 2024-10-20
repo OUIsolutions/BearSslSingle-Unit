@@ -1,7 +1,7 @@
 ---@param path string
 ---@return Token[]
 function Collect_macros(path)
-    os.execute("ctags --kinds-c=d " .. path)
+    os.execute(CTAGS_COMMAD .. " --kinds-c=d " .. path)
     local content = dtw.load_file("tags")
     local lines = clib.split(content, "\n")
     local all_macros = {}

@@ -1,7 +1,7 @@
 ---@param path string
 ---@return Token[]
 function Collect_tokens(path)
-    os.execute("ctags --kinds-c=fvst " .. path)
+    os.execute(CTAGS_COMMAD .. " --kinds-c=fvst " .. path)
     local content = dtw.load_file("tags")
     local lines = clib.split(content, "\n")
     local all_elements = {}
