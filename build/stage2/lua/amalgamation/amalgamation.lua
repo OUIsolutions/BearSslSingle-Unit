@@ -1,17 +1,23 @@
 ---@param start_point string
 ---@param stack Stack
----@param already_included_list  StringArray | nil
----@return string
-function Generate_amalgamation_recursive_with_stack(stack, start_point, already_included_list)
+---@param already_included_list  StringArray
+---@param not_include string[]
+function Generate_amalgamation_recursive_with_stack(stack, start_point, already_included_list, not_include)
     local start_point_sha = dtw.generate_sha_from_file(start_point)
+
+    for i = 1, #not_include do
+        local current = not_include[i]
+        if dtw.starts_with(start_point, current) then
+            return
+        end
+    end
+
     if already_included_list.is_included(start_point_sha) then
-        print(ANSI_YELLOW .. "file" .. start_point .. "already included")
+        print(ANSI_YELLOW .. "file " .. start_point .. " already included")
         return ""
     end
 
     already_included_list.append(start_point_sha)
-
-
     local content = dtw.load_file(start_point)
 
     local size = clib.get_str_size(content)
@@ -53,7 +59,7 @@ function Generate_amalgamation_recursive_with_stack(stack, start_point, already_
             local dir = dtw.newPath(start_point).get_dir()
             local full_path = dtw.concat_path(dir, string_buffer)
 
-            Generate_amalgamation_recursive_with_stack(stack, full_path, already_included_list)
+            Generate_amalgamation_recursive_with_stack(stack, full_path, already_included_list, not_include)
             stack.append("\n")
             waiting_include = false
         end
@@ -68,10 +74,14 @@ function Generate_amalgamation_recursive_with_stack(stack, start_point, already_
 end
 
 ---@param file string
+---@not_include string[]
 ---@return string
-function Generate_amalgamation_recursive(file)
+function Generate_amalgamation_recursive(file, not_include)
     local stack = clib.newStack()
     local already_included_list = Created_already_included();
-    Generate_amalgamation_recursive_with_stack(stack, file, already_included_list)
+    if not not_include then
+        not_include = {}
+    end
+    Generate_amalgamation_recursive_with_stack(stack, file, already_included_list, not_include)
     return stack.get_str()
 end
