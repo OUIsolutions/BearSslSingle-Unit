@@ -42,8 +42,9 @@ local function main()
     print(ANSI_BLUE .. "Creating define amalgamation")
     local fdefine_path = dtw.concat_path(single_unit_dir, "imports/imports.fdefine.h")
     local definition_amalgamation = Generate_amalgamation_recursive(fdefine_path, { 'fdeclare' })
-    definition_amalgamation = definition_amalgamation .. "#define BR_ENABLE_INTRINSICS   1\n"
-    definition_amalgamation = definition_amalgamation .. '#include "BearSSL.h"\n'
+    definition_amalgamation = definition_amalgamation ..
+        '#define BR_ENABLE_INTRINSICS   1\n#include  "BearSSL.h"\n'
+
     local release_fdefine_path = dtw.concat_path(RELEASE_FODER, DEFINE_AMALGAMATION_NAME)
     dtw.write_file(release_fdefine_path, definition_amalgamation)
 end
