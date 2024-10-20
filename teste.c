@@ -1,5 +1,4 @@
-#define teste 1
-#define teste 1
+#include "release/BearSSLSingleUnit/one.c"
 int main(){
 
 }
