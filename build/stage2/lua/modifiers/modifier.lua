@@ -78,7 +78,9 @@ function NewModifier(part)
             for i = 1, #self.tokens do
                 local current = self.tokens[i]
                 if current.replace then
+                    predef = predef .. "#ifndef " .. current.value .. "\n"
                     predef = predef .. '#define ' .. current.value .. ' ' .. current.replace .. '\n'
+                    predef = predef .. "#endif\n"
                 end
             end
             local undef = ''
