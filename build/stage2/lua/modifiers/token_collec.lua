@@ -3,8 +3,8 @@
 function Collect_tokens(path)
     os.execute("ctags --kinds-c=fv " .. path)
     local content = dtw.load_file("tags")
-    lines = clib.split(content, "\n")
-    all_elements = {}
+    local lines = clib.split(content, "\n")
+    local all_elements = {}
     for i = 1, #lines do
         local current = lines[i]
         if clib.get_char(current, 1) ~= "!" then
