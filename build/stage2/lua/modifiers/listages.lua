@@ -14,6 +14,7 @@ end
 function Generate_modifications(modifiers, main_replace)
     for i = 1, #modifiers do
         local current = modifiers[i]
+        print(ANSI_BLUE .. "generating Modifier for" .. current.tree_part.path.get_full_path())
         current.generate_file_modifications(modifiers, main_replace)
     end
 end

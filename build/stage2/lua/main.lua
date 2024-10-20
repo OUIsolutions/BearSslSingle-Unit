@@ -1,7 +1,11 @@
 local function main()
     if not dtw.isdir("BearSSL") then
+        print(ANSI_BLUE .. "cloning BearSSL")
         os.execute("git clone " .. PROVIDER_GIT)
+    else
+        print(ANSI_YELLOW, "Bear cached")
     end
+
     local main_replace = json.load_from_file("main_replace.json")
     local src = dtw.newTree_from_hardware("BearSSL/src")
     dtw.remove_any(RELEASE_FODER)
@@ -13,6 +17,7 @@ local function main()
     local single_unit_dir = dtw.concat_path(RELEASE_FODER, SINGLE_UNIT_FOLDER)
     dtw.copy_any_overwriting("BearSSL/inc", dtw.concat_path(single_unit_dir, "inc"))
     local new_src = dtw.concat_path(single_unit_dir, "src")
+    print(ANSI_BLUE .. "applying silver chain modifications")
     silver_chain.generate_code(
         new_src,
         dtw.concat_path(single_unit_dir, "imports"),
@@ -22,6 +27,7 @@ local function main()
     local one_file_path = dtw.concat_path(single_unit_dir, ONE_FILE)
     dtw.copy_any_overwriting("one.c", one_file_path)
     Create_summary(modifiers)
+    print(ANSI_BLUE .. "Creating Final Amalgamation")
     local final_amalgamation = Generate_amalgamation_recursive(one_file_path)
     local amalgamation_path = dtw.concat_path(RELEASE_FODER, AMALGAMATION_NAME)
     dtw.write_file(amalgamation_path, final_amalgamation)

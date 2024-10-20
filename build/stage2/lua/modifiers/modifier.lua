@@ -1,10 +1,12 @@
 ---@param part DtwTreePart
 ---@return Modifier
 function NewModifier(part)
-    local self                       = {}
-    self.tree_part                   = part
-    self.tokens                      = Collect_tokens(part.path.get_full_path())
-    self.macros                      = Collect_macros(part.path.get_full_path())
+    local self     = {}
+    self.tree_part = part
+    local path     = part.path.get_full_path()
+    print(ANSI_BLUE .. "Creating Modifier for " .. path)
+    self.tokens                      = Collect_tokens(path)
+    self.macros                      = Collect_macros(path)
 
     self.create_sumary               = function()
         return {

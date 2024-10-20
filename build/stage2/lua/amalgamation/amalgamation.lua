@@ -5,7 +5,7 @@
 function Generate_amalgamation_recursive_with_stack(stack, start_point, already_included_list)
     local start_point_sha = dtw.generate_sha_from_file(start_point)
     if already_included_list.is_included(start_point_sha) then
-        print(ANSI_YELLOW .. "file" .. start_point .. "already included\n")
+        print(ANSI_YELLOW .. "file" .. start_point .. "already included")
         return ""
     end
 
@@ -64,7 +64,7 @@ function Generate_amalgamation_recursive_with_stack(stack, start_point, already_
         end
     end
 
-    clib.print(ANSI_GREEN .. "amalgamated: " .. start_point .. "\n")
+    print(ANSI_GREEN .. "amalgamated: " .. start_point)
 end
 
 ---@param file string
