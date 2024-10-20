@@ -35,8 +35,8 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include "BearSSLone.c"
 
-#include "release/BearSSL.h"
 
 /*
  * Connect to the specified host and port. The connected socket is
@@ -149,7 +149,7 @@ sock_write(void *ctx, const unsigned char *buf, size_t len)
  * C code for hardcoded trust anchors can be generated with the "brssl"
  * command-line tool (with the "ta" command).
  */
-#include "truested_anchors.h"
+#include "BearSSLTrustedAnchors.h"
 
 /*
  * Main program: this is a simple program that expects 2 or 3 arguments.
@@ -175,6 +175,7 @@ main(int argc, char *argv[])
 	 * is optional; if absent, "/" is used.
 	 */
 	if (argc < 3 || argc > 4) {
+	    printf("invalid args, run with:./executable  <url> <port> \n");
 		return EXIT_FAILURE;
 	}
 	host = argv[1];

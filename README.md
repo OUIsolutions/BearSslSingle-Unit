@@ -30,6 +30,19 @@ and compile with
 gcc
 ```
 
+## Micro Client Example
+just for testing , you have in **micro_client_sample** a micro https client example,
+you can compile with:
+```shell
+gcc micro_client_sample/main.c -o client.o
+```
+and you can test with
+```shell
+ ./client.o example.com 443
+```
+Note that these example was taken from the original  [BearrSSL](https://bearssl.org/)  samples page
+and the [BearSSLTrustedAnchors.h](https://github.com/arduino-libraries/ArduinoBearSSL/blob/master/src/BearSSLTrustAnchors.h)
+was taken from the oficial arduino Github Organization
 
 ## Building From Scratch
 if you want to build the hole project from scracth you must have a gcc  Compiler
