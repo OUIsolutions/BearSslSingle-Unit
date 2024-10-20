@@ -75,7 +75,7 @@ function NewModifier(part)
                 local current = self.tokens[i]
                 if current.replace then
                     --local token_pattern = "([^%w%])" .. current.value .. "([^%w_])"
-                    content = clib.replace(content,current.value,current.replace)
+                    --content = clib.replace(content,current.value,current.replace)
                 end
             end
         end
