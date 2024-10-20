@@ -48,7 +48,7 @@ summary.json
 *.pdb
 release
 release_old
-
+tags
 # Kernel Module Compile Results
 *.mod*
 *.cmd

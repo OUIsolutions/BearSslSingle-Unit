@@ -30,7 +30,7 @@ and compile with
  gcc -c BearSSL.c -o  BearSSL.o
  gcc main.c BearSSL.o
  ```
- ## [Summary](https://github.com/OUIsolutions/BearSslSingle-Unit/releases/download/v0.001/sumary_src.json)
+ ## [sumary_src.json](https://github.com/OUIsolutions/BearSslSingle-Unit/releases/download/v0.001/sumary_src.json)
  Its the list of functions and types that had to be renamed to not generate namespace colision
  in a single unit compilation
 
