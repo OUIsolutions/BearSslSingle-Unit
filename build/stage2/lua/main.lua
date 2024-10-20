@@ -1,4 +1,15 @@
 local function main()
+    local single_unit_dir = dtw.concat_path(RELEASE_FODER, SINGLE_UNIT_FOLDER)
+    print(ANSI_BLUE .. "Creating define amalgamation")
+    local fdefine_path = dtw.concat_path(single_unit_dir, "imports/imports.fdefine.h")
+    local definition_amalgamation = Generate_amalgamation_recursive(fdefine_path, { 'fdeclare' })
+    definition_amalgamation = '#define BR_ENABLE_INTRINSICS   1\n#include  "BearSSL.h"\n' .. definition_amalgamation
+
+    local release_fdefine_path = dtw.concat_path(RELEASE_FODER, DEFINE_AMALGAMATION_NAME)
+    dtw.write_file(release_fdefine_path, definition_amalgamation)
+    if true then
+        return
+    end
     if not dtw.isdir("BearSSL") then
         print(ANSI_BLUE .. "cloning BearSSL")
         os.execute("git clone " .. PROVIDER_GIT)
