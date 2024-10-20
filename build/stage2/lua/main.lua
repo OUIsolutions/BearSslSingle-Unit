@@ -31,10 +31,17 @@ local function main()
     local one_amalgamation = Generate_amalgamation_recursive(one_file_path)
     local one_amalgamation_release_path = dtw.concat_path(RELEASE_FODER, ONE_AMALGAMATION_NAME)
     dtw.write_file(one_amalgamation_release_path, one_amalgamation)
+
+
     print(ANSI_BLUE .. "Creating declare amalgamation")
     local fdeclare_path = dtw.concat_path(single_unit_dir, "imports/imports.fdeclare.h")
     local declare_amalgamation = Generate_amalgamation_recursive(fdeclare_path)
     local release_declare_path = dtw.concat_path(RELEASE_FODER, DECLARE_AMALGAMATION_NAME)
     dtw.write_file(release_declare_path, declare_amalgamation)
+
+    local fdefine_path = dtw.concat_path(single_unit_dir, "imports/imports.fdefine.h")
+    local definition_amalgamation = Generate_amalgamation_recursive(fdefine_path, { "imports.fdeclare" })
+    local release_fdefine_path = dtw.concat_path(RELEASE_FODER, DEFINE_AMALGAMATION_NAME)
+    dtw.write_file(release_fdefine_path, definition_amalgamation)
 end
 main()

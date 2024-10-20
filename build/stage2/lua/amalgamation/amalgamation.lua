@@ -8,6 +8,8 @@ function Generate_amalgamation_recursive_with_stack(stack, start_point, already_
     for i = 1, #not_include do
         local current = not_include[i]
         if dtw.starts_with(start_point, current) then
+            print(ANSI_YELLOW .. "file " .. start_point .. " taged to skip")
+
             return
         end
     end
