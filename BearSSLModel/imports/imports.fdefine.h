@@ -60,8 +60,9 @@
 #include "../src/fdefine.settings.c"
 #include "../src/hash/fdefine.dig_oid.c"
 #include "../src/hash/fdefine.dig_size.c"
-/*
+
 #include "../src/hash/fdefine.ghash_ctmul.c"
+/*
 #include "../src/hash/fdefine.ghash_ctmul32.c"
 #include "../src/hash/fdefine.ghash_ctmul64.c"
 #include "../src/hash/fdefine.ghash_pclmul.c"
