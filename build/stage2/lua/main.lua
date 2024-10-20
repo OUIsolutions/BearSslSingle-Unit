@@ -50,6 +50,6 @@ local function main()
     dtw.write_file(release_fdefine_path, definition_amalgamation)
 
     print(ANSI_BLUE .. "Ziping File")
-    clib.system_with_status("cd release/BearSSLSingleUnit/ & zip -r ../BearSSLSingleUnit.zip  ./*")
+    clib.system_with_status("cd release/BearSSLSingleUnit/ && zip -r ../BearSSLSingleUnit.zip  ./*")
 end
 main()
