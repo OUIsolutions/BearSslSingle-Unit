@@ -71,13 +71,23 @@ function NewModifier(part)
             content = clib.replace(content, key, value)
         end
         if extension == "c" then
+            local predef = ""
             for i = 1, #self.tokens do
                 local current = self.tokens[i]
                 if current.replace then
-                    --local token_pattern = "([^%w%])" .. current.value .. "([^%w_])"
-                    --content = clib.replace(content,current.value,current.replace)
+                    predef = predef .. '#define ' .. current.replace .. ' ' .. current.value .. '\n'
                 end
             end
+            local undef = ''
+
+            for i = 1, #self.tokens do
+                local current = self.tokens[i]
+                if current.replace then
+                    undef = undef .. '#undef ' .. current.replace .. '\n'
+                end
+            end
+            content = predef .. content
+            content = content .. undef
         end
 
         self.tree_part.set_value(content)
