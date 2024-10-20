@@ -39,6 +39,7 @@ local function main()
     local release_declare_path = dtw.concat_path(RELEASE_FODER, DECLARE_AMALGAMATION_NAME)
     dtw.write_file(release_declare_path, declare_amalgamation)
 
+    print(ANSI_BLUE .. "Creating define amalgamation")
     local fdefine_path = dtw.concat_path(single_unit_dir, "imports/imports.fdefine.h")
     local definition_amalgamation = Generate_amalgamation_recursive(fdefine_path, { "imports.fdeclare" })
     local release_fdefine_path = dtw.concat_path(RELEASE_FODER, DEFINE_AMALGAMATION_NAME)
