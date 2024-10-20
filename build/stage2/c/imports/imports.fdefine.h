@@ -5,4 +5,5 @@
 #include "../callbacks/extra/fdefine.extra.c"
 #include "../callbacks/io/fdefine.io.c"
 #include "../callbacks/silverchain/fdefine.silverchain.c"
+#include "../callbacks/stack/fdefine.stack.c"
 #endif

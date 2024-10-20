@@ -1,3 +1,7 @@
+---@class Stack
+---@field append fun(value:string)
+---@field get_str fun():string
+
 ---@class Clib
 ---@field load_string fun(path:string):string
 ---@field get_char fun(path:string,i:number):string
@@ -11,7 +15,7 @@
 ---@field replace fun(content:string,target:string,value_to_replace:string):string
 ---@field trim fun(content:string):string
 ---@field split fun(content:string,target:string):string[]
-
+---@field newStack fun():Stack
 
 ---@type Clib
 clib = clib

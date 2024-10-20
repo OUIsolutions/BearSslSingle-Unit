@@ -5,4 +5,5 @@
 #include "../callbacks/extra/fdeclare.extra.h"
 #include "../callbacks/io/fdeclare.io.h"
 #include "../callbacks/silverchain/fdeclare.silverchain.h"
+#include "../callbacks/stack/fdeclare.stack.h"
 #endif
