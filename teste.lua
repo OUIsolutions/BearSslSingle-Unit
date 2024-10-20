@@ -1,8 +1,11 @@
-r = {
-    a = "aaa",
-    v = "aaa"
-}
+r = [[
+    int r+a;
+    void ssa(){
 
-for i, h in pairs(r) do
-    print(i, h)
-end
+    }
+]]
+
+local token_pattern = "([^%w])" .. "a" .. "([^%w])"
+
+r = string.gsub(r, token_pattern, "%1teste%2")
+print(r)

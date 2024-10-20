@@ -1,9 +1,11 @@
 # Prerequisites
 *.d
+try
 BearSSL
 Project
 release
 # Object files
+summary.json
 *.o
 *.ko
 *.obj
@@ -43,6 +45,8 @@ release
 *.su
 *.idb
 *.pdb
+release
+release_old
 
 # Kernel Module Compile Results
 *.mod*

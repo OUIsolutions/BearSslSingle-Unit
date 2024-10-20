@@ -17,6 +17,7 @@ void add_callbacks(LuaCEmbed *main_obj){
     lua.tables.set_method(clib,"out_extension",get_out_extension);
     lua.tables.set_method(clib,"replace",lua_replace_string);
     lua.tables.set_method(clib,"trim",lua_trim);
+    lua.tables.set_method(clib,"split",lua_split);
     LuaCEmbedTable *silverchain = lua.globals.new_table(main_obj,"silver_chain");
     lua.tables.set_method(silverchain,"generate_code",lua_cembed_generate_code);
 }
@@ -27,7 +28,16 @@ int main(int argc,char *argv[]){
     lua  = newLuaCEmbedNamespace();
     dtw = newDtwNamespace();
     stack = newCTextStackModule();
-  //  dtw.write_string_file_content("visualize.lua",(const char*)lua_code);
+    bool destroy_visualize = true;
+    if(argc >= 2){
+        if(strcmp(argv[1],"debug") ==0){
+            dtw.write_string_file_content("visualize.lua",(const char*)lua_code);
+            destroy_visualize = false;
+        }
+    }
+    if(destroy_visualize){
+        dtw.remove_any("visualize.lua");
+    }
 
     LuaCEmbed * main_obj = lua.newLuaEvaluation();
     lua.load_lib_from_c(main_obj,load_luaDoTheWorld,"dtw");
