@@ -1,11 +1,12 @@
 ---@param part DtwTreePart
 ---@return Modifier
 function NewModifier(part)
-    local self = {}
-    self.tree_part = part
-    self.tokens = Collect_tokens(part.path.get_full_path())
+    local self                       = {}
+    self.tree_part                   = part
+    self.tokens                      = Collect_tokens(part.path.get_full_path())
+    self.macros                      = Collect_macros(part.path.get_full_path())
 
-    self.create_sumary = function()
+    self.create_sumary               = function()
         return {
             original_path = self.tree_part.path.get_full_path(),
             modified_path = self.modified_path,
@@ -13,7 +14,7 @@ function NewModifier(part)
         }
     end
 
-    self.is_defined = function(token)
+    self.is_defined                  = function(token)
         for i = 1, #self.tokens do
             local current = self.tokens[i]
             if current.value == token then
@@ -26,7 +27,7 @@ function NewModifier(part)
     ---@param all Modifier[]
     ---@param token string
     ---@return boolean
-    self.is_defined_by_others = function(all, token)
+    self.is_defined_by_others        = function(all, token)
         for i = 1, #all do
             local current = all[i]
 
@@ -40,7 +41,7 @@ function NewModifier(part)
     end
 
     ---@param all Modifier[]
-    self.resolve_redefinitions = function(all)
+    self.resolve_redefinitions       = function(all)
         for i = 1, #self.tokens do
             local current = self.tokens[i]
             if self.is_defined_by_others(all, current.value) then
@@ -88,6 +89,10 @@ function NewModifier(part)
             end
             content = predef .. content
             content = content .. undef
+
+            for i = 1, #self.macros do
+                content = content .. "#undef " .. self.macros[i] .. "\n"
+            end
         end
 
         self.tree_part.set_value(content)

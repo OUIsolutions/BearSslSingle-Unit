@@ -1,21 +1,20 @@
 ---@param path string
 ---@return Token[]
-function Collect_tokens(path)
-    os.execute("ctags --kinds-c=fvst " .. path)
+function Collect_macros(path)
+    os.execute("ctags --kinds-c=d " .. path)
     local content = dtw.load_file("tags")
     local lines = clib.split(content, "\n")
-    local all_elements = {}
+    local all_macros = {}
     for i = 1, #lines do
         local current = lines[i]
         if clib.get_char(current, 1) ~= "!" then
-            local token = {}
             local separations = clib.split(current, "\t")
-            token.value = separations[1]
+            local macro = separations[1]
             --local type =
-            if token.value ~= "" then
-                all_elements[#all_elements + 1] = token
+            if macro ~= "" then
+                all_macros[#all_macros + 1] = macro
             end
         end
     end
-    return all_elements
+    return all_macros
 end
