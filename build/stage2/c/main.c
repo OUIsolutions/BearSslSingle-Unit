@@ -18,9 +18,10 @@ void add_callbacks(LuaCEmbed *main_obj){
     lua.tables.set_method(clib,"replace",lua_replace_string);
     lua.tables.set_method(clib,"trim",lua_trim);
     lua.tables.set_method(clib,"split",lua_split);
+    lua.tables.set_method(clib,"newStack",create_newStack);
+
     LuaCEmbedTable *silverchain = lua.globals.new_table(main_obj,"silver_chain");
     lua.tables.set_method(silverchain,"generate_code",lua_cembed_generate_code);
-    lua.tables.set_method(silverchain,"newStack",create_newStack);
 }
 
 

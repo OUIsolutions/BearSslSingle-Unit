@@ -36,7 +36,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-#include "release/BearSSLSingleUnit/one.c"
+#include "release/BearSSLSingleUnit.h"
 
 /*
  * Connect to the specified host and port. The connected socket is
