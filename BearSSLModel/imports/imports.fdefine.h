@@ -32,7 +32,7 @@
 #include "../src/ec/fdefine.ec_keygen.c"
 #include "../src/ec/fdefine.ec_p256_m15.c"
 #include "../src/ec/fdefine.ec_p256_m31.c"
-/*
+
 #include "../src/ec/fdefine.ec_p256_m62.c"
 #include "../src/ec/fdefine.ec_p256_m64.c"
 #include "../src/ec/fdefine.ec_prime_i15.c"
@@ -60,6 +60,7 @@
 #include "../src/fdefine.settings.c"
 #include "../src/hash/fdefine.dig_oid.c"
 #include "../src/hash/fdefine.dig_size.c"
+/*
 #include "../src/hash/fdefine.ghash_ctmul.c"
 #include "../src/hash/fdefine.ghash_ctmul32.c"
 #include "../src/hash/fdefine.ghash_ctmul64.c"
