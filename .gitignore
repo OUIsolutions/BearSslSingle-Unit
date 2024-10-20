@@ -4,6 +4,7 @@ try
 BearSSL
 Project
 release
+teste.c
 # Object files
 summary.json
 *.o

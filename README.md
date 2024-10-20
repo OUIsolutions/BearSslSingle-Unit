@@ -27,8 +27,9 @@ for use, in your C code
 ``
 and compile with
 ```shell
-gcc
-```
+ gcc -c BearSSL.c -o  BearSSL.o
+ gcc main.c BearSSL.o
+ ```
 
 ## Micro Client Example
 just for testing , you have in **micro_client_sample** a micro https client example,
