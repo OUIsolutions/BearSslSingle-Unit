@@ -26,8 +26,7 @@ local function main()
     )
     local one_file_path = dtw.concat_path(single_unit_dir, ONE_FILE)
     dtw.copy_any_overwriting("one.c", one_file_path)
-    print(ANSI_BLUE .. "Ziping File")
-    clib.system_with_status("cd release/BearSSLSingleUnit/ && zip -r ../BearSSLSingleUnit.zip  ./*")
+
     print(ANSI_BLUE .. "Creating Summary")
     Create_summary(modifiers)
     print(ANSI_BLUE .. "Creating Final Amalgamation")
@@ -49,5 +48,8 @@ local function main()
 
     local release_fdefine_path = dtw.concat_path(RELEASE_FODER, DEFINE_AMALGAMATION_NAME)
     dtw.write_file(release_fdefine_path, definition_amalgamation)
+
+    print(ANSI_BLUE .. "Ziping File")
+    clib.system_with_status("cd release/BearSSLSingleUnit/ & zip -r ../BearSSLSingleUnit.zip  ./*")
 end
 main()
