@@ -2,6 +2,6 @@
 #define CTEXT_ENGINE "https://github.com/OUIsolutions/CTextEngine/releases/download/v2.002/CTextEngine.h"
 #define LUA_CEMBED "https://github.com/OUIsolutions/LuaCEmbed/releases/download/v0.76/LuaCEmbed.h"
 #define UNIVERSAL_GARBAGE "https://github.com/OUIsolutions/Universal-Garbage-Colector/releases/download/v2.003/UniversalGarbage.h"
-#define SILVER_CHAIN "https://github.com/OUIsolutions/SilverChain/tree/v0.06"
+#define SILVER_CHAIN "https://github.com/OUIsolutions/SilverChain/archive/refs/tags/v0.06.zip"
 #define LUA_DO_THE_WORLD "https://github.com/OUIsolutions/LuaDoTheWorld/tree/v0.07"
 #define LUA_FLUID_JSON "https://github.com/OUIsolutions/LuaFluidJson/tree/v0.51"

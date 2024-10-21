@@ -8,9 +8,12 @@ DtwNamespace dtw;
 UniversalGarbage *garbage;
 
 void download_git_model(const char *url,const char *name){
-    char command[1000]= {0};
-    sprintf(command,"%s clone %s",GIT_COMMAND,url);
-    system(command);
+    char curl_command[1000]= {0};
+    sprintf(curl_command,"curl -L %s -o %s.zip",url,name);
+    system(curl_command);
+
+
+
     char *element_src = dtw.concat_path(name,"src");
     UniversalGarbage_add_simple(garbage, element_src);
 
@@ -29,10 +32,14 @@ int main(){
     dtw = newDtwNamespace();
     garbage = newUniversalGarbage();
     download_git_model(SILVER_CHAIN, "SilverChain");
+    /*
     download_git_model(LUA_DO_THE_WORLD, "LuaDoTheWorld");
     char command[1000]= {0};
 
-   // sprintf(command,"%s clone %s",GIT_COMMAND,LUA_FLUID_JSON);
-
+    sprintf(command,"%s clone %s",GIT_COMMAND,LUA_FLUID_JSON);
+    dtw.copy_any("LuaFluidJson/src","LuaFluidJson",DTW_NOT_MERGE);
+    dtw.remove_any("LuaFluidJson");
+    */
+    UniversalGarbage_free(garbage);
     return 0;
 }
