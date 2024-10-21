@@ -1,11 +1,11 @@
-#include "../fonts.h"
+#include "../../consts/all.h"
 #include <stdio.h>
 #include <stdlib.h>
 // these module only download the doTheWorld.h and install into dependencyss
 
 void install_lib_with_curl(const char *lib,const char *name){
     char comand[1000]={0};
-    sprintf(comand,"curl -L %s -o dependencies/%s",lib,name);
+    sprintf(comand,"%s -L %s -o dependencies/%s",CURL_COMMAND,lib,name);
     system(comand);
 }
 
