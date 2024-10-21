@@ -8,6 +8,7 @@
 
 DtwNamespace dtw;
 CTextStackModule stack;
+UniversalGarbage *garbage;
 
 void parse_code(CTextStack *final,unsigned  char *content,long size){
     for(int i = 0; i < size; i++){
@@ -20,7 +21,6 @@ int  create_lua_code(){
         return 1;
     }
 
-    UniversalGarbage *garbage = newUniversalGarbage();
 
 
     CTextStack * final = stack.newStack_string_format("unsigned char  %s[]= {",LUA_VAR_NAME);
@@ -59,7 +59,6 @@ int  create_lua_code(){
         if(current_file->content == NULL || current_file->is_binary){
             char *full_path = dtw.path.get_path(current_path);
             printf("impossible to load content of %s\n",full_path);
-            UniversalGarbage_free(garbage);
             return 1;
         }
 
@@ -73,7 +72,6 @@ int  create_lua_code(){
     }
     if(main_code == NULL){
         printf("main code not provided\n");
-        UniversalGarbage_free(garbage);
         return 1;
     }
     parse_code(final,main_code->content,main_code->content_size);
@@ -81,18 +79,18 @@ int  create_lua_code(){
     stack.text(final,"0};");
 
 
-    dtw.write_string_file_content(OUTPUT,final->rendered_text);
+    dtw.write_string_file_content(OUTPUT_LUA,final->rendered_text);
 
-    UniversalGarbage_free(garbage);
     return 0;
 }
 int main(){
     dtw = newDtwNamespace();
     stack = newCTextStackModule();
-
+    garbage  = newUniversalGarbage();
 
     int error = create_lua_code();
     if(error){
+        UniversalGarbage_free(garbage);
         return error;
     }
 
@@ -111,18 +109,12 @@ int main(){
     CTextStack *final_compilation_linux = stack.newStack_string_format("gcc stage2/c/main.c -o %s",FINAL_OUPTUT_LINUX);
     error = system(final_compilation_linux->rendered_text);
     stack.free(final_compilation_linux);
+    UniversalGarbage_free(garbage);
 
 
     if(error){
         return error;
     }
-    /*
-    CTextStack *final_compilation_windows = stack.newStack_string_format("x86_64-w64-mingw32-gcc  stage2/c/main.c -o %s",FINAL_OUPTUT_WINDOWS);
-    error = system(final_compilation_windows->rendered_text);
-    stack.free(final_compilation_windows);
-    */
-
-
 
     return 0;
 }
