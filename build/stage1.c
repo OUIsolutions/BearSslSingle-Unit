@@ -7,20 +7,28 @@
 DtwNamespace dtw;
 UniversalGarbage *garbage;
 
-void download_silver_chain(){
+void download_git_model(const char *url,const char *name){
     char command[1000]= {0};
-    sprintf(command,"%s clone %s",GIT_COMMAND,SILVER_CHAIN);
+    sprintf(command,"%s clone %s",GIT_COMMAND,url);
     system(command);
-    char *silver_chain_path = dtw.concat_path("dependencies","SilverChain/src");
-    UniversalGarbage_add_simple(garbage,silver_chain_path);
-    dtw.copy_any("SilverChain/src",silver_chain_path,DTW_NOT_MERGE);
-    dtw.remove_any("SilverChain");
+    char *element_src = dtw.concat_path(name,"src");
+    UniversalGarbage_add_simple(garbage, element_src);
+
+    char *final_path = dtw.concat_path("dependencies",element_src);
+    UniversalGarbage_add_simple(garbage,final_path);
+
+    dtw.copy_any(element_src,final_path,DTW_NOT_MERGE);
+    dtw.remove_any(name);
 }
+
+
+
 
 int main(){
     dtw = newDtwNamespace();
     garbage = newUniversalGarbage();
-    download_silver_chain();
+    download_git_model(SILVER_CHAIN, "SilverChain");
+    download_git_model(LUA_DO_THE_WORLD, "luaDoTheWorld");
     UniversalGarbage_free(garbage);
 
 }
