@@ -1,3 +1,4 @@
+--- created by script , dont change
 CURL_COMMAND = "curl"
 GIT_COMMAND = "git"
 CTAGS_COMMAD = "ctags"
@@ -17,7 +18,7 @@ CONF_FOLDER = "config"
 OUTPUT_LUA = "src/c/globals.lua_code.c"
 LUA_VAR_NAME = "lua_code"
 LUA_START_POINT = "main.lua"
-FINAL_OUPTUT_LINUX = "../build.out"
+FINAL_OUPTUT_LINUX = "build.out"
 FINAL_OUPTUT_WINDOWS = "../build.exe"
 MODIFIER_FOLDER = "modifier"
 RELEASE_FODER = "release"

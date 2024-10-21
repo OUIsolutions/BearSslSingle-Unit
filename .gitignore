@@ -4,7 +4,8 @@ try
 teste2.c
 stage2.sh
 stage1.sh
-src/c/globals.lua_code.h
+src/c/globals.lua_code.c
+src/lua/constants.lua
 build/dependencies2
 dependencies
 BearSSL

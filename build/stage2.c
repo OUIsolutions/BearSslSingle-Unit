@@ -30,7 +30,7 @@ void create_lua_consts(){
     DtwTree * conf_tree = dtw.tree.newTree();
     UniversalGarbage_add(garbage,dtw.tree.free,conf_tree);
 
-    CTextStack *lua_consts = stack.newStack_string_empty();
+    CTextStack *lua_consts = stack.newStack_string("--- created by script , dont change\n");
     UniversalGarbage_add(garbage,stack.free, lua_consts);
 
     dtw.tree.add_tree_from_hardware(conf_tree,CONF_FOLDER,(DtwTreeProps){
@@ -181,7 +181,6 @@ int main(){
     CTextStack *final_compilation_linux = stack.newStack_string_format("gcc src/c/main.c -o %s",FINAL_OUPTUT_LINUX);
     error = system(final_compilation_linux->rendered_text);
     stack.free(final_compilation_linux);
-    printf("aa\n");
     UniversalGarbage_free(garbage);
 
 
