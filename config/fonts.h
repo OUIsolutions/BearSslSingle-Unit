@@ -5,7 +5,7 @@
 #define SILVER_CHAIN "https://github.com/OUIsolutions/SilverChain.git"
 #define SILVER_CHAIN_VERSION "v0.06"
 #define LUA_DO_THE_WORLD "https://github.com/OUIsolutions/LuaDoTheWorld.git"
-#define LUA_DO_THE_WORLD_VERSION "v0.07"
+#define LUA_DO_THE_WORLD_VERSION "v0.71"
 
 #define LUA_FLUID_JSON "https://github.com/OUIsolutions/LuaFluidJson.git"
 #define LUA_FLUID_JSON_VERSION "v0.52"
