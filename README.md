@@ -42,6 +42,7 @@ gcc micro_client_sample/main.c -o client.o
 ```
 and you can test with
 ```shell
+
  ./client.o example.com 443
 ```
 Note that these example was taken from the original  [BearrSSL](https://bearssl.org/)  samples page
@@ -50,10 +51,10 @@ was taken from the oficial arduino Github Organization
 
 ## Building From Scratch
 if you want to build the hole project from scracth you must have a gcc  Compiler
-and [CTags](https://github.com/universal-ctags/ctags) installed and run in linux
+and [CTags](https://github.com/universal-ctags/ctags) git  and curl installed and run in linux
 just type:
 ```shel
  sh pre_build.sh && ./build.outs
 ```
-You can edit the **buld/stage2/lua/constants.lua** files , and pass the
-**CTAGS_COMMAD** const  executable location if you want
+You can edit the **config/commands** files , and pass the
+**CTAGS_COMMAD**, **GIT_COMMAND** **CURL_COMMAND**  const  executable location if you want
