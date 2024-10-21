@@ -6,6 +6,8 @@ build/dependencies2
 dependencies
 BearSSL
 Project
+LuaDoTheWorld
+SilverChain
 release
 teste.c
 # Object files

@@ -32,9 +32,10 @@ int main(){
     download_git_model(LUA_DO_THE_WORLD, LUA_DO_THE_WORLD_VERSION,"LuaDoTheWorld");
     char command[1000]= {0};
 
-    sprintf(command,"%s clone --branch %s",GIT_COMMAND,LUA_FLUID_JSON_VERSION, LUA_FLUID_JSON);
-    dtw.copy_any("LuaFluidJson/src","LuaFluidJson",DTW_NOT_MERGE);
+    sprintf(command,"%s clone --branch %s  %s",GIT_COMMAND,LUA_FLUID_JSON_VERSION, LUA_FLUID_JSON);
+    system(command);
+    dtw.copy_any("LuaFluidJson/src","dependencies/LuaFluidJson",DTW_NOT_MERGE);
     dtw.remove_any("LuaFluidJson");
-    UniversalGarbage_free(garbage)
+    UniversalGarbage_free(garbage);
     return 0;
 }

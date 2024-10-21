@@ -7,5 +7,5 @@
 #define LUA_DO_THE_WORLD "https://github.com/OUIsolutions/LuaDoTheWorld.git"
 #define LUA_DO_THE_WORLD_VERSION "v0.07"
 
-#define LUA_FLUID_JSON "https://github.com/OUIsolutions/LuaFluidJson/tree/v0.51"
+#define LUA_FLUID_JSON "https://github.com/OUIsolutions/LuaFluidJson.git"
 #define LUA_FLUID_JSON_VERSION "v0.51"
