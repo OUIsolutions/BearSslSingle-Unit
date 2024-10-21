@@ -21,6 +21,7 @@ void create_lua_consts(){
 
     DtwTree * conf_tree = dtw.tree.newTree();
     UniversalGarbage_add(garbage,dtw.tree.free,conf_tree);
+
     CTextStack *lua_consts = stack.newStack_string_empty();
     UniversalGarbage_add(garbage,stack.free, lua_consts);
 
@@ -34,16 +35,19 @@ void create_lua_consts(){
         if(!current_file->content){
             continue;
         }
+       // printf("%s\n",current_file->content);
+
         CTextArray *lines = CTextArray_split((char*)current_file->content,"\n");
         for(int i = 0; i < lines->size;i++){
             CTextArray *separations = CTextArray_split(lines->stacks[i]->rendered_text," ");
+
             if(separations->size != 3){
                 CTextArray_free(separations);
                 continue;
             }
             char *first = separations->stacks[0]->rendered_text;
             char *second = separations->stacks[1]->rendered_text;
-            char *third = separations->stacks[3]->rendered_text;
+            char *third = separations->stacks[2]->rendered_text;
             if(strcmp(first, "#define") !=0){
                 CTextArray_free(separations);
                 continue;
