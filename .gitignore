@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 try
+build/dependencies2
 BearSSL
 Project
 release

@@ -1,2 +1,2 @@
-cd build && gcc stage1/main.c -o stage1.o && ./stage1.o
+cd build && gcc stage0/main.c -o stage.o && ./stage.o
 #./build.out
