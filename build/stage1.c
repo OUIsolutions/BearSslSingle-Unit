@@ -17,6 +17,7 @@ void download_git_model(const char *url,const char *name){
     char *final_path = dtw.concat_path("dependencies",element_src);
     UniversalGarbage_add_simple(garbage,final_path);
 
+
     dtw.copy_any(element_src,final_path,DTW_NOT_MERGE);
     dtw.remove_any(name);
 }
@@ -29,6 +30,9 @@ int main(){
     garbage = newUniversalGarbage();
     download_git_model(SILVER_CHAIN, "SilverChain");
     download_git_model(LUA_DO_THE_WORLD, "LuaDoTheWorld");
-    UniversalGarbage_free(garbage);
+    char command[1000]= {0};
 
+   // sprintf(command,"%s clone %s",GIT_COMMAND,LUA_FLUID_JSON);
+
+    return 0;
 }
