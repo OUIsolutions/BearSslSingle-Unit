@@ -17,8 +17,59 @@ void parse_code(CTextStack *final,unsigned  char *content,long size){
     }
 }
 
+void create_lua_consts(){
 
-int create_lua_main_code(CTextStack *final ){
+    DtwTree * conf_tree = dtw.tree.newTree();
+    UniversalGarbage_add(garbage,dtw.tree.free,conf_tree);
+    CTextStack *lua_consts = stack.newStack_string_empty();
+    UniversalGarbage_add(garbage,stack.free, lua_consts);
+
+    dtw.tree.add_tree_from_hardware(conf_tree,CONF_FOLDER,(DtwTreeProps){
+        .hadware_data = DTW_INCLUDE,
+        .path_atributes = DTW_INCLUDE
+    });
+
+    for(int i = 0; i < conf_tree->size;i++){
+        DtwTreePart *current_file = conf_tree->tree_parts[i];
+        if(!current_file->content){
+            continue;
+        }
+        CTextArray *lines = CTextArray_split((char*)current_file->content,"\n");
+        for(int i = 0; i < lines->size;i++){
+            CTextArray *separations = CTextArray_split(lines->stacks[i]->rendered_text," ");
+            if(separations->size != 3){
+                CTextArray_free(separations);
+                continue;
+            }
+            char *first = separations->stacks[0]->rendered_text;
+            char *second = separations->stacks[1]->rendered_text;
+            char *third = separations->stacks[3]->rendered_text;
+            if(strcmp(first, "#define") !=0){
+                CTextArray_free(separations);
+                continue;
+            }
+
+            stack.format(lua_consts,"%s = %s\n",second,third);
+            CTextArray_free(separations);
+        }
+        CTextArray_free(lines);
+    }
+    char *consts_dir = dtw.concat_path(LUA_FOLDER,"constants.lua");
+    UniversalGarbage_add_simple(garbage,consts_dir);
+    dtw.write_string_file_content(consts_dir,lua_consts->rendered_text);
+
+}
+
+
+int  create_lua_code(){
+    if(dtw.entity_type(LUA_FOLDER) != DTW_FOLDER_TYPE){
+        printf("lua code its not a folder\n");
+        return 1;
+    }
+
+    CTextStack * final = stack.newStack_string_format("unsigned char  %s[]= {",LUA_VAR_NAME);
+    UniversalGarbage_add(garbage,stack.free,final);
+
     DtwTree * tree = dtw.tree.newTree();
     UniversalGarbage_add(garbage,dtw.tree.free,tree);
 
@@ -72,24 +123,6 @@ int create_lua_main_code(CTextStack *final ){
 
     stack.text(final,"0};");
 
-
-
-}
-
-int  create_lua_code(){
-    if(dtw.entity_type(LUA_FOLDER) != DTW_FOLDER_TYPE){
-        printf("lua code its not a folder\n");
-        return 1;
-    }
-
-    CTextStack * final = stack.newStack_string_format("unsigned char  %s[]= {",LUA_VAR_NAME);
-    UniversalGarbage_add(garbage,stack.free,final);
-
-    int error = create_lua_main_code(final);
-    if(error){
-        return error;
-    }
-
     dtw.write_string_file_content(OUTPUT_LUA,final->rendered_text);
 
     return 0;
@@ -99,13 +132,15 @@ int main(){
     dtw = newDtwNamespace();
     stack = newCTextStackModule();
     garbage  = newUniversalGarbage();
+    create_lua_consts();
+    return 0;
+
 
     int error = create_lua_code();
     if(error){
         UniversalGarbage_free(garbage);
         return error;
     }
-    return 0;
 
     DtwStringArray *tags = newDtwStringArray();
     dtw.string_array.append(tags,DEPENDENCIES_FLAG);
