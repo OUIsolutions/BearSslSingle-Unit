@@ -3,9 +3,7 @@
 #include "../dependencies/CTextEngine.h"
 #include "../dependencies/doTheWorld.h"
 #include "../dependencies/UniversalGarbage.h"
-#include "../dependencies/silverchain/src/imports/imports.func_definition.h"
-
-#include "conf.h"
+#include "../config/all.h"
 #include <string.h>
 
 DtwNamespace dtw;
