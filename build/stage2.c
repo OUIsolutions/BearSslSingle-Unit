@@ -150,10 +150,10 @@ int main(){
     dtw.string_array.append(tags,FDECLARE_FLAG);
     dtw.string_array.append(tags,FDEFINE_FLAG);
 
-    generate_code(SRC_C_FOLDER,SRC_C_FOLDER"imports","silverchain_stage2",tags,true,DEFAULT_MAIN_C_NAME,NULL);
+    generate_code("src/c","src/c/imports","silverchain_stage2",tags,true,DEFAULT_MAIN_C_NAME,NULL);
     dtw.string_array.free(tags);
 
-    CTextStack *final_compilation_linux = stack.newStack_string_format("gcc stage2/c/main.c -o %s",FINAL_OUPTUT_LINUX);
+    CTextStack *final_compilation_linux = stack.newStack_string_format("gcc src/c/main.c -o %s",FINAL_OUPTUT_LINUX);
     error = system(final_compilation_linux->rendered_text);
     stack.free(final_compilation_linux);
     UniversalGarbage_free(garbage);

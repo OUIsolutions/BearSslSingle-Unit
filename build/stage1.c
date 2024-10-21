@@ -36,6 +36,10 @@ int main(){
     system(command);
     dtw.copy_any("LuaFluidJson/src","dependencies/LuaFluidJson",DTW_NOT_MERGE);
     dtw.remove_any("LuaFluidJson");
+
+    system("gcc build/stage2.c -o stage.o");
+    system("./stage.o");
+
     UniversalGarbage_free(garbage);
     return 0;
 }
