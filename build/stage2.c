@@ -16,19 +16,12 @@ void parse_code(CTextStack *final,unsigned  char *content,long size){
         stack.format(final," %d,",(unsigned char )content[i]);
     }
 }
-int  create_lua_code(){
-    if(dtw.entity_type(LUA_FOLDER) != DTW_FOLDER_TYPE){
-        printf("lua code its not a folder\n");
-        return 1;
-    }
 
 
-
-    CTextStack * final = stack.newStack_string_format("unsigned char  %s[]= {",LUA_VAR_NAME);
-    UniversalGarbage_add(garbage,stack.free,final);
-
+int create_lua_main_code(CTextStack *final ){
     DtwTree * tree = dtw.tree.newTree();
     UniversalGarbage_add(garbage,dtw.tree.free,tree);
+
 
     dtw.tree.add_tree_from_hardware(tree,LUA_FOLDER,(DtwTreeProps){
         .hadware_data = DTW_INCLUDE,
@@ -79,6 +72,23 @@ int  create_lua_code(){
 
     stack.text(final,"0};");
 
+
+
+}
+
+int  create_lua_code(){
+    if(dtw.entity_type(LUA_FOLDER) != DTW_FOLDER_TYPE){
+        printf("lua code its not a folder\n");
+        return 1;
+    }
+
+    CTextStack * final = stack.newStack_string_format("unsigned char  %s[]= {",LUA_VAR_NAME);
+    UniversalGarbage_add(garbage,stack.free,final);
+
+    int error = create_lua_main_code(final);
+    if(error){
+        return error;
+    }
 
     dtw.write_string_file_content(OUTPUT_LUA,final->rendered_text);
 
