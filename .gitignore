@@ -2,6 +2,7 @@
 *.d
 try
 teste2.c
+stage2.sh
 build/dependencies2
 dependencies
 BearSSL

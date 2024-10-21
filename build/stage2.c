@@ -137,7 +137,7 @@ int main(){
     stack = newCTextStackModule();
     garbage  = newUniversalGarbage();
     create_lua_consts();
-    return 0;
+
 
 
     int error = create_lua_code();
