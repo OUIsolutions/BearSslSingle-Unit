@@ -9,3 +9,4 @@
 
 #define LUA_FLUID_JSON "https://github.com/OUIsolutions/LuaFluidJson.git"
 #define LUA_FLUID_JSON_VERSION "v0.51"
+#define PROVIDER_GIT    "https://www.bearssl.org/git/BearSSL"

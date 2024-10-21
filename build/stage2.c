@@ -3,6 +3,7 @@
 #include "../dependencies/CTextEngine.h"
 #include "../dependencies/doTheWorld.h"
 #include "../dependencies/UniversalGarbage.h"
+#include "../dependencies/SilverChain/src/imports/imports.func_definition.h"
 #include "../config/all.h"
 #include <string.h>
 
@@ -83,6 +84,7 @@ int  create_lua_code(){
 
     return 0;
 }
+
 int main(){
     dtw = newDtwNamespace();
     stack = newCTextStackModule();
@@ -93,7 +95,7 @@ int main(){
         UniversalGarbage_free(garbage);
         return error;
     }
-
+    return 0;
 
     DtwStringArray *tags = newDtwStringArray();
     dtw.string_array.append(tags,DEPENDENCIES_FLAG);
@@ -103,7 +105,7 @@ int main(){
     dtw.string_array.append(tags,FDECLARE_FLAG);
     dtw.string_array.append(tags,FDEFINE_FLAG);
 
-    generate_code(STAGE_2_FOLDER,"stage2/c/imports","silverchain_stage2",tags,true,DEFAULT_MAIN_C_NAME,NULL);
+    generate_code(SRC_C_FOLDER,SRC_C_FOLDER"imports","silverchain_stage2",tags,true,DEFAULT_MAIN_C_NAME,NULL);
     dtw.string_array.free(tags);
 
     CTextStack *final_compilation_linux = stack.newStack_string_format("gcc stage2/c/main.c -o %s",FINAL_OUPTUT_LINUX);

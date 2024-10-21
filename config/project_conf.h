@@ -4,3 +4,4 @@
 #define LUA_START_POINT  "main.lua"
 #define FINAL_OUPTUT_LINUX  "../build.out"
 #define FINAL_OUPTUT_WINDOWS  "../build.exe"
+#define SRC_C_FOLDER "src/c"
