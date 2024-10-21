@@ -28,7 +28,7 @@ int main(){
     dtw = newDtwNamespace();
     garbage = newUniversalGarbage();
     download_git_model(SILVER_CHAIN, "SilverChain");
-    download_git_model(LUA_DO_THE_WORLD, "luaDoTheWorld");
+    download_git_model(LUA_DO_THE_WORLD, "LuaDoTheWorld");
     UniversalGarbage_free(garbage);
 
 }
