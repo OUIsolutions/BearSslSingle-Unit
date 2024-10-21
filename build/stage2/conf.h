@@ -1,7 +1,7 @@
-const char * LUA_FOLDER = "stage3/lua";
+#define LUA_FOLDER  "src/lua"
 const char *STAGE_2_FOLDER = "stage2";
-const char *OUTPUT = "stage2/c/globals.lua_code.c";
-const char *LUA_VAR_NAME = "lua_code";
+#define OUTPUT_LUA "stage2/c/globals.lua_code.c";
+#define LUA_VAR_NAME = "lua_code";
 const char *LUA_START_POINT = "main.lua";
 const char *FINAL_OUPTUT_LINUX = "../build.out";
 const char *FINAL_OUPTUT_WINDOWS = "../build.exe";
