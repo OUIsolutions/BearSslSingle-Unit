@@ -5,6 +5,7 @@
 //silver_chain_scope_end
 
 
+
 void add_callbacks(LuaCEmbed *main_obj){
     LuaCEmbedTable *clib = lua.globals.new_table(main_obj,"clib");
     lua.tables.set_method(clib,"print",custom_print);
