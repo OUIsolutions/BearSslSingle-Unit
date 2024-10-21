@@ -3,7 +3,7 @@
 try
 teste2.c
 build/dependencies2
-build/dependencies
+dependencies
 BearSSL
 Project
 release

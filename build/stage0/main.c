@@ -1,4 +1,4 @@
-#include "../../consts/all.h"
+#include "../../config/all.h"
 #include <stdio.h>
 #include <stdlib.h>
 // these module only download the doTheWorld.h and install into dependencyss
@@ -19,7 +19,7 @@ int main(){
     install_lib_with_curl(LUA_CEMBED,"LuaCEmbed.h");
     install_lib_with_curl(UNIVERSAL_GARBAGE,"UniversalGarbage.h");
 
-    system("gcc stages/stage1/main.c -o stage.o");
-    system("./stage.o");
+    //system("gcc build/stage1/main.c -o stage.o");
+   /// system("./stage.o");
     return 0;
 }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../consts/all.h"
+#include "../../config/all.h"
 #include "../../dependencies/doTheWorld.h"
 #include "../../dependencies/UniversalGarbage.h"
 
