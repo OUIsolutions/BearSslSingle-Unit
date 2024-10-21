@@ -3,6 +3,7 @@
 try
 teste2.c
 stage2.sh
+stage1.sh
 src/c/globals.lua_code.h
 build/dependencies2
 dependencies

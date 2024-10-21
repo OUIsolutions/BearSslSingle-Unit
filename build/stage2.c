@@ -17,7 +17,15 @@ void parse_code(CTextStack *final,unsigned  char *content,long size){
     }
 }
 
+bool its_stack_array_empty(CTextStack *s){
+    if(s->size == 0){
+        return false;
+    }
+    return true;
+}
 void create_lua_consts(){
+
+
 
     DtwTree * conf_tree = dtw.tree.newTree();
     UniversalGarbage_add(garbage,dtw.tree.free,conf_tree);
@@ -30,33 +38,45 @@ void create_lua_consts(){
         .path_atributes = DTW_INCLUDE
     });
 
+    CTextArray *lines = NULL;
+    UniversalGarbage_add(garbage, CTextArray_free, lines);
+
+    CTextArray *separations =NULL;
+    UniversalGarbage_add(garbage, CTextArray_free, separations);
+
+    CTextArray *non_empty_separations = NULL;
+    UniversalGarbage_add(garbage, CTextArray_free, non_empty_separations);
+
+
     for(int i = 0; i < conf_tree->size;i++){
         DtwTreePart *current_file = conf_tree->tree_parts[i];
         if(!current_file->content){
             continue;
         }
-       // printf("%s\n",current_file->content);
 
-        CTextArray *lines = CTextArray_split((char*)current_file->content,"\n");
+        lines = CTextArray_split((char*)current_file->content,"\n");
+        UniversalGarbage_resset(garbage, lines);
         for(int i = 0; i < lines->size;i++){
-            CTextArray *separations = CTextArray_split(lines->stacks[i]->rendered_text," ");
 
-            if(separations->size != 3){
-                CTextArray_free(separations);
+            separations = CTextArray_split(lines->stacks[i]->rendered_text," ");
+            UniversalGarbage_resset(garbage, separations);
+
+            non_empty_separations = CTextArray_filter(separations,its_stack_array_empty);
+            UniversalGarbage_resset(garbage, non_empty_separations);
+
+            if(non_empty_separations->size != 3){
                 continue;
             }
-            char *first = separations->stacks[0]->rendered_text;
-            char *second = separations->stacks[1]->rendered_text;
-            char *third = separations->stacks[2]->rendered_text;
+            char *first = non_empty_separations->stacks[0]->rendered_text;
+            char *second = non_empty_separations->stacks[1]->rendered_text;
+            char *third = non_empty_separations->stacks[2]->rendered_text;
+
             if(strcmp(first, "#define") !=0){
-                CTextArray_free(separations);
                 continue;
             }
 
             stack.format(lua_consts,"%s = %s\n",second,third);
-            CTextArray_free(separations);
         }
-        CTextArray_free(lines);
     }
     char *consts_dir = dtw.concat_path(LUA_FOLDER,"constants.lua");
     UniversalGarbage_add_simple(garbage,consts_dir);
@@ -147,6 +167,8 @@ int main(){
     }
 
     DtwStringArray *tags = newDtwStringArray();
+    UniversalGarbage_add(garbage, dtw.string_array.free, tags);
+
     dtw.string_array.append(tags,DEPENDENCIES_FLAG);
     dtw.string_array.append(tags,CONST_FLAGS);
     dtw.string_array.append(tags,TYPES_FLAG);
@@ -155,11 +177,11 @@ int main(){
     dtw.string_array.append(tags,FDEFINE_FLAG);
 
     generate_code("src/c","src/c/imports","silverchain_stage2",tags,true,DEFAULT_MAIN_C_NAME,NULL);
-    dtw.string_array.free(tags);
 
     CTextStack *final_compilation_linux = stack.newStack_string_format("gcc src/c/main.c -o %s",FINAL_OUPTUT_LINUX);
     error = system(final_compilation_linux->rendered_text);
     stack.free(final_compilation_linux);
+    printf("aa\n");
     UniversalGarbage_free(garbage);
 
 
