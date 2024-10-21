@@ -15,7 +15,11 @@ int main(){
     system("mkdir dependencies");
     install_lib_with_curl(DO_THE_WORLD,"doTheWorld.h");
     install_lib_with_curl(CTEXT_ENGINE,"CTextEngine.h");
-    system("gcc stage1/main.c -o stage.o");
+    install_lib_with_curl(LUA_CEMBED,"LuaCEmbed.h");
+    install_lib_with_curl(LUA_CEMBED,"LuaCEmbed.h");
+    install_lib_with_curl(UNIVERSAL_GARBAGE,"UniversalGarbage.h");
+
+    system("gcc stages/stage1/main.c -o stage.o");
     system("./stage.o");
     return 0;
 }
