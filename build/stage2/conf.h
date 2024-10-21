@@ -1,4 +1,4 @@
-const char * LUA_FOLDER = "stage2/lua";
+const char * LUA_FOLDER = "stage3/lua";
 const char *STAGE_2_FOLDER = "stage2";
 const char *OUTPUT = "stage2/c/globals.lua_code.c";
 const char *LUA_VAR_NAME = "lua_code";

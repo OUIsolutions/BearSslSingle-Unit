@@ -2,6 +2,7 @@
 *.d
 try
 build/dependencies2
+build/dependencies
 BearSSL
 Project
 release
