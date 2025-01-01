@@ -49730,7 +49730,7 @@ br_rsa_i15_oaep_encrypt(
 	if (dlen == 0) {
 		return 0;
 	}
-	return dlen & -(size_t)br_rsa_i15_public((unsigned char *)dst, dlen, pk);
+	return dlen & -(size_t)br_rsa_i15_public(dst, dlen, pk);
 }
 
 
@@ -50473,7 +50473,7 @@ br_rsa_i15_pss_vrfy(const unsigned char *x, size_t xlen,
 		return 0;
 	}
 	return br_rsa_pss_sig_unpad(hf_data, hf_mgf1,
-		(unsigned char *)hash, salt_len, pk, sig);
+		hash, salt_len, pk, sig);
 }
 
 
@@ -51279,8 +51279,8 @@ bufswap(void *b1, void *b2, size_t len)
 	size_t u;
 	unsigned char *buf1, *buf2;
 
-	buf1 = (unsigned char*)b1;
-	buf2 = (unsigned char *)b2;
+	buf1 = b1;
+	buf2 = b2;
 	for (u = 0; u < len; u ++) {
 		unsigned w;
 
@@ -51318,7 +51318,7 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	esize_p = (size + 1) >> 1;
 	esize_q = size - esize_p;
 	sk->n_bitlen = size;
-	sk->p = (unsigned char *)kbuf_priv;
+	sk->p = kbuf_priv;
 	sk->plen = (esize_p + 7) >> 3;
 	sk->q = sk->p + sk->plen;
 	sk->qlen = (esize_q + 7) >> 3;
@@ -51330,7 +51330,7 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	sk->iqlen = sk->plen;
 
 	if (pk != NULL) {
-		pk->n = (unsigned char *)kbuf_pub;
+		pk->n = kbuf_pub;
 		pk->nlen = (size + 7) >> 3;
 		pk->e = pk->n + pk->nlen;
 		pk->elen = 4;
@@ -51605,7 +51605,7 @@ br_rsa_i31_oaep_decrypt(const br_hash_class *dig,
 	if (*len != ((sk->n_bitlen + 7) >> 3)) {
 		return 0;
 	}
-	r = br_rsa_i31_private((unsigned char *)data, sk);
+	r = br_rsa_i31_private(data, sk);
 	r &= br_rsa_oaep_unpad(dig, label, label_len, data, len);
 	return r;
 }
@@ -51659,7 +51659,7 @@ br_rsa_i31_oaep_encrypt(
 	if (dlen == 0) {
 		return 0;
 	}
-	return dlen & -(size_t)br_rsa_i31_public((unsigned char *)dst, dlen, pk);
+	return dlen & -(size_t)br_rsa_i31_public(dst, dlen, pk);
 }
 
 
@@ -52394,7 +52394,7 @@ br_rsa_i31_pss_vrfy(const unsigned char *x, size_t xlen,
 		return 0;
 	}
 	return br_rsa_pss_sig_unpad(hf_data, hf_mgf1,
-		(unsigned char *)hash, salt_len, pk, sig);
+		hash, salt_len, pk, sig);
 }
 
 
@@ -52720,7 +52720,7 @@ br_rsa_i32_oaep_decrypt(const br_hash_class *dig,
 	if (*len != ((sk->n_bitlen + 7) >> 3)) {
 		return 0;
 	}
-	r = br_rsa_i32_private((unsigned char*)data, sk);
+	r = br_rsa_i32_private(data, sk);
 	r &= br_rsa_oaep_unpad(dig, label, label_len, data, len);
 	return r;
 }
@@ -52774,7 +52774,7 @@ br_rsa_i32_oaep_encrypt(
 	if (dlen == 0) {
 		return 0;
 	}
-	return dlen & -(size_t)br_rsa_i32_public((unsigned char*)dst, dlen, pk);
+	return dlen & -(size_t)br_rsa_i32_public(dst, dlen, pk);
 }
 
 
@@ -52819,7 +52819,7 @@ br_rsa_i32_pkcs1_sign(const unsigned char *hash_oid,
 	if (!br_rsa_pkcs1_sig_pad(hash_oid, hash, hash_len, sk->n_bitlen, x)) {
 		return 0;
 	}
-	return br_rsa_i32_private((unsigned char*)x, sk);
+	return br_rsa_i32_private(x, sk);
 }
 
 
@@ -53139,7 +53139,7 @@ br_rsa_i32_pss_vrfy(const unsigned char *x, size_t xlen,
 		return 0;
 	}
 	return br_rsa_pss_sig_unpad(hf_data, hf_mgf1,
-		(unsigned char  *)hash, salt_len, pk, sig);
+		hash, salt_len, pk, sig);
 }
 
 
@@ -53338,7 +53338,7 @@ br_rsa_i62_oaep_decrypt(const br_hash_class *dig,
 	if (*len != ((sk->n_bitlen + 7) >> 3)) {
 		return 0;
 	}
-	r = br_rsa_i62_private((unsigned char*)data, sk);
+	r = br_rsa_i62_private(data, sk);
 	r &= br_rsa_oaep_unpad(dig, label, label_len, data, len);
 	return r;
 }
@@ -53412,7 +53412,7 @@ br_rsa_i62_oaep_encrypt(
 	if (dlen == 0) {
 		return 0;
 	}
-	return dlen & -(size_t)br_rsa_i62_public((unsigned char*)dst, dlen, pk);
+	return dlen & -(size_t)br_rsa_i62_public(dst, dlen, pk);
 }
 
 /* see bearssl_rsa.h */
@@ -53545,7 +53545,7 @@ br_rsa_i62_pkcs1_vrfy(const unsigned char *x, size_t xlen,
 		return 0;
 	}
 	memcpy(sig, x, xlen);
-	if (!br_rsa_i62_public((unsigned char*)sig, xlen, pk)) {
+	if (!br_rsa_i62_public(sig, xlen, pk)) {
 		return 0;
 	}
 	return br_rsa_pkcs1_sig_unpad(sig, xlen, hash_oid, hash_len, hash_out);
@@ -53917,11 +53917,11 @@ br_rsa_i62_pss_vrfy(const unsigned char *x, size_t xlen,
 		return 0;
 	}
 	memcpy(sig, x, xlen);
-	if (!br_rsa_i62_public((unsigned char*)sig, xlen, pk)) {
+	if (!br_rsa_i62_public(sig, xlen, pk)) {
 		return 0;
 	}
 	return br_rsa_pss_sig_unpad(hf_data, hf_mgf1,
-		(const unsigned char*)hash, salt_len, pk, sig);
+		hash, salt_len, pk, sig);
 }
 
 /* see bearssl_rsa.h */
@@ -55016,7 +55016,7 @@ br_tls10_prf(void *dst, size_t len,
 	const unsigned char *s1;
 	size_t slen;
 
-	s1 = (const unsigned char*)secret;
+	s1 = secret;
 	slen = (secret_len + 1) >> 1;
 	memset(dst, 0, len);
 	br_tls_phash(dst, len, &br_md5_vtable,
@@ -56238,13 +56238,13 @@ br_ssl_engine_set_buffers_bidi(br_ssl_engine_context *rc,
 	} else {
 		unsigned u;
 
-		rc->ibuf = (unsigned char*)ibuf;
+		rc->ibuf = ibuf;
 		rc->ibuf_len = ibuf_len;
 		if (obuf == NULL) {
 			obuf = ibuf;
 			obuf_len = ibuf_len;
 		}
-		rc->obuf = (unsigned char*)obuf;
+		rc->obuf = obuf;
 		rc->obuf_len = obuf_len;
 
 		/*

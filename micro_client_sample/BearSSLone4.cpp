@@ -49730,7 +49730,7 @@ br_rsa_i15_oaep_encrypt(
 	if (dlen == 0) {
 		return 0;
 	}
-	return dlen & -(size_t)br_rsa_i15_public((unsigned char *)dst, dlen, pk);
+	return dlen & -(size_t)br_rsa_i15_public(dst, dlen, pk);
 }
 
 
@@ -50473,7 +50473,7 @@ br_rsa_i15_pss_vrfy(const unsigned char *x, size_t xlen,
 		return 0;
 	}
 	return br_rsa_pss_sig_unpad(hf_data, hf_mgf1,
-		(unsigned char *)hash, salt_len, pk, sig);
+		hash, salt_len, pk, sig);
 }
 
 
@@ -51279,8 +51279,8 @@ bufswap(void *b1, void *b2, size_t len)
 	size_t u;
 	unsigned char *buf1, *buf2;
 
-	buf1 = (unsigned char*)b1;
-	buf2 = (unsigned char *)b2;
+	buf1 = b1;
+	buf2 = b2;
 	for (u = 0; u < len; u ++) {
 		unsigned w;
 
@@ -51318,7 +51318,7 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	esize_p = (size + 1) >> 1;
 	esize_q = size - esize_p;
 	sk->n_bitlen = size;
-	sk->p = (unsigned char *)kbuf_priv;
+	sk->p = kbuf_priv;
 	sk->plen = (esize_p + 7) >> 3;
 	sk->q = sk->p + sk->plen;
 	sk->qlen = (esize_q + 7) >> 3;
@@ -51330,7 +51330,7 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	sk->iqlen = sk->plen;
 
 	if (pk != NULL) {
-		pk->n = (unsigned char *)kbuf_pub;
+		pk->n = kbuf_pub;
 		pk->nlen = (size + 7) >> 3;
 		pk->e = pk->n + pk->nlen;
 		pk->elen = 4;
