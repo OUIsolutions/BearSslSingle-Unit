@@ -35,7 +35,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
-#include "BearSSLone.c"
+#include "BearSSLone.cpp"
 
 
 /*

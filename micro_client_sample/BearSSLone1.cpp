@@ -7,7 +7,7 @@
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -15,12 +15,12 @@
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -256,7 +256,7 @@
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -264,12 +264,12 @@
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -287,7 +287,7 @@
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -295,12 +295,12 @@
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -413,7 +413,7 @@
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -421,12 +421,12 @@
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -1761,7 +1761,7 @@ br_ghash br_ghash_pwr8_get(void);
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -1769,12 +1769,12 @@ br_ghash br_ghash_pwr8_get(void);
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -2005,7 +2005,7 @@ size_t br_hmac_outCT(const br_hmac_context *ctx,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -2013,12 +2013,12 @@ size_t br_hmac_outCT(const br_hmac_context *ctx,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -2293,7 +2293,7 @@ void br_shake_produce(br_shake_context *sc, void *out, size_t len);
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -2301,12 +2301,12 @@ void br_shake_produce(br_shake_context *sc, void *out, size_t len);
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -2323,7 +2323,7 @@ void br_shake_produce(br_shake_context *sc, void *out, size_t len);
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -2331,12 +2331,12 @@ void br_shake_produce(br_shake_context *sc, void *out, size_t len);
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -2611,7 +2611,7 @@ extern "C" {
  *
  *
  * ## Implemented Block Ciphers
- * 
+ *
  * Provided implementations are:
  *
  * | Name      | Function | Block Size (bytes) | Key lengths (bytes) |
@@ -5312,7 +5312,7 @@ void br_aesctr_drbg_update(br_aesctr_drbg_context *ctx,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -5320,12 +5320,12 @@ void br_aesctr_drbg_update(br_aesctr_drbg_context *ctx,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -5439,7 +5439,7 @@ void br_tls12_sha384_prf(void *dst, size_t len,
 	const void *secret, size_t secret_len, const char *label,
 	size_t seed_num, const br_tls_prf_seed_chunk *seed);
 
-/** 
+/**
  * brief A convenient type name for a PRF implementation.
  *
  * \param dst          destination buffer.
@@ -5466,7 +5466,7 @@ typedef void (*br_tls_prf_impl)(void *dst, size_t len,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -5474,12 +5474,12 @@ typedef void (*br_tls_prf_impl)(void *dst, size_t len,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -6529,7 +6529,7 @@ uint32_t br_ccm_check_tag(br_ccm_context *ctx, const void *tag);
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -6537,12 +6537,12 @@ uint32_t br_ccm_check_tag(br_ccm_context *ctx, const void *tag);
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -6745,7 +6745,7 @@ typedef struct {
  * length as the modulus (actual modulus length, without extra leading
  * zeros in the modulus representation in memory). If the length does
  * not match, then this function returns 0 and `x[]` is unmodified.
- * 
+ *
  * It `xlen` is correct, then `x[]` is modified. Returned value is 1
  * on success, 0 on error. Error conditions include an oversized `x[]`
  * (the array has the same length as the modulus, but the numerical value
@@ -6856,7 +6856,7 @@ typedef uint32_t (*br_rsa_pkcs1_vrfy)(const unsigned char *x, size_t xlen,
  * \return  1 on success, 0 on error.
  */
 typedef uint32_t (*br_rsa_pss_vrfy)(const unsigned char *x, size_t xlen,
-	const br_hash_class *hf_data, const br_hash_class *hf_mgf1, 
+	const br_hash_class *hf_data, const br_hash_class *hf_mgf1,
 	const void *hash, size_t salt_len, const br_rsa_public_key *pk);
 
 /**
@@ -7134,7 +7134,7 @@ uint32_t br_rsa_i32_pkcs1_vrfy(const unsigned char *x, size_t xlen,
  * \return  1 on success, 0 on error.
  */
 uint32_t br_rsa_i32_pss_vrfy(const unsigned char *x, size_t xlen,
-	const br_hash_class *hf_data, const br_hash_class *hf_mgf1, 
+	const br_hash_class *hf_data, const br_hash_class *hf_mgf1,
 	const void *hash, size_t salt_len, const br_rsa_public_key *pk);
 
 /**
@@ -7235,7 +7235,7 @@ uint32_t br_rsa_i31_pkcs1_vrfy(const unsigned char *x, size_t xlen,
  * \return  1 on success, 0 on error.
  */
 uint32_t br_rsa_i31_pss_vrfy(const unsigned char *x, size_t xlen,
-	const br_hash_class *hf_data, const br_hash_class *hf_mgf1, 
+	const br_hash_class *hf_data, const br_hash_class *hf_mgf1,
 	const void *hash, size_t salt_len, const br_rsa_public_key *pk);
 
 /**
@@ -7348,7 +7348,7 @@ uint32_t br_rsa_i62_pkcs1_vrfy(const unsigned char *x, size_t xlen,
  * \return  1 on success, 0 on error.
  */
 uint32_t br_rsa_i62_pss_vrfy(const unsigned char *x, size_t xlen,
-	const br_hash_class *hf_data, const br_hash_class *hf_mgf1, 
+	const br_hash_class *hf_data, const br_hash_class *hf_mgf1,
 	const void *hash, size_t salt_len, const br_rsa_public_key *pk);
 
 /**
@@ -7525,7 +7525,7 @@ uint32_t br_rsa_i15_pkcs1_vrfy(const unsigned char *x, size_t xlen,
  * \return  1 on success, 0 on error.
  */
 uint32_t br_rsa_i15_pss_vrfy(const unsigned char *x, size_t xlen,
-	const br_hash_class *hf_data, const br_hash_class *hf_mgf1, 
+	const br_hash_class *hf_data, const br_hash_class *hf_mgf1,
 	const void *hash, size_t salt_len, const br_rsa_public_key *pk);
 
 /**
@@ -8188,7 +8188,7 @@ br_rsa_compute_privexp br_rsa_compute_privexp_get_default(void);
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -8196,12 +8196,12 @@ br_rsa_compute_privexp br_rsa_compute_privexp_get_default(void);
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -8297,7 +8297,7 @@ extern "C" {
  *   - The multipliers (integers) MUST be lower than the subgroup order.
  *     If this property is not met, then the result is indeterminate,
  *     but an error value is not necessarily returned.
- * 
+ *
  *
  * ## ECDSA
  *
@@ -9158,7 +9158,7 @@ size_t br_ec_compute_pub(const br_ec_impl *impl, br_ec_public_key *pk,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -9166,12 +9166,12 @@ size_t br_ec_compute_pub(const br_ec_impl *impl, br_ec_public_key *pk,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -9198,7 +9198,7 @@ size_t br_ec_compute_pub(const br_ec_impl *impl, br_ec_public_key *pk,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -9206,12 +9206,12 @@ size_t br_ec_compute_pub(const br_ec_impl *impl, br_ec_public_key *pk,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -14941,7 +14941,7 @@ int br_sslio_close(br_sslio_context *cc);
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -14949,12 +14949,12 @@ int br_sslio_close(br_sslio_context *cc);
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -15757,7 +15757,7 @@ br_enc16be(void *dst, unsigned x)
 #else
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 	buf[0] = (unsigned char)(x >> 8);
 	buf[1] = (unsigned char)x;
 #endif
@@ -15784,7 +15784,7 @@ br_dec16be(const void *src)
 #else
 	const unsigned char *buf;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	return ((unsigned)buf[0] << 8) | (unsigned)buf[1];
 #endif
 }
@@ -15813,7 +15813,7 @@ br_enc32be(void *dst, uint32_t x)
 #else
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 	buf[0] = (unsigned char)(x >> 24);
 	buf[1] = (unsigned char)(x >> 16);
 	buf[2] = (unsigned char)(x >> 8);
@@ -15845,7 +15845,7 @@ br_dec32be(const void *src)
 #else
 	const unsigned char *buf;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	return ((uint32_t)buf[0] << 24)
 		| ((uint32_t)buf[1] << 16)
 		| ((uint32_t)buf[2] << 8)
@@ -15875,7 +15875,7 @@ br_enc64be(void *dst, uint64_t x)
 #else
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 	br_enc32be(buf, (uint32_t)(x >> 32));
 	br_enc32be(buf + 4, (uint32_t)x);
 #endif
@@ -15903,7 +15903,7 @@ br_dec64be(const void *src)
 #else
 	const unsigned char *buf;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	return ((uint64_t)br_dec32be(buf) << 32)
 		| (uint64_t)br_dec32be(buf + 4);
 #endif
@@ -17842,7 +17842,7 @@ br_cpuid(uint32_t mask_eax, uint32_t mask_ebx,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -17850,12 +17850,12 @@ br_cpuid(uint32_t mask_eax, uint32_t mask_ebx,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -17977,7 +17977,7 @@ br_ccm_aad_inject(br_ccm_context *ctx, const void *data, size_t len)
 	const unsigned char *dbuf;
 	size_t ptr;
 
-	dbuf = data;
+	dbuf = (unsigned char *)data;
 
 	/*
 	 * Complete partial block, if needed.
@@ -18043,7 +18043,7 @@ br_ccm_run(br_ccm_context *ctx, int encrypt, void *data, size_t len)
 	unsigned char *dbuf;
 	size_t ptr;
 
-	dbuf = data;
+	dbuf = (unsigned char *)data;
 
 	/*
 	 * Complete a partial block, if any: ctx->buf[] contains
@@ -18196,7 +18196,7 @@ br_ccm_check_tag(br_ccm_context *ctx, const void *tag)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -18204,12 +18204,12 @@ br_ccm_check_tag(br_ccm_context *ctx, const void *tag)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -18540,7 +18540,7 @@ br_eax_run(br_eax_context *ctx, int encrypt, void *data, size_t len)
 		return;
 	}
 
-	dbuf = data;
+	dbuf = (unsigned char *)data;
 	ptr = ctx->ptr;
 
 	/*
@@ -18729,7 +18729,7 @@ const br_aead_class br_eax_vtable = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -18737,12 +18737,12 @@ const br_aead_class br_eax_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -18894,7 +18894,7 @@ br_gcm_run(br_gcm_context *ctx, int encrypt, void *data, size_t len)
 	unsigned char *buf;
 	size_t ptr, dlen;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	ptr = (size_t)ctx->count_ctr & (size_t)15;
 	if (ptr != 0) {
 		/*
@@ -19055,7 +19055,7 @@ const br_aead_class br_gcm_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19063,12 +19063,12 @@ const br_aead_class br_gcm_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19085,8 +19085,8 @@ br_ccopy(uint32_t ctl, void *dst, const void *src, size_t len)
 	unsigned char *d;
 	const unsigned char *s;
 
-	d = dst;
-	s = src;
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
 	while (len -- > 0) {
 		uint32_t x, y;
 
@@ -19107,7 +19107,7 @@ br_ccopy(uint32_t ctl, void *dst, const void *src, size_t len)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19115,12 +19115,12 @@ br_ccopy(uint32_t ctl, void *dst, const void *src, size_t len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19136,7 +19136,7 @@ br_range_dec16be(uint16_t *v, size_t num, const void *src)
 {
 	const unsigned char *buf;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	while (num -- > 0) {
 		*v ++ = br_dec16be(buf);
 		buf += 2;
@@ -19153,7 +19153,7 @@ br_range_dec16be(uint16_t *v, size_t num, const void *src)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19161,12 +19161,12 @@ br_range_dec16be(uint16_t *v, size_t num, const void *src)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19182,7 +19182,7 @@ br_range_dec16le(uint16_t *v, size_t num, const void *src)
 {
 	const unsigned char *buf;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	while (num -- > 0) {
 		*v ++ = br_dec16le(buf);
 		buf += 2;
@@ -19199,7 +19199,7 @@ br_range_dec16le(uint16_t *v, size_t num, const void *src)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19207,12 +19207,12 @@ br_range_dec16le(uint16_t *v, size_t num, const void *src)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19228,7 +19228,7 @@ br_range_dec32be(uint32_t *v, size_t num, const void *src)
 {
 	const unsigned char *buf;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	while (num -- > 0) {
 		*v ++ = br_dec32be(buf);
 		buf += 4;
@@ -19245,7 +19245,7 @@ br_range_dec32be(uint32_t *v, size_t num, const void *src)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19253,12 +19253,12 @@ br_range_dec32be(uint32_t *v, size_t num, const void *src)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19274,7 +19274,7 @@ br_range_dec32le(uint32_t *v, size_t num, const void *src)
 {
 	const unsigned char *buf;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	while (num -- > 0) {
 		*v ++ = br_dec32le(buf);
 		buf += 4;
@@ -19291,7 +19291,7 @@ br_range_dec32le(uint32_t *v, size_t num, const void *src)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19299,12 +19299,12 @@ br_range_dec32le(uint32_t *v, size_t num, const void *src)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19320,7 +19320,7 @@ br_range_dec64be(uint64_t *v, size_t num, const void *src)
 {
 	const unsigned char *buf;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	while (num -- > 0) {
 		*v ++ = br_dec64be(buf);
 		buf += 8;
@@ -19337,7 +19337,7 @@ br_range_dec64be(uint64_t *v, size_t num, const void *src)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19345,12 +19345,12 @@ br_range_dec64be(uint64_t *v, size_t num, const void *src)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19366,7 +19366,7 @@ br_range_dec64le(uint64_t *v, size_t num, const void *src)
 {
 	const unsigned char *buf;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	while (num -- > 0) {
 		*v ++ = br_dec64le(buf);
 		buf += 8;
@@ -19383,7 +19383,7 @@ br_range_dec64le(uint64_t *v, size_t num, const void *src)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19391,12 +19391,12 @@ br_range_dec64le(uint64_t *v, size_t num, const void *src)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19412,7 +19412,7 @@ br_range_enc16be(void *dst, const uint16_t *v, size_t num)
 {
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 	while (num -- > 0) {
 		br_enc16be(buf, *v ++);
 		buf += 2;
@@ -19429,7 +19429,7 @@ br_range_enc16be(void *dst, const uint16_t *v, size_t num)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19437,12 +19437,12 @@ br_range_enc16be(void *dst, const uint16_t *v, size_t num)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19458,7 +19458,7 @@ br_range_enc16le(void *dst, const uint16_t *v, size_t num)
 {
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 	while (num -- > 0) {
 		br_enc16le(buf, *v ++);
 		buf += 2;
@@ -19475,7 +19475,7 @@ br_range_enc16le(void *dst, const uint16_t *v, size_t num)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19483,12 +19483,12 @@ br_range_enc16le(void *dst, const uint16_t *v, size_t num)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19504,7 +19504,7 @@ br_range_enc32be(void *dst, const uint32_t *v, size_t num)
 {
 	unsigned char *buf;
 
-	buf = dst;
+	buf =  (unsigned char *)dst;
 	while (num -- > 0) {
 		br_enc32be(buf, *v ++);
 		buf += 4;
@@ -19521,7 +19521,7 @@ br_range_enc32be(void *dst, const uint32_t *v, size_t num)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19529,12 +19529,12 @@ br_range_enc32be(void *dst, const uint32_t *v, size_t num)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19550,7 +19550,7 @@ br_range_enc32le(void *dst, const uint32_t *v, size_t num)
 {
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (	unsigned char *)dst;
 	while (num -- > 0) {
 		br_enc32le(buf, *v ++);
 		buf += 4;
@@ -19567,7 +19567,7 @@ br_range_enc32le(void *dst, const uint32_t *v, size_t num)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19575,12 +19575,12 @@ br_range_enc32le(void *dst, const uint32_t *v, size_t num)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19596,7 +19596,7 @@ br_range_enc64be(void *dst, const uint64_t *v, size_t num)
 {
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 	while (num -- > 0) {
 		br_enc64be(buf, *v ++);
 		buf += 8;
@@ -19613,7 +19613,7 @@ br_range_enc64be(void *dst, const uint64_t *v, size_t num)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -19621,12 +19621,12 @@ br_range_enc64be(void *dst, const uint64_t *v, size_t num)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -19642,7 +19642,7 @@ br_range_enc64le(void *dst, const uint64_t *v, size_t num)
 {
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 	while (num -- > 0) {
 		br_enc64le(buf, *v ++);
 		buf += 8;
@@ -19766,7 +19766,7 @@ br_pem_decoder_push(br_pem_decoder_context *ctx,
 	if (ctx->event) {
 		return 0;
 	}
-	ctx->hbuf = data;
+	ctx->hbuf = (const unsigned char *)data;
 	ctx->hlen = len;
 	br_pem_decoder_run(&ctx->cpu);
 	return len - ctx->hlen;
@@ -19886,7 +19886,7 @@ static const uint16_t t0_caddr[] = {
 void \
 name(void *ctx) \
 { \
-	t0_context *t0ctx = ctx; \
+	t0_context *t0ctx = (t0_context*)ctx; \
 	t0ctx->ip = &t0_codeblock[0]; \
 	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
@@ -20084,7 +20084,7 @@ br_pem_decoder_run(void *t0ctx)
 				break;
 			case 17: {
 				/* co */
- T0_CO(); 
+ T0_CO();
 				}
 				break;
 			case 18: {
@@ -20097,12 +20097,12 @@ br_pem_decoder_run(void *t0ctx)
 				break;
 			case 19: {
 				/* drop */
- (void)T0_POP(); 
+ (void)T0_POP();
 				}
 				break;
 			case 20: {
 				/* dup */
- T0_PUSH(T0_PEEK(0)); 
+ T0_PUSH(T0_PEEK(0));
 				}
 				break;
 			case 21: {
@@ -20146,7 +20146,7 @@ br_pem_decoder_run(void *t0ctx)
 				break;
 			case 24: {
 				/* over */
- T0_PUSH(T0_PEEK(1)); 
+ T0_PUSH(T0_PEEK(1));
 				}
 				break;
 			case 25: {
@@ -20172,7 +20172,7 @@ br_pem_decoder_run(void *t0ctx)
 				break;
 			case 27: {
 				/* swap */
- T0_SWAP(); 
+ T0_SWAP();
 				}
 				break;
 			case 28: {
@@ -20248,7 +20248,7 @@ t0_exit:
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -20256,12 +20256,12 @@ t0_exit:
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -20336,7 +20336,7 @@ br_pem_encode(void *dest, const void *data, size_t len,
 		return dlen;
 	}
 
-	d = dest;
+	d = (char*)dest;
 
 	/*
 	 * We always move the source data to the end of output buffer;
@@ -20447,7 +20447,7 @@ br_pem_encode(void *dest, const void *data, size_t len,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -20455,12 +20455,12 @@ br_pem_encode(void *dest, const void *data, size_t len,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -20600,7 +20600,7 @@ const br_ec_impl br_ec_all_m15 = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -20608,12 +20608,12 @@ const br_ec_impl br_ec_all_m15 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -20833,7 +20833,7 @@ const br_ec_impl br_ec_all_m31 = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -20841,12 +20841,12 @@ const br_ec_impl br_ec_all_m31 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -21305,7 +21305,7 @@ const br_ec_impl br_ec_c25519_i15 = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -21313,12 +21313,12 @@ const br_ec_impl br_ec_c25519_i15 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -21768,7 +21768,7 @@ const br_ec_impl br_ec_c25519_i31 = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -21776,12 +21776,12 @@ const br_ec_impl br_ec_c25519_i31 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -23328,7 +23328,7 @@ const br_ec_impl br_ec_c25519_m15 = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -23336,12 +23336,12 @@ const br_ec_impl br_ec_c25519_m15 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -24195,7 +24195,7 @@ const br_ec_impl br_ec_c25519_m31 = {
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -24203,12 +24203,12 @@ const br_ec_impl br_ec_c25519_m31 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -24866,7 +24866,7 @@ br_ec_c25519_m62_get(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -24874,12 +24874,12 @@ br_ec_c25519_m62_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -25726,7 +25726,7 @@ br_ec_c25519_m64_get(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -25734,12 +25734,12 @@ br_ec_c25519_m64_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -25782,7 +25782,7 @@ const br_ec_curve_def br_curve25519 = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -25790,12 +25790,12 @@ const br_ec_curve_def br_curve25519 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -25826,7 +25826,7 @@ br_ec_get_default(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -25834,12 +25834,12 @@ br_ec_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -25883,7 +25883,7 @@ br_ec_keygen(const br_prng_class **rng_ctx,
 	 * the value is strictly lower than the curve order (we also
 	 * check for all-zero values, which are invalid).
 	 */
-	buf = kbuf;
+	buf = (unsigned char *)kbuf;
 	for (;;) {
 		size_t u;
 		unsigned cc, zz;
@@ -26001,7 +26001,7 @@ br_ec_keygen(const br_prng_class **rng_ctx,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -26009,12 +26009,12 @@ br_ec_keygen(const br_prng_class **rng_ctx,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -27697,7 +27697,7 @@ p256_decode(p256_jacobian *P, const void *src, size_t len)
 	if (len != 65) {
 		return 0;
 	}
-	buf = src;
+	buf = (unsigned char *)src;
 
 	/*
 	 * First byte must be 0x04 (uncompressed format). We could support
@@ -27751,7 +27751,7 @@ p256_encode(void *dst, const p256_jacobian *P)
 {
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 	buf[0] = 0x04;
 	le13_to_be8(buf + 1, 32, P->x);
 	le13_to_be8(buf + 33, 32, P->y);
@@ -28244,7 +28244,7 @@ const br_ec_impl br_ec_p256_m15 = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -28252,12 +28252,12 @@ const br_ec_impl br_ec_p256_m15 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -29290,7 +29290,7 @@ p256_decode(p256_jacobian *P, const void *src, size_t len)
 	if (len != 65) {
 		return 0;
 	}
-	buf = src;
+	buf = (unsigned char *)src;
 
 	/*
 	 * First byte must be 0x04 (uncompressed format). We could support
@@ -29344,7 +29344,7 @@ p256_encode(void *dst, const p256_jacobian *P)
 {
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 	buf[0] = 0x04;
 	le30_to_be8(buf + 1, 32, P->x);
 	le30_to_be8(buf + 33, 32, P->y);
@@ -29842,7 +29842,7 @@ const br_ec_impl br_ec_p256_m31 = {
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -29850,12 +29850,12 @@ const br_ec_impl br_ec_p256_m31 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -31745,7 +31745,7 @@ br_ec_p256_m62_get(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -31753,12 +31753,12 @@ br_ec_p256_m62_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -32064,7 +32064,7 @@ f256_montymul(uint64_t *d, const uint64_t *a, const uint64_t *b)
 		t1 = (uint64_t)z;
 
 		/* t <- t + f*2^192 - f*2^160 + f*2^128 */
-		ff = ((unsigned __int128)f << 64) 
+		ff = ((unsigned __int128)f << 64)
 			- ((unsigned __int128)f << 32) + f;
 		z = (z >> 64) + (unsigned __int128)t2 + (uint64_t)ff;
 		t2 = (uint64_t)z;
@@ -33661,7 +33661,7 @@ br_ec_p256_m64_get(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -33669,12 +33669,12 @@ br_ec_p256_m64_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -34291,7 +34291,7 @@ point_decode(jacobian *P, const void *src, size_t len, const curve_params *cc)
 	uint32_t r;
 	jacobian Q;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	point_zero(P, cc);
 	plen = (cc->p[0] - (cc->p[0] >> 4) + 7) >> 3;
 	if (len != 1 + (plen << 1)) {
@@ -34332,7 +34332,7 @@ point_encode(void *dst, const jacobian *P, const curve_params *cc)
 	size_t plen;
 	jacobian Q, T;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 	plen = (cc->p[0] - (cc->p[0] >> 4) + 7) >> 3;
 	buf[0] = 0x04;
 	memcpy(&Q, P, sizeof *P);
@@ -34644,7 +34644,7 @@ const br_ec_impl br_ec_prime_i15 = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -34652,12 +34652,12 @@ const br_ec_impl br_ec_prime_i15 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -35273,7 +35273,7 @@ point_decode(jacobian *P, const void *src, size_t len, const curve_params *cc)
 	uint32_t r;
 	jacobian Q;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	point_zero(P, cc);
 	plen = (cc->p[0] - (cc->p[0] >> 5) + 7) >> 3;
 	if (len != 1 + (plen << 1)) {
@@ -35315,7 +35315,7 @@ point_encode(void *dst, const jacobian *P, const curve_params *cc)
 	size_t plen;
 	jacobian Q, T;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 	xbl = cc->p[0];
 	xbl -= (xbl >> 5);
 	plen = (xbl + 7) >> 3;
@@ -35536,7 +35536,7 @@ const br_ec_impl br_ec_prime_i31 = {
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -35544,12 +35544,12 @@ const br_ec_impl br_ec_prime_i31 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -35610,10 +35610,10 @@ br_ec_compute_pub(const br_ec_impl *impl, br_ec_public_key *pk,
 	if (kbuf == NULL) {
 		return POINT_LEN[curve];
 	}
-	len = impl->mulgen(kbuf, sk->x, sk->xlen, curve);
+	len = impl->mulgen((unsigned char *)kbuf, sk->x, sk->xlen, curve);
 	if (pk != NULL) {
 		pk->curve = curve;
-		pk->q = kbuf;
+		pk->q = (unsigned char *)kbuf;
 		pk->qlen = len;
 	}
 	return len;
@@ -35635,7 +35635,7 @@ br_ec_compute_pub(const br_ec_impl *impl, br_ec_public_key *pk,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -35643,12 +35643,12 @@ br_ec_compute_pub(const br_ec_impl *impl, br_ec_public_key *pk,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -35696,7 +35696,7 @@ const br_ec_curve_def br_secp256r1 = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -35704,12 +35704,12 @@ const br_ec_curve_def br_secp256r1 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -35720,11 +35720,11 @@ const br_ec_curve_def br_secp256r1 = {
 
 
 static const unsigned char P384_N[] = {
-	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 
-	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 
-	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 
-	0xC7, 0x63, 0x4D, 0x81, 0xF4, 0x37, 0x2D, 0xDF, 
-	0x58, 0x1A, 0x0D, 0xB2, 0x48, 0xB0, 0xA7, 0x7A, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+	0xC7, 0x63, 0x4D, 0x81, 0xF4, 0x37, 0x2D, 0xDF,
+	0x58, 0x1A, 0x0D, 0xB2, 0x48, 0xB0, 0xA7, 0x7A,
 	0xEC, 0xEC, 0x19, 0x6A, 0xCC, 0xC5, 0x29, 0x73
 };
 
@@ -35761,7 +35761,7 @@ const br_ec_curve_def br_secp384r1 = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -35769,12 +35769,12 @@ const br_ec_curve_def br_secp384r1 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -35833,7 +35833,7 @@ const br_ec_curve_def br_secp521r1 = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -35841,12 +35841,12 @@ const br_ec_curve_def br_secp521r1 = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -35876,7 +35876,7 @@ br_ecdsa_asn1_to_raw(void *sig, size_t sig_len)
 	size_t zlen, rlen, slen, off;
 	unsigned char tmp[254];
 
-	buf = sig;
+	buf = (unsigned char *)sig;
 	if (sig_len < 8) {
 		return 0;
 	}
@@ -35975,7 +35975,7 @@ br_ecdsa_asn1_to_raw(void *sig, size_t sig_len)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -35983,12 +35983,12 @@ br_ecdsa_asn1_to_raw(void *sig, size_t sig_len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36019,7 +36019,7 @@ br_ecdsa_sign_asn1_get_default(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36027,12 +36027,12 @@ br_ecdsa_sign_asn1_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36063,7 +36063,7 @@ br_ecdsa_sign_raw_get_default(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36071,12 +36071,12 @@ br_ecdsa_sign_raw_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36107,7 +36107,7 @@ br_ecdsa_vrfy_asn1_get_default(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36115,12 +36115,12 @@ br_ecdsa_vrfy_asn1_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36151,7 +36151,7 @@ br_ecdsa_vrfy_raw_get_default(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36159,12 +36159,12 @@ br_ecdsa_vrfy_raw_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36206,7 +36206,7 @@ br_ecdsa_i15_bits2int(uint16_t *x,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36214,12 +36214,12 @@ br_ecdsa_i15_bits2int(uint16_t *x,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36260,7 +36260,7 @@ br_ecdsa_i15_sign_asn1(const br_ec_impl *impl,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36268,12 +36268,12 @@ br_ecdsa_i15_sign_asn1(const br_ec_impl *impl,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36445,7 +36445,7 @@ br_ecdsa_i15_sign_raw(const br_ec_impl *impl,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36453,12 +36453,12 @@ br_ecdsa_i15_sign_raw(const br_ec_impl *impl,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36502,7 +36502,7 @@ br_ecdsa_i15_vrfy_asn1(const br_ec_impl *impl,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36510,12 +36510,12 @@ br_ecdsa_i15_vrfy_asn1(const br_ec_impl *impl,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36678,7 +36678,7 @@ br_ecdsa_i15_vrfy_raw(const br_ec_impl *impl,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36686,12 +36686,12 @@ br_ecdsa_i15_vrfy_raw(const br_ec_impl *impl,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36733,7 +36733,7 @@ br_ecdsa_i31_bits2int(uint32_t *x,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36741,12 +36741,12 @@ br_ecdsa_i31_bits2int(uint32_t *x,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36787,7 +36787,7 @@ br_ecdsa_i31_sign_asn1(const br_ec_impl *impl,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36795,12 +36795,12 @@ br_ecdsa_i31_sign_asn1(const br_ec_impl *impl,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -36971,7 +36971,7 @@ br_ecdsa_i31_sign_raw(const br_ec_impl *impl,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -36979,12 +36979,12 @@ br_ecdsa_i31_sign_raw(const br_ec_impl *impl,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -37028,7 +37028,7 @@ br_ecdsa_i31_vrfy_asn1(const br_ec_impl *impl,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -37036,12 +37036,12 @@ br_ecdsa_i31_vrfy_asn1(const br_ec_impl *impl,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -37203,7 +37203,7 @@ br_ecdsa_i31_vrfy_raw(const br_ec_impl *impl,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -37211,12 +37211,12 @@ br_ecdsa_i31_vrfy_raw(const br_ec_impl *impl,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -37260,7 +37260,7 @@ br_ecdsa_raw_to_asn1(void *sig, size_t sig_len)
 	size_t hlen, rlen, slen, zlen, off;
 	unsigned char tmp[257];
 
-	buf = sig;
+	buf = (unsigned char *)sig;
 	if ((sig_len & 1) != 0) {
 		return 0;
 	}
@@ -37332,7 +37332,7 @@ br_ecdsa_raw_to_asn1(void *sig, size_t sig_len)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -37340,12 +37340,12 @@ br_ecdsa_raw_to_asn1(void *sig, size_t sig_len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -37646,7 +37646,7 @@ br_get_config(void)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -37654,12 +37654,12 @@ br_get_config(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -37738,7 +37738,7 @@ br_digest_OID(int digest_id, size_t *len)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -37746,12 +37746,12 @@ br_digest_OID(int digest_id, size_t *len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -37796,7 +37796,7 @@ br_digest_size_by_ID(int digest_id)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -37804,12 +37804,12 @@ br_digest_size_by_ID(int digest_id)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -38000,9 +38000,9 @@ br_ghash_ctmul(void *y, const void *h, const void *data, size_t len)
 	 * Throughout the loop we handle the y and h values as arrays
 	 * of 32-bit words.
 	 */
-	buf = data;
-	yb = y;
-	hb = h;
+	buf = (unsigned char *)data;
+	yb = (unsigned char *)y;
+	hb = (unsigned char *)h;
 	yw[3] = br_dec32be(yb);
 	yw[2] = br_dec32be(yb + 4);
 	yw[1] = br_dec32be(yb + 8);
@@ -38150,7 +38150,7 @@ br_ghash_ctmul(void *y, const void *h, const void *data, size_t len)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -38158,12 +38158,12 @@ br_ghash_ctmul(void *y, const void *h, const void *data, size_t len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -38256,9 +38256,9 @@ br_ghash_ctmul32(void *y, const void *h, const void *data, size_t len)
 	uint32_t yw[4];
 	uint32_t hw[4], hwr[4];
 
-	buf = data;
-	yb = y;
-	hb = h;
+	buf = (unsigned char *)data;
+	yb = (unsigned char *)y;
+	hb = (unsigned char *)h;
 	yw[3] = br_dec32be(yb);
 	yw[2] = br_dec32be(yb + 4);
 	yw[1] = br_dec32be(yb + 8);
@@ -38410,7 +38410,7 @@ br_ghash_ctmul32(void *y, const void *h, const void *data, size_t len)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -38418,12 +38418,12 @@ br_ghash_ctmul32(void *y, const void *h, const void *data, size_t len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -38491,9 +38491,9 @@ br_ghash_ctmul64(void *y, const void *h, const void *data, size_t len)
 	uint64_t y0, y1;
 	uint64_t h0, h1, h2, h0r, h1r, h2r;
 
-	buf = data;
-	yb = y;
-	hb = h;
+	buf = (unsigned char *)data;
+	yb = (unsigned char *)y;
+	hb = (unsigned char *)h;
 	y1 = br_dec64be(yb);
 	y0 = br_dec64be(yb + 8);
 	h1 = br_dec64be(hb);
@@ -38573,7 +38573,7 @@ br_ghash_ctmul64(void *y, const void *h, const void *data, size_t len)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -38581,12 +38581,12 @@ br_ghash_ctmul64(void *y, const void *h, const void *data, size_t len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -38816,7 +38816,7 @@ br_ghash_pclmul(void *y, const void *h, const void *data, size_t len)
 	 * starts at buf2 and contains num1 blocks of 16-byte values.
 	 * We want the first chunk to be as large as possible.
 	 */
-	buf1 = data;
+	buf1 = (unsigned char *)data;
 	num4 = len >> 6;
 	len &= 63;
 	buf2 = buf1 + (num4 << 6);
@@ -38835,8 +38835,8 @@ br_ghash_pclmul(void *y, const void *h, const void *data, size_t len)
 	/*
 	 * Load y and h.
 	 */
-	yw = _mm_loadu_si128(y);
-	h1w = _mm_loadu_si128(h);
+	yw = _mm_loadu_si128((const __m128i_u  *)y);
+	h1w = _mm_loadu_si128((const __m128i_u  *)h);
 	BYTESWAP(yw);
 	BYTESWAP(h1w);
 	BK(h1w, h1x);
@@ -38873,10 +38873,10 @@ br_ghash_pclmul(void *y, const void *h, const void *data, size_t len)
 			__m128i aw0, aw1, aw2, aw3;
 			__m128i ax0, ax1, ax2, ax3;
 
-			aw0 = _mm_loadu_si128((void *)(buf1 +  0));
-			aw1 = _mm_loadu_si128((void *)(buf1 + 16));
-			aw2 = _mm_loadu_si128((void *)(buf1 + 32));
-			aw3 = _mm_loadu_si128((void *)(buf1 + 48));
+			aw0 = _mm_loadu_si128((__m128i_u const *)(buf1 +  0));
+			aw1 = _mm_loadu_si128((__m128i_u const *)(buf1 + 16));
+			aw2 = _mm_loadu_si128((__m128i_u const *)(buf1 + 32));
+			aw3 = _mm_loadu_si128((__m128i_u const *)(buf1 + 48));
 			BYTESWAP(aw0);
 			BYTESWAP(aw1);
 			BYTESWAP(aw2);
@@ -38924,7 +38924,7 @@ br_ghash_pclmul(void *y, const void *h, const void *data, size_t len)
 		__m128i aw, ax;
 		__m128i t0, t1, t2, t3;
 
-		aw = _mm_loadu_si128((void *)buf2);
+		aw = _mm_loadu_si128((const __m128i_u  *)buf2);
 		BYTESWAP(aw);
 		buf2 += 16;
 
@@ -38944,7 +38944,7 @@ br_ghash_pclmul(void *y, const void *h, const void *data, size_t len)
 	}
 
 	BYTESWAP(yw);
-	_mm_storeu_si128(y, yw);
+	_mm_storeu_si128(( __m128i_u  *)y, yw);
 }
 
 BR_TARGETS_X86_DOWN
@@ -38979,7 +38979,7 @@ br_ghash_pclmul_get(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -38987,12 +38987,12 @@ br_ghash_pclmul_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -39418,7 +39418,7 @@ br_ghash_pwr8_get(void)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -39426,12 +39426,12 @@ br_ghash_pwr8_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -39547,7 +39547,7 @@ br_md5_update(br_md5_context *cc, const void *data, size_t len)
 	const unsigned char *buf;
 	size_t ptr;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	ptr = (size_t)cc->count & 63;
 	while (len > 0) {
 		size_t clen;
@@ -39640,7 +39640,7 @@ const br_hash_class br_md5_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -39648,12 +39648,12 @@ const br_hash_class br_md5_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -39680,7 +39680,7 @@ br_md5sha1_update(br_md5sha1_context *cc, const void *data, size_t len)
 	const unsigned char *buf;
 	size_t ptr;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	ptr = (size_t)cc->count & 63;
 	while (len > 0) {
 		size_t clen;
@@ -39732,7 +39732,7 @@ br_md5sha1_out(const br_md5sha1_context *cc, void *dst)
 	br_md5_round(buf, val_md5);
 	br_enc64be(buf + 56, count);
 	br_sha1_round(buf, val_sha1);
-	out = dst;
+	out = (unsigned char *)dst;
 	br_range_enc32le(out, val_md5, 4);
 	br_range_enc32be(out + 16, val_sha1, 5);
 }
@@ -39743,7 +39743,7 @@ br_md5sha1_state(const br_md5sha1_context *cc, void *dst)
 {
 	unsigned char *out;
 
-	out = dst;
+	out = (unsigned char *)dst;
 	br_range_enc32le(out, cc->val_md5, 4);
 	br_range_enc32be(out + 16, cc->val_sha1, 5);
 	return cc->count;
@@ -39755,7 +39755,7 @@ br_md5sha1_set_state(br_md5sha1_context *cc, const void *stb, uint64_t count)
 {
 	const unsigned char *buf;
 
-	buf = stb;
+	buf = (unsigned char *)stb;
 	br_range_dec32le(cc->val_md5, 4, buf);
 	br_range_dec32be(cc->val_sha1, 5, buf + 16);
 	cc->count = count;
@@ -39789,7 +39789,7 @@ const br_hash_class br_md5sha1_vtable = {
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -39797,12 +39797,12 @@ const br_hash_class br_md5sha1_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -39821,7 +39821,7 @@ br_mgf1_xor(void *data, size_t len,
 	size_t u, hlen;
 	uint32_t c;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	hlen = br_digest_size(dig);
 	for (u = 0, c = 0; u < len; u += hlen, c ++) {
 		br_hash_compat_context hc;
@@ -39853,7 +39853,7 @@ br_mgf1_xor(void *data, size_t len,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -39861,12 +39861,12 @@ br_mgf1_xor(void *data, size_t len,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -39960,7 +39960,7 @@ br_multihash_update(br_multihash_context *ctx, const void *data, size_t len)
 	const unsigned char *buf;
 	size_t ptr;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	ptr = (size_t)ctx->count & 127;
 	while (len > 0) {
 		size_t clen;
@@ -40027,7 +40027,7 @@ br_multihash_out(const br_multihash_context *ctx, int id, void *dst)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -40035,12 +40035,12 @@ br_multihash_out(const br_multihash_context *ctx, int id, void *dst)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -40138,7 +40138,7 @@ br_sha1_update(br_sha1_context *cc, const void *data, size_t len)
 	const unsigned char *buf;
 	size_t ptr;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	ptr = (size_t)cc->count & 63;
 	while (len > 0) {
 		size_t clen;
@@ -40238,7 +40238,7 @@ const br_hash_class br_sha1_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -40246,12 +40246,12 @@ const br_hash_class br_sha1_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -40383,7 +40383,7 @@ sha2big_update(br_sha384_context *cc, const void *data, size_t len)
 	const unsigned char *buf;
 	size_t ptr;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	ptr = (size_t)cc->count & 127;
 	cc->count += (uint64_t)len;
 	while (len > 0) {
@@ -40543,7 +40543,7 @@ const br_hash_class br_sha512_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -40551,12 +40551,12 @@ const br_hash_class br_sha512_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -40747,7 +40747,7 @@ sha2small_update(br_sha224_context *cc, const void *data, size_t len)
 	const unsigned char *buf;
 	size_t ptr;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	ptr = (size_t)cc->count & 63;
 	cc->count += (uint64_t)len;
 	while (len > 0) {
@@ -40901,7 +40901,7 @@ const br_hash_class br_sha256_vtable = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -40909,12 +40909,12 @@ const br_hash_class br_sha256_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -40955,7 +40955,7 @@ br_i15_add(uint16_t *a, const uint16_t *b, uint32_t ctl)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -40963,12 +40963,12 @@ br_i15_add(uint16_t *a, const uint16_t *b, uint32_t ctl)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -41007,7 +41007,7 @@ br_i15_bit_length(uint16_t *x, size_t xlen)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -41015,12 +41015,12 @@ br_i15_bit_length(uint16_t *x, size_t xlen)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -41062,7 +41062,7 @@ br_i15_decode_mod(uint16_t *x, const void *src, size_t len, const uint16_t *m)
 	int pass;
 	uint32_t r;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	mlen = (m[0] + 15) >> 4;
 	tlen = (mlen << 1);
 	if (tlen < len) {
@@ -41139,7 +41139,7 @@ br_i15_decode_mod(uint16_t *x, const void *src, size_t len, const uint16_t *m)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -41147,12 +41147,12 @@ br_i15_decode_mod(uint16_t *x, const void *src, size_t len, const uint16_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -41171,7 +41171,7 @@ br_i15_decode(uint16_t *x, const void *src, size_t len)
 	uint32_t acc;
 	int acc_len;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	v = 1;
 	acc = 0;
 	acc_len = 0;
@@ -41203,7 +41203,7 @@ br_i15_decode(uint16_t *x, const void *src, size_t len)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -41211,12 +41211,12 @@ br_i15_decode(uint16_t *x, const void *src, size_t len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -41268,7 +41268,7 @@ br_i15_decode_reduce(uint16_t *x,
 		x[0] = m_ebitlen;
 		return;
 	}
-	buf = src;
+	buf = (unsigned char *)src;
 	br_i15_decode(x, buf, k);
 	x[0] = m_ebitlen;
 
@@ -41311,7 +41311,7 @@ br_i15_decode_reduce(uint16_t *x,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -41319,12 +41319,12 @@ br_i15_decode_reduce(uint16_t *x,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -41351,7 +41351,7 @@ br_i15_encode(void *dst, size_t len, const uint16_t *x)
 	u = 1;
 	acc = 0;
 	acc_len = 0;
-	buf = dst;
+	buf = (unsigned char *)dst;
 	while (len -- > 0) {
 		if (acc_len < 8) {
 			if (u <= xlen) {
@@ -41375,7 +41375,7 @@ br_i15_encode(void *dst, size_t len, const uint16_t *x)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -41383,12 +41383,12 @@ br_i15_encode(void *dst, size_t len, const uint16_t *x)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -41442,7 +41442,7 @@ br_i15_from_monty(uint16_t *x, const uint16_t *m, uint16_t m0i)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -41450,12 +41450,12 @@ br_i15_from_monty(uint16_t *x, const uint16_t *m, uint16_t m0i)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -41501,7 +41501,7 @@ br_i15_iszero(const uint16_t *x)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -41509,12 +41509,12 @@ br_i15_iszero(const uint16_t *x)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -41979,7 +41979,7 @@ br_i15_moddiv(uint16_t *x, const uint16_t *y, const uint16_t *m, uint16_t m0i,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -41987,12 +41987,12 @@ br_i15_moddiv(uint16_t *x, const uint16_t *y, const uint16_t *m, uint16_t m0i,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -42037,7 +42037,7 @@ br_i15_modpow(uint16_t *x,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -42045,12 +42045,12 @@ br_i15_modpow(uint16_t *x,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -42205,7 +42205,7 @@ br_i15_modpow_opt(uint16_t *x,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -42213,12 +42213,12 @@ br_i15_modpow_opt(uint16_t *x,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -42397,7 +42397,7 @@ loop%=:                                                            \n\
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -42405,12 +42405,12 @@ loop%=:                                                            \n\
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -42466,7 +42466,7 @@ br_i15_mulacc(uint16_t *d, const uint16_t *a, const uint16_t *b)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -42474,12 +42474,12 @@ br_i15_mulacc(uint16_t *d, const uint16_t *a, const uint16_t *b)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -42647,7 +42647,7 @@ br_i15_muladd_small(uint16_t *x, uint16_t z, const uint16_t *m)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -42655,12 +42655,12 @@ br_i15_muladd_small(uint16_t *x, uint16_t z, const uint16_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -42693,7 +42693,7 @@ br_i15_ninv15(uint16_t x)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -42701,12 +42701,12 @@ br_i15_ninv15(uint16_t x)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -42767,7 +42767,7 @@ br_i15_reduce(uint16_t *x, const uint16_t *a, const uint16_t *m)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -42775,12 +42775,12 @@ br_i15_reduce(uint16_t *x, const uint16_t *a, const uint16_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -42822,7 +42822,7 @@ br_i15_rshift(uint16_t *x, int count)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -42830,12 +42830,12 @@ br_i15_rshift(uint16_t *x, int count)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -42876,7 +42876,7 @@ br_i15_sub(uint16_t *a, const uint16_t *b, uint32_t ctl)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -42884,12 +42884,12 @@ br_i15_sub(uint16_t *a, const uint16_t *b, uint32_t ctl)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -42920,7 +42920,7 @@ br_i15_to_monty(uint16_t *x, const uint16_t *m)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -42928,12 +42928,12 @@ br_i15_to_monty(uint16_t *x, const uint16_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -42974,7 +42974,7 @@ br_i31_add(uint32_t *a, const uint32_t *b, uint32_t ctl)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -42982,12 +42982,12 @@ br_i31_add(uint32_t *a, const uint32_t *b, uint32_t ctl)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -43026,7 +43026,7 @@ br_i31_bit_length(uint32_t *x, size_t xlen)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -43034,12 +43034,12 @@ br_i31_bit_length(uint32_t *x, size_t xlen)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -43081,7 +43081,7 @@ br_i31_decode_mod(uint32_t *x, const void *src, size_t len, const uint32_t *m)
 	int pass;
 	uint32_t r;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	mlen = (m[0] + 31) >> 5;
 	tlen = (mlen << 2);
 	if (tlen < len) {
@@ -43158,7 +43158,7 @@ br_i31_decode_mod(uint32_t *x, const void *src, size_t len, const uint32_t *m)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -43166,12 +43166,12 @@ br_i31_decode_mod(uint32_t *x, const void *src, size_t len, const uint32_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -43190,7 +43190,7 @@ br_i31_decode(uint32_t *x, const void *src, size_t len)
 	uint32_t acc;
 	int acc_len;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	u = len;
 	v = 1;
 	acc = 0;
@@ -43223,7 +43223,7 @@ br_i31_decode(uint32_t *x, const void *src, size_t len)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -43231,12 +43231,12 @@ br_i31_decode(uint32_t *x, const void *src, size_t len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -43288,7 +43288,7 @@ br_i31_decode_reduce(uint32_t *x,
 		x[0] = m_ebitlen;
 		return;
 	}
-	buf = src;
+	buf = (unsigned char *)src;
 	br_i31_decode(x, buf, k);
 	x[0] = m_ebitlen;
 
@@ -43334,7 +43334,7 @@ br_i31_decode_reduce(uint32_t *x,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -43342,12 +43342,12 @@ br_i31_decode_reduce(uint32_t *x,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -43421,7 +43421,7 @@ br_i31_encode(void *dst, size_t len, const uint32_t *x)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -43429,12 +43429,12 @@ br_i31_encode(void *dst, size_t len, const uint32_t *x)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -43489,7 +43489,7 @@ br_i31_from_monty(uint32_t *x, const uint32_t *m, uint32_t m0i)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -43497,12 +43497,12 @@ br_i31_from_monty(uint32_t *x, const uint32_t *m, uint32_t m0i)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -43548,7 +43548,7 @@ br_i31_iszero(const uint32_t *x)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -43556,12 +43556,12 @@ br_i31_iszero(const uint32_t *x)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -44049,7 +44049,7 @@ br_i31_moddiv(uint32_t *x, const uint32_t *y, const uint32_t *m, uint32_t m0i,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -44057,12 +44057,12 @@ br_i31_moddiv(uint32_t *x, const uint32_t *y, const uint32_t *m, uint32_t m0i,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -44122,7 +44122,7 @@ br_i31_modpow(uint32_t *x,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -44130,12 +44130,12 @@ br_i31_modpow(uint32_t *x,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -44290,7 +44290,7 @@ br_i31_modpow_opt(uint32_t *x,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -44298,12 +44298,12 @@ br_i31_modpow_opt(uint32_t *x,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -44425,7 +44425,7 @@ br_i31_montymul(uint32_t *d, const uint32_t *x, const uint32_t *y,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -44433,12 +44433,12 @@ br_i31_montymul(uint32_t *d, const uint32_t *x, const uint32_t *y,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -44507,7 +44507,7 @@ br_i31_mulacc(uint32_t *d, const uint32_t *a, const uint32_t *b)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -44515,12 +44515,12 @@ br_i31_mulacc(uint32_t *d, const uint32_t *a, const uint32_t *b)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -44672,7 +44672,7 @@ br_i31_muladd_small(uint32_t *x, uint32_t z, const uint32_t *m)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -44680,12 +44680,12 @@ br_i31_muladd_small(uint32_t *x, uint32_t z, const uint32_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -44719,7 +44719,7 @@ br_i31_ninv31(uint32_t x)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -44727,12 +44727,12 @@ br_i31_ninv31(uint32_t x)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -44793,7 +44793,7 @@ br_i31_reduce(uint32_t *x, const uint32_t *a, const uint32_t *m)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -44801,12 +44801,12 @@ br_i31_reduce(uint32_t *x, const uint32_t *a, const uint32_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -44848,7 +44848,7 @@ br_i31_rshift(uint32_t *x, int count)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -44856,12 +44856,12 @@ br_i31_rshift(uint32_t *x, int count)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -44902,7 +44902,7 @@ br_i31_sub(uint32_t *a, const uint32_t *b, uint32_t ctl)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -44910,12 +44910,12 @@ br_i31_sub(uint32_t *a, const uint32_t *b, uint32_t ctl)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -44946,7 +44946,7 @@ br_i31_to_monty(uint32_t *x, const uint32_t *m)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -44954,12 +44954,12 @@ br_i31_to_monty(uint32_t *x, const uint32_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45005,7 +45005,7 @@ br_i32_add(uint32_t *a, const uint32_t *b, uint32_t ctl)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45013,12 +45013,12 @@ br_i32_add(uint32_t *a, const uint32_t *b, uint32_t ctl)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45057,7 +45057,7 @@ br_i32_bit_length(uint32_t *x, size_t xlen)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45065,12 +45065,12 @@ br_i32_bit_length(uint32_t *x, size_t xlen)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45088,7 +45088,7 @@ br_i32_decode_mod(uint32_t *x, const void *src, size_t len, const uint32_t *m)
 	uint32_t r;
 	size_t u, v, mlen;
 
-	buf = src;
+	buf = (unsigned char *)src;
 
 	/*
 	 * First pass: determine whether the value fits. The 'r' value
@@ -45142,7 +45142,7 @@ br_i32_decode_mod(uint32_t *x, const void *src, size_t len, const uint32_t *m)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45150,12 +45150,12 @@ br_i32_decode_mod(uint32_t *x, const void *src, size_t len, const uint32_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45172,7 +45172,7 @@ br_i32_decode(uint32_t *x, const void *src, size_t len)
 	const unsigned char *buf;
 	size_t u, v;
 
-	buf = src;
+	buf = (unsigned char *)src;
 	u = len;
 	v = 1;
 	for (;;) {
@@ -45213,7 +45213,7 @@ br_i32_decode(uint32_t *x, const void *src, size_t len)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45221,12 +45221,12 @@ br_i32_decode(uint32_t *x, const void *src, size_t len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45282,7 +45282,7 @@ br_i32_decode_reduce(uint32_t *x,
 	 * then extra bytes by whole 32-bit words. First compute
 	 * the size that should be injected that way.
 	 */
-	buf = src;
+	buf = (unsigned char *)src;
 	q = (len - k + 3) & ~(size_t)3;
 
 	/*
@@ -45328,7 +45328,7 @@ br_i32_decode_reduce(uint32_t *x,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45336,12 +45336,12 @@ br_i32_decode_reduce(uint32_t *x,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45392,7 +45392,7 @@ br_divrem(uint32_t hi, uint32_t lo, uint32_t d, uint32_t *r)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45400,12 +45400,12 @@ br_divrem(uint32_t hi, uint32_t lo, uint32_t d, uint32_t *r)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45422,7 +45422,7 @@ br_i32_encode(void *dst, size_t len, const uint32_t *x)
 	unsigned char *buf;
 	size_t k;
 
-	buf = dst;
+	buf = (unsigned char *)dst;
 
 	/*
 	 * Compute the announced size of x in bytes; extra bytes are
@@ -45472,7 +45472,7 @@ br_i32_encode(void *dst, size_t len, const uint32_t *x)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45480,12 +45480,12 @@ br_i32_encode(void *dst, size_t len, const uint32_t *x)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45540,7 +45540,7 @@ br_i32_from_monty(uint32_t *x, const uint32_t *m, uint32_t m0i)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45548,12 +45548,12 @@ br_i32_from_monty(uint32_t *x, const uint32_t *m, uint32_t m0i)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45587,7 +45587,7 @@ br_i32_iszero(const uint32_t *x)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45595,12 +45595,12 @@ br_i32_iszero(const uint32_t *x)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45660,7 +45660,7 @@ br_i32_modpow(uint32_t *x,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45668,12 +45668,12 @@ br_i32_modpow(uint32_t *x,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45737,7 +45737,7 @@ br_i32_montymul(uint32_t *d, const uint32_t *x, const uint32_t *y,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45745,12 +45745,12 @@ br_i32_montymul(uint32_t *d, const uint32_t *x, const uint32_t *y,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45801,7 +45801,7 @@ br_i32_mulacc(uint32_t *d, const uint32_t *a, const uint32_t *b)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45809,12 +45809,12 @@ br_i32_mulacc(uint32_t *d, const uint32_t *a, const uint32_t *b)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45947,7 +45947,7 @@ br_i32_muladd_small(uint32_t *x, uint32_t z, const uint32_t *m)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -45955,12 +45955,12 @@ br_i32_muladd_small(uint32_t *x, uint32_t z, const uint32_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -45994,7 +45994,7 @@ br_i32_ninv32(uint32_t x)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -46002,12 +46002,12 @@ br_i32_ninv32(uint32_t x)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -46068,7 +46068,7 @@ br_i32_reduce(uint32_t *x, const uint32_t *a, const uint32_t *m)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -46076,12 +46076,12 @@ br_i32_reduce(uint32_t *x, const uint32_t *a, const uint32_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -46127,7 +46127,7 @@ br_i32_sub(uint32_t *a, const uint32_t *b, uint32_t ctl)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -46135,12 +46135,12 @@ br_i32_sub(uint32_t *a, const uint32_t *b, uint32_t ctl)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -46171,7 +46171,7 @@ br_i32_to_monty(uint32_t *x, const uint32_t *m)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -46179,12 +46179,12 @@ br_i32_to_monty(uint32_t *x, const uint32_t *m)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -46676,7 +46676,7 @@ br_i62_modpow_opt_as_i31(uint32_t *x31, const unsigned char *e, size_t elen,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -46684,12 +46684,12 @@ br_i62_modpow_opt_as_i31(uint32_t *x31, const unsigned char *e, size_t elen,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -46791,7 +46791,7 @@ br_hkdf_produce(br_hkdf_context *hc,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -46799,12 +46799,12 @@ br_hkdf_produce(br_hkdf_context *hc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -47277,7 +47277,7 @@ br_shake_inject(br_shake_context *sc, const void *data, size_t len)
 	const unsigned char *buf;
 	size_t rate, dptr;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	rate = sc->rate;
 	dptr = sc->dptr;
 	while (len > 0) {
@@ -47327,7 +47327,7 @@ br_shake_produce(br_shake_context *sc, void *out, size_t len)
 	unsigned char *buf;
 	size_t dptr, rate;
 
-	buf = out;
+	buf = (unsigned char *)out;
 	dptr = sc->dptr;
 	rate = sc->rate;
 	while (len > 0) {
@@ -47392,7 +47392,7 @@ br_shake_produce(br_shake_context *sc, void *out, size_t len)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -47400,12 +47400,12 @@ br_shake_produce(br_shake_context *sc, void *out, size_t len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -47419,7 +47419,7 @@ static inline size_t
 block_size(const br_hash_class *dig)
 {
 	unsigned ls;
-	
+
 	ls = (unsigned)(dig->desc >> BR_HASHDESC_LBLEN_OFF)
 		& BR_HASHDESC_LBLEN_MASK;
 	return (size_t)1 << ls;
@@ -47526,7 +47526,7 @@ br_hmac_out(const br_hmac_context *ctx, void *out)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -47534,12 +47534,12 @@ br_hmac_out(const br_hmac_context *ctx, void *out)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -47560,7 +47560,7 @@ static inline size_t
 block_size(const br_hash_class *dig)
 {
 	unsigned ls;
-	
+
 	ls = (unsigned)(dig->desc >> BR_HASHDESC_LBLEN_OFF)
 		& BR_HASHDESC_LBLEN_MASK;
 	return (size_t)1 << ls;
@@ -47728,7 +47728,7 @@ br_hmac_outCT(const br_hmac_context *ctx,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -47736,12 +47736,12 @@ br_hmac_outCT(const br_hmac_context *ctx,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -47773,7 +47773,7 @@ br_aesctr_drbg_generate(br_aesctr_drbg_context *ctx, void *out, size_t len)
 	unsigned char *buf;
 	unsigned char iv[12];
 
-	buf = out;
+	buf = (unsigned char *)out;
 	memset(iv, 0, sizeof iv);
 	while (len > 0) {
 		size_t clen;
@@ -47942,7 +47942,7 @@ const br_prng_class br_aesctr_drbg_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -47950,12 +47950,12 @@ const br_prng_class br_aesctr_drbg_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -47994,7 +47994,7 @@ br_hmac_drbg_generate(br_hmac_drbg_context *ctx, void *out, size_t len)
 	dig = ctx->digest_class;
 	hlen = br_digest_size(dig);
 	br_hmac_key_init(&kc, dig, ctx->K, hlen);
-	buf = out;
+	buf = (unsigned char *)out;
 	while (len > 0) {
 		size_t clen;
 
@@ -48107,7 +48107,7 @@ const br_prng_class br_hmac_drbg_vtable = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48115,12 +48115,12 @@ const br_prng_class br_hmac_drbg_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48368,7 +48368,7 @@ br_prng_seeder_system(const char **name)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48376,12 +48376,12 @@ br_prng_seeder_system(const char **name)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48414,7 +48414,7 @@ br_rsa_keygen_get_default(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48422,12 +48422,12 @@ br_rsa_keygen_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48458,7 +48458,7 @@ br_rsa_compute_modulus_get_default(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48466,12 +48466,12 @@ br_rsa_compute_modulus_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48504,7 +48504,7 @@ br_rsa_oaep_decrypt_get_default(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48512,12 +48512,12 @@ br_rsa_oaep_decrypt_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48550,7 +48550,7 @@ br_rsa_oaep_encrypt_get_default(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48558,12 +48558,12 @@ br_rsa_oaep_encrypt_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48596,7 +48596,7 @@ br_rsa_pkcs1_sign_get_default(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48604,12 +48604,12 @@ br_rsa_pkcs1_sign_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48642,7 +48642,7 @@ br_rsa_pkcs1_vrfy_get_default(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48650,12 +48650,12 @@ br_rsa_pkcs1_vrfy_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48688,7 +48688,7 @@ br_rsa_private_get_default(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48696,12 +48696,12 @@ br_rsa_private_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48732,7 +48732,7 @@ br_rsa_compute_privexp_get_default(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48740,12 +48740,12 @@ br_rsa_compute_privexp_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48778,7 +48778,7 @@ br_rsa_pss_sign_get_default(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48786,12 +48786,12 @@ br_rsa_pss_sign_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48824,7 +48824,7 @@ br_rsa_pss_vrfy_get_default(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48832,12 +48832,12 @@ br_rsa_pss_vrfy_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48870,7 +48870,7 @@ br_rsa_public_get_default(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48878,12 +48878,12 @@ br_rsa_public_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -48935,7 +48935,7 @@ br_rsa_compute_pubexp_get_default(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -48943,12 +48943,12 @@ br_rsa_compute_pubexp_get_default(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -49355,8 +49355,8 @@ bufswap(void *b1, void *b2, size_t len)
 	size_t u;
 	unsigned char *buf1, *buf2;
 
-	buf1 = b1;
-	buf2 = b2;
+	buf1 = (unsigned char *)b1;
+	buf2 = (unsigned char *)b2;
 	for (u = 0; u < len; u ++) {
 		unsigned w;
 
@@ -49391,7 +49391,7 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 	esize_p = (size + 1) >> 1;
 	esize_q = size - esize_p;
 	sk->n_bitlen = size;
-	sk->p = kbuf_priv;
+	sk->p = (unsigned char *)kbuf_priv;
 	sk->plen = (esize_p + 7) >> 3;
 	sk->q = sk->p + sk->plen;
 	sk->qlen = (esize_q + 7) >> 3;
@@ -49403,7 +49403,7 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 	sk->iqlen = sk->plen;
 
 	if (pk != NULL) {
-		pk->n = kbuf_pub;
+		pk->n = ( unsigned char *)kbuf_pub;
 		pk->nlen = (size + 7) >> 3;
 		pk->e = pk->n + pk->nlen;
 		pk->elen = 4;
@@ -49535,7 +49535,7 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -49543,12 +49543,12 @@ br_rsa_i15_keygen(const br_prng_class **rng,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -49642,7 +49642,7 @@ br_rsa_i15_compute_modulus(void *n, const br_rsa_private_key *sk)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -49650,12 +49650,12 @@ br_rsa_i15_compute_modulus(void *n, const br_rsa_private_key *sk)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -49676,7 +49676,7 @@ br_rsa_i15_oaep_decrypt(const br_hash_class *dig,
 	if (*len != ((sk->n_bitlen + 7) >> 3)) {
 		return 0;
 	}
-	r = br_rsa_i15_private(data, sk);
+	r = br_rsa_i15_private((unsigned char*)data, sk);
 	r &= br_rsa_oaep_unpad(dig, label, label_len, data, len);
 	return r;
 }
@@ -49691,7 +49691,7 @@ br_rsa_i15_oaep_decrypt(const br_hash_class *dig,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -49699,12 +49699,12 @@ br_rsa_i15_oaep_decrypt(const br_hash_class *dig,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -49743,7 +49743,7 @@ br_rsa_i15_oaep_encrypt(
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -49751,12 +49751,12 @@ br_rsa_i15_oaep_encrypt(
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -49775,7 +49775,7 @@ br_rsa_i15_pkcs1_sign(const unsigned char *hash_oid,
 	if (!br_rsa_pkcs1_sig_pad(hash_oid, hash, hash_len, sk->n_bitlen, x)) {
 		return 0;
 	}
-	return br_rsa_i15_private(x, sk);
+	return br_rsa_i15_private((unsigned char*)x, sk);
 }
 
 
@@ -49788,7 +49788,7 @@ br_rsa_i15_pkcs1_sign(const unsigned char *hash_oid,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -49796,12 +49796,12 @@ br_rsa_i15_pkcs1_sign(const unsigned char *hash_oid,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -49839,7 +49839,7 @@ br_rsa_i15_pkcs1_vrfy(const unsigned char *x, size_t xlen,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -49847,12 +49847,12 @@ br_rsa_i15_pkcs1_vrfy(const unsigned char *x, size_t xlen,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -50058,7 +50058,7 @@ br_rsa_i15_private(unsigned char *x, const br_rsa_private_key *sk)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -50066,12 +50066,12 @@ br_rsa_i15_private(unsigned char *x, const br_rsa_private_key *sk)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -50386,7 +50386,7 @@ br_rsa_i15_compute_privexp(void *d,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -50394,12 +50394,12 @@ br_rsa_i15_compute_privexp(void *d,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -50421,7 +50421,7 @@ br_rsa_i15_pss_sign(const br_prng_class **rng,
 	{
 		return 0;
 	}
-	return br_rsa_i15_private(x, sk);
+	return br_rsa_i15_private((unsigned char*)x, sk);
 }
 
 
@@ -50434,7 +50434,7 @@ br_rsa_i15_pss_sign(const br_prng_class **rng,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -50442,12 +50442,12 @@ br_rsa_i15_pss_sign(const br_prng_class **rng,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -50486,7 +50486,7 @@ br_rsa_i15_pss_vrfy(const unsigned char *x, size_t xlen,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -50494,12 +50494,12 @@ br_rsa_i15_pss_vrfy(const unsigned char *x, size_t xlen,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -50611,7 +50611,7 @@ br_rsa_i15_public(unsigned char *x, size_t xlen,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -50619,12 +50619,12 @@ br_rsa_i15_public(unsigned char *x, size_t xlen,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -50772,7 +50772,7 @@ br_rsa_i15_compute_pubexp(const br_rsa_private_key *sk)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -50780,12 +50780,12 @@ br_rsa_i15_compute_pubexp(const br_rsa_private_key *sk)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -50838,7 +50838,7 @@ br_rsa_i31_keygen(const br_prng_class **rng,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -50846,12 +50846,12 @@ br_rsa_i31_keygen(const br_prng_class **rng,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -51464,7 +51464,7 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -51472,12 +51472,12 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -51571,7 +51571,7 @@ br_rsa_i31_compute_modulus(void *n, const br_rsa_private_key *sk)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -51579,12 +51579,12 @@ br_rsa_i31_compute_modulus(void *n, const br_rsa_private_key *sk)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -51620,7 +51620,7 @@ br_rsa_i31_oaep_decrypt(const br_hash_class *dig,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -51628,12 +51628,12 @@ br_rsa_i31_oaep_decrypt(const br_hash_class *dig,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -51672,7 +51672,7 @@ br_rsa_i31_oaep_encrypt(
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -51680,12 +51680,12 @@ br_rsa_i31_oaep_encrypt(
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -51717,7 +51717,7 @@ br_rsa_i31_pkcs1_sign(const unsigned char *hash_oid,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -51725,12 +51725,12 @@ br_rsa_i31_pkcs1_sign(const unsigned char *hash_oid,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -51768,7 +51768,7 @@ br_rsa_i31_pkcs1_vrfy(const unsigned char *x, size_t xlen,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -51776,12 +51776,12 @@ br_rsa_i31_pkcs1_vrfy(const unsigned char *x, size_t xlen,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -51981,7 +51981,7 @@ br_rsa_i31_private(unsigned char *x, const br_rsa_private_key *sk)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -51989,12 +51989,12 @@ br_rsa_i31_private(unsigned char *x, const br_rsa_private_key *sk)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -52307,7 +52307,7 @@ br_rsa_i31_compute_privexp(void *d,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -52315,12 +52315,12 @@ br_rsa_i31_compute_privexp(void *d,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -52355,7 +52355,7 @@ br_rsa_i31_pss_sign(const br_prng_class **rng,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -52363,12 +52363,12 @@ br_rsa_i31_pss_sign(const br_prng_class **rng,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -52407,7 +52407,7 @@ br_rsa_i31_pss_vrfy(const unsigned char *x, size_t xlen,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -52415,12 +52415,12 @@ br_rsa_i31_pss_vrfy(const unsigned char *x, size_t xlen,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -52525,7 +52525,7 @@ br_rsa_i31_public(unsigned char *x, size_t xlen,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -52533,12 +52533,12 @@ br_rsa_i31_public(unsigned char *x, size_t xlen,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -52686,7 +52686,7 @@ br_rsa_i31_compute_pubexp(const br_rsa_private_key *sk)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -52694,12 +52694,12 @@ br_rsa_i31_compute_pubexp(const br_rsa_private_key *sk)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -52735,7 +52735,7 @@ br_rsa_i32_oaep_decrypt(const br_hash_class *dig,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -52743,12 +52743,12 @@ br_rsa_i32_oaep_decrypt(const br_hash_class *dig,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -52787,7 +52787,7 @@ br_rsa_i32_oaep_encrypt(
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -52795,12 +52795,12 @@ br_rsa_i32_oaep_encrypt(
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -52832,7 +52832,7 @@ br_rsa_i32_pkcs1_sign(const unsigned char *hash_oid,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -52840,12 +52840,12 @@ br_rsa_i32_pkcs1_sign(const unsigned char *hash_oid,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -52883,7 +52883,7 @@ br_rsa_i32_pkcs1_vrfy(const unsigned char *x, size_t xlen,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -52891,12 +52891,12 @@ br_rsa_i32_pkcs1_vrfy(const unsigned char *x, size_t xlen,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53052,7 +53052,7 @@ br_rsa_i32_private(unsigned char *x, const br_rsa_private_key *sk)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53060,12 +53060,12 @@ br_rsa_i32_private(unsigned char *x, const br_rsa_private_key *sk)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53100,7 +53100,7 @@ br_rsa_i32_pss_sign(const br_prng_class **rng,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53108,12 +53108,12 @@ br_rsa_i32_pss_sign(const br_prng_class **rng,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53152,7 +53152,7 @@ br_rsa_i32_pss_vrfy(const unsigned char *x, size_t xlen,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53160,12 +53160,12 @@ br_rsa_i32_pss_vrfy(const unsigned char *x, size_t xlen,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53237,7 +53237,7 @@ br_rsa_i32_public(unsigned char *x, size_t xlen,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53245,12 +53245,12 @@ br_rsa_i32_public(unsigned char *x, size_t xlen,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53302,7 +53302,7 @@ br_rsa_i62_keygen_get(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53310,12 +53310,12 @@ br_rsa_i62_keygen_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53371,7 +53371,7 @@ br_rsa_i62_oaep_decrypt_get(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53379,12 +53379,12 @@ br_rsa_i62_oaep_decrypt_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53443,7 +53443,7 @@ br_rsa_i62_oaep_encrypt_get(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53451,12 +53451,12 @@ br_rsa_i62_oaep_encrypt_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53508,7 +53508,7 @@ br_rsa_i62_pkcs1_sign_get(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53516,12 +53516,12 @@ br_rsa_i62_pkcs1_sign_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53579,7 +53579,7 @@ br_rsa_i62_pkcs1_vrfy_get(void)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53587,12 +53587,12 @@ br_rsa_i62_pkcs1_vrfy_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53812,7 +53812,7 @@ br_rsa_i62_private_get(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53820,12 +53820,12 @@ br_rsa_i62_private_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53880,7 +53880,7 @@ br_rsa_i62_pss_sign_get(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53888,12 +53888,12 @@ br_rsa_i62_pss_sign_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -53952,7 +53952,7 @@ br_rsa_i62_pss_vrfy_get(void)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -53960,12 +53960,12 @@ br_rsa_i62_pss_vrfy_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -54089,7 +54089,7 @@ br_rsa_i62_public_get(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -54097,12 +54097,12 @@ br_rsa_i62_public_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -54210,7 +54210,7 @@ br_rsa_oaep_pad(const br_prng_class **rnd, const br_hash_class *dig,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -54218,12 +54218,12 @@ br_rsa_oaep_pad(const br_prng_class **rnd, const br_hash_class *dig,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -54269,7 +54269,7 @@ br_rsa_oaep_unpad(const br_hash_class *dig,
 
 	hlen = br_digest_size(dig);
 	k = *len;
-	buf = data;
+	buf = (unsigned char *)data;
 
 	/*
 	 * There must be room for the padding.
@@ -54363,7 +54363,7 @@ br_rsa_oaep_unpad(const br_hash_class *dig,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -54371,12 +54371,12 @@ br_rsa_oaep_unpad(const br_hash_class *dig,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -54471,7 +54471,7 @@ br_rsa_pkcs1_sig_pad(const unsigned char *hash_oid,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -54479,12 +54479,12 @@ br_rsa_pkcs1_sig_pad(const unsigned char *hash_oid,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -54600,7 +54600,7 @@ br_rsa_pkcs1_sig_unpad(const unsigned char *sig, size_t sig_len,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -54608,12 +54608,12 @@ br_rsa_pkcs1_sig_unpad(const unsigned char *sig, size_t sig_len,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -54714,7 +54714,7 @@ br_rsa_pss_sig_pad(const br_prng_class **rng,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -54722,12 +54722,12 @@ br_rsa_pss_sig_pad(const br_prng_class **rng,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -54843,7 +54843,7 @@ br_rsa_pss_sig_unpad(const br_hash_class *hf_data,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -54851,12 +54851,12 @@ br_rsa_pss_sig_unpad(const br_hash_class *hf_data,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -54903,7 +54903,7 @@ br_rsa_ssl_decrypt(br_rsa_private core, const br_rsa_private_key *sk,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -54911,12 +54911,12 @@ br_rsa_ssl_decrypt(br_rsa_private core, const br_rsa_private_key *sk,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -54984,7 +54984,7 @@ br_tls_phash(void *dst, size_t len,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -54992,12 +54992,12 @@ br_tls_phash(void *dst, size_t len,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -55035,7 +55035,7 @@ br_tls10_prf(void *dst, size_t len,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -55043,12 +55043,12 @@ br_tls10_prf(void *dst, size_t len,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -55079,7 +55079,7 @@ br_tls12_sha256_prf(void *dst, size_t len,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -55087,12 +55087,12 @@ br_tls12_sha256_prf(void *dst, size_t len,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -55141,7 +55141,7 @@ br_tls12_sha384_prf(void *dst, size_t len,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -55149,12 +55149,12 @@ br_tls12_sha384_prf(void *dst, size_t len,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -55348,7 +55348,7 @@ br_ssl_client_set_single_ec(br_ssl_client_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -55356,12 +55356,12 @@ br_ssl_client_set_single_ec(br_ssl_client_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -55517,7 +55517,7 @@ br_ssl_client_set_single_rsa(br_ssl_client_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -55525,12 +55525,12 @@ br_ssl_client_set_single_rsa(br_ssl_client_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -55603,7 +55603,7 @@ br_ssl_client_reset(br_ssl_client_context *cc,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -55611,12 +55611,12 @@ br_ssl_client_reset(br_ssl_client_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -55643,7 +55643,7 @@ br_ssl_client_set_default_rsapub(br_ssl_client_context *cc)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -55651,12 +55651,12 @@ br_ssl_client_set_default_rsapub(br_ssl_client_context *cc)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -55830,7 +55830,7 @@ br_ssl_client_init_full(br_ssl_client_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -55838,12 +55838,12 @@ br_ssl_client_init_full(br_ssl_client_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -55973,7 +55973,7 @@ br_ssl_client_init_full(br_ssl_client_context *cc,
  *  ixa   index within ibuf[] for the currently read data
  *  ixb   maximum index within ibuf[] for the currently read data
  *  ixc   number of bytes not yet received for the current record
- * 
+ *
  * -- When ixa == ixb, there is no available data for readers. When
  * ixa != ixb, there is available data and it starts at offset ixa.
  *
@@ -57424,7 +57424,7 @@ br_ssl_engine_switch_ccm_out(br_ssl_engine_context *cc,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -57432,12 +57432,12 @@ br_ssl_engine_switch_ccm_out(br_ssl_engine_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -57496,7 +57496,7 @@ br_ssl_engine_set_default_aes_cbc(br_ssl_engine_context *cc)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -57504,12 +57504,12 @@ br_ssl_engine_set_default_aes_cbc(br_ssl_engine_context *cc)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -57571,7 +57571,7 @@ br_ssl_engine_set_default_aes_ccm(br_ssl_engine_context *cc)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -57579,12 +57579,12 @@ br_ssl_engine_set_default_aes_ccm(br_ssl_engine_context *cc)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -57668,7 +57668,7 @@ br_ssl_engine_set_default_aes_gcm(br_ssl_engine_context *cc)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -57676,12 +57676,12 @@ br_ssl_engine_set_default_aes_gcm(br_ssl_engine_context *cc)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -57741,7 +57741,7 @@ br_ssl_engine_set_default_chapol(br_ssl_engine_context *cc)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -57749,12 +57749,12 @@ br_ssl_engine_set_default_chapol(br_ssl_engine_context *cc)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -57786,7 +57786,7 @@ br_ssl_engine_set_default_des_cbc(br_ssl_engine_context *cc)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -57794,12 +57794,12 @@ br_ssl_engine_set_default_des_cbc(br_ssl_engine_context *cc)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -57830,7 +57830,7 @@ br_ssl_engine_set_default_ec(br_ssl_engine_context *cc)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -57838,12 +57838,12 @@ br_ssl_engine_set_default_ec(br_ssl_engine_context *cc)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -57876,7 +57876,7 @@ br_ssl_engine_set_default_ecdsa(br_ssl_engine_context *cc)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -57884,12 +57884,12 @@ br_ssl_engine_set_default_ecdsa(br_ssl_engine_context *cc)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -57916,7 +57916,7 @@ br_ssl_engine_set_default_rsavrfy(br_ssl_engine_context *cc)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -57924,12 +57924,12 @@ br_ssl_engine_set_default_rsavrfy(br_ssl_engine_context *cc)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -58882,7 +58882,7 @@ static const uint16_t t0_caddr[] = {
 void \
 name(void *ctx) \
 { \
-	t0_context *t0ctx = ctx; \
+	t0_context *t0ctx = (t0_context*)ctx; \
 	t0ctx->ip = &t0_codeblock[0]; \
 	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
@@ -59185,7 +59185,7 @@ br_ssl_hs_client_run(void *t0ctx)
 				break;
 			case 27: {
 				/* co */
- T0_CO(); 
+ T0_CO();
 				}
 				break;
 			case 28: {
@@ -59313,12 +59313,12 @@ br_ssl_hs_client_run(void *t0ctx)
 				break;
 			case 37: {
 				/* drop */
- (void)T0_POP(); 
+ (void)T0_POP();
 				}
 				break;
 			case 38: {
 				/* dup */
- T0_PUSH(T0_PEEK(0)); 
+ T0_PUSH(T0_PEEK(0));
 				}
 				break;
 			case 39: {
@@ -59494,7 +59494,7 @@ br_ssl_hs_client_run(void *t0ctx)
 				break;
 			case 56: {
 				/* over */
- T0_PUSH(T0_PEEK(1)); 
+ T0_PUSH(T0_PEEK(1));
 				}
 				break;
 			case 57: {
@@ -59627,7 +59627,7 @@ br_ssl_hs_client_run(void *t0ctx)
 				break;
 			case 68: {
 				/* swap */
- T0_SWAP(); 
+ T0_SWAP();
 				}
 				break;
 			case 69: {
@@ -60934,7 +60934,7 @@ static const uint16_t t0_caddr[] = {
 void \
 name(void *ctx) \
 { \
-	t0_context *t0ctx = ctx; \
+	t0_context *t0ctx = (t0_context*)ctx; \
 	t0ctx->ip = &t0_codeblock[0]; \
 	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
@@ -61069,7 +61069,7 @@ br_ssl_hs_server_run(void *t0ctx)
 				break;
 			case 10: {
 				/* -rot */
- T0_NROT(); 
+ T0_NROT();
 				}
 				break;
 			case 11: {
@@ -61243,7 +61243,7 @@ br_ssl_hs_server_run(void *t0ctx)
 				break;
 			case 27: {
 				/* co */
- T0_CO(); 
+ T0_CO();
 				}
 				break;
 			case 28: {
@@ -61407,12 +61407,12 @@ br_ssl_hs_server_run(void *t0ctx)
 				break;
 			case 41: {
 				/* drop */
- (void)T0_POP(); 
+ (void)T0_POP();
 				}
 				break;
 			case 42: {
 				/* dup */
- T0_PUSH(T0_PEEK(0)); 
+ T0_PUSH(T0_PEEK(0));
 				}
 				break;
 			case 43: {
@@ -61549,12 +61549,12 @@ br_ssl_hs_server_run(void *t0ctx)
 				break;
 			case 58: {
 				/* over */
- T0_PUSH(T0_PEEK(1)); 
+ T0_PUSH(T0_PEEK(1));
 				}
 				break;
 			case 59: {
 				/* pick */
- T0_PICK(T0_POP()); 
+ T0_PICK(T0_POP());
 				}
 				break;
 			case 60: {
@@ -61695,7 +61695,7 @@ br_ssl_hs_server_run(void *t0ctx)
 				break;
 			case 71: {
 				/* swap */
- T0_SWAP(); 
+ T0_SWAP();
 				}
 				break;
 			case 72: {
@@ -62054,7 +62054,7 @@ t0_exit:
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -62062,12 +62062,12 @@ t0_exit:
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -62323,7 +62323,7 @@ br_sslio_close(br_sslio_context *ctx)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -62331,12 +62331,12 @@ br_sslio_close(br_sslio_context *ctx)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -62414,7 +62414,7 @@ br_ssl_key_export(br_ssl_engine_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -62422,12 +62422,12 @@ br_ssl_key_export(br_ssl_engine_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -62972,7 +62972,7 @@ void br_ssl_session_cache_lru_forget(
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -62980,12 +62980,12 @@ void br_ssl_session_cache_lru_forget(
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -63081,7 +63081,7 @@ cbc_decrypt(br_sslrec_in_cbc_context *cc,
 	int i;
 	br_hmac_context hc;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	len = *data_len;
 	blen = cc->bc.vtable->block_size;
 
@@ -63286,7 +63286,7 @@ cbc_encrypt(br_sslrec_out_cbc_context *cc,
 	unsigned char tmp[13];
 	br_hmac_context hc;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	len = *data_len;
 	blen = cc->bc.vtable->block_size;
 
@@ -63420,7 +63420,7 @@ const br_sslrec_out_cbc_class br_sslrec_out_cbc_vtable = {
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -63428,12 +63428,12 @@ const br_sslrec_out_cbc_class br_sslrec_out_cbc_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -63641,7 +63641,7 @@ const br_sslrec_out_ccm_class br_sslrec_out_ccm_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -63649,12 +63649,12 @@ const br_sslrec_out_ccm_class br_sslrec_out_ccm_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -63728,7 +63728,7 @@ chapol_decrypt(br_sslrec_chapol_context *cc,
 	unsigned char tag[16];
 	unsigned bad;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	len = *data_len - 16;
 	gen_chapol_process(cc, record_type, version, buf, len, tag, 0);
 	bad = 0;
@@ -63788,7 +63788,7 @@ chapol_encrypt(br_sslrec_chapol_context *cc,
 	unsigned char *buf;
 	size_t len;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	len = *data_len;
 	gen_chapol_process(cc, record_type, version, buf, len, buf + len, 1);
 	buf -= 5;
@@ -63826,7 +63826,7 @@ const br_sslrec_out_chapol_class br_sslrec_out_chapol_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -63834,12 +63834,12 @@ const br_sslrec_out_chapol_class br_sslrec_out_chapol_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -64069,7 +64069,7 @@ const br_sslrec_out_gcm_class br_sslrec_out_gcm_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -64077,12 +64077,12 @@ const br_sslrec_out_gcm_class br_sslrec_out_gcm_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -64237,7 +64237,7 @@ br_ssl_server_set_single_ec(br_ssl_server_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -64245,12 +64245,12 @@ br_ssl_server_set_single_ec(br_ssl_server_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -64413,7 +64413,7 @@ br_ssl_server_set_single_rsa(br_ssl_server_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -64421,12 +64421,12 @@ br_ssl_server_set_single_rsa(br_ssl_server_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -64473,7 +64473,7 @@ br_ssl_server_reset(br_ssl_server_context *cc)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -64481,12 +64481,12 @@ br_ssl_server_reset(br_ssl_server_context *cc)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -64630,7 +64630,7 @@ br_ssl_server_init_full_ec(br_ssl_server_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -64638,12 +64638,12 @@ br_ssl_server_init_full_ec(br_ssl_server_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -64770,7 +64770,7 @@ br_ssl_server_init_full_rsa(br_ssl_server_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -64778,12 +64778,12 @@ br_ssl_server_init_full_rsa(br_ssl_server_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -64849,7 +64849,7 @@ br_ssl_server_init_mine2c(br_ssl_server_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -64857,12 +64857,12 @@ br_ssl_server_init_mine2c(br_ssl_server_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -64928,7 +64928,7 @@ br_ssl_server_init_mine2g(br_ssl_server_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -64936,12 +64936,12 @@ br_ssl_server_init_mine2g(br_ssl_server_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -65007,7 +65007,7 @@ br_ssl_server_init_minf2c(br_ssl_server_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -65015,12 +65015,12 @@ br_ssl_server_init_minf2c(br_ssl_server_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -65086,7 +65086,7 @@ br_ssl_server_init_minf2g(br_ssl_server_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -65094,12 +65094,12 @@ br_ssl_server_init_minf2g(br_ssl_server_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -65164,7 +65164,7 @@ br_ssl_server_init_minr2g(br_ssl_server_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -65172,12 +65172,12 @@ br_ssl_server_init_minr2g(br_ssl_server_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -65242,7 +65242,7 @@ br_ssl_server_init_minu2g(br_ssl_server_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -65250,12 +65250,12 @@ br_ssl_server_init_minu2g(br_ssl_server_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -65320,7 +65320,7 @@ br_ssl_server_init_minv2g(br_ssl_server_context *cc,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -65328,12 +65328,12 @@ br_ssl_server_init_minv2g(br_ssl_server_context *cc,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -65359,8 +65359,8 @@ br_aes_big_cbcdec_run(const br_aes_big_cbcdec_keys *ctx,
 {
 	unsigned char *buf, *ivbuf;
 
-	ivbuf = iv;
-	buf = data;
+	ivbuf = (unsigned char *)iv;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		unsigned char tmp[16];
 		int i;
@@ -65397,7 +65397,7 @@ const br_block_cbcdec_class br_aes_big_cbcdec_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -65405,12 +65405,12 @@ const br_block_cbcdec_class br_aes_big_cbcdec_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -65436,8 +65436,8 @@ br_aes_big_cbcenc_run(const br_aes_big_cbcenc_keys *ctx,
 {
 	unsigned char *buf, *ivbuf;
 
-	ivbuf = iv;
-	buf = data;
+	ivbuf = (unsigned char *)iv;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		int i;
 
@@ -65475,7 +65475,7 @@ const br_block_cbcenc_class br_aes_big_cbcenc_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -65483,12 +65483,12 @@ const br_block_cbcenc_class br_aes_big_cbcenc_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -65514,7 +65514,7 @@ xorbuf(void *dst, const void *src, size_t len)
 	const unsigned char *s;
 
 	d = dst;
-	s = src;
+	s = (unsigned char *)src;
 	while (len -- > 0) {
 		*d ++ ^= *s ++;
 	}
@@ -65527,7 +65527,7 @@ br_aes_big_ctr_run(const br_aes_big_ctr_keys *ctx,
 {
 	unsigned char *buf;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		unsigned char tmp[16];
 
@@ -65571,7 +65571,7 @@ const br_block_ctr_class br_aes_big_ctr_vtable = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -65579,12 +65579,12 @@ const br_block_ctr_class br_aes_big_ctr_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -65610,7 +65610,7 @@ xorbuf(void *dst, const void *src, size_t len)
 	const unsigned char *s;
 
 	d = dst;
-	s = src;
+	s = (unsigned char *)src;
 	while (len -- > 0) {
 		*d ++ ^= *s ++;
 	}
@@ -65624,7 +65624,7 @@ br_aes_big_ctrcbc_ctr(const br_aes_big_ctrcbc_keys *ctx,
 	unsigned char *buf, *bctr;
 	uint32_t cc0, cc1, cc2, cc3;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	bctr = ctr;
 	cc3 = br_dec32be(bctr +  0);
 	cc2 = br_dec32be(bctr +  4);
@@ -65663,7 +65663,7 @@ br_aes_big_ctrcbc_mac(const br_aes_big_ctrcbc_keys *ctx,
 {
 	const unsigned char *buf;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		xorbuf(cbcmac, buf, 16);
 		br_aes_big_encrypt(ctx->num_rounds, ctx->skey, cbcmac);
@@ -65731,7 +65731,7 @@ const br_block_ctrcbc_class br_aes_big_ctrcbc_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -65739,12 +65739,12 @@ const br_block_ctrcbc_class br_aes_big_ctrcbc_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -65845,7 +65845,7 @@ static unsigned
 mulb(unsigned x)
 {
 	unsigned x2;
-	
+
 	x2 = mul2(x);
 	return x ^ x2 ^ mul2(mul2(x2));
 }
@@ -65922,7 +65922,7 @@ br_aes_big_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	uint32_t t0, t1, t2, t3;
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	s0 = br_dec32be(buf);
 	s1 = br_dec32be(buf + 4);
 	s2 = br_dec32be(buf + 8);
@@ -66003,7 +66003,7 @@ br_aes_big_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -66011,12 +66011,12 @@ br_aes_big_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -66095,7 +66095,7 @@ br_aes_big_encrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	uint32_t t0, t1, t2, t3;
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	s0 = br_dec32be(buf);
 	s1 = br_dec32be(buf + 4);
 	s2 = br_dec32be(buf + 8);
@@ -66177,7 +66177,7 @@ br_aes_big_encrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -66185,12 +66185,12 @@ br_aes_big_encrypt(unsigned num_rounds, const uint32_t *skey, void *data)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -66305,7 +66305,7 @@ br_aes_keysched(uint32_t *skey, const void *key, size_t key_len)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -66313,12 +66313,12 @@ br_aes_keysched(uint32_t *skey, const void *key, size_t key_len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -66653,7 +66653,7 @@ br_aes_ct_skey_expand(uint32_t *skey,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -66661,12 +66661,12 @@ br_aes_ct_skey_expand(uint32_t *skey,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -67065,7 +67065,7 @@ br_aes_ct64_skey_expand(uint64_t *skey,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -67073,12 +67073,12 @@ br_aes_ct64_skey_expand(uint64_t *skey,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -67108,7 +67108,7 @@ br_aes_ct64_cbcdec_run(const br_aes_ct64_cbcdec_keys *ctx,
 
 	br_aes_ct64_skey_expand(sk_exp, ctx->num_rounds, ctx->skey);
 	br_range_dec32le(ivw, 4, iv);
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		uint64_t q[8];
 		uint32_t w1[16], w2[16];
@@ -67177,7 +67177,7 @@ const br_block_cbcdec_class br_aes_ct64_cbcdec_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -67185,12 +67185,12 @@ const br_block_cbcdec_class br_aes_ct64_cbcdec_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -67220,7 +67220,7 @@ br_aes_ct64_cbcenc_run(const br_aes_ct64_cbcenc_keys *ctx,
 
 	br_aes_ct64_skey_expand(sk_exp, ctx->num_rounds, ctx->skey);
 	br_range_dec32le(ivw, 4, iv);
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		uint32_t w[4];
 		uint64_t q[8];
@@ -67269,7 +67269,7 @@ const br_block_cbcenc_class br_aes_ct64_cbcenc_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -67277,12 +67277,12 @@ const br_block_cbcenc_class br_aes_ct64_cbcenc_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -67308,7 +67308,7 @@ xorbuf(void *dst, const void *src, size_t len)
 	const unsigned char *s;
 
 	d = dst;
-	s = src;
+	s = (unsigned char *)src;
 	while (len -- > 0) {
 		*d ++ ^= *s ++;
 	}
@@ -67328,7 +67328,7 @@ br_aes_ct64_ctr_run(const br_aes_ct64_ctr_keys *ctx,
 	memcpy(ivw + 4, ivw, 3 * sizeof(uint32_t));
 	memcpy(ivw + 8, ivw, 3 * sizeof(uint32_t));
 	memcpy(ivw + 12, ivw, 3 * sizeof(uint32_t));
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		uint64_t q[8];
 		uint32_t w[16];
@@ -67395,7 +67395,7 @@ const br_block_ctr_class br_aes_ct64_ctr_vtable = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -67403,12 +67403,12 @@ const br_block_ctr_class br_aes_ct64_ctr_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -67434,7 +67434,7 @@ xorbuf(void *dst, const void *src, size_t len)
 	const unsigned char *s;
 
 	d = dst;
-	s = src;
+	s = (unsigned char *)src;
 	while (len -- > 0) {
 		*d ++ ^= *s ++;
 	}
@@ -67463,7 +67463,7 @@ br_aes_ct64_ctrcbc_ctr(const br_aes_ct64_ctrcbc_keys *ctx,
 	iv2 = br_dec32be(ivbuf +  8);
 	iv3 = br_dec32be(ivbuf + 12);
 
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		uint64_t q[8];
 		uint32_t w[16];
@@ -67536,7 +67536,7 @@ br_aes_ct64_ctrcbc_mac(const br_aes_ct64_ctrcbc_keys *ctx,
 	cm2 = br_dec32le((unsigned char *)cbcmac +  8);
 	cm3 = br_dec32le((unsigned char *)cbcmac + 12);
 
-	buf = data;
+	buf = (unsigned char *)data;
 	memset(q, 0, sizeof q);
 	while (len > 0) {
 		uint32_t w[4];
@@ -67606,7 +67606,7 @@ br_aes_ct64_ctrcbc_encrypt(const br_aes_ct64_ctrcbc_keys *ctx,
 	cm2 = br_dec32le((unsigned char *)cbcmac +  8);
 	cm3 = br_dec32le((unsigned char *)cbcmac + 12);
 
-	buf = data;
+	buf = (unsigned char *)data;
 	first_iter = 1;
 	memset(q, 0, sizeof q);
 	while (len > 0) {
@@ -67744,7 +67744,7 @@ br_aes_ct64_ctrcbc_decrypt(const br_aes_ct64_ctrcbc_keys *ctx,
 	cm2 = br_dec32le((unsigned char *)cbcmac +  8);
 	cm3 = br_dec32le((unsigned char *)cbcmac + 12);
 
-	buf = data;
+	buf = (unsigned char *)data;
 	memset(q, 0, sizeof q);
 	while (len > 0) {
 		uint32_t w[8], carry;
@@ -67849,7 +67849,7 @@ const br_block_ctrcbc_class br_aes_ct64_ctrcbc_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -67857,12 +67857,12 @@ const br_block_ctrcbc_class br_aes_ct64_ctrcbc_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -68032,7 +68032,7 @@ br_aes_ct64_bitslice_decrypt(unsigned num_rounds,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -68040,12 +68040,12 @@ br_aes_ct64_bitslice_decrypt(unsigned num_rounds,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -68159,7 +68159,7 @@ br_aes_ct64_bitslice_encrypt(unsigned num_rounds,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -68167,12 +68167,12 @@ br_aes_ct64_bitslice_encrypt(unsigned num_rounds,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -68201,12 +68201,12 @@ br_aes_ct_cbcdec_run(const br_aes_ct_cbcdec_keys *ctx,
 	uint32_t sk_exp[120];
 
 	br_aes_ct_skey_expand(sk_exp, ctx->num_rounds, ctx->skey);
-	ivbuf = iv;
+	ivbuf = (unsigned char *)iv;
 	iv0 = br_dec32le(ivbuf);
 	iv1 = br_dec32le(ivbuf + 4);
 	iv2 = br_dec32le(ivbuf + 8);
 	iv3 = br_dec32le(ivbuf + 12);
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		uint32_t q[8], sq[8];
 
@@ -68278,7 +68278,7 @@ const br_block_cbcdec_class br_aes_ct_cbcdec_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -68286,12 +68286,12 @@ const br_block_cbcdec_class br_aes_ct_cbcdec_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -68325,12 +68325,12 @@ br_aes_ct_cbcenc_run(const br_aes_ct_cbcenc_keys *ctx,
 	q[5] = 0;
 	q[7] = 0;
 	br_aes_ct_skey_expand(sk_exp, ctx->num_rounds, ctx->skey);
-	ivbuf = iv;
+	ivbuf = (unsigned char *)iv;
 	iv0 = br_dec32le(ivbuf);
 	iv1 = br_dec32le(ivbuf + 4);
 	iv2 = br_dec32le(ivbuf + 8);
 	iv3 = br_dec32le(ivbuf + 12);
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		q[0] = iv0 ^ br_dec32le(buf);
 		q[2] = iv1 ^ br_dec32le(buf + 4);
@@ -68380,7 +68380,7 @@ const br_block_cbcenc_class br_aes_ct_cbcenc_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -68388,12 +68388,12 @@ const br_block_cbcenc_class br_aes_ct_cbcenc_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -68419,7 +68419,7 @@ xorbuf(void *dst, const void *src, size_t len)
 	const unsigned char *s;
 
 	d = dst;
-	s = src;
+	s = (unsigned char *)src;
 	while (len -- > 0) {
 		*d ++ ^= *s ++;
 	}
@@ -68436,11 +68436,11 @@ br_aes_ct_ctr_run(const br_aes_ct_ctr_keys *ctx,
 	uint32_t sk_exp[120];
 
 	br_aes_ct_skey_expand(sk_exp, ctx->num_rounds, ctx->skey);
-	ivbuf = iv;
+	ivbuf = (unsigned char *)iv;
 	iv0 = br_dec32le(ivbuf);
 	iv1 = br_dec32le(ivbuf + 4);
 	iv2 = br_dec32le(ivbuf + 8);
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		uint32_t q[8];
 		unsigned char tmp[32];
@@ -68508,7 +68508,7 @@ const br_block_ctr_class br_aes_ct_ctr_vtable = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -68516,12 +68516,12 @@ const br_block_ctr_class br_aes_ct_ctr_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -68547,7 +68547,7 @@ xorbuf(void *dst, const void *src, size_t len)
 	const unsigned char *s;
 
 	d = dst;
-	s = src;
+	s = (unsigned char *)src;
 	while (len -- > 0) {
 		*d ++ ^= *s ++;
 	}
@@ -68576,7 +68576,7 @@ br_aes_ct_ctrcbc_ctr(const br_aes_ct_ctrcbc_keys *ctx,
 	iv2 = br_dec32be(ivbuf +  8);
 	iv3 = br_dec32be(ivbuf + 12);
 
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		uint32_t q[8], carry;
 		unsigned char tmp[32];
@@ -68649,7 +68649,7 @@ br_aes_ct_ctrcbc_mac(const br_aes_ct_ctrcbc_keys *ctx,
 
 	br_aes_ct_skey_expand(sk_exp, ctx->num_rounds, ctx->skey);
 
-	buf = data;
+	buf = (unsigned char *)data;
 	cm0 = br_dec32le((unsigned char *)cbcmac +  0);
 	cm1 = br_dec32le((unsigned char *)cbcmac +  4);
 	cm2 = br_dec32le((unsigned char *)cbcmac +  8);
@@ -68722,7 +68722,7 @@ br_aes_ct_ctrcbc_encrypt(const br_aes_ct_ctrcbc_keys *ctx,
 	cm2 = br_dec32le((unsigned char *)cbcmac +  8);
 	cm3 = br_dec32le((unsigned char *)cbcmac + 12);
 
-	buf = data;
+	buf = (unsigned char *)data;
 	first_iter = 1;
 	while (len > 0) {
 		uint32_t q[8], carry;
@@ -68851,7 +68851,7 @@ br_aes_ct_ctrcbc_decrypt(const br_aes_ct_ctrcbc_keys *ctx,
 	cm2 = br_dec32le((unsigned char *)cbcmac +  8);
 	cm3 = br_dec32le((unsigned char *)cbcmac + 12);
 
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		uint32_t q[8], carry;
 		unsigned char tmp[16];
@@ -68951,7 +68951,7 @@ const br_block_ctrcbc_class br_aes_ct_ctrcbc_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -68959,12 +68959,12 @@ const br_block_ctrcbc_class br_aes_ct_ctrcbc_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -69145,7 +69145,7 @@ br_aes_ct_bitslice_decrypt(unsigned num_rounds,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -69153,12 +69153,12 @@ br_aes_ct_bitslice_decrypt(unsigned num_rounds,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -69269,7 +69269,7 @@ br_aes_ct_bitslice_encrypt(unsigned num_rounds,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -69277,12 +69277,12 @@ br_aes_ct_bitslice_encrypt(unsigned num_rounds,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -69723,7 +69723,7 @@ br_aes_pwr8_keysched(unsigned char *sk, const void *key, size_t len)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -69731,12 +69731,12 @@ br_aes_pwr8_keysched(unsigned char *sk, const void *key, size_t len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -70318,7 +70318,7 @@ br_aes_pwr8_cbcdec_run(const br_aes_pwr8_cbcdec_keys *ctx,
 	if (len == 0) {
 		return;
 	}
-	buf = data;
+	buf = (unsigned char *)data;
 	memcpy(nextiv, buf + len - 16, 16);
 	if (len >= 64) {
 		size_t num_blocks;
@@ -70402,7 +70402,7 @@ br_aes_pwr8_cbcdec_get_vtable(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -70410,12 +70410,12 @@ br_aes_pwr8_cbcdec_get_vtable(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -70828,7 +70828,7 @@ br_aes_pwr8_cbcenc_get_vtable(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -70836,12 +70836,12 @@ br_aes_pwr8_cbcenc_get_vtable(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -71459,7 +71459,7 @@ br_aes_pwr8_ctr_run(const br_aes_pwr8_ctr_keys *ctx,
 	unsigned char *buf;
 	unsigned char ivbuf[64];
 
-	buf = data;
+	buf = (unsigned char *)data;
 	memcpy(ivbuf +  0, iv, 12);
 	memcpy(ivbuf + 16, iv, 12);
 	memcpy(ivbuf + 32, iv, 12);
@@ -71554,7 +71554,7 @@ br_aes_pwr8_ctr_get_vtable(void)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -71562,12 +71562,12 @@ br_aes_pwr8_ctr_get_vtable(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -71607,7 +71607,7 @@ br_aes_pwr8_ctrcbc_init(br_aes_pwr8_ctrcbc_keys *ctx,
  *   Counter increment uses v28, v29 and v30
  *
  * For CTR alone:
- *  
+ *
  *   AES subkeys are in registers 0 to 10/12/14 (depending on keys size)
  *   Register v15 contains the byteswap index register (little-endian only)
  *   Registers v16 to v19 contain the CTR counter values (four blocks)
@@ -72534,7 +72534,7 @@ br_aes_pwr8_ctrcbc_get_vtable(void)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -72542,12 +72542,12 @@ br_aes_pwr8_ctrcbc_get_vtable(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -72573,8 +72573,8 @@ br_aes_small_cbcdec_run(const br_aes_small_cbcdec_keys *ctx,
 {
 	unsigned char *buf, *ivbuf;
 
-	ivbuf = iv;
-	buf = data;
+	ivbuf = (unsigned char *)iv;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		unsigned char tmp[16];
 		int i;
@@ -72611,7 +72611,7 @@ const br_block_cbcdec_class br_aes_small_cbcdec_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -72619,12 +72619,12 @@ const br_block_cbcdec_class br_aes_small_cbcdec_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -72650,8 +72650,8 @@ br_aes_small_cbcenc_run(const br_aes_small_cbcenc_keys *ctx,
 {
 	unsigned char *buf, *ivbuf;
 
-	ivbuf = iv;
-	buf = data;
+	ivbuf = (unsigned char *)iv;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		int i;
 
@@ -72689,7 +72689,7 @@ const br_block_cbcenc_class br_aes_small_cbcenc_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -72697,12 +72697,12 @@ const br_block_cbcenc_class br_aes_small_cbcenc_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -72728,7 +72728,7 @@ xorbuf(void *dst, const void *src, size_t len)
 	const unsigned char *s;
 
 	d = dst;
-	s = src;
+	s = (unsigned char *)src;
 	while (len -- > 0) {
 		*d ++ ^= *s ++;
 	}
@@ -72741,7 +72741,7 @@ br_aes_small_ctr_run(const br_aes_small_ctr_keys *ctx,
 {
 	unsigned char *buf;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		unsigned char tmp[16];
 
@@ -72785,7 +72785,7 @@ const br_block_ctr_class br_aes_small_ctr_vtable = {
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -72793,12 +72793,12 @@ const br_block_ctr_class br_aes_small_ctr_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -72824,7 +72824,7 @@ xorbuf(void *dst, const void *src, size_t len)
 	const unsigned char *s;
 
 	d = dst;
-	s = src;
+	s = (unsigned char *)src;
 	while (len -- > 0) {
 		*d ++ ^= *s ++;
 	}
@@ -72838,7 +72838,7 @@ br_aes_small_ctrcbc_ctr(const br_aes_small_ctrcbc_keys *ctx,
 	unsigned char *buf, *bctr;
 	uint32_t cc0, cc1, cc2, cc3;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	bctr = ctr;
 	cc3 = br_dec32be(bctr +  0);
 	cc2 = br_dec32be(bctr +  4);
@@ -72877,7 +72877,7 @@ br_aes_small_ctrcbc_mac(const br_aes_small_ctrcbc_keys *ctx,
 {
 	const unsigned char *buf;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		xorbuf(cbcmac, buf, 16);
 		br_aes_small_encrypt(ctx->num_rounds, ctx->skey, cbcmac);
@@ -72948,7 +72948,7 @@ const br_block_ctrcbc_class br_aes_small_ctrcbc_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -72956,12 +72956,12 @@ const br_block_ctrcbc_class br_aes_small_ctrcbc_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -73103,7 +73103,7 @@ br_aes_small_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	unsigned state[16];
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	for (u = 0; u < 16; u ++) {
 		state[u] = buf[u];
 	}
@@ -73145,7 +73145,7 @@ br_aes_small_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -73153,12 +73153,12 @@ br_aes_small_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -73253,7 +73253,7 @@ br_aes_small_encrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	unsigned state[16];
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	for (u = 0; u < 16; u ++) {
 		state[u] = buf[u];
 	}
@@ -73286,7 +73286,7 @@ br_aes_small_encrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -73294,12 +73294,12 @@ br_aes_small_encrypt(unsigned num_rounds, const uint32_t *skey, void *data)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -73434,12 +73434,12 @@ x86ni_keysched(__m128i *sk, const void *key, size_t len)
 		expand_step256_2(&t1, &t3); \
 	} while (0)
 
-	kb = key;
+	kb = (const unsigned char *)key;
 	switch (len) {
 		__m128i t1, t2, t3;
 
 	case 16:
-		t1 = _mm_loadu_si128((const void *)kb);
+		t1 = _mm_loadu_si128((const __m128i_u  *)kb);
 		sk[0] = t1;
 		KEXP128(t1,  1, 0x01);
 		KEXP128(t1,  2, 0x02);
@@ -73454,8 +73454,8 @@ x86ni_keysched(__m128i *sk, const void *key, size_t len)
 		return 10;
 
 	case 24:
-		t1 = _mm_loadu_si128((const void *)kb);
-		t3 = _mm_loadu_si128((const void *)(kb + 8));
+		t1 = _mm_loadu_si128((const __m128i_u  *)kb);
+		t3 = _mm_loadu_si128((const __m128i_u  *)(kb + 8));
 		t3 = _mm_shuffle_epi32(t3, 0x4E);
 		KEXP192(0, 0x01, 0x02);
 		KEXP192(3, 0x04, 0x08);
@@ -73465,8 +73465,8 @@ x86ni_keysched(__m128i *sk, const void *key, size_t len)
 		return 12;
 
 	case 32:
-		t1 = _mm_loadu_si128((const void *)kb);
-		t3 = _mm_loadu_si128((const void *)(kb + 16));
+		t1 = _mm_loadu_si128((const __m128i_u  *)kb);
+		t3 = _mm_loadu_si128((const __m128i_u  *)(kb + 16));
 		sk[0] = t1;
 		KEXP256( 1, 0x01);
 		KEXP256( 3, 0x02);
@@ -73511,12 +73511,12 @@ br_aes_x86ni_keysched_dec(unsigned char *skni, const void *key, size_t len)
 	unsigned u, num_rounds;
 
 	num_rounds = x86ni_keysched(sk, key, len);
-	_mm_storeu_si128((void *)skni, sk[num_rounds]);
+	_mm_storeu_si128(( __m128i_u  *)skni, sk[num_rounds]);
 	for (u = 1; u < num_rounds; u ++) {
-		_mm_storeu_si128((void *)(skni + (u << 4)),
+		_mm_storeu_si128(( __m128i_u  *)(skni + (u << 4)),
 			_mm_aesimc_si128(sk[num_rounds - u]));
 	}
-	_mm_storeu_si128((void *)(skni + (num_rounds << 4)), sk[0]);
+	_mm_storeu_si128(( __m128i_u  *)(skni + (num_rounds << 4)), sk[0]);
 	return num_rounds;
 }
 
@@ -73538,7 +73538,7 @@ BR_TARGETS_X86_DOWN
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -73546,12 +73546,12 @@ BR_TARGETS_X86_DOWN
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -73593,27 +73593,27 @@ br_aes_x86ni_cbcdec_run(const br_aes_x86ni_cbcdec_keys *ctx,
 	__m128i sk[15], ivx;
 	unsigned u;
 
-	buf = data;
-	ivx = _mm_loadu_si128(iv);
+	buf = (unsigned char *)data;
+	ivx = _mm_loadu_si128((const __m128i_u  *)iv);
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u  *)(ctx->skey.skni + (u << 4)));
 	}
 	while (len > 0) {
 		__m128i x0, x1, x2, x3, e0, e1, e2, e3;
 
-		x0 = _mm_loadu_si128((void *)(buf +  0));
+		x0 = _mm_loadu_si128((const __m128i_u  *)(buf +  0));
 		if (len >= 64) {
-			x1 = _mm_loadu_si128((void *)(buf + 16));
-			x2 = _mm_loadu_si128((void *)(buf + 32));
-			x3 = _mm_loadu_si128((void *)(buf + 48));
+			x1 = _mm_loadu_si128((const __m128i_u  *)(buf + 16));
+			x2 = _mm_loadu_si128((const __m128i_u  *)(buf + 32));
+			x3 = _mm_loadu_si128((const __m128i_u  *)(buf + 48));
 		} else {
-			x0 = _mm_loadu_si128((void *)(buf +  0));
+			x0 = _mm_loadu_si128((const __m128i_u  *)(buf +  0));
 			if (len >= 32) {
-				x1 = _mm_loadu_si128((void *)(buf + 16));
+				x1 = _mm_loadu_si128((const __m128i_u  *)(buf + 16));
 				if (len >= 48) {
 					x2 = _mm_loadu_si128(
-						(void *)(buf + 32));
+						(const __m128i_u  *)(buf + 32));
 					x3 = x2;
 				} else {
 					x2 = x0;
@@ -73714,25 +73714,25 @@ br_aes_x86ni_cbcdec_run(const br_aes_x86ni_cbcdec_keys *ctx,
 		x2 = _mm_xor_si128(x2, e1);
 		x3 = _mm_xor_si128(x3, e2);
 		ivx = e3;
-		_mm_storeu_si128((void *)(buf +  0), x0);
+		_mm_storeu_si128((__m128i_u  *)(buf +  0), x0);
 		if (len >= 64) {
-			_mm_storeu_si128((void *)(buf + 16), x1);
-			_mm_storeu_si128((void *)(buf + 32), x2);
-			_mm_storeu_si128((void *)(buf + 48), x3);
+			_mm_storeu_si128((__m128i_u  *)(buf + 16), x1);
+			_mm_storeu_si128((__m128i_u  *)(buf + 32), x2);
+			_mm_storeu_si128((__m128i_u  *)(buf + 48), x3);
 			buf += 64;
 			len -= 64;
 		} else {
 			if (len >= 32) {
-				_mm_storeu_si128((void *)(buf + 16), x1);
+				_mm_storeu_si128((__m128i_u  *)(buf + 16), x1);
 				if (len >= 48) {
 					_mm_storeu_si128(
-						(void *)(buf + 32), x2);
+						(__m128i_u  *)(buf + 32), x2);
 				}
 			}
 			break;
 		}
 	}
-	_mm_storeu_si128(iv, ivx);
+	_mm_storeu_si128((__m128i_u  *)iv, ivx);
 }
 
 BR_TARGETS_X86_DOWN
@@ -73770,7 +73770,7 @@ br_aes_x86ni_cbcdec_get_vtable(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -73778,12 +73778,12 @@ br_aes_x86ni_cbcdec_get_vtable(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -73825,16 +73825,16 @@ br_aes_x86ni_cbcenc_run(const br_aes_x86ni_cbcenc_keys *ctx,
 	__m128i sk[15], ivx;
 	unsigned u;
 
-	buf = data;
-	ivx = _mm_loadu_si128(iv);
+	buf = (unsigned char *)data;
+	ivx = _mm_loadu_si128((const __m128i_u  *)iv);
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u  *)(ctx->skey.skni + (u << 4)));
 	}
 	while (len > 0) {
 		__m128i x;
 
-		x = _mm_xor_si128(_mm_loadu_si128((void *)buf), ivx);
+		x = _mm_xor_si128(_mm_loadu_si128((const __m128i_u  *)buf), ivx);
 		x = _mm_xor_si128(x, sk[0]);
 		x = _mm_aesenc_si128(x, sk[1]);
 		x = _mm_aesenc_si128(x, sk[2]);
@@ -73859,11 +73859,11 @@ br_aes_x86ni_cbcenc_run(const br_aes_x86ni_cbcenc_keys *ctx,
 			x = _mm_aesenclast_si128(x, sk[14]);
 		}
 		ivx = x;
-		_mm_storeu_si128((void *)buf, x);
+		_mm_storeu_si128(( __m128i_u  *)buf, x);
 		buf += 16;
 		len -= 16;
 	}
-	_mm_storeu_si128(iv, ivx);
+	_mm_storeu_si128(( __m128i_u  *)iv, ivx);
 }
 
 BR_TARGETS_X86_DOWN
@@ -73901,7 +73901,7 @@ br_aes_x86ni_cbcenc_get_vtable(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -73909,12 +73909,12 @@ br_aes_x86ni_cbcenc_get_vtable(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -73958,13 +73958,13 @@ br_aes_x86ni_ctr_run(const br_aes_x86ni_ctr_keys *ctx,
 	__m128i ivx;
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	memcpy(ivbuf, iv, 12);
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u  *)(ctx->skey.skni + (u << 4)));
 	}
-	ivx = _mm_loadu_si128((void *)ivbuf);
+	ivx = _mm_loadu_si128((const __m128i_u  *)ivbuf);
 	while (len > 0) {
 		__m128i x0, x1, x2, x3;
 
@@ -74054,27 +74054,27 @@ br_aes_x86ni_ctr_run(const br_aes_x86ni_ctr_keys *ctx,
 		}
 		if (len >= 64) {
 			x0 = _mm_xor_si128(x0,
-				_mm_loadu_si128((void *)(buf +  0)));
+				_mm_loadu_si128((const __m128i_u  *)(buf +  0)));
 			x1 = _mm_xor_si128(x1,
-				_mm_loadu_si128((void *)(buf + 16)));
+				_mm_loadu_si128((const __m128i_u  *)(buf + 16)));
 			x2 = _mm_xor_si128(x2,
-				_mm_loadu_si128((void *)(buf + 32)));
+				_mm_loadu_si128((const __m128i_u  *)(buf + 32)));
 			x3 = _mm_xor_si128(x3,
-				_mm_loadu_si128((void *)(buf + 48)));
-			_mm_storeu_si128((void *)(buf +  0), x0);
-			_mm_storeu_si128((void *)(buf + 16), x1);
-			_mm_storeu_si128((void *)(buf + 32), x2);
-			_mm_storeu_si128((void *)(buf + 48), x3);
+				_mm_loadu_si128((const __m128i_u  *)(buf + 48)));
+			_mm_storeu_si128(( __m128i_u  *)(buf +  0), x0);
+			_mm_storeu_si128(( __m128i_u  *)(buf + 16), x1);
+			_mm_storeu_si128(( __m128i_u  *)(buf + 32), x2);
+			_mm_storeu_si128(( __m128i_u  *)(buf + 48), x3);
 			buf += 64;
 			len -= 64;
 			cc += 4;
 		} else {
 			unsigned char tmp[64];
 
-			_mm_storeu_si128((void *)(tmp +  0), x0);
-			_mm_storeu_si128((void *)(tmp + 16), x1);
-			_mm_storeu_si128((void *)(tmp + 32), x2);
-			_mm_storeu_si128((void *)(tmp + 48), x3);
+			_mm_storeu_si128(( __m128i_u  *)(tmp +  0), x0);
+			_mm_storeu_si128(( __m128i_u  *)(tmp + 16), x1);
+			_mm_storeu_si128(( __m128i_u  *)(tmp + 32), x2);
+			_mm_storeu_si128(( __m128i_u  *)(tmp + 48), x3);
 			for (u = 0; u < len; u ++) {
 				buf[u] ^= tmp[u];
 			}
@@ -74121,7 +74121,7 @@ br_aes_x86ni_ctr_get_vtable(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -74129,12 +74129,12 @@ br_aes_x86ni_ctr_get_vtable(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -74178,10 +74178,10 @@ br_aes_x86ni_ctrcbc_ctr(const br_aes_x86ni_ctrcbc_keys *ctx,
 	__m128i erev, zero, one, four, notthree;
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u  *)(ctx->skey.skni + (u << 4)));
 	}
 
 	/*
@@ -74198,7 +74198,7 @@ br_aes_x86ni_ctrcbc_ctr(const br_aes_x86ni_ctrcbc_keys *ctx,
 	 * Decode the counter in big-endian and pre-increment the other
 	 * three counters.
 	 */
-	ivx0 = _mm_shuffle_epi8(_mm_loadu_si128((void *)ctr), erev);
+	ivx0 = _mm_shuffle_epi8(_mm_loadu_si128((const __m128i_u  *)ctr), erev);
 	ivx1 = _mm_add_epi64(ivx0, one);
 	ivx1 = _mm_sub_epi64(ivx1,
 		_mm_slli_si128(_mm_cmpeq_epi64(ivx1, zero), 8));
@@ -74302,26 +74302,26 @@ br_aes_x86ni_ctrcbc_ctr(const br_aes_x86ni_ctrcbc_keys *ctx,
 		}
 		if (len >= 64) {
 			x0 = _mm_xor_si128(x0,
-				_mm_loadu_si128((void *)(buf +  0)));
+				_mm_loadu_si128(( __m128i_u  *)(buf +  0)));
 			x1 = _mm_xor_si128(x1,
-				_mm_loadu_si128((void *)(buf + 16)));
+				_mm_loadu_si128(( __m128i_u  *)(buf + 16)));
 			x2 = _mm_xor_si128(x2,
-				_mm_loadu_si128((void *)(buf + 32)));
+				_mm_loadu_si128(( __m128i_u  *)(buf + 32)));
 			x3 = _mm_xor_si128(x3,
-				_mm_loadu_si128((void *)(buf + 48)));
-			_mm_storeu_si128((void *)(buf +  0), x0);
-			_mm_storeu_si128((void *)(buf + 16), x1);
-			_mm_storeu_si128((void *)(buf + 32), x2);
-			_mm_storeu_si128((void *)(buf + 48), x3);
+				_mm_loadu_si128(( __m128i_u  *)(buf + 48)));
+			_mm_storeu_si128(( __m128i_u  *)(buf +  0), x0);
+			_mm_storeu_si128(( __m128i_u  *)(buf + 16), x1);
+			_mm_storeu_si128(( __m128i_u  *)(buf + 32), x2);
+			_mm_storeu_si128(( __m128i_u  *)(buf + 48), x3);
 			buf += 64;
 			len -= 64;
 		} else {
 			unsigned char tmp[64];
 
-			_mm_storeu_si128((void *)(tmp +  0), x0);
-			_mm_storeu_si128((void *)(tmp + 16), x1);
-			_mm_storeu_si128((void *)(tmp + 32), x2);
-			_mm_storeu_si128((void *)(tmp + 48), x3);
+			_mm_storeu_si128(( __m128i_u  *)(tmp +  0), x0);
+			_mm_storeu_si128(( __m128i_u  *)(tmp + 16), x1);
+			_mm_storeu_si128(( __m128i_u  *)(tmp + 32), x2);
+			_mm_storeu_si128(( __m128i_u  *)(tmp + 48), x3);
 			for (u = 0; u < len; u ++) {
 				buf[u] ^= tmp[u];
 			}
@@ -74368,7 +74368,7 @@ br_aes_x86ni_ctrcbc_ctr(const br_aes_x86ni_ctrcbc_keys *ctx,
 	 * Write back new counter value. The loop took care to put the
 	 * right counter value in ivx0.
 	 */
-	_mm_storeu_si128((void *)ctr, _mm_shuffle_epi8(ivx0, erev));
+	_mm_storeu_si128(( __m128i_u  *)ctr, _mm_shuffle_epi8(ivx0, erev));
 }
 
 /* see bearssl_block.h */
@@ -74382,16 +74382,16 @@ br_aes_x86ni_ctrcbc_mac(const br_aes_x86ni_ctrcbc_keys *ctx,
 	__m128i sk[15], ivx;
 	unsigned u;
 
-	buf = data;
-	ivx = _mm_loadu_si128(cbcmac);
+	buf = (unsigned char *)data;
+	ivx = _mm_loadu_si128((const __m128i_u*)cbcmac);
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u  *)(ctx->skey.skni + (u << 4)));
 	}
 	while (len > 0) {
 		__m128i x;
 
-		x = _mm_xor_si128(_mm_loadu_si128((void *)buf), ivx);
+		x = _mm_xor_si128(_mm_loadu_si128((const __m128i_u  *)buf), ivx);
 		x = _mm_xor_si128(x, sk[0]);
 		x = _mm_aesenc_si128(x, sk[1]);
 		x = _mm_aesenc_si128(x, sk[2]);
@@ -74419,7 +74419,7 @@ br_aes_x86ni_ctrcbc_mac(const br_aes_x86ni_ctrcbc_keys *ctx,
 		buf += 16;
 		len -= 16;
 	}
-	_mm_storeu_si128(cbcmac, ivx);
+	_mm_storeu_si128(( __m128i_u  *)cbcmac, ivx);
 }
 
 /* see bearssl_block.h */
@@ -74438,7 +74438,7 @@ br_aes_x86ni_ctrcbc_encrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u  *)(ctx->skey.skni + (u << 4)));
 	}
 
 	/*
@@ -74452,10 +74452,10 @@ br_aes_x86ni_ctrcbc_encrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 	/*
 	 * Decode the counter in big-endian.
 	 */
-	ivx = _mm_shuffle_epi8(_mm_loadu_si128(ctr), erev);
-	cmx = _mm_loadu_si128(cbcmac);
+	ivx = _mm_shuffle_epi8(_mm_loadu_si128((const __m128i_u  *)ctr), erev);
+	cmx = _mm_loadu_si128((const __m128i_u  *)cbcmac);
 
-	buf = data;
+	buf = (unsigned char *)data;
 	first_iter = 1;
 	while (len > 0) {
 		__m128i dx, x0, x1;
@@ -74466,7 +74466,7 @@ br_aes_x86ni_ctrcbc_encrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 		 *   x0   counter (for CTR encryption)
 		 *   x1   input for CBC-MAC
 		 */
-		dx = _mm_loadu_si128((void *)buf);
+		dx = _mm_loadu_si128((const __m128i_u  *)buf);
 		x0 = _mm_shuffle_epi8(ivx, erev);
 		x1 = cmx;
 
@@ -74520,7 +74520,7 @@ br_aes_x86ni_ctrcbc_encrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 		} else {
 			cmx = _mm_xor_si128(x1, x0);
 		}
-		_mm_storeu_si128((void *)buf, x0);
+		_mm_storeu_si128(( __m128i_u  *)buf, x0);
 
 		buf += 16;
 		len -= 16;
@@ -74567,8 +74567,8 @@ br_aes_x86ni_ctrcbc_encrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 	/*
 	 * Write back new counter value and CBC-MAC value.
 	 */
-	_mm_storeu_si128(ctr, _mm_shuffle_epi8(ivx, erev));
-	_mm_storeu_si128(cbcmac, cmx);
+	_mm_storeu_si128(( __m128i_u  *)ctr, _mm_shuffle_epi8(ivx, erev));
+	_mm_storeu_si128(( __m128i_u  *)cbcmac, cmx);
 }
 
 /* see bearssl_block.h */
@@ -74586,7 +74586,7 @@ br_aes_x86ni_ctrcbc_decrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u  *)(ctx->skey.skni + (u << 4)));
 	}
 
 	/*
@@ -74600,10 +74600,10 @@ br_aes_x86ni_ctrcbc_decrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 	/*
 	 * Decode the counter in big-endian.
 	 */
-	ivx = _mm_shuffle_epi8(_mm_loadu_si128(ctr), erev);
-	cmx = _mm_loadu_si128(cbcmac);
+	ivx = _mm_shuffle_epi8(_mm_loadu_si128((const __m128i_u  *)ctr), erev);
+	cmx = _mm_loadu_si128((const __m128i_u  *)cbcmac);
 
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		__m128i dx, x0, x1;
 
@@ -74613,7 +74613,7 @@ br_aes_x86ni_ctrcbc_decrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 		 *   x0   counter (for CTR encryption)
 		 *   x1   input for CBC-MAC
 		 */
-		dx = _mm_loadu_si128((void *)buf);
+		dx = _mm_loadu_si128((const __m128i_u  *)buf);
 		x0 = _mm_shuffle_epi8(ivx, erev);
 		x1 = _mm_xor_si128(cmx, dx);
 
@@ -74661,7 +74661,7 @@ br_aes_x86ni_ctrcbc_decrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 		}
 		x0 = _mm_xor_si128(x0, dx);
 		cmx = x1;
-		_mm_storeu_si128((void *)buf, x0);
+		_mm_storeu_si128(( __m128i_u  *)buf, x0);
 
 		buf += 16;
 		len -= 16;
@@ -74677,8 +74677,8 @@ br_aes_x86ni_ctrcbc_decrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 	/*
 	 * Write back new counter value and CBC-MAC value.
 	 */
-	_mm_storeu_si128(ctr, _mm_shuffle_epi8(ivx, erev));
-	_mm_storeu_si128(cbcmac, cmx);
+	_mm_storeu_si128(( __m128i_u  *)ctr, _mm_shuffle_epi8(ivx, erev));
+	_mm_storeu_si128(( __m128i_u  *)cbcmac, cmx);
 }
 
 BR_TARGETS_X86_DOWN
@@ -74726,7 +74726,7 @@ br_aes_x86ni_ctrcbc_get_vtable(void)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -74734,12 +74734,12 @@ br_aes_x86ni_ctrcbc_get_vtable(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -74762,7 +74762,7 @@ br_chacha20_ct_run(const void *key,
 		0x61707865, 0x3320646e, 0x79622d32, 0x6b206574
 	};
 
-	buf = data;
+	buf = (unsigned char *)data;
 	for (u = 0; u < 8; u ++) {
 		kw[u] = br_dec32le((const unsigned char *)key + (u << 2));
 	}
@@ -74841,7 +74841,7 @@ br_chacha20_ct_run(const void *key,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -74849,12 +74849,12 @@ br_chacha20_ct_run(const void *key,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -74916,13 +74916,13 @@ br_chacha20_sse2_run(const void *key,
 		0x61707865, 0x3320646e, 0x79622d32, 0x6b206574
 	};
 
-	buf = data;
-	kw0 = _mm_loadu_si128(key);
-	kw1 = _mm_loadu_si128((const void *)((const unsigned char *)key + 16));
+	buf = (unsigned char *)data;
+	kw0 = _mm_loadu_si128((const __m128i_u  *)key);
+	kw1 = _mm_loadu_si128((const __m128i_u  *)((const unsigned char *)key + 16));
 	ivtmp[0] = cc;
 	memcpy(ivtmp + 1, iv, 12);
-	iw = _mm_loadu_si128((const void *)ivtmp);
-	cw = _mm_loadu_si128((const void *)CW);
+	iw = _mm_loadu_si128((const __m128i_u  *)ivtmp);
+	cw = _mm_loadu_si128((const __m128i_u  *)CW);
 	one = _mm_set_epi32(0, 0, 0, 1);
 
 	while (len > 0) {
@@ -75026,11 +75026,10 @@ br_chacha20_sse2_run(const void *key,
 		if (len < 64) {
 			unsigned char tmp[64];
 			size_t u;
-
-			_mm_storeu_si128((void *)(tmp +  0), s0);
-			_mm_storeu_si128((void *)(tmp + 16), s1);
-			_mm_storeu_si128((void *)(tmp + 32), s2);
-			_mm_storeu_si128((void *)(tmp + 48), s3);
+            _mm_storeu_si128(( __m128i_u  *)(tmp +  0), s0);
+			_mm_storeu_si128(( __m128i_u  *)(tmp + 16), s1);
+			_mm_storeu_si128(( __m128i_u  *)(tmp + 32), s2);
+			_mm_storeu_si128(( __m128i_u  *)(tmp + 48), s3);
 			for (u = 0; u < len; u ++) {
 				buf[u] ^= tmp[u];
 			}
@@ -75038,18 +75037,18 @@ br_chacha20_sse2_run(const void *key,
 		} else {
 			__m128i b0, b1, b2, b3;
 
-			b0 = _mm_loadu_si128((const void *)(buf +  0));
-			b1 = _mm_loadu_si128((const void *)(buf + 16));
-			b2 = _mm_loadu_si128((const void *)(buf + 32));
-			b3 = _mm_loadu_si128((const void *)(buf + 48));
+			b0 = _mm_loadu_si128((const __m128i_u*)(buf +  0));
+			b1 = _mm_loadu_si128((const __m128i_u*)(buf + 16));
+			b2 = _mm_loadu_si128((const __m128i_u*)(buf + 32));
+			b3 = _mm_loadu_si128((const __m128i_u*)(buf + 48));
 			b0 = _mm_xor_si128(b0, s0);
 			b1 = _mm_xor_si128(b1, s1);
 			b2 = _mm_xor_si128(b2, s2);
 			b3 = _mm_xor_si128(b3, s3);
-			_mm_storeu_si128((void *)(buf +  0), b0);
-			_mm_storeu_si128((void *)(buf + 16), b1);
-			_mm_storeu_si128((void *)(buf + 32), b2);
-			_mm_storeu_si128((void *)(buf + 48), b3);
+			_mm_storeu_si128(( __m128i_u  *)(buf +  0), b0);
+			_mm_storeu_si128(( __m128i_u  *)(buf + 16), b1);
+			_mm_storeu_si128(( __m128i_u  *)(buf + 32), b2);
+			_mm_storeu_si128(( __m128i_u  *)(buf + 48), b3);
 			buf += 64;
 			len -= 64;
 		}
@@ -75096,7 +75095,7 @@ br_chacha20_sse2_get(void)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -75104,12 +75103,12 @@ br_chacha20_sse2_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -75466,7 +75465,7 @@ br_des_ct_process_block(unsigned num_rounds,
 	unsigned char *buf;
 	uint32_t l, r;
 
-	buf = block;
+	buf = (unsigned char *)block;
 	l = br_dec32be(buf);
 	r = br_dec32be(buf + 4);
 	br_des_do_IP(&l, &r);
@@ -75518,7 +75517,7 @@ br_des_ct_skey_expand(uint32_t *sk_exp,
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -75526,12 +75525,12 @@ br_des_ct_skey_expand(uint32_t *sk_exp,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -75575,8 +75574,8 @@ br_des_ct_cbcdec_run(const br_des_ct_cbcdec_keys *ctx,
 	uint32_t sk_exp[288];
 
 	br_des_ct_skey_expand(sk_exp, ctx->num_rounds, ctx->skey);
-	ivbuf = iv;
-	buf = data;
+	ivbuf = (unsigned char *)iv;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		unsigned char tmp[8];
 		int i;
@@ -75613,7 +75612,7 @@ const br_block_cbcdec_class br_des_ct_cbcdec_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -75621,12 +75620,12 @@ const br_block_cbcdec_class br_des_ct_cbcdec_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -75654,8 +75653,8 @@ br_des_ct_cbcenc_run(const br_des_ct_cbcenc_keys *ctx,
 	uint32_t sk_exp[288];
 
 	br_des_ct_skey_expand(sk_exp, ctx->num_rounds, ctx->skey);
-	ivbuf = iv;
-	buf = data;
+	ivbuf = (unsigned char *)iv;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		int i;
 
@@ -75690,7 +75689,7 @@ const br_block_cbcenc_class br_des_ct_cbcenc_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -75698,12 +75697,12 @@ const br_block_cbcenc_class br_des_ct_cbcenc_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -75873,7 +75872,7 @@ br_des_rev_skey(uint32_t *skey)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -75881,12 +75880,12 @@ br_des_rev_skey(uint32_t *skey)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -76116,7 +76115,7 @@ br_des_tab_process_block(unsigned num_rounds, const uint32_t *skey, void *block)
 	unsigned char *buf;
 	uint32_t l, r;
 
-	buf = block;
+    buf = (unsigned char *)block;
 	l = br_dec32be(buf);
 	r = br_dec32be(buf + 4);
 	br_des_do_IP(&l, &r);
@@ -76194,7 +76193,7 @@ br_des_tab_keysched(uint32_t *skey, const void *key, size_t key_len)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -76202,12 +76201,12 @@ br_des_tab_keysched(uint32_t *skey, const void *key, size_t key_len)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -76249,8 +76248,8 @@ br_des_tab_cbcdec_run(const br_des_tab_cbcdec_keys *ctx,
 {
 	unsigned char *buf, *ivbuf;
 
-	ivbuf = iv;
-	buf = data;
+	ivbuf = (unsigned char *)iv;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		unsigned char tmp[8];
 		int i;
@@ -76287,7 +76286,7 @@ const br_block_cbcdec_class br_des_tab_cbcdec_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -76295,12 +76294,12 @@ const br_block_cbcdec_class br_des_tab_cbcdec_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -76326,8 +76325,8 @@ br_des_tab_cbcenc_run(const br_des_tab_cbcenc_keys *ctx,
 {
 	unsigned char *buf, *ivbuf;
 
-	ivbuf = iv;
-	buf = data;
+    ivbuf = (unsigned char *)iv;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		int i;
 
@@ -76365,7 +76364,7 @@ const br_block_cbcenc_class br_des_tab_cbcenc_vtable = {
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -76373,12 +76372,12 @@ const br_block_cbcenc_class br_des_tab_cbcenc_vtable = {
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -76432,7 +76431,7 @@ poly1305_inner(uint32_t *acc, const uint32_t *r, const void *data, size_t len)
 	a3 = acc[3];
 	a4 = acc[4];
 
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		uint64_t w0, w1, w2, w3, w4;
 		uint64_t c;
@@ -76638,7 +76637,7 @@ br_poly1305_ctmul_run(const void *key, const void *iv,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -76646,12 +76645,12 @@ br_poly1305_ctmul_run(const void *key, const void *iv,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -76684,7 +76683,7 @@ poly1305_inner(uint32_t *a, const uint32_t *r, const void *data, size_t len)
 	 */
 	const unsigned char *buf;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		unsigned char tmp[16];
 		uint32_t b[10];
@@ -76947,7 +76946,7 @@ br_poly1305_ctmul32_run(const void *key, const void *iv,
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -76955,12 +76954,12 @@ br_poly1305_ctmul32_run(const void *key, const void *iv,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -77080,7 +77079,7 @@ poly1305_inner_big(uint64_t *acc, uint64_t *r, const void *data, size_t len)
 	a0 = acc[0];
 	a1 = acc[1];
 	a2 = acc[2];
-	buf = data;
+    buf = (unsigned char *)data;
 
 	while (len > 0) {
 		uint64_t v0, v1, v2;
@@ -77179,7 +77178,7 @@ poly1305_inner_small(uint64_t *acc, uint64_t *r, const void *data, size_t len)
 	a0 = acc[0];
 	a1 = acc[1];
 	a2 = acc[2];
-	buf = data;
+	buf = (unsigned char *)data;
 
 	while (len > 0) {
 		uint64_t v0, v1, v2;
@@ -77438,7 +77437,7 @@ br_poly1305_ctmulq_get(void)
 /*
  * Copyright (c) 2017 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -77446,12 +77445,12 @@ br_poly1305_ctmulq_get(void)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -77499,7 +77498,7 @@ poly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t len)
 {
 	const unsigned char *buf;
 
-	buf = data;
+	buf = (unsigned char *)data;
 	while (len > 0) {
 		unsigned char tmp[16], rev[16];
 		uint16_t b[10];
@@ -77647,7 +77646,7 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	 * be little-endian.
 	 */
 	br_i15_encode(tag, 16, acc);
-	byteswap16(tag);
+	byteswap16((unsigned char *)tag);
 
 	/*
 	 * If decrypting, then ChaCha20 runs _after_ Poly1305.
@@ -77669,7 +77668,7 @@ br_poly1305_i15_run(const void *key, const void *iv,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -77677,12 +77676,12 @@ br_poly1305_i15_run(const void *key, const void *iv,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -77699,7 +77698,7 @@ br_asn1_uint_prepare(const void *xdata, size_t xlen)
 	const unsigned char *x;
 	br_asn1_uint t;
 
-	x = xdata;
+	x = (unsigned char *)xdata;
 	while (xlen > 0 && *x == 0) {
 		x ++;
 		xlen --;
@@ -77721,7 +77720,7 @@ br_asn1_encode_length(void *dest, size_t len)
 	size_t z;
 	int i, j;
 
-	buf = dest;
+	buf = (unsigned char *)dest;
 	if (len < 0x80) {
 		if (buf != NULL) {
 			*buf = len;
@@ -77751,7 +77750,7 @@ br_asn1_encode_uint(void *dest, br_asn1_uint pp)
 	if (dest == NULL) {
 		return 1 + br_asn1_encode_length(NULL, pp.asn1len) + pp.asn1len;
 	}
-	buf = dest;
+	buf = (unsigned char *)dest;
 	*buf ++ = 0x02;
 	lenlen = br_asn1_encode_length(buf, pp.asn1len);
 	buf += lenlen;
@@ -77770,7 +77769,7 @@ br_asn1_encode_uint(void *dest, br_asn1_uint pp)
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -77778,12 +77777,12 @@ br_asn1_encode_uint(void *dest, br_asn1_uint pp)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -77850,7 +77849,7 @@ br_encode_ec_pkcs8_der(void *dest,
 		unsigned char *buf;
 		size_t lenlen;
 
-		buf = dest;
+		buf = (unsigned char *)dest;
 		*buf ++ = 0x30;  /* SEQUENCE tag */
 		lenlen = br_asn1_encode_length(buf, len_seq);
 		buf += lenlen;
@@ -77888,7 +77887,7 @@ br_encode_ec_pkcs8_der(void *dest,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -77896,12 +77895,12 @@ br_encode_ec_pkcs8_der(void *dest,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -77999,7 +77998,7 @@ br_encode_ec_raw_der_inner(void *dest,
 		unsigned char *buf;
 		size_t lenlen;
 
-		buf = dest;
+		buf = (unsigned char *)dest;
 		*buf ++ = 0x30;  /* SEQUENCE tag */
 		lenlen = br_asn1_encode_length(buf, len_seq);
 		buf += lenlen;
@@ -78057,7 +78056,7 @@ br_encode_ec_raw_der(void *dest,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -78065,12 +78064,12 @@ br_encode_ec_raw_der(void *dest,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -78135,7 +78134,7 @@ br_encode_rsa_pkcs8_der(void *dest, const br_rsa_private_key *sk,
 		unsigned char *buf;
 		size_t lenlen;
 
-		buf = dest;
+		buf = (unsigned char *)dest;
 		*buf ++ = 0x30;  /* SEQUENCE tag */
 		lenlen = br_asn1_encode_length(buf, len_seq);
 		buf += lenlen;
@@ -78162,7 +78161,7 @@ br_encode_rsa_pkcs8_der(void *dest, const br_rsa_private_key *sk,
 /*
  * Copyright (c) 2018 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -78170,12 +78169,12 @@ br_encode_rsa_pkcs8_der(void *dest, const br_rsa_private_key *sk,
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -78245,7 +78244,7 @@ br_encode_rsa_raw_der(void *dest, const br_rsa_private_key *sk,
 		unsigned char *buf;
 		size_t lenlen;
 
-		buf = dest;
+		buf = (unsigned char*)dest;
 		*buf ++ = 0x30;  /* SEQUENCE tag */
 		lenlen = br_asn1_encode_length(buf, slen);
 		buf += lenlen;
@@ -78377,7 +78376,7 @@ void
 br_skey_decoder_push(br_skey_decoder_context *ctx,
 	const void *data, size_t len)
 {
-	ctx->hbuf = data;
+	ctx->hbuf = (const unsigned char*)data;
 	ctx->hlen = len;
 	br_skey_decoder_run(&ctx->cpu);
 }
@@ -78561,7 +78560,7 @@ static const uint16_t t0_caddr[] = {
 void \
 name(void *ctx) \
 { \
-	t0_context *t0ctx = ctx; \
+	t0_context *t0ctx = (t0_context*)ctx; \
 	t0ctx->ip = &t0_codeblock[0]; \
 	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
@@ -78687,7 +78686,7 @@ br_skey_decoder_run(void *t0ctx)
 				break;
 			case 9: {
 				/* -rot */
- T0_NROT(); 
+ T0_NROT();
 				}
 				break;
 			case 10: {
@@ -78764,17 +78763,17 @@ br_skey_decoder_run(void *t0ctx)
 				break;
 			case 18: {
 				/* co */
- T0_CO(); 
+ T0_CO();
 				}
 				break;
 			case 19: {
 				/* drop */
- (void)T0_POP(); 
+ (void)T0_POP();
 				}
 				break;
 			case 20: {
 				/* dup */
- T0_PUSH(T0_PEEK(0)); 
+ T0_PUSH(T0_PEEK(0));
 				}
 				break;
 			case 21: {
@@ -78819,7 +78818,7 @@ br_skey_decoder_run(void *t0ctx)
 				break;
 			case 25: {
 				/* over */
- T0_PUSH(T0_PEEK(1)); 
+ T0_PUSH(T0_PEEK(1));
 				}
 				break;
 			case 26: {
@@ -78855,7 +78854,7 @@ br_skey_decoder_run(void *t0ctx)
 				break;
 			case 28: {
 				/* rot */
- T0_ROT(); 
+ T0_ROT();
 				}
 				break;
 			case 29: {
@@ -78908,7 +78907,7 @@ br_skey_decoder_run(void *t0ctx)
 				break;
 			case 32: {
 				/* swap */
- T0_SWAP(); 
+ T0_SWAP();
 				}
 				break;
 			case 33: {
@@ -79100,7 +79099,7 @@ void
 br_x509_decoder_push(br_x509_decoder_context *ctx,
 	const void *data, size_t len)
 {
-	ctx->hbuf = data;
+    ctx->hbuf = (const unsigned char*)data;
 	ctx->hlen = len;
 	br_x509_decoder_run(&ctx->cpu);
 }
@@ -79362,7 +79361,7 @@ static const uint16_t t0_caddr[] = {
 void \
 name(void *ctx) \
 { \
-	t0_context *t0ctx = ctx; \
+	t0_context *t0ctx =(t0_context*)ctx; \
 	t0ctx->ip = &t0_codeblock[0]; \
 	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
@@ -79506,7 +79505,7 @@ br_x509_decoder_run(void *t0ctx)
 				break;
 			case 11: {
 				/* -rot */
- T0_NROT(); 
+ T0_NROT();
 				}
 				break;
 			case 12: {
@@ -79601,7 +79600,7 @@ br_x509_decoder_run(void *t0ctx)
 				break;
 			case 22: {
 				/* co */
- T0_CO(); 
+ T0_CO();
 				}
 				break;
 			case 23: {
@@ -79639,12 +79638,12 @@ br_x509_decoder_run(void *t0ctx)
 				break;
 			case 26: {
 				/* drop */
- (void)T0_POP(); 
+ (void)T0_POP();
 				}
 				break;
 			case 27: {
 				/* dup */
- T0_PUSH(T0_PEEK(0)); 
+ T0_PUSH(T0_PEEK(0));
 				}
 				break;
 			case 28: {
@@ -79690,7 +79689,7 @@ br_x509_decoder_run(void *t0ctx)
 				break;
 			case 32: {
 				/* over */
- T0_PUSH(T0_PEEK(1)); 
+ T0_PUSH(T0_PEEK(1));
 				}
 				break;
 			case 33: {
@@ -79733,7 +79732,7 @@ br_x509_decoder_run(void *t0ctx)
 				break;
 			case 35: {
 				/* rot */
- T0_ROT(); 
+ T0_ROT();
 				}
 				break;
 			case 36: {
@@ -79754,7 +79753,7 @@ br_x509_decoder_run(void *t0ctx)
 				break;
 			case 38: {
 				/* swap */
- T0_SWAP(); 
+ T0_SWAP();
 				}
 				break;
 			}
@@ -79817,7 +79816,7 @@ t0_exit:
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -79825,12 +79824,12 @@ t0_exit:
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
@@ -80339,8 +80338,8 @@ eqnocase(const void *s1, const void *s2, size_t len)
 {
 	const unsigned char *buf1, *buf2;
 
-	buf1 = s1;
-	buf2 = s2;
+	buf1 = (const unsigned char*)s1;
+	buf2 = (const unsigned char*)s2;
 	while (len -- > 0) {
 		int x1, x2;
 
@@ -80811,7 +80810,7 @@ static const uint16_t t0_caddr[] = {
 void \
 name(void *ctx) \
 { \
-	t0_context *t0ctx = ctx; \
+	t0_context *t0ctx = (t0_context*)ctx; \
 	t0ctx->ip = &t0_codeblock[0]; \
 	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
@@ -80955,7 +80954,7 @@ br_x509_minimal_run(void *t0ctx)
 				break;
 			case 11: {
 				/* -rot */
- T0_NROT(); 
+ T0_NROT();
 				}
 				break;
 			case 12: {
@@ -81197,7 +81196,7 @@ br_x509_minimal_run(void *t0ctx)
 				break;
 			case 26: {
 				/* co */
- T0_CO(); 
+ T0_CO();
 				}
 				break;
 			case 27: {
@@ -81345,12 +81344,12 @@ br_x509_minimal_run(void *t0ctx)
 				break;
 			case 37: {
 				/* drop */
- (void)T0_POP(); 
+ (void)T0_POP();
 				}
 				break;
 			case 38: {
 				/* dup */
- T0_PUSH(T0_PEEK(0)); 
+ T0_PUSH(T0_PEEK(0));
 				}
 				break;
 			case 39: {
@@ -81491,7 +81490,7 @@ br_x509_minimal_run(void *t0ctx)
 				break;
 			case 48: {
 				/* over */
- T0_PUSH(T0_PEEK(1)); 
+ T0_PUSH(T0_PEEK(1));
 				}
 				break;
 			case 49: {
@@ -81541,7 +81540,7 @@ br_x509_minimal_run(void *t0ctx)
 				break;
 			case 51: {
 				/* rot */
- T0_ROT(); 
+ T0_ROT();
 				}
 				break;
 			case 52: {
@@ -81593,7 +81592,7 @@ br_x509_minimal_run(void *t0ctx)
 				break;
 			case 58: {
 				/* swap */
- T0_SWAP(); 
+ T0_SWAP();
 				}
 				break;
 			case 59: {
@@ -81717,7 +81716,7 @@ verify_signature(br_x509_minimal_context *ctx, const br_x509_pkey *pk)
 /*
  * Copyright (c) 2016 Thomas Pornin <pornin@bolet.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining 
+ * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
  * without limitation the rights to use, copy, modify, merge, publish,
@@ -81725,12 +81724,12 @@ verify_signature(br_x509_minimal_context *ctx, const br_x509_pkey *pk)
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
  *
- * The above copyright notice and this permission notice shall be 
+ * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
