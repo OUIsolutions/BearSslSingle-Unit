@@ -7,7 +7,7 @@ function main()
    for i, v in ipairs(transformmed) do
        local file = transformmed[i]
        local content= darwin.dtw.load_file(file)
-       local replaced = string.gsub(content, 't0_parse7E_unsigned', "(BEAR_SINGLE_UNITY_FILE)t0_parse7E_unsigned")
+       local replaced = string.gsub(content, 't0_context', "(BEAR_SINGLE_UNITY_FILE)t0_context")
        darwin.dtw.write_file(file, replaced)
    end
 

@@ -7,7 +7,7 @@ typedef struct {
 	uint32_t *dp;
 	uint32_t *rp;
 	const unsigned char *ip;
-} t0_context;
+} (BEAR_SINGLE_UNITY_FILE)t0_context;
 
 static uint32_t
 (BEAR_SINGLE_UNITY_FILE)t0_parse7E_unsigned(const unsigned char **p)
@@ -278,7 +278,7 @@ static const uint16_t (BEAR_SINGLE_UNITY_FILE)t0_caddr[] = {
 void \
 name(void *ctx) \
 { \
-	t0_context *t0ctx = ctx; \
+	(BEAR_SINGLE_UNITY_FILE)t0_context *t0ctx = ctx; \
 	t0ctx->ip = &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[0]; \
 	(BEAR_SINGLE_UNITY_FILE)T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
@@ -336,9 +336,9 @@ br_skey_decoder_run(void *t0ctx)
 } while (0)
 #define T0_RET()        goto t0_next
 
-	dp = ((t0_context *)t0ctx)->dp;
-	rp = ((t0_context *)t0ctx)->rp;
-	ip = ((t0_context *)t0ctx)->ip;
+	dp = (((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->dp;
+	rp = (((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->rp;
+	ip = (((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->ip;
 	goto t0_next;
 	for (;;) {
 		uint32_t t0x;
@@ -644,7 +644,7 @@ br_skey_decoder_run(void *t0ctx)
 		}
 	}
 t0_exit:
-	((t0_context *)t0ctx)->dp = dp;
-	((t0_context *)t0ctx)->rp = rp;
-	((t0_context *)t0ctx)->ip = ip;
+	(((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->dp = dp;
+	(((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->rp = rp;
+	(((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->ip = ip;
 }
