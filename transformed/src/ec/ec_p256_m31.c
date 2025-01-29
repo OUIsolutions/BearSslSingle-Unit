@@ -1037,7 +1037,7 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
  * infinity. Returned value is 0 if the point is invalid, 1 otherwise.
  */
 static uint32_t
-p256_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const void *src, size_t len)
+BEAR_SINGLE_UNITY_FILEp256_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const void *src, size_t len)
 {
 	const unsigned char *buf;
 	uint32_t tx[9], ty[9], t1[9], t2[9];
@@ -1387,7 +1387,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	if (Glen != 65) {
 		return 0;
 	}
-	r = p256_decode(&P, G, Glen);
+	r = BEAR_SINGLE_UNITY_FILEp256_decode(&P, G, Glen);
 	BEAR_SINGLE_UNITY_FILEp256_mul(&P, x, xlen);
 	p256_to_affine(&P);
 	BEAR_SINGLE_UNITY_FILEp256_encode(G, &P);
@@ -1420,12 +1420,12 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 	if (len != 65) {
 		return 0;
 	}
-	r = p256_decode(&P, A, len);
+	r = BEAR_SINGLE_UNITY_FILEp256_decode(&P, A, len);
 	BEAR_SINGLE_UNITY_FILEp256_mul(&P, x, xlen);
 	if (B == NULL) {
 		BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(&Q, y, ylen);
 	} else {
-		r &= p256_decode(&Q, B, len);
+		r &= BEAR_SINGLE_UNITY_FILEp256_decode(&Q, B, len);
 		BEAR_SINGLE_UNITY_FILEp256_mul(&Q, y, ylen);
 	}
 
