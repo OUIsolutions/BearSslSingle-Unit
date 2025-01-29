@@ -170,12 +170,12 @@ make_pms_rsa(br_ssl_client_context *ctx, int prf_id)
 /*
  * OID for hash functions in RSA signatures.
  */
-static const unsigned char *HASH_OID[] = {
-	BR_(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA1,
-	BR_(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA224,
-	BR_(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA256,
-	BR_(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA384,
-	BR_(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA512
+static const unsigned char *(BEAR_SINGLE_UNITY_FILE)HASH_OID[] = {
+	BR_(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA1,
+	BR_(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA224,
+	BR_(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA256,
+	BR_(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA384,
+	BR_(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA512
 };
 
 /*
@@ -231,7 +231,7 @@ verify_SKE_sig(br_ssl_client_context *ctx,
 		const unsigned char *hash_oid;
 
 		if (hash) {
-			hash_oid = HASH_OID[hash - 2];
+			hash_oid = (BEAR_SINGLE_UNITY_FILE)HASH_OID[hash - 2];
 		} else {
 			hash_oid = NULL;
 		}
