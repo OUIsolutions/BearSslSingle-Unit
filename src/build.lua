@@ -14,6 +14,15 @@ function build()
             
         end
     end
+    local itens = darwin.dtw.list_files_recursively(OUTPUT_DIR,true)
+    for i, item in ipairs(itens) do
+        local sha = darwin.generate_sha_from_file(item)
+        --(BEAR_SINGLE_UNITY_FILE)
+        local content = darwin.dtw.load_file(item)
+        local new_content = replace_string(content,"(BEAR_SINGLE_UNITY_FILE)","sha"..sha)
+        darwin.dtw.write_file(item,new_content)
+    end
+
     local inner_name = darwin.dtw.concat_path(OUTPUT_DIR,"src/inner.h")
     local new_inner_name = darwin.dtw.concat_path(OUTPUT_DIR,"src/fdeclare.inner.h")
     darwin.dtw.move_any_overwriting(inner_name,new_inner_name)
