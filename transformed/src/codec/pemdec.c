@@ -196,7 +196,7 @@ static const uint16_t t0_caddr[] = {
 
 #define PENDEC_T0_INTERPRETED   29
 
-#define T0_ENTER(ip, rp, slot)   do { \
+#define PENDEC_T0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
 		t0_newip = &t0_codeblock[t0_caddr[(slot) - PENDEC_T0_INTERPRETED]]; \
@@ -212,7 +212,7 @@ name(void *ctx) \
 { \
 	t0_context *t0ctx = ctx; \
 	t0ctx->ip = &t0_codeblock[0]; \
-	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+	PENDEC_T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
 
 T0_DEFENTRY(br_pem_decoder_init_main, 38)
@@ -516,7 +516,7 @@ br_pem_decoder_run(void *t0ctx)
 			}
 
 		} else {
-			T0_ENTER(ip, rp, t0x);
+			PENDEC_T0_ENTER(ip, rp, t0x);
 		}
 	}
 t0_exit:
