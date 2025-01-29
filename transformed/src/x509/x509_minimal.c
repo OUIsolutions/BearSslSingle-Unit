@@ -10,7 +10,7 @@ typedef struct {
 } t0_context;
 
 static uint32_t
-t0_parse7E_unsigned(const unsigned char **p)
+(BEAR_SINGLE_UNITY_FILE)t0_parse7E_unsigned(const unsigned char **p)
 {
 	uint32_t x;
 
@@ -854,7 +854,7 @@ static const uint16_t (BEAR_SINGLE_UNITY_FILE)t0_caddr[] = {
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
 		t0_newip = &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[(BEAR_SINGLE_UNITY_FILE)t0_caddr[(slot) - (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED]]; \
-		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
+		t0_lnum = (BEAR_SINGLE_UNITY_FILE)t0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
 		*((rp) ++) = (uint32_t)((ip) - &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[0]) + (t0_lnum << 16); \
 		(ip) = t0_newip; \
@@ -949,10 +949,10 @@ br_x509_minimal_run(void *t0ctx)
 				T0_PUSHi((BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(&ip));
 				break;
 			case 2: /* read local */
-				T0_PUSH(T0_LOCAL(t0_parse7E_unsigned(&ip)));
+				T0_PUSH(T0_LOCAL((BEAR_SINGLE_UNITY_FILE)t0_parse7E_unsigned(&ip)));
 				break;
 			case 3: /* write local */
-				T0_LOCAL(t0_parse7E_unsigned(&ip)) = T0_POP();
+				T0_LOCAL((BEAR_SINGLE_UNITY_FILE)t0_parse7E_unsigned(&ip)) = T0_POP();
 				break;
 			case 4: /* jump */
 				t0off = (BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(&ip);
