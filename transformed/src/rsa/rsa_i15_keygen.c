@@ -102,7 +102,7 @@ static const unsigned char SMALL_PRIMES[] = {
  * This function assumes that x is odd.
  */
 static uint32_t
-trial_divisions(const uint16_t *x, uint16_t *t)
+(BEAR_SINGLE_UNITY_FILE)trial_divisions(const uint16_t *x, uint16_t *t)
 {
 	uint16_t *y;
 	uint16_t x0i;
@@ -122,7 +122,7 @@ trial_divisions(const uint16_t *x, uint16_t *t)
  * 0 otherwise.
  */
 static uint32_t
-miller_rabin(const br_prng_class **rng, const uint16_t *x, int n,
+(BEAR_SINGLE_UNITY_FILE)miller_rabin(const br_prng_class **rng, const uint16_t *x, int n,
 	uint16_t *t, size_t tlen)
 {
 	/*
@@ -218,7 +218,7 @@ miller_rabin(const br_prng_class **rng, const uint16_t *x, int n,
  * bit length. The two top bits and the two bottom bits are set to 1.
  */
 static void
-mkprime(const br_prng_class **rng, uint16_t *x, uint32_t esize,
+(BEAR_SINGLE_UNITY_FILE)mkprime(const br_prng_class **rng, uint16_t *x, uint32_t esize,
 	uint32_t pubexp, uint16_t *t, size_t tlen)
 {
 	size_t len;
@@ -328,7 +328,7 @@ mkprime(const br_prng_class **rng, uint16_t *x, uint32_t esize,
 		/*
 		 * More trial divisions.
 		 */
-		if (!trial_divisions(x, t)) {
+		if (!(BEAR_SINGLE_UNITY_FILE)trial_divisions(x, t)) {
 			continue;
 		}
 
@@ -360,7 +360,7 @@ mkprime(const br_prng_class **rng, uint16_t *x, uint32_t esize,
 			rounds = 2;
 		}
 
-		if (miller_rabin(rng, x, rounds, t, tlen)) {
+		if ((BEAR_SINGLE_UNITY_FILE)miller_rabin(rng, x, rounds, t, tlen)) {
 			return;
 		}
 	}
@@ -502,7 +502,7 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 	 */
 
 	for (;;) {
-		mkprime(rng, p, esize_p, pubexp, t, tlen);
+		(BEAR_SINGLE_UNITY_FILE)mkprime(rng, p, esize_p, pubexp, t, tlen);
 		br_i15_rshift(p, 1);
 		if ((BEAR_SINGLE_UNITY_FILE)invert_pubexp(t, p, pubexp, t + 1 + plen)) {
 			br_i15_add(p, p, 1);
@@ -514,7 +514,7 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 	}
 
 	for (;;) {
-		mkprime(rng, q, esize_q, pubexp, t, tlen);
+		(BEAR_SINGLE_UNITY_FILE)mkprime(rng, q, esize_q, pubexp, t, tlen);
 		br_i15_rshift(q, 1);
 		if ((BEAR_SINGLE_UNITY_FILE)invert_pubexp(t, q, pubexp, t + 1 + qlen)) {
 			br_i15_add(q, q, 1);

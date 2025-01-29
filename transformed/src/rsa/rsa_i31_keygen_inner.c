@@ -104,7 +104,7 @@ static const unsigned char SMALL_PRIMES[] = {
  * This function assumes that x is odd.
  */
 static uint32_t
-trial_divisions(const uint32_t *x, uint32_t *t)
+(BEAR_SINGLE_UNITY_FILE)trial_divisions(const uint32_t *x, uint32_t *t)
 {
 	uint32_t *y;
 	uint32_t x0i;
@@ -124,7 +124,7 @@ trial_divisions(const uint32_t *x, uint32_t *t)
  * 0 otherwise.
  */
 static uint32_t
-miller_rabin(const br_prng_class **rng, const uint32_t *x, int n,
+(BEAR_SINGLE_UNITY_FILE)miller_rabin(const br_prng_class **rng, const uint32_t *x, int n,
 	uint32_t *t, size_t tlen, br_i31_modpow_opt_type mp31)
 {
 	/*
@@ -232,7 +232,7 @@ miller_rabin(const br_prng_class **rng, const uint32_t *x, int n,
  * bit length. The two top bits and the two bottom bits are set to 1.
  */
 static void
-mkprime(const br_prng_class **rng, uint32_t *x, uint32_t esize,
+(BEAR_SINGLE_UNITY_FILE)mkprime(const br_prng_class **rng, uint32_t *x, uint32_t esize,
 	uint32_t pubexp, uint32_t *t, size_t tlen, br_i31_modpow_opt_type mp31)
 {
 	size_t len;
@@ -350,7 +350,7 @@ mkprime(const br_prng_class **rng, uint32_t *x, uint32_t esize,
 		/*
 		 * More trial divisions.
 		 */
-		if (!trial_divisions(x, t)) {
+		if (!(BEAR_SINGLE_UNITY_FILE)trial_divisions(x, t)) {
 			continue;
 		}
 
@@ -382,7 +382,7 @@ mkprime(const br_prng_class **rng, uint32_t *x, uint32_t esize,
 			rounds = 2;
 		}
 
-		if (miller_rabin(rng, x, rounds, t, tlen, mp31)) {
+		if ((BEAR_SINGLE_UNITY_FILE)miller_rabin(rng, x, rounds, t, tlen, mp31)) {
 			return;
 		}
 	}
@@ -527,7 +527,7 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	 */
 
 	for (;;) {
-		mkprime(rng, p, esize_p, pubexp, t, tlen, mp31);
+		(BEAR_SINGLE_UNITY_FILE)mkprime(rng, p, esize_p, pubexp, t, tlen, mp31);
 		br_i31_rshift(p, 1);
 		if ((BEAR_SINGLE_UNITY_FILE)invert_pubexp(t, p, pubexp, t + 1 + plen)) {
 			br_i31_add(p, p, 1);
@@ -539,7 +539,7 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	}
 
 	for (;;) {
-		mkprime(rng, q, esize_q, pubexp, t, tlen, mp31);
+		(BEAR_SINGLE_UNITY_FILE)mkprime(rng, q, esize_q, pubexp, t, tlen, mp31);
 		br_i31_rshift(q, 1);
 		if ((BEAR_SINGLE_UNITY_FILE)invert_pubexp(t, q, pubexp, t + 1 + qlen)) {
 			br_i31_add(q, q, 1);
