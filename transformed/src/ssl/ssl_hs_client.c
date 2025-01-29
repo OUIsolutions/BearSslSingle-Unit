@@ -878,7 +878,7 @@ static const uint16_t t0_caddr[] = {
 
 #define (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED   88
 
-#define T0_ENTER(ip, rp, slot)   do { \
+#define (BEAR_SINGLE_UNITY_FILE)T0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
 		t0_newip = &t0_codeblock[t0_caddr[(slot) - (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED]]; \
@@ -894,7 +894,7 @@ name(void *ctx) \
 { \
 	t0_context *t0ctx = ctx; \
 	t0ctx->ip = &t0_codeblock[0]; \
-	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+	(BEAR_SINGLE_UNITY_FILE)T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
 
 T0_DEFENTRY(br_ssl_hs_client_init_main, 169)
@@ -1905,7 +1905,7 @@ br_ssl_hs_client_run(void *t0ctx)
 			}
 
 		} else {
-			T0_ENTER(ip, rp, t0x);
+			(BEAR_SINGLE_UNITY_FILE)T0_ENTER(ip, rp, t0x);
 		}
 	}
 t0_exit:
