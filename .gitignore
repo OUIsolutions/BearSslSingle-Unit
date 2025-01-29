@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 try
+BearSSlOutput
 origin
 debug_patches
 teste2.c
