@@ -202,7 +202,7 @@ static const uint32_t S8[] = {
 };
 
 static inline uint32_t
-Fconf(uint32_t r0, uint32_t skl, uint32_t skr)
+(BEAR_SINGLE_UNITY_FILE)Fconf(uint32_t r0, uint32_t skl, uint32_t skr)
 {
 	uint32_t r1;
 
@@ -229,7 +229,7 @@ static void
 	for (i = 0; i < 16; i ++) {
 		uint32_t t;
 
-		t = l ^ Fconf(r, skey[(i << 1) + 0], skey[(i << 1) + 1]);
+		t = l ^ (BEAR_SINGLE_UNITY_FILE)Fconf(r, skey[(i << 1) + 0], skey[(i << 1) + 1]);
 		l = r;
 		r = t;
 	}
