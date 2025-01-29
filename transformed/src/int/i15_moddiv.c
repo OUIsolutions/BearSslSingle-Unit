@@ -68,7 +68,7 @@ i15_moddiv_cond_negate(uint16_t *a, size_t len, uint32_t ctl)
  * Also, modulus m must be odd.
  */
 static void
-finish_mod(uint16_t *a, size_t len, const uint16_t *m, uint32_t neg)
+i15_moddiv_finish_mod(uint16_t *a, size_t len, const uint16_t *m, uint32_t neg)
 {
 	size_t k;
 	uint32_t cc, xm, ym;
@@ -235,8 +235,8 @@ co_reduce_mod(uint16_t *a, uint16_t *b, size_t len,
 	 * The top word of 'a' and 'b' may have a 16-th bit set.
 	 * We may have to add or subtract the modulus.
 	 */
-	finish_mod(a, len, m, (uint32_t)cca >> 31);
-	finish_mod(b, len, m, (uint32_t)ccb >> 31);
+	i15_moddiv_finish_mod(a, len, m, (uint32_t)cca >> 31);
+	i15_moddiv_finish_mod(b, len, m, (uint32_t)ccb >> 31);
 }
 
 /* see inner.h */

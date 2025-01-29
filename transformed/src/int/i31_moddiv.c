@@ -68,7 +68,7 @@ i3_moddiv_cond_negate(uint32_t *a, size_t len, uint32_t ctl)
  * Also, modulus m must be odd.
  */
 static void
-finish_mod(uint32_t *a, size_t len, const uint32_t *m, uint32_t neg)
+i31_moddiv_finish_mod(uint32_t *a, size_t len, const uint32_t *m, uint32_t neg)
 {
 	size_t k;
 	uint32_t cc, xm, ym;
@@ -248,8 +248,8 @@ co_reduce_mod(uint32_t *a, uint32_t *b, size_t len,
 	 * The top word of 'a' and 'b' may have a 32-th bit set.
 	 * We may have to add or subtract the modulus.
 	 */
-	finish_mod(a, len, m, (uint32_t)((uint64_t)cca >> 63));
-	finish_mod(b, len, m, (uint32_t)((uint64_t)ccb >> 63));
+	i31_moddiv_finish_mod(a, len, m, (uint32_t)((uint64_t)cca >> 63));
+	i31_moddiv_finish_mod(b, len, m, (uint32_t)((uint64_t)ccb >> 63));
 }
 
 /* see inner.h */
