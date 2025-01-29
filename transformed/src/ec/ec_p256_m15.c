@@ -96,7 +96,7 @@ le13_to_be8(unsigned char *dst, size_t len, const uint32_t *src)
  * arrays may be identical, but shall not overlap partially.
  */
 static inline uint32_t
-norm13(uint32_t *d, const uint32_t *w, size_t len)
+BEAR_SINGLE_UNITY_FILEnorm13(uint32_t *d, const uint32_t *w, size_t len)
 {
 	size_t u;
 	uint32_t cc;
@@ -113,7 +113,7 @@ norm13(uint32_t *d, const uint32_t *w, size_t len)
 }
 
 /*
- * mul20() multiplies two 260-bit integers together. Each word must fit
+ * BEAR_SINGLE_UNITY_FILEmul20() multiplies two 260-bit integers together. Each word must fit
  * on 13 bits; source operands use 20 words, destination operand
  * receives 40 words. All overlaps allowed.
  *
@@ -125,7 +125,7 @@ norm13(uint32_t *d, const uint32_t *w, size_t len)
 #if BR_SLOW_MUL15
 
 static void
-mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+BEAR_SINGLE_UNITY_FILEmul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	/*
 	 * Two-level Karatsuba: turns a 20x20 multiplication into
@@ -340,7 +340,7 @@ mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 	/*
 	 * Perform carry propagation to bring all words down to 13 bits.
 	 */
-	cc = norm13(d, w, 40);
+	cc = BEAR_SINGLE_UNITY_FILEnorm13(d, w, 40);
 	d[39] += (cc << 13);
 
 #undef ZADD
@@ -353,13 +353,13 @@ mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 static inline void
 BEAR_SINGLE_UNITY_FILEsquare20(uint32_t *d, const uint32_t *a)
 {
-	mul20(d, a, a);
+	BEAR_SINGLE_UNITY_FILEmul20(d, a, a);
 }
 
 #else
 
 static void
-mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+BEAR_SINGLE_UNITY_FILEmul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	uint32_t t[39];
 
@@ -763,7 +763,7 @@ mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 	t[37] = MUL15(a[18], b[19])
 		+ MUL15(a[19], b[18]);
 	t[38] = MUL15(a[19], b[19]);
-	d[39] = norm13(d, t, 39);
+	d[39] = BEAR_SINGLE_UNITY_FILEnorm13(d, t, 39);
 }
 
 static void
@@ -981,7 +981,7 @@ BEAR_SINGLE_UNITY_FILEsquare20(uint32_t *d, const uint32_t *a)
 		+ ((MUL15(a[17], a[19])) << 1);
 	t[37] = ((MUL15(a[18], a[19])) << 1);
 	t[38] = MUL15(a[19], a[19]);
-	d[39] = norm13(d, t, 39);
+	d[39] = BEAR_SINGLE_UNITY_FILEnorm13(d, t, 39);
 }
 
 #endif
@@ -1020,7 +1020,7 @@ reduce_f256(uint32_t *d)
 	d[14] -= x << 10;
 	d[7] -= x << 5;
 	d[0] += x;
-	norm13(d, d, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(d, d, 20);
 }
 
 /*
@@ -1068,7 +1068,7 @@ BEAR_SINGLE_UNITY_FILEmul_f256(uint32_t *d, const uint32_t *a, const uint32_t *b
 	 * Compute raw multiplication. All result words fit in 13 bits
 	 * each.
 	 */
-	mul20(t, a, b);
+	BEAR_SINGLE_UNITY_FILEmul20(t, a, b);
 
 	/*
 	 * Modular reduction: each high word in added/subtracted where
@@ -1108,7 +1108,7 @@ BEAR_SINGLE_UNITY_FILEmul_f256(uint32_t *d, const uint32_t *a, const uint32_t *b
 	 * starting values are 13-bit each, all words fit on 20 bits
 	 * (21 to account for the sign bit).
 	 */
-	cc = norm13(t, t, 20);
+	cc = BEAR_SINGLE_UNITY_FILEnorm13(t, t, 20);
 
 	/*
 	 * Perform modular reduction again for the bits beyond 256 (the carry
@@ -1138,7 +1138,7 @@ BEAR_SINGLE_UNITY_FILEmul_f256(uint32_t *d, const uint32_t *a, const uint32_t *b
 	t[17] -= cc << 3;
 	t[19] += cc << 9;
 
-	norm13(d, t, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(d, t, 20);
 }
 
 /*
@@ -1197,7 +1197,7 @@ BEAR_SINGLE_UNITY_FILEsquare_f256(uint32_t *d, const uint32_t *a)
 	 * starting values are 13-bit each, all words fit on 20 bits
 	 * (21 to account for the sign bit).
 	 */
-	cc = norm13(t, t, 20);
+	cc = BEAR_SINGLE_UNITY_FILEnorm13(t, t, 20);
 
 	/*
 	 * Perform modular reduction again for the bits beyond 256 (the carry
@@ -1227,7 +1227,7 @@ BEAR_SINGLE_UNITY_FILEsquare_f256(uint32_t *d, const uint32_t *a)
 	t[17] -= cc << 3;
 	t[19] += cc << 9;
 
-	norm13(d, t, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(d, t, 20);
 }
 
 /*
@@ -1369,8 +1369,8 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 		t2[i] = (BEAR_SINGLE_UNITY_FILEF256[i] << 1) + Q->x[i] - t1[i];
 		t1[i] += Q->x[i];
 	}
-	norm13(t1, t1, 20);
-	norm13(t2, t2, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t1, t1, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t2, t2, 20);
 
 	/*
 	 * Compute 3*(x+z^2)*(x-z^2) in t1.
@@ -1379,7 +1379,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	for (i = 0; i < 20; i ++) {
 		t1[i] = MUL15(3, t3[i]);
 	}
-	norm13(t1, t1, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t1, t1, 20);
 
 	/*
 	 * Compute 4*x*y^2 (in t2) and 2*y^2 (in t3).
@@ -1388,12 +1388,12 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	for (i = 0; i < 20; i ++) {
 		t3[i] <<= 1;
 	}
-	norm13(t3, t3, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t3, t3, 20);
 	BEAR_SINGLE_UNITY_FILEmul_f256(t2, Q->x, t3);
 	for (i = 0; i < 20; i ++) {
 		t2[i] <<= 1;
 	}
-	norm13(t2, t2, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t2, t2, 20);
 	reduce_f256(t2);
 
 	/*
@@ -1403,7 +1403,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	for (i = 0; i < 20; i ++) {
 		Q->x[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 2) - (t2[i] << 1);
 	}
-	norm13(Q->x, Q->x, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(Q->x, Q->x, 20);
 	reduce_f256(Q->x);
 
 	/*
@@ -1413,7 +1413,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	for (i = 0; i < 20; i ++) {
 		Q->z[i] = t4[i] << 1;
 	}
-	norm13(Q->z, Q->z, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(Q->z, Q->z, 20);
 	reduce_f256(Q->z);
 
 	/*
@@ -1423,13 +1423,13 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	for (i = 0; i < 20; i ++) {
 		t2[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - Q->x[i];
 	}
-	norm13(t2, t2, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t2, t2, 20);
 	BEAR_SINGLE_UNITY_FILEmul_f256(Q->y, t1, t2);
 	BEAR_SINGLE_UNITY_FILEsquare_f256(t4, t3);
 	for (i = 0; i < 20; i ++) {
 		Q->y[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 2) - (t4[i] << 1);
 	}
-	norm13(Q->y, Q->y, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(Q->y, Q->y, 20);
 	reduce_f256(Q->y);
 }
 
@@ -1509,8 +1509,8 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 		t2[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
 		t4[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t3[i];
 	}
-	norm13(t2, t2, 20);
-	norm13(t4, t4, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t2, t2, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t4, t4, 20);
 	reduce_f256(t4);
 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(t4);
 	ret = 0;
@@ -1533,7 +1533,7 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 	for (i = 0; i < 20; i ++) {
 		P1->x[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 3) - t5[i] - (t6[i] << 1);
 	}
-	norm13(P1->x, P1->x, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(P1->x, P1->x, 20);
 	reduce_f256(P1->x);
 
 	/*
@@ -1542,13 +1542,13 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 	for (i = 0; i < 20; i ++) {
 		t6[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - P1->x[i];
 	}
-	norm13(t6, t6, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t6, t6, 20);
 	BEAR_SINGLE_UNITY_FILEmul_f256(P1->y, t4, t6);
 	BEAR_SINGLE_UNITY_FILEmul_f256(t1, t5, t3);
 	for (i = 0; i < 20; i ++) {
 		P1->y[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
 	}
-	norm13(P1->y, P1->y, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(P1->y, P1->y, 20);
 	reduce_f256(P1->y);
 
 	/*
@@ -1632,8 +1632,8 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
 		t2[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
 		t4[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t3[i];
 	}
-	norm13(t2, t2, 20);
-	norm13(t4, t4, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t2, t2, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t4, t4, 20);
 	reduce_f256(t4);
 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(t4);
 	ret = 0;
@@ -1656,7 +1656,7 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
 	for (i = 0; i < 20; i ++) {
 		P1->x[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 3) - t5[i] - (t6[i] << 1);
 	}
-	norm13(P1->x, P1->x, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(P1->x, P1->x, 20);
 	reduce_f256(P1->x);
 
 	/*
@@ -1665,13 +1665,13 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
 	for (i = 0; i < 20; i ++) {
 		t6[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - P1->x[i];
 	}
-	norm13(t6, t6, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t6, t6, 20);
 	BEAR_SINGLE_UNITY_FILEmul_f256(P1->y, t4, t6);
 	BEAR_SINGLE_UNITY_FILEmul_f256(t1, t5, t3);
 	for (i = 0; i < 20; i ++) {
 		P1->y[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
 	}
-	norm13(P1->y, P1->y, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(P1->y, P1->y, 20);
 	reduce_f256(P1->y);
 
 	/*
@@ -1725,7 +1725,7 @@ BEAR_SINGLE_UNITY_FILEp256_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const 
 	for (i = 0; i < 20; i ++) {
 		t1[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 3) - MUL15(3, tx[i]) + BEAR_SINGLE_UNITY_FILEP256_B[i] - t2[i];
 	}
-	norm13(t1, t1, 20);
+	BEAR_SINGLE_UNITY_FILEnorm13(t1, t1, 20);
 	reduce_f256(t1);
 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(t1);
 	for (i = 0; i < 20; i ++) {

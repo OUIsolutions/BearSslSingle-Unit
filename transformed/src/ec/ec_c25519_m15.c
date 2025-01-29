@@ -141,7 +141,7 @@ le13_to_le8(unsigned char *dst, size_t len, const uint32_t *src)
  * arrays may be identical, but shall not overlap partially.
  */
 static inline uint32_t
-norm13(uint32_t *d, const uint32_t *w, size_t len)
+BEAR_SINGLE_UNITY_FILEnorm13(uint32_t *d, const uint32_t *w, size_t len)
 {
 	size_t u;
 	uint32_t cc;
@@ -158,7 +158,7 @@ norm13(uint32_t *d, const uint32_t *w, size_t len)
 }
 
 /*
- * mul20() multiplies two 260-bit integers together. Each word must fit
+ * BEAR_SINGLE_UNITY_FILEmul20() multiplies two 260-bit integers together. Each word must fit
  * on 13 bits; source operands use 20 words, destination operand
  * receives 40 words. All overlaps allowed.
  *
@@ -170,7 +170,7 @@ norm13(uint32_t *d, const uint32_t *w, size_t len)
 #if BR_SLOW_MUL15
 
 static void
-mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+BEAR_SINGLE_UNITY_FILEmul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	/*
 	 * Two-level Karatsuba: turns a 20x20 multiplication into
@@ -385,7 +385,7 @@ mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 	/*
 	 * Perform carry propagation to bring all words down to 13 bits.
 	 */
-	cc = norm13(d, w, 40);
+	cc = BEAR_SINGLE_UNITY_FILEnorm13(d, w, 40);
 	d[39] += (cc << 13);
 
 #undef ZADD
@@ -398,13 +398,13 @@ mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 static inline void
 BEAR_SINGLE_UNITY_FILEsquare20(uint32_t *d, const uint32_t *a)
 {
-	mul20(d, a, a);
+	BEAR_SINGLE_UNITY_FILEmul20(d, a, a);
 }
 
 #else
 
 static void
-mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+BEAR_SINGLE_UNITY_FILEmul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	uint32_t t[39];
 
@@ -809,7 +809,7 @@ mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 		+ MUL15(a[19], b[18]);
 	t[38] = MUL15(a[19], b[19]);
 
-	d[39] = norm13(d, t, 39);
+	d[39] = BEAR_SINGLE_UNITY_FILEnorm13(d, t, 39);
 }
 
 static void
@@ -1028,7 +1028,7 @@ BEAR_SINGLE_UNITY_FILEsquare20(uint32_t *d, const uint32_t *a)
 	t[37] = ((MUL15(a[18], a[19])) << 1);
 	t[38] = MUL15(a[19], a[19]);
 
-	d[39] = norm13(d, t, 39);
+	d[39] = BEAR_SINGLE_UNITY_FILEnorm13(d, t, 39);
 }
 
 #endif
@@ -1075,7 +1075,7 @@ f255_mulgen(uint32_t *d, const uint32_t *a, const uint32_t *b, int square)
 	if (square) {
 		BEAR_SINGLE_UNITY_FILEsquare20(t, a);
 	} else {
-		mul20(t, a, b);
+		BEAR_SINGLE_UNITY_FILEmul20(t, a, b);
 	}
 
 	/*
