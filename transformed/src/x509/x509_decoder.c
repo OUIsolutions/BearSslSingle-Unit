@@ -75,7 +75,7 @@ void br_x509_decoder_run(void *t0ctx);
 
 
 
-#define CTX   ((br_x509_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_decoder_context, cpu)))
+#define (BEAR_SINGLE_UNITY_FILE)CTX   ((br_x509_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_decoder_context, cpu)))
 #define (BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME   br_x509_decoder_context
 
 /* see bearssl_x509.h */
@@ -612,10 +612,10 @@ br_x509_decoder_run(void *t0ctx)
 
 	size_t qlen = T0_POP();
 	uint32_t curve = T0_POP();
-	CTX->pkey.key_type = BR_KEYTYPE_EC;
-	CTX->pkey.key.ec.curve = curve;
-	CTX->pkey.key.ec.q = CTX->pkey_data;
-	CTX->pkey.key.ec.qlen = qlen;
+	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key_type = BR_KEYTYPE_EC;
+	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.ec.curve = curve;
+	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.ec.q = (BEAR_SINGLE_UNITY_FILE)CTX->pkey_data;
+	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.ec.qlen = qlen;
 
 				}
 				break;
@@ -624,11 +624,11 @@ br_x509_decoder_run(void *t0ctx)
 
 	size_t elen = T0_POP();
 	size_t nlen = T0_POP();
-	CTX->pkey.key_type = BR_KEYTYPE_RSA;
-	CTX->pkey.key.rsa.n = CTX->pkey_data;
-	CTX->pkey.key.rsa.nlen = nlen;
-	CTX->pkey.key.rsa.e = CTX->pkey_data + nlen;
-	CTX->pkey.key.rsa.elen = elen;
+	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key_type = BR_KEYTYPE_RSA;
+	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.n = (BEAR_SINGLE_UNITY_FILE)CTX->pkey_data;
+	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.nlen = nlen;
+	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.e = (BEAR_SINGLE_UNITY_FILE)CTX->pkey_data + nlen;
+	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.elen = elen;
 
 				}
 				break;
@@ -654,7 +654,7 @@ br_x509_decoder_run(void *t0ctx)
 				/* eqOID */
 
 	const unsigned char *a2 = &(BEAR_SINGLE_UNITY_FILE)t0_datablock[T0_POP()];
-	const unsigned char *a1 = &CTX->pad[0];
+	const unsigned char *a1 = &(BEAR_SINGLE_UNITY_FILE)CTX->pad[0];
 	size_t len = a1[0];
 	int x;
 	if (len == a2[0]) {
@@ -669,7 +669,7 @@ br_x509_decoder_run(void *t0ctx)
 			case 29: {
 				/* fail */
 
-	CTX->err = T0_POPi();
+	(BEAR_SINGLE_UNITY_FILE)CTX->err = T0_POPi();
 	T0_CO();
 
 				}
@@ -701,18 +701,18 @@ br_x509_decoder_run(void *t0ctx)
 
 	uint32_t len = T0_POP();
 	uint32_t addr = T0_POP();
-	size_t clen = CTX->hlen;
+	size_t clen = (BEAR_SINGLE_UNITY_FILE)CTX->hlen;
 	if (clen > len) {
 		clen = (size_t)len;
 	}
 	if (addr != 0) {
-		memcpy((unsigned char *)CTX + addr, CTX->hbuf, clen);
+		memcpy((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr, (BEAR_SINGLE_UNITY_FILE)CTX->hbuf, clen);
 	}
-	if (CTX->copy_dn && CTX->append_dn) {
-		CTX->append_dn(CTX->append_dn_ctx, CTX->hbuf, clen);
+	if ((BEAR_SINGLE_UNITY_FILE)CTX->copy_dn && (BEAR_SINGLE_UNITY_FILE)CTX->append_dn) {
+		(BEAR_SINGLE_UNITY_FILE)CTX->append_dn((BEAR_SINGLE_UNITY_FILE)CTX->append_dn_ctx, (BEAR_SINGLE_UNITY_FILE)CTX->hbuf, clen);
 	}
-	CTX->hbuf += clen;
-	CTX->hlen -= clen;
+	(BEAR_SINGLE_UNITY_FILE)CTX->hbuf += clen;
+	(BEAR_SINGLE_UNITY_FILE)CTX->hlen -= clen;
 	T0_PUSH(addr + clen);
 	T0_PUSH(len - clen);
 
@@ -721,14 +721,14 @@ br_x509_decoder_run(void *t0ctx)
 			case 34: {
 				/* read8-low */
 
-	if (CTX->hlen == 0) {
+	if ((BEAR_SINGLE_UNITY_FILE)CTX->hlen == 0) {
 		T0_PUSHi(-1);
 	} else {
-		unsigned char x = *CTX->hbuf ++;
-		if (CTX->copy_dn && CTX->append_dn) {
-			CTX->append_dn(CTX->append_dn_ctx, &x, 1);
+		unsigned char x = *(BEAR_SINGLE_UNITY_FILE)CTX->hbuf ++;
+		if ((BEAR_SINGLE_UNITY_FILE)CTX->copy_dn && (BEAR_SINGLE_UNITY_FILE)CTX->append_dn) {
+			(BEAR_SINGLE_UNITY_FILE)CTX->append_dn((BEAR_SINGLE_UNITY_FILE)CTX->append_dn_ctx, &x, 1);
 		}
-		CTX->hlen --;
+		(BEAR_SINGLE_UNITY_FILE)CTX->hlen --;
 		T0_PUSH(x);
 	}
 
@@ -743,7 +743,7 @@ br_x509_decoder_run(void *t0ctx)
 				/* set32 */
 
 	uint32_t addr = T0_POP();
-	*(uint32_t *)(void *)((unsigned char *)CTX + addr) = T0_POP();
+	*(uint32_t *)(void *)((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr) = T0_POP();
 
 				}
 				break;
@@ -751,7 +751,7 @@ br_x509_decoder_run(void *t0ctx)
 				/* set8 */
 
 	uint32_t addr = T0_POP();
-	*((unsigned char *)CTX + addr) = (unsigned char)T0_POP();
+	*((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr) = (unsigned char)T0_POP();
 
 				}
 				break;

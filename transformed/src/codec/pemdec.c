@@ -69,7 +69,7 @@ void br_pem_decoder_run(void *t0ctx);
 
 
 
-#define CTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
+#define (BEAR_SINGLE_UNITY_FILE)CTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
 
 /* see bearssl_pem.h */
 void
@@ -432,11 +432,11 @@ br_pem_decoder_run(void *t0ctx)
 			case 21: {
 				/* flush-buf */
 
-	if (CTX->ptr > 0) {
-		if (CTX->dest) {
-			CTX->dest(CTX->dest_ctx, CTX->buf, CTX->ptr);
+	if ((BEAR_SINGLE_UNITY_FILE)CTX->ptr > 0) {
+		if ((BEAR_SINGLE_UNITY_FILE)CTX->dest) {
+			(BEAR_SINGLE_UNITY_FILE)CTX->dest((BEAR_SINGLE_UNITY_FILE)CTX->dest_ctx, (BEAR_SINGLE_UNITY_FILE)CTX->buf, (BEAR_SINGLE_UNITY_FILE)CTX->ptr);
 		}
-		CTX->ptr = 0;
+		(BEAR_SINGLE_UNITY_FILE)CTX->ptr = 0;
 	}
 
 				}
@@ -464,7 +464,7 @@ br_pem_decoder_run(void *t0ctx)
 				/* get8 */
 
 	size_t addr = T0_POP();
-	T0_PUSH(*((unsigned char *)CTX + addr));
+	T0_PUSH(*((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr));
 
 				}
 				break;
@@ -476,9 +476,9 @@ br_pem_decoder_run(void *t0ctx)
 			case 25: {
 				/* read8-native */
 
-	if (CTX->hlen > 0) {
-		T0_PUSH(*CTX->hbuf ++);
-		CTX->hlen --;
+	if ((BEAR_SINGLE_UNITY_FILE)CTX->hlen > 0) {
+		T0_PUSH(*(BEAR_SINGLE_UNITY_FILE)CTX->hbuf ++);
+		(BEAR_SINGLE_UNITY_FILE)CTX->hlen --;
 	} else {
 		T0_PUSHi(-1);
 	}
@@ -490,7 +490,7 @@ br_pem_decoder_run(void *t0ctx)
 
 	size_t addr = T0_POP();
 	unsigned x = T0_POP();
-	*((unsigned char *)CTX + addr) = x;
+	*((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr) = x;
 
 				}
 				break;
@@ -503,12 +503,12 @@ br_pem_decoder_run(void *t0ctx)
 				/* write8 */
 
 	unsigned char x = (unsigned char)T0_POP();
-	CTX->buf[CTX->ptr ++] = x;
-	if (CTX->ptr == sizeof CTX->buf) {
-		if (CTX->dest) {
-			CTX->dest(CTX->dest_ctx, CTX->buf, sizeof CTX->buf);
+	(BEAR_SINGLE_UNITY_FILE)CTX->buf[(BEAR_SINGLE_UNITY_FILE)CTX->ptr ++] = x;
+	if ((BEAR_SINGLE_UNITY_FILE)CTX->ptr == sizeof (BEAR_SINGLE_UNITY_FILE)CTX->buf) {
+		if ((BEAR_SINGLE_UNITY_FILE)CTX->dest) {
+			(BEAR_SINGLE_UNITY_FILE)CTX->dest((BEAR_SINGLE_UNITY_FILE)CTX->dest_ctx, (BEAR_SINGLE_UNITY_FILE)CTX->buf, sizeof (BEAR_SINGLE_UNITY_FILE)CTX->buf);
 		}
-		CTX->ptr = 0;
+		(BEAR_SINGLE_UNITY_FILE)CTX->ptr = 0;
 	}
 
 				}
