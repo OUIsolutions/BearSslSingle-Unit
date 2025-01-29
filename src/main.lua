@@ -7,7 +7,7 @@ function main()
    for i, v in ipairs(transformmed) do
        local file = transformmed[i]
        local content= darwin.dtw.load_file(file)
-       local replaced = string.gsub(content, 't0_context', "(BEAR_SINGLE_UNITY_FILE)t0_context")
+       local replaced = string.gsub(content, 'poly1305_inner', "(BEAR_SINGLE_UNITY_FILE)poly1305_inner")
        darwin.dtw.write_file(file, replaced)
    end
 

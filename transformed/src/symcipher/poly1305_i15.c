@@ -58,7 +58,7 @@ static const uint16_t R2[] = {
  * is in Montgomery representation, while the "a" array is not.
  */
 static void
-poly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t len)
+(BEAR_SINGLE_UNITY_FILE)poly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t len)
 {
 	const unsigned char *buf;
 
@@ -189,9 +189,9 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	 */
 	br_enc64le(foot, (uint64_t)aad_len);
 	br_enc64le(foot + 8, (uint64_t)len);
-	poly1305_inner(acc, r, aad, aad_len);
-	poly1305_inner(acc, r, data, len);
-	poly1305_inner(acc, r, foot, sizeof foot);
+	(BEAR_SINGLE_UNITY_FILE)poly1305_inner(acc, r, aad, aad_len);
+	(BEAR_SINGLE_UNITY_FILE)poly1305_inner(acc, r, data, len);
+	(BEAR_SINGLE_UNITY_FILE)poly1305_inner(acc, r, foot, sizeof foot);
 
 	/*
 	 * Decode the value 's'. Again, a byteswap is needed.
