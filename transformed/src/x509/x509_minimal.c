@@ -342,7 +342,7 @@ const br_x509_class br_x509_minimal_vtable = {
 	xm_get_pkey
 };
 
-#define CTX   ((br_x509_minimal_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_minimal_context, cpu)))
+#define X509_MINIMAL_CTX   ((br_x509_minimal_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_minimal_context, cpu)))
 #define X509_MINIMAL_CONTEXT_NAME   br_x509_minimal_context
 
 #define DNHASH_LEN   ((CTX->dn_hash_impl->desc >> BR_HASHDESC_OUT_OFF) & BR_HASHDESC_OUT_MASK)
@@ -1105,8 +1105,8 @@ br_x509_minimal_run(void *t0ctx)
 				/* blobcopy */
 
 	size_t len = T0_POP();
-	unsigned char *src = (unsigned char *)CTX + T0_POP();
-	unsigned char *dst = (unsigned char *)CTX + T0_POP();
+	unsigned char *src = (unsigned char *)X509_MINIMAL_CTX + T0_POP();
+	unsigned char *dst = (unsigned char *)X509_MINIMAL_CTX + T0_POP();
 	memcpy(dst, src, len);
 
 				}
@@ -1116,32 +1116,32 @@ br_x509_minimal_run(void *t0ctx)
 
 	size_t u;
 
-	for (u = 0; u < CTX->trust_anchors_num; u ++) {
+	for (u = 0; u < X509_MINIMAL_CTX->trust_anchors_num; u ++) {
 		const br_x509_trust_anchor *ta;
 		unsigned char hashed_DN[64];
 		int kt;
 
-		ta = &CTX->trust_anchors[u];
+		ta = &X509_MINIMAL_CTX->trust_anchors[u];
 		if (ta->flags & BR_X509_TA_CA) {
 			continue;
 		}
-		hash_dn(CTX, ta->dn.data, ta->dn.len, hashed_DN);
-		if (memcmp(hashed_DN, CTX->current_dn_hash, DNHASH_LEN)) {
+		hash_dn(X509_MINIMAL_CTX, ta->dn.data, ta->dn.len, hashed_DN);
+		if (memcmp(hashed_DN, X509_MINIMAL_CTX->current_dn_hash, DNHASH_LEN)) {
 			continue;
 		}
-		kt = CTX->pkey.key_type;
+		kt = X509_MINIMAL_CTX->pkey.key_type;
 		if ((ta->pkey.key_type & 0x0F) != kt) {
 			continue;
 		}
 		switch (kt) {
 
 		case BR_KEYTYPE_RSA:
-			if (!eqbigint(CTX->pkey.key.rsa.n,
-				CTX->pkey.key.rsa.nlen,
+			if (!eqbigint(X509_MINIMAL_CTX->pkey.key.rsa.n,
+				X509_MINIMAL_CTX->pkey.key.rsa.nlen,
 				ta->pkey.key.rsa.n,
 				ta->pkey.key.rsa.nlen)
-				|| !eqbigint(CTX->pkey.key.rsa.e,
-				CTX->pkey.key.rsa.elen,
+				|| !eqbigint(X509_MINIMAL_CTX->pkey.key.rsa.e,
+				X509_MINIMAL_CTX->pkey.key.rsa.elen,
 				ta->pkey.key.rsa.e,
 				ta->pkey.key.rsa.elen))
 			{
@@ -1150,9 +1150,9 @@ br_x509_minimal_run(void *t0ctx)
 			break;
 
 		case BR_KEYTYPE_EC:
-			if (CTX->pkey.key.ec.curve != ta->pkey.key.ec.curve
-				|| CTX->pkey.key.ec.qlen != ta->pkey.key.ec.qlen
-				|| memcmp(CTX->pkey.key.ec.q,
+			if (X509_MINIMAL_CTX->pkey.key.ec.curve != ta->pkey.key.ec.curve
+				|| X509_MINIMAL_CTX->pkey.key.ec.qlen != ta->pkey.key.ec.qlen
+				|| memcmp(X509_MINIMAL_CTX->pkey.key.ec.q,
 					ta->pkey.key.ec.q,
 					ta->pkey.key.ec.qlen) != 0)
 			{
@@ -1167,7 +1167,7 @@ br_x509_minimal_run(void *t0ctx)
 		/*
 		 * Direct trust match!
 		 */
-		CTX->err = BR_ERR_X509_OK;
+		X509_MINIMAL_CTX->err = BR_ERR_X509_OK;
 		T0_CO();
 	}
 
@@ -1178,20 +1178,20 @@ br_x509_minimal_run(void *t0ctx)
 
 	size_t u;
 
-	for (u = 0; u < CTX->trust_anchors_num; u ++) {
+	for (u = 0; u < X509_MINIMAL_CTX->trust_anchors_num; u ++) {
 		const br_x509_trust_anchor *ta;
 		unsigned char hashed_DN[64];
 
-		ta = &CTX->trust_anchors[u];
+		ta = &X509_MINIMAL_CTX->trust_anchors[u];
 		if (!(ta->flags & BR_X509_TA_CA)) {
 			continue;
 		}
-		hash_dn(CTX, ta->dn.data, ta->dn.len, hashed_DN);
-		if (memcmp(hashed_DN, CTX->saved_dn_hash, DNHASH_LEN)) {
+		hash_dn(X509_MINIMAL_CTX, ta->dn.data, ta->dn.len, hashed_DN);
+		if (memcmp(hashed_DN, X509_MINIMAL_CTX->saved_dn_hash, DNHASH_LEN)) {
 			continue;
 		}
-		if (verify_signature(CTX, &ta->pkey) == 0) {
-			CTX->err = BR_ERR_X509_OK;
+		if (verify_signature(X509_MINIMAL_CTX, &ta->pkey) == 0) {
+			X509_MINIMAL_CTX->err = BR_ERR_X509_OK;
 			T0_CO();
 		}
 	}
@@ -1206,15 +1206,15 @@ br_x509_minimal_run(void *t0ctx)
 	uint32_t nas = T0_POP();
 	uint32_t nad = T0_POP();
 	int r;
-	if (CTX->itime != 0) {
-		r = CTX->itime(CTX->itime_ctx, nbd, nbs, nad, nas);
+	if (X509_MINIMAL_CTX->itime != 0) {
+		r = X509_MINIMAL_CTX->itime(X509_MINIMAL_CTX->itime_ctx, nbd, nbs, nad, nas);
 		if (r < -1 || r > 1) {
-			CTX->err = BR_ERR_X509_TIME_UNKNOWN;
+			X509_MINIMAL_CTX->err = BR_ERR_X509_TIME_UNKNOWN;
 			T0_CO();
 		}
 	} else {
-		uint32_t vd = CTX->days;
-		uint32_t vs = CTX->seconds;
+		uint32_t vd = X509_MINIMAL_CTX->days;
+		uint32_t vs = X509_MINIMAL_CTX->seconds;
 		if (vd == 0 && vs == 0) {
 #if BR_USE_UNIX_TIME
 			time_t x = time(NULL);
@@ -1232,7 +1232,7 @@ br_x509_minimal_run(void *t0ctx)
 			vd = (uint32_t)(x / 86400) + 584754;
 			vs = (uint32_t)(x % 86400);
 #else
-			CTX->err = BR_ERR_X509_TIME_UNKNOWN;
+			X509_MINIMAL_CTX->err = BR_ERR_X509_TIME_UNKNOWN;
 			T0_CO();
 #endif
 		}
@@ -1256,8 +1256,8 @@ br_x509_minimal_run(void *t0ctx)
 			case 27: {
 				/* compute-dn-hash */
 
-	CTX->dn_hash_impl->out(&CTX->dn_hash.vtable, CTX->current_dn_hash);
-	CTX->do_dn_hash = 0;
+	X509_MINIMAL_CTX->dn_hash_impl->out(&X509_MINIMAL_CTX->dn_hash.vtable, CTX->current_dn_hash);
+	X509_MINIMAL_CTX->do_dn_hash = 0;
 
 				}
 				break;
@@ -1266,7 +1266,7 @@ br_x509_minimal_run(void *t0ctx)
 
 	int id = T0_POPi();
 	size_t len;
-	len = br_multihash_out(&CTX->mhash, id, CTX->tbs_hash);
+	len = br_multihash_out(&X509_MINIMAL_CTX->mhash, id, X509_MINIMAL_CTX->tbs_hash);
 	T0_PUSH(len);
 
 				}
@@ -1276,11 +1276,11 @@ br_x509_minimal_run(void *t0ctx)
 
 	size_t qlen = T0_POP();
 	uint32_t curve = T0_POP();
-	memcpy(CTX->ee_pkey_data, CTX->pkey_data, qlen);
-	CTX->pkey.key_type = BR_KEYTYPE_EC;
-	CTX->pkey.key.ec.curve = curve;
-	CTX->pkey.key.ec.q = CTX->ee_pkey_data;
-	CTX->pkey.key.ec.qlen = qlen;
+	memcpy(X509_MINIMAL_CTX->ee_pkey_data, X509_MINIMAL_CTX->pkey_data, qlen);
+	X509_MINIMAL_CTX->pkey.key_type = BR_KEYTYPE_EC;
+	X509_MINIMAL_CTX->pkey.key.ec.curve = curve;
+	X509_MINIMAL_CTX->pkey.key.ec.q = X509_MINIMAL_CTX->ee_pkey_data;
+	X509_MINIMAL_CTX->pkey.key.ec.qlen = qlen;
 
 				}
 				break;
@@ -1289,12 +1289,12 @@ br_x509_minimal_run(void *t0ctx)
 
 	size_t elen = T0_POP();
 	size_t nlen = T0_POP();
-	memcpy(CTX->ee_pkey_data, CTX->pkey_data, nlen + elen);
-	CTX->pkey.key_type = BR_KEYTYPE_RSA;
-	CTX->pkey.key.rsa.n = CTX->ee_pkey_data;
-	CTX->pkey.key.rsa.nlen = nlen;
-	CTX->pkey.key.rsa.e = CTX->ee_pkey_data + nlen;
-	CTX->pkey.key.rsa.elen = elen;
+	memcpy(X509_MINIMAL_CTX->ee_pkey_data, X509_MINIMAL_CTX->pkey_data, nlen + elen);
+	X509_MINIMAL_CTX->pkey.key_type = BR_KEYTYPE_RSA;
+	X509_MINIMAL_CTX->pkey.key.rsa.n = X509_MINIMAL_CTX->ee_pkey_data;
+	X509_MINIMAL_CTX->pkey.key.rsa.nlen = nlen;
+	X509_MINIMAL_CTX->pkey.key.rsa.e = X509_MINIMAL_CTX->ee_pkey_data + nlen;
+	X509_MINIMAL_CTX->pkey.key.rsa.elen = elen;
 
 				}
 				break;
@@ -1305,14 +1305,14 @@ br_x509_minimal_run(void *t0ctx)
 	unsigned ok = T0_POP();
 	size_t u, len;
 
-	len = CTX->pad[0];
-	for (u = 0; u < CTX->num_name_elts; u ++) {
+	len = X509_MINIMAL_CTX->pad[0];
+	for (u = 0; u < X509_MINIMAL_CTX->num_name_elts; u ++) {
 		br_name_element *ne;
 
-		ne = &CTX->name_elts[u];
+		ne = &X509_MINIMAL_CTX->name_elts[u];
 		if (ne->status == 0 && ne->oid[0] == 0 && ne->oid[1] == tag) {
 			if (ok && ne->len > len) {
-				memcpy(ne->buf, CTX->pad + 1, len);
+				memcpy(ne->buf, X509_MINIMAL_CTX->pad + 1, len);
 				ne->buf[len] = 0;
 				ne->status = 1;
 			} else {
@@ -1332,12 +1332,12 @@ br_x509_minimal_run(void *t0ctx)
 	int ok = T0_POPi();
 
 	if (off >= 0) {
-		br_name_element *ne = &CTX->name_elts[off];
+		br_name_element *ne = &X509_MINIMAL_CTX->name_elts[off];
 
 		if (ok) {
-			len = CTX->pad[0];
+			len = X509_MINIMAL_CTX->pad[0];
 			if (len < ne->len) {
-				memcpy(ne->buf, CTX->pad + 1, len);
+				memcpy(ne->buf, X509_MINIMAL_CTX->pad + 1, len);
 				ne->buf[len] = 0;
 				ne->status = 1;
 			} else {
@@ -1374,9 +1374,9 @@ br_x509_minimal_run(void *t0ctx)
 
 	pk.key_type = BR_KEYTYPE_EC;
 	pk.key.ec.curve = curve;
-	pk.key.ec.q = CTX->pkey_data;
+	pk.key.ec.q = X509_MINIMAL_CTX->pkey_data;
 	pk.key.ec.qlen = qlen;
-	T0_PUSH(verify_signature(CTX, &pk));
+	T0_PUSH(verify_signature(X509_MINIMAL_CTX, &pk));
 
 				}
 				break;
@@ -1388,11 +1388,11 @@ br_x509_minimal_run(void *t0ctx)
 	br_x509_pkey pk;
 
 	pk.key_type = BR_KEYTYPE_RSA;
-	pk.key.rsa.n = CTX->pkey_data;
+	pk.key.rsa.n = X509_MINIMAL_CTX->pkey_data;
 	pk.key.rsa.nlen = nlen;
-	pk.key.rsa.e = CTX->pkey_data + nlen;
+	pk.key.rsa.e = X509_MINIMAL_CTX->pkey_data + nlen;
 	pk.key.rsa.elen = elen;
-	T0_PUSH(verify_signature(CTX, &pk));
+	T0_PUSH(verify_signature(X509_MINIMAL_CTX, &pk));
 
 				}
 				break;
@@ -1410,7 +1410,7 @@ br_x509_minimal_run(void *t0ctx)
 				/* eqOID */
 
 	const unsigned char *a2 = &X509_MINIMAL_t0_datablock[T0_POP()];
-	const unsigned char *a1 = &CTX->pad[0];
+	const unsigned char *a1 = &X509_MINIMAL_CTX->pad[0];
 	size_t len = a1[0];
 	int x;
 	if (len == a2[0]) {
@@ -1426,8 +1426,8 @@ br_x509_minimal_run(void *t0ctx)
 				/* eqblob */
 
 	size_t len = T0_POP();
-	const unsigned char *a2 = (const unsigned char *)CTX + T0_POP();
-	const unsigned char *a1 = (const unsigned char *)CTX + T0_POP();
+	const unsigned char *a2 = (const unsigned char *)X509_MINIMAL_CTX + T0_POP();
+	const unsigned char *a1 = (const unsigned char *)X509_MINIMAL_CTX + T0_POP();
 	T0_PUSHi(-(memcmp(a1, a2, len) == 0));
 
 				}
@@ -1435,7 +1435,7 @@ br_x509_minimal_run(void *t0ctx)
 			case 41: {
 				/* fail */
 
-	CTX->err = T0_POPi();
+	X509_MINIMAL_CTX->err = T0_POPi();
 	T0_CO();
 
 				}
@@ -1444,7 +1444,7 @@ br_x509_minimal_run(void *t0ctx)
 				/* get16 */
 
 	uint32_t addr = T0_POP();
-	T0_PUSH(*(uint16_t *)(void *)((unsigned char *)CTX + addr));
+	T0_PUSH(*(uint16_t *)(void *)((unsigned char *)X509_MINIMAL_CTX + addr));
 
 				}
 				break;
@@ -1452,7 +1452,7 @@ br_x509_minimal_run(void *t0ctx)
 				/* get32 */
 
 	uint32_t addr = T0_POP();
-	T0_PUSH(*(uint32_t *)(void *)((unsigned char *)CTX + addr));
+	T0_PUSH(*(uint32_t *)(void *)((unsigned char *)X509_MINIMAL_CTX + addr));
 
 				}
 				break;
@@ -1461,27 +1461,27 @@ br_x509_minimal_run(void *t0ctx)
 
 	size_t n1, n2;
 
-	if (CTX->server_name == NULL) {
+	if (X509_MINIMAL_CTX->server_name == NULL) {
 		T0_PUSH(0);
 		T0_RET();
 	}
-	n1 = strlen(CTX->server_name);
-	n2 = CTX->pad[0];
-	if (n1 == n2 && eqnocase(&CTX->pad[1], CTX->server_name, n1)) {
+	n1 = strlen(X509_MINIMAL_CTX->server_name);
+	n2 = X509_MINIMAL_CTX->pad[0];
+	if (n1 == n2 && eqnocase(&X509_MINIMAL_CTX->pad[1], X509_MINIMAL_CTX->server_name, n1)) {
 		T0_PUSHi(-1);
 		T0_RET();
 	}
-	if (n2 >= 2 && CTX->pad[1] == '*' && CTX->pad[2] == '.') {
+	if (n2 >= 2 && X509_MINIMAL_CTX->pad[1] == '*' && X509_MINIMAL_CTX->pad[2] == '.') {
 		size_t u;
 
 		u = 0;
-		while (u < n1 && CTX->server_name[u] != '.') {
+		while (u < n1 && X509_MINIMAL_CTX->server_name[u] != '.') {
 			u ++;
 		}
 		u ++;
 		n1 -= u;
 		if ((n2 - 2) == n1
-			&& eqnocase(&CTX->pad[3], CTX->server_name + u, n1))
+			&& eqnocase(&X509_MINIMAL_CTX->pad[3], X509_MINIMAL_CTX->server_name + u, n1))
 		{
 			T0_PUSHi(-1);
 			T0_RET();
@@ -1505,12 +1505,12 @@ br_x509_minimal_run(void *t0ctx)
 	unsigned san = T0_POP();
 	size_t u;
 
-	for (u = 0; u < CTX->num_name_elts; u ++) {
-		if (CTX->name_elts[u].status == 0) {
+	for (u = 0; u < X509_MINIMAL_CTX->num_name_elts; u ++) {
+		if (X509_MINIMAL_CTX->name_elts[u].status == 0) {
 			const unsigned char *oid;
 			size_t len, off;
 
-			oid = CTX->name_elts[u].oid;
+			oid = X509_MINIMAL_CTX->name_elts[u].oid;
 			if (san) {
 				if (oid[0] != 0 || oid[1] != 0) {
 					continue;
@@ -1520,9 +1520,9 @@ br_x509_minimal_run(void *t0ctx)
 				off = 0;
 			}
 			len = oid[off];
-			if (len != 0 && len == CTX->pad[0]
+			if (len != 0 && len == X509_MINIMAL_CTX->pad[0]
 				&& memcmp(oid + off + 1,
-					CTX->pad + 1, len) == 0)
+					X509_MINIMAL_CTX->pad + 1, len) == 0)
 			{
 				T0_PUSH(u);
 				T0_RET();
@@ -1552,22 +1552,22 @@ br_x509_minimal_run(void *t0ctx)
 
 	uint32_t len = T0_POP();
 	uint32_t addr = T0_POP();
-	size_t clen = CTX->hlen;
+	size_t clen = X509_MINIMAL_CTX->hlen;
 	if (clen > len) {
 		clen = (size_t)len;
 	}
 	if (addr != 0) {
-		memcpy((unsigned char *)CTX + addr, CTX->hbuf, clen);
+		memcpy((unsigned char *)X509_MINIMAL_CTX + addr, X509_MINIMAL_CTX->hbuf, clen);
 	}
-	if (CTX->do_mhash) {
-		br_multihash_update(&CTX->mhash, CTX->hbuf, clen);
+	if (X509_MINIMAL_CTX->do_mhash) {
+		br_multihash_update(&X509_MINIMAL_CTX->mhash, X509_MINIMAL_CTX->hbuf, clen);
 	}
-	if (CTX->do_dn_hash) {
-		CTX->dn_hash_impl->update(
-			&CTX->dn_hash.vtable, CTX->hbuf, clen);
+	if (X509_MINIMAL_CTX->do_dn_hash) {
+		X509_MINIMAL_CTX->dn_hash_impl->update(
+			&X509_MINIMAL_CTX->dn_hash.vtable, X509_MINIMAL_CTX->hbuf, clen);
 	}
-	CTX->hbuf += clen;
-	CTX->hlen -= clen;
+	X509_MINIMAL_CTX->hbuf += clen;
+	X509_MINIMAL_CTX->hlen -= clen;
 	T0_PUSH(addr + clen);
 	T0_PUSH(len - clen);
 
@@ -1576,17 +1576,17 @@ br_x509_minimal_run(void *t0ctx)
 			case 50: {
 				/* read8-low */
 
-	if (CTX->hlen == 0) {
+	if (X509_MINIMAL_CTX->hlen == 0) {
 		T0_PUSHi(-1);
 	} else {
-		unsigned char x = *CTX->hbuf ++;
-		if (CTX->do_mhash) {
-			br_multihash_update(&CTX->mhash, &x, 1);
+		unsigned char x = *X509_MINIMAL_CTX->hbuf ++;
+		if (X509_MINIMAL_CTX->do_mhash) {
+			br_multihash_update(&X509_MINIMAL_CTX->mhash, &x, 1);
 		}
-		if (CTX->do_dn_hash) {
-			CTX->dn_hash_impl->update(&CTX->dn_hash.vtable, &x, 1);
+		if (X509_MINIMAL_CTX->do_dn_hash) {
+			X509_MINIMAL_CTX->dn_hash_impl->update(&X509_MINIMAL_CTX->dn_hash.vtable, &x, 1);
 		}
-		CTX->hlen --;
+		X509_MINIMAL_CTX->hlen --;
 		T0_PUSH(x);
 	}
 
@@ -1601,7 +1601,7 @@ br_x509_minimal_run(void *t0ctx)
 				/* set16 */
 
 	uint32_t addr = T0_POP();
-	*(uint16_t *)(void *)((unsigned char *)CTX + addr) = T0_POP();
+	*(uint16_t *)(void *)((unsigned char *)X509_MINIMAL_CTX + addr) = T0_POP();
 
 				}
 				break;
@@ -1609,7 +1609,7 @@ br_x509_minimal_run(void *t0ctx)
 				/* set32 */
 
 	uint32_t addr = T0_POP();
-	*(uint32_t *)(void *)((unsigned char *)CTX + addr) = T0_POP();
+	*(uint32_t *)(void *)((unsigned char *)X509_MINIMAL_CTX + addr) = T0_POP();
 
 				}
 				break;
@@ -1617,30 +1617,30 @@ br_x509_minimal_run(void *t0ctx)
 				/* set8 */
 
 	uint32_t addr = T0_POP();
-	*((unsigned char *)CTX + addr) = (unsigned char)T0_POP();
+	*((unsigned char *)X509_MINIMAL_CTX + addr) = (unsigned char)T0_POP();
 
 				}
 				break;
 			case 55: {
 				/* start-dn-hash */
 
-	CTX->dn_hash_impl->init(&CTX->dn_hash.vtable);
-	CTX->do_dn_hash = 1;
+	X509_MINIMAL_CTX->dn_hash_impl->init(&X509_MINIMAL_CTX->dn_hash.vtable);
+	X509_MINIMAL_CTX->do_dn_hash = 1;
 
 				}
 				break;
 			case 56: {
 				/* start-tbs-hash */
 
-	br_multihash_init(&CTX->mhash);
-	CTX->do_mhash = 1;
+	br_multihash_init(&X509_MINIMAL_CTX->mhash);
+	X509_MINIMAL_CTX->do_mhash = 1;
 
 				}
 				break;
 			case 57: {
 				/* stop-tbs-hash */
 
-	CTX->do_mhash = 0;
+	X509_MINIMAL_CTX->do_mhash = 0;
 
 				}
 				break;
@@ -1652,7 +1652,7 @@ br_x509_minimal_run(void *t0ctx)
 			case 59: {
 				/* zero-server-name */
 
-	T0_PUSHi(-(CTX->server_name == NULL));
+	T0_PUSHi(-(X509_MINIMAL_CTX->server_name == NULL));
 
 				}
 				break;
