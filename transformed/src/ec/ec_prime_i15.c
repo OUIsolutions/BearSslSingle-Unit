@@ -141,10 +141,10 @@ typedef struct {
  *    MSET(d, a)       copy a into d
  *    MADD(d, a)       d = d+a (modular)
  *    MSUB(d, a)       d = d-a (modular)
- *    MMUL(d, a, b)    d = a*b (Montgomery multiplication)
+ *    (BEAR_SINGLE_UNITY_FILE)MMUL(d, a, b)    d = a*b (Montgomery multiplication)
  *    MINV(d, a, b)    invert d modulo p; a and b are used as scratch registers
  *    MTZ(d)           clear return value if d = 0
- * Destination of MMUL (d) must be distinct from operands (a and b).
+ * Destination of (BEAR_SINGLE_UNITY_FILE)MMUL (d) must be distinct from operands (a and b).
  * There is no such constraint for MSUB and MADD.
  *
  * Registers include the operand coordinates, and temporaries.
@@ -152,7 +152,7 @@ typedef struct {
 #define MSET(d, a)      (0x0000 + ((d) << 8) + ((a) << 4))
 #define MADD(d, a)      (0x1000 + ((d) << 8) + ((a) << 4))
 #define MSUB(d, a)      (0x2000 + ((d) << 8) + ((a) << 4))
-#define MMUL(d, a, b)   (0x3000 + ((d) << 8) + ((a) << 4) + (b))
+#define (BEAR_SINGLE_UNITY_FILE)MMUL(d, a, b)   (0x3000 + ((d) << 8) + ((a) << 4) + (b))
 #define MINV(d, a, b)   (0x4000 + ((d) << 8) + ((a) << 4) + (b))
 #define MTZ(d)          (0x5000 + ((d) << 8))
 #define ENDCODE         0
@@ -215,7 +215,7 @@ static const uint16_t code_double[] = {
 	/*
 	 * Compute z^2 (in t1).
 	 */
-	MMUL(t1, Pz, Pz),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t1, Pz, Pz),
 
 	/*
 	 * Compute x-z^2 (in t2) and then x+z^2 (in t1).
@@ -227,7 +227,7 @@ static const uint16_t code_double[] = {
 	/*
 	 * Compute m = 3*(x+z^2)*(x-z^2) (in t1).
 	 */
-	MMUL(t3, t1, t2),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t3, t1, t2),
 	MSET(t1, t3),
 	MADD(t1, t3),
 	MADD(t1, t3),
@@ -235,22 +235,22 @@ static const uint16_t code_double[] = {
 	/*
 	 * Compute s = 4*x*y^2 (in t2) and 2*y^2 (in t3).
 	 */
-	MMUL(t3, Py, Py),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t3, Py, Py),
 	MADD(t3, t3),
-	MMUL(t2, Px, t3),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t2, Px, t3),
 	MADD(t2, t2),
 
 	/*
 	 * Compute x' = m^2 - 2*s.
 	 */
-	MMUL(Px, t1, t1),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(Px, t1, t1),
 	MSUB(Px, t2),
 	MSUB(Px, t2),
 
 	/*
 	 * Compute z' = 2*y*z.
 	 */
-	MMUL(t4, Py, Pz),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t4, Py, Pz),
 	MSET(Pz, t4),
 	MADD(Pz, t4),
 
@@ -259,8 +259,8 @@ static const uint16_t code_double[] = {
 	 * 2*y^2 in t3.
 	 */
 	MSUB(t2, Px),
-	MMUL(Py, t1, t2),
-	MMUL(t4, t3, t3),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(Py, t1, t2),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t4, t3, t3),
 	MSUB(Py, t4),
 	MSUB(Py, t4),
 
@@ -321,18 +321,18 @@ static const uint16_t code_add[] = {
 	/*
 	 * Compute u1 = x1*z2^2 (in t1) and s1 = y1*z2^3 (in t3).
 	 */
-	MMUL(t3, P2z, P2z),
-	MMUL(t1, P1x, t3),
-	MMUL(t4, P2z, t3),
-	MMUL(t3, P1y, t4),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t3, P2z, P2z),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t1, P1x, t3),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t4, P2z, t3),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t3, P1y, t4),
 
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
-	MMUL(t4, P1z, P1z),
-	MMUL(t2, P2x, t4),
-	MMUL(t5, P1z, t4),
-	MMUL(t4, P2y, t5),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t4, P1z, P1z),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t2, P2x, t4),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t5, P1z, t4),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t4, P2y, t5),
 
 	/*
 	 * Compute h = u2 - u1 (in t2) and r = s2 - s1 (in t4).
@@ -348,15 +348,15 @@ static const uint16_t code_add[] = {
 	/*
 	 * Compute u1*h^2 (in t6) and h^3 (in t5).
 	 */
-	MMUL(t7, t2, t2),
-	MMUL(t6, t1, t7),
-	MMUL(t5, t7, t2),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t7, t2, t2),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t6, t1, t7),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t5, t7, t2),
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 * t1 and t7 can be used as scratch registers.
 	 */
-	MMUL(P1x, t4, t4),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(P1x, t4, t4),
 	MSUB(P1x, t5),
 	MSUB(P1x, t6),
 	MSUB(P1x, t6),
@@ -365,15 +365,15 @@ static const uint16_t code_add[] = {
 	 * Compute y3 = r*(u1*h^2 - x3) - s1*h^3.
 	 */
 	MSUB(t6, P1x),
-	MMUL(P1y, t4, t6),
-	MMUL(t1, t5, t3),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(P1y, t4, t6),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t1, t5, t3),
 	MSUB(P1y, t1),
 
 	/*
 	 * Compute z3 = h*z1*z2.
 	 */
-	MMUL(t1, P1z, P2z),
-	MMUL(P1z, t1, t2),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t1, P1z, P2z),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(P1z, t1, t2),
 
 	ENDCODE
 };
@@ -388,14 +388,14 @@ static const uint16_t code_add[] = {
 static const uint16_t code_check[] = {
 
 	/* Convert x and y to Montgomery representation. */
-	MMUL(t1, P1x, P2x),
-	MMUL(t2, P1y, P2x),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t1, P1x, P2x),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t2, P1y, P2x),
 	MSET(P1x, t1),
 	MSET(P1y, t2),
 
 	/* Compute x^3 in t1. */
-	MMUL(t2, P1x, P1x),
-	MMUL(t1, P1x, t2),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t2, P1x, P1x),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t1, P1x, t2),
 
 	/* Subtract 3*x from t1. */
 	MSUB(t1, P1x),
@@ -406,14 +406,14 @@ static const uint16_t code_check[] = {
 	MADD(t1, P2y),
 
 	/* Compute y^2 in t2. */
-	MMUL(t2, P1y, P1y),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t2, P1y, P1y),
 
 	/* Compare y^2 with x^3 - 3*x + b; they must match. */
 	MSUB(t1, t2),
 	MTZ(t1),
 
 	/* Set z to 1 (in Montgomery representation). */
-	MMUL(P1z, P2x, P2z),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(P1z, P2x, P2z),
 
 	ENDCODE
 };
@@ -428,23 +428,23 @@ static const uint16_t code_affine[] = {
 	MSET(t1, P1z),
 
 	/* Compute z^3 in t2. */
-	MMUL(t2, P1z, P1z),
-	MMUL(t3, P1z, t2),
-	MMUL(t2, t3, P2z),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t2, P1z, P1z),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t3, P1z, t2),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t2, t3, P2z),
 
 	/* Invert to (1/z^3) in t2. */
 	MINV(t2, t3, t4),
 
 	/* Compute y. */
 	MSET(t3, P1y),
-	MMUL(P1y, t2, t3),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(P1y, t2, t3),
 
 	/* Compute (1/z^2) in t3. */
-	MMUL(t3, t2, t1),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(t3, t2, t1),
 
 	/* Compute x. */
 	MSET(t2, P1x),
-	MMUL(P1x, t2, t3),
+	(BEAR_SINGLE_UNITY_FILE)MMUL(P1x, t2, t3),
 
 	ENDCODE
 };
