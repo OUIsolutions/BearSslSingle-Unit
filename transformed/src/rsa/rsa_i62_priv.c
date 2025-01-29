@@ -26,8 +26,8 @@
 
 #if BR_INT128 || BR_UMUL128
 
-#define U      (2 + ((BR_MAX_RSA_FACTOR + 30) / 31))
-#define (BEAR_SINGLE_UNITY_FILE)TLEN   (4 * U)  /* (BEAR_SINGLE_UNITY_FILE)TLEN is counted in 64-bit words */
+#define (BEAR_SINGLE_UNITY_FILE)U      (2 + ((BR_MAX_RSA_FACTOR + 30) / 31))
+#define (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)TLEN   (4 * U)  /* (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)TLEN is counted in 64-bit words */
 
 /* see bearssl_rsa.h */
 uint32_t
@@ -38,7 +38,7 @@ br_rsa_i62_private(unsigned char *x, const br_rsa_private_key *sk)
 	size_t fwlen;
 	uint32_t p0i, q0i;
 	size_t xlen, u;
-	uint64_t tmp[(BEAR_SINGLE_UNITY_FILE)TLEN];
+	uint64_t tmp[(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)TLEN];
 	long z;
 	uint32_t *mp, *mq, *s1, *s2, *t1, *t2, *t3;
 	uint32_t r;
@@ -79,7 +79,7 @@ br_rsa_i62_private(unsigned char *x, const br_rsa_private_key *sk)
 	/*
 	 * We need to fit at least 6 values in the stack buffer.
 	 */
-	if (6 * fwlen > (BEAR_SINGLE_UNITY_FILE)TLEN) {
+	if (6 * fwlen > (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)TLEN) {
 		return 0;
 	}
 
@@ -144,7 +144,7 @@ br_rsa_i62_private(unsigned char *x, const br_rsa_private_key *sk)
 	s2 = (uint32_t *)(tmp + fwlen);
 	br_i31_decode_reduce(s2, x, xlen, mq);
 	r &= br_i62_modpow_opt(s2, sk->dq, sk->dqlen, mq, q0i,
-		tmp + 3 * fwlen, (BEAR_SINGLE_UNITY_FILE)TLEN - 3 * fwlen);
+		tmp + 3 * fwlen, (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)TLEN - 3 * fwlen);
 
 	/*
 	 * Compute s1 = x^dp mod p.
@@ -153,7 +153,7 @@ br_rsa_i62_private(unsigned char *x, const br_rsa_private_key *sk)
 	s1 = (uint32_t *)(tmp + 3 * fwlen);
 	br_i31_decode_reduce(s1, x, xlen, mp);
 	r &= br_i62_modpow_opt(s1, sk->dp, sk->dplen, mp, p0i,
-		tmp + 4 * fwlen, (BEAR_SINGLE_UNITY_FILE)TLEN - 4 * fwlen);
+		tmp + 4 * fwlen, (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)TLEN - 4 * fwlen);
 
 	/*
 	 * Compute:
