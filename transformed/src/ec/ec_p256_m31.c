@@ -501,7 +501,7 @@ mul_f256(uint32_t *d, const uint32_t *a, const uint32_t *b)
  * twice the modulus.
  */
 static void
-square_f256(uint32_t *d, const uint32_t *a)
+BEAR_SINGLE_UNITY_FILEsquare_f256(uint32_t *d, const uint32_t *a)
 {
 	uint32_t t[18];
 	uint64_t s[18];
@@ -692,7 +692,7 @@ BEAR_SINGLE_UNITY_FILEp256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 	 */
 	memcpy(t1, P->z, sizeof P->z);
 	for (i = 0; i < 30; i ++) {
-		square_f256(t1, t1);
+		BEAR_SINGLE_UNITY_FILEsquare_f256(t1, t1);
 		mul_f256(t1, t1, P->z);
 	}
 
@@ -703,7 +703,7 @@ BEAR_SINGLE_UNITY_FILEp256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 	 */
 	memcpy(t2, P->z, sizeof P->z);
 	for (i = 1; i < 256; i ++) {
-		square_f256(t2, t2);
+		BEAR_SINGLE_UNITY_FILEsquare_f256(t2, t2);
 		switch (i) {
 		case 31:
 		case 190:
@@ -764,7 +764,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	/*
 	 * Compute z^2 in t1.
 	 */
-	square_f256(t1, Q->z);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(t1, Q->z);
 
 	/*
 	 * Compute x-z^2 in t2 and x+z^2 in t1.
@@ -782,7 +782,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	/*
 	 * Compute 4*x*y^2 (in t2) and 2*y^2 (in t3).
 	 */
-	square_f256(t3, Q->y);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(t3, Q->y);
 	add_f256(t3, t3, t3);
 	mul_f256(t2, Q->x, t3);
 	add_f256(t2, t2, t2);
@@ -790,7 +790,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	/*
 	 * Compute x' = m^2 - 2*s.
 	 */
-	square_f256(Q->x, t1);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(Q->x, t1);
 	sub_f256(Q->x, Q->x, t2);
 	sub_f256(Q->x, Q->x, t2);
 
@@ -806,7 +806,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	 */
 	sub_f256(t2, t2, Q->x);
 	mul_f256(Q->y, t1, t2);
-	square_f256(t4, t3);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(t4, t3);
 	add_f256(t4, t4, t4);
 	sub_f256(Q->y, Q->y, t4);
 }
@@ -865,7 +865,7 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 	/*
 	 * Compute u1 = x1*z2^2 (in t1) and s1 = y1*z2^3 (in t3).
 	 */
-	square_f256(t3, P2->z);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(t3, P2->z);
 	mul_f256(t1, P1->x, t3);
 	mul_f256(t4, P2->z, t3);
 	mul_f256(t3, P1->y, t4);
@@ -873,7 +873,7 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
-	square_f256(t4, P1->z);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(t4, P1->z);
 	mul_f256(t2, P2->x, t4);
 	mul_f256(t5, P1->z, t4);
 	mul_f256(t4, P2->y, t5);
@@ -895,14 +895,14 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 	/*
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
-	square_f256(t7, t2);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(t7, t2);
 	mul_f256(t6, t1, t7);
 	mul_f256(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
-	square_f256(P1->x, t4);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(P1->x, t4);
 	sub_f256(P1->x, P1->x, t5);
 	sub_f256(P1->x, P1->x, t6);
 	sub_f256(P1->x, P1->x, t6);
@@ -982,7 +982,7 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
-	square_f256(t4, P1->z);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(t4, P1->z);
 	mul_f256(t2, P2->x, t4);
 	mul_f256(t5, P1->z, t4);
 	mul_f256(t4, P2->y, t5);
@@ -1004,14 +1004,14 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
 	/*
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
-	square_f256(t7, t2);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(t7, t2);
 	mul_f256(t6, t1, t7);
 	mul_f256(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
-	square_f256(P1->x, t4);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(P1->x, t4);
 	sub_f256(P1->x, P1->x, t5);
 	sub_f256(P1->x, P1->x, t6);
 	sub_f256(P1->x, P1->x, t6);
@@ -1069,9 +1069,9 @@ BEAR_SINGLE_UNITY_FILEp256_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const 
 	/*
 	 * Check curve equation.
 	 */
-	square_f256(t1, tx);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(t1, tx);
 	mul_f256(t1, tx, t1);
-	square_f256(t2, ty);
+	BEAR_SINGLE_UNITY_FILEsquare_f256(t2, ty);
 	sub_f256(t1, t1, tx);
 	sub_f256(t1, t1, tx);
 	sub_f256(t1, t1, tx);
