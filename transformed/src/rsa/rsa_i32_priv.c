@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 #define U   (1 + (BR_MAX_RSA_FACTOR >> 5))
 

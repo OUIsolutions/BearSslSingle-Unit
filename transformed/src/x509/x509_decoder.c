@@ -7,10 +7,10 @@ typedef struct {
 	uint32_t *dp;
 	uint32_t *rp;
 	const unsigned char *ip;
-} X509_DECODER_t0_context;
+} t0_context;
 
 static uint32_t
-X509_DECODER_t0_parse7E_unsigned(const unsigned char **p)
+t0_parse7E_unsigned(const unsigned char **p)
 {
 	uint32_t x;
 
@@ -27,7 +27,7 @@ X509_DECODER_t0_parse7E_unsigned(const unsigned char **p)
 }
 
 static int32_t
-X509_DECODER_t0_parse7E_signed(const unsigned char **p)
+t0_parse7E_signed(const unsigned char **p)
 {
 	int neg;
 	uint32_t x;
@@ -58,7 +58,7 @@ X509_DECODER_t0_parse7E_signed(const unsigned char **p)
 #define T0_INT4(x)       T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 #define T0_INT5(x)       T0_SBYTE(x), T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 
-/* static const unsigned char X509_DECODER_t0_datablock[]; */
+/* static const unsigned char t0_datablock[]; */
 
 
 void br_x509_decoder_init_main(void *t0ctx);
@@ -67,16 +67,16 @@ void br_x509_decoder_run(void *t0ctx);
 
 
 
+#include "inner.h"
 
 
 
 
 
+#include "inner.h"
 
-
-
-#define X509_DECODER_CTX   ((br_x509_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_decoder_context, cpu)))
-#define X509_DECODER_CONTEXT_NAME   br_x509_decoder_context
+#define CTX   ((br_x509_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_decoder_context, cpu)))
+#define CONTEXT_NAME   br_x509_decoder_context
 
 /* see bearssl_x509.h */
 void
@@ -110,7 +110,7 @@ br_x509_decoder_push(br_x509_decoder_context *ctx,
 
 
 
-static const unsigned char X509_DECODER_t0_datablock[] = {
+static const unsigned char t0_datablock[] = {
 	0x00, 0x09, 0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x01, 0x09,
 	0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x05, 0x09, 0x2A, 0x86,
 	0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x0E, 0x09, 0x2A, 0x86, 0x48, 0x86,
@@ -129,7 +129,7 @@ static const unsigned char X509_DECODER_t0_datablock[] = {
 	0x29, 0xFF, 0x03, 0x55, 0x1D, 0x13
 };
 
-static const unsigned char X509_DECODER_t0_codeblock[] = {
+static const unsigned char t0_codeblock[] = {
 	0x00, 0x01, 0x00, 0x10, 0x00, 0x00, 0x01, 0x00, 0x11, 0x00, 0x00, 0x01,
 	0x01, 0x09, 0x00, 0x00, 0x01, 0x01, 0x0A, 0x00, 0x00, 0x1A, 0x1A, 0x00,
 	0x00, 0x01, T0_INT1(BR_ERR_X509_BAD_BOOLEAN), 0x00, 0x00, 0x01,
@@ -147,18 +147,18 @@ static const unsigned char X509_DECODER_t0_codeblock[] = {
 	T0_INT1(BR_ERR_X509_UNEXPECTED), 0x00, 0x00, 0x01,
 	T0_INT1(BR_ERR_X509_UNSUPPORTED), 0x00, 0x00, 0x01,
 	T0_INT1(BR_KEYTYPE_EC), 0x00, 0x00, 0x01, T0_INT1(BR_KEYTYPE_RSA),
-	0x00, 0x00, 0x01, T0_INT2(offsetof(X509_DECODER_CONTEXT_NAME, copy_dn)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof(X509_DECODER_CONTEXT_NAME, decoded)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(X509_DECODER_CONTEXT_NAME, isCA)), 0x00, 0x00, 0x01,
+	0x00, 0x00, 0x01, T0_INT2(offsetof(CONTEXT_NAME, copy_dn)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof(CONTEXT_NAME, decoded)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(CONTEXT_NAME, isCA)), 0x00, 0x00, 0x01,
 	T0_INT2(offsetof(br_x509_decoder_context, pkey_data)), 0x01,
 	T0_INT2(BR_X509_BUFSIZE_KEY), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(X509_DECODER_CONTEXT_NAME, notafter_days)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(X509_DECODER_CONTEXT_NAME, notafter_seconds)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(X509_DECODER_CONTEXT_NAME, notbefore_days)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(X509_DECODER_CONTEXT_NAME, notbefore_seconds)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(X509_DECODER_CONTEXT_NAME, pad)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(X509_DECODER_CONTEXT_NAME, signer_hash_id)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(X509_DECODER_CONTEXT_NAME, signer_key_type)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(CONTEXT_NAME, notafter_days)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(CONTEXT_NAME, notafter_seconds)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(CONTEXT_NAME, notbefore_days)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(CONTEXT_NAME, notbefore_seconds)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(CONTEXT_NAME, pad)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(CONTEXT_NAME, signer_hash_id)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(CONTEXT_NAME, signer_key_type)), 0x00, 0x00, 0x01,
 	0x80, 0x45, 0x00, 0x00, 0x01, 0x80, 0x4E, 0x00, 0x00, 0x01, 0x80, 0x54,
 	0x00, 0x00, 0x01, 0x81, 0x36, 0x00, 0x02, 0x03, 0x00, 0x03, 0x01, 0x1B,
 	0x02, 0x01, 0x13, 0x26, 0x02, 0x00, 0x0F, 0x15, 0x00, 0x00, 0x05, 0x02,
@@ -260,7 +260,7 @@ static const unsigned char X509_DECODER_t0_codeblock[] = {
 	0x04, 0x76, 0x00, 0x00, 0x01, 0x00, 0x20, 0x21, 0x0B, 0x2B, 0x00
 };
 
-static const uint16_t X509_DECODER_t0_caddr[] = {
+static const uint16_t t0_caddr[] = {
 	0,
 	5,
 	10,
@@ -349,28 +349,28 @@ static const uint16_t X509_DECODER_t0_caddr[] = {
 	1327
 };
 
-#define X509_DECODER_T0_INTERPRETED   39
+#define T0_INTERPRETED   39
 
-#define X509_DECODER_T0_ENTER(ip, rp, slot)   do { \
+#define T0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
-		t0_newip = &X509_DECODER_t0_codeblock[X509_DECODER_t0_caddr[(slot) - X509_DECODER_T0_INTERPRETED]]; \
-		t0_lnum = X509_DECODER_t0_parse7E_unsigned(&t0_newip); \
+		t0_newip = &t0_codeblock[t0_caddr[(slot) - T0_INTERPRETED]]; \
+		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
-		*((rp) ++) = (uint32_t)((ip) - &X509_DECODER_t0_codeblock[0]) + (t0_lnum << 16); \
+		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
 		(ip) = t0_newip; \
 	} while (0)
 
-#define X509_DECODER_T0_DEFENTRY(name, slot) \
+#define T0_DEFENTRY(name, slot) \
 void \
 name(void *ctx) \
 { \
-	X509_DECODER_t0_context *t0ctx = ctx; \
-	t0ctx->ip = &X509_DECODER_t0_codeblock[0]; \
-	X509_DECODER_T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+	t0_context *t0ctx = ctx; \
+	t0ctx->ip = &t0_codeblock[0]; \
+	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
 
-X509_DECODER_T0_DEFENTRY(br_x509_decoder_init_main, 92)
+T0_DEFENTRY(br_x509_decoder_init_main, 92)
 
 #define T0_NEXT(t0ipp)   (*(*(t0ipp)) ++)
 
@@ -423,16 +423,16 @@ br_x509_decoder_run(void *t0ctx)
 } while (0)
 #define T0_RET()        goto t0_next
 
-	dp = ((X509_DECODER_t0_context *)t0ctx)->dp;
-	rp = ((X509_DECODER_t0_context *)t0ctx)->rp;
-	ip = ((X509_DECODER_t0_context *)t0ctx)->ip;
+	dp = ((t0_context *)t0ctx)->dp;
+	rp = ((t0_context *)t0ctx)->rp;
+	ip = ((t0_context *)t0ctx)->ip;
 	goto t0_next;
 	for (;;) {
 		uint32_t t0x;
 
 	t0_next:
 		t0x = T0_NEXT(&ip);
-		if (t0x < X509_DECODER_T0_INTERPRETED) {
+		if (t0x < T0_INTERPRETED) {
 			switch (t0x) {
 				int32_t t0off;
 
@@ -444,29 +444,29 @@ br_x509_decoder_run(void *t0ctx)
 					ip = NULL;
 					goto t0_exit;
 				}
-				ip = &X509_DECODER_t0_codeblock[t0x];
+				ip = &t0_codeblock[t0x];
 				break;
 			case 1: /* literal constant */
-				T0_PUSHi(X509_DECODER_t0_parse7E_signed(&ip));
+				T0_PUSHi(t0_parse7E_signed(&ip));
 				break;
 			case 2: /* read local */
-				T0_PUSH(T0_LOCAL(X509_DECODER_t0_parse7E_unsigned(&ip)));
+				T0_PUSH(T0_LOCAL(t0_parse7E_unsigned(&ip)));
 				break;
 			case 3: /* write local */
-				T0_LOCAL(X509_DECODER_t0_parse7E_unsigned(&ip)) = T0_POP();
+				T0_LOCAL(t0_parse7E_unsigned(&ip)) = T0_POP();
 				break;
 			case 4: /* jump */
-				t0off = X509_DECODER_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				ip += t0off;
 				break;
 			case 5: /* jump if */
-				t0off = X509_DECODER_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				if (T0_POP()) {
 					ip += t0off;
 				}
 				break;
 			case 6: /* jump if not */
-				t0off = X509_DECODER_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				if (!T0_POP()) {
 					ip += t0off;
 				}
@@ -612,10 +612,10 @@ br_x509_decoder_run(void *t0ctx)
 
 	size_t qlen = T0_POP();
 	uint32_t curve = T0_POP();
-	X509_DECODER_CTX->pkey.key_type = BR_KEYTYPE_EC;
-	X509_DECODER_CTX->pkey.key.ec.curve = curve;
-	X509_DECODER_CTX->pkey.key.ec.q = X509_DECODER_CTX->pkey_data;
-	X509_DECODER_CTX->pkey.key.ec.qlen = qlen;
+	CTX->pkey.key_type = BR_KEYTYPE_EC;
+	CTX->pkey.key.ec.curve = curve;
+	CTX->pkey.key.ec.q = CTX->pkey_data;
+	CTX->pkey.key.ec.qlen = qlen;
 
 				}
 				break;
@@ -624,11 +624,11 @@ br_x509_decoder_run(void *t0ctx)
 
 	size_t elen = T0_POP();
 	size_t nlen = T0_POP();
-	X509_DECODER_CTX->pkey.key_type = BR_KEYTYPE_RSA;
-	X509_DECODER_CTX->pkey.key.rsa.n = X509_DECODER_CTX->pkey_data;
-	X509_DECODER_CTX->pkey.key.rsa.nlen = nlen;
-	X509_DECODER_CTX->pkey.key.rsa.e = X509_DECODER_CTX->pkey_data + nlen;
-	X509_DECODER_CTX->pkey.key.rsa.elen = elen;
+	CTX->pkey.key_type = BR_KEYTYPE_RSA;
+	CTX->pkey.key.rsa.n = CTX->pkey_data;
+	CTX->pkey.key.rsa.nlen = nlen;
+	CTX->pkey.key.rsa.e = CTX->pkey_data + nlen;
+	CTX->pkey.key.rsa.elen = elen;
 
 				}
 				break;
@@ -636,7 +636,7 @@ br_x509_decoder_run(void *t0ctx)
 				/* data-get8 */
 
 	size_t addr = T0_POP();
-	T0_PUSH(X509_DECODER_t0_datablock[addr]);
+	T0_PUSH(t0_datablock[addr]);
 
 				}
 				break;
@@ -653,8 +653,8 @@ br_x509_decoder_run(void *t0ctx)
 			case 28: {
 				/* eqOID */
 
-	const unsigned char *a2 = &X509_DECODER_t0_datablock[T0_POP()];
-	const unsigned char *a1 = &X509_DECODER_CTX->pad[0];
+	const unsigned char *a2 = &t0_datablock[T0_POP()];
+	const unsigned char *a1 = &CTX->pad[0];
 	size_t len = a1[0];
 	int x;
 	if (len == a2[0]) {
@@ -669,7 +669,7 @@ br_x509_decoder_run(void *t0ctx)
 			case 29: {
 				/* fail */
 
-	X509_DECODER_CTX->err = T0_POPi();
+	CTX->err = T0_POPi();
 	T0_CO();
 
 				}
@@ -701,18 +701,18 @@ br_x509_decoder_run(void *t0ctx)
 
 	uint32_t len = T0_POP();
 	uint32_t addr = T0_POP();
-	size_t clen = X509_DECODER_CTX->hlen;
+	size_t clen = CTX->hlen;
 	if (clen > len) {
 		clen = (size_t)len;
 	}
 	if (addr != 0) {
-		memcpy((unsigned char *)X509_DECODER_CTX + addr, X509_DECODER_CTX->hbuf, clen);
+		memcpy((unsigned char *)CTX + addr, CTX->hbuf, clen);
 	}
-	if (X509_DECODER_CTX->copy_dn && X509_DECODER_CTX->append_dn) {
-		X509_DECODER_CTX->append_dn(X509_DECODER_CTX->append_dn_ctx, X509_DECODER_CTX->hbuf, clen);
+	if (CTX->copy_dn && CTX->append_dn) {
+		CTX->append_dn(CTX->append_dn_ctx, CTX->hbuf, clen);
 	}
-	X509_DECODER_CTX->hbuf += clen;
-	X509_DECODER_CTX->hlen -= clen;
+	CTX->hbuf += clen;
+	CTX->hlen -= clen;
 	T0_PUSH(addr + clen);
 	T0_PUSH(len - clen);
 
@@ -721,14 +721,14 @@ br_x509_decoder_run(void *t0ctx)
 			case 34: {
 				/* read8-low */
 
-	if (X509_DECODER_CTX->hlen == 0) {
+	if (CTX->hlen == 0) {
 		T0_PUSHi(-1);
 	} else {
-		unsigned char x = *X509_DECODER_CTX->hbuf ++;
-		if (X509_DECODER_CTX->copy_dn && X509_DECODER_CTX->append_dn) {
-			X509_DECODER_CTX->append_dn(X509_DECODER_CTX->append_dn_ctx, &x, 1);
+		unsigned char x = *CTX->hbuf ++;
+		if (CTX->copy_dn && CTX->append_dn) {
+			CTX->append_dn(CTX->append_dn_ctx, &x, 1);
 		}
-		X509_DECODER_CTX->hlen --;
+		CTX->hlen --;
 		T0_PUSH(x);
 	}
 
@@ -743,7 +743,7 @@ br_x509_decoder_run(void *t0ctx)
 				/* set32 */
 
 	uint32_t addr = T0_POP();
-	*(uint32_t *)(void *)((unsigned char *)X509_DECODER_CTX + addr) = T0_POP();
+	*(uint32_t *)(void *)((unsigned char *)CTX + addr) = T0_POP();
 
 				}
 				break;
@@ -751,7 +751,7 @@ br_x509_decoder_run(void *t0ctx)
 				/* set8 */
 
 	uint32_t addr = T0_POP();
-	*((unsigned char *)X509_DECODER_CTX + addr) = (unsigned char)T0_POP();
+	*((unsigned char *)CTX + addr) = (unsigned char)T0_POP();
 
 				}
 				break;
@@ -763,11 +763,11 @@ br_x509_decoder_run(void *t0ctx)
 			}
 
 		} else {
-			X509_DECODER_T0_ENTER(ip, rp, t0x);
+			T0_ENTER(ip, rp, t0x);
 		}
 	}
 t0_exit:
-	((X509_DECODER_t0_context *)t0ctx)->dp = dp;
-	((X509_DECODER_t0_context *)t0ctx)->rp = rp;
-	((X509_DECODER_t0_context *)t0ctx)->ip = ip;
+	((t0_context *)t0ctx)->dp = dp;
+	((t0_context *)t0ctx)->rp = rp;
+	((t0_context *)t0ctx)->ip = ip;
 }

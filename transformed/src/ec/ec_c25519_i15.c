@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 /*
  * Parameters for the field:
@@ -37,7 +37,7 @@ static const uint16_t C255_P[] = {
 	0x7FFF
 };
 
-#define ec_c25519_i15_P0I   0x4A1B
+#define P0I   0x4A1B
 
 static const uint16_t C255_R2[] = {
 	0x0110,
@@ -58,7 +58,7 @@ print_int_mont(const char *name, const uint16_t *x)
 
 	printf("%s = ", name);
 	memcpy(y, x, sizeof y);
-	br_i15_from_monty(y, C255_P, ec_c25519_i15_P0I);
+	br_i15_from_monty(y, C255_P, P0I);
 	br_i15_encode(tmp, sizeof tmp, y);
 	for (u = 0; u < sizeof tmp; u ++) {
 		printf("%02X", tmp[u]);
@@ -157,7 +157,7 @@ c255_mul(uint16_t *d, const uint16_t *a, const uint16_t *b)
 {
 	uint16_t t[18];
 
-	br_i15_montymul(t, a, b, C255_P, ec_c25519_i15_P0I);
+	br_i15_montymul(t, a, b, C255_P, P0I);
 	memcpy(d, t, sizeof t);
 }
 
@@ -232,7 +232,7 @@ api_mul(unsigned char *G, size_t Glen,
 	 * Initialise variables x1, x2, z2, x3 and z3. We set all of them
 	 * into Montgomery representation.
 	 */
-	br_i15_montymul(x1, a, C255_R2, C255_P, ec_c25519_i15_P0I);
+	br_i15_montymul(x1, a, C255_R2, C255_P, P0I);
 	memcpy(x3, x1, ILEN);
 	br_i15_zero(z2, C255_P[0]);
 	memcpy(x2, z2, ILEN);
@@ -339,11 +339,11 @@ api_mul(unsigned char *G, size_t Glen,
 	 * To avoid a dependency on br_i15_from_monty(), we use a
 	 * Montgomery multiplication with 1.
 	 *    memcpy(x2, b, ILEN);
-	 *    br_i15_from_monty(x2, C255_P, ec_c25519_i15_P0I);
+	 *    br_i15_from_monty(x2, C255_P, P0I);
 	 */
 	br_i15_zero(a, C255_P[0]);
 	a[1] = 1;
-	br_i15_montymul(x2, a, b, C255_P, ec_c25519_i15_P0I);
+	br_i15_montymul(x2, a, b, C255_P, P0I);
 
 	br_i15_encode(G, 32, x2);
 	byteswap(G);

@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 /*
  * In this file, we handle big integers with a custom format, i.e.
@@ -40,7 +40,7 @@
  * computed; otherwise, if 'ctl' is 0, then the value is unchanged.
  */
 static void
-i15_moddiv_cond_negate(uint16_t *a, size_t len, uint32_t ctl)
+cond_negate(uint16_t *a, size_t len, uint32_t ctl)
 {
 	size_t k;
 	uint32_t cc, xm;
@@ -68,7 +68,7 @@ i15_moddiv_cond_negate(uint16_t *a, size_t len, uint32_t ctl)
  * Also, modulus m must be odd.
  */
 static void
-i15_moddiv_finish_mod(uint16_t *a, size_t len, const uint16_t *m, uint32_t neg)
+finish_mod(uint16_t *a, size_t len, const uint16_t *m, uint32_t neg)
 {
 	size_t k;
 	uint32_t cc, xm, ym;
@@ -163,8 +163,8 @@ co_reduce(uint16_t *a, uint16_t *b, size_t len,
 	b[len - 1] = (uint16_t)ccb;
 	nega = (uint32_t)cca >> 31;
 	negb = (uint32_t)ccb >> 31;
-	i15_moddiv_cond_negate(a, len, nega);
-	i15_moddiv_cond_negate(b, len, negb);
+	cond_negate(a, len, nega);
+	cond_negate(b, len, negb);
 	return nega | (negb << 1);
 }
 
@@ -235,8 +235,8 @@ co_reduce_mod(uint16_t *a, uint16_t *b, size_t len,
 	 * The top word of 'a' and 'b' may have a 16-th bit set.
 	 * We may have to add or subtract the modulus.
 	 */
-	i15_moddiv_finish_mod(a, len, m, (uint32_t)cca >> 31);
-	i15_moddiv_finish_mod(b, len, m, (uint32_t)ccb >> 31);
+	finish_mod(a, len, m, (uint32_t)cca >> 31);
+	finish_mod(b, len, m, (uint32_t)ccb >> 31);
 }
 
 /* see inner.h */

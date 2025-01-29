@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 /*
  * Parameters for supported curves (field modulus, and 'b' equation
@@ -176,13 +176,13 @@ typedef struct {
 /*
  * Temporaries.
  */
-#define ec_prime_131_t1     6
-#define ec_prime_131_t2     7
-#define ec_prime_131_t3     8
-#define ec_prime_131_t4     9
-#define ec_prime_131_t5    10
-#define ec_prime_131_t6    11
-#define ec_prime_131_t7    12
+#define t1     6
+#define t2     7
+#define t3     8
+#define t4     9
+#define t5    10
+#define t6    11
+#define t7    12
 
 /*
  * Extra scratch registers available when there is no second operand (e.g.

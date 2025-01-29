@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 /*
  * Supported cipher suites that use SHA-384 for the PRF when selected

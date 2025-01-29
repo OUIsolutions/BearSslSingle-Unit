@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 /*
  * PC2left[x] tells where bit x goes when applying PC-2. 'x' is a bit
@@ -202,7 +202,7 @@ static const uint32_t S8[] = {
 };
 
 static inline uint32_t
-des_tab_Fconf(uint32_t r0, uint32_t skl, uint32_t skr)
+Fconf(uint32_t r0, uint32_t skl, uint32_t skr)
 {
 	uint32_t r1;
 
@@ -219,7 +219,7 @@ des_tab_Fconf(uint32_t r0, uint32_t skl, uint32_t skr)
 }
 
 static void
-dest_tab_process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *skey)
+process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *skey)
 {
 	int i;
 	uint32_t l, r;
@@ -229,7 +229,7 @@ dest_tab_process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *skey)
 	for (i = 0; i < 16; i ++) {
 		uint32_t t;
 
-		t = l ^ des_tab_Fconf(r, skey[(i << 1) + 0], skey[(i << 1) + 1]);
+		t = l ^ Fconf(r, skey[(i << 1) + 0], skey[(i << 1) + 1]);
 		l = r;
 		r = t;
 	}
@@ -249,7 +249,7 @@ br_des_tab_process_block(unsigned num_rounds, const uint32_t *skey, void *block)
 	r = br_dec32be(buf + 4);
 	br_des_do_IP(&l, &r);
 	while (num_rounds -- > 0) {
-		dest_tab_process_block_unit(&l, &r, skey);
+		process_block_unit(&l, &r, skey);
 		skey += 32;
 	}
 	br_des_do_invIP(&l, &r);
@@ -258,7 +258,7 @@ br_des_tab_process_block(unsigned num_rounds, const uint32_t *skey, void *block)
 }
 
 static void
-dest_tab_keysched_unit(uint32_t *skey, const void *key)
+keysched_unit(uint32_t *skey, const void *key)
 {
 	int i;
 
@@ -292,19 +292,19 @@ br_des_tab_keysched(uint32_t *skey, const void *key, size_t key_len)
 {
 	switch (key_len) {
 	case 8:
-		dest_tab_keysched_unit(skey, key);
+		keysched_unit(skey, key);
 		return 1;
 	case 16:
-		dest_tab_keysched_unit(skey, key);
-		dest_tab_keysched_unit(skey + 32, (const unsigned char *)key + 8);
+		keysched_unit(skey, key);
+		keysched_unit(skey + 32, (const unsigned char *)key + 8);
 		br_des_rev_skey(skey + 32);
 		memcpy(skey + 64, skey, 32 * sizeof *skey);
 		return 3;
 	default:
-		dest_tab_keysched_unit(skey, key);
-		dest_tab_keysched_unit(skey + 32, (const unsigned char *)key + 8);
+		keysched_unit(skey, key);
+		keysched_unit(skey + 32, (const unsigned char *)key + 8);
 		br_des_rev_skey(skey + 32);
-		dest_tab_keysched_unit(skey + 64, (const unsigned char *)key + 16);
+		keysched_unit(skey + 64, (const unsigned char *)key + 16);
 		return 3;
 	}
 }

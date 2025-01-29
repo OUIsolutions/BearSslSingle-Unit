@@ -22,13 +22,13 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 /*
  * Perform the inner processing of blocks for Poly1305.
  */
 static void
-ctmul32_poly1305_inner(uint32_t *a, const uint32_t *r, const void *data, size_t len)
+poly1305_inner(uint32_t *a, const uint32_t *r, const void *data, size_t len)
 {
 	/*
 	 * Implementation notes: we split the 130-bit values into ten
@@ -231,9 +231,9 @@ br_poly1305_ctmul32_run(const void *key, const void *iv,
 	 */
 	br_enc64le(foot, (uint64_t)aad_len);
 	br_enc64le(foot + 8, (uint64_t)len);
-	ctmul32_poly1305_inner(acc, r, aad, aad_len);
-	ctmul32_poly1305_inner(acc, r, data, len);
-	ctmul32_poly1305_inner(acc, r, foot, sizeof foot);
+	poly1305_inner(acc, r, aad, aad_len);
+	poly1305_inner(acc, r, data, len);
+	poly1305_inner(acc, r, foot, sizeof foot);
 
 	/*
 	 * Finalise modular reduction. This is done with carry propagation

@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 static const unsigned char POINT_LEN[] = {
 	  0,   /* 0: not a valid curve ID */

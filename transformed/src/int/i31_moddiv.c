@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 /*
  * In this file, we handle big integers with a custom format, i.e.
@@ -40,7 +40,7 @@
  * computed; otherwise, if 'ctl' is 0, then the value is unchanged.
  */
 static void
-i3_moddiv_cond_negate(uint32_t *a, size_t len, uint32_t ctl)
+cond_negate(uint32_t *a, size_t len, uint32_t ctl)
 {
 	size_t k;
 	uint32_t cc, xm;
@@ -68,7 +68,7 @@ i3_moddiv_cond_negate(uint32_t *a, size_t len, uint32_t ctl)
  * Also, modulus m must be odd.
  */
 static void
-i31_moddiv_finish_mod(uint32_t *a, size_t len, const uint32_t *m, uint32_t neg)
+finish_mod(uint32_t *a, size_t len, const uint32_t *m, uint32_t neg)
 {
 	size_t k;
 	uint32_t cc, xm, ym;
@@ -179,8 +179,8 @@ co_reduce(uint32_t *a, uint32_t *b, size_t len,
 
 	nega = (uint32_t)((uint64_t)cca >> 63);
 	negb = (uint32_t)((uint64_t)ccb >> 63);
-	i3_moddiv_cond_negate(a, len, nega);
-	i3_moddiv_cond_negate(b, len, negb);
+	cond_negate(a, len, nega);
+	cond_negate(b, len, negb);
 	return nega | (negb << 1);
 }
 
@@ -248,8 +248,8 @@ co_reduce_mod(uint32_t *a, uint32_t *b, size_t len,
 	 * The top word of 'a' and 'b' may have a 32-th bit set.
 	 * We may have to add or subtract the modulus.
 	 */
-	i31_moddiv_finish_mod(a, len, m, (uint32_t)((uint64_t)cca >> 63));
-	i31_moddiv_finish_mod(b, len, m, (uint32_t)((uint64_t)ccb >> 63));
+	finish_mod(a, len, m, (uint32_t)((uint64_t)cca >> 63));
+	finish_mod(b, len, m, (uint32_t)((uint64_t)ccb >> 63));
 }
 
 /* see inner.h */

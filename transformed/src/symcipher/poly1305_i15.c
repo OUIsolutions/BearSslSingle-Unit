@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 /*
  * This is a "reference" implementation of Poly1305 that uses the
@@ -42,7 +42,7 @@ static const uint16_t P1305[] = {
 /*
  * -p mod 2^15.
  */
-#define poly_1305_i15_P0I   0x4CCD
+#define P0I   0x4CCD
 
 /*
  * R^2 mod p, for conversion to Montgomery representation (R = 2^135,
@@ -58,7 +58,7 @@ static const uint16_t R2[] = {
  * is in Montgomery representation, while the "a" array is not.
  */
 static void
-i15_c_poly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t len)
+poly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t len)
 {
 	const unsigned char *buf;
 
@@ -100,7 +100,7 @@ i15_c_poly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t le
 		/*
 		 * Multiply by r, result is the new accumulator value.
 		 */
-		br_i15_montymul(a, b, r, P1305, poly_1305_i15_P0I);
+		br_i15_montymul(a, b, r, P1305, P0I);
 
 		buf += 16;
 		len -= 16;
@@ -176,7 +176,7 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	/*
 	 * Convert 'r' to Montgomery representation.
 	 */
-	br_i15_montymul(r, t, R2, P1305, poly_1305_i15_P0I);
+	br_i15_montymul(r, t, R2, P1305, P0I);
 
 	/*
 	 * Accumulator is 0.
@@ -189,9 +189,9 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	 */
 	br_enc64le(foot, (uint64_t)aad_len);
 	br_enc64le(foot + 8, (uint64_t)len);
-	i15_c_poly1305_inner(acc, r, aad, aad_len);
-	i15_c_poly1305_inner(acc, r, data, len);
-	i15_c_poly1305_inner(acc, r, foot, sizeof foot);
+	poly1305_inner(acc, r, aad, aad_len);
+	poly1305_inner(acc, r, data, len);
+	poly1305_inner(acc, r, foot, sizeof foot);
 
 	/*
 	 * Decode the value 's'. Again, a byteswap is needed.

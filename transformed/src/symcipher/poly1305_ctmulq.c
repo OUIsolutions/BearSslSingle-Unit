@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 #if BR_INT128 || BR_UMUL128
 
@@ -296,7 +296,7 @@ poly1305_inner_small(uint64_t *acc, uint64_t *r, const void *data, size_t len)
 }
 
 static inline void
-ctmulq_poly1305_inner(uint64_t *acc, uint64_t *r, const void *data, size_t len)
+poly1305_inner(uint64_t *acc, uint64_t *r, const void *data, size_t len)
 {
 	if (len >= 64) {
 		size_t len2;
@@ -383,9 +383,9 @@ br_poly1305_ctmulq_run(const void *key, const void *iv,
 	 */
 	br_enc64le(foot, (uint64_t)aad_len);
 	br_enc64le(foot + 8, (uint64_t)len);
-	ctmulq_poly1305_inner(acc, r, aad, aad_len);
-	ctmulq_poly1305_inner(acc, r, data, len);
-	ctmulq_poly1305_inner(acc, r, foot, sizeof foot);
+	poly1305_inner(acc, r, aad, aad_len);
+	poly1305_inner(acc, r, data, len);
+	poly1305_inner_small(acc, r, foot, sizeof foot);
 
 	/*
 	 * Finalise modular reduction. At that point, the value consists

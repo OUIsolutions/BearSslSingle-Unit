@@ -7,10 +7,10 @@ typedef struct {
 	uint32_t *dp;
 	uint32_t *rp;
 	const unsigned char *ip;
-} PENDOC_t0_context;
+} t0_context;
 
 static uint32_t
-PENDOC_t0_parse7E_unsigned(const unsigned char **p)
+t0_parse7E_unsigned(const unsigned char **p)
 {
 	uint32_t x;
 
@@ -27,7 +27,7 @@ PENDOC_t0_parse7E_unsigned(const unsigned char **p)
 }
 
 static int32_t
-PENDOC_t0_parse7E_signed(const unsigned char **p)
+t0_parse7E_signed(const unsigned char **p)
 {
 	int neg;
 	uint32_t x;
@@ -58,7 +58,7 @@ PENDOC_t0_parse7E_signed(const unsigned char **p)
 #define T0_INT4(x)       T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 #define T0_INT5(x)       T0_SBYTE(x), T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 
-/* static const unsigned char PENDEC_t0_datablock[]; */
+/* static const unsigned char t0_datablock[]; */
 
 
 void br_pem_decoder_init_main(void *t0ctx);
@@ -67,9 +67,9 @@ void br_pem_decoder_run(void *t0ctx);
 
 
 
+#include "inner.h"
 
-
-#define PENDOC_CTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
+#define CTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
 
 /* see bearssl_pem.h */
 void
@@ -109,12 +109,12 @@ br_pem_decoder_event(br_pem_decoder_context *ctx)
 
 
 
-static const unsigned char PENDEC_t0_datablock[] = {
+static const unsigned char t0_datablock[] = {
 	0x00, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x42, 0x45, 0x47, 0x49, 0x4E, 0x20,
 	0x00, 0x2D, 0x2D, 0x2D, 0x2D, 0x45, 0x4E, 0x44, 0x20, 0x00
 };
 
-static const unsigned char PENDOC_t0_codeblock[] = {
+static const unsigned char t0_codeblock[] = {
 	0x00, 0x01, 0x00, 0x09, 0x00, 0x00, 0x01, 0x01, 0x07, 0x00, 0x00, 0x01,
 	0x01, 0x08, 0x00, 0x00, 0x13, 0x13, 0x00, 0x00, 0x01,
 	T0_INT2(offsetof(br_pem_decoder_context, event)), 0x00, 0x00, 0x01,
@@ -170,7 +170,7 @@ static const unsigned char PENDOC_t0_codeblock[] = {
 	0x01, 0x20, 0x0B, 0x10, 0x00
 };
 
-static const uint16_t PENDEC_t0_caddr[] = {
+static const uint16_t t0_caddr[] = {
 	0,
 	5,
 	10,
@@ -194,28 +194,28 @@ static const uint16_t PENDEC_t0_caddr[] = {
 	601
 };
 
-#define PENDEC_T0_INTERPRETED   29
+#define T0_INTERPRETED   29
 
-#define PENDEC_T0_ENTER(ip, rp, slot)   do { \
+#define T0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
-		t0_newip = &PENDOC_t0_codeblock[PENDEC_t0_caddr[(slot) - PENDEC_T0_INTERPRETED]]; \
-		t0_lnum = PENDOC_t0_parse7E_unsigned(&t0_newip); \
+		t0_newip = &t0_codeblock[t0_caddr[(slot) - T0_INTERPRETED]]; \
+		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
-		*((rp) ++) = (uint32_t)((ip) - &PENDOC_t0_codeblock[0]) + (t0_lnum << 16); \
+		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
 		(ip) = t0_newip; \
 	} while (0)
 
-#define PENDEC_T0_T0_DEFENTRY(name, slot) \
+#define T0_DEFENTRY(name, slot) \
 void \
 name(void *ctx) \
 { \
-	PENDOC_t0_context *t0ctx = ctx; \
-	t0ctx->ip = &PENDOC_t0_codeblock[0]; \
-	PENDEC_T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+	t0_context *t0ctx = ctx; \
+	t0ctx->ip = &t0_codeblock[0]; \
+	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
 
-PENDEC_T0_T0_DEFENTRY(br_pem_decoder_init_main, 38)
+T0_DEFENTRY(br_pem_decoder_init_main, 38)
 
 #define T0_NEXT(t0ipp)   (*(*(t0ipp)) ++)
 
@@ -268,16 +268,16 @@ br_pem_decoder_run(void *t0ctx)
 } while (0)
 #define T0_RET()        goto t0_next
 
-	dp = ((PENDOC_t0_context *)t0ctx)->dp;
-	rp = ((PENDOC_t0_context *)t0ctx)->rp;
-	ip = ((PENDOC_t0_context *)t0ctx)->ip;
+	dp = ((t0_context *)t0ctx)->dp;
+	rp = ((t0_context *)t0ctx)->rp;
+	ip = ((t0_context *)t0ctx)->ip;
 	goto t0_next;
 	for (;;) {
 		uint32_t t0x;
 
 	t0_next:
 		t0x = T0_NEXT(&ip);
-		if (t0x < PENDEC_T0_INTERPRETED) {
+		if (t0x < T0_INTERPRETED) {
 			switch (t0x) {
 				int32_t t0off;
 
@@ -289,29 +289,29 @@ br_pem_decoder_run(void *t0ctx)
 					ip = NULL;
 					goto t0_exit;
 				}
-				ip = &PENDOC_t0_codeblock[t0x];
+				ip = &t0_codeblock[t0x];
 				break;
 			case 1: /* literal constant */
-				T0_PUSHi(PENDOC_t0_parse7E_signed(&ip));
+				T0_PUSHi(t0_parse7E_signed(&ip));
 				break;
 			case 2: /* read local */
-				T0_PUSH(T0_LOCAL(PENDOC_t0_parse7E_unsigned(&ip)));
+				T0_PUSH(T0_LOCAL(t0_parse7E_unsigned(&ip)));
 				break;
 			case 3: /* write local */
-				T0_LOCAL(PENDOC_t0_parse7E_unsigned(&ip)) = T0_POP();
+				T0_LOCAL(t0_parse7E_unsigned(&ip)) = T0_POP();
 				break;
 			case 4: /* jump */
-				t0off = PENDOC_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				ip += t0off;
 				break;
 			case 5: /* jump if */
-				t0off = PENDOC_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				if (T0_POP()) {
 					ip += t0off;
 				}
 				break;
 			case 6: /* jump if not */
-				t0off = PENDOC_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				if (!T0_POP()) {
 					ip += t0off;
 				}
@@ -415,7 +415,7 @@ br_pem_decoder_run(void *t0ctx)
 				/* data-get8 */
 
 	size_t addr = T0_POP();
-	T0_PUSH(PENDEC_t0_datablock[addr]);
+	T0_PUSH(t0_datablock[addr]);
 
 				}
 				break;
@@ -432,11 +432,11 @@ br_pem_decoder_run(void *t0ctx)
 			case 21: {
 				/* flush-buf */
 
-	if (PENDOC_CTX->ptr > 0) {
-		if (PENDOC_CTX->dest) {
-			PENDOC_CTX->dest(PENDOC_CTX->dest_ctx, PENDOC_CTX->buf, PENDOC_CTX->ptr);
+	if (CTX->ptr > 0) {
+		if (CTX->dest) {
+			CTX->dest(CTX->dest_ctx, CTX->buf, CTX->ptr);
 		}
-		PENDOC_CTX->ptr = 0;
+		CTX->ptr = 0;
 	}
 
 				}
@@ -464,7 +464,7 @@ br_pem_decoder_run(void *t0ctx)
 				/* get8 */
 
 	size_t addr = T0_POP();
-	T0_PUSH(*((unsigned char *)PENDOC_CTX + addr));
+	T0_PUSH(*((unsigned char *)CTX + addr));
 
 				}
 				break;
@@ -476,9 +476,9 @@ br_pem_decoder_run(void *t0ctx)
 			case 25: {
 				/* read8-native */
 
-	if (PENDOC_CTX->hlen > 0) {
-		T0_PUSH(*PENDOC_CTX->hbuf ++);
-		PENDOC_CTX->hlen --;
+	if (CTX->hlen > 0) {
+		T0_PUSH(*CTX->hbuf ++);
+		CTX->hlen --;
 	} else {
 		T0_PUSHi(-1);
 	}
@@ -490,7 +490,7 @@ br_pem_decoder_run(void *t0ctx)
 
 	size_t addr = T0_POP();
 	unsigned x = T0_POP();
-	*((unsigned char *)PENDOC_CTX + addr) = x;
+	*((unsigned char *)CTX + addr) = x;
 
 				}
 				break;
@@ -503,12 +503,12 @@ br_pem_decoder_run(void *t0ctx)
 				/* write8 */
 
 	unsigned char x = (unsigned char)T0_POP();
-	PENDOC_CTX->buf[PENDOC_CTX->ptr ++] = x;
-	if (PENDOC_CTX->ptr == sizeof PENDOC_CTX->buf) {
-		if (PENDOC_CTX->dest) {
-			PENDOC_CTX->dest(PENDOC_CTX->dest_ctx, PENDOC_CTX->buf, sizeof PENDOC_CTX->buf);
+	CTX->buf[CTX->ptr ++] = x;
+	if (CTX->ptr == sizeof CTX->buf) {
+		if (CTX->dest) {
+			CTX->dest(CTX->dest_ctx, CTX->buf, sizeof CTX->buf);
 		}
-		PENDOC_CTX->ptr = 0;
+		CTX->ptr = 0;
 	}
 
 				}
@@ -516,11 +516,11 @@ br_pem_decoder_run(void *t0ctx)
 			}
 
 		} else {
-			PENDEC_T0_ENTER(ip, rp, t0x);
+			T0_ENTER(ip, rp, t0x);
 		}
 	}
 t0_exit:
-	((PENDOC_t0_context *)t0ctx)->dp = dp;
-	((PENDOC_t0_context *)t0ctx)->rp = rp;
-	((PENDOC_t0_context *)t0ctx)->ip = ip;
+	((t0_context *)t0ctx)->dp = dp;
+	((t0_context *)t0ctx)->rp = rp;
+	((t0_context *)t0ctx)->ip = ip;
 }

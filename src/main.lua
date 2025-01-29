@@ -3,7 +3,11 @@
 function main()
     
 
-
+   --iterate over transformmed 
+   local transformed = darwin.dtw.list_files_recursively("transformed",true)
+   for i, file in ipairs(transformed) do
+       local content = 
+   end
 
 
    if darwin.argv.one_of_args_exist("update_bear")  then

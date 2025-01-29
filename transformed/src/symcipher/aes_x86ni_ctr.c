@@ -23,7 +23,7 @@
  */
 
 #define BR_ENABLE_INTRINSICS   1
-
+#include "inner.h"
 
 #if BR_AES_X86NI
 

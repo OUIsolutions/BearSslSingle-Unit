@@ -7,10 +7,10 @@ typedef struct {
 	uint32_t *dp;
 	uint32_t *rp;
 	const unsigned char *ip;
-} SKEY_DECODER_t0_context;
+} t0_context;
 
 static uint32_t
-SKEY_DECODER_t0_parse7E_unsigned(const unsigned char **p)
+t0_parse7E_unsigned(const unsigned char **p)
 {
 	uint32_t x;
 
@@ -27,7 +27,7 @@ SKEY_DECODER_t0_parse7E_unsigned(const unsigned char **p)
 }
 
 static int32_t
-SKEY_DECODER_t0_parse7E_signed(const unsigned char **p)
+t0_parse7E_signed(const unsigned char **p)
 {
 	int neg;
 	uint32_t x;
@@ -58,7 +58,7 @@ SKEY_DECODER_t0_parse7E_signed(const unsigned char **p)
 #define T0_INT4(x)       T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 #define T0_INT5(x)       T0_SBYTE(x), T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 
-/* static const unsigned char SKEY_DECODER_t0_datablock[]; */
+/* static const unsigned char t0_datablock[]; */
 
 
 void br_skey_decoder_init_main(void *t0ctx);
@@ -67,16 +67,16 @@ void br_skey_decoder_run(void *t0ctx);
 
 
 
+#include "inner.h"
 
 
 
 
 
+#include "inner.h"
 
-
-
-#define SKEY_DECODER_CTX   ((br_skey_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_skey_decoder_context, cpu)))
-#define SKEY_DECODER_CONTEXT_NAME   br_skey_decoder_context
+#define CTX   ((br_skey_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_skey_decoder_context, cpu)))
+#define CONTEXT_NAME   br_skey_decoder_context
 
 /* see bearssl_x509.h */
 void
@@ -101,14 +101,14 @@ br_skey_decoder_push(br_skey_decoder_context *ctx,
 
 
 
-static const unsigned char SKEY_DECODER_t0_datablock[] = {
+static const unsigned char t0_datablock[] = {
 	0x00, 0x09, 0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x01, 0x07,
 	0x2A, 0x86, 0x48, 0xCE, 0x3D, 0x02, 0x01, 0x08, 0x2A, 0x86, 0x48, 0xCE,
 	0x3D, 0x03, 0x01, 0x07, 0x05, 0x2B, 0x81, 0x04, 0x00, 0x22, 0x05, 0x2B,
 	0x81, 0x04, 0x00, 0x23
 };
 
-static const unsigned char SKEY_DECODER_t0_codeblock[] = {
+static const unsigned char t0_codeblock[] = {
 	0x00, 0x01, 0x01, 0x07, 0x00, 0x00, 0x01, 0x01, 0x08, 0x00, 0x00, 0x13,
 	0x13, 0x00, 0x00, 0x01, T0_INT1(BR_ERR_X509_BAD_TAG_CLASS), 0x00, 0x00,
 	0x01, T0_INT1(BR_ERR_X509_BAD_TAG_VALUE), 0x00, 0x00, 0x01,
@@ -123,9 +123,9 @@ static const unsigned char SKEY_DECODER_t0_codeblock[] = {
 	T0_INT1(BR_ERR_X509_UNEXPECTED), 0x00, 0x00, 0x01,
 	T0_INT1(BR_ERR_X509_UNSUPPORTED), 0x00, 0x00, 0x01,
 	T0_INT1(BR_KEYTYPE_EC), 0x00, 0x00, 0x01, T0_INT1(BR_KEYTYPE_RSA),
-	0x00, 0x00, 0x01, T0_INT2(offsetof(SKEY_DECODER_CONTEXT_NAME, key_data)), 0x00,
-	0x00, 0x01, T0_INT2(offsetof(SKEY_DECODER_CONTEXT_NAME, key_type)), 0x00, 0x00,
-	0x33, 0x48, 0x00, 0x00, 0x01, T0_INT2(offsetof(SKEY_DECODER_CONTEXT_NAME, pad)),
+	0x00, 0x00, 0x01, T0_INT2(offsetof(CONTEXT_NAME, key_data)), 0x00,
+	0x00, 0x01, T0_INT2(offsetof(CONTEXT_NAME, key_type)), 0x00, 0x00,
+	0x33, 0x48, 0x00, 0x00, 0x01, T0_INT2(offsetof(CONTEXT_NAME, pad)),
 	0x00, 0x00, 0x01, 0x13, 0x00, 0x00, 0x01, 0x1C, 0x00, 0x00, 0x01, 0x22,
 	0x00, 0x00, 0x05, 0x02, 0x2C, 0x16, 0x00, 0x00, 0x06, 0x02, 0x2D, 0x16,
 	0x00, 0x00, 0x01, 0x10, 0x3D, 0x00, 0x00, 0x0D, 0x05, 0x02, 0x2F, 0x16,
@@ -198,7 +198,7 @@ static const unsigned char SKEY_DECODER_t0_codeblock[] = {
 	0x24, 0x00
 };
 
-static const uint16_t SKEY_DECODER_t0_caddr[] = {
+static const uint16_t t0_caddr[] = {
 	0,
 	5,
 	10,
@@ -262,28 +262,28 @@ static const uint16_t SKEY_DECODER_t0_caddr[] = {
 	901
 };
 
-#define SKEY_DECODER_T0_INTERPRETED   34
+#define T0_INTERPRETED   34
 
-#define SKEY_DECODER_T0_ENTER(ip, rp, slot)   do { \
+#define T0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
-		t0_newip = &SKEY_DECODER_t0_codeblock[SKEY_DECODER_t0_caddr[(slot) - SKEY_DECODER_T0_INTERPRETED]]; \
-		t0_lnum = SKEY_DECODER_t0_parse7E_unsigned(&t0_newip); \
+		t0_newip = &t0_codeblock[t0_caddr[(slot) - T0_INTERPRETED]]; \
+		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
-		*((rp) ++) = (uint32_t)((ip) - &SKEY_DECODER_t0_codeblock[0]) + (t0_lnum << 16); \
+		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
 		(ip) = t0_newip; \
 	} while (0)
 
-#define SKEY_DECODER_T0_DEFENTRY(name, slot) \
+#define T0_DEFENTRY(name, slot) \
 void \
 name(void *ctx) \
 { \
-	SKEY_DECODER_t0_context *t0ctx = ctx; \
-	t0ctx->ip = &SKEY_DECODER_t0_codeblock[0]; \
-	SKEY_DECODER_T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+	t0_context *t0ctx = ctx; \
+	t0ctx->ip = &t0_codeblock[0]; \
+	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
 
-SKEY_DECODER_T0_DEFENTRY(br_skey_decoder_init_main, 73)
+T0_DEFENTRY(br_skey_decoder_init_main, 73)
 
 #define T0_NEXT(t0ipp)   (*(*(t0ipp)) ++)
 
@@ -336,16 +336,16 @@ br_skey_decoder_run(void *t0ctx)
 } while (0)
 #define T0_RET()        goto t0_next
 
-	dp = ((SKEY_DECODER_t0_context *)t0ctx)->dp;
-	rp = ((SKEY_DECODER_t0_context *)t0ctx)->rp;
-	ip = ((SKEY_DECODER_t0_context *)t0ctx)->ip;
+	dp = ((t0_context *)t0ctx)->dp;
+	rp = ((t0_context *)t0ctx)->rp;
+	ip = ((t0_context *)t0ctx)->ip;
 	goto t0_next;
 	for (;;) {
 		uint32_t t0x;
 
 	t0_next:
 		t0x = T0_NEXT(&ip);
-		if (t0x < SKEY_DECODER_T0_INTERPRETED) {
+		if (t0x < T0_INTERPRETED) {
 			switch (t0x) {
 				int32_t t0off;
 
@@ -357,29 +357,29 @@ br_skey_decoder_run(void *t0ctx)
 					ip = NULL;
 					goto t0_exit;
 				}
-				ip = &SKEY_DECODER_t0_codeblock[t0x];
+				ip = &t0_codeblock[t0x];
 				break;
 			case 1: /* literal constant */
-				T0_PUSHi(SKEY_DECODER_t0_parse7E_signed(&ip));
+				T0_PUSHi(t0_parse7E_signed(&ip));
 				break;
 			case 2: /* read local */
-				T0_PUSH(T0_LOCAL(SKEY_DECODER_t0_parse7E_unsigned(&ip)));
+				T0_PUSH(T0_LOCAL(t0_parse7E_unsigned(&ip)));
 				break;
 			case 3: /* write local */
-				T0_LOCAL(SKEY_DECODER_t0_parse7E_unsigned(&ip)) = T0_POP();
+				T0_LOCAL(t0_parse7E_unsigned(&ip)) = T0_POP();
 				break;
 			case 4: /* jump */
-				t0off = SKEY_DECODER_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				ip += t0off;
 				break;
 			case 5: /* jump if */
-				t0off = SKEY_DECODER_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				if (T0_POP()) {
 					ip += t0off;
 				}
 				break;
 			case 6: /* jump if not */
-				t0off = SKEY_DECODER_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				if (!T0_POP()) {
 					ip += t0off;
 				}
@@ -497,8 +497,8 @@ br_skey_decoder_run(void *t0ctx)
 			case 21: {
 				/* eqOID */
 
-	const unsigned char *a2 = &SKEY_DECODER_t0_datablock[T0_POP()];
-	const unsigned char *a1 = &SKEY_DECODER_CTX->pad[0];
+	const unsigned char *a2 = &t0_datablock[T0_POP()];
+	const unsigned char *a1 = &CTX->pad[0];
 	size_t len = a1[0];
 	int x;
 	if (len == a2[0]) {
@@ -513,7 +513,7 @@ br_skey_decoder_run(void *t0ctx)
 			case 22: {
 				/* fail */
 
-	SKEY_DECODER_CTX->err = T0_POPi();
+	CTX->err = T0_POPi();
 	T0_CO();
 
 				}
@@ -522,7 +522,7 @@ br_skey_decoder_run(void *t0ctx)
 				/* get8 */
 
 	uint32_t addr = T0_POP();
-	T0_PUSH(*((unsigned char *)SKEY_DECODER_CTX + addr));
+	T0_PUSH(*((unsigned char *)CTX + addr));
 
 				}
 				break;
@@ -544,15 +544,15 @@ br_skey_decoder_run(void *t0ctx)
 
 	uint32_t len = T0_POP();
 	uint32_t addr = T0_POP();
-	size_t clen = SKEY_DECODER_CTX->hlen;
+	size_t clen = CTX->hlen;
 	if (clen > len) {
 		clen = (size_t)len;
 	}
 	if (addr != 0) {
-		memcpy((unsigned char *)SKEY_DECODER_CTX + addr, SKEY_DECODER_CTX->hbuf, clen);
+		memcpy((unsigned char *)CTX + addr, CTX->hbuf, clen);
 	}
-	SKEY_DECODER_CTX->hbuf += clen;
-	SKEY_DECODER_CTX->hlen -= clen;
+	CTX->hbuf += clen;
+	CTX->hlen -= clen;
 	T0_PUSH(addr + clen);
 	T0_PUSH(len - clen);
 
@@ -561,11 +561,11 @@ br_skey_decoder_run(void *t0ctx)
 			case 27: {
 				/* read8-low */
 
-	if (SKEY_DECODER_CTX->hlen == 0) {
+	if (CTX->hlen == 0) {
 		T0_PUSHi(-1);
 	} else {
-		SKEY_DECODER_CTX->hlen --;
-		T0_PUSH(*SKEY_DECODER_CTX->hbuf ++);
+		CTX->hlen --;
+		T0_PUSH(*CTX->hbuf ++);
 	}
 
 				}
@@ -580,9 +580,9 @@ br_skey_decoder_run(void *t0ctx)
 
 	size_t xlen = T0_POP();
 	uint32_t curve = T0_POP();
-	SKEY_DECODER_CTX->key.ec.curve = curve;
-	SKEY_DECODER_CTX->key.ec.x = SKEY_DECODER_CTX->key_data;
-	SKEY_DECODER_CTX->key.ec.xlen = xlen;
+	CTX->key.ec.curve = curve;
+	CTX->key.ec.x = CTX->key_data;
+	CTX->key.ec.xlen = xlen;
 
 				}
 				break;
@@ -597,21 +597,21 @@ br_skey_decoder_run(void *t0ctx)
 	uint32_t n_bitlen = T0_POP();
 	size_t off;
 
-	SKEY_DECODER_CTX->key.rsa.n_bitlen = n_bitlen;
-	SKEY_DECODER_CTX->key.rsa.p = SKEY_DECODER_CTX->key_data;
-	SKEY_DECODER_CTX->key.rsa.plen = plen;
+	CTX->key.rsa.n_bitlen = n_bitlen;
+	CTX->key.rsa.p = CTX->key_data;
+	CTX->key.rsa.plen = plen;
 	off = plen;
-	SKEY_DECODER_CTX->key.rsa.q = SKEY_DECODER_CTX->key_data + off;
-	SKEY_DECODER_CTX->key.rsa.qlen = qlen;
+	CTX->key.rsa.q = CTX->key_data + off;
+	CTX->key.rsa.qlen = qlen;
 	off += qlen;
-	SKEY_DECODER_CTX->key.rsa.dp = SKEY_DECODER_CTX->key_data + off;
-	SKEY_DECODER_CTX->key.rsa.dplen = dplen;
+	CTX->key.rsa.dp = CTX->key_data + off;
+	CTX->key.rsa.dplen = dplen;
 	off += dplen;
-	SKEY_DECODER_CTX->key.rsa.dq = SKEY_DECODER_CTX->key_data + off;
-	SKEY_DECODER_CTX->key.rsa.dqlen = dqlen;
+	CTX->key.rsa.dq = CTX->key_data + off;
+	CTX->key.rsa.dqlen = dqlen;
 	off += dqlen;
-	SKEY_DECODER_CTX->key.rsa.iq = SKEY_DECODER_CTX->key_data + off;
-	SKEY_DECODER_CTX->key.rsa.iqlen = iqlen;
+	CTX->key.rsa.iq = CTX->key_data + off;
+	CTX->key.rsa.iqlen = iqlen;
 
 				}
 				break;
@@ -619,7 +619,7 @@ br_skey_decoder_run(void *t0ctx)
 				/* set8 */
 
 	uint32_t addr = T0_POP();
-	*((unsigned char *)SKEY_DECODER_CTX + addr) = (unsigned char)T0_POP();
+	*((unsigned char *)CTX + addr) = (unsigned char)T0_POP();
 
 				}
 				break;
@@ -640,11 +640,11 @@ br_skey_decoder_run(void *t0ctx)
 			}
 
 		} else {
-			SKEY_DECODER_T0_ENTER(ip, rp, t0x);
+			T0_ENTER(ip, rp, t0x);
 		}
 	}
 t0_exit:
-	((SKEY_DECODER_t0_context *)t0ctx)->dp = dp;
-	((SKEY_DECODER_t0_context *)t0ctx)->rp = rp;
-	((SKEY_DECODER_t0_context *)t0ctx)->ip = ip;
+	((t0_context *)t0ctx)->dp = dp;
+	((t0_context *)t0ctx)->rp = rp;
+	((t0_context *)t0ctx)->ip = ip;
 }

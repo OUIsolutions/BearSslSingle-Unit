@@ -23,7 +23,7 @@
  */
 
 #define BR_POWER_ASM_MACROS   1
-
+#include "inner.h"
 
 /*
  * This code contains the AES key schedule implementation using the

@@ -23,7 +23,7 @@
  */
 
 #define BR_POWER_ASM_MACROS   1
-
+#include "inner.h"
 
 /*
  * This is the GHASH implementation that leverages the POWER8 opcodes.

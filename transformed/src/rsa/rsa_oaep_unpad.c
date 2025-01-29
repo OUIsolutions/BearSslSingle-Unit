@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 /*
  * Hash some data and XOR the result into the provided buffer. This is put

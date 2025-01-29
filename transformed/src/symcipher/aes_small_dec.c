@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 /*
  * Inverse S-box.
@@ -53,7 +53,7 @@ static const unsigned char iS[] = {
 };
 
 static void
-aes_small_dec_add_round_key(unsigned *state, const uint32_t *skeys)
+add_round_key(unsigned *state, const uint32_t *skeys)
 {
 	int i;
 
@@ -79,7 +79,7 @@ inv_sub_bytes(unsigned *state)
 }
 
 static void
-aes_samll_dec_inv_shift_rows(unsigned *state)
+inv_shift_rows(unsigned *state)
 {
 	unsigned tmp;
 
@@ -113,7 +113,7 @@ gf256red(unsigned x)
 }
 
 static void
-aes_samall_dec_inv_mix_columns(unsigned *state)
+inv_mix_columns(unsigned *state)
 {
 	int i;
 
@@ -160,16 +160,16 @@ br_aes_small_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	for (u = 0; u < 16; u ++) {
 		state[u] = buf[u];
 	}
-	aes_small_dec_add_round_key(state, skey + (num_rounds << 2));
+	add_round_key(state, skey + (num_rounds << 2));
 	for (u = num_rounds - 1; u > 0; u --) {
-		aes_samll_dec_inv_shift_rows(state);
+		inv_shift_rows(state);
 		inv_sub_bytes(state);
-		aes_small_dec_add_round_key(state, skey + (u << 2));
-		aes_samall_dec_inv_mix_columns(state);
+		add_round_key(state, skey + (u << 2));
+		inv_mix_columns(state);
 	}
-	aes_samll_dec_inv_shift_rows(state);
+	inv_shift_rows(state);
 	inv_sub_bytes(state);
-	aes_small_dec_add_round_key(state, skey);
+	add_round_key(state, skey);
 	for (u = 0; u < 16; u ++) {
 		buf[u] = state[u];
 	}

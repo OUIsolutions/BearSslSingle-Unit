@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-
+#include "inner.h"
 
 /* see bearssl_ec.h */
 const br_ec_impl *

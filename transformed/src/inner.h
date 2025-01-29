@@ -29,7 +29,7 @@
 #include <limits.h>
 
 #include "config.h"
-#include "../inc/bearssl.h"
+#include "bearssl.h"
 
 /*
  * On MSVC, disable the warning about applying unary minus on an

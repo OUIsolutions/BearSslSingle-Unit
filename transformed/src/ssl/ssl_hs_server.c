@@ -7,10 +7,10 @@ typedef struct {
 	uint32_t *dp;
 	uint32_t *rp;
 	const unsigned char *ip;
-} HS_SERVER_t0_context;
+} t0_context;
 
 static uint32_t
-HS_SERVER_t0_parse7E_unsigned(const unsigned char **p)
+t0_parse7E_unsigned(const unsigned char **p)
 {
 	uint32_t x;
 
@@ -27,7 +27,7 @@ HS_SERVER_t0_parse7E_unsigned(const unsigned char **p)
 }
 
 static int32_t
-HS_SERVER_t0_parse7E_signed(const unsigned char **p)
+t0_parse7E_signed(const unsigned char **p)
 {
 	int neg;
 	uint32_t x;
@@ -58,7 +58,7 @@ HS_SERVER_t0_parse7E_signed(const unsigned char **p)
 #define T0_INT4(x)       T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 #define T0_INT5(x)       T0_SBYTE(x), T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 
-/* static const unsigned char HS_SERVER_t0_datablock[]; */
+/* static const unsigned char t0_datablock[]; */
 
 
 void br_ssl_hs_server_init_main(void *t0ctx);
@@ -70,7 +70,7 @@ void br_ssl_hs_server_run(void *t0ctx);
 #include <stddef.h>
 #include <string.h>
 
-
+#include "inner.h"
 
 /*
  * This macro evaluates to a pointer to the current engine context.
@@ -89,7 +89,7 @@ void br_ssl_hs_server_run(void *t0ctx);
  * appropriate cast. This also means that "addresses" computed as offsets
  * within the structure work for both kinds of context.
  */
-#define HS_SERVER_CTX  ((br_ssl_server_context *)ENG)
+#define CTX  ((br_ssl_server_context *)ENG)
 
 /*
  * Decrypt the pre-master secret (RSA key exchange).
@@ -445,7 +445,7 @@ verify_CV_sig(br_ssl_server_context *ctx, size_t sig_len)
 
 
 
-static const unsigned char HS_SERVER_t0_datablock[] = {
+static const unsigned char t0_datablock[] = {
 	0x00, 0x00, 0x0A, 0x00, 0x24, 0x00, 0x2F, 0x01, 0x24, 0x00, 0x35, 0x02,
 	0x24, 0x00, 0x3C, 0x01, 0x44, 0x00, 0x3D, 0x02, 0x44, 0x00, 0x9C, 0x03,
 	0x04, 0x00, 0x9D, 0x04, 0x05, 0xC0, 0x03, 0x40, 0x24, 0xC0, 0x04, 0x41,
@@ -464,7 +464,7 @@ static const unsigned char HS_SERVER_t0_datablock[] = {
 	0x04, 0x00, 0x00
 };
 
-static const unsigned char HS_SERVER_t0_codeblock[] = {
+static const unsigned char t0_codeblock[] = {
 	0x00, 0x01, 0x00, 0x0B, 0x00, 0x00, 0x01, 0x00, 0x0E, 0x00, 0x00, 0x01,
 	0x00, 0x0F, 0x00, 0x00, 0x01, 0x00, 0x10, 0x00, 0x00, 0x01, 0x01, 0x08,
 	0x00, 0x00, 0x01, 0x01, 0x09, 0x00, 0x00, 0x01, 0x02, 0x08, 0x00, 0x00,
@@ -790,7 +790,7 @@ static const unsigned char HS_SERVER_t0_codeblock[] = {
 	0xCF, 0x29, 0x04, 0x76
 };
 
-static const uint16_t HS_SERVER_t0_caddr[] = {
+static const uint16_t t0_caddr[] = {
 	0,
 	5,
 	10,
@@ -927,28 +927,28 @@ static const uint16_t HS_SERVER_t0_caddr[] = {
 	3306
 };
 
-#define SSL_HS_SERVER_T0_INTERPRETED   93
+#define T0_INTERPRETED   93
 
-#define SSL_HS_SERVER_T0_ENTER(ip, rp, slot)   do { \
+#define T0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
-		t0_newip = &HS_SERVER_t0_codeblock[HS_SERVER_t0_caddr[(slot) - SSL_HS_SERVER_T0_INTERPRETED]]; \
-		t0_lnum = HS_SERVER_t0_parse7E_unsigned(&t0_newip); \
+		t0_newip = &t0_codeblock[t0_caddr[(slot) - T0_INTERPRETED]]; \
+		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
-		*((rp) ++) = (uint32_t)((ip) - &HS_SERVER_t0_codeblock[0]) + (t0_lnum << 16); \
+		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
 		(ip) = t0_newip; \
 	} while (0)
 
-#define SSL_HS_SERVER_T0_DEFENTRY(name, slot) \
+#define T0_DEFENTRY(name, slot) \
 void \
 name(void *ctx) \
 { \
-	HS_SERVER_t0_context *t0ctx = ctx; \
-	t0ctx->ip = &HS_SERVER_t0_codeblock[0]; \
-	SSL_HS_SERVER_T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+	t0_context *t0ctx = ctx; \
+	t0ctx->ip = &t0_codeblock[0]; \
+	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
 
-SSL_HS_SERVER_T0_DEFENTRY(br_ssl_hs_server_init_main, 166)
+T0_DEFENTRY(br_ssl_hs_server_init_main, 166)
 
 #define T0_NEXT(t0ipp)   (*(*(t0ipp)) ++)
 
@@ -1001,16 +1001,16 @@ br_ssl_hs_server_run(void *t0ctx)
 } while (0)
 #define T0_RET()        goto t0_next
 
-	dp = ((HS_SERVER_t0_context *)t0ctx)->dp;
-	rp = ((HS_SERVER_t0_context *)t0ctx)->rp;
-	ip = ((HS_SERVER_t0_context *)t0ctx)->ip;
+	dp = ((t0_context *)t0ctx)->dp;
+	rp = ((t0_context *)t0ctx)->rp;
+	ip = ((t0_context *)t0ctx)->ip;
 	goto t0_next;
 	for (;;) {
 		uint32_t t0x;
 
 	t0_next:
 		t0x = T0_NEXT(&ip);
-		if (t0x < SSL_HS_SERVER_T0_INTERPRETED) {
+		if (t0x < T0_INTERPRETED) {
 			switch (t0x) {
 				int32_t t0off;
 
@@ -1022,29 +1022,29 @@ br_ssl_hs_server_run(void *t0ctx)
 					ip = NULL;
 					goto t0_exit;
 				}
-				ip = &HS_SERVER_t0_codeblock[t0x];
+				ip = &t0_codeblock[t0x];
 				break;
 			case 1: /* literal constant */
-				T0_PUSHi(HS_SERVER_t0_parse7E_signed(&ip));
+				T0_PUSHi(t0_parse7E_signed(&ip));
 				break;
 			case 2: /* read local */
-				T0_PUSH(T0_LOCAL(HS_SERVER_t0_parse7E_unsigned(&ip)));
+				T0_PUSH(T0_LOCAL(t0_parse7E_unsigned(&ip)));
 				break;
 			case 3: /* write local */
-				T0_LOCAL(HS_SERVER_t0_parse7E_unsigned(&ip)) = T0_POP();
+				T0_LOCAL(t0_parse7E_unsigned(&ip)) = T0_POP();
 				break;
 			case 4: /* jump */
-				t0off = HS_SERVER_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				ip += t0off;
 				break;
 			case 5: /* jump if */
-				t0off = HS_SERVER_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				if (T0_POP()) {
 					ip += t0off;
 				}
 				break;
 			case 6: /* jump if not */
-				t0off = HS_SERVER_t0_parse7E_signed(&ip);
+				t0off = t0_parse7E_signed(&ip);
 				if (!T0_POP()) {
 					ip += t0off;
 				}
@@ -1181,18 +1181,18 @@ br_ssl_hs_server_run(void *t0ctx)
 				/* begin-ta-name */
 
 	const br_x500_name *dn;
-	if (HS_SERVER_CTX->cur_dn_index >= HS_SERVER_CTX->num_tas) {
+	if (CTX->cur_dn_index >= CTX->num_tas) {
 		T0_PUSHi(-1);
 	} else {
-		if (HS_SERVER_CTX->ta_names == NULL) {
-			dn = &HS_SERVER_CTX->tas[HS_SERVER_CTX->cur_dn_index].dn;
+		if (CTX->ta_names == NULL) {
+			dn = &CTX->tas[CTX->cur_dn_index].dn;
 		} else {
-			dn = &HS_SERVER_CTX->ta_names[HS_SERVER_CTX->cur_dn_index];
+			dn = &CTX->ta_names[CTX->cur_dn_index];
 		}
-		HS_SERVER_CTX->cur_dn_index ++;
-		HS_SERVER_CTX->cur_dn = dn->data;
-		HS_SERVER_CTX->cur_dn_len = dn->len;
-		T0_PUSH(HS_SERVER_CTX->cur_dn_len);
+		CTX->cur_dn_index ++;
+		CTX->cur_dn = dn->data;
+		CTX->cur_dn_len = dn->len;
+		T0_PUSH(CTX->cur_dn_len);
 	}
 
 				}
@@ -1200,7 +1200,7 @@ br_ssl_hs_server_run(void *t0ctx)
 			case 22: {
 				/* begin-ta-name-list */
 
-	HS_SERVER_CTX->cur_dn_index = 0;
+	CTX->cur_dn_index = 0;
 
 				}
 				break;
@@ -1219,10 +1219,10 @@ br_ssl_hs_server_run(void *t0ctx)
 	int x;
 	br_ssl_server_choices choices;
 
-	x = (*HS_SERVER_CTX->policy_vtable)->choose(
-		HS_SERVER_CTX->policy_vtable, HS_SERVER_CTX, &choices);
+	x = (*CTX->policy_vtable)->choose(
+		CTX->policy_vtable, CTX, &choices);
 	ENG->session.cipher_suite = choices.cipher_suite;
-	HS_SERVER_CTX->sign_hash_id = choices.algo_id;
+	CTX->sign_hash_id = choices.algo_id;
 	ENG->chain = choices.chain;
 	ENG->chain_len = choices.chain_len;
 	T0_PUSHi(-(x != 0));
@@ -1240,8 +1240,8 @@ br_ssl_hs_server_run(void *t0ctx)
 				/* check-resume */
 
 	if (ENG->session.session_id_len == 32
-		&& HS_SERVER_CTX->cache_vtable != NULL && (*HS_SERVER_CTX->cache_vtable)->load(
-			HS_SERVER_CTX->cache_vtable, HS_SERVER_CTX, &ENG->session))
+		&& CTX->cache_vtable != NULL && (*CTX->cache_vtable)->load(
+			CTX->cache_vtable, CTX, &ENG->session))
 	{
 		T0_PUSHi(-1);
 	} else {
@@ -1312,13 +1312,13 @@ br_ssl_hs_server_run(void *t0ctx)
 
 	size_t clen;
 
-	clen = HS_SERVER_CTX->cur_dn_len;
+	clen = CTX->cur_dn_len;
 	if (clen > sizeof ENG->pad) {
 		clen = sizeof ENG->pad;
 	}
-	memcpy(ENG->pad, HS_SERVER_CTX->cur_dn, clen);
-	HS_SERVER_CTX->cur_dn += clen;
-	HS_SERVER_CTX->cur_dn_len -= clen;
+	memcpy(ENG->pad, CTX->cur_dn, clen);
+	CTX->cur_dn += clen;
+	CTX->cur_dn_len -= clen;
 	T0_PUSH(clen);
 
 				}
@@ -1340,9 +1340,9 @@ br_ssl_hs_server_run(void *t0ctx)
 		off = HASH_PAD_OFF[id - 1];
 		len = HASH_PAD_OFF[id] - off;
 	}
-	memcpy(HS_SERVER_CTX->hash_CV, ENG->pad + off, len);
-	HS_SERVER_CTX->hash_CV_len = len;
-	HS_SERVER_CTX->hash_CV_id = id;
+	memcpy(CTX->hash_CV, ENG->pad + off, len);
+	CTX->hash_CV_len = len;
+	CTX->hash_CV_id = id;
 	T0_PUSHi(-1);
 
 				}
@@ -1361,7 +1361,7 @@ br_ssl_hs_server_run(void *t0ctx)
 				/* data-get8 */
 
 	size_t addr = T0_POP();
-	T0_PUSH(HS_SERVER_t0_datablock[addr]);
+	T0_PUSH(t0_datablock[addr]);
 
 				}
 				break;
@@ -1377,7 +1377,7 @@ br_ssl_hs_server_run(void *t0ctx)
 
 	int prf_id = T0_POPi();
 	size_t len = T0_POP();
-	do_ecdh(HS_SERVER_CTX, prf_id, ENG->pad, len);
+	do_ecdh(CTX, prf_id, ENG->pad, len);
 
 				}
 				break;
@@ -1385,7 +1385,7 @@ br_ssl_hs_server_run(void *t0ctx)
 				/* do-ecdhe-part1 */
 
 	int curve = T0_POPi();
-	T0_PUSHi(do_ecdhe_part1(HS_SERVER_CTX, curve));
+	T0_PUSHi(do_ecdhe_part1(CTX, curve));
 
 				}
 				break;
@@ -1394,7 +1394,7 @@ br_ssl_hs_server_run(void *t0ctx)
 
 	int prf_id = T0_POPi();
 	size_t len = T0_POP();
-	do_ecdhe_part2(HS_SERVER_CTX, prf_id, ENG->pad, len);
+	do_ecdhe_part2(CTX, prf_id, ENG->pad, len);
 
 				}
 				break;
@@ -1403,14 +1403,14 @@ br_ssl_hs_server_run(void *t0ctx)
 
 	int prf_id = T0_POPi();
 	size_t len = T0_POP();
-	do_rsa_decrypt(HS_SERVER_CTX, prf_id, ENG->pad, len);
+	do_rsa_decrypt(CTX, prf_id, ENG->pad, len);
 
 				}
 				break;
 			case 40: {
 				/* do-static-ecdh */
 
-	do_static_ecdh(HS_SERVER_CTX, T0_POP());
+	do_static_ecdh(CTX, T0_POP());
 
 				}
 				break;
@@ -1611,9 +1611,9 @@ br_ssl_hs_server_run(void *t0ctx)
 			case 62: {
 				/* save-session */
 
-	if (HS_SERVER_CTX->cache_vtable != NULL) {
-		(*HS_SERVER_CTX->cache_vtable)->save(
-			HS_SERVER_CTX->cache_vtable, HS_SERVER_CTX, &ENG->session);
+	if (CTX->cache_vtable != NULL) {
+		(*CTX->cache_vtable)->save(
+			CTX->cache_vtable, CTX, &ENG->session);
 	}
 
 				}
@@ -1825,13 +1825,13 @@ br_ssl_hs_server_run(void *t0ctx)
 	size_t u, len;
 
 	len = 0;
-	if (HS_SERVER_CTX->ta_names != NULL) {
-		for (u = 0; u < HS_SERVER_CTX->num_tas; u ++) {
-			len += HS_SERVER_CTX->ta_names[u].len + 2;
+	if (CTX->ta_names != NULL) {
+		for (u = 0; u < CTX->num_tas; u ++) {
+			len += CTX->ta_names[u].len + 2;
 		}
-	} else if (HS_SERVER_CTX->tas != NULL) {
-		for (u = 0; u < HS_SERVER_CTX->num_tas; u ++) {
-			len += HS_SERVER_CTX->tas[u].dn.len + 2;
+	} else if (CTX->tas != NULL) {
+		for (u = 0; u < CTX->num_tas; u ++) {
+			len += CTX->tas[u].dn.len + 2;
 		}
 	}
 	T0_PUSH(len);
@@ -1894,7 +1894,7 @@ br_ssl_hs_server_run(void *t0ctx)
 
 	int err;
 
-	err = verify_CV_sig(HS_SERVER_CTX, T0_POP());
+	err = verify_CV_sig(CTX, T0_POP());
 	T0_PUSHi(err);
 
 				}
@@ -1999,11 +1999,11 @@ br_ssl_hs_server_run(void *t0ctx)
 			}
 
 		} else {
-			SSL_HS_SERVER_T0_ENTER(ip, rp, t0x);
+			T0_ENTER(ip, rp, t0x);
 		}
 	}
 t0_exit:
-	((HS_SERVER_t0_context *)t0ctx)->dp = dp;
-	((HS_SERVER_t0_context *)t0ctx)->rp = rp;
-	((HS_SERVER_t0_context *)t0ctx)->ip = ip;
+	((t0_context *)t0ctx)->dp = dp;
+	((t0_context *)t0ctx)->rp = rp;
+	((t0_context *)t0ctx)->ip = ip;
 }
