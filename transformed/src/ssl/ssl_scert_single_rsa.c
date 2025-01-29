@@ -99,7 +99,7 @@ static const unsigned char HASH_OID_SHA384[] = {
 	0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x02
 };
 
-static const unsigned char HASH_OID_SHA512[] = {
+static const unsigned char (BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA512[] = {
 	0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x03
 };
 
@@ -108,7 +108,7 @@ static const unsigned char *HASH_OID[] = {
 	HASH_OID_SHA224,
 	HASH_OID_SHA256,
 	HASH_OID_SHA384,
-	HASH_OID_SHA512
+	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA512
 };
 
 static size_t
