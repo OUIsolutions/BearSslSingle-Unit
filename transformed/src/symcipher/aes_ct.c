@@ -238,7 +238,7 @@ static const unsigned char Rcon[] = {
 };
 
 static uint32_t
-sub_word(uint32_t x)
+(BEAR_SINGLE_UNITY_FILE)sub_word(uint32_t x)
 {
 	uint32_t q[8];
 	int i;
@@ -286,9 +286,9 @@ br_aes_ct_keysched(uint32_t *comp_skey, const void *key, size_t key_len)
 	for (i = nk, j = 0, k = 0; i < nkf; i ++) {
 		if (j == 0) {
 			tmp = (tmp << 24) | (tmp >> 8);
-			tmp = sub_word(tmp) ^ Rcon[k];
+			tmp = (BEAR_SINGLE_UNITY_FILE)sub_word(tmp) ^ Rcon[k];
 		} else if (nk > 6 && j == 4) {
-			tmp = sub_word(tmp);
+			tmp = (BEAR_SINGLE_UNITY_FILE)sub_word(tmp);
 		}
 		tmp ^= skey[(i - nk) << 1];
 		skey[(i << 1) + 0] = tmp;
