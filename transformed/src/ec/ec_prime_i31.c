@@ -176,8 +176,8 @@ typedef struct {
 /*
  * Temporaries.
  */
-#define t1     6
-#define t2     7
+#define ec_prime_131_t1     6
+#define ec_prime_131_t2     7
 #define t3     8
 #define t4     9
 #define t5    10
