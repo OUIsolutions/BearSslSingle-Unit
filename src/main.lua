@@ -7,7 +7,7 @@ function main()
    for i, v in ipairs(transformmed) do
        local file = transformmed[i]
        local content= darwin.dtw.load_file(file)
-      var = 'byteswap'
+      var = 'C255_R2'
       local replaced = string.gsub(content, var, "BEAR_SINGLE_UNITY_FILE"..var)
       darwin.dtw.write_file(file, replaced)
    end

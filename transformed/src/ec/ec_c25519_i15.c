@@ -39,7 +39,7 @@ static const uint16_t BEAR_SINGLE_UNITY_FILEC255_P[] = {
 
 #define BEAR_SINGLE_UNITY_FILEP0I   0x4A1B
 
-static const uint16_t C255_R2[] = {
+static const uint16_t BEAR_SINGLE_UNITY_FILEC255_R2[] = {
 	0x0110,
 	0x0169, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
@@ -67,7 +67,7 @@ print_int_mont(const char *name, const uint16_t *x)
 }
 */
 
-static const uint16_t C255_A24[] = {
+static const uint16_t BEAR_SINGLE_UNITY_FILEC255_A24[] = {
 	0x0110,
 	0x45D3, 0x0046, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
@@ -130,7 +130,7 @@ BEAR_SINGLE_UNITY_FILEcswap(uint16_t *a, uint16_t *b, uint32_t ctl)
 }
 
 static void
-c255_add(uint16_t *d, const uint16_t *a, const uint16_t *b)
+BEAR_SINGLE_UNITY_FILEc255_add(uint16_t *d, const uint16_t *a, const uint16_t *b)
 {
 	uint32_t ctl;
 	uint16_t t[18];
@@ -143,7 +143,7 @@ c255_add(uint16_t *d, const uint16_t *a, const uint16_t *b)
 }
 
 static void
-c255_sub(uint16_t *d, const uint16_t *a, const uint16_t *b)
+BEAR_SINGLE_UNITY_FILEc255_sub(uint16_t *d, const uint16_t *a, const uint16_t *b)
 {
 	uint16_t t[18];
 
@@ -153,7 +153,7 @@ c255_sub(uint16_t *d, const uint16_t *a, const uint16_t *b)
 }
 
 static void
-c255_mul(uint16_t *d, const uint16_t *a, const uint16_t *b)
+BEAR_SINGLE_UNITY_FILEc255_mul(uint16_t *d, const uint16_t *a, const uint16_t *b)
 {
 	uint16_t t[18];
 
@@ -232,7 +232,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	 * Initialise variables x1, x2, z2, x3 and z3. We set all of them
 	 * into Montgomery representation.
 	 */
-	br_i15_montymul(x1, a, C255_R2, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
+	br_i15_montymul(x1, a, BEAR_SINGLE_UNITY_FILEC255_R2, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	memcpy(x3, x1, ILEN);
 	br_i15_zero(z2, BEAR_SINGLE_UNITY_FILEC255_P[0]);
 	memcpy(x2, z2, ILEN);
@@ -266,15 +266,15 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		print_int_mont("z3", z3);
 		*/
 
-		c255_add(a, x2, z2);
-		c255_mul(aa, a, a);
-		c255_sub(b, x2, z2);
-		c255_mul(bb, b, b);
-		c255_sub(e, aa, bb);
-		c255_add(c, x3, z3);
-		c255_sub(d, x3, z3);
-		c255_mul(da, d, a);
-		c255_mul(cb, c, b);
+		BEAR_SINGLE_UNITY_FILEc255_add(a, x2, z2);
+		BEAR_SINGLE_UNITY_FILEc255_mul(aa, a, a);
+		BEAR_SINGLE_UNITY_FILEc255_sub(b, x2, z2);
+		BEAR_SINGLE_UNITY_FILEc255_mul(bb, b, b);
+		BEAR_SINGLE_UNITY_FILEc255_sub(e, aa, bb);
+		BEAR_SINGLE_UNITY_FILEc255_add(c, x3, z3);
+		BEAR_SINGLE_UNITY_FILEc255_sub(d, x3, z3);
+		BEAR_SINGLE_UNITY_FILEc255_mul(da, d, a);
+		BEAR_SINGLE_UNITY_FILEc255_mul(cb, c, b);
 
 		/* obsolete
 		print_int_mont("a ", a);
@@ -288,15 +288,15 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		print_int_mont("cb", cb);
 		*/
 
-		c255_add(x3, da, cb);
-		c255_mul(x3, x3, x3);
-		c255_sub(z3, da, cb);
-		c255_mul(z3, z3, z3);
-		c255_mul(z3, z3, x1);
-		c255_mul(x2, aa, bb);
-		c255_mul(z2, C255_A24, e);
-		c255_add(z2, z2, aa);
-		c255_mul(z2, e, z2);
+		BEAR_SINGLE_UNITY_FILEc255_add(x3, da, cb);
+		BEAR_SINGLE_UNITY_FILEc255_mul(x3, x3, x3);
+		BEAR_SINGLE_UNITY_FILEc255_sub(z3, da, cb);
+		BEAR_SINGLE_UNITY_FILEc255_mul(z3, z3, z3);
+		BEAR_SINGLE_UNITY_FILEc255_mul(z3, z3, x1);
+		BEAR_SINGLE_UNITY_FILEc255_mul(x2, aa, bb);
+		BEAR_SINGLE_UNITY_FILEc255_mul(z2, BEAR_SINGLE_UNITY_FILEC255_A24, e);
+		BEAR_SINGLE_UNITY_FILEc255_add(z2, z2, aa);
+		BEAR_SINGLE_UNITY_FILEc255_mul(z2, e, z2);
 
 		/* obsolete
 		print_int_mont("x2", x2);
@@ -315,25 +315,25 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	 */
 	memcpy(a, z2, ILEN);
 	for (i = 0; i < 15; i ++) {
-		c255_mul(a, a, a);
-		c255_mul(a, a, z2);
+		BEAR_SINGLE_UNITY_FILEc255_mul(a, a, a);
+		BEAR_SINGLE_UNITY_FILEc255_mul(a, a, z2);
 	}
 	memcpy(b, a, ILEN);
 	for (i = 0; i < 14; i ++) {
 		int j;
 
 		for (j = 0; j < 16; j ++) {
-			c255_mul(b, b, b);
+			BEAR_SINGLE_UNITY_FILEc255_mul(b, b, b);
 		}
-		c255_mul(b, b, a);
+		BEAR_SINGLE_UNITY_FILEc255_mul(b, b, a);
 	}
 	for (i = 14; i >= 0; i --) {
-		c255_mul(b, b, b);
+		BEAR_SINGLE_UNITY_FILEc255_mul(b, b, b);
 		if ((0xFFEB >> i) & 1) {
-			c255_mul(b, z2, b);
+			BEAR_SINGLE_UNITY_FILEc255_mul(b, z2, b);
 		}
 	}
-	c255_mul(b, x2, b);
+	BEAR_SINGLE_UNITY_FILEc255_mul(b, x2, b);
 
 	/*
 	 * To avoid a dependency on br_i15_from_monty(), we use a
