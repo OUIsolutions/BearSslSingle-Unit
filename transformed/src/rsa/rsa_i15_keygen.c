@@ -377,7 +377,7 @@ mkprime(const br_prng_class **rng, uint16_t *x, uint32_t esize,
  * the size of p.
  */
 static uint32_t
-invert_pubexp(uint16_t *d, const uint16_t *m, uint32_t e, uint16_t *t)
+(BEAR_SINGLE_UNITY_FILE)invert_pubexp(uint16_t *d, const uint16_t *m, uint32_t e, uint16_t *t)
 {
 	uint16_t *f;
 	uint32_t r;
@@ -504,7 +504,7 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 	for (;;) {
 		mkprime(rng, p, esize_p, pubexp, t, tlen);
 		br_i15_rshift(p, 1);
-		if (invert_pubexp(t, p, pubexp, t + 1 + plen)) {
+		if ((BEAR_SINGLE_UNITY_FILE)invert_pubexp(t, p, pubexp, t + 1 + plen)) {
 			br_i15_add(p, p, 1);
 			p[1] |= 1;
 			br_i15_encode(sk->p, sk->plen, p);
@@ -516,7 +516,7 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 	for (;;) {
 		mkprime(rng, q, esize_q, pubexp, t, tlen);
 		br_i15_rshift(q, 1);
-		if (invert_pubexp(t, q, pubexp, t + 1 + qlen)) {
+		if ((BEAR_SINGLE_UNITY_FILE)invert_pubexp(t, q, pubexp, t + 1 + qlen)) {
 			br_i15_add(q, q, 1);
 			q[1] |= 1;
 			br_i15_encode(sk->q, sk->qlen, q);
