@@ -617,7 +617,7 @@ f255_final_reduce(uint64_t *a)
 }
 
 static uint32_t
-api_mul(unsigned char *G, size_t Glen,
+(BEAR_SINGLE_UNITY_FILE)api_mul(unsigned char *G, size_t Glen,
 	const unsigned char *kb, size_t kblen, int curve)
 {
 	unsigned char k[32];
@@ -768,7 +768,7 @@ api_mul(unsigned char *G, size_t Glen,
 }
 
 static size_t
-api_mulgen(unsigned char *R,
+(BEAR_SINGLE_UNITY_FILE)api_mulgen(unsigned char *R,
 	const unsigned char *x, size_t xlen, int curve)
 {
 	const unsigned char *G;
@@ -776,12 +776,12 @@ api_mulgen(unsigned char *R,
 
 	G = api_generator(curve, &Glen);
 	memcpy(R, G, Glen);
-	api_mul(R, Glen, x, xlen, curve);
+	(BEAR_SINGLE_UNITY_FILE)api_mul(R, Glen, x, xlen, curve);
 	return Glen;
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)api_muladd(unsigned char *A, const unsigned char *B, size_t len,
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
@@ -807,9 +807,9 @@ const br_ec_impl br_ec_c25519_m64 = {
 	&api_generator,
 	&api_order,
 	&api_xoff,
-	&api_mul,
-	&api_mulgen,
-	&(BEAR_SINGLE_UNITY_FILE)api_muladd
+	&(BEAR_SINGLE_UNITY_FILE)api_mul,
+	&(BEAR_SINGLE_UNITY_FILE)api_mulgen,
+	&(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)api_muladd
 };
 
 /* see bearssl_ec.h */
