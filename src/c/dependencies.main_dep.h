@@ -1,6 +1,0 @@
-#include "../../config/all.h"
-#include "../../dependencies/CTextEngine.h"
-#include "../../dependencies/LuaCEmbed.h"
-#include "../../dependencies/LuaDoTheWorld/src/one.c"
-#include "../../dependencies/LuaFluidJson/main.c"
-#include "../../dependencies/SilverChain/src/imports/imports.func_definition.h"
