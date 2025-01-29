@@ -343,7 +343,7 @@ const br_x509_class br_x509_minimal_vtable = {
 };
 
 #define CTX   ((br_x509_minimal_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_minimal_context, cpu)))
-#define CONTEXT_NAME   br_x509_minimal_context
+#define (BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME   br_x509_minimal_context
 
 #define DNHASH_LEN   ((CTX->dn_hash_impl->desc >> BR_HASHDESC_OUT_OFF) & BR_HASHDESC_OUT_MASK)
 
@@ -472,21 +472,21 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)t0_codeblock[] = {
 	T0_INT1(BR_ERR_X509_UNSUPPORTED), 0x00, 0x00, 0x01,
 	T0_INT1(BR_ERR_X509_WEAK_PUBLIC_KEY), 0x00, 0x00, 0x01,
 	T0_INT1(BR_KEYTYPE_EC), 0x00, 0x00, 0x01, T0_INT1(BR_KEYTYPE_RSA),
-	0x00, 0x00, 0x01, T0_INT2(offsetof(CONTEXT_NAME, cert_length)), 0x00,
-	0x00, 0x01, T0_INT2(offsetof(CONTEXT_NAME, cert_sig)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof(CONTEXT_NAME, cert_sig_hash_len)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof(CONTEXT_NAME, cert_sig_hash_oid)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof(CONTEXT_NAME, cert_sig_len)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, cert_signer_key_type)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof(CONTEXT_NAME, current_dn_hash)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof(CONTEXT_NAME, key_usages)), 0x00, 0x00, 0x01,
+	0x00, 0x00, 0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_length)), 0x00,
+	0x00, 0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_sig)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_sig_hash_len)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_sig_hash_oid)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_sig_len)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_signer_key_type)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, current_dn_hash)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, key_usages)), 0x00, 0x00, 0x01,
 	T0_INT2(offsetof(br_x509_minimal_context, pkey_data)), 0x01,
 	T0_INT2(BR_X509_BUFSIZE_KEY), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, min_rsa_size)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, next_dn_hash)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, num_certs)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, pad)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, saved_dn_hash)), 0x00, 0x00, 0x01, 0x80,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, min_rsa_size)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, next_dn_hash)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, num_certs)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, pad)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, saved_dn_hash)), 0x00, 0x00, 0x01, 0x80,
 	0x73, 0x00, 0x00, 0x01, 0x80, 0x7C, 0x00, 0x00, 0x01, 0x81, 0x02, 0x00,
 	0x00, 0x8F, 0x05, 0x05, 0x33, 0x41, 0x01, 0x00, 0x00, 0x33, 0x01, 0x0A,
 	0x0E, 0x09, 0x01, 0x9A, 0xFF, 0xB8, 0x00, 0x0A, 0x00, 0x00, 0x01, 0x82,

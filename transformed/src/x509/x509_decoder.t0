@@ -25,7 +25,7 @@ preamble {
 
 
 #define CTX   ((br_x509_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_decoder_context, cpu)))
-#define CONTEXT_NAME   br_x509_decoder_context
+#define (BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME   br_x509_decoder_context
 
 /* see bearssl_x509.h */
 void

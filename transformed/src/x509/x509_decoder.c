@@ -76,7 +76,7 @@ void br_x509_decoder_run(void *t0ctx);
 
 
 #define CTX   ((br_x509_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_decoder_context, cpu)))
-#define CONTEXT_NAME   br_x509_decoder_context
+#define (BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME   br_x509_decoder_context
 
 /* see bearssl_x509.h */
 void
@@ -147,18 +147,18 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)t0_codeblock[] = {
 	T0_INT1(BR_ERR_X509_UNEXPECTED), 0x00, 0x00, 0x01,
 	T0_INT1(BR_ERR_X509_UNSUPPORTED), 0x00, 0x00, 0x01,
 	T0_INT1(BR_KEYTYPE_EC), 0x00, 0x00, 0x01, T0_INT1(BR_KEYTYPE_RSA),
-	0x00, 0x00, 0x01, T0_INT2(offsetof(CONTEXT_NAME, copy_dn)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof(CONTEXT_NAME, decoded)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, isCA)), 0x00, 0x00, 0x01,
+	0x00, 0x00, 0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, copy_dn)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, decoded)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, isCA)), 0x00, 0x00, 0x01,
 	T0_INT2(offsetof(br_x509_decoder_context, pkey_data)), 0x01,
 	T0_INT2(BR_X509_BUFSIZE_KEY), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, notafter_days)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, notafter_seconds)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, notbefore_days)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, notbefore_seconds)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, pad)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, signer_hash_id)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof(CONTEXT_NAME, signer_key_type)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, notafter_days)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, notafter_seconds)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, notbefore_days)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, notbefore_seconds)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, pad)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, signer_hash_id)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, signer_key_type)), 0x00, 0x00, 0x01,
 	0x80, 0x45, 0x00, 0x00, 0x01, 0x80, 0x4E, 0x00, 0x00, 0x01, 0x80, 0x54,
 	0x00, 0x00, 0x01, 0x81, 0x36, 0x00, 0x02, 0x03, 0x00, 0x03, 0x01, 0x1B,
 	0x02, 0x01, 0x13, 0x26, 0x02, 0x00, 0x0F, 0x15, 0x00, 0x00, 0x05, 0x02,

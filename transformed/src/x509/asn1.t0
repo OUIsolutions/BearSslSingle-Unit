@@ -31,7 +31,7 @@
 \ -- In the preamble, a macro called "CTX" that evaluates to the current
 \ context structure.
 \
-\ -- In the preamble, a macro called "CONTEXT_NAME" that evaluates to the
+\ -- In the preamble, a macro called "(BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME" that evaluates to the
 \ context structure type. This will be invoked during compilation.
 \
 \ -- A word called "read8-low" ( -- x ) that reads the next byte, or -1
@@ -109,7 +109,7 @@ preamble {
 : addr:
 	next-word { field }
 	"addr-" field + 0 1 define-word
-	0 8191 "offsetof(CONTEXT_NAME, " field + ")" + make-CX
+	0 8191 "offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, " field + ")" + make-CX
 	postpone literal postpone ; ;
 
 addr: pad

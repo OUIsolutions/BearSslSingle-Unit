@@ -292,7 +292,7 @@ const br_x509_class br_x509_minimal_vtable = {
 };
 
 #define CTX   ((br_x509_minimal_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_minimal_context, cpu)))
-#define CONTEXT_NAME   br_x509_minimal_context
+#define (BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME   br_x509_minimal_context
 
 #define DNHASH_LEN   ((CTX->dn_hash_impl->desc >> BR_HASHDESC_OUT_OFF) & BR_HASHDESC_OUT_MASK)
 
