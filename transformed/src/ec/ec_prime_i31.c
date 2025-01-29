@@ -665,7 +665,7 @@ point_decode(jacobian *P, const void *src, size_t len, const curve_params *cc)
  * plen is the field modulus length, in bytes.
  */
 static void
-point_encode(void *dst, const jacobian *P, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_encode(void *dst, const jacobian *P, const curve_params *cc)
 {
 	unsigned char *buf;
 	uint32_t xbl;
@@ -740,7 +740,7 @@ static uint32_t
 	}
 	r = point_decode(&P, G, Glen, cc);
 	point_mul(&P, x, xlen, cc);
-	point_encode(G, &P, cc);
+	(BEAR_SINGLE_UNITY_FILE)point_encode(G, &P, cc);
 	return r;
 }
 
@@ -808,7 +808,7 @@ static uint32_t
 	 *   z = 1, t = 1   report an error (P+Q = 0)
 	 */
 	CCOPY(z & ~t, &P, &Q, sizeof Q);
-	point_encode(A, &P, cc);
+	(BEAR_SINGLE_UNITY_FILE)point_encode(A, &P, cc);
 	r &= ~(z & t);
 
 	return r;

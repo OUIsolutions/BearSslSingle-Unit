@@ -730,7 +730,7 @@ point_decode(p256_jacobian *P, const unsigned char *buf)
  * the encoded point is written in the buffer, and 1 is returned.
  */
 static uint32_t
-point_encode(unsigned char *buf, const p256_jacobian *P)
+(BEAR_SINGLE_UNITY_FILE)point_encode(unsigned char *buf, const p256_jacobian *P)
 {
 	uint64_t t1[4], t2[4], z;
 
@@ -1661,7 +1661,7 @@ static uint32_t
 	r = check_scalar(k, klen);
 	r &= point_decode(&P, G);
 	p256_mul(&P, k, klen);
-	r &= point_encode(G, &P);
+	r &= (BEAR_SINGLE_UNITY_FILE)point_encode(G, &P);
 	return r;
 }
 
@@ -1673,7 +1673,7 @@ static size_t
 
 	(void)curve;
 	p256_mulgen(&P, k, klen);
-	point_encode(R, &P);
+	(BEAR_SINGLE_UNITY_FILE)point_encode(R, &P);
 	return 65;
 }
 
@@ -1746,7 +1746,7 @@ static uint32_t
 	 *   s = 1, t = 1   report an error (P+Q = 0)
 	 */
 	CCOPY(s & ~t, &P, &Q, sizeof Q);
-	point_encode(A, &P);
+	(BEAR_SINGLE_UNITY_FILE)point_encode(A, &P);
 	r &= ~(s & t);
 	return r;
 }
