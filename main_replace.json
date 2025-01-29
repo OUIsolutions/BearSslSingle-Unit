@@ -1,5 +1,0 @@
-{
-    "#include \"config.h\"": "",
-    "#include \"inner.h\"": "",
-    "#include \"bearssl.h\"": "#include \"../inc/bearssl.h\""
-}
