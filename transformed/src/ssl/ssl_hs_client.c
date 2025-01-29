@@ -58,7 +58,7 @@ t0_parse7E_signed(const unsigned char **p)
 #define T0_INT4(x)       T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 #define T0_INT5(x)       T0_SBYTE(x), T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 
-/* static const unsigned char t0_datablock[]; */
+/* static const unsigned char HS_CLIENT_t0_datablock[]; */
 
 
 void br_ssl_hs_client_init_main(void *t0ctx);
@@ -396,7 +396,7 @@ make_client_sign(br_ssl_client_context *ctx)
 
 
 
-static const unsigned char t0_datablock[] = {
+static const unsigned char HS_CLIENT_t0_datablock[] = {
 	0x00, 0x00, 0x0A, 0x00, 0x24, 0x00, 0x2F, 0x01, 0x24, 0x00, 0x35, 0x02,
 	0x24, 0x00, 0x3C, 0x01, 0x44, 0x00, 0x3D, 0x02, 0x44, 0x00, 0x9C, 0x03,
 	0x04, 0x00, 0x9D, 0x04, 0x05, 0xC0, 0x03, 0x40, 0x24, 0xC0, 0x04, 0x41,
@@ -1252,7 +1252,7 @@ br_ssl_hs_client_run(void *t0ctx)
 				/* data-get8 */
 
 	size_t addr = T0_POP();
-	T0_PUSH(t0_datablock[addr]);
+	T0_PUSH(HS_CLIENT_t0_datablock[addr]);
 
 				}
 				break;

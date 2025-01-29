@@ -58,7 +58,7 @@ t0_parse7E_signed(const unsigned char **p)
 #define T0_INT4(x)       T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 #define T0_INT5(x)       T0_SBYTE(x), T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 
-/* static const unsigned char t0_datablock[]; */
+/* static const unsigned char SKEY_DECODER_t0_datablock[]; */
 
 
 void br_skey_decoder_init_main(void *t0ctx);
@@ -101,7 +101,7 @@ br_skey_decoder_push(br_skey_decoder_context *ctx,
 
 
 
-static const unsigned char t0_datablock[] = {
+static const unsigned char SKEY_DECODER_t0_datablock[] = {
 	0x00, 0x09, 0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x01, 0x07,
 	0x2A, 0x86, 0x48, 0xCE, 0x3D, 0x02, 0x01, 0x08, 0x2A, 0x86, 0x48, 0xCE,
 	0x3D, 0x03, 0x01, 0x07, 0x05, 0x2B, 0x81, 0x04, 0x00, 0x22, 0x05, 0x2B,
@@ -497,7 +497,7 @@ br_skey_decoder_run(void *t0ctx)
 			case 21: {
 				/* eqOID */
 
-	const unsigned char *a2 = &t0_datablock[T0_POP()];
+	const unsigned char *a2 = &SKEY_DECODER_t0_datablock[T0_POP()];
 	const unsigned char *a1 = &CTX->pad[0];
 	size_t len = a1[0];
 	int x;
