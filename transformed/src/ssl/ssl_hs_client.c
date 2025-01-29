@@ -89,7 +89,7 @@ void br_ssl_hs_client_run(void *t0ctx);
  * appropriate cast. This also means that "addresses" computed as offsets
  * within the structure work for both kinds of context.
  */
-#define CTX  ((br_ssl_client_context *)ENG)
+#define HS_CLIENT_CTX  ((br_ssl_client_context *)ENG)
 
 /*
  * Generate the pre-master secret for RSA key exchange, and encrypt it
@@ -1103,9 +1103,9 @@ br_ssl_hs_client_run(void *t0ctx)
 	size_t len;
 
 	len = T0_POP();
-	if (CTX->client_auth_vtable != NULL) {
-		(*CTX->client_auth_vtable)->append_name(
-			CTX->client_auth_vtable, ENG->pad, len);
+	if (HS_CLIENT_CTX->client_auth_vtable != NULL) {
+		(*HS_CLIENT_CTX->client_auth_vtable)->append_name(
+			HS_CLIENT_CTX->client_auth_vtable, ENG->pad, len);
 	}
 
 				}
@@ -1113,9 +1113,9 @@ br_ssl_hs_client_run(void *t0ctx)
 			case 19: {
 				/* anchor-dn-end-name */
 
-	if (CTX->client_auth_vtable != NULL) {
-		(*CTX->client_auth_vtable)->end_name(
-			CTX->client_auth_vtable);
+	if (HS_CLIENT_CTX->client_auth_vtable != NULL) {
+		(*HS_CLIENT_CTX->client_auth_vtable)->end_name(
+			HS_CLIENT_CTX->client_auth_vtable);
 	}
 
 				}
@@ -1123,9 +1123,9 @@ br_ssl_hs_client_run(void *t0ctx)
 			case 20: {
 				/* anchor-dn-end-name-list */
 
-	if (CTX->client_auth_vtable != NULL) {
-		(*CTX->client_auth_vtable)->end_name_list(
-			CTX->client_auth_vtable);
+	if (HS_CLIENT_CTX->client_auth_vtable != NULL) {
+		(*HS_CLIENT_CTX->client_auth_vtable)->end_name_list(
+			HS_CLIENT_CTX->client_auth_vtable);
 	}
 
 				}
@@ -1136,9 +1136,9 @@ br_ssl_hs_client_run(void *t0ctx)
 	size_t len;
 
 	len = T0_POP();
-	if (CTX->client_auth_vtable != NULL) {
-		(*CTX->client_auth_vtable)->start_name(
-			CTX->client_auth_vtable, len);
+	if (HS_CLIENT_CTX->client_auth_vtable != NULL) {
+		(*HS_CLIENT_CTX->client_auth_vtable)->start_name(
+			HS_CLIENT_CTX->client_auth_vtable, len);
 	}
 
 				}
@@ -1146,9 +1146,9 @@ br_ssl_hs_client_run(void *t0ctx)
 			case 22: {
 				/* anchor-dn-start-name-list */
 
-	if (CTX->client_auth_vtable != NULL) {
-		(*CTX->client_auth_vtable)->start_name_list(
-			CTX->client_auth_vtable);
+	if (HS_CLIENT_CTX->client_auth_vtable != NULL) {
+		(*HS_CLIENT_CTX->client_auth_vtable)->start_name_list(
+			HS_CLIENT_CTX->client_auth_vtable);
 	}
 
 				}
@@ -1268,7 +1268,7 @@ br_ssl_hs_client_run(void *t0ctx)
 
 	size_t sig_len;
 
-	sig_len = make_client_sign(CTX);
+	sig_len = make_client_sign(HS_CLIENT_CTX);
 	if (sig_len == 0) {
 		br_ssl_engine_fail(ENG, BR_ERR_INVALID_ALGORITHM);
 		T0_CO();
@@ -1284,7 +1284,7 @@ br_ssl_hs_client_run(void *t0ctx)
 	unsigned ecdhe = T0_POP();
 	int x;
 
-	x = make_pms_ecdh(CTX, ecdhe, prf_id);
+	x = make_pms_ecdh(HS_CLIENT_CTX, ecdhe, prf_id);
 	if (x < 0) {
 		br_ssl_engine_fail(ENG, -x);
 		T0_CO();
@@ -1299,7 +1299,7 @@ br_ssl_hs_client_run(void *t0ctx)
 
 	int x;
 
-	x = make_pms_rsa(CTX, T0_POP());
+	x = make_pms_rsa(HS_CLIENT_CTX, T0_POP());
 	if (x < 0) {
 		br_ssl_engine_fail(ENG, -x);
 		T0_CO();
@@ -1314,7 +1314,7 @@ br_ssl_hs_client_run(void *t0ctx)
 
 	unsigned prf_id = T0_POP();
 
-	if (make_pms_static_ecdh(CTX, prf_id) < 0) {
+	if (make_pms_static_ecdh(HS_CLIENT_CTX, prf_id) < 0) {
 		br_ssl_engine_fail(ENG, BR_ERR_INVALID_ALGORITHM);
 		T0_CO();
 	}
@@ -1369,17 +1369,17 @@ br_ssl_hs_client_run(void *t0ctx)
 	uint32_t auth_types;
 
 	auth_types = T0_POP();
-	if (CTX->client_auth_vtable != NULL) {
+	if (HS_CLIENT_CTX->client_auth_vtable != NULL) {
 		br_ssl_client_certificate ux;
 
-		(*CTX->client_auth_vtable)->choose(CTX->client_auth_vtable,
-			CTX, auth_types, &ux);
-		CTX->auth_type = (unsigned char)ux.auth_type;
-		CTX->hash_id = (unsigned char)ux.hash_id;
+		(*HS_CLIENT_CTX->client_auth_vtable)->choose(HS_CLIENT_CTX->client_auth_vtable,
+			HS_CLIENT_CTX, auth_types, &ux);
+		HS_CLIENT_CTX->auth_type = (unsigned char)ux.auth_type;
+		HS_CLIENT_CTX->hash_id = (unsigned char)ux.hash_id;
 		ENG->chain = ux.chain;
 		ENG->chain_len = ux.chain_len;
 	} else {
-		CTX->hash_id = 0;
+		HS_CLIENT_CTX->hash_id = 0;
 		ENG->chain_len = 0;
 	}
 
@@ -1557,7 +1557,7 @@ br_ssl_hs_client_run(void *t0ctx)
 
 	xc = *(ENG->x509ctx);
 	pk = xc->get_pkey(ENG->x509ctx, NULL);
-	CTX->server_curve =
+	HS_CLIENT_CTX->server_curve =
 		(pk->key_type == BR_KEYTYPE_EC) ? pk->key.ec.curve : 0;
 
 				}
@@ -1801,7 +1801,7 @@ br_ssl_hs_client_run(void *t0ctx)
 	int use_rsa = T0_POPi();
 	int hash = T0_POPi();
 
-	T0_PUSH(verify_SKE_sig(CTX, hash, use_rsa, sig_len));
+	T0_PUSH(verify_SKE_sig(HS_CLIENT_CTX, hash, use_rsa, sig_len));
 
 				}
 				break;
