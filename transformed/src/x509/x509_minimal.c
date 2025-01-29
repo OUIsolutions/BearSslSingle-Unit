@@ -345,7 +345,7 @@ const br_x509_class br_x509_minimal_vtable = {
 #define X509_MINIMAL_CTX   ((br_x509_minimal_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_minimal_context, cpu)))
 #define X509_MINIMAL_CONTEXT_NAME   br_x509_minimal_context
 
-#define DNHASH_LEN   ((CTX->dn_hash_impl->desc >> BR_HASHDESC_OUT_OFF) & BR_HASHDESC_OUT_MASK)
+#define DNHASH_LEN   ((X509_MINIMAL_CTX->dn_hash_impl->desc >> BR_HASHDESC_OUT_OFF) & BR_HASHDESC_OUT_MASK)
 
 /*
  * Hash a DN (from a trust anchor) into the provided buffer. This uses the
@@ -1256,7 +1256,7 @@ br_x509_minimal_run(void *t0ctx)
 			case 27: {
 				/* compute-dn-hash */
 
-	X509_MINIMAL_CTX->dn_hash_impl->out(&X509_MINIMAL_CTX->dn_hash.vtable, CTX->current_dn_hash);
+	X509_MINIMAL_CTX->dn_hash_impl->out(&X509_MINIMAL_CTX->dn_hash.vtable, X509_MINIMAL_CTX->current_dn_hash);
 	X509_MINIMAL_CTX->do_dn_hash = 0;
 
 				}
