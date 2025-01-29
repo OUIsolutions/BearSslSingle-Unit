@@ -57,7 +57,7 @@ static inline void
 }
 
 static inline uint64_t
-rotr32(uint64_t x)
+(BEAR_SINGLE_UNITY_FILE)rotr32(uint64_t x)
 {
 	return (x << 32) | (x >> 32);
 }
@@ -85,14 +85,14 @@ static inline void
 	r6 = (q6 >> 16) | (q6 << 48);
 	r7 = (q7 >> 16) | (q7 << 48);
 
-	q[0] = q7 ^ r7 ^ r0 ^ rotr32(q0 ^ r0);
-	q[1] = q0 ^ r0 ^ q7 ^ r7 ^ r1 ^ rotr32(q1 ^ r1);
-	q[2] = q1 ^ r1 ^ r2 ^ rotr32(q2 ^ r2);
-	q[3] = q2 ^ r2 ^ q7 ^ r7 ^ r3 ^ rotr32(q3 ^ r3);
-	q[4] = q3 ^ r3 ^ q7 ^ r7 ^ r4 ^ rotr32(q4 ^ r4);
-	q[5] = q4 ^ r4 ^ r5 ^ rotr32(q5 ^ r5);
-	q[6] = q5 ^ r5 ^ r6 ^ rotr32(q6 ^ r6);
-	q[7] = q6 ^ r6 ^ r7 ^ rotr32(q7 ^ r7);
+	q[0] = q7 ^ r7 ^ r0 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q0 ^ r0);
+	q[1] = q0 ^ r0 ^ q7 ^ r7 ^ r1 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q1 ^ r1);
+	q[2] = q1 ^ r1 ^ r2 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q2 ^ r2);
+	q[3] = q2 ^ r2 ^ q7 ^ r7 ^ r3 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q3 ^ r3);
+	q[4] = q3 ^ r3 ^ q7 ^ r7 ^ r4 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q4 ^ r4);
+	q[5] = q4 ^ r4 ^ r5 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q5 ^ r5);
+	q[6] = q5 ^ r5 ^ r6 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q6 ^ r6);
+	q[7] = q6 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q7 ^ r7);
 }
 
 /* see inner.h */
