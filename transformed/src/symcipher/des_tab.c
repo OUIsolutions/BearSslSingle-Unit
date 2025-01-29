@@ -219,7 +219,7 @@ Fconf(uint32_t r0, uint32_t skl, uint32_t skr)
 }
 
 static void
-process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *skey)
+(BEAR_SINGLE_UNITY_FILE)process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *skey)
 {
 	int i;
 	uint32_t l, r;
@@ -249,7 +249,7 @@ br_des_tab_process_block(unsigned num_rounds, const uint32_t *skey, void *block)
 	r = br_dec32be(buf + 4);
 	br_des_do_IP(&l, &r);
 	while (num_rounds -- > 0) {
-		process_block_unit(&l, &r, skey);
+		(BEAR_SINGLE_UNITY_FILE)process_block_unit(&l, &r, skey);
 		skey += 32;
 	}
 	br_des_do_invIP(&l, &r);
