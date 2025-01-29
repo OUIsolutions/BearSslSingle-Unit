@@ -1353,7 +1353,7 @@ static const unsigned char P256_N[] = {
 };
 
 static const unsigned char *
-api_generator(int curve, size_t *len)
+(BEAR_SINGLE_UNITY_FILE)api_generator(int curve, size_t *len)
 {
 	(void)curve;
 	*len = sizeof P256_G;
@@ -1460,7 +1460,7 @@ static uint32_t
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_p256_m31 = {
 	(uint32_t)0x00800000,
-	&api_generator,
+	&(BEAR_SINGLE_UNITY_FILE)api_generator,
 	&api_order,
 	&api_xoff,
 	&(BEAR_SINGLE_UNITY_FILE)api_mul,

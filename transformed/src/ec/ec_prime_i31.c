@@ -699,7 +699,7 @@ id_to_curve_def(int curve)
 }
 
 static const unsigned char *
-api_generator(int curve, size_t *len)
+(BEAR_SINGLE_UNITY_FILE)api_generator(int curve, size_t *len)
 {
 	const br_ec_curve_def *cd;
 
@@ -721,7 +721,7 @@ api_order(int curve, size_t *len)
 static size_t
 api_xoff(int curve, size_t *len)
 {
-	api_generator(curve, len);
+	(BEAR_SINGLE_UNITY_FILE)api_generator(curve, len);
 	*len >>= 1;
 	return 1;
 }
@@ -751,7 +751,7 @@ static size_t
 	const unsigned char *G;
 	size_t Glen;
 
-	G = api_generator(curve, &Glen);
+	G = (BEAR_SINGLE_UNITY_FILE)api_generator(curve, &Glen);
 	memcpy(R, G, Glen);
 	(BEAR_SINGLE_UNITY_FILE)api_mul(R, Glen, x, xlen, curve);
 	return Glen;
@@ -780,7 +780,7 @@ static uint32_t
 	if (B == NULL) {
 		size_t Glen;
 
-		B = api_generator(curve, &Glen);
+		B = (BEAR_SINGLE_UNITY_FILE)api_generator(curve, &Glen);
 	}
 	r &= (BEAR_SINGLE_UNITY_FILE)point_decode(&Q, B, len, cc);
 	point_mul(&P, x, xlen, cc);
@@ -817,7 +817,7 @@ static uint32_t
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_prime_i31 = {
 	(uint32_t)0x03800000,
-	&api_generator,
+	&(BEAR_SINGLE_UNITY_FILE)api_generator,
 	&api_order,
 	&api_xoff,
 	&(BEAR_SINGLE_UNITY_FILE)api_mul,

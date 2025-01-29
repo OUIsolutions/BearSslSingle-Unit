@@ -7,7 +7,7 @@ function main()
    for i, v in ipairs(transformmed) do
        local file = transformmed[i]
        local content= darwin.dtw.load_file(file)
-       var = 'point_decode'
+       var = 'api_generator'
        local replaced = string.gsub(content, var, "(BEAR_SINGLE_UNITY_FILE)"..var)
        darwin.dtw.write_file(file, replaced)
    end

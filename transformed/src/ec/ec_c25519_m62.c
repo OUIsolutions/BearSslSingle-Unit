@@ -45,7 +45,7 @@ static const unsigned char ORDER[] = {
 };
 
 static const unsigned char *
-api_generator(int curve, size_t *len)
+(BEAR_SINGLE_UNITY_FILE)api_generator(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -548,7 +548,7 @@ static size_t
 	const unsigned char *G;
 	size_t Glen;
 
-	G = api_generator(curve, &Glen);
+	G = (BEAR_SINGLE_UNITY_FILE)api_generator(curve, &Glen);
 	memcpy(R, G, Glen);
 	(BEAR_SINGLE_UNITY_FILE)api_mul(R, Glen, x, xlen, curve);
 	return Glen;
@@ -578,7 +578,7 @@ static uint32_t
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_c25519_m62 = {
 	(uint32_t)0x20000000,
-	&api_generator,
+	&(BEAR_SINGLE_UNITY_FILE)api_generator,
 	&api_order,
 	&api_xoff,
 	&(BEAR_SINGLE_UNITY_FILE)api_mul,

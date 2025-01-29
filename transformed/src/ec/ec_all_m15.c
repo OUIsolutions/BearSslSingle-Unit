@@ -25,7 +25,7 @@
 
 
 static const unsigned char *
-api_generator(int curve, size_t *len)
+(BEAR_SINGLE_UNITY_FILE)api_generator(int curve, size_t *len)
 {
 	switch (curve) {
 	case BR_EC_secp256r1:
@@ -112,7 +112,7 @@ static uint32_t
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_all_m15 = {
 	(uint32_t)0x23800000,
-	&api_generator,
+	&(BEAR_SINGLE_UNITY_FILE)api_generator,
 	&api_order,
 	&api_xoff,
 	&(BEAR_SINGLE_UNITY_FILE)api_mul,
