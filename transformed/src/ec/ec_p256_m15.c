@@ -1947,7 +1947,7 @@ lookup_Gwin(p256_jacobian *T, uint32_t idx)
  * and lower than the curve order.
  */
 static void
-p256_mulgen(p256_jacobian *P, const unsigned char *x, size_t xlen)
+(BEAR_SINGLE_UNITY_FILE)p256_mulgen(p256_jacobian *P, const unsigned char *x, size_t xlen)
 {
 	/*
 	 * qz is a flag that is initially 1, and remains equal to 1
@@ -2056,7 +2056,7 @@ static size_t
 	p256_jacobian P;
 
 	(void)curve;
-	p256_mulgen(&P, x, xlen);
+	(BEAR_SINGLE_UNITY_FILE)p256_mulgen(&P, x, xlen);
 	p256_to_affine(&P);
 	p256_encode(R, &P);
 	return 65;
@@ -2078,7 +2078,7 @@ static uint32_t
 	r = p256_decode(&P, A, len);
 	p256_mul(&P, x, xlen);
 	if (B == NULL) {
-		p256_mulgen(&Q, y, ylen);
+		(BEAR_SINGLE_UNITY_FILE)p256_mulgen(&Q, y, ylen);
 	} else {
 		r &= p256_decode(&Q, B, len);
 		p256_mul(&Q, y, ylen);

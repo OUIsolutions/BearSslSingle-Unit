@@ -1608,7 +1608,7 @@ static const p256_affine P256_Gwin[] = {
  * (but the process is still constant-time).
  */
 static void
-p256_mulgen(p256_jacobian *P, const unsigned char *k, size_t klen)
+(BEAR_SINGLE_UNITY_FILE)p256_mulgen(p256_jacobian *P, const unsigned char *k, size_t klen)
 {
 	point_mul_inner(P, P256_Gwin, k, klen);
 }
@@ -1672,7 +1672,7 @@ static size_t
 	p256_jacobian P;
 
 	(void)curve;
-	p256_mulgen(&P, k, klen);
+	(BEAR_SINGLE_UNITY_FILE)p256_mulgen(&P, k, klen);
 	(BEAR_SINGLE_UNITY_FILE)point_encode(R, &P);
 	return 65;
 }
@@ -1721,7 +1721,7 @@ static uint32_t
 	r = (BEAR_SINGLE_UNITY_FILE)point_decode(&P, A);
 	p256_mul(&P, x, xlen);
 	if (B == NULL) {
-		p256_mulgen(&Q, y, ylen);
+		(BEAR_SINGLE_UNITY_FILE)p256_mulgen(&Q, y, ylen);
 	} else {
 		r &= (BEAR_SINGLE_UNITY_FILE)point_decode(&Q, B);
 		p256_mul(&Q, y, ylen);
