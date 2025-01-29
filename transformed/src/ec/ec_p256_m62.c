@@ -86,7 +86,7 @@ BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
 #define MASK52   (BIT(52) - BIT(0))
 
 /* R = 2^260 mod p */
-static const uint64_t BEAR_SINGLE_UNITY_FILEF256_R[] = {
+static const uint64_t BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R[] = {
 	0x0000000000010, 0xF000000000000, 0xFFFFFFFFFFFFF,
 	0xFFEFFFFFFFFFF, 0x00000000FFFFF
 };
@@ -705,7 +705,7 @@ BEAR_SINGLE_UNITY_FILEpoint_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const
 	 */
 	memcpy(P->x, x, sizeof x);
 	memcpy(P->y, y, sizeof y);
-	memcpy(P->z, BEAR_SINGLE_UNITY_FILEF256_R, sizeof BEAR_SINGLE_UNITY_FILEF256_R);
+	memcpy(P->z, BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R, sizeof BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R);
 	return r;
 }
 
@@ -1195,7 +1195,7 @@ BEAR_SINGLE_UNITY_FILEp256_add_complete_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobia
 	 * Compute m = 3*(x2^2 - 1) (in t4).
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P2->x);
-	BEAR_SINGLE_UNITY_FILEf256_sub(t4, t4, BEAR_SINGLE_UNITY_FILEF256_R);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t4, t4, BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R);
 	BEAR_SINGLE_UNITY_FILEf256_add(t5, t4, t4);
 	BEAR_SINGLE_UNITY_FILEf256_add(t4, t4, t5);
 
@@ -1233,7 +1233,7 @@ BEAR_SINGLE_UNITY_FILEp256_add_complete_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobia
 	for (i = 0; i < 5; i ++) {
 		P1->x[i] ^= zz & (P1->x[i] ^ P2->x[i]);
 		P1->y[i] ^= zz & (P1->y[i] ^ P2->y[i]);
-		P1->z[i] ^= zz & (P1->z[i] ^ BEAR_SINGLE_UNITY_FILEF256_R[i]);
+		P1->z[i] ^= zz & (P1->z[i] ^ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R[i]);
 	}
 }
 #endif
@@ -1309,7 +1309,7 @@ BEAR_SINGLE_UNITY_FILEpoint_mul_inner(p256_BEAR_SINGLE_UNITY_FILEjacobian *R, co
 			for (j = 0; j < 5; j ++) {
 				Q.x[j] ^= m & (Q.x[j] ^ T.x[j]);
 				Q.y[j] ^= m & (Q.y[j] ^ T.y[j]);
-				Q.z[j] ^= m & (Q.z[j] ^ BEAR_SINGLE_UNITY_FILEF256_R[j]);
+				Q.z[j] ^= m & (Q.z[j] ^ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R[j]);
 			}
 			CCOPY(bnz & ~qz, &Q, &U, sizeof Q);
 			qz &= ~bnz;
@@ -1406,7 +1406,7 @@ BEAR_SINGLE_UNITY_FILEwindow_to_affine(BEAR_SINGLE_UNITY_FILEp256_affine *aff, p
 	}
 	if ((num & 1) != 0) {
 		memcpy(z[num >> 1], jac[num - 1].z, sizeof zt);
-		memcpy(jac[num - 1].z, BEAR_SINGLE_UNITY_FILEF256_R, sizeof BEAR_SINGLE_UNITY_FILEF256_R);
+		memcpy(jac[num - 1].z, BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R, sizeof BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R);
 	}
 
 	/*

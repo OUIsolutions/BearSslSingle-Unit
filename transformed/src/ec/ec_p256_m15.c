@@ -987,9 +987,9 @@ square20(uint32_t *d, const uint32_t *a)
 #endif
 
 /*
- * Modulus for field F256 (field for point coordinates in curve P-256).
+ * Modulus for field BEAR_SINGLE_UNITY_FILEF256 (field for point coordinates in curve P-256).
  */
-static const uint32_t F256[] = {
+static const uint32_t BEAR_SINGLE_UNITY_FILEF256[] = {
 	0x1FFF, 0x1FFF, 0x1FFF, 0x1FFF, 0x1FFF, 0x1FFF, 0x1FFF, 0x001F,
 	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0400, 0x0000,
 	0x0000, 0x1FF8, 0x1FFF, 0x01FF
@@ -1005,7 +1005,7 @@ static const uint32_t BEAR_SINGLE_UNITY_FILEP256_B[] = {
 };
 
 /*
- * Perform a "short reduction" in field F256 (field for curve P-256).
+ * Perform a "short reduction" in field BEAR_SINGLE_UNITY_FILEF256 (field for curve P-256).
  * The source value should be less than 262 bits; on output, it will
  * be at most 257 bits, and less than twice the modulus.
  */
@@ -1024,7 +1024,7 @@ reduce_f256(uint32_t *d)
 }
 
 /*
- * Perform a "final reduction" in field F256 (field for curve P-256).
+ * Perform a "final reduction" in field BEAR_SINGLE_UNITY_FILEF256 (field for curve P-256).
  * The source value must be less than twice the modulus. If the value
  * is not lower than the modulus, then the modulus is subtracted and
  * this function returns 1; otherwise, it leaves it untouched and it
@@ -1042,7 +1042,7 @@ BEAR_SINGLE_UNITY_FILEreduce_final_f256(uint32_t *d)
 	for (i = 0; i < 20; i ++) {
 		uint32_t w;
 
-		w = t[i] - F256[i] - cc;
+		w = t[i] - BEAR_SINGLE_UNITY_FILEF256[i] - cc;
 		cc = w >> 31;
 		t[i] = w & 0x1FFF;
 	}
@@ -1059,7 +1059,7 @@ BEAR_SINGLE_UNITY_FILEreduce_final_f256(uint32_t *d)
  * on output, value fits on 257 bits and is lower than twice the modulus.
  */
 static void
-mul_f256(uint32_t *d, const uint32_t *a, const uint32_t *b)
+BEAR_SINGLE_UNITY_FILEmul_f256(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	uint32_t t[40], cc;
 	int i;
@@ -1288,7 +1288,7 @@ BEAR_SINGLE_UNITY_FILEp256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 	memcpy(t1, P->z, sizeof P->z);
 	for (i = 0; i < 30; i ++) {
 		BEAR_SINGLE_UNITY_FILEsquare_f256(t1, t1);
-		mul_f256(t1, t1, P->z);
+		BEAR_SINGLE_UNITY_FILEmul_f256(t1, t1, P->z);
 	}
 
 	/*
@@ -1304,12 +1304,12 @@ BEAR_SINGLE_UNITY_FILEp256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 		case 190:
 		case 221:
 		case 252:
-			mul_f256(t2, t2, t1);
+			BEAR_SINGLE_UNITY_FILEmul_f256(t2, t2, t1);
 			break;
 		case 63:
 		case 253:
 		case 255:
-			mul_f256(t2, t2, P->z);
+			BEAR_SINGLE_UNITY_FILEmul_f256(t2, t2, P->z);
 			break;
 		}
 	}
@@ -1317,10 +1317,10 @@ BEAR_SINGLE_UNITY_FILEp256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 	/*
 	 * Now that we have 1/z, multiply x by 1/z^2 and y by 1/z^3.
 	 */
-	mul_f256(t1, t2, t2);
-	mul_f256(P->x, t1, P->x);
-	mul_f256(t1, t1, t2);
-	mul_f256(P->y, t1, P->y);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t1, t2, t2);
+	BEAR_SINGLE_UNITY_FILEmul_f256(P->x, t1, P->x);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t1, t1, t2);
+	BEAR_SINGLE_UNITY_FILEmul_f256(P->y, t1, P->y);
 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(P->x);
 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(P->y);
 
@@ -1328,7 +1328,7 @@ BEAR_SINGLE_UNITY_FILEp256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 	 * Multiply z by 1/z. If z = 0, then this will yield 0, otherwise
 	 * this will set z to 1.
 	 */
-	mul_f256(P->z, P->z, t2);
+	BEAR_SINGLE_UNITY_FILEmul_f256(P->z, P->z, t2);
 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(P->z);
 }
 
@@ -1366,7 +1366,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	 * Compute x-z^2 in t2 and x+z^2 in t1.
 	 */
 	for (i = 0; i < 20; i ++) {
-		t2[i] = (F256[i] << 1) + Q->x[i] - t1[i];
+		t2[i] = (BEAR_SINGLE_UNITY_FILEF256[i] << 1) + Q->x[i] - t1[i];
 		t1[i] += Q->x[i];
 	}
 	norm13(t1, t1, 20);
@@ -1375,7 +1375,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	/*
 	 * Compute 3*(x+z^2)*(x-z^2) in t1.
 	 */
-	mul_f256(t3, t1, t2);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t3, t1, t2);
 	for (i = 0; i < 20; i ++) {
 		t1[i] = MUL15(3, t3[i]);
 	}
@@ -1389,7 +1389,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 		t3[i] <<= 1;
 	}
 	norm13(t3, t3, 20);
-	mul_f256(t2, Q->x, t3);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t2, Q->x, t3);
 	for (i = 0; i < 20; i ++) {
 		t2[i] <<= 1;
 	}
@@ -1401,7 +1401,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	 */
 	BEAR_SINGLE_UNITY_FILEsquare_f256(Q->x, t1);
 	for (i = 0; i < 20; i ++) {
-		Q->x[i] += (F256[i] << 2) - (t2[i] << 1);
+		Q->x[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 2) - (t2[i] << 1);
 	}
 	norm13(Q->x, Q->x, 20);
 	reduce_f256(Q->x);
@@ -1409,7 +1409,7 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	/*
 	 * Compute z' = 2*y*z.
 	 */
-	mul_f256(t4, Q->y, Q->z);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t4, Q->y, Q->z);
 	for (i = 0; i < 20; i ++) {
 		Q->z[i] = t4[i] << 1;
 	}
@@ -1421,13 +1421,13 @@ BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 	 * 2*y^2 in t3.
 	 */
 	for (i = 0; i < 20; i ++) {
-		t2[i] += (F256[i] << 1) - Q->x[i];
+		t2[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - Q->x[i];
 	}
 	norm13(t2, t2, 20);
-	mul_f256(Q->y, t1, t2);
+	BEAR_SINGLE_UNITY_FILEmul_f256(Q->y, t1, t2);
 	BEAR_SINGLE_UNITY_FILEsquare_f256(t4, t3);
 	for (i = 0; i < 20; i ++) {
-		Q->y[i] += (F256[i] << 2) - (t4[i] << 1);
+		Q->y[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 2) - (t4[i] << 1);
 	}
 	norm13(Q->y, Q->y, 20);
 	reduce_f256(Q->y);
@@ -1488,17 +1488,17 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 	 * Compute u1 = x1*z2^2 (in t1) and s1 = y1*z2^3 (in t3).
 	 */
 	BEAR_SINGLE_UNITY_FILEsquare_f256(t3, P2->z);
-	mul_f256(t1, P1->x, t3);
-	mul_f256(t4, P2->z, t3);
-	mul_f256(t3, P1->y, t4);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t1, P1->x, t3);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t4, P2->z, t3);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t3, P1->y, t4);
 
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
 	BEAR_SINGLE_UNITY_FILEsquare_f256(t4, P1->z);
-	mul_f256(t2, P2->x, t4);
-	mul_f256(t5, P1->z, t4);
-	mul_f256(t4, P2->y, t5);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t2, P2->x, t4);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t5, P1->z, t4);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t4, P2->y, t5);
 
 	/*
 	 * Compute h = h2 - u1 (in t2) and r = s2 - s1 (in t4).
@@ -1506,8 +1506,8 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 	 * reduce.
 	 */
 	for (i = 0; i < 20; i ++) {
-		t2[i] += (F256[i] << 1) - t1[i];
-		t4[i] += (F256[i] << 1) - t3[i];
+		t2[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
+		t4[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t3[i];
 	}
 	norm13(t2, t2, 20);
 	norm13(t4, t4, 20);
@@ -1523,15 +1523,15 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
 	BEAR_SINGLE_UNITY_FILEsquare_f256(t7, t2);
-	mul_f256(t6, t1, t7);
-	mul_f256(t5, t7, t2);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t6, t1, t7);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
 	BEAR_SINGLE_UNITY_FILEsquare_f256(P1->x, t4);
 	for (i = 0; i < 20; i ++) {
-		P1->x[i] += (F256[i] << 3) - t5[i] - (t6[i] << 1);
+		P1->x[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 3) - t5[i] - (t6[i] << 1);
 	}
 	norm13(P1->x, P1->x, 20);
 	reduce_f256(P1->x);
@@ -1540,13 +1540,13 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 	 * Compute y3 = r*(u1*h^2 - x3) - s1*h^3.
 	 */
 	for (i = 0; i < 20; i ++) {
-		t6[i] += (F256[i] << 1) - P1->x[i];
+		t6[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - P1->x[i];
 	}
 	norm13(t6, t6, 20);
-	mul_f256(P1->y, t4, t6);
-	mul_f256(t1, t5, t3);
+	BEAR_SINGLE_UNITY_FILEmul_f256(P1->y, t4, t6);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t1, t5, t3);
 	for (i = 0; i < 20; i ++) {
-		P1->y[i] += (F256[i] << 1) - t1[i];
+		P1->y[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
 	}
 	norm13(P1->y, P1->y, 20);
 	reduce_f256(P1->y);
@@ -1554,8 +1554,8 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 	/*
 	 * Compute z3 = h*z1*z2.
 	 */
-	mul_f256(t1, P1->z, P2->z);
-	mul_f256(P1->z, t1, t2);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t1, P1->z, P2->z);
+	BEAR_SINGLE_UNITY_FILEmul_f256(P1->z, t1, t2);
 
 	return ret;
 }
@@ -1619,9 +1619,9 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
 	BEAR_SINGLE_UNITY_FILEsquare_f256(t4, P1->z);
-	mul_f256(t2, P2->x, t4);
-	mul_f256(t5, P1->z, t4);
-	mul_f256(t4, P2->y, t5);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t2, P2->x, t4);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t5, P1->z, t4);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t4, P2->y, t5);
 
 	/*
 	 * Compute h = h2 - u1 (in t2) and r = s2 - s1 (in t4).
@@ -1629,8 +1629,8 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
 	 * reduce.
 	 */
 	for (i = 0; i < 20; i ++) {
-		t2[i] += (F256[i] << 1) - t1[i];
-		t4[i] += (F256[i] << 1) - t3[i];
+		t2[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
+		t4[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t3[i];
 	}
 	norm13(t2, t2, 20);
 	norm13(t4, t4, 20);
@@ -1646,15 +1646,15 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
 	BEAR_SINGLE_UNITY_FILEsquare_f256(t7, t2);
-	mul_f256(t6, t1, t7);
-	mul_f256(t5, t7, t2);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t6, t1, t7);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
 	BEAR_SINGLE_UNITY_FILEsquare_f256(P1->x, t4);
 	for (i = 0; i < 20; i ++) {
-		P1->x[i] += (F256[i] << 3) - t5[i] - (t6[i] << 1);
+		P1->x[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 3) - t5[i] - (t6[i] << 1);
 	}
 	norm13(P1->x, P1->x, 20);
 	reduce_f256(P1->x);
@@ -1663,13 +1663,13 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
 	 * Compute y3 = r*(u1*h^2 - x3) - s1*h^3.
 	 */
 	for (i = 0; i < 20; i ++) {
-		t6[i] += (F256[i] << 1) - P1->x[i];
+		t6[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - P1->x[i];
 	}
 	norm13(t6, t6, 20);
-	mul_f256(P1->y, t4, t6);
-	mul_f256(t1, t5, t3);
+	BEAR_SINGLE_UNITY_FILEmul_f256(P1->y, t4, t6);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t1, t5, t3);
 	for (i = 0; i < 20; i ++) {
-		P1->y[i] += (F256[i] << 1) - t1[i];
+		P1->y[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
 	}
 	norm13(P1->y, P1->y, 20);
 	reduce_f256(P1->y);
@@ -1677,7 +1677,7 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
 	/*
 	 * Compute z3 = h*z1*z2.
 	 */
-	mul_f256(P1->z, P1->z, t2);
+	BEAR_SINGLE_UNITY_FILEmul_f256(P1->z, P1->z, t2);
 
 	return ret;
 }
@@ -1720,10 +1720,10 @@ BEAR_SINGLE_UNITY_FILEp256_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const 
 	 * Check curve equation.
 	 */
 	BEAR_SINGLE_UNITY_FILEsquare_f256(t1, tx);
-	mul_f256(t1, tx, t1);
+	BEAR_SINGLE_UNITY_FILEmul_f256(t1, tx, t1);
 	BEAR_SINGLE_UNITY_FILEsquare_f256(t2, ty);
 	for (i = 0; i < 20; i ++) {
-		t1[i] += (F256[i] << 3) - MUL15(3, tx[i]) + BEAR_SINGLE_UNITY_FILEP256_B[i] - t2[i];
+		t1[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 3) - MUL15(3, tx[i]) + BEAR_SINGLE_UNITY_FILEP256_B[i] - t2[i];
 	}
 	norm13(t1, t1, 20);
 	reduce_f256(t1);
