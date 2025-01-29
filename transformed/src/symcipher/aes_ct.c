@@ -205,7 +205,7 @@ br_aes_ct_bitslice_Sbox(uint32_t *q)
 void
 br_aes_ct_ortho(uint32_t *q)
 {
-#define SWAPN(cl, ch, s, x, y)   do { \
+#define (BEAR_SINGLE_UNITY_FILE)SWAPN(cl, ch, s, x, y)   do { \
 		uint32_t a, b; \
 		a = (x); \
 		b = (y); \
@@ -213,9 +213,9 @@ br_aes_ct_ortho(uint32_t *q)
 		(y) = ((a & (uint32_t)ch) >> (s)) | (b & (uint32_t)ch); \
 	} while (0)
 
-#define (BEAR_SINGLE_UNITY_FILE)SWAP2(x, y)   SWAPN(0x55555555, 0xAAAAAAAA, 1, x, y)
-#define (BEAR_SINGLE_UNITY_FILE)SWAP4(x, y)   SWAPN(0x33333333, 0xCCCCCCCC, 2, x, y)
-#define (BEAR_SINGLE_UNITY_FILE)SWAP8(x, y)   SWAPN(0x0F0F0F0F, 0xF0F0F0F0, 4, x, y)
+#define (BEAR_SINGLE_UNITY_FILE)SWAP2(x, y)   (BEAR_SINGLE_UNITY_FILE)SWAPN(0x55555555, 0xAAAAAAAA, 1, x, y)
+#define (BEAR_SINGLE_UNITY_FILE)SWAP4(x, y)   (BEAR_SINGLE_UNITY_FILE)SWAPN(0x33333333, 0xCCCCCCCC, 2, x, y)
+#define (BEAR_SINGLE_UNITY_FILE)SWAP8(x, y)   (BEAR_SINGLE_UNITY_FILE)SWAPN(0x0F0F0F0F, 0xF0F0F0F0, 4, x, y)
 
 	(BEAR_SINGLE_UNITY_FILE)SWAP2(q[0], q[1]);
 	(BEAR_SINGLE_UNITY_FILE)SWAP2(q[2], q[3]);
