@@ -1502,10 +1502,10 @@ BEAR_SINGLE_UNITY_FILEp256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const uns
 }
 
 /*
- * Precomputed window for the conventional generator: BEAR_SINGLE_UNITY_FILEP256_Gwin[n]
+ * Precomputed window for the conventional generator: BEAR_SINGLE_UNITY_FILEP256_BEAR_SINGLE_UNITY_FILEGwin[n]
  * contains (n+1)*G (affine coordinates, in Montgomery representation).
  */
-static const BEAR_SINGLE_UNITY_FILEp256_affine BEAR_SINGLE_UNITY_FILEP256_Gwin[] = {
+static const BEAR_SINGLE_UNITY_FILEp256_affine BEAR_SINGLE_UNITY_FILEP256_BEAR_SINGLE_UNITY_FILEGwin[] = {
 	{
 		{ 0x79E730D418A9143C, 0x75BA95FC5FEDB601,
 		  0x79FB732B77622510, 0x18905F76A53755C6 },
@@ -1610,7 +1610,7 @@ static const BEAR_SINGLE_UNITY_FILEp256_affine BEAR_SINGLE_UNITY_FILEP256_Gwin[]
 static void
 BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t klen)
 {
-	BEAR_SINGLE_UNITY_FILEpoint_mul_inner(P, BEAR_SINGLE_UNITY_FILEP256_Gwin, k, klen);
+	BEAR_SINGLE_UNITY_FILEpoint_mul_inner(P, BEAR_SINGLE_UNITY_FILEP256_BEAR_SINGLE_UNITY_FILEGwin, k, klen);
 }
 
 /*

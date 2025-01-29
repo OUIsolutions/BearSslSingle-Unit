@@ -1820,7 +1820,7 @@ BEAR_SINGLE_UNITY_FILEp256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const uns
  * order); 13-bit words are then grouped 2-by-2 into 32-bit words
  * (little-endian order within each word).
  */
-static const uint32_t Gwin[15][20] = {
+static const uint32_t BEAR_SINGLE_UNITY_FILEGwin[15][20] = {
 
 	{ 0x04C60296, 0x02721176, 0x19D00F4A, 0x102517AC,
 	  0x13B8037D, 0x0748103C, 0x1E730E56, 0x08481FE2,
@@ -1914,10 +1914,10 @@ static const uint32_t Gwin[15][20] = {
 };
 
 /*
- * Lookup one of the Gwin[] values, by index. This is constant-time.
+ * Lookup one of the BEAR_SINGLE_UNITY_FILEGwin[] values, by index. This is constant-time.
  */
 static void
-BEAR_SINGLE_UNITY_FILElookup_Gwin(p256_BEAR_SINGLE_UNITY_FILEjacobian *T, uint32_t idx)
+BEAR_SINGLE_UNITY_FILElookup_BEAR_SINGLE_UNITY_FILEGwin(p256_BEAR_SINGLE_UNITY_FILEjacobian *T, uint32_t idx)
 {
 	uint32_t xy[20];
 	uint32_t k;
@@ -1929,7 +1929,7 @@ BEAR_SINGLE_UNITY_FILElookup_Gwin(p256_BEAR_SINGLE_UNITY_FILEjacobian *T, uint32
 
 		m = -EQ(idx, k + 1);
 		for (u = 0; u < 20; u ++) {
-			xy[u] |= m & Gwin[k][u];
+			xy[u] |= m & BEAR_SINGLE_UNITY_FILEGwin[k][u];
 		}
 	}
 	for (u = 0; u < 10; u ++) {
@@ -1978,7 +1978,7 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_F
 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
 			bits = (bx >> 4) & 0x0F;
 			bnz = NEQ(bits, 0);
-			BEAR_SINGLE_UNITY_FILElookup_Gwin(&T, bits);
+			BEAR_SINGLE_UNITY_FILElookup_BEAR_SINGLE_UNITY_FILEGwin(&T, bits);
 			U = Q;
 			BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(&U, &T);
 			CCOPY(bnz & qz, &Q, &T, sizeof Q);
