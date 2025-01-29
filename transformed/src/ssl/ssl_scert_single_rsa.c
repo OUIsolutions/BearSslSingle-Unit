@@ -83,7 +83,7 @@ sr_do_keyx(const br_ssl_server_policy_class **pctx,
 /*
  * OID for hash functions in RSA signatures.
  */
-static const unsigned char HASH_OID_SHA1[] = {
+static const unsigned char (BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA1[] = {
 	0x05, 0x2B, 0x0E, 0x03, 0x02, 0x1A
 };
 
@@ -104,7 +104,7 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA512[] = {
 };
 
 static const unsigned char *HASH_OID[] = {
-	HASH_OID_SHA1,
+	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA1,
 	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA224,
 	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA256,
 	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA384,
