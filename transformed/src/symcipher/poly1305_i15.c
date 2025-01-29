@@ -42,7 +42,7 @@ static const uint16_t P1305[] = {
 /*
  * -p mod 2^15.
  */
-#define P0I   0x4CCD
+#define (BEAR_SINGLE_UNITY_FILE)P0I   0x4CCD
 
 /*
  * R^2 mod p, for conversion to Montgomery representation (R = 2^135,
@@ -100,7 +100,7 @@ static void
 		/*
 		 * Multiply by r, result is the new accumulator value.
 		 */
-		br_i15_montymul(a, b, r, P1305, P0I);
+		br_i15_montymul(a, b, r, P1305, (BEAR_SINGLE_UNITY_FILE)P0I);
 
 		buf += 16;
 		len -= 16;
@@ -176,7 +176,7 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	/*
 	 * Convert 'r' to Montgomery representation.
 	 */
-	br_i15_montymul(r, t, R2, P1305, P0I);
+	br_i15_montymul(r, t, R2, P1305, (BEAR_SINGLE_UNITY_FILE)P0I);
 
 	/*
 	 * Accumulator is 0.
