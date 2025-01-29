@@ -1266,7 +1266,7 @@ static const uint32_t Gwin[15][18] = {
  * Lookup one of the Gwin[] values, by index. This is constant-time.
  */
 static void
-lookup_Gwin(p256_BEAR_SINGLE_UNITY_FILEjacobian *T, uint32_t idx)
+BEAR_SINGLE_UNITY_FILElookup_Gwin(p256_BEAR_SINGLE_UNITY_FILEjacobian *T, uint32_t idx)
 {
 	uint32_t xy[18];
 	uint32_t k;
@@ -1323,7 +1323,7 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_F
 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
 			bits = (bx >> 4) & 0x0F;
 			bnz = NEQ(bits, 0);
-			lookup_Gwin(&T, bits);
+			BEAR_SINGLE_UNITY_FILElookup_Gwin(&T, bits);
 			U = Q;
 			BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(&U, &T);
 			CCOPY(bnz & qz, &Q, &T, sizeof Q);
