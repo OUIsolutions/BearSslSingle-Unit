@@ -1246,7 +1246,7 @@ typedef struct {
 	uint32_t x[20];
 	uint32_t y[20];
 	uint32_t z[20];
-} p256_jacobian;
+} p256_(BEAR_SINGLE_UNITY_FILE)jacobian;
 
 /*
  * Convert a point to affine coordinates:
@@ -1257,7 +1257,7 @@ typedef struct {
  * The coordinates are guaranteed to be lower than the modulus.
  */
 static void
-p256_to_affine(p256_jacobian *P)
+p256_to_affine(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
 {
 	uint32_t t1[20], t2[20];
 	int i;
@@ -1337,7 +1337,7 @@ p256_to_affine(p256_jacobian *P)
  * including the point at infinity.
  */
 static void
-p256_double(p256_jacobian *Q)
+p256_double(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *Q)
 {
 	/*
 	 * Doubling formulas are:
@@ -1465,7 +1465,7 @@ p256_double(p256_jacobian *Q)
  *     performed.
  */
 static uint32_t
-p256_add(p256_jacobian *P1, const p256_jacobian *P2)
+p256_add(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P2)
 {
 	/*
 	 * Addtions formulas are:
@@ -1590,7 +1590,7 @@ p256_add(p256_jacobian *P1, const p256_jacobian *P2)
  *     performed.
  */
 static uint32_t
-p256_add_mixed(p256_jacobian *P1, const p256_jacobian *P2)
+p256_add_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P2)
 {
 	/*
 	 * Addtions formulas are:
@@ -1687,7 +1687,7 @@ p256_add_mixed(p256_jacobian *P1, const p256_jacobian *P2)
  * infinity. Returned value is 0 if the point is invalid, 1 otherwise.
  */
 static uint32_t
-p256_decode(p256_jacobian *P, const void *src, size_t len)
+p256_decode(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const void *src, size_t len)
 {
 	const unsigned char *buf;
 	uint32_t tx[20], ty[20], t1[20], t2[20];
@@ -1747,7 +1747,7 @@ p256_decode(p256_jacobian *P, const void *src, size_t len)
  * valid, in affine coordinates, and not the point at infinity.
  */
 static void
-p256_encode(void *dst, const p256_jacobian *P)
+p256_encode(void *dst, const p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
 {
 	unsigned char *buf;
 
@@ -1763,7 +1763,7 @@ p256_encode(void *dst, const p256_jacobian *P)
  * at infinity.
  */
 static void
-p256_mul(p256_jacobian *P, const unsigned char *x, size_t xlen)
+p256_mul(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const unsigned char *x, size_t xlen)
 {
 	/*
 	 * qz is a flag that is initially 1, and remains equal to 1
@@ -1773,7 +1773,7 @@ p256_mul(p256_jacobian *P, const unsigned char *x, size_t xlen)
 	 * The precomputed window really is the points P2 and P3.
 	 */
 	uint32_t qz;
-	p256_jacobian P2, P3, Q, T, U;
+	p256_(BEAR_SINGLE_UNITY_FILE)jacobian P2, P3, Q, T, U;
 
 	/*
 	 * Compute window values.
@@ -1917,7 +1917,7 @@ static const uint32_t Gwin[15][20] = {
  * Lookup one of the Gwin[] values, by index. This is constant-time.
  */
 static void
-lookup_Gwin(p256_jacobian *T, uint32_t idx)
+lookup_Gwin(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *T, uint32_t idx)
 {
 	uint32_t xy[20];
 	uint32_t k;
@@ -1947,7 +1947,7 @@ lookup_Gwin(p256_jacobian *T, uint32_t idx)
  * and lower than the curve order.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)p256_mulgen(p256_jacobian *P, const unsigned char *x, size_t xlen)
+(BEAR_SINGLE_UNITY_FILE)p256_mulgen(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const unsigned char *x, size_t xlen)
 {
 	/*
 	 * qz is a flag that is initially 1, and remains equal to 1
@@ -1957,7 +1957,7 @@ static void
 	 * of 4. The precomputed window is constant static data, with
 	 * points in affine coordinates; we use a constant-time lookup.
 	 */
-	p256_jacobian Q;
+	p256_(BEAR_SINGLE_UNITY_FILE)jacobian Q;
 	uint32_t qz;
 
 	memset(&Q, 0, sizeof Q);
@@ -1970,7 +1970,7 @@ static void
 		for (k = 0; k < 2; k ++) {
 			uint32_t bits;
 			uint32_t bnz;
-			p256_jacobian T, U;
+			p256_(BEAR_SINGLE_UNITY_FILE)jacobian T, U;
 
 			p256_double(&Q);
 			p256_double(&Q);
@@ -2036,7 +2036,7 @@ static uint32_t
 	const unsigned char *x, size_t xlen, int curve)
 {
 	uint32_t r;
-	p256_jacobian P;
+	p256_(BEAR_SINGLE_UNITY_FILE)jacobian P;
 
 	(void)curve;
 	if (Glen != 65) {
@@ -2053,7 +2053,7 @@ static size_t
 (BEAR_SINGLE_UNITY_FILE)api_mulgen(unsigned char *R,
 	const unsigned char *x, size_t xlen, int curve)
 {
-	p256_jacobian P;
+	p256_(BEAR_SINGLE_UNITY_FILE)jacobian P;
 
 	(void)curve;
 	(BEAR_SINGLE_UNITY_FILE)p256_mulgen(&P, x, xlen);
@@ -2067,7 +2067,7 @@ static uint32_t
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
-	p256_jacobian P, Q;
+	p256_(BEAR_SINGLE_UNITY_FILE)jacobian P, Q;
 	uint32_t r, t, z;
 	int i;
 

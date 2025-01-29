@@ -133,7 +133,7 @@ id_to_curve(int curve)
  */
 typedef struct {
 	uint16_t c[3][I15_LEN];
-} jacobian;
+} (BEAR_SINGLE_UNITY_FILE)jacobian;
 
 /*
  * We use a custom interpreter that uses a dozen registers, and
@@ -211,7 +211,7 @@ typedef struct {
  *
  * Cost: 8 multiplications
  */
-static const uint16_t code_double[] = {
+static const uint16_t (BEAR_SINGLE_UNITY_FILE)code_double[] = {
 	/*
 	 * Compute z^2 (in t1).
 	 */
@@ -317,7 +317,7 @@ static const uint16_t code_double[] = {
  *
  * Cost: 16 multiplications
  */
-static const uint16_t code_add[] = {
+static const uint16_t (BEAR_SINGLE_UNITY_FILE)code_add[] = {
 	/*
 	 * Compute u1 = x1*z2^2 (in t1) and s1 = y1*z2^3 (in t3).
 	 */
@@ -385,7 +385,7 @@ static const uint16_t code_add[] = {
  * converted to Montgomery coordinates yet).
  * -- P2x, P2y and P2z are set to, respectively, R^2, b*R and 1.
  */
-static const uint16_t code_check[] = {
+static const uint16_t (BEAR_SINGLE_UNITY_FILE)code_check[] = {
 
 	/* Convert x and y to Montgomery representation. */
 	(BEAR_SINGLE_UNITY_FILE)MMUL(t1, P1x, P2x),
@@ -422,7 +422,7 @@ static const uint16_t code_check[] = {
  * Conversion back to affine coordinates. This code snippet assumes that
  * the z coordinate of P2 is set to 1 (not in Montgomery representation).
  */
-static const uint16_t code_affine[] = {
+static const uint16_t (BEAR_SINGLE_UNITY_FILE)code_affine[] = {
 
 	/* Save z*R in t1. */
 	MSET(t1, P1z),
@@ -450,7 +450,7 @@ static const uint16_t code_affine[] = {
 };
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)run_code(jacobian *P1, const jacobian *P2,
+(BEAR_SINGLE_UNITY_FILE)run_code((BEAR_SINGLE_UNITY_FILE)jacobian *P1, const (BEAR_SINGLE_UNITY_FILE)jacobian *P2,
 	const curve_params *cc, const uint16_t *code)
 {
 	uint32_t r;
@@ -530,26 +530,26 @@ static void
 }
 
 static void
-(BEAR_SINGLE_UNITY_FILE)point_zero(jacobian *P, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_zero((BEAR_SINGLE_UNITY_FILE)jacobian *P, const curve_params *cc)
 {
 	memset(P, 0, sizeof *P);
 	P->c[0][0] = P->c[1][0] = P->c[2][0] = cc->p[0];
 }
 
 static inline void
-(BEAR_SINGLE_UNITY_FILE)point_double(jacobian *P, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_double((BEAR_SINGLE_UNITY_FILE)jacobian *P, const curve_params *cc)
 {
-	(BEAR_SINGLE_UNITY_FILE)run_code(P, P, cc, code_double);
+	(BEAR_SINGLE_UNITY_FILE)run_code(P, P, cc, (BEAR_SINGLE_UNITY_FILE)code_double);
 }
 
 static inline uint32_t
-(BEAR_SINGLE_UNITY_FILE)point_add(jacobian *P1, const jacobian *P2, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_add((BEAR_SINGLE_UNITY_FILE)jacobian *P1, const (BEAR_SINGLE_UNITY_FILE)jacobian *P2, const curve_params *cc)
 {
-	return (BEAR_SINGLE_UNITY_FILE)run_code(P1, P2, cc, code_add);
+	return (BEAR_SINGLE_UNITY_FILE)run_code(P1, P2, cc, (BEAR_SINGLE_UNITY_FILE)code_add);
 }
 
 static void
-(BEAR_SINGLE_UNITY_FILE)point_mul(jacobian *P, const unsigned char *x, size_t xlen,
+(BEAR_SINGLE_UNITY_FILE)point_mul((BEAR_SINGLE_UNITY_FILE)jacobian *P, const unsigned char *x, size_t xlen,
 	const curve_params *cc)
 {
 	/*
@@ -567,7 +567,7 @@ static void
 	 * this situation.
 	 */
 	uint32_t qz;
-	jacobian P2, P3, Q, T, U;
+	(BEAR_SINGLE_UNITY_FILE)jacobian P2, P3, Q, T, U;
 
 	memcpy(&P2, P, sizeof P2);
 	(BEAR_SINGLE_UNITY_FILE)point_double(&P2, cc);
@@ -607,7 +607,7 @@ static void
  * the coordinates are still set to properly formed field elements.
  */
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)point_decode(jacobian *P, const void *src, size_t len, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_decode((BEAR_SINGLE_UNITY_FILE)jacobian *P, const void *src, size_t len, const curve_params *cc)
 {
 	/*
 	 * Points must use uncompressed format:
@@ -629,7 +629,7 @@ static uint32_t
 	const unsigned char *buf;
 	size_t plen, zlen;
 	uint32_t r;
-	jacobian Q;
+	(BEAR_SINGLE_UNITY_FILE)jacobian Q;
 
 	buf = src;
 	(BEAR_SINGLE_UNITY_FILE)point_zero(P, cc);
@@ -656,7 +656,7 @@ static uint32_t
 	memcpy(Q.c[0], cc->R2, zlen);
 	memcpy(Q.c[1], cc->b, zlen);
 	(BEAR_SINGLE_UNITY_FILE)set_one(Q.c[2], cc->p);
-	r &= ~(BEAR_SINGLE_UNITY_FILE)run_code(P, &Q, cc, code_check);
+	r &= ~(BEAR_SINGLE_UNITY_FILE)run_code(P, &Q, cc, (BEAR_SINGLE_UNITY_FILE)code_check);
 	return r;
 }
 
@@ -666,18 +666,18 @@ static uint32_t
  * plen is the field modulus length, in bytes.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)point_encode(void *dst, const jacobian *P, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_encode(void *dst, const (BEAR_SINGLE_UNITY_FILE)jacobian *P, const curve_params *cc)
 {
 	unsigned char *buf;
 	size_t plen;
-	jacobian Q, T;
+	(BEAR_SINGLE_UNITY_FILE)jacobian Q, T;
 
 	buf = dst;
 	plen = (cc->p[0] - (cc->p[0] >> 4) + 7) >> 3;
 	buf[0] = 0x04;
 	memcpy(&Q, P, sizeof *P);
 	(BEAR_SINGLE_UNITY_FILE)set_one(T.c[2], cc->p);
-	(BEAR_SINGLE_UNITY_FILE)run_code(&Q, &T, cc, code_affine);
+	(BEAR_SINGLE_UNITY_FILE)run_code(&Q, &T, cc, (BEAR_SINGLE_UNITY_FILE)code_affine);
 	br_i15_encode(buf + 1, plen, Q.c[0]);
 	br_i15_encode(buf + 1 + plen, plen, Q.c[1]);
 }
@@ -730,7 +730,7 @@ static uint32_t
 {
 	uint32_t r;
 	const curve_params *cc;
-	jacobian P;
+	(BEAR_SINGLE_UNITY_FILE)jacobian P;
 
 	cc = id_to_curve(curve);
 	if (Glen != cc->point_len) {
@@ -762,7 +762,7 @@ static uint32_t
 {
 	uint32_t r, t, z;
 	const curve_params *cc;
-	jacobian P, Q;
+	(BEAR_SINGLE_UNITY_FILE)jacobian P, Q;
 
 	/*
 	 * TODO: see about merging the two ladders. Right now, we do
