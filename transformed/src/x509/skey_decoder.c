@@ -75,7 +75,7 @@ void br_skey_decoder_run(void *t0ctx);
 
 
 
-#define CTX   ((br_skey_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_skey_decoder_context, cpu)))
+#define SKEY_DECODER_CTX   ((br_skey_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_skey_decoder_context, cpu)))
 #define SKEY_DECODER_CONTEXT_NAME   br_skey_decoder_context
 
 /* see bearssl_x509.h */
@@ -498,7 +498,7 @@ br_skey_decoder_run(void *t0ctx)
 				/* eqOID */
 
 	const unsigned char *a2 = &SKEY_DECODER_t0_datablock[T0_POP()];
-	const unsigned char *a1 = &CTX->pad[0];
+	const unsigned char *a1 = &SKEY_DECODER_CTX->pad[0];
 	size_t len = a1[0];
 	int x;
 	if (len == a2[0]) {
@@ -513,7 +513,7 @@ br_skey_decoder_run(void *t0ctx)
 			case 22: {
 				/* fail */
 
-	CTX->err = T0_POPi();
+	SKEY_DECODER_CTX->err = T0_POPi();
 	T0_CO();
 
 				}
@@ -522,7 +522,7 @@ br_skey_decoder_run(void *t0ctx)
 				/* get8 */
 
 	uint32_t addr = T0_POP();
-	T0_PUSH(*((unsigned char *)CTX + addr));
+	T0_PUSH(*((unsigned char *)SKEY_DECODER_CTX + addr));
 
 				}
 				break;
@@ -544,15 +544,15 @@ br_skey_decoder_run(void *t0ctx)
 
 	uint32_t len = T0_POP();
 	uint32_t addr = T0_POP();
-	size_t clen = CTX->hlen;
+	size_t clen = SKEY_DECODER_CTX->hlen;
 	if (clen > len) {
 		clen = (size_t)len;
 	}
 	if (addr != 0) {
-		memcpy((unsigned char *)CTX + addr, CTX->hbuf, clen);
+		memcpy((unsigned char *)SKEY_DECODER_CTX + addr, SKEY_DECODER_CTX->hbuf, clen);
 	}
-	CTX->hbuf += clen;
-	CTX->hlen -= clen;
+	SKEY_DECODER_CTX->hbuf += clen;
+	SKEY_DECODER_CTX->hlen -= clen;
 	T0_PUSH(addr + clen);
 	T0_PUSH(len - clen);
 
@@ -561,11 +561,11 @@ br_skey_decoder_run(void *t0ctx)
 			case 27: {
 				/* read8-low */
 
-	if (CTX->hlen == 0) {
+	if (SKEY_DECODER_CTX->hlen == 0) {
 		T0_PUSHi(-1);
 	} else {
-		CTX->hlen --;
-		T0_PUSH(*CTX->hbuf ++);
+		SKEY_DECODER_CTX->hlen --;
+		T0_PUSH(*SKEY_DECODER_CTX->hbuf ++);
 	}
 
 				}
@@ -580,9 +580,9 @@ br_skey_decoder_run(void *t0ctx)
 
 	size_t xlen = T0_POP();
 	uint32_t curve = T0_POP();
-	CTX->key.ec.curve = curve;
-	CTX->key.ec.x = CTX->key_data;
-	CTX->key.ec.xlen = xlen;
+	SKEY_DECODER_CTX->key.ec.curve = curve;
+	SKEY_DECODER_CTX->key.ec.x = SKEY_DECODER_CTX->key_data;
+	SKEY_DECODER_CTX->key.ec.xlen = xlen;
 
 				}
 				break;
@@ -597,21 +597,21 @@ br_skey_decoder_run(void *t0ctx)
 	uint32_t n_bitlen = T0_POP();
 	size_t off;
 
-	CTX->key.rsa.n_bitlen = n_bitlen;
-	CTX->key.rsa.p = CTX->key_data;
-	CTX->key.rsa.plen = plen;
+	SKEY_DECODER_CTX->key.rsa.n_bitlen = n_bitlen;
+	SKEY_DECODER_CTX->key.rsa.p = SKEY_DECODER_CTX->key_data;
+	SKEY_DECODER_CTX->key.rsa.plen = plen;
 	off = plen;
-	CTX->key.rsa.q = CTX->key_data + off;
-	CTX->key.rsa.qlen = qlen;
+	SKEY_DECODER_CTX->key.rsa.q = SKEY_DECODER_CTX->key_data + off;
+	SKEY_DECODER_CTX->key.rsa.qlen = qlen;
 	off += qlen;
-	CTX->key.rsa.dp = CTX->key_data + off;
-	CTX->key.rsa.dplen = dplen;
+	SKEY_DECODER_CTX->key.rsa.dp = SKEY_DECODER_CTX->key_data + off;
+	SKEY_DECODER_CTX->key.rsa.dplen = dplen;
 	off += dplen;
-	CTX->key.rsa.dq = CTX->key_data + off;
-	CTX->key.rsa.dqlen = dqlen;
+	SKEY_DECODER_CTX->key.rsa.dq = SKEY_DECODER_CTX->key_data + off;
+	SKEY_DECODER_CTX->key.rsa.dqlen = dqlen;
 	off += dqlen;
-	CTX->key.rsa.iq = CTX->key_data + off;
-	CTX->key.rsa.iqlen = iqlen;
+	SKEY_DECODER_CTX->key.rsa.iq = SKEY_DECODER_CTX->key_data + off;
+	SKEY_DECODER_CTX->key.rsa.iqlen = iqlen;
 
 				}
 				break;
@@ -619,7 +619,7 @@ br_skey_decoder_run(void *t0ctx)
 				/* set8 */
 
 	uint32_t addr = T0_POP();
-	*((unsigned char *)CTX + addr) = (unsigned char)T0_POP();
+	*((unsigned char *)SKEY_DECODER_CTX + addr) = (unsigned char)T0_POP();
 
 				}
 				break;
