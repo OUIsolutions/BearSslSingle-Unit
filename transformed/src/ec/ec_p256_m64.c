@@ -84,7 +84,7 @@ static const uint64_t F256_R[] = {
 
 /* Curve equation is y^2 = x^3 - 3*x + B. This constant is B*R mod p
    (Montgomery representation of B). */
-static const uint64_t P256_B_MONTY[] = {
+static const uint64_t (BEAR_SINGLE_UNITY_FILE)P256_B_MONTY[] = {
 	0xD89CDF6229C4BDDF, 0xACF005CD78843090,
 	0xE5A220ABF7212ED6, 0xDC30061D04874834
 };
@@ -704,7 +704,7 @@ static uint32_t
 	f256_add(t, t, x);
 	f256_add(t, t, x);
 	f256_add(t, t, x);
-	f256_sub(t, t, P256_B_MONTY);
+	f256_sub(t, t, (BEAR_SINGLE_UNITY_FILE)P256_B_MONTY);
 	f256_final_reduce(t);
 	tt = t[0] | t[1] | t[2] | t[3];
 	r &= EQ((uint32_t)(tt | (tt >> 32)), 0);
