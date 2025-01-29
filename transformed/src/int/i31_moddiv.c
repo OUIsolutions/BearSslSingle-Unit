@@ -123,7 +123,7 @@ finish_mod(uint32_t *a, size_t len, const uint32_t *m, uint32_t neg)
  * to contain an extra 32th bit.
  */
 static uint32_t
-co_reduce(uint32_t *a, uint32_t *b, size_t len,
+(BEAR_SINGLE_UNITY_FILE)co_reduce(uint32_t *a, uint32_t *b, size_t len,
 	int64_t pa, int64_t pb, int64_t qa, int64_t qb)
 {
 	size_t k;
@@ -196,7 +196,7 @@ co_reduce(uint32_t *a, uint32_t *b, size_t len,
  * to contain an extra 32th bit.
  */
 static void
-co_reduce_mod(uint32_t *a, uint32_t *b, size_t len,
+(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(uint32_t *a, uint32_t *b, size_t len,
 	int64_t pa, int64_t pb, int64_t qa, int64_t qb,
 	const uint32_t *m, uint32_t m0i)
 {
@@ -464,12 +464,12 @@ br_i31_moddiv(uint32_t *x, const uint32_t *y, const uint32_t *m, uint32_t m0i,
 		/*
 		 * Replace a and b with new values a' and b'.
 		 */
-		r = co_reduce(a, b, len, pa, pb, qa, qb);
+		r = (BEAR_SINGLE_UNITY_FILE)co_reduce(a, b, len, pa, pb, qa, qb);
 		pa -= pa * ((r & 1) << 1);
 		pb -= pb * ((r & 1) << 1);
 		qa -= qa * (r & 2);
 		qb -= qb * (r & 2);
-		co_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);
+		(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);
 	}
 
 	/*
