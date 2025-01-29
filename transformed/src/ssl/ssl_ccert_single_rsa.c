@@ -122,7 +122,7 @@ cc_do_sign(const br_ssl_client_certificate_class **pctx,
 	return zc->irsasign(hash_oid, hv, hv_len, zc->sk, data) ? sig_len : 0;
 }
 
-static const br_ssl_client_certificate_class ccert_vtable = {
+static const br_ssl_client_certificate_class (BEAR_SINGLE_UNITY_FILE)ccert_vtable = {
 	sizeof(br_ssl_client_certificate_rsa_context),
 	cc_none0, /* start_name_list */
 	cc_none1, /* start_name */
@@ -140,7 +140,7 @@ br_ssl_client_set_single_rsa(br_ssl_client_context *cc,
 	const br_x509_certificate *chain, size_t chain_len,
 	const br_rsa_private_key *sk, br_rsa_pkcs1_sign irsasign)
 {
-	cc->client_auth.single_rsa.vtable = &ccert_vtable;
+	cc->client_auth.single_rsa.vtable = &(BEAR_SINGLE_UNITY_FILE)ccert_vtable;
 	cc->client_auth.single_rsa.chain = chain;
 	cc->client_auth.single_rsa.chain_len = chain_len;
 	cc->client_auth.single_rsa.sk = sk;

@@ -124,7 +124,7 @@ cc_do_sign(const br_ssl_client_certificate_class **pctx,
 	return zc->iecdsa(zc->iec, hc, hv, zc->sk, data);
 }
 
-static const br_ssl_client_certificate_class ccert_vtable = {
+static const br_ssl_client_certificate_class (BEAR_SINGLE_UNITY_FILE)ccert_vtable = {
 	sizeof(br_ssl_client_certificate_ec_context),
 	cc_none0, /* start_name_list */
 	cc_none1, /* start_name */
@@ -144,7 +144,7 @@ br_ssl_client_set_single_ec(br_ssl_client_context *cc,
 	unsigned cert_issuer_key_type,
 	const br_ec_impl *iec, br_ecdsa_sign iecdsa)
 {
-	cc->client_auth.single_ec.vtable = &ccert_vtable;
+	cc->client_auth.single_ec.vtable = &(BEAR_SINGLE_UNITY_FILE)ccert_vtable;
 	cc->client_auth.single_ec.chain = chain;
 	cc->client_auth.single_ec.chain_len = chain_len;
 	cc->client_auth.single_ec.sk = sk;
