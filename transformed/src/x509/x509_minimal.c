@@ -445,7 +445,7 @@ static const unsigned char t0_datablock[] = {
 	0x01, 0x01, 0x08, 0x2B, 0x06, 0x01, 0x05, 0x05, 0x07, 0x01, 0x0B
 };
 
-static const unsigned char t0_codeblock[] = {
+static const unsigned char (BEAR_SINGLE_UNITY_FILE)t0_codeblock[] = {
 	0x00, 0x01, 0x00, 0x0D, 0x00, 0x00, 0x01, 0x00, 0x10, 0x00, 0x00, 0x01,
 	0x00, 0x11, 0x00, 0x00, 0x01, 0x01, 0x09, 0x00, 0x00, 0x01, 0x01, 0x0A,
 	0x00, 0x00, 0x25, 0x25, 0x00, 0x00, 0x01,
@@ -853,23 +853,23 @@ static const uint16_t (BEAR_SINGLE_UNITY_FILE)t0_caddr[] = {
 #define (BEAR_SINGLE_UNITY_FILE)T0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
-		t0_newip = &t0_codeblock[(BEAR_SINGLE_UNITY_FILE)t0_caddr[(slot) - (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED]]; \
+		t0_newip = &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[(BEAR_SINGLE_UNITY_FILE)t0_caddr[(slot) - (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED]]; \
 		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
-		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
+		*((rp) ++) = (uint32_t)((ip) - &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[0]) + (t0_lnum << 16); \
 		(ip) = t0_newip; \
 	} while (0)
 
-#define T0_DEFENTRY(name, slot) \
+#define (BEAR_SINGLE_UNITY_FILE)T0_DEFENTRY(name, slot) \
 void \
 name(void *ctx) \
 { \
 	t0_context *t0ctx = ctx; \
-	t0ctx->ip = &t0_codeblock[0]; \
+	t0ctx->ip = &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[0]; \
 	(BEAR_SINGLE_UNITY_FILE)T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
 
-T0_DEFENTRY(br_x509_minimal_init_main, 144)
+(BEAR_SINGLE_UNITY_FILE)T0_DEFENTRY(br_x509_minimal_init_main, 144)
 
 #define T0_NEXT(t0ipp)   (*(*(t0ipp)) ++)
 
@@ -943,7 +943,7 @@ br_x509_minimal_run(void *t0ctx)
 					ip = NULL;
 					goto t0_exit;
 				}
-				ip = &t0_codeblock[t0x];
+				ip = &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[t0x];
 				break;
 			case 1: /* literal constant */
 				T0_PUSHi(t0_parse7E_signed(&ip));
