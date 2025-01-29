@@ -1607,7 +1607,7 @@ BEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const 
  * Constant-time behaviour: only klen may be observable.
  */
 static uint32_t
-check_scalar(const unsigned char *k, size_t klen)
+BEAR_SINGLE_UNITY_FILEcheck_scalar(const unsigned char *k, size_t klen)
 {
 	uint32_t z;
 	int32_t c;
@@ -1642,7 +1642,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	if (Glen != 65) {
 		return 0;
 	}
-	r = check_scalar(k, klen);
+	r = BEAR_SINGLE_UNITY_FILEcheck_scalar(k, klen);
 	r &= BEAR_SINGLE_UNITY_FILEpoint_decode(&P, G);
 	p256_mul(&P, k, klen);
 	r &= BEAR_SINGLE_UNITY_FILEpoint_encode(G, &P);
