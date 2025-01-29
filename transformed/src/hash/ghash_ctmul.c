@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-#include "inner.h"
+
 
 /*
  * We compute "carryless multiplications" through normal integer

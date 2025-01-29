@@ -70,7 +70,7 @@ void br_ssl_hs_client_run(void *t0ctx);
 #include <stddef.h>
 #include <string.h>
 
-#include "inner.h"
+
 
 /*
  * This macro evaluates to a pointer to the current engine context.

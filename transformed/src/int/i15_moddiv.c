@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-#include "inner.h"
+
 
 /*
  * In this file, we handle big integers with a custom format, i.e.
