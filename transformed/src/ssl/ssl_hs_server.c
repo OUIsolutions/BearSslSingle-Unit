@@ -7,10 +7,10 @@ typedef struct {
 	uint32_t *dp;
 	uint32_t *rp;
 	const unsigned char *ip;
-} t0_context;
+} HS_SERVER_t0_context;
 
 static uint32_t
-t0_parse7E_unsigned(const unsigned char **p)
+HS_SERVER_t0_parse7E_unsigned(const unsigned char **p)
 {
 	uint32_t x;
 
@@ -933,7 +933,7 @@ static const uint16_t HS_SERVER_t0_caddr[] = {
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
 		t0_newip = &HS_SERVER_t0_codeblock[HS_SERVER_t0_caddr[(slot) - SSL_HS_SERVER_T0_INTERPRETED]]; \
-		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
+		t0_lnum = HS_SERVER_t0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
 		*((rp) ++) = (uint32_t)((ip) - &HS_SERVER_t0_codeblock[0]) + (t0_lnum << 16); \
 		(ip) = t0_newip; \
@@ -943,7 +943,7 @@ static const uint16_t HS_SERVER_t0_caddr[] = {
 void \
 name(void *ctx) \
 { \
-	t0_context *t0ctx = ctx; \
+	HS_SERVER_t0_context *t0ctx = ctx; \
 	t0ctx->ip = &HS_SERVER_t0_codeblock[0]; \
 	SSL_HS_SERVER_T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
@@ -1001,9 +1001,9 @@ br_ssl_hs_server_run(void *t0ctx)
 } while (0)
 #define T0_RET()        goto t0_next
 
-	dp = ((t0_context *)t0ctx)->dp;
-	rp = ((t0_context *)t0ctx)->rp;
-	ip = ((t0_context *)t0ctx)->ip;
+	dp = ((HS_SERVER_t0_context *)t0ctx)->dp;
+	rp = ((HS_SERVER_t0_context *)t0ctx)->rp;
+	ip = ((HS_SERVER_t0_context *)t0ctx)->ip;
 	goto t0_next;
 	for (;;) {
 		uint32_t t0x;
@@ -1028,10 +1028,10 @@ br_ssl_hs_server_run(void *t0ctx)
 				T0_PUSHi(HS_SERVER_t0_parse7E_signed(&ip));
 				break;
 			case 2: /* read local */
-				T0_PUSH(T0_LOCAL(t0_parse7E_unsigned(&ip)));
+				T0_PUSH(T0_LOCAL(HS_SERVER_t0_parse7E_unsigned(&ip)));
 				break;
 			case 3: /* write local */
-				T0_LOCAL(t0_parse7E_unsigned(&ip)) = T0_POP();
+				T0_LOCAL(HS_SERVER_t0_parse7E_unsigned(&ip)) = T0_POP();
 				break;
 			case 4: /* jump */
 				t0off = HS_SERVER_t0_parse7E_signed(&ip);
@@ -2003,7 +2003,7 @@ br_ssl_hs_server_run(void *t0ctx)
 		}
 	}
 t0_exit:
-	((t0_context *)t0ctx)->dp = dp;
-	((t0_context *)t0ctx)->rp = rp;
-	((t0_context *)t0ctx)->ip = ip;
+	((HS_SERVER_t0_context *)t0ctx)->dp = dp;
+	((HS_SERVER_t0_context *)t0ctx)->rp = rp;
+	((HS_SERVER_t0_context *)t0ctx)->ip = ip;
 }
