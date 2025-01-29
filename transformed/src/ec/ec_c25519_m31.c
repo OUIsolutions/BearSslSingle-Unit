@@ -150,7 +150,7 @@ le30_to_le8(unsigned char *dst, size_t len, const uint32_t *src)
  * 18 words of 30 bits each.
  */
 static void
-mul9(uint32_t *d, const uint32_t *a, const uint32_t *b)
+(BEAR_SINGLE_UNITY_FILE)mul9(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	/*
 	 * Maximum intermediate result is no more than
@@ -380,7 +380,7 @@ f255_mul(uint32_t *d, const uint32_t *a, const uint32_t *b)
 	 * each; upper word (t[17]) must fit on 2 bits, since the product
 	 * of two 256-bit integers must fit on 512 bits.
 	 */
-	mul9(t, a, b);
+	(BEAR_SINGLE_UNITY_FILE)mul9(t, a, b);
 
 	/*
 	 * Modular reduction: each high word is added where necessary.

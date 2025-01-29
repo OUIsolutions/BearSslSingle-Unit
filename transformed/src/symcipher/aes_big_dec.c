@@ -106,7 +106,7 @@ mul2(unsigned x)
 }
 
 static unsigned
-mul9(unsigned x)
+(BEAR_SINGLE_UNITY_FILE)mul9(unsigned x)
 {
 	return x ^ mul2(mul2(mul2(x)));
 }
@@ -163,10 +163,10 @@ br_aes_big_keysched_inv(uint32_t *skey, const void *key, size_t key_len)
 		p1 = (p >> 16) & 0xFF;
 		p2 = (p >> 8) & 0xFF;
 		p3 = p & 0xFF;
-		q0 = mule(p0) ^ mulb(p1) ^ muld(p2) ^ mul9(p3);
-		q1 = mul9(p0) ^ mule(p1) ^ mulb(p2) ^ muld(p3);
-		q2 = muld(p0) ^ mul9(p1) ^ mule(p2) ^ mulb(p3);
-		q3 = mulb(p0) ^ muld(p1) ^ mul9(p2) ^ mule(p3);
+		q0 = mule(p0) ^ mulb(p1) ^ muld(p2) ^ (BEAR_SINGLE_UNITY_FILE)mul9(p3);
+		q1 = (BEAR_SINGLE_UNITY_FILE)mul9(p0) ^ mule(p1) ^ mulb(p2) ^ muld(p3);
+		q2 = muld(p0) ^ (BEAR_SINGLE_UNITY_FILE)mul9(p1) ^ mule(p2) ^ mulb(p3);
+		q3 = mulb(p0) ^ muld(p1) ^ (BEAR_SINGLE_UNITY_FILE)mul9(p2) ^ mule(p3);
 		skey[i] = (q0 << 24) | (q1 << 16) | (q2 << 8) | q3;
 	}
 	return num_rounds;
