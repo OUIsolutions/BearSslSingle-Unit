@@ -258,7 +258,7 @@ br_des_tab_process_block(unsigned num_rounds, const uint32_t *skey, void *block)
 }
 
 static void
-keysched_unit(uint32_t *skey, const void *key)
+(BEAR_SINGLE_UNITY_FILE)keysched_unit(uint32_t *skey, const void *key)
 {
 	int i;
 
@@ -292,19 +292,19 @@ br_des_tab_keysched(uint32_t *skey, const void *key, size_t key_len)
 {
 	switch (key_len) {
 	case 8:
-		keysched_unit(skey, key);
+		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey, key);
 		return 1;
 	case 16:
-		keysched_unit(skey, key);
-		keysched_unit(skey + 32, (const unsigned char *)key + 8);
+		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey, key);
+		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey + 32, (const unsigned char *)key + 8);
 		br_des_rev_skey(skey + 32);
 		memcpy(skey + 64, skey, 32 * sizeof *skey);
 		return 3;
 	default:
-		keysched_unit(skey, key);
-		keysched_unit(skey + 32, (const unsigned char *)key + 8);
+		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey, key);
+		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey + 32, (const unsigned char *)key + 8);
 		br_des_rev_skey(skey + 32);
-		keysched_unit(skey + 64, (const unsigned char *)key + 16);
+		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey + 64, (const unsigned char *)key + 16);
 		return 3;
 	}
 }
