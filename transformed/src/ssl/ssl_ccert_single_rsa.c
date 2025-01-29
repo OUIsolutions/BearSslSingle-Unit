@@ -98,7 +98,7 @@ static const unsigned char *(BEAR_SINGLE_UNITY_FILE)HASH_OID[] = {
 };
 
 static size_t
-cc_do_sign(const br_ssl_client_certificate_class **pctx,
+(BEAR_SINGLE_UNITY_FILE)cc_do_sign(const br_ssl_client_certificate_class **pctx,
 	int hash_id, size_t hv_len, unsigned char *data, size_t len)
 {
 	br_ssl_client_certificate_rsa_context *zc;
@@ -131,7 +131,7 @@ static const br_ssl_client_certificate_class (BEAR_SINGLE_UNITY_FILE)ccert_vtabl
 	cc_none0, /* end_name_list */
 	(BEAR_SINGLE_UNITY_FILE)cc_choose,
 	0,
-	cc_do_sign
+	(BEAR_SINGLE_UNITY_FILE)cc_do_sign
 };
 
 /* see bearssl_ssl.h */
