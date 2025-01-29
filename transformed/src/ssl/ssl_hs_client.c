@@ -1457,7 +1457,7 @@ br_ssl_hs_client_run(void *t0ctx)
 				}
 				break;
 			case 50: {
-				/* (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)mkrand */
+				/* (BEAR_SINGLE_UNITY_FILE)mkrand */
 
 	size_t len = (size_t)T0_POP();
 	void *addr = (unsigned char *)ENG + (size_t)T0_POP();

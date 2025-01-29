@@ -714,7 +714,7 @@ cc: bzero ( addr len -- ) {
 \ =======================================================================
 
 \ Generate random bytes into buffer (address is offset in context).
-cc: (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)mkrand ( addr len -- ) {
+cc: (BEAR_SINGLE_UNITY_FILE)mkrand ( addr len -- ) {
 	size_t len = (size_t)T0_POP();
 	void *addr = (unsigned char *)ENG + (size_t)T0_POP();
 	br_hmac_drbg_generate(&ENG->rng, addr, len);

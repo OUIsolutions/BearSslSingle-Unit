@@ -463,7 +463,7 @@ cc: ext-ALPN-length ( -- len ) {
 
 	\ Client random
 	addr-client_random 4 bzero
-	addr-client_random 4 + 28 (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)mkrand
+	addr-client_random 4 + 28 (BEAR_SINGLE_UNITY_FILE)mkrand
 	addr-client_random 32 write-blob
 
 	\ Session ID
