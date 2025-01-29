@@ -1156,18 +1156,18 @@ BEAR_SINGLE_UNITY_FILEf255_mulgen(uint32_t *d, const uint32_t *a, const uint32_t
  * little-endian order. Input value may be up to 2^256-1; on output, value
  * fits on 256 bits and is lower than twice the modulus.
  *
- * BEAR_SINGLE_UNITY_FILEf255_mul() is the general multiplication, f255_square() is specialised
+ * BEAR_SINGLE_UNITY_FILEf255_mul() is the general multiplication, BEAR_SINGLE_UNITY_FILEf255_square() is specialised
  * for squarings.
  */
 #define BEAR_SINGLE_UNITY_FILEf255_mul(d, a, b)   BEAR_SINGLE_UNITY_FILEf255_mulgen(d, a, b, 0)
-#define f255_square(d, a)   BEAR_SINGLE_UNITY_FILEf255_mulgen(d, a, a, 1)
+#define BEAR_SINGLE_UNITY_FILEf255_square(d, a)   BEAR_SINGLE_UNITY_FILEf255_mulgen(d, a, a, 1)
 
 /*
  * Add two values in F255. Partial reduction is performed (down to less
  * than twice the modulus).
  */
 static void
-f255_add(uint32_t *d, const uint32_t *a, const uint32_t *b)
+BEAR_SINGLE_UNITY_FILEf255_add(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	int i;
 	uint32_t cc, w;
@@ -1192,7 +1192,7 @@ f255_add(uint32_t *d, const uint32_t *a, const uint32_t *b)
  * performed (down to less than twice the modulus).
  */
 static void
-f255_sub(uint32_t *d, const uint32_t *a, const uint32_t *b)
+BEAR_SINGLE_UNITY_FILEf255_sub(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	/*
 	 * We actually compute a - b + 2*p, so that the final value is
@@ -1280,7 +1280,7 @@ BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
 }
 
 static void
-cswap(uint32_t *a, uint32_t *b, uint32_t ctl)
+BEAR_SINGLE_UNITY_FILEcswap(uint32_t *a, uint32_t *b, uint32_t ctl)
 {
 	int i;
 
@@ -1348,8 +1348,8 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 
 		kt = (k[31 - (i >> 3)] >> (i & 7)) & 1;
 		swap ^= kt;
-		cswap(x2, x3, swap);
-		cswap(z2, z3, swap);
+		BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
+		BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
 		swap = kt;
 
 		/* obsolete
@@ -1359,13 +1359,13 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		print_int("z3", z3);
 		*/
 
-		f255_add(a, x2, z2);
-		f255_square(aa, a);
-		f255_sub(b, x2, z2);
-		f255_square(bb, b);
-		f255_sub(e, aa, bb);
-		f255_add(c, x3, z3);
-		f255_sub(d, x3, z3);
+		BEAR_SINGLE_UNITY_FILEf255_add(a, x2, z2);
+		BEAR_SINGLE_UNITY_FILEf255_square(aa, a);
+		BEAR_SINGLE_UNITY_FILEf255_sub(b, x2, z2);
+		BEAR_SINGLE_UNITY_FILEf255_square(bb, b);
+		BEAR_SINGLE_UNITY_FILEf255_sub(e, aa, bb);
+		BEAR_SINGLE_UNITY_FILEf255_add(c, x3, z3);
+		BEAR_SINGLE_UNITY_FILEf255_sub(d, x3, z3);
 		BEAR_SINGLE_UNITY_FILEf255_mul(da, d, a);
 		BEAR_SINGLE_UNITY_FILEf255_mul(cb, c, b);
 
@@ -1381,14 +1381,14 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		print_int("cb", cb);
 		*/
 
-		f255_add(x3, da, cb);
-		f255_square(x3, x3);
-		f255_sub(z3, da, cb);
-		f255_square(z3, z3);
+		BEAR_SINGLE_UNITY_FILEf255_add(x3, da, cb);
+		BEAR_SINGLE_UNITY_FILEf255_square(x3, x3);
+		BEAR_SINGLE_UNITY_FILEf255_sub(z3, da, cb);
+		BEAR_SINGLE_UNITY_FILEf255_square(z3, z3);
 		BEAR_SINGLE_UNITY_FILEf255_mul(z3, z3, x1);
 		BEAR_SINGLE_UNITY_FILEf255_mul(x2, aa, bb);
 		BEAR_SINGLE_UNITY_FILEf255_mul_a24(z2, e);
-		f255_add(z2, z2, aa);
+		BEAR_SINGLE_UNITY_FILEf255_add(z2, z2, aa);
 		BEAR_SINGLE_UNITY_FILEf255_mul(z2, e, z2);
 
 		/* obsolete
@@ -1398,8 +1398,8 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		print_int("z3", z3);
 		*/
 	}
-	cswap(x2, x3, swap);
-	cswap(z2, z3, swap);
+	BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
+	BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
 
 	/*
 	 * Inverse z2 with a modular exponentiation. This is a simple
@@ -1408,7 +1408,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	 */
 	memcpy(a, z2, sizeof z2);
 	for (i = 0; i < 15; i ++) {
-		f255_square(a, a);
+		BEAR_SINGLE_UNITY_FILEf255_square(a, a);
 		BEAR_SINGLE_UNITY_FILEf255_mul(a, a, z2);
 	}
 	memcpy(b, a, sizeof a);
@@ -1416,12 +1416,12 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		int j;
 
 		for (j = 0; j < 16; j ++) {
-			f255_square(b, b);
+			BEAR_SINGLE_UNITY_FILEf255_square(b, b);
 		}
 		BEAR_SINGLE_UNITY_FILEf255_mul(b, b, a);
 	}
 	for (i = 14; i >= 0; i --) {
-		f255_square(b, b);
+		BEAR_SINGLE_UNITY_FILEf255_square(b, b);
 		if ((0xFFEB >> i) & 1) {
 			BEAR_SINGLE_UNITY_FILEf255_mul(b, z2, b);
 		}

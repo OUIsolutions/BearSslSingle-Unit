@@ -80,7 +80,7 @@ BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
  * Swap two field elements, conditionally on a flag.
  */
 static inline void
-f255_cswap(uint64_t *a, uint64_t *b, uint32_t ctl)
+BEAR_SINGLE_UNITY_FILEf255_BEAR_SINGLE_UNITY_FILEcswap(uint64_t *a, uint64_t *b, uint32_t ctl)
 {
 	uint64_t m, w;
 
@@ -96,7 +96,7 @@ f255_cswap(uint64_t *a, uint64_t *b, uint32_t ctl)
  * Addition with no carry propagation. Limbs double in size.
  */
 static inline void
-f255_add(uint64_t *d, const uint64_t *a, const uint64_t *b)
+BEAR_SINGLE_UNITY_FILEf255_add(uint64_t *d, const uint64_t *a, const uint64_t *b)
 {
 	d[0] = a[0] + b[0];
 	d[1] = a[1] + b[1];
@@ -113,7 +113,7 @@ f255_add(uint64_t *d, const uint64_t *a, const uint64_t *b)
  * value up to 2^51+19455.
  */
 static inline void
-f255_sub(uint64_t *d, const uint64_t *a, const uint64_t *b)
+BEAR_SINGLE_UNITY_FILEf255_sub(uint64_t *d, const uint64_t *a, const uint64_t *b)
 {
 	uint64_t cc, w;
 
@@ -432,41 +432,41 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 
 		kt = (k[31 - (i >> 3)] >> (i & 7)) & 1;
 		swap ^= kt;
-		f255_cswap(x2, x3, swap);
-		f255_cswap(z2, z3, swap);
+		BEAR_SINGLE_UNITY_FILEf255_BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
+		BEAR_SINGLE_UNITY_FILEf255_BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
 		swap = kt;
 
 		/*
 		 * At that point, limbs of x_2 and z_2 are assumed to fit
 		 * on at most 52 bits each.
 		 *
-		 * Each f255_add() adds one bit to the maximum range of
-		 * the values, but f255_sub() and BEAR_SINGLE_UNITY_FILEf255_mul() bring back
-		 * the limbs into 52 bits. All f255_add() outputs are
+		 * Each BEAR_SINGLE_UNITY_FILEf255_add() adds one bit to the maximum range of
+		 * the values, but BEAR_SINGLE_UNITY_FILEf255_sub() and BEAR_SINGLE_UNITY_FILEf255_mul() bring back
+		 * the limbs into 52 bits. All BEAR_SINGLE_UNITY_FILEf255_add() outputs are
 		 * used only as inputs for BEAR_SINGLE_UNITY_FILEf255_mul(), which ensures
 		 * that limbs remain in the proper range.
 		 */
 
 		/* A = x_2 + z_2   -- limbs fit on 53 bits each */
-		f255_add(a, x2, z2);
+		BEAR_SINGLE_UNITY_FILEf255_add(a, x2, z2);
 
 		/* AA = A^2 */
 		BEAR_SINGLE_UNITY_FILEf255_mul(aa, a, a);
 
 		/* B = x_2 - z_2 */
-		f255_sub(b, x2, z2);
+		BEAR_SINGLE_UNITY_FILEf255_sub(b, x2, z2);
 
 		/* BB = B^2 */
 		BEAR_SINGLE_UNITY_FILEf255_mul(bb, b, b);
 
 		/* E = AA - BB */
-		f255_sub(e, aa, bb);
+		BEAR_SINGLE_UNITY_FILEf255_sub(e, aa, bb);
 
 		/* C = x_3 + z_3   -- limbs fit on 53 bits each */
-		f255_add(c, x3, z3);
+		BEAR_SINGLE_UNITY_FILEf255_add(c, x3, z3);
 
 		/* D = x_3 - z_3 */
-		f255_sub(d, x3, z3);
+		BEAR_SINGLE_UNITY_FILEf255_sub(d, x3, z3);
 
 		/* DA = D * A */
 		BEAR_SINGLE_UNITY_FILEf255_mul(da, d, a);
@@ -475,11 +475,11 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		BEAR_SINGLE_UNITY_FILEf255_mul(cb, c, b);
 
 		/* x_3 = (DA + CB)^2 */
-		f255_add(x3, da, cb);
+		BEAR_SINGLE_UNITY_FILEf255_add(x3, da, cb);
 		BEAR_SINGLE_UNITY_FILEf255_mul(x3, x3, x3);
 
 		/* z_3 = x_1 * (DA - CB)^2 */
-		f255_sub(z3, da, cb);
+		BEAR_SINGLE_UNITY_FILEf255_sub(z3, da, cb);
 		BEAR_SINGLE_UNITY_FILEf255_mul(z3, z3, z3);
 		BEAR_SINGLE_UNITY_FILEf255_mul(z3, x1, z3);
 
@@ -488,12 +488,12 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 
 		/* z_2 = E * (AA + a24 * E) */
 		BEAR_SINGLE_UNITY_FILEf255_mul_a24(z2, e);
-		f255_add(z2, aa, z2);
+		BEAR_SINGLE_UNITY_FILEf255_add(z2, aa, z2);
 		BEAR_SINGLE_UNITY_FILEf255_mul(z2, e, z2);
 	}
 
-	f255_cswap(x2, x3, swap);
-	f255_cswap(z2, z3, swap);
+	BEAR_SINGLE_UNITY_FILEf255_BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
+	BEAR_SINGLE_UNITY_FILEf255_BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
 
 	/*
 	 * Compute 1/z2 = z2^(p-2). Since p = 2^255-19, we can mutualize

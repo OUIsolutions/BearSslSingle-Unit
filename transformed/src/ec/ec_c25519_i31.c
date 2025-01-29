@@ -110,7 +110,7 @@ BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
 }
 
 static void
-cswap(uint32_t *a, uint32_t *b, uint32_t ctl)
+BEAR_SINGLE_UNITY_FILEcswap(uint32_t *a, uint32_t *b, uint32_t ctl)
 {
 	int i;
 
@@ -249,8 +249,8 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 
 		kt = (k[31 - (i >> 3)] >> (i & 7)) & 1;
 		swap ^= kt;
-		cswap(x2, x3, swap);
-		cswap(z2, z3, swap);
+		BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
+		BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
 		swap = kt;
 
 		/* obsolete
@@ -299,8 +299,8 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		print_int_mont("z3", z3);
 		*/
 	}
-	cswap(x2, x3, swap);
-	cswap(z2, z3, swap);
+	BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
+	BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
 
 	/*
 	 * Inverse z2 with a modular exponentiation. This is a simple
