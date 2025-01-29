@@ -437,7 +437,7 @@ invert_pubexp(uint32_t *d, const uint32_t *m, uint32_t e, uint32_t *t)
  * Swap two buffers in RAM. They must be disjoint.
  */
 static void
-bufswap(void *b1, void *b2, size_t len)
+(BEAR_SINGLE_UNITY_FILE)bufswap(void *b1, void *b2, size_t len)
 {
 	size_t u;
 	unsigned char *buf1, *buf2;
@@ -566,9 +566,9 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	 * returning p and q such that p > q, which is not a secret.
 	 */
 	if (esize_p == esize_q && br_i31_sub(p, q, 0) == 1) {
-		bufswap(p, q, (1 + plen) * sizeof *p);
-		bufswap(sk->p, sk->q, sk->plen);
-		bufswap(sk->dp, sk->dq, sk->dplen);
+		(BEAR_SINGLE_UNITY_FILE)bufswap(p, q, (1 + plen) * sizeof *p);
+		(BEAR_SINGLE_UNITY_FILE)bufswap(sk->p, sk->q, sk->plen);
+		(BEAR_SINGLE_UNITY_FILE)bufswap(sk->dp, sk->dq, sk->dplen);
 	}
 
 	/*
