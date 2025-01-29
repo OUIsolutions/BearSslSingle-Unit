@@ -117,7 +117,7 @@ norm13(uint32_t *d, const uint32_t *w, size_t len)
  * on 13 bits; source operands use 20 words, destination operand
  * receives 40 words. All overlaps allowed.
  *
- * square20() computes the square of a 260-bit integer. Each word must
+ * BEAR_SINGLE_UNITY_FILEsquare20() computes the square of a 260-bit integer. Each word must
  * fit on 13 bits; source operand uses 20 words, destination operand
  * receives 40 words. All overlaps allowed.
  */
@@ -351,7 +351,7 @@ mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 }
 
 static inline void
-square20(uint32_t *d, const uint32_t *a)
+BEAR_SINGLE_UNITY_FILEsquare20(uint32_t *d, const uint32_t *a)
 {
 	mul20(d, a, a);
 }
@@ -767,7 +767,7 @@ mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
 }
 
 static void
-square20(uint32_t *d, const uint32_t *a)
+BEAR_SINGLE_UNITY_FILEsquare20(uint32_t *d, const uint32_t *a)
 {
 	uint32_t t[39];
 
@@ -1157,7 +1157,7 @@ BEAR_SINGLE_UNITY_FILEsquare_f256(uint32_t *d, const uint32_t *a)
 	/*
 	 * Compute raw square. All result words fit in 13 bits each.
 	 */
-	square20(t, a);
+	BEAR_SINGLE_UNITY_FILEsquare20(t, a);
 
 	/*
 	 * Modular reduction: each high word in added/subtracted where

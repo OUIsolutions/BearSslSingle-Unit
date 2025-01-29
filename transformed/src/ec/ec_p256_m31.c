@@ -226,7 +226,7 @@ BEAR_SINGLE_UNITY_FILEmul9(uint32_t *d, const uint32_t *a, const uint32_t *b)
  * Result uses 18 words of 30 bits each.
  */
 static void
-square9(uint32_t *d, const uint32_t *a)
+BEAR_SINGLE_UNITY_FILEsquare9(uint32_t *d, const uint32_t *a)
 {
 	uint64_t t[17];
 	uint64_t cc;
@@ -509,7 +509,7 @@ BEAR_SINGLE_UNITY_FILEsquare_f256(uint32_t *d, const uint32_t *a)
 	uint32_t z, c;
 	int i;
 
-	square9(t, a);
+	BEAR_SINGLE_UNITY_FILEsquare9(t, a);
 
 	/*
 	 * Modular reduction: each high word in added/subtracted where
