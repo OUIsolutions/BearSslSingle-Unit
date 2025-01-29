@@ -196,7 +196,7 @@ static uint32_t
  * to contain an extra 32th bit.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(uint32_t *a, uint32_t *b, size_t len,
+(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(uint32_t *a, uint32_t *b, size_t len,
 	int64_t pa, int64_t pb, int64_t qa, int64_t qb,
 	const uint32_t *m, uint32_t m0i)
 {
@@ -469,7 +469,7 @@ br_i31_moddiv(uint32_t *x, const uint32_t *y, const uint32_t *m, uint32_t m0i,
 		pb -= pb * ((r & 1) << 1);
 		qa -= qa * (r & 2);
 		qb -= qb * (r & 2);
-		(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);
+		(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);
 	}
 
 	/*

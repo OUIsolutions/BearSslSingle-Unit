@@ -44,7 +44,7 @@ static const uint32_t (BEAR_SINGLE_UNITY_FILE)P256_R2[] = {
 	0x00000000
 };
 
-static const uint32_t P256_B[] = {
+static const uint32_t (BEAR_SINGLE_UNITY_FILE)P256_B[] = {
 	0x00000108,
 	0x6FEE1803, 0x6229C4BD, 0x21B139BE, 0x327150AA,
 	0x3567802E, 0x3F7212ED, 0x012E4355, 0x782DD38D,
@@ -59,7 +59,7 @@ static const uint32_t (BEAR_SINGLE_UNITY_FILE)P384_P[] = {
 	0x00000FFF
 };
 
-static const uint32_t P384_R2[] = {
+static const uint32_t (BEAR_SINGLE_UNITY_FILE)P384_R2[] = {
 	0x0000018C,
 	0x00000000, 0x00000080, 0x7FFFFE00, 0x000001FF,
 	0x00000800, 0x00000000, 0x7FFFE000, 0x00001FFF,
@@ -67,7 +67,7 @@ static const uint32_t P384_R2[] = {
 	0x00000000
 };
 
-static const uint32_t P384_B[] = {
+static const uint32_t (BEAR_SINGLE_UNITY_FILE)P384_B[] = {
 	0x0000018C,
 	0x6E666840, 0x070D0392, 0x5D810231, 0x7651D50C,
 	0x17E218D6, 0x1B192002, 0x44EFE441, 0x3A524E2B,
@@ -75,7 +75,7 @@ static const uint32_t P384_B[] = {
 	0x000008A5
 };
 
-static const uint32_t P521_P[] = {
+static const uint32_t (BEAR_SINGLE_UNITY_FILE)P521_P[] = {
 	0x00000219,
 	0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF,
 	0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF,
@@ -84,7 +84,7 @@ static const uint32_t P521_P[] = {
 	0x01FFFFFF
 };
 
-static const uint32_t P521_R2[] = {
+static const uint32_t (BEAR_SINGLE_UNITY_FILE)P521_R2[] = {
 	0x00000219,
 	0x00001000, 0x00000000, 0x00000000, 0x00000000,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
@@ -93,7 +93,7 @@ static const uint32_t P521_R2[] = {
 	0x00000000
 };
 
-static const uint32_t P521_B[] = {
+static const uint32_t (BEAR_SINGLE_UNITY_FILE)P521_B[] = {
 	0x00000219,
 	0x540FC00A, 0x228FEA35, 0x2C34F1EF, 0x67BF107A,
 	0x46FC1CD5, 0x1605E9DD, 0x6937B165, 0x272A3D8F,
@@ -114,9 +114,9 @@ static inline const (BEAR_SINGLE_UNITY_FILE)curve_params *
 (BEAR_SINGLE_UNITY_FILE)id_to_curve(int curve)
 {
 	static const (BEAR_SINGLE_UNITY_FILE)curve_params pp[] = {
-		{ (BEAR_SINGLE_UNITY_FILE)P256_P, P256_B, (BEAR_SINGLE_UNITY_FILE)P256_R2, 0x00000001,  65 },
-		{ (BEAR_SINGLE_UNITY_FILE)P384_P, P384_B, P384_R2, 0x00000001,  97 },
-		{ P521_P, P521_B, P521_R2, 0x00000001, 133 }
+		{ (BEAR_SINGLE_UNITY_FILE)P256_P, (BEAR_SINGLE_UNITY_FILE)P256_B, (BEAR_SINGLE_UNITY_FILE)P256_R2, 0x00000001,  65 },
+		{ (BEAR_SINGLE_UNITY_FILE)P384_P, (BEAR_SINGLE_UNITY_FILE)P384_B, (BEAR_SINGLE_UNITY_FILE)P384_R2, 0x00000001,  97 },
+		{ (BEAR_SINGLE_UNITY_FILE)P521_P, (BEAR_SINGLE_UNITY_FILE)P521_B, (BEAR_SINGLE_UNITY_FILE)P521_R2, 0x00000001, 133 }
 	};
 
 	return &pp[curve - BR_EC_secp256r1];
@@ -685,7 +685,7 @@ static void
 }
 
 static const br_ec_curve_def *
-(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)id_to_curve_def(int curve)
+(BEAR_SINGLE_UNITY_FILE)id_to_curve_def(int curve)
 {
 	switch (curve) {
 	case BR_EC_secp256r1:
@@ -703,7 +703,7 @@ static const unsigned char *
 {
 	const br_ec_curve_def *cd;
 
-	cd = (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)id_to_curve_def(curve);
+	cd = (BEAR_SINGLE_UNITY_FILE)id_to_curve_def(curve);
 	*len = cd->generator_len;
 	return cd->generator;
 }
@@ -713,7 +713,7 @@ static const unsigned char *
 {
 	const br_ec_curve_def *cd;
 
-	cd = (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)id_to_curve_def(curve);
+	cd = (BEAR_SINGLE_UNITY_FILE)id_to_curve_def(curve);
 	*len = cd->order_len;
 	return cd->order;
 }

@@ -304,7 +304,7 @@ static const uint32_t F256[] = {
 /*
  * The 'b' curve equation coefficient for P-256.
  */
-static const uint32_t P256_B[] = {
+static const uint32_t (BEAR_SINGLE_UNITY_FILE)P256_B[] = {
 
 	0x27D2604B, 0x2F38F0F8, 0x053B0F63, 0x0741AC33, 0x1886BC65,
 	0x2EF555DA, 0x293E7B3E, 0x0D762A8E, 0x00005AC6
@@ -1075,7 +1075,7 @@ p256_decode(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const void *src, size_t le
 	sub_f256(t1, t1, tx);
 	sub_f256(t1, t1, tx);
 	sub_f256(t1, t1, tx);
-	add_f256(t1, t1, P256_B);
+	add_f256(t1, t1, (BEAR_SINGLE_UNITY_FILE)P256_B);
 	sub_f256(t1, t1, t2);
 	reduce_final_f256(t1);
 	for (i = 0; i < 9; i ++) {

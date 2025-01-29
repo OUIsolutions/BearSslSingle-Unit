@@ -180,7 +180,7 @@ static uint32_t
  * to contain an extra 16th bit.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(uint16_t *a, uint16_t *b, size_t len,
+(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(uint16_t *a, uint16_t *b, size_t len,
 	int32_t pa, int32_t pb, int32_t qa, int32_t qb,
 	const uint16_t *m, uint16_t m0i)
 {
@@ -446,7 +446,7 @@ br_i15_moddiv(uint16_t *x, const uint16_t *y, const uint16_t *m, uint16_t m0i,
 		pb -= pb * ((r & 1) << 1);
 		qa -= qa * (r & 2);
 		qb -= qb * (r & 2);
-		(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);
+		(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);
 	}
 
 	/*
