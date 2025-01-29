@@ -26,7 +26,7 @@
 
 #define I15_LEN     ((BR_MAX_EC_SIZE + 29) / 15)
 #define POINT_LEN   (1 + (((BR_MAX_EC_SIZE + 7) >> 3) << 1))
-#define ORDER_LEN   ((BR_MAX_EC_SIZE + 7) >> 3)
+#define BEAR_SINGLE_UNITY_FILEORDER_LEN   ((BR_MAX_EC_SIZE + 7) >> 3)
 
 /* see bearssl_ec.h */
 size_t
@@ -44,7 +44,7 @@ br_ecdsa_i15_sign_raw(const br_ec_impl *impl,
 	const br_ec_curve_def *cd;
 	uint16_t n[I15_LEN], r[I15_LEN], s[I15_LEN], x[I15_LEN];
 	uint16_t m[I15_LEN], k[I15_LEN], t1[I15_LEN], t2[I15_LEN];
-	unsigned char tt[ORDER_LEN << 1];
+	unsigned char tt[BEAR_SINGLE_UNITY_FILEORDER_LEN << 1];
 	unsigned char eU[POINT_LEN];
 	size_t hash_len, nlen, ulen;
 	uint16_t n0i;
