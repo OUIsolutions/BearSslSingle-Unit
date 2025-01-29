@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 try
+origin
 teste2.c
 stage2.sh
 stage1.sh
