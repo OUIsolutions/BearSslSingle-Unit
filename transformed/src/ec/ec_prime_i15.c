@@ -109,12 +109,12 @@ typedef struct {
 	const uint16_t *R2;
 	uint16_t p0i;
 	size_t point_len;
-} curve_params;
+} (BEAR_SINGLE_UNITY_FILE)curve_params;
 
-static inline const curve_params *
-id_to_curve(int curve)
+static inline const (BEAR_SINGLE_UNITY_FILE)curve_params *
+(BEAR_SINGLE_UNITY_FILE)id_to_curve(int curve)
 {
-	static const curve_params pp[] = {
+	static const (BEAR_SINGLE_UNITY_FILE)curve_params pp[] = {
 		{ (BEAR_SINGLE_UNITY_FILE)P256_P, P256_B, (BEAR_SINGLE_UNITY_FILE)P256_R2, 0x0001,  65 },
 		{ (BEAR_SINGLE_UNITY_FILE)P384_P, P384_B, P384_R2, 0x0001,  97 },
 		{ P521_P, P521_B, P521_R2, 0x0001, 133 }
@@ -451,7 +451,7 @@ static const uint16_t (BEAR_SINGLE_UNITY_FILE)code_affine[] = {
 
 static uint32_t
 (BEAR_SINGLE_UNITY_FILE)run_code((BEAR_SINGLE_UNITY_FILE)jacobian *P1, const (BEAR_SINGLE_UNITY_FILE)jacobian *P2,
-	const curve_params *cc, const uint16_t *code)
+	const (BEAR_SINGLE_UNITY_FILE)curve_params *cc, const uint16_t *code)
 {
 	uint32_t r;
 	uint16_t t[13][I15_LEN];
@@ -530,27 +530,27 @@ static void
 }
 
 static void
-(BEAR_SINGLE_UNITY_FILE)point_zero((BEAR_SINGLE_UNITY_FILE)jacobian *P, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_zero((BEAR_SINGLE_UNITY_FILE)jacobian *P, const (BEAR_SINGLE_UNITY_FILE)curve_params *cc)
 {
 	memset(P, 0, sizeof *P);
 	P->c[0][0] = P->c[1][0] = P->c[2][0] = cc->p[0];
 }
 
 static inline void
-(BEAR_SINGLE_UNITY_FILE)point_double((BEAR_SINGLE_UNITY_FILE)jacobian *P, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_double((BEAR_SINGLE_UNITY_FILE)jacobian *P, const (BEAR_SINGLE_UNITY_FILE)curve_params *cc)
 {
 	(BEAR_SINGLE_UNITY_FILE)run_code(P, P, cc, (BEAR_SINGLE_UNITY_FILE)code_double);
 }
 
 static inline uint32_t
-(BEAR_SINGLE_UNITY_FILE)point_add((BEAR_SINGLE_UNITY_FILE)jacobian *P1, const (BEAR_SINGLE_UNITY_FILE)jacobian *P2, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_add((BEAR_SINGLE_UNITY_FILE)jacobian *P1, const (BEAR_SINGLE_UNITY_FILE)jacobian *P2, const (BEAR_SINGLE_UNITY_FILE)curve_params *cc)
 {
 	return (BEAR_SINGLE_UNITY_FILE)run_code(P1, P2, cc, (BEAR_SINGLE_UNITY_FILE)code_add);
 }
 
 static void
 (BEAR_SINGLE_UNITY_FILE)point_mul((BEAR_SINGLE_UNITY_FILE)jacobian *P, const unsigned char *x, size_t xlen,
-	const curve_params *cc)
+	const (BEAR_SINGLE_UNITY_FILE)curve_params *cc)
 {
 	/*
 	 * We do a simple double-and-add ladder with a 2-bit window
@@ -607,7 +607,7 @@ static void
  * the coordinates are still set to properly formed field elements.
  */
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)point_decode((BEAR_SINGLE_UNITY_FILE)jacobian *P, const void *src, size_t len, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_decode((BEAR_SINGLE_UNITY_FILE)jacobian *P, const void *src, size_t len, const (BEAR_SINGLE_UNITY_FILE)curve_params *cc)
 {
 	/*
 	 * Points must use uncompressed format:
@@ -666,7 +666,7 @@ static uint32_t
  * plen is the field modulus length, in bytes.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)point_encode(void *dst, const (BEAR_SINGLE_UNITY_FILE)jacobian *P, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_encode(void *dst, const (BEAR_SINGLE_UNITY_FILE)jacobian *P, const (BEAR_SINGLE_UNITY_FILE)curve_params *cc)
 {
 	unsigned char *buf;
 	size_t plen;
@@ -683,7 +683,7 @@ static void
 }
 
 static const br_ec_curve_def *
-(BEAR_SINGLE_UNITY_FILE)id_to_curve_def(int curve)
+(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)id_to_curve_def(int curve)
 {
 	switch (curve) {
 	case BR_EC_secp256r1:
@@ -701,7 +701,7 @@ static const unsigned char *
 {
 	const br_ec_curve_def *cd;
 
-	cd = (BEAR_SINGLE_UNITY_FILE)id_to_curve_def(curve);
+	cd = (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)id_to_curve_def(curve);
 	*len = cd->generator_len;
 	return cd->generator;
 }
@@ -711,7 +711,7 @@ static const unsigned char *
 {
 	const br_ec_curve_def *cd;
 
-	cd = (BEAR_SINGLE_UNITY_FILE)id_to_curve_def(curve);
+	cd = (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)id_to_curve_def(curve);
 	*len = cd->order_len;
 	return cd->order;
 }
@@ -729,10 +729,10 @@ static uint32_t
 	const unsigned char *x, size_t xlen, int curve)
 {
 	uint32_t r;
-	const curve_params *cc;
+	const (BEAR_SINGLE_UNITY_FILE)curve_params *cc;
 	(BEAR_SINGLE_UNITY_FILE)jacobian P;
 
-	cc = id_to_curve(curve);
+	cc = (BEAR_SINGLE_UNITY_FILE)id_to_curve(curve);
 	if (Glen != cc->point_len) {
 		return 0;
 	}
@@ -761,7 +761,7 @@ static uint32_t
 	const unsigned char *y, size_t ylen, int curve)
 {
 	uint32_t r, t, z;
-	const curve_params *cc;
+	const (BEAR_SINGLE_UNITY_FILE)curve_params *cc;
 	(BEAR_SINGLE_UNITY_FILE)jacobian P, Q;
 
 	/*
@@ -770,7 +770,7 @@ static uint32_t
 	 * wasteful of CPU resources (but yields short code).
 	 */
 
-	cc = id_to_curve(curve);
+	cc = (BEAR_SINGLE_UNITY_FILE)id_to_curve(curve);
 	if (len != cc->point_len) {
 		return 0;
 	}
