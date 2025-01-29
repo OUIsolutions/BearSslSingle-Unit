@@ -171,12 +171,14 @@ make_pms_rsa(br_ssl_client_context *ctx, int prf_id)
  * OID for hash functions in RSA signatures.
  */
 static const unsigned char *(BEAR_SINGLE_UNITY_FILE)HASH_OID[] = {
-	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA1,
-	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA224,
-	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA256,
-	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA384,
-	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA512
+	BR_HASH_OID_SHA1,
+	BR_HASH_OID_SHA224,
+	BR_HASH_OID_SHA256,
+	BR_HASH_OID_SHA384,
+	BR_HASH_OID_SHA512
 };
+
+
 
 /*
  * Check the RSA signature on the ServerKeyExchange message.
