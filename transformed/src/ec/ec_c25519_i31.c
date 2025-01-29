@@ -36,7 +36,7 @@ static const uint32_t C255_P[] = {
 	0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x0000007F
 };
 
-#define (BEAR_SINGLE_UNITY_FILE)P0I   0x286BCA1B
+#define BEAR_SINGLE_UNITY_FILEP0I   0x286BCA1B
 
 static const uint32_t C255_R2[] = {
 	0x00000107,
@@ -62,7 +62,7 @@ print_int_mont(const char *name, const uint32_t *x)
 
 	printf("%s = ", name);
 	memcpy(y, x, sizeof y);
-	br_i31_from_monty(y, C255_P, (BEAR_SINGLE_UNITY_FILE)P0I);
+	br_i31_from_monty(y, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	br_i31_encode(tmp, sizeof tmp, y);
 	for (u = 0; u < sizeof tmp; u ++) {
 		printf("%02X", tmp[u]);
@@ -86,7 +86,7 @@ static const unsigned char ORDER[] = {
 };
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_generator(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -94,7 +94,7 @@ static const unsigned char *
 }
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_order(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -102,7 +102,7 @@ static const unsigned char *
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_xoff(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -154,7 +154,7 @@ c255_mul(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	uint32_t t[10];
 
-	br_i31_montymul(t, a, b, C255_P, (BEAR_SINGLE_UNITY_FILE)P0I);
+	br_i31_montymul(t, a, b, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	memcpy(d, t, sizeof t);
 }
 
@@ -173,7 +173,7 @@ byteswap(unsigned char *G)
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_mul(unsigned char *G, size_t Glen,
+BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	const unsigned char *kb, size_t kblen, int curve)
 {
 	uint32_t x1[10], x2[10], x3[10], z2[10], z3[10];
@@ -223,7 +223,7 @@ static uint32_t
 	 * Initialise variables x1, x2, z2, x3 and z3. We set all of them
 	 * into Montgomery representation.
 	 */
-	br_i31_montymul(x1, a, C255_R2, C255_P, (BEAR_SINGLE_UNITY_FILE)P0I);
+	br_i31_montymul(x1, a, C255_R2, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	memcpy(x3, x1, sizeof x1);
 	br_i31_zero(z2, C255_P[0]);
 	memcpy(x2, z2, sizeof z2);
@@ -333,11 +333,11 @@ static uint32_t
 	 * To avoid a dependency on br_i31_from_monty(), we use
 	 * a Montgomery multiplication with 1.
 	 *    memcpy(x2, b, sizeof b);
-	 *    br_i31_from_monty(x2, C255_P, (BEAR_SINGLE_UNITY_FILE)P0I);
+	 *    br_i31_from_monty(x2, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	 */
 	br_i31_zero(a, C255_P[0]);
 	a[1] = 1;
-	br_i31_montymul(x2, a, b, C255_P, (BEAR_SINGLE_UNITY_FILE)P0I);
+	br_i31_montymul(x2, a, b, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
 
 	br_i31_encode(G, 32, x2);
 	byteswap(G);
@@ -345,20 +345,20 @@ static uint32_t
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_mulgen(unsigned char *R,
+BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
 	const unsigned char *x, size_t xlen, int curve)
 {
 	const unsigned char *G;
 	size_t Glen;
 
-	G = (BEAR_SINGLE_UNITY_FILE)api_generator(curve, &Glen);
+	G = BEAR_SINGLE_UNITY_FILEapi_generator(curve, &Glen);
 	memcpy(R, G, Glen);
-	(BEAR_SINGLE_UNITY_FILE)api_mul(R, Glen, x, xlen, curve);
+	BEAR_SINGLE_UNITY_FILEapi_mul(R, Glen, x, xlen, curve);
 	return Glen;
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
@@ -381,10 +381,10 @@ static uint32_t
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_c25519_i31 = {
 	(uint32_t)0x20000000,
-	&(BEAR_SINGLE_UNITY_FILE)api_generator,
-	&(BEAR_SINGLE_UNITY_FILE)api_order,
-	&(BEAR_SINGLE_UNITY_FILE)api_xoff,
-	&(BEAR_SINGLE_UNITY_FILE)api_mul,
-	&(BEAR_SINGLE_UNITY_FILE)api_mulgen,
-	&(BEAR_SINGLE_UNITY_FILE)api_muladd
+	&BEAR_SINGLE_UNITY_FILEapi_generator,
+	&BEAR_SINGLE_UNITY_FILEapi_order,
+	&BEAR_SINGLE_UNITY_FILEapi_xoff,
+	&BEAR_SINGLE_UNITY_FILEapi_mul,
+	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
+	&BEAR_SINGLE_UNITY_FILEapi_muladd
 };

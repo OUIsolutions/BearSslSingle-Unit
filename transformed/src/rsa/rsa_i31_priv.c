@@ -24,8 +24,8 @@
 
 
 
-#define (BEAR_SINGLE_UNITY_FILE)U      (2 + ((BR_MAX_RSA_FACTOR + 30) / 31))
-#define (BEAR_SINGLE_UNITY_FILE)TLEN   (8 * U)
+#define BEAR_SINGLE_UNITY_FILEU      (2 + ((BR_MAX_RSA_FACTOR + 30) / 31))
+#define BEAR_SINGLE_UNITY_FILETLEN   (8 * U)
 
 /* see bearssl_rsa.h */
 uint32_t
@@ -36,7 +36,7 @@ br_rsa_i31_private(unsigned char *x, const br_rsa_private_key *sk)
 	size_t fwlen;
 	uint32_t p0i, q0i;
 	size_t xlen, u;
-	uint32_t tmp[1 + (BEAR_SINGLE_UNITY_FILE)TLEN];
+	uint32_t tmp[1 + BEAR_SINGLE_UNITY_FILETLEN];
 	long z;
 	uint32_t *mp, *mq, *s1, *s2, *t1, *t2, *t3;
 	uint32_t r;
@@ -77,7 +77,7 @@ br_rsa_i31_private(unsigned char *x, const br_rsa_private_key *sk)
 	/*
 	 * We need to fit at least 6 values in the stack buffer.
 	 */
-	if (6 * fwlen > (BEAR_SINGLE_UNITY_FILE)TLEN) {
+	if (6 * fwlen > BEAR_SINGLE_UNITY_FILETLEN) {
 		return 0;
 	}
 
@@ -142,7 +142,7 @@ br_rsa_i31_private(unsigned char *x, const br_rsa_private_key *sk)
 	s2 = mq + fwlen;
 	br_i31_decode_reduce(s2, x, xlen, mq);
 	r &= br_i31_modpow_opt(s2, sk->dq, sk->dqlen, mq, q0i,
-		mq + 3 * fwlen, (BEAR_SINGLE_UNITY_FILE)TLEN - 3 * fwlen);
+		mq + 3 * fwlen, BEAR_SINGLE_UNITY_FILETLEN - 3 * fwlen);
 
 	/*
 	 * Compute s1 = x^dp mod p.
@@ -151,7 +151,7 @@ br_rsa_i31_private(unsigned char *x, const br_rsa_private_key *sk)
 	s1 = mq + 3 * fwlen;
 	br_i31_decode_reduce(s1, x, xlen, mp);
 	r &= br_i31_modpow_opt(s1, sk->dp, sk->dplen, mp, p0i,
-		mq + 4 * fwlen, (BEAR_SINGLE_UNITY_FILE)TLEN - 4 * fwlen);
+		mq + 4 * fwlen, BEAR_SINGLE_UNITY_FILETLEN - 4 * fwlen);
 
 	/*
 	 * Compute:

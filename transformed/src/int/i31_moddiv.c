@@ -40,7 +40,7 @@
  * computed; otherwise, if 'ctl' is 0, then the value is unchanged.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)cond_negate(uint32_t *a, size_t len, uint32_t ctl)
+BEAR_SINGLE_UNITY_FILEcond_negate(uint32_t *a, size_t len, uint32_t ctl)
 {
 	size_t k;
 	uint32_t cc, xm;
@@ -68,7 +68,7 @@ static void
  * Also, modulus m must be odd.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)finish_mod(uint32_t *a, size_t len, const uint32_t *m, uint32_t neg)
+BEAR_SINGLE_UNITY_FILEfinish_mod(uint32_t *a, size_t len, const uint32_t *m, uint32_t neg)
 {
 	size_t k;
 	uint32_t cc, xm, ym;
@@ -123,7 +123,7 @@ static void
  * to contain an extra 32th bit.
  */
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)co_reduce(uint32_t *a, uint32_t *b, size_t len,
+BEAR_SINGLE_UNITY_FILEco_reduce(uint32_t *a, uint32_t *b, size_t len,
 	int64_t pa, int64_t pb, int64_t qa, int64_t qb)
 {
 	size_t k;
@@ -179,8 +179,8 @@ static uint32_t
 
 	nega = (uint32_t)((uint64_t)cca >> 63);
 	negb = (uint32_t)((uint64_t)ccb >> 63);
-	(BEAR_SINGLE_UNITY_FILE)cond_negate(a, len, nega);
-	(BEAR_SINGLE_UNITY_FILE)cond_negate(b, len, negb);
+	BEAR_SINGLE_UNITY_FILEcond_negate(a, len, nega);
+	BEAR_SINGLE_UNITY_FILEcond_negate(b, len, negb);
 	return nega | (negb << 1);
 }
 
@@ -196,7 +196,7 @@ static uint32_t
  * to contain an extra 32th bit.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(uint32_t *a, uint32_t *b, size_t len,
+BEAR_SINGLE_UNITY_FILEco_reduce_mod(uint32_t *a, uint32_t *b, size_t len,
 	int64_t pa, int64_t pb, int64_t qa, int64_t qb,
 	const uint32_t *m, uint32_t m0i)
 {
@@ -248,8 +248,8 @@ static void
 	 * The top word of 'a' and 'b' may have a 32-th bit set.
 	 * We may have to add or subtract the modulus.
 	 */
-	(BEAR_SINGLE_UNITY_FILE)finish_mod(a, len, m, (uint32_t)((uint64_t)cca >> 63));
-	(BEAR_SINGLE_UNITY_FILE)finish_mod(b, len, m, (uint32_t)((uint64_t)ccb >> 63));
+	BEAR_SINGLE_UNITY_FILEfinish_mod(a, len, m, (uint32_t)((uint64_t)cca >> 63));
+	BEAR_SINGLE_UNITY_FILEfinish_mod(b, len, m, (uint32_t)((uint64_t)ccb >> 63));
 }
 
 /* see inner.h */
@@ -464,12 +464,12 @@ br_i31_moddiv(uint32_t *x, const uint32_t *y, const uint32_t *m, uint32_t m0i,
 		/*
 		 * Replace a and b with new values a' and b'.
 		 */
-		r = (BEAR_SINGLE_UNITY_FILE)co_reduce(a, b, len, pa, pb, qa, qb);
+		r = BEAR_SINGLE_UNITY_FILEco_reduce(a, b, len, pa, pb, qa, qb);
 		pa -= pa * ((r & 1) << 1);
 		pb -= pb * ((r & 1) << 1);
 		qa -= qa * (r & 2);
 		qb -= qb * (r & 2);
-		(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);
+		BEAR_SINGLE_UNITY_FILEco_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);
 	}
 
 	/*

@@ -24,7 +24,7 @@
 
 
 
-static const uint32_t (BEAR_SINGLE_UNITY_FILE)Rcon[] = {
+static const uint32_t BEAR_SINGLE_UNITY_FILERcon[] = {
 	0x01000000, 0x02000000, 0x04000000, 0x08000000, 0x10000000, 0x20000000,
 	0x40000000, 0x80000000, 0x1B000000, 0x36000000
 };
@@ -98,7 +98,7 @@ br_aes_keysched(uint32_t *skey, const void *key, size_t key_len)
 		tmp = skey[i - 1];
 		if (j == 0) {
 			tmp = (tmp << 8) | (tmp >> 24);
-			tmp = SubWord(tmp) ^ (BEAR_SINGLE_UNITY_FILE)Rcon[k];
+			tmp = SubWord(tmp) ^ BEAR_SINGLE_UNITY_FILERcon[k];
 		} else if (nk > 6 && j == 4) {
 			tmp = SubWord(tmp);
 		}

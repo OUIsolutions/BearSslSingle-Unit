@@ -30,7 +30,7 @@
  * of the hash.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)hash_data(const br_hash_class *dig, void *dst, const void *src, size_t len)
+BEAR_SINGLE_UNITY_FILEhash_data(const br_hash_class *dig, void *dst, const void *src, size_t len)
 {
 	br_hash_compat_context hc;
 
@@ -85,7 +85,7 @@ br_rsa_oaep_pad(const br_prng_class **rnd, const br_hash_class *dig,
 	 * overlaps between source and destination buffers are supported.
 	 */
 	memmove(buf + k - src_len, src, src_len);
-	(BEAR_SINGLE_UNITY_FILE)hash_data(dig, buf + 1 + hlen, label, label_len);
+	BEAR_SINGLE_UNITY_FILEhash_data(dig, buf + 1 + hlen, label, label_len);
 	memset(buf + 1 + (hlen << 1), 0, k - src_len - (hlen << 1) - 2);
 	buf[k - src_len - 1] = 0x01;
 

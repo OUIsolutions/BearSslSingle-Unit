@@ -34,7 +34,7 @@ preamble {
  * appropriate cast. This also means that "addresses" computed as offsets
  * within the structure work for both kinds of context.
  */
-#define (BEAR_SINGLE_UNITY_FILE)CTX  ((br_ssl_client_context *)ENG)
+#define BEAR_SINGLE_UNITY_FILECTX  ((br_ssl_client_context *)ENG)
 
 /*
  * Generate the pre-master secret for RSA key exchange, and encrypt it
@@ -115,12 +115,12 @@ make_pms_rsa(br_ssl_client_context *ctx, int prf_id)
 /*
  * OID for hash functions in RSA signatures.
  */
-static const unsigned char *(BEAR_SINGLE_UNITY_FILE)HASH_OID[] = {
-	BR_(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA1,
-	BR_(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA224,
-	BR_(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA256,
-	BR_(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA384,
-	BR_(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA512
+static const unsigned char *BEAR_SINGLE_UNITY_FILEHASH_OID[] = {
+	BR_BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1,
+	BR_BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224,
+	BR_BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256,
+	BR_BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384,
+	BR_BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512
 };
 
 /*
@@ -176,7 +176,7 @@ verify_SKE_sig(br_ssl_client_context *ctx,
 		const unsigned char *hash_oid;
 
 		if (hash) {
-			hash_oid = (BEAR_SINGLE_UNITY_FILE)HASH_OID[hash - 2];
+			hash_oid = BEAR_SINGLE_UNITY_FILEHASH_OID[hash - 2];
 		} else {
 			hash_oid = NULL;
 		}
@@ -463,7 +463,7 @@ cc: ext-ALPN-length ( -- len ) {
 
 	\ Client random
 	addr-client_random 4 bzero
-	addr-client_random 4 + 28 (BEAR_SINGLE_UNITY_FILE)mkrand
+	addr-client_random 4 + 28 BEAR_SINGLE_UNITY_FILEmkrand
 	addr-client_random 32 write-blob
 
 	\ Session ID
@@ -632,7 +632,7 @@ cc: DEBUG-BLOB ( addr len -- ) {
 	extern int printf(const char *fmt, ...);
 
 	size_t len = T0_POP();
-	unsigned char *buf = (unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + T0_POP();
+	unsigned char *buf = (unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
 	size_t u;
 
 	printf("BLOB:");
@@ -819,7 +819,7 @@ cc: set-server-curve ( -- ) {
 
 	xc = *(ENG->x509ctx);
 	pk = xc->get_pkey(ENG->x509ctx, NULL);
-	(BEAR_SINGLE_UNITY_FILE)CTX->server_curve =
+	BEAR_SINGLE_UNITY_FILECTX->server_curve =
 		(pk->key_type == BR_KEYTYPE_EC) ? pk->key.ec.curve : 0;
 }
 
@@ -844,7 +844,7 @@ cc: verify-SKE-sig ( hash use-rsa sig-len -- err ) {
 	int use_rsa = T0_POPi();
 	int hash = T0_POPi();
 
-	T0_PUSH(verify_SKE_sig((BEAR_SINGLE_UNITY_FILE)CTX, hash, use_rsa, sig_len));
+	T0_PUSH(verify_SKE_sig(BEAR_SINGLE_UNITY_FILECTX, hash, use_rsa, sig_len));
 }
 
 \ Parse ServerKeyExchange
@@ -903,9 +903,9 @@ cc: verify-SKE-sig ( hash use-rsa sig-len -- err ) {
 
 \ Client certificate: start processing of anchor names.
 cc: anchor-dn-start-name-list ( -- ) {
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable != NULL) {
-		(*(BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable)->start_name_list(
-			(BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable);
+	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
+		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->start_name_list(
+			BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable);
 	}
 }
 
@@ -914,9 +914,9 @@ cc: anchor-dn-start-name ( length -- ) {
 	size_t len;
 
 	len = T0_POP();
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable != NULL) {
-		(*(BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable)->start_name(
-			(BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable, len);
+	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
+		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->start_name(
+			BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable, len);
 	}
 }
 
@@ -925,25 +925,25 @@ cc: anchor-dn-append-name ( length -- ) {
 	size_t len;
 
 	len = T0_POP();
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable != NULL) {
-		(*(BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable)->append_name(
-			(BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable, ENG->pad, len);
+	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
+		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->append_name(
+			BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable, ENG->pad, len);
 	}
 }
 
 \ Client certificate: end current anchor DN.
 cc: anchor-dn-end-name ( -- ) {
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable != NULL) {
-		(*(BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable)->end_name(
-			(BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable);
+	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
+		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->end_name(
+			BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable);
 	}
 }
 
 \ Client certificate: end list of anchor DN.
 cc: anchor-dn-end-name-list ( -- ) {
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable != NULL) {
-		(*(BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable)->end_name_list(
-			(BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable);
+	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
+		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->end_name_list(
+			BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable);
 	}
 }
 
@@ -952,17 +952,17 @@ cc: get-client-chain ( auth_types -- ) {
 	uint32_t auth_types;
 
 	auth_types = T0_POP();
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable != NULL) {
+	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
 		br_ssl_client_certificate ux;
 
-		(*(BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable)->choose((BEAR_SINGLE_UNITY_FILE)CTX->client_auth_vtable,
-			(BEAR_SINGLE_UNITY_FILE)CTX, auth_types, &ux);
-		(BEAR_SINGLE_UNITY_FILE)CTX->auth_type = (unsigned char)ux.auth_type;
-		(BEAR_SINGLE_UNITY_FILE)CTX->hash_id = (unsigned char)ux.hash_id;
+		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->choose(BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable,
+			BEAR_SINGLE_UNITY_FILECTX, auth_types, &ux);
+		BEAR_SINGLE_UNITY_FILECTX->auth_type = (unsigned char)ux.auth_type;
+		BEAR_SINGLE_UNITY_FILECTX->hash_id = (unsigned char)ux.hash_id;
 		ENG->chain = ux.chain;
 		ENG->chain_len = ux.chain_len;
 	} else {
-		(BEAR_SINGLE_UNITY_FILE)CTX->hash_id = 0;
+		BEAR_SINGLE_UNITY_FILECTX->hash_id = 0;
 		ENG->chain_len = 0;
 	}
 }
@@ -1065,7 +1065,7 @@ cc: get-client-chain ( auth_types -- ) {
 cc: do-rsa-encrypt ( prf_id -- nlen ) {
 	int x;
 
-	x = make_pms_rsa((BEAR_SINGLE_UNITY_FILE)CTX, T0_POP());
+	x = make_pms_rsa(BEAR_SINGLE_UNITY_FILECTX, T0_POP());
 	if (x < 0) {
 		br_ssl_engine_fail(ENG, -x);
 		T0_CO();
@@ -1079,7 +1079,7 @@ cc: do-ecdh ( echde prf_id -- ulen ) {
 	unsigned ecdhe = T0_POP();
 	int x;
 
-	x = make_pms_ecdh((BEAR_SINGLE_UNITY_FILE)CTX, ecdhe, prf_id);
+	x = make_pms_ecdh(BEAR_SINGLE_UNITY_FILECTX, ecdhe, prf_id);
 	if (x < 0) {
 		br_ssl_engine_fail(ENG, -x);
 		T0_CO();
@@ -1091,7 +1091,7 @@ cc: do-ecdh ( echde prf_id -- ulen ) {
 cc: do-static-ecdh ( prf-id -- ) {
 	unsigned prf_id = T0_POP();
 
-	if (make_pms_static_ecdh((BEAR_SINGLE_UNITY_FILE)CTX, prf_id) < 0) {
+	if (make_pms_static_ecdh(BEAR_SINGLE_UNITY_FILECTX, prf_id) < 0) {
 		br_ssl_engine_fail(ENG, BR_ERR_INVALID_ALGORITHM);
 		T0_CO();
 	}
@@ -1100,7 +1100,7 @@ cc: do-static-ecdh ( prf-id -- ) {
 cc: do-client-sign ( -- sig_len ) {
 	size_t sig_len;
 
-	sig_len = make_client_sign((BEAR_SINGLE_UNITY_FILE)CTX);
+	sig_len = make_client_sign(BEAR_SINGLE_UNITY_FILECTX);
 	if (sig_len == 0) {
 		br_ssl_engine_fail(ENG, BR_ERR_INVALID_ALGORITHM);
 		T0_CO();

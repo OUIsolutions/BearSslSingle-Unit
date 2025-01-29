@@ -7,10 +7,10 @@ typedef struct {
 	uint32_t *dp;
 	uint32_t *rp;
 	const unsigned char *ip;
-} (BEAR_SINGLE_UNITY_FILE)t0_context;
+} BEAR_SINGLE_UNITY_FILEt0_context;
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)t0_parse7E_unsigned(const unsigned char **p)
+BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(const unsigned char **p)
 {
 	uint32_t x;
 
@@ -27,7 +27,7 @@ static uint32_t
 }
 
 static int32_t
-(BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(const unsigned char **p)
+BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(const unsigned char **p)
 {
 	int neg;
 	uint32_t x;
@@ -58,7 +58,7 @@ static int32_t
 #define T0_INT4(x)       T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 #define T0_INT5(x)       T0_SBYTE(x), T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 
-/* static const unsigned char (BEAR_SINGLE_UNITY_FILE)t0_datablock[]; */
+/* static const unsigned char BEAR_SINGLE_UNITY_FILEt0_datablock[]; */
 
 
 void br_x509_minimal_init_main(void *t0ctx);
@@ -342,10 +342,10 @@ const br_x509_class br_x509_minimal_vtable = {
 	xm_get_pkey
 };
 
-#define (BEAR_SINGLE_UNITY_FILE)CTX   ((br_x509_minimal_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_minimal_context, cpu)))
-#define (BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME   br_x509_minimal_context
+#define BEAR_SINGLE_UNITY_FILECTX   ((br_x509_minimal_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_minimal_context, cpu)))
+#define BEAR_SINGLE_UNITY_FILECONTEXT_NAME   br_x509_minimal_context
 
-#define DNHASH_LEN   (((BEAR_SINGLE_UNITY_FILE)CTX->dn_hash_impl->desc >> BR_HASHDESC_OUT_OFF) & BR_HASHDESC_OUT_MASK)
+#define DNHASH_LEN   ((BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->desc >> BR_HASHDESC_OUT_OFF) & BR_HASHDESC_OUT_MASK)
 
 /*
  * Hash a DN (from a trust anchor) into the provided buffer. This uses the
@@ -417,7 +417,7 @@ static int verify_signature(br_x509_minimal_context *ctx,
 
 
 
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)t0_datablock[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEt0_datablock[] = {
 	0x00, 0x09, 0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x01, 0x09,
 	0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x05, 0x09, 0x2A, 0x86,
 	0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x0E, 0x09, 0x2A, 0x86, 0x48, 0x86,
@@ -445,7 +445,7 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)t0_datablock[] = {
 	0x01, 0x01, 0x08, 0x2B, 0x06, 0x01, 0x05, 0x05, 0x07, 0x01, 0x0B
 };
 
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)t0_codeblock[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEt0_codeblock[] = {
 	0x00, 0x01, 0x00, 0x0D, 0x00, 0x00, 0x01, 0x00, 0x10, 0x00, 0x00, 0x01,
 	0x00, 0x11, 0x00, 0x00, 0x01, 0x01, 0x09, 0x00, 0x00, 0x01, 0x01, 0x0A,
 	0x00, 0x00, 0x25, 0x25, 0x00, 0x00, 0x01,
@@ -472,21 +472,21 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)t0_codeblock[] = {
 	T0_INT1(BR_ERR_X509_UNSUPPORTED), 0x00, 0x00, 0x01,
 	T0_INT1(BR_ERR_X509_WEAK_PUBLIC_KEY), 0x00, 0x00, 0x01,
 	T0_INT1(BR_KEYTYPE_EC), 0x00, 0x00, 0x01, T0_INT1(BR_KEYTYPE_RSA),
-	0x00, 0x00, 0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_length)), 0x00,
-	0x00, 0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_sig)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_sig_hash_len)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_sig_hash_oid)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_sig_len)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, cert_signer_key_type)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, current_dn_hash)), 0x00, 0x00,
-	0x01, T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, key_usages)), 0x00, 0x00, 0x01,
+	0x00, 0x00, 0x01, T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, cert_length)), 0x00,
+	0x00, 0x01, T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, cert_sig)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, cert_sig_hash_len)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, cert_sig_hash_oid)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, cert_sig_len)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, cert_signer_key_type)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, current_dn_hash)), 0x00, 0x00,
+	0x01, T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, key_usages)), 0x00, 0x00, 0x01,
 	T0_INT2(offsetof(br_x509_minimal_context, pkey_data)), 0x01,
 	T0_INT2(BR_X509_BUFSIZE_KEY), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, min_rsa_size)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, next_dn_hash)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, num_certs)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, pad)), 0x00, 0x00, 0x01,
-	T0_INT2(offsetof((BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME, saved_dn_hash)), 0x00, 0x00, 0x01, 0x80,
+	T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, min_rsa_size)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, next_dn_hash)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, num_certs)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, pad)), 0x00, 0x00, 0x01,
+	T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, saved_dn_hash)), 0x00, 0x00, 0x01, 0x80,
 	0x73, 0x00, 0x00, 0x01, 0x80, 0x7C, 0x00, 0x00, 0x01, 0x81, 0x02, 0x00,
 	0x00, 0x8F, 0x05, 0x05, 0x33, 0x41, 0x01, 0x00, 0x00, 0x33, 0x01, 0x0A,
 	0x0E, 0x09, 0x01, 0x9A, 0xFF, 0xB8, 0x00, 0x0A, 0x00, 0x00, 0x01, 0x82,
@@ -706,7 +706,7 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)t0_codeblock[] = {
 	0x01, 0x83, 0xFF, 0x7E, 0x0D, 0x00
 };
 
-static const uint16_t (BEAR_SINGLE_UNITY_FILE)t0_caddr[] = {
+static const uint16_t BEAR_SINGLE_UNITY_FILEt0_caddr[] = {
 	0,
 	5,
 	10,
@@ -848,28 +848,28 @@ static const uint16_t (BEAR_SINGLE_UNITY_FILE)t0_caddr[] = {
 	2752
 };
 
-#define (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED   60
+#define BEAR_SINGLE_UNITY_FILET0_INTERPRETED   60
 
-#define (BEAR_SINGLE_UNITY_FILE)T0_ENTER(ip, rp, slot)   do { \
+#define BEAR_SINGLE_UNITY_FILET0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
-		t0_newip = &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[(BEAR_SINGLE_UNITY_FILE)t0_caddr[(slot) - (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED]]; \
-		t0_lnum = (BEAR_SINGLE_UNITY_FILE)t0_parse7E_unsigned(&t0_newip); \
+		t0_newip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[BEAR_SINGLE_UNITY_FILEt0_caddr[(slot) - BEAR_SINGLE_UNITY_FILET0_INTERPRETED]]; \
+		t0_lnum = BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
-		*((rp) ++) = (uint32_t)((ip) - &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[0]) + (t0_lnum << 16); \
+		*((rp) ++) = (uint32_t)((ip) - &BEAR_SINGLE_UNITY_FILEt0_codeblock[0]) + (t0_lnum << 16); \
 		(ip) = t0_newip; \
 	} while (0)
 
-#define (BEAR_SINGLE_UNITY_FILE)T0_DEFENTRY(name, slot) \
+#define BEAR_SINGLE_UNITY_FILET0_DEFENTRY(name, slot) \
 void \
 name(void *ctx) \
 { \
-	(BEAR_SINGLE_UNITY_FILE)t0_context *t0ctx = ctx; \
-	t0ctx->ip = &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[0]; \
-	(BEAR_SINGLE_UNITY_FILE)T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+	BEAR_SINGLE_UNITY_FILEt0_context *t0ctx = ctx; \
+	t0ctx->ip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[0]; \
+	BEAR_SINGLE_UNITY_FILET0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
 
-(BEAR_SINGLE_UNITY_FILE)T0_DEFENTRY(br_x509_minimal_init_main, 144)
+BEAR_SINGLE_UNITY_FILET0_DEFENTRY(br_x509_minimal_init_main, 144)
 
 #define T0_NEXT(t0ipp)   (*(*(t0ipp)) ++)
 
@@ -922,16 +922,16 @@ br_x509_minimal_run(void *t0ctx)
 } while (0)
 #define T0_RET()        goto t0_next
 
-	dp = (((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->dp;
-	rp = (((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->rp;
-	ip = (((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->ip;
+	dp = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->dp;
+	rp = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->rp;
+	ip = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->ip;
 	goto t0_next;
 	for (;;) {
 		uint32_t t0x;
 
 	t0_next:
 		t0x = T0_NEXT(&ip);
-		if (t0x < (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED) {
+		if (t0x < BEAR_SINGLE_UNITY_FILET0_INTERPRETED) {
 			switch (t0x) {
 				int32_t t0off;
 
@@ -943,29 +943,29 @@ br_x509_minimal_run(void *t0ctx)
 					ip = NULL;
 					goto t0_exit;
 				}
-				ip = &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[t0x];
+				ip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[t0x];
 				break;
 			case 1: /* literal constant */
-				T0_PUSHi((BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(&ip));
+				T0_PUSHi(BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip));
 				break;
 			case 2: /* read local */
-				T0_PUSH(T0_LOCAL((BEAR_SINGLE_UNITY_FILE)t0_parse7E_unsigned(&ip)));
+				T0_PUSH(T0_LOCAL(BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&ip)));
 				break;
 			case 3: /* write local */
-				T0_LOCAL((BEAR_SINGLE_UNITY_FILE)t0_parse7E_unsigned(&ip)) = T0_POP();
+				T0_LOCAL(BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&ip)) = T0_POP();
 				break;
 			case 4: /* jump */
-				t0off = (BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(&ip);
+				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
 				ip += t0off;
 				break;
 			case 5: /* jump if */
-				t0off = (BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(&ip);
+				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
 				if (T0_POP()) {
 					ip += t0off;
 				}
 				break;
 			case 6: /* jump if not */
-				t0off = (BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(&ip);
+				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
 				if (!T0_POP()) {
 					ip += t0off;
 				}
@@ -1105,8 +1105,8 @@ br_x509_minimal_run(void *t0ctx)
 				/* blobcopy */
 
 	size_t len = T0_POP();
-	unsigned char *src = (unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + T0_POP();
-	unsigned char *dst = (unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + T0_POP();
+	unsigned char *src = (unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
+	unsigned char *dst = (unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
 	memcpy(dst, src, len);
 
 				}
@@ -1116,32 +1116,32 @@ br_x509_minimal_run(void *t0ctx)
 
 	size_t u;
 
-	for (u = 0; u < (BEAR_SINGLE_UNITY_FILE)CTX->trust_anchors_num; u ++) {
+	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->trust_anchors_num; u ++) {
 		const br_x509_trust_anchor *ta;
 		unsigned char hashed_DN[64];
 		int kt;
 
-		ta = &(BEAR_SINGLE_UNITY_FILE)CTX->trust_anchors[u];
+		ta = &BEAR_SINGLE_UNITY_FILECTX->trust_anchors[u];
 		if (ta->flags & BR_X509_TA_CA) {
 			continue;
 		}
-		hash_dn((BEAR_SINGLE_UNITY_FILE)CTX, ta->dn.data, ta->dn.len, hashed_DN);
-		if (memcmp(hashed_DN, (BEAR_SINGLE_UNITY_FILE)CTX->current_dn_hash, DNHASH_LEN)) {
+		hash_dn(BEAR_SINGLE_UNITY_FILECTX, ta->dn.data, ta->dn.len, hashed_DN);
+		if (memcmp(hashed_DN, BEAR_SINGLE_UNITY_FILECTX->current_dn_hash, DNHASH_LEN)) {
 			continue;
 		}
-		kt = (BEAR_SINGLE_UNITY_FILE)CTX->pkey.key_type;
+		kt = BEAR_SINGLE_UNITY_FILECTX->pkey.key_type;
 		if ((ta->pkey.key_type & 0x0F) != kt) {
 			continue;
 		}
 		switch (kt) {
 
 		case BR_KEYTYPE_RSA:
-			if (!eqbigint((BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.n,
-				(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.nlen,
+			if (!eqbigint(BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.n,
+				BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.nlen,
 				ta->pkey.key.rsa.n,
 				ta->pkey.key.rsa.nlen)
-				|| !eqbigint((BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.e,
-				(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.elen,
+				|| !eqbigint(BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.e,
+				BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.elen,
 				ta->pkey.key.rsa.e,
 				ta->pkey.key.rsa.elen))
 			{
@@ -1150,9 +1150,9 @@ br_x509_minimal_run(void *t0ctx)
 			break;
 
 		case BR_KEYTYPE_EC:
-			if ((BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.ec.curve != ta->pkey.key.ec.curve
-				|| (BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.ec.qlen != ta->pkey.key.ec.qlen
-				|| memcmp((BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.ec.q,
+			if (BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.curve != ta->pkey.key.ec.curve
+				|| BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.qlen != ta->pkey.key.ec.qlen
+				|| memcmp(BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.q,
 					ta->pkey.key.ec.q,
 					ta->pkey.key.ec.qlen) != 0)
 			{
@@ -1167,7 +1167,7 @@ br_x509_minimal_run(void *t0ctx)
 		/*
 		 * Direct trust match!
 		 */
-		(BEAR_SINGLE_UNITY_FILE)CTX->err = BR_ERR_X509_OK;
+		BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_OK;
 		T0_CO();
 	}
 
@@ -1178,20 +1178,20 @@ br_x509_minimal_run(void *t0ctx)
 
 	size_t u;
 
-	for (u = 0; u < (BEAR_SINGLE_UNITY_FILE)CTX->trust_anchors_num; u ++) {
+	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->trust_anchors_num; u ++) {
 		const br_x509_trust_anchor *ta;
 		unsigned char hashed_DN[64];
 
-		ta = &(BEAR_SINGLE_UNITY_FILE)CTX->trust_anchors[u];
+		ta = &BEAR_SINGLE_UNITY_FILECTX->trust_anchors[u];
 		if (!(ta->flags & BR_X509_TA_CA)) {
 			continue;
 		}
-		hash_dn((BEAR_SINGLE_UNITY_FILE)CTX, ta->dn.data, ta->dn.len, hashed_DN);
-		if (memcmp(hashed_DN, (BEAR_SINGLE_UNITY_FILE)CTX->saved_dn_hash, DNHASH_LEN)) {
+		hash_dn(BEAR_SINGLE_UNITY_FILECTX, ta->dn.data, ta->dn.len, hashed_DN);
+		if (memcmp(hashed_DN, BEAR_SINGLE_UNITY_FILECTX->saved_dn_hash, DNHASH_LEN)) {
 			continue;
 		}
-		if (verify_signature((BEAR_SINGLE_UNITY_FILE)CTX, &ta->pkey) == 0) {
-			(BEAR_SINGLE_UNITY_FILE)CTX->err = BR_ERR_X509_OK;
+		if (verify_signature(BEAR_SINGLE_UNITY_FILECTX, &ta->pkey) == 0) {
+			BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_OK;
 			T0_CO();
 		}
 	}
@@ -1206,15 +1206,15 @@ br_x509_minimal_run(void *t0ctx)
 	uint32_t nas = T0_POP();
 	uint32_t nad = T0_POP();
 	int r;
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->itime != 0) {
-		r = (BEAR_SINGLE_UNITY_FILE)CTX->itime((BEAR_SINGLE_UNITY_FILE)CTX->itime_ctx, nbd, nbs, nad, nas);
+	if (BEAR_SINGLE_UNITY_FILECTX->itime != 0) {
+		r = BEAR_SINGLE_UNITY_FILECTX->itime(BEAR_SINGLE_UNITY_FILECTX->itime_ctx, nbd, nbs, nad, nas);
 		if (r < -1 || r > 1) {
-			(BEAR_SINGLE_UNITY_FILE)CTX->err = BR_ERR_X509_TIME_UNKNOWN;
+			BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_TIME_UNKNOWN;
 			T0_CO();
 		}
 	} else {
-		uint32_t vd = (BEAR_SINGLE_UNITY_FILE)CTX->days;
-		uint32_t vs = (BEAR_SINGLE_UNITY_FILE)CTX->seconds;
+		uint32_t vd = BEAR_SINGLE_UNITY_FILECTX->days;
+		uint32_t vs = BEAR_SINGLE_UNITY_FILECTX->seconds;
 		if (vd == 0 && vs == 0) {
 #if BR_USE_UNIX_TIME
 			time_t x = time(NULL);
@@ -1232,7 +1232,7 @@ br_x509_minimal_run(void *t0ctx)
 			vd = (uint32_t)(x / 86400) + 584754;
 			vs = (uint32_t)(x % 86400);
 #else
-			(BEAR_SINGLE_UNITY_FILE)CTX->err = BR_ERR_X509_TIME_UNKNOWN;
+			BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_TIME_UNKNOWN;
 			T0_CO();
 #endif
 		}
@@ -1256,8 +1256,8 @@ br_x509_minimal_run(void *t0ctx)
 			case 27: {
 				/* compute-dn-hash */
 
-	(BEAR_SINGLE_UNITY_FILE)CTX->dn_hash_impl->out(&(BEAR_SINGLE_UNITY_FILE)CTX->dn_hash.vtable, (BEAR_SINGLE_UNITY_FILE)CTX->current_dn_hash);
-	(BEAR_SINGLE_UNITY_FILE)CTX->do_dn_hash = 0;
+	BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->out(&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable, BEAR_SINGLE_UNITY_FILECTX->current_dn_hash);
+	BEAR_SINGLE_UNITY_FILECTX->do_dn_hash = 0;
 
 				}
 				break;
@@ -1266,7 +1266,7 @@ br_x509_minimal_run(void *t0ctx)
 
 	int id = T0_POPi();
 	size_t len;
-	len = br_multihash_out(&(BEAR_SINGLE_UNITY_FILE)CTX->mhash, id, (BEAR_SINGLE_UNITY_FILE)CTX->tbs_hash);
+	len = br_multihash_out(&BEAR_SINGLE_UNITY_FILECTX->mhash, id, BEAR_SINGLE_UNITY_FILECTX->tbs_hash);
 	T0_PUSH(len);
 
 				}
@@ -1276,11 +1276,11 @@ br_x509_minimal_run(void *t0ctx)
 
 	size_t qlen = T0_POP();
 	uint32_t curve = T0_POP();
-	memcpy((BEAR_SINGLE_UNITY_FILE)CTX->ee_pkey_data, (BEAR_SINGLE_UNITY_FILE)CTX->pkey_data, qlen);
-	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key_type = BR_KEYTYPE_EC;
-	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.ec.curve = curve;
-	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.ec.q = (BEAR_SINGLE_UNITY_FILE)CTX->ee_pkey_data;
-	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.ec.qlen = qlen;
+	memcpy(BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data, BEAR_SINGLE_UNITY_FILECTX->pkey_data, qlen);
+	BEAR_SINGLE_UNITY_FILECTX->pkey.key_type = BR_KEYTYPE_EC;
+	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.curve = curve;
+	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.q = BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data;
+	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.qlen = qlen;
 
 				}
 				break;
@@ -1289,12 +1289,12 @@ br_x509_minimal_run(void *t0ctx)
 
 	size_t elen = T0_POP();
 	size_t nlen = T0_POP();
-	memcpy((BEAR_SINGLE_UNITY_FILE)CTX->ee_pkey_data, (BEAR_SINGLE_UNITY_FILE)CTX->pkey_data, nlen + elen);
-	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key_type = BR_KEYTYPE_RSA;
-	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.n = (BEAR_SINGLE_UNITY_FILE)CTX->ee_pkey_data;
-	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.nlen = nlen;
-	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.e = (BEAR_SINGLE_UNITY_FILE)CTX->ee_pkey_data + nlen;
-	(BEAR_SINGLE_UNITY_FILE)CTX->pkey.key.rsa.elen = elen;
+	memcpy(BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data, BEAR_SINGLE_UNITY_FILECTX->pkey_data, nlen + elen);
+	BEAR_SINGLE_UNITY_FILECTX->pkey.key_type = BR_KEYTYPE_RSA;
+	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.n = BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data;
+	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.nlen = nlen;
+	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.e = BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data + nlen;
+	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.elen = elen;
 
 				}
 				break;
@@ -1305,14 +1305,14 @@ br_x509_minimal_run(void *t0ctx)
 	unsigned ok = T0_POP();
 	size_t u, len;
 
-	len = (BEAR_SINGLE_UNITY_FILE)CTX->pad[0];
-	for (u = 0; u < (BEAR_SINGLE_UNITY_FILE)CTX->num_name_elts; u ++) {
+	len = BEAR_SINGLE_UNITY_FILECTX->pad[0];
+	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->num_name_elts; u ++) {
 		br_name_element *ne;
 
-		ne = &(BEAR_SINGLE_UNITY_FILE)CTX->name_elts[u];
+		ne = &BEAR_SINGLE_UNITY_FILECTX->name_elts[u];
 		if (ne->status == 0 && ne->oid[0] == 0 && ne->oid[1] == tag) {
 			if (ok && ne->len > len) {
-				memcpy(ne->buf, (BEAR_SINGLE_UNITY_FILE)CTX->pad + 1, len);
+				memcpy(ne->buf, BEAR_SINGLE_UNITY_FILECTX->pad + 1, len);
 				ne->buf[len] = 0;
 				ne->status = 1;
 			} else {
@@ -1332,12 +1332,12 @@ br_x509_minimal_run(void *t0ctx)
 	int ok = T0_POPi();
 
 	if (off >= 0) {
-		br_name_element *ne = &(BEAR_SINGLE_UNITY_FILE)CTX->name_elts[off];
+		br_name_element *ne = &BEAR_SINGLE_UNITY_FILECTX->name_elts[off];
 
 		if (ok) {
-			len = (BEAR_SINGLE_UNITY_FILE)CTX->pad[0];
+			len = BEAR_SINGLE_UNITY_FILECTX->pad[0];
 			if (len < ne->len) {
-				memcpy(ne->buf, (BEAR_SINGLE_UNITY_FILE)CTX->pad + 1, len);
+				memcpy(ne->buf, BEAR_SINGLE_UNITY_FILECTX->pad + 1, len);
 				ne->buf[len] = 0;
 				ne->status = 1;
 			} else {
@@ -1354,7 +1354,7 @@ br_x509_minimal_run(void *t0ctx)
 				/* data-get8 */
 
 	size_t addr = T0_POP();
-	T0_PUSH((BEAR_SINGLE_UNITY_FILE)t0_datablock[addr]);
+	T0_PUSH(BEAR_SINGLE_UNITY_FILEt0_datablock[addr]);
 
 				}
 				break;
@@ -1374,9 +1374,9 @@ br_x509_minimal_run(void *t0ctx)
 
 	pk.key_type = BR_KEYTYPE_EC;
 	pk.key.ec.curve = curve;
-	pk.key.ec.q = (BEAR_SINGLE_UNITY_FILE)CTX->pkey_data;
+	pk.key.ec.q = BEAR_SINGLE_UNITY_FILECTX->pkey_data;
 	pk.key.ec.qlen = qlen;
-	T0_PUSH(verify_signature((BEAR_SINGLE_UNITY_FILE)CTX, &pk));
+	T0_PUSH(verify_signature(BEAR_SINGLE_UNITY_FILECTX, &pk));
 
 				}
 				break;
@@ -1388,11 +1388,11 @@ br_x509_minimal_run(void *t0ctx)
 	br_x509_pkey pk;
 
 	pk.key_type = BR_KEYTYPE_RSA;
-	pk.key.rsa.n = (BEAR_SINGLE_UNITY_FILE)CTX->pkey_data;
+	pk.key.rsa.n = BEAR_SINGLE_UNITY_FILECTX->pkey_data;
 	pk.key.rsa.nlen = nlen;
-	pk.key.rsa.e = (BEAR_SINGLE_UNITY_FILE)CTX->pkey_data + nlen;
+	pk.key.rsa.e = BEAR_SINGLE_UNITY_FILECTX->pkey_data + nlen;
 	pk.key.rsa.elen = elen;
-	T0_PUSH(verify_signature((BEAR_SINGLE_UNITY_FILE)CTX, &pk));
+	T0_PUSH(verify_signature(BEAR_SINGLE_UNITY_FILECTX, &pk));
 
 				}
 				break;
@@ -1409,8 +1409,8 @@ br_x509_minimal_run(void *t0ctx)
 			case 39: {
 				/* eqOID */
 
-	const unsigned char *a2 = &(BEAR_SINGLE_UNITY_FILE)t0_datablock[T0_POP()];
-	const unsigned char *a1 = &(BEAR_SINGLE_UNITY_FILE)CTX->pad[0];
+	const unsigned char *a2 = &BEAR_SINGLE_UNITY_FILEt0_datablock[T0_POP()];
+	const unsigned char *a1 = &BEAR_SINGLE_UNITY_FILECTX->pad[0];
 	size_t len = a1[0];
 	int x;
 	if (len == a2[0]) {
@@ -1426,8 +1426,8 @@ br_x509_minimal_run(void *t0ctx)
 				/* eqblob */
 
 	size_t len = T0_POP();
-	const unsigned char *a2 = (const unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + T0_POP();
-	const unsigned char *a1 = (const unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + T0_POP();
+	const unsigned char *a2 = (const unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
+	const unsigned char *a1 = (const unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
 	T0_PUSHi(-(memcmp(a1, a2, len) == 0));
 
 				}
@@ -1435,7 +1435,7 @@ br_x509_minimal_run(void *t0ctx)
 			case 41: {
 				/* fail */
 
-	(BEAR_SINGLE_UNITY_FILE)CTX->err = T0_POPi();
+	BEAR_SINGLE_UNITY_FILECTX->err = T0_POPi();
 	T0_CO();
 
 				}
@@ -1444,7 +1444,7 @@ br_x509_minimal_run(void *t0ctx)
 				/* get16 */
 
 	uint32_t addr = T0_POP();
-	T0_PUSH(*(uint16_t *)(void *)((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr));
+	T0_PUSH(*(uint16_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
 
 				}
 				break;
@@ -1452,7 +1452,7 @@ br_x509_minimal_run(void *t0ctx)
 				/* get32 */
 
 	uint32_t addr = T0_POP();
-	T0_PUSH(*(uint32_t *)(void *)((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr));
+	T0_PUSH(*(uint32_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
 
 				}
 				break;
@@ -1461,27 +1461,27 @@ br_x509_minimal_run(void *t0ctx)
 
 	size_t n1, n2;
 
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->server_name == NULL) {
+	if (BEAR_SINGLE_UNITY_FILECTX->server_name == NULL) {
 		T0_PUSH(0);
 		T0_RET();
 	}
-	n1 = strlen((BEAR_SINGLE_UNITY_FILE)CTX->server_name);
-	n2 = (BEAR_SINGLE_UNITY_FILE)CTX->pad[0];
-	if (n1 == n2 && eqnocase(&(BEAR_SINGLE_UNITY_FILE)CTX->pad[1], (BEAR_SINGLE_UNITY_FILE)CTX->server_name, n1)) {
+	n1 = strlen(BEAR_SINGLE_UNITY_FILECTX->server_name);
+	n2 = BEAR_SINGLE_UNITY_FILECTX->pad[0];
+	if (n1 == n2 && eqnocase(&BEAR_SINGLE_UNITY_FILECTX->pad[1], BEAR_SINGLE_UNITY_FILECTX->server_name, n1)) {
 		T0_PUSHi(-1);
 		T0_RET();
 	}
-	if (n2 >= 2 && (BEAR_SINGLE_UNITY_FILE)CTX->pad[1] == '*' && (BEAR_SINGLE_UNITY_FILE)CTX->pad[2] == '.') {
+	if (n2 >= 2 && BEAR_SINGLE_UNITY_FILECTX->pad[1] == '*' && BEAR_SINGLE_UNITY_FILECTX->pad[2] == '.') {
 		size_t u;
 
 		u = 0;
-		while (u < n1 && (BEAR_SINGLE_UNITY_FILE)CTX->server_name[u] != '.') {
+		while (u < n1 && BEAR_SINGLE_UNITY_FILECTX->server_name[u] != '.') {
 			u ++;
 		}
 		u ++;
 		n1 -= u;
 		if ((n2 - 2) == n1
-			&& eqnocase(&(BEAR_SINGLE_UNITY_FILE)CTX->pad[3], (BEAR_SINGLE_UNITY_FILE)CTX->server_name + u, n1))
+			&& eqnocase(&BEAR_SINGLE_UNITY_FILECTX->pad[3], BEAR_SINGLE_UNITY_FILECTX->server_name + u, n1))
 		{
 			T0_PUSHi(-1);
 			T0_RET();
@@ -1505,12 +1505,12 @@ br_x509_minimal_run(void *t0ctx)
 	unsigned san = T0_POP();
 	size_t u;
 
-	for (u = 0; u < (BEAR_SINGLE_UNITY_FILE)CTX->num_name_elts; u ++) {
-		if ((BEAR_SINGLE_UNITY_FILE)CTX->name_elts[u].status == 0) {
+	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->num_name_elts; u ++) {
+		if (BEAR_SINGLE_UNITY_FILECTX->name_elts[u].status == 0) {
 			const unsigned char *oid;
 			size_t len, off;
 
-			oid = (BEAR_SINGLE_UNITY_FILE)CTX->name_elts[u].oid;
+			oid = BEAR_SINGLE_UNITY_FILECTX->name_elts[u].oid;
 			if (san) {
 				if (oid[0] != 0 || oid[1] != 0) {
 					continue;
@@ -1520,9 +1520,9 @@ br_x509_minimal_run(void *t0ctx)
 				off = 0;
 			}
 			len = oid[off];
-			if (len != 0 && len == (BEAR_SINGLE_UNITY_FILE)CTX->pad[0]
+			if (len != 0 && len == BEAR_SINGLE_UNITY_FILECTX->pad[0]
 				&& memcmp(oid + off + 1,
-					(BEAR_SINGLE_UNITY_FILE)CTX->pad + 1, len) == 0)
+					BEAR_SINGLE_UNITY_FILECTX->pad + 1, len) == 0)
 			{
 				T0_PUSH(u);
 				T0_RET();
@@ -1552,22 +1552,22 @@ br_x509_minimal_run(void *t0ctx)
 
 	uint32_t len = T0_POP();
 	uint32_t addr = T0_POP();
-	size_t clen = (BEAR_SINGLE_UNITY_FILE)CTX->hlen;
+	size_t clen = BEAR_SINGLE_UNITY_FILECTX->hlen;
 	if (clen > len) {
 		clen = (size_t)len;
 	}
 	if (addr != 0) {
-		memcpy((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr, (BEAR_SINGLE_UNITY_FILE)CTX->hbuf, clen);
+		memcpy((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
 	}
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->do_mhash) {
-		br_multihash_update(&(BEAR_SINGLE_UNITY_FILE)CTX->mhash, (BEAR_SINGLE_UNITY_FILE)CTX->hbuf, clen);
+	if (BEAR_SINGLE_UNITY_FILECTX->do_mhash) {
+		br_multihash_update(&BEAR_SINGLE_UNITY_FILECTX->mhash, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
 	}
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->do_dn_hash) {
-		(BEAR_SINGLE_UNITY_FILE)CTX->dn_hash_impl->update(
-			&(BEAR_SINGLE_UNITY_FILE)CTX->dn_hash.vtable, (BEAR_SINGLE_UNITY_FILE)CTX->hbuf, clen);
+	if (BEAR_SINGLE_UNITY_FILECTX->do_dn_hash) {
+		BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->update(
+			&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
 	}
-	(BEAR_SINGLE_UNITY_FILE)CTX->hbuf += clen;
-	(BEAR_SINGLE_UNITY_FILE)CTX->hlen -= clen;
+	BEAR_SINGLE_UNITY_FILECTX->hbuf += clen;
+	BEAR_SINGLE_UNITY_FILECTX->hlen -= clen;
 	T0_PUSH(addr + clen);
 	T0_PUSH(len - clen);
 
@@ -1576,17 +1576,17 @@ br_x509_minimal_run(void *t0ctx)
 			case 50: {
 				/* read8-low */
 
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->hlen == 0) {
+	if (BEAR_SINGLE_UNITY_FILECTX->hlen == 0) {
 		T0_PUSHi(-1);
 	} else {
-		unsigned char x = *(BEAR_SINGLE_UNITY_FILE)CTX->hbuf ++;
-		if ((BEAR_SINGLE_UNITY_FILE)CTX->do_mhash) {
-			br_multihash_update(&(BEAR_SINGLE_UNITY_FILE)CTX->mhash, &x, 1);
+		unsigned char x = *BEAR_SINGLE_UNITY_FILECTX->hbuf ++;
+		if (BEAR_SINGLE_UNITY_FILECTX->do_mhash) {
+			br_multihash_update(&BEAR_SINGLE_UNITY_FILECTX->mhash, &x, 1);
 		}
-		if ((BEAR_SINGLE_UNITY_FILE)CTX->do_dn_hash) {
-			(BEAR_SINGLE_UNITY_FILE)CTX->dn_hash_impl->update(&(BEAR_SINGLE_UNITY_FILE)CTX->dn_hash.vtable, &x, 1);
+		if (BEAR_SINGLE_UNITY_FILECTX->do_dn_hash) {
+			BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->update(&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable, &x, 1);
 		}
-		(BEAR_SINGLE_UNITY_FILE)CTX->hlen --;
+		BEAR_SINGLE_UNITY_FILECTX->hlen --;
 		T0_PUSH(x);
 	}
 
@@ -1601,7 +1601,7 @@ br_x509_minimal_run(void *t0ctx)
 				/* set16 */
 
 	uint32_t addr = T0_POP();
-	*(uint16_t *)(void *)((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr) = T0_POP();
+	*(uint16_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = T0_POP();
 
 				}
 				break;
@@ -1609,7 +1609,7 @@ br_x509_minimal_run(void *t0ctx)
 				/* set32 */
 
 	uint32_t addr = T0_POP();
-	*(uint32_t *)(void *)((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr) = T0_POP();
+	*(uint32_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = T0_POP();
 
 				}
 				break;
@@ -1617,30 +1617,30 @@ br_x509_minimal_run(void *t0ctx)
 				/* set8 */
 
 	uint32_t addr = T0_POP();
-	*((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr) = (unsigned char)T0_POP();
+	*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = (unsigned char)T0_POP();
 
 				}
 				break;
 			case 55: {
 				/* start-dn-hash */
 
-	(BEAR_SINGLE_UNITY_FILE)CTX->dn_hash_impl->init(&(BEAR_SINGLE_UNITY_FILE)CTX->dn_hash.vtable);
-	(BEAR_SINGLE_UNITY_FILE)CTX->do_dn_hash = 1;
+	BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->init(&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable);
+	BEAR_SINGLE_UNITY_FILECTX->do_dn_hash = 1;
 
 				}
 				break;
 			case 56: {
 				/* start-tbs-hash */
 
-	br_multihash_init(&(BEAR_SINGLE_UNITY_FILE)CTX->mhash);
-	(BEAR_SINGLE_UNITY_FILE)CTX->do_mhash = 1;
+	br_multihash_init(&BEAR_SINGLE_UNITY_FILECTX->mhash);
+	BEAR_SINGLE_UNITY_FILECTX->do_mhash = 1;
 
 				}
 				break;
 			case 57: {
 				/* stop-tbs-hash */
 
-	(BEAR_SINGLE_UNITY_FILE)CTX->do_mhash = 0;
+	BEAR_SINGLE_UNITY_FILECTX->do_mhash = 0;
 
 				}
 				break;
@@ -1652,20 +1652,20 @@ br_x509_minimal_run(void *t0ctx)
 			case 59: {
 				/* zero-server-name */
 
-	T0_PUSHi(-((BEAR_SINGLE_UNITY_FILE)CTX->server_name == NULL));
+	T0_PUSHi(-(BEAR_SINGLE_UNITY_FILECTX->server_name == NULL));
 
 				}
 				break;
 			}
 
 		} else {
-			(BEAR_SINGLE_UNITY_FILE)T0_ENTER(ip, rp, t0x);
+			BEAR_SINGLE_UNITY_FILET0_ENTER(ip, rp, t0x);
 		}
 	}
 t0_exit:
-	(((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->dp = dp;
-	(((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->rp = rp;
-	(((BEAR_SINGLE_UNITY_FILE)t0_context *)t0ctx)->ip = ip;
+	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->dp = dp;
+	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->rp = rp;
+	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->ip = ip;
 }
 
 
@@ -1692,7 +1692,7 @@ verify_signature(br_x509_minimal_context *ctx, const br_x509_pkey *pk)
 			return BR_ERR_X509_UNSUPPORTED;
 		}
 		if (!ctx->irsa(ctx->cert_sig, ctx->cert_sig_len,
-			&(BEAR_SINGLE_UNITY_FILE)t0_datablock[ctx->cert_sig_hash_oid],
+			&BEAR_SINGLE_UNITY_FILEt0_datablock[ctx->cert_sig_hash_oid],
 			ctx->cert_sig_hash_len, &pk->key.rsa, tmp))
 		{
 			return BR_ERR_X509_BAD_SIGNATURE;

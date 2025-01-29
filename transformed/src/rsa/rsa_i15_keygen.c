@@ -29,7 +29,7 @@
  * The header word is untouched.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)mkrand(const br_prng_class **rng, uint16_t *x, uint32_t esize)
+BEAR_SINGLE_UNITY_FILEmkrand(const br_prng_class **rng, uint16_t *x, uint32_t esize)
 {
 	size_t u, len;
 	unsigned m;
@@ -51,7 +51,7 @@ static void
  * This is the big-endian unsigned representation of the product of
  * all small primes from 13 to 1481.
  */
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)SMALL_PRIMES[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILESMALL_PRIMES[] = {
 	0x2E, 0xAB, 0x92, 0xD1, 0x8B, 0x12, 0x47, 0x31, 0x54, 0x0A,
 	0x99, 0x5D, 0x25, 0x5E, 0xE2, 0x14, 0x96, 0x29, 0x1E, 0xB7,
 	0x78, 0x70, 0xCC, 0x1F, 0xA5, 0xAB, 0x8D, 0x72, 0x11, 0x37,
@@ -84,17 +84,17 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)SMALL_PRIMES[] = {
  * We need temporary values for at least 7 integers of the same size
  * as a factor (including header word); more space helps with performance
  * (in modular exponentiations), but we much prefer to remain under
- * 2 kilobytes in total, to save stack space. The macro (BEAR_SINGLE_UNITY_FILE)TEMPS below
+ * 2 kilobytes in total, to save stack space. The macro BEAR_SINGLE_UNITY_FILETEMPS below
  * exceeds 1024 (which is a count in 16-bit words) when BR_MAX_RSA_SIZE
  * is greater than 4350 (default value is 4096, so the 2-kB limit is
  * maintained unless BR_MAX_RSA_SIZE was modified).
  */
 #define MAX(x, y)   ((x) > (y) ? (x) : (y))
-#define (BEAR_SINGLE_UNITY_FILE)TEMPS       MAX(1024, 7 * ((((BR_MAX_RSA_SIZE + 1) >> 1) + 29) / 15))
+#define BEAR_SINGLE_UNITY_FILETEMPS       MAX(1024, 7 * ((((BR_MAX_RSA_SIZE + 1) >> 1) + 29) / 15))
 
 /*
  * Perform trial division on a candidate prime. This computes
- * y = (BEAR_SINGLE_UNITY_FILE)SMALL_PRIMES mod x, then tries to compute y/y mod x. The
+ * y = BEAR_SINGLE_UNITY_FILESMALL_PRIMES mod x, then tries to compute y/y mod x. The
  * br_i15_moddiv() function will report an error if y is not invertible
  * modulo x. Returned value is 1 on success (none of the small primes
  * divides x), 0 on error (a non-trivial GCD is obtained).
@@ -102,7 +102,7 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)SMALL_PRIMES[] = {
  * This function assumes that x is odd.
  */
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)trial_divisions(const uint16_t *x, uint16_t *t)
+BEAR_SINGLE_UNITY_FILEtrial_divisions(const uint16_t *x, uint16_t *t)
 {
 	uint16_t *y;
 	uint16_t x0i;
@@ -110,7 +110,7 @@ static uint32_t
 	y = t;
 	t += 1 + ((x[0] + 15) >> 4);
 	x0i = br_i15_ninv15(x[1]);
-	br_i15_decode_reduce(y, (BEAR_SINGLE_UNITY_FILE)SMALL_PRIMES, sizeof (BEAR_SINGLE_UNITY_FILE)SMALL_PRIMES, x);
+	br_i15_decode_reduce(y, BEAR_SINGLE_UNITY_FILESMALL_PRIMES, sizeof BEAR_SINGLE_UNITY_FILESMALL_PRIMES, x);
 	return br_i15_moddiv(y, y, x, x0i, t);
 }
 
@@ -122,7 +122,7 @@ static uint32_t
  * 0 otherwise.
  */
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)miller_rabin(const br_prng_class **rng, const uint16_t *x, int n,
+BEAR_SINGLE_UNITY_FILEmiller_rabin(const br_prng_class **rng, const uint16_t *x, int n,
 	uint16_t *t, size_t tlen)
 {
 	/*
@@ -184,7 +184,7 @@ static uint32_t
 		a = t;
 		a[0] = x[0];
 		a[xlen] = 0;
-		(BEAR_SINGLE_UNITY_FILE)mkrand(rng, a, asize);
+		BEAR_SINGLE_UNITY_FILEmkrand(rng, a, asize);
 
 		/*
 		 * Compute a^((x-1)/2) mod x. We assume here that the
@@ -218,7 +218,7 @@ static uint32_t
  * bit length. The two top bits and the two bottom bits are set to 1.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)mkprime(const br_prng_class **rng, uint16_t *x, uint32_t esize,
+BEAR_SINGLE_UNITY_FILEmkprime(const br_prng_class **rng, uint16_t *x, uint32_t esize,
 	uint32_t pubexp, uint16_t *t, size_t tlen)
 {
 	size_t len;
@@ -234,7 +234,7 @@ static void
 		 * Generate random bits. We force the two top bits and the
 		 * two bottom bits to 1.
 		 */
-		(BEAR_SINGLE_UNITY_FILE)mkrand(rng, x, esize);
+		BEAR_SINGLE_UNITY_FILEmkrand(rng, x, esize);
 		if ((esize & 15) == 0) {
 			x[len] |= 0x6000;
 		} else if ((esize & 15) == 1) {
@@ -328,7 +328,7 @@ static void
 		/*
 		 * More trial divisions.
 		 */
-		if (!(BEAR_SINGLE_UNITY_FILE)trial_divisions(x, t)) {
+		if (!BEAR_SINGLE_UNITY_FILEtrial_divisions(x, t)) {
 			continue;
 		}
 
@@ -360,7 +360,7 @@ static void
 			rounds = 2;
 		}
 
-		if ((BEAR_SINGLE_UNITY_FILE)miller_rabin(rng, x, rounds, t, tlen)) {
+		if (BEAR_SINGLE_UNITY_FILEmiller_rabin(rng, x, rounds, t, tlen)) {
 			return;
 		}
 	}
@@ -377,7 +377,7 @@ static void
  * the size of p.
  */
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)invert_pubexp(uint16_t *d, const uint16_t *m, uint32_t e, uint16_t *t)
+BEAR_SINGLE_UNITY_FILEinvert_pubexp(uint16_t *d, const uint16_t *m, uint32_t e, uint16_t *t)
 {
 	uint16_t *f;
 	uint32_t r;
@@ -416,7 +416,7 @@ static uint32_t
  * Swap two buffers in RAM. They must be disjoint.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)bufswap(void *b1, void *b2, size_t len)
+BEAR_SINGLE_UNITY_FILEbufswap(void *b1, void *b2, size_t len)
 {
 	size_t u;
 	unsigned char *buf1, *buf2;
@@ -442,7 +442,7 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 	uint32_t esize_p, esize_q;
 	size_t plen, qlen, tlen;
 	uint16_t *p, *q, *t;
-	uint16_t tmp[(BEAR_SINGLE_UNITY_FILE)TEMPS];
+	uint16_t tmp[BEAR_SINGLE_UNITY_FILETEMPS];
 	uint32_t r;
 
 	if (size < BR_MIN_RSA_SIZE || size > BR_MAX_RSA_SIZE) {
@@ -502,9 +502,9 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 	 */
 
 	for (;;) {
-		(BEAR_SINGLE_UNITY_FILE)mkprime(rng, p, esize_p, pubexp, t, tlen);
+		BEAR_SINGLE_UNITY_FILEmkprime(rng, p, esize_p, pubexp, t, tlen);
 		br_i15_rshift(p, 1);
-		if ((BEAR_SINGLE_UNITY_FILE)invert_pubexp(t, p, pubexp, t + 1 + plen)) {
+		if (BEAR_SINGLE_UNITY_FILEinvert_pubexp(t, p, pubexp, t + 1 + plen)) {
 			br_i15_add(p, p, 1);
 			p[1] |= 1;
 			br_i15_encode(sk->p, sk->plen, p);
@@ -514,9 +514,9 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 	}
 
 	for (;;) {
-		(BEAR_SINGLE_UNITY_FILE)mkprime(rng, q, esize_q, pubexp, t, tlen);
+		BEAR_SINGLE_UNITY_FILEmkprime(rng, q, esize_q, pubexp, t, tlen);
 		br_i15_rshift(q, 1);
-		if ((BEAR_SINGLE_UNITY_FILE)invert_pubexp(t, q, pubexp, t + 1 + qlen)) {
+		if (BEAR_SINGLE_UNITY_FILEinvert_pubexp(t, q, pubexp, t + 1 + qlen)) {
 			br_i15_add(q, q, 1);
 			q[1] |= 1;
 			br_i15_encode(sk->q, sk->qlen, q);
@@ -541,9 +541,9 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 	 * returning p and q such that p > q, which is not a secret.
 	 */
 	if (esize_p == esize_q && br_i15_sub(p, q, 0) == 1) {
-		(BEAR_SINGLE_UNITY_FILE)bufswap(p, q, (1 + plen) * sizeof *p);
-		(BEAR_SINGLE_UNITY_FILE)bufswap(sk->p, sk->q, sk->plen);
-		(BEAR_SINGLE_UNITY_FILE)bufswap(sk->dp, sk->dq, sk->dplen);
+		BEAR_SINGLE_UNITY_FILEbufswap(p, q, (1 + plen) * sizeof *p);
+		BEAR_SINGLE_UNITY_FILEbufswap(sk->p, sk->q, sk->plen);
+		BEAR_SINGLE_UNITY_FILEbufswap(sk->dp, sk->dq, sk->dplen);
 	}
 
 	/*

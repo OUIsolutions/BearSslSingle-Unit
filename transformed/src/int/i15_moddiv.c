@@ -40,7 +40,7 @@
  * computed; otherwise, if 'ctl' is 0, then the value is unchanged.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)cond_negate(uint16_t *a, size_t len, uint32_t ctl)
+BEAR_SINGLE_UNITY_FILEcond_negate(uint16_t *a, size_t len, uint32_t ctl)
 {
 	size_t k;
 	uint32_t cc, xm;
@@ -68,7 +68,7 @@ static void
  * Also, modulus m must be odd.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)finish_mod(uint16_t *a, size_t len, const uint16_t *m, uint32_t neg)
+BEAR_SINGLE_UNITY_FILEfinish_mod(uint16_t *a, size_t len, const uint16_t *m, uint32_t neg)
 {
 	size_t k;
 	uint32_t cc, xm, ym;
@@ -120,7 +120,7 @@ static void
  * to contain an extra 16th bit.
  */
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)co_reduce(uint16_t *a, uint16_t *b, size_t len,
+BEAR_SINGLE_UNITY_FILEco_reduce(uint16_t *a, uint16_t *b, size_t len,
 	int32_t pa, int32_t pb, int32_t qa, int32_t qb)
 {
 	size_t k;
@@ -163,8 +163,8 @@ static uint32_t
 	b[len - 1] = (uint16_t)ccb;
 	nega = (uint32_t)cca >> 31;
 	negb = (uint32_t)ccb >> 31;
-	(BEAR_SINGLE_UNITY_FILE)cond_negate(a, len, nega);
-	(BEAR_SINGLE_UNITY_FILE)cond_negate(b, len, negb);
+	BEAR_SINGLE_UNITY_FILEcond_negate(a, len, nega);
+	BEAR_SINGLE_UNITY_FILEcond_negate(b, len, negb);
 	return nega | (negb << 1);
 }
 
@@ -180,7 +180,7 @@ static uint32_t
  * to contain an extra 16th bit.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(uint16_t *a, uint16_t *b, size_t len,
+BEAR_SINGLE_UNITY_FILEco_reduce_mod(uint16_t *a, uint16_t *b, size_t len,
 	int32_t pa, int32_t pb, int32_t qa, int32_t qb,
 	const uint16_t *m, uint16_t m0i)
 {
@@ -235,8 +235,8 @@ static void
 	 * The top word of 'a' and 'b' may have a 16-th bit set.
 	 * We may have to add or subtract the modulus.
 	 */
-	(BEAR_SINGLE_UNITY_FILE)finish_mod(a, len, m, (uint32_t)cca >> 31);
-	(BEAR_SINGLE_UNITY_FILE)finish_mod(b, len, m, (uint32_t)ccb >> 31);
+	BEAR_SINGLE_UNITY_FILEfinish_mod(a, len, m, (uint32_t)cca >> 31);
+	BEAR_SINGLE_UNITY_FILEfinish_mod(b, len, m, (uint32_t)ccb >> 31);
 }
 
 /* see inner.h */
@@ -441,12 +441,12 @@ br_i15_moddiv(uint16_t *x, const uint16_t *y, const uint16_t *m, uint16_t m0i,
 		/*
 		 * Replace a and b with new values a' and b'.
 		 */
-		r = (BEAR_SINGLE_UNITY_FILE)co_reduce(a, b, len, pa, pb, qa, qb);
+		r = BEAR_SINGLE_UNITY_FILEco_reduce(a, b, len, pa, pb, qa, qb);
 		pa -= pa * ((r & 1) << 1);
 		pb -= pb * ((r & 1) << 1);
 		qa -= qa * (r & 2);
 		qb -= qb * (r & 2);
-		(BEAR_SINGLE_UNITY_FILE)co_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);
+		BEAR_SINGLE_UNITY_FILEco_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);
 	}
 
 	/*

@@ -70,7 +70,7 @@ rotl(uint32_t x, int n)
  * Compute key schedule for 8 key bytes (produces 32 subkey words).
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)keysched_unit(uint32_t *skey, const void *key)
+BEAR_SINGLE_UNITY_FILEkeysched_unit(uint32_t *skey, const void *key)
 {
 	int i;
 
@@ -159,19 +159,19 @@ br_des_ct_keysched(uint32_t *skey, const void *key, size_t key_len)
 {
 	switch (key_len) {
 	case 8:
-		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey, key);
+		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey, key);
 		return 1;
 	case 16:
-		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey, key);
-		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey + 32, (const unsigned char *)key + 8);
+		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey, key);
+		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey + 32, (const unsigned char *)key + 8);
 		br_des_rev_skey(skey + 32);
 		memcpy(skey + 64, skey, 32 * sizeof *skey);
 		return 3;
 	default:
-		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey, key);
-		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey + 32, (const unsigned char *)key + 8);
+		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey, key);
+		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey + 32, (const unsigned char *)key + 8);
 		br_des_rev_skey(skey + 32);
-		(BEAR_SINGLE_UNITY_FILE)keysched_unit(skey + 64, (const unsigned char *)key + 16);
+		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey + 64, (const unsigned char *)key + 16);
 		return 3;
 	}
 }
@@ -181,7 +181,7 @@ br_des_ct_keysched(uint32_t *skey, const void *key, size_t key_len)
  * 48 bits), XOR with subkey, S-boxes, and permutation P.
  */
 static inline uint32_t
-(BEAR_SINGLE_UNITY_FILE)Fconf(uint32_t r0, const uint32_t *sk)
+BEAR_SINGLE_UNITY_FILEFconf(uint32_t r0, const uint32_t *sk)
 {
 	/*
 	 * Each 6->4 S-box is virtually turned into four 6->1 boxes; we
@@ -344,7 +344,7 @@ static inline uint32_t
  * in the final round.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *sk_exp)
+BEAR_SINGLE_UNITY_FILEprocess_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *sk_exp)
 {
 	int i;
 	uint32_t l, r;
@@ -354,7 +354,7 @@ static void
 	for (i = 0; i < 16; i ++) {
 		uint32_t t;
 
-		t = l ^ (BEAR_SINGLE_UNITY_FILE)Fconf(r, sk_exp);
+		t = l ^ BEAR_SINGLE_UNITY_FILEFconf(r, sk_exp);
 		l = r;
 		r = t;
 		sk_exp += 6;
@@ -376,7 +376,7 @@ br_des_ct_process_block(unsigned num_rounds,
 	r = br_dec32be(buf + 4);
 	br_des_do_IP(&l, &r);
 	while (num_rounds -- > 0) {
-		(BEAR_SINGLE_UNITY_FILE)process_block_unit(&l, &r, sk_exp);
+		BEAR_SINGLE_UNITY_FILEprocess_block_unit(&l, &r, sk_exp);
 		sk_exp += 96;
 	}
 	br_des_do_invIP(&l, &r);

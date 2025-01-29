@@ -34,7 +34,7 @@ br_aes_ct_ctrcbc_init(br_aes_ct_ctrcbc_keys *ctx,
 }
 
 static void
-(BEAR_SINGLE_UNITY_FILE)xorbuf(void *dst, const void *src, size_t len)
+BEAR_SINGLE_UNITY_FILExorbuf(void *dst, const void *src, size_t len)
 {
 	unsigned char *d;
 	const unsigned char *s;
@@ -117,10 +117,10 @@ br_aes_ct_ctrcbc_ctr(const br_aes_ct_ctrcbc_keys *ctx,
 		br_enc32le(tmp + 28, q[7]);
 
 		if (len <= 32) {
-			(BEAR_SINGLE_UNITY_FILE)xorbuf(buf, tmp, len);
+			BEAR_SINGLE_UNITY_FILExorbuf(buf, tmp, len);
 			break;
 		}
-		(BEAR_SINGLE_UNITY_FILE)xorbuf(buf, tmp, 32);
+		BEAR_SINGLE_UNITY_FILExorbuf(buf, tmp, 32);
 		buf += 32;
 		len -= 32;
 	}
@@ -381,7 +381,7 @@ br_aes_ct_ctrcbc_decrypt(const br_aes_ct_ctrcbc_keys *ctx,
 		br_enc32le(tmp +  4, q[2]);
 		br_enc32le(tmp +  8, q[4]);
 		br_enc32le(tmp + 12, q[6]);
-		(BEAR_SINGLE_UNITY_FILE)xorbuf(buf, tmp, 16);
+		BEAR_SINGLE_UNITY_FILExorbuf(buf, tmp, 16);
 		cm0 = q[1];
 		cm1 = q[3];
 		cm2 = q[5];

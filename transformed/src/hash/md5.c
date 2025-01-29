@@ -24,19 +24,19 @@
 
 
 
-#define (BEAR_SINGLE_UNITY_FILE)F(B, C, D)     ((((C) ^ (D)) & (B)) ^ (D))
-#define (BEAR_SINGLE_UNITY_FILE)G(B, C, D)     ((((C) ^ (B)) & (D)) ^ (C))
-#define (BEAR_SINGLE_UNITY_FILE)H(B, C, D)     ((B) ^ (C) ^ (D))
-#define (BEAR_SINGLE_UNITY_FILE)I(B, C, D)     ((C) ^ ((B) | ~(D)))
+#define BEAR_SINGLE_UNITY_FILEF(B, C, D)     ((((C) ^ (D)) & (B)) ^ (D))
+#define BEAR_SINGLE_UNITY_FILEG(B, C, D)     ((((C) ^ (B)) & (D)) ^ (C))
+#define BEAR_SINGLE_UNITY_FILEH(B, C, D)     ((B) ^ (C) ^ (D))
+#define BEAR_SINGLE_UNITY_FILEI(B, C, D)     ((C) ^ ((B) | ~(D)))
 
-#define (BEAR_SINGLE_UNITY_FILE)ROTL(x, n)    (((x) << (n)) | ((x) >> (32 - (n))))
+#define BEAR_SINGLE_UNITY_FILEROTL(x, n)    (((x) << (n)) | ((x) >> (32 - (n))))
 
 /* see inner.h */
 const uint32_t br_md5_IV[4] = {
 	0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476
 };
 
-static const uint32_t (BEAR_SINGLE_UNITY_FILE)K[64] = {
+static const uint32_t BEAR_SINGLE_UNITY_FILEK[64] = {
 	0xD76AA478, 0xE8C7B756, 0x242070DB, 0xC1BDCEEE,
 	0xF57C0FAF, 0x4787C62A, 0xA8304613, 0xFD469501,
 	0x698098D8, 0x8B44F7AF, 0xFFFF5BB1, 0x895CD7BE,
@@ -84,28 +84,28 @@ br_md5_round(const unsigned char *buf, uint32_t *val)
 	br_range_dec32le(m, 16, buf);
 
 	for (i = 0; i < 16; i += 4) {
-		a = b + (BEAR_SINGLE_UNITY_FILE)ROTL(a + (BEAR_SINGLE_UNITY_FILE)F(b, c, d) + m[i + 0] + (BEAR_SINGLE_UNITY_FILE)K[i + 0],  7);
-		d = a + (BEAR_SINGLE_UNITY_FILE)ROTL(d + (BEAR_SINGLE_UNITY_FILE)F(a, b, c) + m[i + 1] + (BEAR_SINGLE_UNITY_FILE)K[i + 1], 12);
-		c = d + (BEAR_SINGLE_UNITY_FILE)ROTL(c + (BEAR_SINGLE_UNITY_FILE)F(d, a, b) + m[i + 2] + (BEAR_SINGLE_UNITY_FILE)K[i + 2], 17);
-		b = c + (BEAR_SINGLE_UNITY_FILE)ROTL(b + (BEAR_SINGLE_UNITY_FILE)F(c, d, a) + m[i + 3] + (BEAR_SINGLE_UNITY_FILE)K[i + 3], 22);
+		a = b + BEAR_SINGLE_UNITY_FILEROTL(a + BEAR_SINGLE_UNITY_FILEF(b, c, d) + m[i + 0] + BEAR_SINGLE_UNITY_FILEK[i + 0],  7);
+		d = a + BEAR_SINGLE_UNITY_FILEROTL(d + BEAR_SINGLE_UNITY_FILEF(a, b, c) + m[i + 1] + BEAR_SINGLE_UNITY_FILEK[i + 1], 12);
+		c = d + BEAR_SINGLE_UNITY_FILEROTL(c + BEAR_SINGLE_UNITY_FILEF(d, a, b) + m[i + 2] + BEAR_SINGLE_UNITY_FILEK[i + 2], 17);
+		b = c + BEAR_SINGLE_UNITY_FILEROTL(b + BEAR_SINGLE_UNITY_FILEF(c, d, a) + m[i + 3] + BEAR_SINGLE_UNITY_FILEK[i + 3], 22);
 	}
 	for (i = 16; i < 32; i += 4) {
-		a = b + (BEAR_SINGLE_UNITY_FILE)ROTL(a + (BEAR_SINGLE_UNITY_FILE)G(b, c, d) + m[MP[i - 16]] + (BEAR_SINGLE_UNITY_FILE)K[i + 0],  5);
-		d = a + (BEAR_SINGLE_UNITY_FILE)ROTL(d +(BEAR_SINGLE_UNITY_FILE)G(a, b, c) + m[MP[i - 15]] + (BEAR_SINGLE_UNITY_FILE)K[i + 1],  9);
-		c = d + (BEAR_SINGLE_UNITY_FILE)ROTL(c + (BEAR_SINGLE_UNITY_FILE)G(d, a, b) + m[MP[i - 14]] + (BEAR_SINGLE_UNITY_FILE)K[i + 2], 14);
-		b = c + (BEAR_SINGLE_UNITY_FILE)ROTL(b + (BEAR_SINGLE_UNITY_FILE)G(c, d, a) + m[MP[i - 13]] + (BEAR_SINGLE_UNITY_FILE)K[i + 3], 20);
+		a = b + BEAR_SINGLE_UNITY_FILEROTL(a + BEAR_SINGLE_UNITY_FILEG(b, c, d) + m[MP[i - 16]] + BEAR_SINGLE_UNITY_FILEK[i + 0],  5);
+		d = a + BEAR_SINGLE_UNITY_FILEROTL(d +BEAR_SINGLE_UNITY_FILEG(a, b, c) + m[MP[i - 15]] + BEAR_SINGLE_UNITY_FILEK[i + 1],  9);
+		c = d + BEAR_SINGLE_UNITY_FILEROTL(c + BEAR_SINGLE_UNITY_FILEG(d, a, b) + m[MP[i - 14]] + BEAR_SINGLE_UNITY_FILEK[i + 2], 14);
+		b = c + BEAR_SINGLE_UNITY_FILEROTL(b + BEAR_SINGLE_UNITY_FILEG(c, d, a) + m[MP[i - 13]] + BEAR_SINGLE_UNITY_FILEK[i + 3], 20);
 	}
 	for (i = 32; i < 48; i += 4) {
-		a = b + (BEAR_SINGLE_UNITY_FILE)ROTL(a + (BEAR_SINGLE_UNITY_FILE)H(b, c, d) + m[MP[i - 16]] + (BEAR_SINGLE_UNITY_FILE)K[i + 0],  4);
-		d = a + (BEAR_SINGLE_UNITY_FILE)ROTL(d + (BEAR_SINGLE_UNITY_FILE)H(a, b, c) + m[MP[i - 15]] + (BEAR_SINGLE_UNITY_FILE)K[i + 1], 11);
-		c = d +(BEAR_SINGLE_UNITY_FILE)ROTL(c + (BEAR_SINGLE_UNITY_FILE)H(d, a, b) + m[MP[i - 14]] + (BEAR_SINGLE_UNITY_FILE)K[i + 2], 16);
-		b = c + (BEAR_SINGLE_UNITY_FILE)ROTL(b + (BEAR_SINGLE_UNITY_FILE)H(c, d, a) + m[MP[i - 13]] + (BEAR_SINGLE_UNITY_FILE)K[i + 3], 23);
+		a = b + BEAR_SINGLE_UNITY_FILEROTL(a + BEAR_SINGLE_UNITY_FILEH(b, c, d) + m[MP[i - 16]] + BEAR_SINGLE_UNITY_FILEK[i + 0],  4);
+		d = a + BEAR_SINGLE_UNITY_FILEROTL(d + BEAR_SINGLE_UNITY_FILEH(a, b, c) + m[MP[i - 15]] + BEAR_SINGLE_UNITY_FILEK[i + 1], 11);
+		c = d +BEAR_SINGLE_UNITY_FILEROTL(c + BEAR_SINGLE_UNITY_FILEH(d, a, b) + m[MP[i - 14]] + BEAR_SINGLE_UNITY_FILEK[i + 2], 16);
+		b = c + BEAR_SINGLE_UNITY_FILEROTL(b + BEAR_SINGLE_UNITY_FILEH(c, d, a) + m[MP[i - 13]] + BEAR_SINGLE_UNITY_FILEK[i + 3], 23);
 	}
 	for (i = 48; i < 64; i += 4) {
-		a = b + (BEAR_SINGLE_UNITY_FILE)ROTL(a + (BEAR_SINGLE_UNITY_FILE)I(b, c, d) + m[MP[i - 16]] + (BEAR_SINGLE_UNITY_FILE)K[i + 0],  6);
-		d = a + (BEAR_SINGLE_UNITY_FILE)ROTL(d + (BEAR_SINGLE_UNITY_FILE)I(a, b, c) + m[MP[i - 15]] + (BEAR_SINGLE_UNITY_FILE)K[i + 1], 10);
-		c = d + (BEAR_SINGLE_UNITY_FILE)ROTL(c + (BEAR_SINGLE_UNITY_FILE)I(d, a, b) + m[MP[i - 14]] + (BEAR_SINGLE_UNITY_FILE)K[i + 2], 15);
-		b = c + (BEAR_SINGLE_UNITY_FILE)ROTL(b + (BEAR_SINGLE_UNITY_FILE)I(c, d, a) + m[MP[i - 13]] + (BEAR_SINGLE_UNITY_FILE)K[i + 3], 21);
+		a = b + BEAR_SINGLE_UNITY_FILEROTL(a + BEAR_SINGLE_UNITY_FILEI(b, c, d) + m[MP[i - 16]] + BEAR_SINGLE_UNITY_FILEK[i + 0],  6);
+		d = a + BEAR_SINGLE_UNITY_FILEROTL(d + BEAR_SINGLE_UNITY_FILEI(a, b, c) + m[MP[i - 15]] + BEAR_SINGLE_UNITY_FILEK[i + 1], 10);
+		c = d + BEAR_SINGLE_UNITY_FILEROTL(c + BEAR_SINGLE_UNITY_FILEI(d, a, b) + m[MP[i - 14]] + BEAR_SINGLE_UNITY_FILEK[i + 2], 15);
+		b = c + BEAR_SINGLE_UNITY_FILEROTL(b + BEAR_SINGLE_UNITY_FILEI(c, d, a) + m[MP[i - 13]] + BEAR_SINGLE_UNITY_FILEK[i + 3], 21);
 	}
 
 	val[0] += a;

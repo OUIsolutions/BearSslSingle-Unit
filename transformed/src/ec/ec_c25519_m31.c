@@ -150,7 +150,7 @@ le30_to_le8(unsigned char *dst, size_t len, const uint32_t *src)
  * 18 words of 30 bits each.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)mul9(uint32_t *d, const uint32_t *a, const uint32_t *b)
+BEAR_SINGLE_UNITY_FILEmul9(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	/*
 	 * Maximum intermediate result is no more than
@@ -380,7 +380,7 @@ f255_mul(uint32_t *d, const uint32_t *a, const uint32_t *b)
 	 * each; upper word (t[17]) must fit on 2 bits, since the product
 	 * of two 256-bit integers must fit on 512 bits.
 	 */
-	(BEAR_SINGLE_UNITY_FILE)mul9(t, a, b);
+	BEAR_SINGLE_UNITY_FILEmul9(t, a, b);
 
 	/*
 	 * Modular reduction: each high word is added where necessary.
@@ -578,7 +578,7 @@ static const unsigned char ORDER[] = {
 };
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_generator(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -586,7 +586,7 @@ static const unsigned char *
 }
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_order(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -594,7 +594,7 @@ static const unsigned char *
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_xoff(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -619,7 +619,7 @@ cswap(uint32_t *a, uint32_t *b, uint32_t ctl)
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_mul(unsigned char *G, size_t Glen,
+BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	const unsigned char *kb, size_t kblen, int curve)
 {
 	uint32_t x1[9], x2[9], x3[9], z2[9], z3[9];
@@ -755,20 +755,20 @@ static uint32_t
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_mulgen(unsigned char *R,
+BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
 	const unsigned char *x, size_t xlen, int curve)
 {
 	const unsigned char *G;
 	size_t Glen;
 
-	G = (BEAR_SINGLE_UNITY_FILE)api_generator(curve, &Glen);
+	G = BEAR_SINGLE_UNITY_FILEapi_generator(curve, &Glen);
 	memcpy(R, G, Glen);
-	(BEAR_SINGLE_UNITY_FILE)api_mul(R, Glen, x, xlen, curve);
+	BEAR_SINGLE_UNITY_FILEapi_mul(R, Glen, x, xlen, curve);
 	return Glen;
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
@@ -791,10 +791,10 @@ static uint32_t
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_c25519_m31 = {
 	(uint32_t)0x20000000,
-	&(BEAR_SINGLE_UNITY_FILE)api_generator,
-	&(BEAR_SINGLE_UNITY_FILE)api_order,
-	&(BEAR_SINGLE_UNITY_FILE)api_xoff,
-	&(BEAR_SINGLE_UNITY_FILE)api_mul,
-	&(BEAR_SINGLE_UNITY_FILE)api_mulgen,
-	&(BEAR_SINGLE_UNITY_FILE)api_muladd
+	&BEAR_SINGLE_UNITY_FILEapi_generator,
+	&BEAR_SINGLE_UNITY_FILEapi_order,
+	&BEAR_SINGLE_UNITY_FILEapi_xoff,
+	&BEAR_SINGLE_UNITY_FILEapi_mul,
+	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
+	&BEAR_SINGLE_UNITY_FILEapi_muladd
 };

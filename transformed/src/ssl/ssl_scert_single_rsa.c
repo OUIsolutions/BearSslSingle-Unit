@@ -83,32 +83,32 @@ sr_do_keyx(const br_ssl_server_policy_class **pctx,
 /*
  * OID for hash functions in RSA signatures.
  */
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA1[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1[] = {
 	0x05, 0x2B, 0x0E, 0x03, 0x02, 0x1A
 };
 
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA224[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224[] = {
 	0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x04
 };
 
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA256[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256[] = {
 	0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x01
 };
 
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA384[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384[] = {
 	0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x02
 };
 
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA512[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512[] = {
 	0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x03
 };
 
-static const unsigned char *(BEAR_SINGLE_UNITY_FILE)HASH_OID[] = {
-	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA1,
-	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA224,
-	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA256,
-	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA384,
-	(BEAR_SINGLE_UNITY_FILE)HASH_OID_SHA512
+static const unsigned char *BEAR_SINGLE_UNITY_FILEHASH_OID[] = {
+	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1,
+	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224,
+	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256,
+	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384,
+	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512
 };
 
 static size_t
@@ -126,7 +126,7 @@ sr_do_sign(const br_ssl_server_policy_class **pctx,
 	if (algo_id == 0) {
 		hash_oid = NULL;
 	} else if (algo_id >= 2 && algo_id <= 6) {
-		hash_oid = (BEAR_SINGLE_UNITY_FILE)HASH_OID[algo_id - 2];
+		hash_oid = BEAR_SINGLE_UNITY_FILEHASH_OID[algo_id - 2];
 	} else {
 		return 0;
 	}

@@ -27,12 +27,12 @@
 #define CH(X, Y, Z)    ((((Y) ^ (Z)) & (X)) ^ (Z))
 #define MAJ(X, Y, Z)   (((Y) & (Z)) | (((Y) | (Z)) & (X)))
 
-#define (BEAR_SINGLE_UNITY_FILE)ROTR(x, n)    (((uint32_t)(x) << (32 - (n))) | ((uint32_t)(x) >> (n)))
+#define BEAR_SINGLE_UNITY_FILEROTR(x, n)    (((uint32_t)(x) << (32 - (n))) | ((uint32_t)(x) >> (n)))
 
-#define BSG2_0(x)      ((BEAR_SINGLE_UNITY_FILE)ROTR(x, 2) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 13) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 22))
-#define BSG2_1(x)      ((BEAR_SINGLE_UNITY_FILE)ROTR(x, 6) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 11) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 25))
-#define SSG2_0(x)      ((BEAR_SINGLE_UNITY_FILE)ROTR(x, 7) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 18) ^ (uint32_t)((x) >> 3))
-#define SSG2_1(x)      ((BEAR_SINGLE_UNITY_FILE)ROTR(x, 17) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 19) ^ (uint32_t)((x) >> 10))
+#define BSG2_0(x)      (BEAR_SINGLE_UNITY_FILEROTR(x, 2) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 13) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 22))
+#define BSG2_1(x)      (BEAR_SINGLE_UNITY_FILEROTR(x, 6) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 11) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 25))
+#define SSG2_0(x)      (BEAR_SINGLE_UNITY_FILEROTR(x, 7) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 18) ^ (uint32_t)((x) >> 3))
+#define SSG2_1(x)      (BEAR_SINGLE_UNITY_FILEROTR(x, 17) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 19) ^ (uint32_t)((x) >> 10))
 
 /* see inner.h */
 const uint32_t br_sha224_IV[8] = {
@@ -46,7 +46,7 @@ const uint32_t br_sha256_IV[8] = {
 	0x510E527F, 0x9B05688C, 0x1F83D9AB, 0x5BE0CD19
 };
 
-static const uint32_t (BEAR_SINGLE_UNITY_FILE)K[64] = {
+static const uint32_t BEAR_SINGLE_UNITY_FILEK[64] = {
 	0x428A2F98, 0x71374491, 0xB5C0FBCF, 0xE9B5DBA5,
 	0x3956C25B, 0x59F111F1, 0x923F82A4, 0xAB1C5ED5,
 	0xD807AA98, 0x12835B01, 0x243185BE, 0x550C7DC3,
@@ -72,7 +72,7 @@ br_sha2small_round(const unsigned char *buf, uint32_t *val)
 
 #define SHA2_STEP(A, B, C, D, E, F, G, H, j)   do { \
 		uint32_t T1, T2; \
-		T1 = H + BSG2_1(E) + CH(E, F, G) + (BEAR_SINGLE_UNITY_FILE)K[j] + w[j]; \
+		T1 = H + BSG2_1(E) + CH(E, F, G) + BEAR_SINGLE_UNITY_FILEK[j] + w[j]; \
 		T2 = BSG2_0(A) + MAJ(A, B, C); \
 		D += T1; \
 		H = T1 + T2; \

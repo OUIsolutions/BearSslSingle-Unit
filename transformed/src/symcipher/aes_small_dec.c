@@ -27,7 +27,7 @@
 /*
  * Inverse S-box.
  */
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)iS[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEiS[] = {
 	0x52, 0x09, 0x6A, 0xD5, 0x30, 0x36, 0xA5, 0x38, 0xBF, 0x40, 0xA3, 0x9E,
 	0x81, 0xF3, 0xD7, 0xFB, 0x7C, 0xE3, 0x39, 0x82, 0x9B, 0x2F, 0xFF, 0x87,
 	0x34, 0x8E, 0x43, 0x44, 0xC4, 0xDE, 0xE9, 0xCB, 0x54, 0x7B, 0x94, 0x32,
@@ -53,7 +53,7 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)iS[] = {
 };
 
 static void
-(BEAR_SINGLE_UNITY_FILE)add_round_key(unsigned *state, const uint32_t *skeys)
+BEAR_SINGLE_UNITY_FILEadd_round_key(unsigned *state, const uint32_t *skeys)
 {
 	int i;
 
@@ -74,12 +74,12 @@ inv_sub_bytes(unsigned *state)
 	int i;
 
 	for (i = 0; i < 16; i ++) {
-		state[i] = (BEAR_SINGLE_UNITY_FILE)iS[state[i]];
+		state[i] = BEAR_SINGLE_UNITY_FILEiS[state[i]];
 	}
 }
 
 static void
-inv_(BEAR_SINGLE_UNITY_FILE)shift_rows(unsigned *state)
+inv_BEAR_SINGLE_UNITY_FILEshift_rows(unsigned *state)
 {
 	unsigned tmp;
 
@@ -113,7 +113,7 @@ gf256red(unsigned x)
 }
 
 static void
-inv_(BEAR_SINGLE_UNITY_FILE)mix_columns(unsigned *state)
+inv_BEAR_SINGLE_UNITY_FILEmix_columns(unsigned *state)
 {
 	int i;
 
@@ -160,16 +160,16 @@ br_aes_small_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	for (u = 0; u < 16; u ++) {
 		state[u] = buf[u];
 	}
-	(BEAR_SINGLE_UNITY_FILE)add_round_key(state, skey + (num_rounds << 2));
+	BEAR_SINGLE_UNITY_FILEadd_round_key(state, skey + (num_rounds << 2));
 	for (u = num_rounds - 1; u > 0; u --) {
-		inv_(BEAR_SINGLE_UNITY_FILE)shift_rows(state);
+		inv_BEAR_SINGLE_UNITY_FILEshift_rows(state);
 		inv_sub_bytes(state);
-		(BEAR_SINGLE_UNITY_FILE)add_round_key(state, skey + (u << 2));
-		inv_(BEAR_SINGLE_UNITY_FILE)mix_columns(state);
+		BEAR_SINGLE_UNITY_FILEadd_round_key(state, skey + (u << 2));
+		inv_BEAR_SINGLE_UNITY_FILEmix_columns(state);
 	}
-	inv_(BEAR_SINGLE_UNITY_FILE)shift_rows(state);
+	inv_BEAR_SINGLE_UNITY_FILEshift_rows(state);
 	inv_sub_bytes(state);
-	(BEAR_SINGLE_UNITY_FILE)add_round_key(state, skey);
+	BEAR_SINGLE_UNITY_FILEadd_round_key(state, skey);
 	for (u = 0; u < 16; u ++) {
 		buf[u] = state[u];
 	}

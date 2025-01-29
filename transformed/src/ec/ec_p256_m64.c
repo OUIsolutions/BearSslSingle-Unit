@@ -30,7 +30,7 @@
 #include <intrin.h>
 #endif
 
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)P256_G[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEP256_G[] = {
 	0x04, 0x6B, 0x17, 0xD1, 0xF2, 0xE1, 0x2C, 0x42, 0x47, 0xF8,
 	0xBC, 0xE6, 0xE5, 0x63, 0xA4, 0x40, 0xF2, 0x77, 0x03, 0x7D,
 	0x81, 0x2D, 0xEB, 0x33, 0xA0, 0xF4, 0xA1, 0x39, 0x45, 0xD8,
@@ -40,7 +40,7 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)P256_G[] = {
 	0x68, 0x37, 0xBF, 0x51, 0xF5
 };
 
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)P256_N[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEP256_N[] = {
 	0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF,
 	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xBC, 0xE6, 0xFA, 0xAD,
 	0xA7, 0x17, 0x9E, 0x84, 0xF3, 0xB9, 0xCA, 0xC2, 0xFC, 0x63,
@@ -48,23 +48,23 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)P256_N[] = {
 };
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_generator(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
 {
 	(void)curve;
-	*len = sizeof (BEAR_SINGLE_UNITY_FILE)P256_G;
-	return (BEAR_SINGLE_UNITY_FILE)P256_G;
+	*len = sizeof BEAR_SINGLE_UNITY_FILEP256_G;
+	return BEAR_SINGLE_UNITY_FILEP256_G;
 }
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_order(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
 {
 	(void)curve;
-	*len = sizeof (BEAR_SINGLE_UNITY_FILE)P256_N;
-	return (BEAR_SINGLE_UNITY_FILE)P256_N;
+	*len = sizeof BEAR_SINGLE_UNITY_FILEP256_N;
+	return BEAR_SINGLE_UNITY_FILEP256_N;
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_xoff(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -84,7 +84,7 @@ static const uint64_t F256_R[] = {
 
 /* Curve equation is y^2 = x^3 - 3*x + B. This constant is B*R mod p
    (Montgomery representation of B). */
-static const uint64_t (BEAR_SINGLE_UNITY_FILE)P256_B_MONTY[] = {
+static const uint64_t BEAR_SINGLE_UNITY_FILEP256_B_MONTY[] = {
 	0xD89CDF6229C4BDDF, 0xACF005CD78843090,
 	0xE5A220ABF7212ED6, 0xDC30061D04874834
 };
@@ -496,7 +496,7 @@ f256_montymul(uint64_t *d, const uint64_t *a, const uint64_t *b)
  * TODO: see if some extra speed can be gained here.
  */
 static inline void
-(BEAR_SINGLE_UNITY_FILE)f256_montysquare(uint64_t *d, const uint64_t *a)
+BEAR_SINGLE_UNITY_FILEf256_montysquare(uint64_t *d, const uint64_t *a)
 {
 	f256_montymul(d, a, a);
 }
@@ -505,7 +505,7 @@ static inline void
  * Convert to Montgomery representation.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)f256_tomonty(uint64_t *d, const uint64_t *a)
+BEAR_SINGLE_UNITY_FILEf256_tomonty(uint64_t *d, const uint64_t *a)
 {
 	/*
 	 * R2 = 2^512 mod p.
@@ -563,13 +563,13 @@ f256_invert(uint64_t *d, const uint64_t *a)
 
 	memcpy(t, a, sizeof t);
 	for (i = 0; i < 30; i ++) {
-		(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t, t);
+		BEAR_SINGLE_UNITY_FILEf256_montysquare(t, t);
 		f256_montymul(t, t, a);
 	}
 
 	memcpy(r, t, sizeof t);
 	for (i = 224; i >= 0; i --) {
-		(BEAR_SINGLE_UNITY_FILE)f256_montysquare(r, r);
+		BEAR_SINGLE_UNITY_FILEf256_montysquare(r, r);
 		switch (i) {
 		case 0:
 		case 2:
@@ -655,7 +655,7 @@ typedef struct {
 	uint64_t x[4];
 	uint64_t y[4];
 	uint64_t z[4];
-} p256_(BEAR_SINGLE_UNITY_FILE)jacobian;
+} p256_BEAR_SINGLE_UNITY_FILEjacobian;
 
 /*
  * Decode a point. The returned point is in Jacobian coordinates, but
@@ -666,7 +666,7 @@ typedef struct {
  * The buffer is assumed to have length exactly 65 bytes.
  */
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)point_decode(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const unsigned char *buf)
+BEAR_SINGLE_UNITY_FILEpoint_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *buf)
 {
 	uint64_t x[4], y[4], t[4], x3[4], tt;
 	uint32_t r;
@@ -688,8 +688,8 @@ static uint32_t
 	y[2] = br_dec64be(buf + 41);
 	y[1] = br_dec64be(buf + 49);
 	y[0] = br_dec64be(buf + 57);
-	(BEAR_SINGLE_UNITY_FILE)f256_tomonty(x, x);
-	(BEAR_SINGLE_UNITY_FILE)f256_tomonty(y, y);
+	BEAR_SINGLE_UNITY_FILEf256_tomonty(x, x);
+	BEAR_SINGLE_UNITY_FILEf256_tomonty(y, y);
 
 	/*
 	 * Verify y^2 = x^3 + A*x + B. In curve P-256, A = -3.
@@ -697,14 +697,14 @@ static uint32_t
 	 * take care to apply the final reduction to make sure we have
 	 * 0 and not p.
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t, y);
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(x3, x);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t, y);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(x3, x);
 	f256_montymul(x3, x3, x);
 	f256_sub(t, t, x3);
 	f256_add(t, t, x);
 	f256_add(t, t, x);
 	f256_add(t, t, x);
-	f256_sub(t, t, (BEAR_SINGLE_UNITY_FILE)P256_B_MONTY);
+	f256_sub(t, t, BEAR_SINGLE_UNITY_FILEP256_B_MONTY);
 	f256_final_reduce(t);
 	tt = t[0] | t[1] | t[2] | t[3];
 	r &= EQ((uint32_t)(tt | (tt >> 32)), 0);
@@ -730,13 +730,13 @@ static uint32_t
  * the encoded point is written in the buffer, and 1 is returned.
  */
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)point_encode(unsigned char *buf, const p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
+BEAR_SINGLE_UNITY_FILEpoint_encode(unsigned char *buf, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 {
 	uint64_t t1[4], t2[4], z;
 
 	/* Set t1 = 1/z^2 and t2 = 1/z^3. */
 	f256_invert(t2, P->z);
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t1, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t1, t2);
 	f256_montymul(t2, t2, t1);
 
 	/* Compute affine coordinates x (in t1) and y (in t2). */
@@ -778,7 +778,7 @@ static uint32_t
  * encoding as the integer p.)
  */
 static void
-p256_double(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
+p256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 {
 	/*
 	 * Doubling formulas are:
@@ -800,7 +800,7 @@ p256_double(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
 	/*
 	 * Compute z^2 in t1.
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t1, P->z);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t1, P->z);
 
 	/*
 	 * Compute x-z^2 in t2 and x+z^2 in t1.
@@ -818,7 +818,7 @@ p256_double(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
 	/*
 	 * Compute 4*x*y^2 (in t2) and 2*y^2 (in t3).
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t3, P->y);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t3, P->y);
 	f256_add(t3, t3, t3);
 	f256_montymul(t2, P->x, t3);
 	f256_add(t2, t2, t2);
@@ -826,7 +826,7 @@ p256_double(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
 	/*
 	 * Compute x' = m^2 - 2*s.
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(P->x, t1);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(P->x, t1);
 	f256_sub(P->x, P->x, t2);
 	f256_sub(P->x, P->x, t2);
 
@@ -842,7 +842,7 @@ p256_double(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
 	 */
 	f256_sub(t2, t2, P->x);
 	f256_montymul(P->y, t1, t2);
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t4, t3);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, t3);
 	f256_add(t4, t4, t4);
 	f256_sub(P->y, P->y, t4);
 }
@@ -881,7 +881,7 @@ p256_double(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
  * e.g. if P1 and P2 have the same Y coordinate, but distinct X coordinates.
  */
 static uint32_t
-p256_add(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P2)
+p256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
 {
 	/*
 	 * Addtions formulas are:
@@ -902,7 +902,7 @@ p256_add(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_(BEAR_SINGLE_UNIT
 	/*
 	 * Compute u1 = x1*z2^2 (in t1) and s1 = y1*z2^3 (in t3).
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t3, P2->z);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t3, P2->z);
 	f256_montymul(t1, P1->x, t3);
 	f256_montymul(t4, P2->z, t3);
 	f256_montymul(t3, P1->y, t4);
@@ -910,7 +910,7 @@ p256_add(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_(BEAR_SINGLE_UNIT
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t4, P1->z);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P1->z);
 	f256_montymul(t2, P2->x, t4);
 	f256_montymul(t5, P1->z, t4);
 	f256_montymul(t4, P2->y, t5);
@@ -930,14 +930,14 @@ p256_add(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_(BEAR_SINGLE_UNIT
 	/*
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t7, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
 	f256_montymul(t6, t1, t7);
 	f256_montymul(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(P1->x, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(P1->x, t4);
 	f256_sub(P1->x, P1->x, t5);
 	f256_sub(P1->x, P1->x, t6);
 	f256_sub(P1->x, P1->x, t6);
@@ -993,7 +993,7 @@ p256_add(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_(BEAR_SINGLE_UNIT
  * result is correct.
  */
 static uint32_t
-p256_add_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_affine *P2)
+p256_add_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affine *P2)
 {
 	/*
 	 * Addtions formulas are:
@@ -1020,7 +1020,7 @@ p256_add_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_affine *P2)
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t4, P1->z);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P1->z);
 	f256_montymul(t2, P2->x, t4);
 	f256_montymul(t5, P1->z, t4);
 	f256_montymul(t4, P2->y, t5);
@@ -1040,14 +1040,14 @@ p256_add_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_affine *P2)
 	/*
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t7, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
 	f256_montymul(t6, t1, t7);
 	f256_montymul(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(P1->x, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(P1->x, t4);
 	f256_sub(P1->x, P1->x, t5);
 	f256_sub(P1->x, P1->x, t6);
 	f256_sub(P1->x, P1->x, t6);
@@ -1078,7 +1078,7 @@ p256_add_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_affine *P2)
  * This function returns the correct result in all cases.
  */
 static uint32_t
-p256_add_complete_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_affine *P2)
+p256_add_complete_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affine *P2)
 {
 	/*
 	 * Addtions formulas, in the general case, are:
@@ -1143,7 +1143,7 @@ p256_add_complete_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_af
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t4, P1->z);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P1->z);
 	f256_montymul(t2, P2->x, t4);
 	f256_montymul(t5, P1->z, t4);
 	f256_montymul(t4, P2->y, t5);
@@ -1167,14 +1167,14 @@ p256_add_complete_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_af
 	/*
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t7, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
 	f256_montymul(t6, t1, t7);
 	f256_montymul(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(P1->x, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(P1->x, t4);
 	f256_sub(P1->x, P1->x, t5);
 	f256_sub(P1->x, P1->x, t6);
 	f256_sub(P1->x, P1->x, t6);
@@ -1204,7 +1204,7 @@ p256_add_complete_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_af
 	/*
 	 * Compute 2*(y2^2) (in t2) and s = 4*x2*(y2^2) (in t3).
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t2, P2->y);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t2, P2->y);
 	f256_add(t2, t2, t2);
 	f256_add(t3, t2, t2);
 	f256_montymul(t3, P2->x, t3);
@@ -1212,7 +1212,7 @@ p256_add_complete_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_af
 	/*
 	 * Compute m = 3*(x2^2 - 1) (in t4).
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t4, P2->x);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P2->x);
 	f256_sub(t4, t4, F256_R);
 	f256_add(t5, t4, t4);
 	f256_add(t4, t4, t5);
@@ -1220,7 +1220,7 @@ p256_add_complete_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_af
 	/*
 	 * Compute x' = m^2 - 2*s (in t5).
 	 */
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t5, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t5, t4);
 	f256_sub(t5, t3);
 	f256_sub(t5, t3);
 
@@ -1229,7 +1229,7 @@ p256_add_complete_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_af
 	 */
 	f256_sub(t6, t3, t5);
 	f256_montymul(t6, t6, t4);
-	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t7, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
 	f256_sub(t6, t6, t7);
 	f256_sub(t6, t6, t7);
 
@@ -1266,10 +1266,10 @@ p256_add_complete_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_af
  *  - Everything is in Montgomery representation.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)point_mul_inner(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *R, const p256_affine *W,
+BEAR_SINGLE_UNITY_FILEpoint_mul_inner(p256_BEAR_SINGLE_UNITY_FILEjacobian *R, const p256_affine *W,
 	const unsigned char *k, size_t klen)
 {
-	p256_(BEAR_SINGLE_UNITY_FILE)jacobian Q;
+	p256_BEAR_SINGLE_UNITY_FILEjacobian Q;
 	uint32_t qz;
 
 	memset(&Q, 0, sizeof Q);
@@ -1283,7 +1283,7 @@ static void
 			uint32_t bits;
 			uint32_t bnz;
 			p256_affine T;
-			p256_(BEAR_SINGLE_UNITY_FILE)jacobian U;
+			p256_BEAR_SINGLE_UNITY_FILEjacobian U;
 			uint32_t n;
 			int j;
 			uint64_t m;
@@ -1346,7 +1346,7 @@ static void
  * modified.
  */
 static void
-window_to_affine(p256_affine *aff, p256_(BEAR_SINGLE_UNITY_FILE)jacobian *jac, int num)
+window_to_affine(p256_affine *aff, p256_BEAR_SINGLE_UNITY_FILEjacobian *jac, int num)
 {
 	/*
 	 * Convert the window points to affine coordinates. We use the
@@ -1451,7 +1451,7 @@ window_to_affine(p256_affine *aff, p256_(BEAR_SINGLE_UNITY_FILE)jacobian *jac, i
 	f256_invert(zt, z[0]);
 	for (i = 0; i < num; i ++) {
 		f256_montymul(zv, jac[i].z, zt);
-		(BEAR_SINGLE_UNITY_FILE)f256_montysquare(zu, zv);
+		BEAR_SINGLE_UNITY_FILEf256_montysquare(zu, zv);
 		f256_montymul(zv, zv, zu);
 		f256_montymul(aff[i].x, jac[i].x, zu);
 		f256_montymul(aff[i].y, jac[i].y, zv);
@@ -1468,11 +1468,11 @@ window_to_affine(p256_affine *aff, p256_(BEAR_SINGLE_UNITY_FILE)jacobian *jac, i
  * (but the process is still constant-time).
  */
 static void
-p256_mul(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const unsigned char *k, size_t klen)
+p256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t klen)
 {
 	union {
 		p256_affine aff[15];
-		p256_(BEAR_SINGLE_UNITY_FILE)jacobian jac[15];
+		p256_BEAR_SINGLE_UNITY_FILEjacobian jac[15];
 	} window;
 	int i;
 
@@ -1498,14 +1498,14 @@ p256_mul(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const unsigned char *k, size_
 	/*
 	 * Perform point multiplication.
 	 */
-	(BEAR_SINGLE_UNITY_FILE)point_mul_inner(P, window.aff, k, klen);
+	BEAR_SINGLE_UNITY_FILEpoint_mul_inner(P, window.aff, k, klen);
 }
 
 /*
- * Precomputed window for the conventional generator: (BEAR_SINGLE_UNITY_FILE)P256_Gwin[n]
+ * Precomputed window for the conventional generator: BEAR_SINGLE_UNITY_FILEP256_Gwin[n]
  * contains (n+1)*G (affine coordinates, in Montgomery representation).
  */
-static const p256_affine (BEAR_SINGLE_UNITY_FILE)P256_Gwin[] = {
+static const p256_affine BEAR_SINGLE_UNITY_FILEP256_Gwin[] = {
 	{
 		{ 0x79E730D418A9143C, 0x75BA95FC5FEDB601,
 		  0x79FB732B77622510, 0x18905F76A53755C6 },
@@ -1608,9 +1608,9 @@ static const p256_affine (BEAR_SINGLE_UNITY_FILE)P256_Gwin[] = {
  * (but the process is still constant-time).
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)p256_mulgen(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const unsigned char *k, size_t klen)
+BEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t klen)
 {
-	(BEAR_SINGLE_UNITY_FILE)point_mul_inner(P, (BEAR_SINGLE_UNITY_FILE)P256_Gwin, k, klen);
+	BEAR_SINGLE_UNITY_FILEpoint_mul_inner(P, BEAR_SINGLE_UNITY_FILEP256_Gwin, k, klen);
 }
 
 /*
@@ -1639,7 +1639,7 @@ check_scalar(const unsigned char *k, size_t klen)
 	if (klen == 32) {
 		c = 0;
 		for (u = 0; u < klen; u ++) {
-			c |= -(int32_t)EQ0(c) & CMP(k[u], (BEAR_SINGLE_UNITY_FILE)P256_N[u]);
+			c |= -(int32_t)EQ0(c) & CMP(k[u], BEAR_SINGLE_UNITY_FILEP256_N[u]);
 		}
 	} else {
 		c = -1;
@@ -1648,37 +1648,37 @@ check_scalar(const unsigned char *k, size_t klen)
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_mul(unsigned char *G, size_t Glen,
+BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	const unsigned char *k, size_t klen, int curve)
 {
 	uint32_t r;
-	p256_(BEAR_SINGLE_UNITY_FILE)jacobian P;
+	p256_BEAR_SINGLE_UNITY_FILEjacobian P;
 
 	(void)curve;
 	if (Glen != 65) {
 		return 0;
 	}
 	r = check_scalar(k, klen);
-	r &= (BEAR_SINGLE_UNITY_FILE)point_decode(&P, G);
+	r &= BEAR_SINGLE_UNITY_FILEpoint_decode(&P, G);
 	p256_mul(&P, k, klen);
-	r &= (BEAR_SINGLE_UNITY_FILE)point_encode(G, &P);
+	r &= BEAR_SINGLE_UNITY_FILEpoint_encode(G, &P);
 	return r;
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_mulgen(unsigned char *R,
+BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
 	const unsigned char *k, size_t klen, int curve)
 {
-	p256_(BEAR_SINGLE_UNITY_FILE)jacobian P;
+	p256_BEAR_SINGLE_UNITY_FILEjacobian P;
 
 	(void)curve;
-	(BEAR_SINGLE_UNITY_FILE)p256_mulgen(&P, k, klen);
-	(BEAR_SINGLE_UNITY_FILE)point_encode(R, &P);
+	BEAR_SINGLE_UNITY_FILEp256_mulgen(&P, k, klen);
+	BEAR_SINGLE_UNITY_FILEpoint_encode(R, &P);
 	return 65;
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
@@ -1710,7 +1710,7 @@ static uint32_t
 	 * all cases).
 	 */
 
-	p256_(BEAR_SINGLE_UNITY_FILE)jacobian P, Q;
+	p256_BEAR_SINGLE_UNITY_FILEjacobian P, Q;
 	uint32_t r, t, s;
 	uint64_t z;
 
@@ -1718,12 +1718,12 @@ static uint32_t
 	if (len != 65) {
 		return 0;
 	}
-	r = (BEAR_SINGLE_UNITY_FILE)point_decode(&P, A);
+	r = BEAR_SINGLE_UNITY_FILEpoint_decode(&P, A);
 	p256_mul(&P, x, xlen);
 	if (B == NULL) {
-		(BEAR_SINGLE_UNITY_FILE)p256_mulgen(&Q, y, ylen);
+		BEAR_SINGLE_UNITY_FILEp256_mulgen(&Q, y, ylen);
 	} else {
-		r &= (BEAR_SINGLE_UNITY_FILE)point_decode(&Q, B);
+		r &= BEAR_SINGLE_UNITY_FILEpoint_decode(&Q, B);
 		p256_mul(&Q, y, ylen);
 	}
 
@@ -1746,7 +1746,7 @@ static uint32_t
 	 *   s = 1, t = 1   report an error (P+Q = 0)
 	 */
 	CCOPY(s & ~t, &P, &Q, sizeof Q);
-	(BEAR_SINGLE_UNITY_FILE)point_encode(A, &P);
+	BEAR_SINGLE_UNITY_FILEpoint_encode(A, &P);
 	r &= ~(s & t);
 	return r;
 }
@@ -1754,12 +1754,12 @@ static uint32_t
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_p256_m64 = {
 	(uint32_t)0x00800000,
-	&(BEAR_SINGLE_UNITY_FILE)api_generator,
-	&(BEAR_SINGLE_UNITY_FILE)api_order,
-	&(BEAR_SINGLE_UNITY_FILE)api_xoff,
-	&(BEAR_SINGLE_UNITY_FILE)api_mul,
-	&(BEAR_SINGLE_UNITY_FILE)api_mulgen,
-	&(BEAR_SINGLE_UNITY_FILE)api_muladd
+	&BEAR_SINGLE_UNITY_FILEapi_generator,
+	&BEAR_SINGLE_UNITY_FILEapi_order,
+	&BEAR_SINGLE_UNITY_FILEapi_xoff,
+	&BEAR_SINGLE_UNITY_FILEapi_mul,
+	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
+	&BEAR_SINGLE_UNITY_FILEapi_muladd
 };
 
 /* see bearssl_ec.h */

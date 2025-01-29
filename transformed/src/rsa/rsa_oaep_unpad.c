@@ -30,7 +30,7 @@
  * context is done only for the duration of the hash.
  */
 static void
-xor_(BEAR_SINGLE_UNITY_FILE)hash_data(const br_hash_class *dig, void *dst, const void *src, size_t len)
+xor_BEAR_SINGLE_UNITY_FILEhash_data(const br_hash_class *dig, void *dst, const void *src, size_t len)
 {
 	br_hash_compat_context hc;
 	unsigned char tmp[64];
@@ -79,7 +79,7 @@ br_rsa_oaep_unpad(const br_hash_class *dig,
 	 * Hash the label and XOR it with the value in the array; if
 	 * they are equal then these should yield only zeros.
 	 */
-	xor_(BEAR_SINGLE_UNITY_FILE)hash_data(dig, buf + 1 + hlen, label, label_len);
+	xor_BEAR_SINGLE_UNITY_FILEhash_data(dig, buf + 1 + hlen, label, label_len);
 
 	/*
 	 * At that point, if the padding was correct, when we should

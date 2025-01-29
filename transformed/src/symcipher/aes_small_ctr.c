@@ -34,7 +34,7 @@ br_aes_small_ctr_init(br_aes_small_ctr_keys *ctx,
 }
 
 static void
-(BEAR_SINGLE_UNITY_FILE)xorbuf(void *dst, const void *src, size_t len)
+BEAR_SINGLE_UNITY_FILExorbuf(void *dst, const void *src, size_t len)
 {
 	unsigned char *d;
 	const unsigned char *s;
@@ -61,10 +61,10 @@ br_aes_small_ctr_run(const br_aes_small_ctr_keys *ctx,
 		br_enc32be(tmp + 12, cc ++);
 		br_aes_small_encrypt(ctx->num_rounds, ctx->skey, tmp);
 		if (len <= 16) {
-			(BEAR_SINGLE_UNITY_FILE)xorbuf(buf, tmp, len);
+			BEAR_SINGLE_UNITY_FILExorbuf(buf, tmp, len);
 			break;
 		}
-		(BEAR_SINGLE_UNITY_FILE)xorbuf(buf, tmp, 16);
+		BEAR_SINGLE_UNITY_FILExorbuf(buf, tmp, 16);
 		buf += 16;
 		len -= 16;
 	}

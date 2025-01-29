@@ -998,7 +998,7 @@ static const uint32_t F256[] = {
 /*
  * The 'b' curve equation coefficient for P-256.
  */
-static const uint32_t (BEAR_SINGLE_UNITY_FILE)P256_B[] = {
+static const uint32_t BEAR_SINGLE_UNITY_FILEP256_B[] = {
 	0x004B, 0x1E93, 0x0F89, 0x1C78, 0x03BC, 0x187B, 0x114E, 0x1619,
 	0x1D06, 0x0328, 0x01AF, 0x0D31, 0x1557, 0x15DE, 0x1ECF, 0x127C,
 	0x0A3A, 0x0EC5, 0x118D, 0x00B5
@@ -1246,7 +1246,7 @@ typedef struct {
 	uint32_t x[20];
 	uint32_t y[20];
 	uint32_t z[20];
-} p256_(BEAR_SINGLE_UNITY_FILE)jacobian;
+} p256_BEAR_SINGLE_UNITY_FILEjacobian;
 
 /*
  * Convert a point to affine coordinates:
@@ -1257,7 +1257,7 @@ typedef struct {
  * The coordinates are guaranteed to be lower than the modulus.
  */
 static void
-p256_to_affine(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
+p256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 {
 	uint32_t t1[20], t2[20];
 	int i;
@@ -1337,7 +1337,7 @@ p256_to_affine(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
  * including the point at infinity.
  */
 static void
-p256_double(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *Q)
+p256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 {
 	/*
 	 * Doubling formulas are:
@@ -1465,7 +1465,7 @@ p256_double(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *Q)
  *     performed.
  */
 static uint32_t
-p256_add(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P2)
+p256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
 {
 	/*
 	 * Addtions formulas are:
@@ -1590,7 +1590,7 @@ p256_add(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_(BEAR_SINGLE_UNIT
  *     performed.
  */
 static uint32_t
-p256_add_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P2)
+p256_add_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
 {
 	/*
 	 * Addtions formulas are:
@@ -1687,7 +1687,7 @@ p256_add_mixed(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P1, const p256_(BEAR_SINGL
  * infinity. Returned value is 0 if the point is invalid, 1 otherwise.
  */
 static uint32_t
-p256_decode(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const void *src, size_t len)
+p256_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const void *src, size_t len)
 {
 	const unsigned char *buf;
 	uint32_t tx[20], ty[20], t1[20], t2[20];
@@ -1723,7 +1723,7 @@ p256_decode(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const void *src, size_t le
 	mul_f256(t1, tx, t1);
 	square_f256(t2, ty);
 	for (i = 0; i < 20; i ++) {
-		t1[i] += (F256[i] << 3) - MUL15(3, tx[i]) + (BEAR_SINGLE_UNITY_FILE)P256_B[i] - t2[i];
+		t1[i] += (F256[i] << 3) - MUL15(3, tx[i]) + BEAR_SINGLE_UNITY_FILEP256_B[i] - t2[i];
 	}
 	norm13(t1, t1, 20);
 	reduce_f256(t1);
@@ -1747,7 +1747,7 @@ p256_decode(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const void *src, size_t le
  * valid, in affine coordinates, and not the point at infinity.
  */
 static void
-p256_encode(void *dst, const p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
+p256_encode(void *dst, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 {
 	unsigned char *buf;
 
@@ -1763,7 +1763,7 @@ p256_encode(void *dst, const p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P)
  * at infinity.
  */
 static void
-p256_mul(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const unsigned char *x, size_t xlen)
+p256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t xlen)
 {
 	/*
 	 * qz is a flag that is initially 1, and remains equal to 1
@@ -1773,7 +1773,7 @@ p256_mul(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const unsigned char *x, size_
 	 * The precomputed window really is the points P2 and P3.
 	 */
 	uint32_t qz;
-	p256_(BEAR_SINGLE_UNITY_FILE)jacobian P2, P3, Q, T, U;
+	p256_BEAR_SINGLE_UNITY_FILEjacobian P2, P3, Q, T, U;
 
 	/*
 	 * Compute window values.
@@ -1917,7 +1917,7 @@ static const uint32_t Gwin[15][20] = {
  * Lookup one of the Gwin[] values, by index. This is constant-time.
  */
 static void
-lookup_Gwin(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *T, uint32_t idx)
+lookup_Gwin(p256_BEAR_SINGLE_UNITY_FILEjacobian *T, uint32_t idx)
 {
 	uint32_t xy[20];
 	uint32_t k;
@@ -1947,7 +1947,7 @@ lookup_Gwin(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *T, uint32_t idx)
  * and lower than the curve order.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)p256_mulgen(p256_(BEAR_SINGLE_UNITY_FILE)jacobian *P, const unsigned char *x, size_t xlen)
+BEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t xlen)
 {
 	/*
 	 * qz is a flag that is initially 1, and remains equal to 1
@@ -1957,7 +1957,7 @@ static void
 	 * of 4. The precomputed window is constant static data, with
 	 * points in affine coordinates; we use a constant-time lookup.
 	 */
-	p256_(BEAR_SINGLE_UNITY_FILE)jacobian Q;
+	p256_BEAR_SINGLE_UNITY_FILEjacobian Q;
 	uint32_t qz;
 
 	memset(&Q, 0, sizeof Q);
@@ -1970,7 +1970,7 @@ static void
 		for (k = 0; k < 2; k ++) {
 			uint32_t bits;
 			uint32_t bnz;
-			p256_(BEAR_SINGLE_UNITY_FILE)jacobian T, U;
+			p256_BEAR_SINGLE_UNITY_FILEjacobian T, U;
 
 			p256_double(&Q);
 			p256_double(&Q);
@@ -1990,7 +1990,7 @@ static void
 	*P = Q;
 }
 
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)P256_G[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEP256_G[] = {
 	0x04, 0x6B, 0x17, 0xD1, 0xF2, 0xE1, 0x2C, 0x42, 0x47, 0xF8,
 	0xBC, 0xE6, 0xE5, 0x63, 0xA4, 0x40, 0xF2, 0x77, 0x03, 0x7D,
 	0x81, 0x2D, 0xEB, 0x33, 0xA0, 0xF4, 0xA1, 0x39, 0x45, 0xD8,
@@ -2000,7 +2000,7 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)P256_G[] = {
 	0x68, 0x37, 0xBF, 0x51, 0xF5
 };
 
-static const unsigned char (BEAR_SINGLE_UNITY_FILE)P256_N[] = {
+static const unsigned char BEAR_SINGLE_UNITY_FILEP256_N[] = {
 	0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF,
 	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xBC, 0xE6, 0xFA, 0xAD,
 	0xA7, 0x17, 0x9E, 0x84, 0xF3, 0xB9, 0xCA, 0xC2, 0xFC, 0x63,
@@ -2008,23 +2008,23 @@ static const unsigned char (BEAR_SINGLE_UNITY_FILE)P256_N[] = {
 };
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_generator(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
 {
 	(void)curve;
-	*len = sizeof (BEAR_SINGLE_UNITY_FILE)P256_G;
-	return (BEAR_SINGLE_UNITY_FILE)P256_G;
+	*len = sizeof BEAR_SINGLE_UNITY_FILEP256_G;
+	return BEAR_SINGLE_UNITY_FILEP256_G;
 }
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_order(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
 {
 	(void)curve;
-	*len = sizeof (BEAR_SINGLE_UNITY_FILE)P256_N;
-	return (BEAR_SINGLE_UNITY_FILE)P256_N;
+	*len = sizeof BEAR_SINGLE_UNITY_FILEP256_N;
+	return BEAR_SINGLE_UNITY_FILEP256_N;
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_xoff(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -2032,11 +2032,11 @@ static size_t
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_mul(unsigned char *G, size_t Glen,
+BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	const unsigned char *x, size_t xlen, int curve)
 {
 	uint32_t r;
-	p256_(BEAR_SINGLE_UNITY_FILE)jacobian P;
+	p256_BEAR_SINGLE_UNITY_FILEjacobian P;
 
 	(void)curve;
 	if (Glen != 65) {
@@ -2050,24 +2050,24 @@ static uint32_t
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_mulgen(unsigned char *R,
+BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
 	const unsigned char *x, size_t xlen, int curve)
 {
-	p256_(BEAR_SINGLE_UNITY_FILE)jacobian P;
+	p256_BEAR_SINGLE_UNITY_FILEjacobian P;
 
 	(void)curve;
-	(BEAR_SINGLE_UNITY_FILE)p256_mulgen(&P, x, xlen);
+	BEAR_SINGLE_UNITY_FILEp256_mulgen(&P, x, xlen);
 	p256_to_affine(&P);
 	p256_encode(R, &P);
 	return 65;
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
-	p256_(BEAR_SINGLE_UNITY_FILE)jacobian P, Q;
+	p256_BEAR_SINGLE_UNITY_FILEjacobian P, Q;
 	uint32_t r, t, z;
 	int i;
 
@@ -2078,7 +2078,7 @@ static uint32_t
 	r = p256_decode(&P, A, len);
 	p256_mul(&P, x, xlen);
 	if (B == NULL) {
-		(BEAR_SINGLE_UNITY_FILE)p256_mulgen(&Q, y, ylen);
+		BEAR_SINGLE_UNITY_FILEp256_mulgen(&Q, y, ylen);
 	} else {
 		r &= p256_decode(&Q, B, len);
 		p256_mul(&Q, y, ylen);
@@ -2115,10 +2115,10 @@ static uint32_t
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_p256_m15 = {
 	(uint32_t)0x00800000,
-	&(BEAR_SINGLE_UNITY_FILE)api_generator,
-	&(BEAR_SINGLE_UNITY_FILE)api_order,
-	&(BEAR_SINGLE_UNITY_FILE)api_xoff,
-	&(BEAR_SINGLE_UNITY_FILE)api_mul,
-	&(BEAR_SINGLE_UNITY_FILE)api_mulgen,
-	&(BEAR_SINGLE_UNITY_FILE)api_muladd
+	&BEAR_SINGLE_UNITY_FILEapi_generator,
+	&BEAR_SINGLE_UNITY_FILEapi_order,
+	&BEAR_SINGLE_UNITY_FILEapi_xoff,
+	&BEAR_SINGLE_UNITY_FILEapi_mul,
+	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
+	&BEAR_SINGLE_UNITY_FILEapi_muladd
 };

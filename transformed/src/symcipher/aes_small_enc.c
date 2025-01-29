@@ -27,7 +27,7 @@
 #define S   br_aes_S
 
 static void
-(BEAR_SINGLE_UNITY_FILE)add_round_key(unsigned *state, const uint32_t *skeys)
+BEAR_SINGLE_UNITY_FILEadd_round_key(unsigned *state, const uint32_t *skeys)
 {
 	int i;
 
@@ -53,7 +53,7 @@ sub_bytes(unsigned *state)
 }
 
 static void
-(BEAR_SINGLE_UNITY_FILE)shift_rows(unsigned *state)
+BEAR_SINGLE_UNITY_FILEshift_rows(unsigned *state)
 {
 	unsigned tmp;
 
@@ -78,7 +78,7 @@ static void
 }
 
 static void
-(BEAR_SINGLE_UNITY_FILE)mix_columns(unsigned *state)
+BEAR_SINGLE_UNITY_FILEmix_columns(unsigned *state)
 {
 	int i;
 
@@ -113,16 +113,16 @@ br_aes_small_encrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	for (u = 0; u < 16; u ++) {
 		state[u] = buf[u];
 	}
-	(BEAR_SINGLE_UNITY_FILE)add_round_key(state, skey);
+	BEAR_SINGLE_UNITY_FILEadd_round_key(state, skey);
 	for (u = 1; u < num_rounds; u ++) {
 		sub_bytes(state);
-		(BEAR_SINGLE_UNITY_FILE)shift_rows(state);
-		(BEAR_SINGLE_UNITY_FILE)mix_columns(state);
-		(BEAR_SINGLE_UNITY_FILE)add_round_key(state, skey + (u << 2));
+		BEAR_SINGLE_UNITY_FILEshift_rows(state);
+		BEAR_SINGLE_UNITY_FILEmix_columns(state);
+		BEAR_SINGLE_UNITY_FILEadd_round_key(state, skey + (u << 2));
 	}
 	sub_bytes(state);
-	(BEAR_SINGLE_UNITY_FILE)shift_rows(state);
-	(BEAR_SINGLE_UNITY_FILE)add_round_key(state, skey + (num_rounds << 2));
+	BEAR_SINGLE_UNITY_FILEshift_rows(state);
+	BEAR_SINGLE_UNITY_FILEadd_round_key(state, skey + (num_rounds << 2));
 	for (u = 0; u < 16; u ++) {
 		buf[u] = state[u];
 	}

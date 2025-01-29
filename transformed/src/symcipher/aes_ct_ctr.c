@@ -34,7 +34,7 @@ br_aes_ct_ctr_init(br_aes_ct_ctr_keys *ctx,
 }
 
 static void
-(BEAR_SINGLE_UNITY_FILE)xorbuf(void *dst, const void *src, size_t len)
+BEAR_SINGLE_UNITY_FILExorbuf(void *dst, const void *src, size_t len)
 {
 	unsigned char *d;
 	const unsigned char *s;
@@ -88,14 +88,14 @@ br_aes_ct_ctr_run(const br_aes_ct_ctr_keys *ctx,
 		br_enc32le(tmp + 28, q[7]);
 
 		if (len <= 32) {
-			(BEAR_SINGLE_UNITY_FILE)xorbuf(buf, tmp, len);
+			BEAR_SINGLE_UNITY_FILExorbuf(buf, tmp, len);
 			cc ++;
 			if (len > 16) {
 				cc ++;
 			}
 			break;
 		}
-		(BEAR_SINGLE_UNITY_FILE)xorbuf(buf, tmp, 32);
+		BEAR_SINGLE_UNITY_FILExorbuf(buf, tmp, 32);
 		buf += 32;
 		len -= 32;
 		cc += 2;

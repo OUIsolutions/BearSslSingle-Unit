@@ -45,7 +45,7 @@ static const unsigned char ORDER[] = {
 };
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_generator(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -53,7 +53,7 @@ static const unsigned char *
 }
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_order(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -61,7 +61,7 @@ static const unsigned char *
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_xoff(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -373,7 +373,7 @@ f255_final_reduce(uint64_t *a)
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_mul(unsigned char *G, size_t Glen,
+BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	const unsigned char *kb, size_t kblen, int curve)
 {
 	unsigned char k[32];
@@ -542,20 +542,20 @@ static uint32_t
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_mulgen(unsigned char *R,
+BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
 	const unsigned char *x, size_t xlen, int curve)
 {
 	const unsigned char *G;
 	size_t Glen;
 
-	G = (BEAR_SINGLE_UNITY_FILE)api_generator(curve, &Glen);
+	G = BEAR_SINGLE_UNITY_FILEapi_generator(curve, &Glen);
 	memcpy(R, G, Glen);
-	(BEAR_SINGLE_UNITY_FILE)api_mul(R, Glen, x, xlen, curve);
+	BEAR_SINGLE_UNITY_FILEapi_mul(R, Glen, x, xlen, curve);
 	return Glen;
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
@@ -578,12 +578,12 @@ static uint32_t
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_c25519_m62 = {
 	(uint32_t)0x20000000,
-	&(BEAR_SINGLE_UNITY_FILE)api_generator,
-	&(BEAR_SINGLE_UNITY_FILE)api_order,
-	&(BEAR_SINGLE_UNITY_FILE)api_xoff,
-	&(BEAR_SINGLE_UNITY_FILE)api_mul,
-	&(BEAR_SINGLE_UNITY_FILE)api_mulgen,
-	&(BEAR_SINGLE_UNITY_FILE)api_muladd
+	&BEAR_SINGLE_UNITY_FILEapi_generator,
+	&BEAR_SINGLE_UNITY_FILEapi_order,
+	&BEAR_SINGLE_UNITY_FILEapi_xoff,
+	&BEAR_SINGLE_UNITY_FILEapi_mul,
+	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
+	&BEAR_SINGLE_UNITY_FILEapi_muladd
 };
 
 /* see bearssl_ec.h */

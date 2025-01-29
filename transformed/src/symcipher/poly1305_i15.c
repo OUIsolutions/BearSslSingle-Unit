@@ -42,7 +42,7 @@ static const uint16_t P1305[] = {
 /*
  * -p mod 2^15.
  */
-#define (BEAR_SINGLE_UNITY_FILE)P0I   0x4CCD
+#define BEAR_SINGLE_UNITY_FILEP0I   0x4CCD
 
 /*
  * R^2 mod p, for conversion to Montgomery representation (R = 2^135,
@@ -58,7 +58,7 @@ static const uint16_t R2[] = {
  * is in Montgomery representation, while the "a" array is not.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)poly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t len)
+BEAR_SINGLE_UNITY_FILEpoly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t len)
 {
 	const unsigned char *buf;
 
@@ -100,7 +100,7 @@ static void
 		/*
 		 * Multiply by r, result is the new accumulator value.
 		 */
-		br_i15_montymul(a, b, r, P1305, (BEAR_SINGLE_UNITY_FILE)P0I);
+		br_i15_montymul(a, b, r, P1305, BEAR_SINGLE_UNITY_FILEP0I);
 
 		buf += 16;
 		len -= 16;
@@ -176,7 +176,7 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	/*
 	 * Convert 'r' to Montgomery representation.
 	 */
-	br_i15_montymul(r, t, R2, P1305, (BEAR_SINGLE_UNITY_FILE)P0I);
+	br_i15_montymul(r, t, R2, P1305, BEAR_SINGLE_UNITY_FILEP0I);
 
 	/*
 	 * Accumulator is 0.
@@ -189,9 +189,9 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	 */
 	br_enc64le(foot, (uint64_t)aad_len);
 	br_enc64le(foot + 8, (uint64_t)len);
-	(BEAR_SINGLE_UNITY_FILE)poly1305_inner(acc, r, aad, aad_len);
-	(BEAR_SINGLE_UNITY_FILE)poly1305_inner(acc, r, data, len);
-	(BEAR_SINGLE_UNITY_FILE)poly1305_inner(acc, r, foot, sizeof foot);
+	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, aad, aad_len);
+	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, data, len);
+	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, foot, sizeof foot);
 
 	/*
 	 * Decode the value 's'. Again, a byteswap is needed.

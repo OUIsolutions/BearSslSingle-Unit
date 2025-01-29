@@ -24,8 +24,8 @@ preamble {
 
 
 
-#define (BEAR_SINGLE_UNITY_FILE)CTX   ((br_skey_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_skey_decoder_context, cpu)))
-#define (BEAR_SINGLE_UNITY_FILE)CONTEXT_NAME   br_skey_decoder_context
+#define BEAR_SINGLE_UNITY_FILECTX   ((br_skey_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_skey_decoder_context, cpu)))
+#define BEAR_SINGLE_UNITY_FILECONTEXT_NAME   br_skey_decoder_context
 
 /* see bearssl_x509.h */
 void
@@ -54,26 +54,26 @@ addr: key_type
 addr: key_data
 
 cc: read8-low ( -- x ) {
-	if ((BEAR_SINGLE_UNITY_FILE)CTX->hlen == 0) {
+	if (BEAR_SINGLE_UNITY_FILECTX->hlen == 0) {
 		T0_PUSHi(-1);
 	} else {
-		(BEAR_SINGLE_UNITY_FILE)CTX->hlen --;
-		T0_PUSH(*(BEAR_SINGLE_UNITY_FILE)CTX->hbuf ++);
+		BEAR_SINGLE_UNITY_FILECTX->hlen --;
+		T0_PUSH(*BEAR_SINGLE_UNITY_FILECTX->hbuf ++);
 	}
 }
 
 cc: read-blob-inner ( addr len -- addr len ) {
 	uint32_t len = T0_POP();
 	uint32_t addr = T0_POP();
-	size_t clen = (BEAR_SINGLE_UNITY_FILE)CTX->hlen;
+	size_t clen = BEAR_SINGLE_UNITY_FILECTX->hlen;
 	if (clen > len) {
 		clen = (size_t)len;
 	}
 	if (addr != 0) {
-		memcpy((unsigned char *)(BEAR_SINGLE_UNITY_FILE)CTX + addr, (BEAR_SINGLE_UNITY_FILE)CTX->hbuf, clen);
+		memcpy((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
 	}
-	(BEAR_SINGLE_UNITY_FILE)CTX->hbuf += clen;
-	(BEAR_SINGLE_UNITY_FILE)CTX->hlen -= clen;
+	BEAR_SINGLE_UNITY_FILECTX->hbuf += clen;
+	BEAR_SINGLE_UNITY_FILECTX->hlen -= clen;
 	T0_PUSH(addr + clen);
 	T0_PUSH(len - clen);
 }
@@ -96,30 +96,30 @@ cc: set-rsa-key ( n_bitlen plen qlen dplen dqlen iqlen -- ) {
 	uint32_t n_bitlen = T0_POP();
 	size_t off;
 
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.rsa.n_bitlen = n_bitlen;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.rsa.p = (BEAR_SINGLE_UNITY_FILE)CTX->key_data;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.rsa.plen = plen;
+	BEAR_SINGLE_UNITY_FILECTX->key.rsa.n_bitlen = n_bitlen;
+	BEAR_SINGLE_UNITY_FILECTX->key.rsa.p = BEAR_SINGLE_UNITY_FILECTX->key_data;
+	BEAR_SINGLE_UNITY_FILECTX->key.rsa.plen = plen;
 	off = plen;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.rsa.q = (BEAR_SINGLE_UNITY_FILE)CTX->key_data + off;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.rsa.qlen = qlen;
+	BEAR_SINGLE_UNITY_FILECTX->key.rsa.q = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+	BEAR_SINGLE_UNITY_FILECTX->key.rsa.qlen = qlen;
 	off += qlen;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.rsa.dp = (BEAR_SINGLE_UNITY_FILE)CTX->key_data + off;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.rsa.dplen = dplen;
+	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dp = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dplen = dplen;
 	off += dplen;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.rsa.dq = (BEAR_SINGLE_UNITY_FILE)CTX->key_data + off;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.rsa.dqlen = dqlen;
+	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dq = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dqlen = dqlen;
 	off += dqlen;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.rsa.iq = (BEAR_SINGLE_UNITY_FILE)CTX->key_data + off;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.rsa.iqlen = iqlen;
+	BEAR_SINGLE_UNITY_FILECTX->key.rsa.iq = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+	BEAR_SINGLE_UNITY_FILECTX->key.rsa.iqlen = iqlen;
 }
 
 \ Set the private key (EC).
 cc: set-ec-key ( curve xlen -- ) {
 	size_t xlen = T0_POP();
 	uint32_t curve = T0_POP();
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.ec.curve = curve;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.ec.x = (BEAR_SINGLE_UNITY_FILE)CTX->key_data;
-	(BEAR_SINGLE_UNITY_FILE)CTX->key.ec.xlen = xlen;
+	BEAR_SINGLE_UNITY_FILECTX->key.ec.curve = curve;
+	BEAR_SINGLE_UNITY_FILECTX->key.ec.x = BEAR_SINGLE_UNITY_FILECTX->key_data;
+	BEAR_SINGLE_UNITY_FILECTX->key.ec.xlen = xlen;
 }
 
 \ Get the bit length for an integer (unsigned).

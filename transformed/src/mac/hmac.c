@@ -25,7 +25,7 @@
 
 
 static inline size_t
-(BEAR_SINGLE_UNITY_FILE)block_size(const br_hash_class *dig)
+BEAR_SINGLE_UNITY_FILEblock_size(const br_hash_class *dig)
 {
 	unsigned ls;
 	
@@ -41,7 +41,7 @@ process_key(const br_hash_class **hc, void *ks,
 	unsigned char tmp[256];
 	size_t blen, u;
 
-	blen = (BEAR_SINGLE_UNITY_FILE)block_size(*hc);
+	blen = BEAR_SINGLE_UNITY_FILEblock_size(*hc);
 	memcpy(tmp, key, key_len);
 	for (u = 0; u < key_len; u ++) {
 		tmp[u] ^= (unsigned char)bb;
@@ -62,7 +62,7 @@ br_hmac_key_init(br_hmac_key_context *kc,
 
 	kc->dig_vtable = dig;
 	hc.vtable = dig;
-	if (key_len > (BEAR_SINGLE_UNITY_FILE)block_size(dig)) {
+	if (key_len > BEAR_SINGLE_UNITY_FILEblock_size(dig)) {
 		dig->init(&hc.vtable);
 		dig->update(&hc.vtable, key, key_len);
 		dig->out(&hc.vtable, kbuf);
@@ -82,7 +82,7 @@ br_hmac_init(br_hmac_context *ctx,
 	size_t blen, hlen;
 
 	dig = kc->dig_vtable;
-	blen = (BEAR_SINGLE_UNITY_FILE)block_size(dig);
+	blen = BEAR_SINGLE_UNITY_FILEblock_size(dig);
 	dig->init(&ctx->dig.vtable);
 	dig->set_state(&ctx->dig.vtable, kc->ksi, (uint64_t)blen);
 	memcpy(ctx->kso, kc->kso, sizeof kc->kso);
@@ -111,7 +111,7 @@ br_hmac_out(const br_hmac_context *ctx, void *out)
 
 	dig = ctx->dig.vtable;
 	dig->out(&ctx->dig.vtable, tmp);
-	blen = (BEAR_SINGLE_UNITY_FILE)block_size(dig);
+	blen = BEAR_SINGLE_UNITY_FILEblock_size(dig);
 	dig->init(&hc.vtable);
 	dig->set_state(&hc.vtable, ctx->kso, (uint64_t)blen);
 	hlen = br_digest_size(dig);

@@ -37,7 +37,7 @@ static const uint16_t C255_P[] = {
 	0x7FFF
 };
 
-#define (BEAR_SINGLE_UNITY_FILE)P0I   0x4A1B
+#define BEAR_SINGLE_UNITY_FILEP0I   0x4A1B
 
 static const uint16_t C255_R2[] = {
 	0x0110,
@@ -58,7 +58,7 @@ print_int_mont(const char *name, const uint16_t *x)
 
 	printf("%s = ", name);
 	memcpy(y, x, sizeof y);
-	br_i15_from_monty(y, C255_P, (BEAR_SINGLE_UNITY_FILE)P0I);
+	br_i15_from_monty(y, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	br_i15_encode(tmp, sizeof tmp, y);
 	for (u = 0; u < sizeof tmp; u ++) {
 		printf("%02X", tmp[u]);
@@ -89,7 +89,7 @@ static const unsigned char ORDER[] = {
 };
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_generator(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -97,7 +97,7 @@ static const unsigned char *
 }
 
 static const unsigned char *
-(BEAR_SINGLE_UNITY_FILE)api_order(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -105,7 +105,7 @@ static const unsigned char *
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_xoff(int curve, size_t *len)
+BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -157,7 +157,7 @@ c255_mul(uint16_t *d, const uint16_t *a, const uint16_t *b)
 {
 	uint16_t t[18];
 
-	br_i15_montymul(t, a, b, C255_P, (BEAR_SINGLE_UNITY_FILE)P0I);
+	br_i15_montymul(t, a, b, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	memcpy(d, t, sizeof t);
 }
 
@@ -176,7 +176,7 @@ byteswap(unsigned char *G)
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_mul(unsigned char *G, size_t Glen,
+BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	const unsigned char *kb, size_t kblen, int curve)
 {
 #define ILEN   (18 * sizeof(uint16_t))
@@ -232,7 +232,7 @@ static uint32_t
 	 * Initialise variables x1, x2, z2, x3 and z3. We set all of them
 	 * into Montgomery representation.
 	 */
-	br_i15_montymul(x1, a, C255_R2, C255_P, (BEAR_SINGLE_UNITY_FILE)P0I);
+	br_i15_montymul(x1, a, C255_R2, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	memcpy(x3, x1, ILEN);
 	br_i15_zero(z2, C255_P[0]);
 	memcpy(x2, z2, ILEN);
@@ -339,11 +339,11 @@ static uint32_t
 	 * To avoid a dependency on br_i15_from_monty(), we use a
 	 * Montgomery multiplication with 1.
 	 *    memcpy(x2, b, ILEN);
-	 *    br_i15_from_monty(x2, C255_P, (BEAR_SINGLE_UNITY_FILE)P0I);
+	 *    br_i15_from_monty(x2, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	 */
 	br_i15_zero(a, C255_P[0]);
 	a[1] = 1;
-	br_i15_montymul(x2, a, b, C255_P, (BEAR_SINGLE_UNITY_FILE)P0I);
+	br_i15_montymul(x2, a, b, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
 
 	br_i15_encode(G, 32, x2);
 	byteswap(G);
@@ -353,20 +353,20 @@ static uint32_t
 }
 
 static size_t
-(BEAR_SINGLE_UNITY_FILE)api_mulgen(unsigned char *R,
+BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
 	const unsigned char *x, size_t xlen, int curve)
 {
 	const unsigned char *G;
 	size_t Glen;
 
-	G = (BEAR_SINGLE_UNITY_FILE)api_generator(curve, &Glen);
+	G = BEAR_SINGLE_UNITY_FILEapi_generator(curve, &Glen);
 	memcpy(R, G, Glen);
-	(BEAR_SINGLE_UNITY_FILE)api_mul(R, Glen, x, xlen, curve);
+	BEAR_SINGLE_UNITY_FILEapi_mul(R, Glen, x, xlen, curve);
 	return Glen;
 }
 
 static uint32_t
-(BEAR_SINGLE_UNITY_FILE)api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
@@ -389,10 +389,10 @@ static uint32_t
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_c25519_i15 = {
 	(uint32_t)0x20000000,
-	&(BEAR_SINGLE_UNITY_FILE)api_generator,
-	&(BEAR_SINGLE_UNITY_FILE)api_order,
-	&(BEAR_SINGLE_UNITY_FILE)api_xoff,
-	&(BEAR_SINGLE_UNITY_FILE)api_mul,
-	&(BEAR_SINGLE_UNITY_FILE)api_mulgen,
-	&(BEAR_SINGLE_UNITY_FILE)api_muladd
+	&BEAR_SINGLE_UNITY_FILEapi_generator,
+	&BEAR_SINGLE_UNITY_FILEapi_order,
+	&BEAR_SINGLE_UNITY_FILEapi_xoff,
+	&BEAR_SINGLE_UNITY_FILEapi_mul,
+	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
+	&BEAR_SINGLE_UNITY_FILEapi_muladd
 };
