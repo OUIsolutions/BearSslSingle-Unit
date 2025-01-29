@@ -7,7 +7,8 @@ function main()
    for i, v in ipairs(transformmed) do
        local file = transformmed[i]
        local content= darwin.dtw.load_file(file)
-       local replaced = string.gsub(content, 'P256_P', "(BEAR_SINGLE_UNITY_FILE)P256_P")
+       var = 'api_muladd'
+       local replaced = string.gsub(content, var, "(BEAR_SINGLE_UNITY_FILE)"..var)
        darwin.dtw.write_file(file, replaced)
    end
 
