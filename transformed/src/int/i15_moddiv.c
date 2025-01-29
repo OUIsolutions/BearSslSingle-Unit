@@ -40,7 +40,7 @@
  * computed; otherwise, if 'ctl' is 0, then the value is unchanged.
  */
 static void
-cond_negate(uint16_t *a, size_t len, uint32_t ctl)
+i15_moddiv_cond_negate(uint16_t *a, size_t len, uint32_t ctl)
 {
 	size_t k;
 	uint32_t cc, xm;
@@ -163,8 +163,8 @@ co_reduce(uint16_t *a, uint16_t *b, size_t len,
 	b[len - 1] = (uint16_t)ccb;
 	nega = (uint32_t)cca >> 31;
 	negb = (uint32_t)ccb >> 31;
-	cond_negate(a, len, nega);
-	cond_negate(b, len, negb);
+	i15_moddiv_cond_negate(a, len, nega);
+	i15_moddiv_cond_negate(b, len, negb);
 	return nega | (negb << 1);
 }
 
