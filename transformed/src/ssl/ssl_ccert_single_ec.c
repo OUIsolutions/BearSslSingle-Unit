@@ -47,7 +47,7 @@ cc_none2(const br_ssl_client_certificate_class **pctx,
 }
 
 static void
-cc_choose(const br_ssl_client_certificate_class **pctx,
+(BEAR_SINGLE_UNITY_FILE)cc_choose(const br_ssl_client_certificate_class **pctx,
 	const br_ssl_client_context *cc, uint32_t auth_types,
 	br_ssl_client_certificate *choices)
 {
@@ -131,7 +131,7 @@ static const br_ssl_client_certificate_class ccert_vtable = {
 	cc_none2, /* append_name */
 	cc_none0, /* end_name */
 	cc_none0, /* end_name_list */
-	cc_choose,
+	(BEAR_SINGLE_UNITY_FILE)cc_choose,
 	cc_do_keyx,
 	cc_do_sign
 };
