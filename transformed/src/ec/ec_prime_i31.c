@@ -548,7 +548,7 @@ point_add(jacobian *P1, const jacobian *P2, const curve_params *cc)
 }
 
 static void
-point_mul(jacobian *P, const unsigned char *x, size_t xlen,
+(BEAR_SINGLE_UNITY_FILE)point_mul(jacobian *P, const unsigned char *x, size_t xlen,
 	const curve_params *cc)
 {
 	/*
@@ -685,7 +685,7 @@ static void
 }
 
 static const br_ec_curve_def *
-id_to_curve_def(int curve)
+(BEAR_SINGLE_UNITY_FILE)id_to_curve_def(int curve)
 {
 	switch (curve) {
 	case BR_EC_secp256r1:
@@ -703,7 +703,7 @@ static const unsigned char *
 {
 	const br_ec_curve_def *cd;
 
-	cd = id_to_curve_def(curve);
+	cd = (BEAR_SINGLE_UNITY_FILE)id_to_curve_def(curve);
 	*len = cd->generator_len;
 	return cd->generator;
 }
@@ -713,7 +713,7 @@ static const unsigned char *
 {
 	const br_ec_curve_def *cd;
 
-	cd = id_to_curve_def(curve);
+	cd = (BEAR_SINGLE_UNITY_FILE)id_to_curve_def(curve);
 	*len = cd->order_len;
 	return cd->order;
 }
@@ -739,7 +739,7 @@ static uint32_t
 		return 0;
 	}
 	r = (BEAR_SINGLE_UNITY_FILE)point_decode(&P, G, Glen, cc);
-	point_mul(&P, x, xlen, cc);
+	(BEAR_SINGLE_UNITY_FILE)point_mul(&P, x, xlen, cc);
 	(BEAR_SINGLE_UNITY_FILE)point_encode(G, &P, cc);
 	return r;
 }
@@ -783,8 +783,8 @@ static uint32_t
 		B = (BEAR_SINGLE_UNITY_FILE)api_generator(curve, &Glen);
 	}
 	r &= (BEAR_SINGLE_UNITY_FILE)point_decode(&Q, B, len, cc);
-	point_mul(&P, x, xlen, cc);
-	point_mul(&Q, y, ylen, cc);
+	(BEAR_SINGLE_UNITY_FILE)point_mul(&P, x, xlen, cc);
+	(BEAR_SINGLE_UNITY_FILE)point_mul(&Q, y, ylen, cc);
 
 	/*
 	 * We want to compute P+Q. Since the base points A and B are distinct

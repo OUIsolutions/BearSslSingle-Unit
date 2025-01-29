@@ -1266,7 +1266,7 @@ p256_add_complete_mixed(p256_jacobian *P1, const p256_affine *P2)
  *  - Everything is in Montgomery representation.
  */
 static void
-point_mul_inner(p256_jacobian *R, const p256_affine *W,
+(BEAR_SINGLE_UNITY_FILE)point_mul_inner(p256_jacobian *R, const p256_affine *W,
 	const unsigned char *k, size_t klen)
 {
 	p256_jacobian Q;
@@ -1498,7 +1498,7 @@ p256_mul(p256_jacobian *P, const unsigned char *k, size_t klen)
 	/*
 	 * Perform point multiplication.
 	 */
-	point_mul_inner(P, window.aff, k, klen);
+	(BEAR_SINGLE_UNITY_FILE)point_mul_inner(P, window.aff, k, klen);
 }
 
 /*
@@ -1610,7 +1610,7 @@ static const p256_affine (BEAR_SINGLE_UNITY_FILE)P256_Gwin[] = {
 static void
 (BEAR_SINGLE_UNITY_FILE)p256_mulgen(p256_jacobian *P, const unsigned char *k, size_t klen)
 {
-	point_mul_inner(P, (BEAR_SINGLE_UNITY_FILE)P256_Gwin, k, klen);
+	(BEAR_SINGLE_UNITY_FILE)point_mul_inner(P, (BEAR_SINGLE_UNITY_FILE)P256_Gwin, k, klen);
 }
 
 /*
