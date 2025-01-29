@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-#include "inner.h"
+
 
 /*
  * Hash some data. This is put as a separate function so that stack

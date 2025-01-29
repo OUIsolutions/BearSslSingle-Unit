@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-#include "inner.h"
+
 
 #if BR_INT128 || BR_UMUL128
 

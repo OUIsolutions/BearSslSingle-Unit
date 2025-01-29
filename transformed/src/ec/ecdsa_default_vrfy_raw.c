@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-#include "inner.h"
+
 
 /* see bearssl_ec.h */
 br_ecdsa_vrfy
