@@ -344,7 +344,7 @@ Fconf(uint32_t r0, const uint32_t *sk)
  * in the final round.
  */
 static void
-process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *sk_exp)
+des_ct_process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *sk_exp)
 {
 	int i;
 	uint32_t l, r;
@@ -376,7 +376,7 @@ br_des_ct_process_block(unsigned num_rounds,
 	r = br_dec32be(buf + 4);
 	br_des_do_IP(&l, &r);
 	while (num_rounds -- > 0) {
-		process_block_unit(&l, &r, sk_exp);
+		des_ct_process_block_unit(&l, &r, sk_exp);
 		sk_exp += 96;
 	}
 	br_des_do_invIP(&l, &r);
