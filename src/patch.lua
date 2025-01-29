@@ -11,12 +11,12 @@ function create_patch()
     end
 end 
 function aply_patch()
-    dtw.copy_any_overwriting("origin","BearSSl")
+    darwin.dtw.copy_any_overwriting("origin",OUTPUT_DIR)
     local itens = darwin.dtw.list_files_recursively(PATCH_DIR,false)
     local itens = darwin.dtw.list_files_recursively("transformed/",false)
     for i, item in ipairs(itens) do
-        local  dest = darwin.dtw.concat_path("BearSSl",item)
+        local  dest = darwin.dtw.concat_path(OUTPUT_DIR,item)
         local  patch = darwin.dtw.concat_path(PATCH_DIR,item..".patch")
         os.execute("patch -p0 "..dest.." < "..patch)        
-    ends
+    end
 end 
