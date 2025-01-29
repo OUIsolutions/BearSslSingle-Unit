@@ -214,7 +214,7 @@ br_aes_ct_ortho(uint32_t *q)
 	} while (0)
 
 #define SWAP2(x, y)   SWAPN(0x55555555, 0xAAAAAAAA, 1, x, y)
-#define SWAP4(x, y)   SWAPN(0x33333333, 0xCCCCCCCC, 2, x, y)
+#define (BEAR_SINGLE_UNITY_FILE)SWAP4(x, y)   SWAPN(0x33333333, 0xCCCCCCCC, 2, x, y)
 #define (BEAR_SINGLE_UNITY_FILE)SWAP8(x, y)   SWAPN(0x0F0F0F0F, 0xF0F0F0F0, 4, x, y)
 
 	SWAP2(q[0], q[1]);
@@ -222,10 +222,10 @@ br_aes_ct_ortho(uint32_t *q)
 	SWAP2(q[4], q[5]);
 	SWAP2(q[6], q[7]);
 
-	SWAP4(q[0], q[2]);
-	SWAP4(q[1], q[3]);
-	SWAP4(q[4], q[6]);
-	SWAP4(q[5], q[7]);
+	(BEAR_SINGLE_UNITY_FILE)SWAP4(q[0], q[2]);
+	(BEAR_SINGLE_UNITY_FILE)SWAP4(q[1], q[3]);
+	(BEAR_SINGLE_UNITY_FILE)SWAP4(q[4], q[6]);
+	(BEAR_SINGLE_UNITY_FILE)SWAP4(q[5], q[7]);
 
 	(BEAR_SINGLE_UNITY_FILE)SWAP8(q[0], q[4]);
 	(BEAR_SINGLE_UNITY_FILE)SWAP8(q[1], q[5]);
