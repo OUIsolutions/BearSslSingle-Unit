@@ -75,7 +75,7 @@ void br_x509_decoder_run(void *t0ctx);
 
 
 
-#define CTX   ((br_x509_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_decoder_context, cpu)))
+#define X509_DECODER_CTX   ((br_x509_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_decoder_context, cpu)))
 #define X509_DECODER_CONTEXT_NAME   br_x509_decoder_context
 
 /* see bearssl_x509.h */
@@ -612,10 +612,10 @@ br_x509_decoder_run(void *t0ctx)
 
 	size_t qlen = T0_POP();
 	uint32_t curve = T0_POP();
-	CTX->pkey.key_type = BR_KEYTYPE_EC;
-	CTX->pkey.key.ec.curve = curve;
-	CTX->pkey.key.ec.q = CTX->pkey_data;
-	CTX->pkey.key.ec.qlen = qlen;
+	X509_DECODER_CTX->pkey.key_type = BR_KEYTYPE_EC;
+	X509_DECODER_CTX->pkey.key.ec.curve = curve;
+	X509_DECODER_CTX->pkey.key.ec.q = X509_DECODER_CTX->pkey_data;
+	X509_DECODER_CTX->pkey.key.ec.qlen = qlen;
 
 				}
 				break;
@@ -624,11 +624,11 @@ br_x509_decoder_run(void *t0ctx)
 
 	size_t elen = T0_POP();
 	size_t nlen = T0_POP();
-	CTX->pkey.key_type = BR_KEYTYPE_RSA;
-	CTX->pkey.key.rsa.n = CTX->pkey_data;
-	CTX->pkey.key.rsa.nlen = nlen;
-	CTX->pkey.key.rsa.e = CTX->pkey_data + nlen;
-	CTX->pkey.key.rsa.elen = elen;
+	X509_DECODER_CTX->pkey.key_type = BR_KEYTYPE_RSA;
+	X509_DECODER_CTX->pkey.key.rsa.n = X509_DECODER_CTX->pkey_data;
+	X509_DECODER_CTX->pkey.key.rsa.nlen = nlen;
+	X509_DECODER_CTX->pkey.key.rsa.e = X509_DECODER_CTX->pkey_data + nlen;
+	X509_DECODER_CTX->pkey.key.rsa.elen = elen;
 
 				}
 				break;
@@ -654,7 +654,7 @@ br_x509_decoder_run(void *t0ctx)
 				/* eqOID */
 
 	const unsigned char *a2 = &X509_DECODER_t0_datablock[T0_POP()];
-	const unsigned char *a1 = &CTX->pad[0];
+	const unsigned char *a1 = &X509_DECODER_CTX->pad[0];
 	size_t len = a1[0];
 	int x;
 	if (len == a2[0]) {
@@ -669,7 +669,7 @@ br_x509_decoder_run(void *t0ctx)
 			case 29: {
 				/* fail */
 
-	CTX->err = T0_POPi();
+	X509_DECODER_CTX->err = T0_POPi();
 	T0_CO();
 
 				}
@@ -701,18 +701,18 @@ br_x509_decoder_run(void *t0ctx)
 
 	uint32_t len = T0_POP();
 	uint32_t addr = T0_POP();
-	size_t clen = CTX->hlen;
+	size_t clen = X509_DECODER_CTX->hlen;
 	if (clen > len) {
 		clen = (size_t)len;
 	}
 	if (addr != 0) {
-		memcpy((unsigned char *)CTX + addr, CTX->hbuf, clen);
+		memcpy((unsigned char *)X509_DECODER_CTX + addr, X509_DECODER_CTX->hbuf, clen);
 	}
-	if (CTX->copy_dn && CTX->append_dn) {
-		CTX->append_dn(CTX->append_dn_ctx, CTX->hbuf, clen);
+	if (X509_DECODER_CTX->copy_dn && X509_DECODER_CTX->append_dn) {
+		X509_DECODER_CTX->append_dn(X509_DECODER_CTX->append_dn_ctx, X509_DECODER_CTX->hbuf, clen);
 	}
-	CTX->hbuf += clen;
-	CTX->hlen -= clen;
+	X509_DECODER_CTX->hbuf += clen;
+	X509_DECODER_CTX->hlen -= clen;
 	T0_PUSH(addr + clen);
 	T0_PUSH(len - clen);
 
@@ -721,14 +721,14 @@ br_x509_decoder_run(void *t0ctx)
 			case 34: {
 				/* read8-low */
 
-	if (CTX->hlen == 0) {
+	if (X509_DECODER_CTX->hlen == 0) {
 		T0_PUSHi(-1);
 	} else {
-		unsigned char x = *CTX->hbuf ++;
-		if (CTX->copy_dn && CTX->append_dn) {
-			CTX->append_dn(CTX->append_dn_ctx, &x, 1);
+		unsigned char x = *X509_DECODER_CTX->hbuf ++;
+		if (X509_DECODER_CTX->copy_dn && X509_DECODER_CTX->append_dn) {
+			X509_DECODER_CTX->append_dn(X509_DECODER_CTX->append_dn_ctx, &x, 1);
 		}
-		CTX->hlen --;
+		X509_DECODER_CTX->hlen --;
 		T0_PUSH(x);
 	}
 
@@ -743,7 +743,7 @@ br_x509_decoder_run(void *t0ctx)
 				/* set32 */
 
 	uint32_t addr = T0_POP();
-	*(uint32_t *)(void *)((unsigned char *)CTX + addr) = T0_POP();
+	*(uint32_t *)(void *)((unsigned char *)X509_DECODER_CTX + addr) = T0_POP();
 
 				}
 				break;
