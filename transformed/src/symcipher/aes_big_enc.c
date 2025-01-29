@@ -73,15 +73,15 @@ static const uint32_t Ssm0[] = {
 };
 
 static inline uint32_t
-rotr(uint32_t x, int n)
+(BEAR_SINGLE_UNITY_FILE)rotr(uint32_t x, int n)
 {
 	return (x << (32 - n)) | (x >> n);
 }
 
 #define SboxExt0(x)   (Ssm0[x])
-#define SboxExt1(x)   (rotr(Ssm0[x], 8))
-#define SboxExt2(x)   (rotr(Ssm0[x], 16))
-#define SboxExt3(x)   (rotr(Ssm0[x], 24))
+#define SboxExt1(x)   ((BEAR_SINGLE_UNITY_FILE)rotr(Ssm0[x], 8))
+#define SboxExt2(x)   ((BEAR_SINGLE_UNITY_FILE)rotr(Ssm0[x], 16))
+#define SboxExt3(x)   ((BEAR_SINGLE_UNITY_FILE)rotr(Ssm0[x], 24))
 
 
 /* see bearssl.h */

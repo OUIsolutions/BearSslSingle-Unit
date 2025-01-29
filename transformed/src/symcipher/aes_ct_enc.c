@@ -54,7 +54,7 @@ static inline void
 }
 
 static inline uint32_t
-(BEAR_SINGLE_UNITY_FILE)rotr16(uint32_t x)
+(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr16(uint32_t x)
 {
 	return (x << 16) | (x >> 16);
 }
@@ -82,14 +82,14 @@ static inline void
 	r6 = (q6 >> 8) | (q6 << 24);
 	r7 = (q7 >> 8) | (q7 << 24);
 
-	q[0] = q7 ^ r7 ^ r0 ^ (BEAR_SINGLE_UNITY_FILE)rotr16(q0 ^ r0);
-	q[1] = q0 ^ r0 ^ q7 ^ r7 ^ r1 ^ (BEAR_SINGLE_UNITY_FILE)rotr16(q1 ^ r1);
-	q[2] = q1 ^ r1 ^ r2 ^ (BEAR_SINGLE_UNITY_FILE)rotr16(q2 ^ r2);
-	q[3] = q2 ^ r2 ^ q7 ^ r7 ^ r3 ^ (BEAR_SINGLE_UNITY_FILE)rotr16(q3 ^ r3);
-	q[4] = q3 ^ r3 ^ q7 ^ r7 ^ r4 ^ (BEAR_SINGLE_UNITY_FILE)rotr16(q4 ^ r4);
-	q[5] = q4 ^ r4 ^ r5 ^ (BEAR_SINGLE_UNITY_FILE)rotr16(q5 ^ r5);
-	q[6] = q5 ^ r5 ^ r6 ^ (BEAR_SINGLE_UNITY_FILE)rotr16(q6 ^ r6);
-	q[7] = q6 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)rotr16(q7 ^ r7);
+	q[0] = q7 ^ r7 ^ r0 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr16(q0 ^ r0);
+	q[1] = q0 ^ r0 ^ q7 ^ r7 ^ r1 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr16(q1 ^ r1);
+	q[2] = q1 ^ r1 ^ r2 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr16(q2 ^ r2);
+	q[3] = q2 ^ r2 ^ q7 ^ r7 ^ r3 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr16(q3 ^ r3);
+	q[4] = q3 ^ r3 ^ q7 ^ r7 ^ r4 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr16(q4 ^ r4);
+	q[5] = q4 ^ r4 ^ r5 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr16(q5 ^ r5);
+	q[6] = q5 ^ r5 ^ r6 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr16(q6 ^ r6);
+	q[7] = q6 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr16(q7 ^ r7);
 }
 
 /* see inner.h */

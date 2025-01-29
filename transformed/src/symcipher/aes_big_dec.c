@@ -173,15 +173,15 @@ br_aes_big_keysched_inv(uint32_t *skey, const void *key, size_t key_len)
 }
 
 static inline uint32_t
-rotr(uint32_t x, int n)
+(BEAR_SINGLE_UNITY_FILE)rotr(uint32_t x, int n)
 {
 	return (x << (32 - n)) | (x >> n);
 }
 
 #define iSboxExt0(x)   (iSsm0[x])
-#define iSboxExt1(x)   (rotr(iSsm0[x], 8))
-#define iSboxExt2(x)   (rotr(iSsm0[x], 16))
-#define iSboxExt3(x)   (rotr(iSsm0[x], 24))
+#define iSboxExt1(x)   ((BEAR_SINGLE_UNITY_FILE)rotr(iSsm0[x], 8))
+#define iSboxExt2(x)   ((BEAR_SINGLE_UNITY_FILE)rotr(iSsm0[x], 16))
+#define iSboxExt3(x)   ((BEAR_SINGLE_UNITY_FILE)rotr(iSsm0[x], 24))
 
 /* see bearssl.h */
 void
