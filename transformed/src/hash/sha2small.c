@@ -27,12 +27,12 @@
 #define CH(X, Y, Z)    ((((Y) ^ (Z)) & (X)) ^ (Z))
 #define MAJ(X, Y, Z)   (((Y) & (Z)) | (((Y) | (Z)) & (X)))
 
-#define ROTR(x, n)    (((uint32_t)(x) << (32 - (n))) | ((uint32_t)(x) >> (n)))
+#define (BEAR_SINGLE_UNITY_FILE)ROTR(x, n)    (((uint32_t)(x) << (32 - (n))) | ((uint32_t)(x) >> (n)))
 
-#define BSG2_0(x)      (ROTR(x, 2) ^ ROTR(x, 13) ^ ROTR(x, 22))
-#define BSG2_1(x)      (ROTR(x, 6) ^ ROTR(x, 11) ^ ROTR(x, 25))
-#define SSG2_0(x)      (ROTR(x, 7) ^ ROTR(x, 18) ^ (uint32_t)((x) >> 3))
-#define SSG2_1(x)      (ROTR(x, 17) ^ ROTR(x, 19) ^ (uint32_t)((x) >> 10))
+#define BSG2_0(x)      ((BEAR_SINGLE_UNITY_FILE)ROTR(x, 2) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 13) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 22))
+#define BSG2_1(x)      ((BEAR_SINGLE_UNITY_FILE)ROTR(x, 6) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 11) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 25))
+#define SSG2_0(x)      ((BEAR_SINGLE_UNITY_FILE)ROTR(x, 7) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 18) ^ (uint32_t)((x) >> 3))
+#define SSG2_1(x)      ((BEAR_SINGLE_UNITY_FILE)ROTR(x, 17) ^ (BEAR_SINGLE_UNITY_FILE)ROTR(x, 19) ^ (uint32_t)((x) >> 10))
 
 /* see inner.h */
 const uint32_t br_sha224_IV[8] = {
