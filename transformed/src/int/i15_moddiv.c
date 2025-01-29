@@ -40,7 +40,7 @@
  * computed; otherwise, if 'ctl' is 0, then the value is unchanged.
  */
 static void
-cond_negate(uint16_t *a, size_t len, uint32_t ctl)
+(BEAR_SINGLE_UNITY_FILE)cond_negate(uint16_t *a, size_t len, uint32_t ctl)
 {
 	size_t k;
 	uint32_t cc, xm;
@@ -68,7 +68,7 @@ cond_negate(uint16_t *a, size_t len, uint32_t ctl)
  * Also, modulus m must be odd.
  */
 static void
-finish_mod(uint16_t *a, size_t len, const uint16_t *m, uint32_t neg)
+(BEAR_SINGLE_UNITY_FILE)finish_mod(uint16_t *a, size_t len, const uint16_t *m, uint32_t neg)
 {
 	size_t k;
 	uint32_t cc, xm, ym;
@@ -163,8 +163,8 @@ static uint32_t
 	b[len - 1] = (uint16_t)ccb;
 	nega = (uint32_t)cca >> 31;
 	negb = (uint32_t)ccb >> 31;
-	cond_negate(a, len, nega);
-	cond_negate(b, len, negb);
+	(BEAR_SINGLE_UNITY_FILE)cond_negate(a, len, nega);
+	(BEAR_SINGLE_UNITY_FILE)cond_negate(b, len, negb);
 	return nega | (negb << 1);
 }
 
@@ -235,8 +235,8 @@ static void
 	 * The top word of 'a' and 'b' may have a 16-th bit set.
 	 * We may have to add or subtract the modulus.
 	 */
-	finish_mod(a, len, m, (uint32_t)cca >> 31);
-	finish_mod(b, len, m, (uint32_t)ccb >> 31);
+	(BEAR_SINGLE_UNITY_FILE)finish_mod(a, len, m, (uint32_t)cca >> 31);
+	(BEAR_SINGLE_UNITY_FILE)finish_mod(b, len, m, (uint32_t)ccb >> 31);
 }
 
 /* see inner.h */
