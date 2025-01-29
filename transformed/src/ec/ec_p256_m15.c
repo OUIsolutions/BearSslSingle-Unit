@@ -1747,7 +1747,7 @@ p256_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const void *src, size_t len)
  * valid, in affine coordinates, and not the point at infinity.
  */
 static void
-p256_encode(void *dst, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
+BEAR_SINGLE_UNITY_FILEp256_encode(void *dst, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 {
 	unsigned char *buf;
 
@@ -2045,7 +2045,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	r = p256_decode(&P, G, Glen);
 	BEAR_SINGLE_UNITY_FILEp256_mul(&P, x, xlen);
 	p256_to_affine(&P);
-	p256_encode(G, &P);
+	BEAR_SINGLE_UNITY_FILEp256_encode(G, &P);
 	return r;
 }
 
@@ -2058,7 +2058,7 @@ BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
 	(void)curve;
 	BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(&P, x, xlen);
 	p256_to_affine(&P);
-	p256_encode(R, &P);
+	BEAR_SINGLE_UNITY_FILEp256_encode(R, &P);
 	return 65;
 }
 
@@ -2107,7 +2107,7 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 	 */
 	CCOPY(z & ~t, &P, &Q, sizeof Q);
 	p256_to_affine(&P);
-	p256_encode(A, &P);
+	BEAR_SINGLE_UNITY_FILEp256_encode(A, &P);
 	r &= ~(z & t);
 	return r;
 }
