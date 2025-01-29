@@ -1369,7 +1369,7 @@ static const unsigned char *
 }
 
 static size_t
-api_xoff(int curve, size_t *len)
+(BEAR_SINGLE_UNITY_FILE)api_xoff(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -1462,7 +1462,7 @@ const br_ec_impl br_ec_p256_m31 = {
 	(uint32_t)0x00800000,
 	&(BEAR_SINGLE_UNITY_FILE)api_generator,
 	&(BEAR_SINGLE_UNITY_FILE)api_order,
-	&api_xoff,
+	&(BEAR_SINGLE_UNITY_FILE)api_xoff,
 	&(BEAR_SINGLE_UNITY_FILE)api_mul,
 	&(BEAR_SINGLE_UNITY_FILE)api_mulgen,
 	&(BEAR_SINGLE_UNITY_FILE)api_muladd
