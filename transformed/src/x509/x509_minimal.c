@@ -860,7 +860,7 @@ static const uint16_t t0_caddr[] = {
 		(ip) = t0_newip; \
 	} while (0)
 
-#define T0_DEFENTRY(name, slot) \
+#define X509_MINIMAL_T0_DEFENTRY(name, slot) \
 void \
 name(void *ctx) \
 { \
@@ -869,7 +869,7 @@ name(void *ctx) \
 	X509_MINIMAL_T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
 
-T0_DEFENTRY(br_x509_minimal_init_main, 144)
+X509_MINIMAL_T0_DEFENTRY(br_x509_minimal_init_main, 144)
 
 #define T0_NEXT(t0ipp)   (*(*(t0ipp)) ++)
 

@@ -206,7 +206,7 @@ static const uint16_t t0_caddr[] = {
 		(ip) = t0_newip; \
 	} while (0)
 
-#define T0_DEFENTRY(name, slot) \
+#define PENDEC_T0_T0_DEFENTRY(name, slot) \
 void \
 name(void *ctx) \
 { \
@@ -215,7 +215,7 @@ name(void *ctx) \
 	PENDEC_T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
 
-T0_DEFENTRY(br_pem_decoder_init_main, 38)
+PENDEC_T0_T0_DEFENTRY(br_pem_decoder_init_main, 38)
 
 #define T0_NEXT(t0ipp)   (*(*(t0ipp)) ++)
 
