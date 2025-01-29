@@ -24,4 +24,5 @@ function build()
         tags = {"fdeclare", "fdefine" },
         implement_main=false
     })
+    darwin.dtw.copy_any_overwriting("one.c",darwin.dtw.concat_path(OUTPUT_DIR,"one.c"))
 end 
