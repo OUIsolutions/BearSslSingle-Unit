@@ -31,7 +31,7 @@ cc_none0(const br_ssl_client_certificate_class **pctx)
 }
 
 static void
-cc_none1(const br_ssl_client_certificate_class **pctx, size_t len)
+(BEAR_SINGLE_UNITY_FILE)cc_none1(const br_ssl_client_certificate_class **pctx, size_t len)
 {
 	(void)pctx;
 	(void)len;
@@ -127,7 +127,7 @@ static size_t
 static const br_ssl_client_certificate_class (BEAR_SINGLE_UNITY_FILE)ccert_vtable = {
 	sizeof(br_ssl_client_certificate_ec_context),
 	cc_none0, /* start_name_list */
-	cc_none1, /* start_name */
+	(BEAR_SINGLE_UNITY_FILE)cc_none1, /* start_name */
 	(BEAR_SINGLE_UNITY_FILE)cc_none2, /* append_name */
 	cc_none0, /* end_name */
 	cc_none0, /* end_name_list */
