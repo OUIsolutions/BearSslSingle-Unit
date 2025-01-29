@@ -93,7 +93,7 @@ static const uint64_t BEAR_SINGLE_UNITY_FILEP256_B_MONTY[] = {
  * Addition in the field.
  */
 static inline void
-f256_add(uint64_t *d, const uint64_t *a, const uint64_t *b)
+BEAR_SINGLE_UNITY_FILEf256_add(uint64_t *d, const uint64_t *a, const uint64_t *b)
 {
 #if BR_INT128
 	unsigned __int128 w;
@@ -175,7 +175,7 @@ f256_add(uint64_t *d, const uint64_t *a, const uint64_t *b)
  * Subtraction in the field.
  */
 static inline void
-f256_sub(uint64_t *d, const uint64_t *a, const uint64_t *b)
+BEAR_SINGLE_UNITY_FILEf256_sub(uint64_t *d, const uint64_t *a, const uint64_t *b)
 {
 #if BR_INT128
 
@@ -256,7 +256,7 @@ f256_sub(uint64_t *d, const uint64_t *a, const uint64_t *b)
  * Montgomery multiplication in the field.
  */
 static void
-f256_montymul(uint64_t *d, const uint64_t *a, const uint64_t *b)
+BEAR_SINGLE_UNITY_FILEf256_montymul(uint64_t *d, const uint64_t *a, const uint64_t *b)
 {
 #if BR_INT128
 
@@ -498,7 +498,7 @@ f256_montymul(uint64_t *d, const uint64_t *a, const uint64_t *b)
 static inline void
 BEAR_SINGLE_UNITY_FILEf256_montysquare(uint64_t *d, const uint64_t *a)
 {
-	f256_montymul(d, a, a);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(d, a, a);
 }
 
 /*
@@ -520,21 +520,21 @@ BEAR_SINGLE_UNITY_FILEf256_tomonty(uint64_t *d, const uint64_t *a)
 		0x00000004FFFFFFFD
 	};
 
-	f256_montymul(d, a, R2);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(d, a, R2);
 }
 
 /*
  * Convert from Montgomery representation.
  */
 static void
-f256_frommonty(uint64_t *d, const uint64_t *a)
+BEAR_SINGLE_UNITY_FILEf256_frommonty(uint64_t *d, const uint64_t *a)
 {
 	/*
 	 * Montgomery multiplication by 1 is division by 2^256 modulo p.
 	 */
 	static const uint64_t one[] = { 1, 0, 0, 0 };
 
-	f256_montymul(d, a, one);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(d, a, one);
 }
 
 /*
@@ -542,7 +542,7 @@ f256_frommonty(uint64_t *d, const uint64_t *a)
  * returns 0 or p. This function uses Montgomery representation.
  */
 static void
-f256_invert(uint64_t *d, const uint64_t *a)
+BEAR_SINGLE_UNITY_FILEf256_invert(uint64_t *d, const uint64_t *a)
 {
 	/*
 	 * We compute a^(p-2) mod p. The exponent pattern (from high to
@@ -564,7 +564,7 @@ f256_invert(uint64_t *d, const uint64_t *a)
 	memcpy(t, a, sizeof t);
 	for (i = 0; i < 30; i ++) {
 		BEAR_SINGLE_UNITY_FILEf256_montysquare(t, t);
-		f256_montymul(t, t, a);
+		BEAR_SINGLE_UNITY_FILEf256_montymul(t, t, a);
 	}
 
 	memcpy(r, t, sizeof t);
@@ -575,12 +575,12 @@ f256_invert(uint64_t *d, const uint64_t *a)
 		case 2:
 		case 192:
 		case 224:
-			f256_montymul(r, r, a);
+			BEAR_SINGLE_UNITY_FILEf256_montymul(r, r, a);
 			break;
 		case 3:
 		case 34:
 		case 65:
-			f256_montymul(r, r, t);
+			BEAR_SINGLE_UNITY_FILEf256_montymul(r, r, t);
 			break;
 		}
 	}
@@ -593,7 +593,7 @@ f256_invert(uint64_t *d, const uint64_t *a)
  * if the input is greater than or equal to p.
  */
 static inline void
-f256_final_reduce(uint64_t *a)
+BEAR_SINGLE_UNITY_FILEf256_final_reduce(uint64_t *a)
 {
 #if BR_INT128
 
@@ -649,7 +649,7 @@ f256_final_reduce(uint64_t *a)
 typedef struct {
 	uint64_t x[4];
 	uint64_t y[4];
-} p256_affine;
+} BEAR_SINGLE_UNITY_FILEp256_affine;
 
 typedef struct {
 	uint64_t x[4];
@@ -699,13 +699,13 @@ BEAR_SINGLE_UNITY_FILEpoint_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t, y);
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(x3, x);
-	f256_montymul(x3, x3, x);
-	f256_sub(t, t, x3);
-	f256_add(t, t, x);
-	f256_add(t, t, x);
-	f256_add(t, t, x);
-	f256_sub(t, t, BEAR_SINGLE_UNITY_FILEP256_B_MONTY);
-	f256_final_reduce(t);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(x3, x3, x);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t, t, x3);
+	BEAR_SINGLE_UNITY_FILEf256_add(t, t, x);
+	BEAR_SINGLE_UNITY_FILEf256_add(t, t, x);
+	BEAR_SINGLE_UNITY_FILEf256_add(t, t, x);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t, t, BEAR_SINGLE_UNITY_FILEP256_B_MONTY);
+	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t);
 	tt = t[0] | t[1] | t[2] | t[3];
 	r &= EQ((uint32_t)(tt | (tt >> 32)), 0);
 
@@ -735,20 +735,20 @@ BEAR_SINGLE_UNITY_FILEpoint_encode(unsigned char *buf, const p256_BEAR_SINGLE_UN
 	uint64_t t1[4], t2[4], z;
 
 	/* Set t1 = 1/z^2 and t2 = 1/z^3. */
-	f256_invert(t2, P->z);
+	BEAR_SINGLE_UNITY_FILEf256_invert(t2, P->z);
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t1, t2);
-	f256_montymul(t2, t2, t1);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, t2, t1);
 
 	/* Compute affine coordinates x (in t1) and y (in t2). */
-	f256_montymul(t1, P->x, t1);
-	f256_montymul(t2, P->y, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, P->x, t1);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, P->y, t2);
 
 	/* Convert back from Montgomery representation, and finalize
 	   reductions. */
-	f256_frommonty(t1, t1);
-	f256_frommonty(t2, t2);
-	f256_final_reduce(t1);
-	f256_final_reduce(t2);
+	BEAR_SINGLE_UNITY_FILEf256_frommonty(t1, t1);
+	BEAR_SINGLE_UNITY_FILEf256_frommonty(t2, t2);
+	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t1);
+	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t2);
 
 	/* Encode. */
 	buf[0] = 0x04;
@@ -778,7 +778,7 @@ BEAR_SINGLE_UNITY_FILEpoint_encode(unsigned char *buf, const p256_BEAR_SINGLE_UN
  * encoding as the integer p.)
  */
 static void
-p256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
+BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 {
 	/*
 	 * Doubling formulas are:
@@ -805,46 +805,46 @@ p256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 	/*
 	 * Compute x-z^2 in t2 and x+z^2 in t1.
 	 */
-	f256_add(t2, P->x, t1);
-	f256_sub(t1, P->x, t1);
+	BEAR_SINGLE_UNITY_FILEf256_add(t2, P->x, t1);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t1, P->x, t1);
 
 	/*
 	 * Compute 3*(x+z^2)*(x-z^2) in t1.
 	 */
-	f256_montymul(t3, t1, t2);
-	f256_add(t1, t3, t3);
-	f256_add(t1, t3, t1);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t3, t1, t2);
+	BEAR_SINGLE_UNITY_FILEf256_add(t1, t3, t3);
+	BEAR_SINGLE_UNITY_FILEf256_add(t1, t3, t1);
 
 	/*
 	 * Compute 4*x*y^2 (in t2) and 2*y^2 (in t3).
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t3, P->y);
-	f256_add(t3, t3, t3);
-	f256_montymul(t2, P->x, t3);
-	f256_add(t2, t2, t2);
+	BEAR_SINGLE_UNITY_FILEf256_add(t3, t3, t3);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, P->x, t3);
+	BEAR_SINGLE_UNITY_FILEf256_add(t2, t2, t2);
 
 	/*
 	 * Compute x' = m^2 - 2*s.
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(P->x, t1);
-	f256_sub(P->x, P->x, t2);
-	f256_sub(P->x, P->x, t2);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P->x, P->x, t2);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P->x, P->x, t2);
 
 	/*
 	 * Compute z' = 2*y*z.
 	 */
-	f256_montymul(t4, P->y, P->z);
-	f256_add(P->z, t4, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t4, P->y, P->z);
+	BEAR_SINGLE_UNITY_FILEf256_add(P->z, t4, t4);
 
 	/*
 	 * Compute y' = m*(s - x') - 8*y^4. Note that we already have
 	 * 2*y^2 in t3.
 	 */
-	f256_sub(t2, t2, P->x);
-	f256_montymul(P->y, t1, t2);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t2, t2, P->x);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(P->y, t1, t2);
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, t3);
-	f256_add(t4, t4, t4);
-	f256_sub(P->y, P->y, t4);
+	BEAR_SINGLE_UNITY_FILEf256_add(t4, t4, t4);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P->y, P->y, t4);
 }
 
 /*
@@ -881,7 +881,7 @@ p256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
  * e.g. if P1 and P2 have the same Y coordinate, but distinct X coordinates.
  */
 static uint32_t
-p256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
+BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
 {
 	/*
 	 * Addtions formulas are:
@@ -903,26 +903,26 @@ p256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_F
 	 * Compute u1 = x1*z2^2 (in t1) and s1 = y1*z2^3 (in t3).
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t3, P2->z);
-	f256_montymul(t1, P1->x, t3);
-	f256_montymul(t4, P2->z, t3);
-	f256_montymul(t3, P1->y, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, P1->x, t3);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t4, P2->z, t3);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t3, P1->y, t4);
 
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P1->z);
-	f256_montymul(t2, P2->x, t4);
-	f256_montymul(t5, P1->z, t4);
-	f256_montymul(t4, P2->y, t5);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, P2->x, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, P1->z, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t4, P2->y, t5);
 
 	/*
 	 * Compute h = h2 - u1 (in t2) and r = s2 - s1 (in t4).
 	 * We need to test whether r is zero, so we will do some extra
 	 * reduce.
 	 */
-	f256_sub(t2, t2, t1);
-	f256_sub(t4, t4, t3);
-	f256_final_reduce(t4);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t2, t2, t1);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t4, t4, t3);
+	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t4);
 	tt = t4[0] | t4[1] | t4[2] | t4[3];
 	ret = (uint32_t)(tt | (tt >> 32));
 	ret = (ret | -ret) >> 31;
@@ -931,30 +931,30 @@ p256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_F
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
-	f256_montymul(t6, t1, t7);
-	f256_montymul(t5, t7, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t6, t1, t7);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(P1->x, t4);
-	f256_sub(P1->x, P1->x, t5);
-	f256_sub(P1->x, P1->x, t6);
-	f256_sub(P1->x, P1->x, t6);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t5);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
 
 	/*
 	 * Compute y3 = r*(u1*h^2 - x3) - s1*h^3.
 	 */
-	f256_sub(t6, t6, P1->x);
-	f256_montymul(P1->y, t4, t6);
-	f256_montymul(t1, t5, t3);
-	f256_sub(P1->y, P1->y, t1);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t6, P1->x);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->y, t4, t6);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, t5, t3);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->y, P1->y, t1);
 
 	/*
 	 * Compute z3 = h*z1*z2.
 	 */
-	f256_montymul(t1, P1->z, P2->z);
-	f256_montymul(P1->z, t1, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, P1->z, P2->z);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->z, t1, t2);
 
 	return ret;
 }
@@ -993,7 +993,7 @@ p256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_F
  * result is correct.
  */
 static uint32_t
-p256_add_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affine *P2)
+BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const BEAR_SINGLE_UNITY_FILEp256_affine *P2)
 {
 	/*
 	 * Addtions formulas are:
@@ -1021,18 +1021,18 @@ p256_add_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affine *P2)
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P1->z);
-	f256_montymul(t2, P2->x, t4);
-	f256_montymul(t5, P1->z, t4);
-	f256_montymul(t4, P2->y, t5);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, P2->x, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, P1->z, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t4, P2->y, t5);
 
 	/*
 	 * Compute h = h2 - u1 (in t2) and r = s2 - s1 (in t4).
 	 * We need to test whether r is zero, so we will do some extra
 	 * reduce.
 	 */
-	f256_sub(t2, t2, t1);
-	f256_sub(t4, t4, t3);
-	f256_final_reduce(t4);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t2, t2, t1);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t4, t4, t3);
+	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t4);
 	tt = t4[0] | t4[1] | t4[2] | t4[3];
 	ret = (uint32_t)(tt | (tt >> 32));
 	ret = (ret | -ret) >> 31;
@@ -1041,29 +1041,29 @@ p256_add_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affine *P2)
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
-	f256_montymul(t6, t1, t7);
-	f256_montymul(t5, t7, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t6, t1, t7);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(P1->x, t4);
-	f256_sub(P1->x, P1->x, t5);
-	f256_sub(P1->x, P1->x, t6);
-	f256_sub(P1->x, P1->x, t6);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t5);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
 
 	/*
 	 * Compute y3 = r*(u1*h^2 - x3) - s1*h^3.
 	 */
-	f256_sub(t6, t6, P1->x);
-	f256_montymul(P1->y, t4, t6);
-	f256_montymul(t1, t5, t3);
-	f256_sub(P1->y, P1->y, t1);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t6, P1->x);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->y, t4, t6);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, t5, t3);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->y, P1->y, t1);
 
 	/*
 	 * Compute z3 = h*z1*z2.
 	 */
-	f256_montymul(P1->z, P1->z, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->z, P1->z, t2);
 
 	return ret;
 }
@@ -1078,7 +1078,7 @@ p256_add_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affine *P2)
  * This function returns the correct result in all cases.
  */
 static uint32_t
-p256_add_complete_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affine *P2)
+BEAR_SINGLE_UNITY_FILEp256_add_complete_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const BEAR_SINGLE_UNITY_FILEp256_affine *P2)
 {
 	/*
 	 * Addtions formulas, in the general case, are:
@@ -1113,7 +1113,7 @@ p256_add_complete_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affi
 	 * or all-zero otherwise; then we can compute the double of P2
 	 * and add it, combined with the mask, to (x3,y3,z3).
 	 *
-	 * Using the doubling formulas in p256_double() on (x2,y2),
+	 * Using the doubling formulas in BEAR_SINGLE_UNITY_FILEp256_double() on (x2,y2),
 	 * simplifying since P2 is affine (i.e. z2 = 1, implicitly),
 	 * we get:
 	 *   s = 4*x2*y2^2
@@ -1144,23 +1144,23 @@ p256_add_complete_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affi
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P1->z);
-	f256_montymul(t2, P2->x, t4);
-	f256_montymul(t5, P1->z, t4);
-	f256_montymul(t4, P2->y, t5);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, P2->x, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, P1->z, t4);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t4, P2->y, t5);
 
 	/*
 	 * Compute h = h2 - u1 (in t2) and r = s2 - s1 (in t4).
 	 * reduce.
 	 */
-	f256_sub(t2, t2, t1);
-	f256_sub(t4, t4, t3);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t2, t2, t1);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t4, t4, t3);
 
 	/*
 	 * If both h = 0 and r = 0, then P1 = P2, and we want to set
 	 * the mask tt to -1; otherwise, the mask will be 0.
 	 */
-	f256_final_reduce(t2);
-	f256_final_reduce(t4);
+	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t2);
+	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t4);
 	tt = t2[0] | t2[1] | t2[2] | t2[3] | t4[0] | t4[1] | t4[2] | t4[3];
 	tt = ((tt | -tt) >> 63) - (uint64_t)1;
 
@@ -1168,29 +1168,29 @@ p256_add_complete_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affi
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
-	f256_montymul(t6, t1, t7);
-	f256_montymul(t5, t7, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t6, t1, t7);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(P1->x, t4);
-	f256_sub(P1->x, P1->x, t5);
-	f256_sub(P1->x, P1->x, t6);
-	f256_sub(P1->x, P1->x, t6);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t5);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
 
 	/*
 	 * Compute y3 = r*(u1*h^2 - x3) - s1*h^3.
 	 */
-	f256_sub(t6, t6, P1->x);
-	f256_montymul(P1->y, t4, t6);
-	f256_montymul(t1, t5, t3);
-	f256_sub(P1->y, P1->y, t1);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t6, P1->x);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->y, t4, t6);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, t5, t3);
+	BEAR_SINGLE_UNITY_FILEf256_sub(P1->y, P1->y, t1);
 
 	/*
 	 * Compute z3 = h*z1.
 	 */
-	f256_montymul(P1->z, P1->z, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->z, P1->z, t2);
 
 	/*
 	 * The "double" result, in case P1 = P2.
@@ -1199,39 +1199,39 @@ p256_add_complete_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affi
 	/*
 	 * Compute z' = 2*y2 (in t1).
 	 */
-	f256_add(t1, P2->y, P2->y);
+	BEAR_SINGLE_UNITY_FILEf256_add(t1, P2->y, P2->y);
 
 	/*
 	 * Compute 2*(y2^2) (in t2) and s = 4*x2*(y2^2) (in t3).
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t2, P2->y);
-	f256_add(t2, t2, t2);
-	f256_add(t3, t2, t2);
-	f256_montymul(t3, P2->x, t3);
+	BEAR_SINGLE_UNITY_FILEf256_add(t2, t2, t2);
+	BEAR_SINGLE_UNITY_FILEf256_add(t3, t2, t2);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t3, P2->x, t3);
 
 	/*
 	 * Compute m = 3*(x2^2 - 1) (in t4).
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P2->x);
-	f256_sub(t4, t4, F256_R);
-	f256_add(t5, t4, t4);
-	f256_add(t4, t4, t5);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t4, t4, F256_R);
+	BEAR_SINGLE_UNITY_FILEf256_add(t5, t4, t4);
+	BEAR_SINGLE_UNITY_FILEf256_add(t4, t4, t5);
 
 	/*
 	 * Compute x' = m^2 - 2*s (in t5).
 	 */
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t5, t4);
-	f256_sub(t5, t3);
-	f256_sub(t5, t3);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t5, t3);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t5, t3);
 
 	/*
 	 * Compute y' = m*(s - x') - 8*y2^4 (in t6).
 	 */
-	f256_sub(t6, t3, t5);
-	f256_montymul(t6, t6, t4);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t3, t5);
+	BEAR_SINGLE_UNITY_FILEf256_montymul(t6, t6, t4);
 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
-	f256_sub(t6, t6, t7);
-	f256_sub(t6, t6, t7);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t6, t7);
+	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t6, t7);
 
 	/*
 	 * We now have the alternate (doubling) coordinates in (t5,t6,t1).
@@ -1266,7 +1266,7 @@ p256_add_complete_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_affi
  *  - Everything is in Montgomery representation.
  */
 static void
-BEAR_SINGLE_UNITY_FILEpoint_mul_inner(p256_BEAR_SINGLE_UNITY_FILEjacobian *R, const p256_affine *W,
+BEAR_SINGLE_UNITY_FILEpoint_mul_inner(p256_BEAR_SINGLE_UNITY_FILEjacobian *R, const BEAR_SINGLE_UNITY_FILEp256_affine *W,
 	const unsigned char *k, size_t klen)
 {
 	p256_BEAR_SINGLE_UNITY_FILEjacobian Q;
@@ -1282,16 +1282,16 @@ BEAR_SINGLE_UNITY_FILEpoint_mul_inner(p256_BEAR_SINGLE_UNITY_FILEjacobian *R, co
 		for (i = 0; i < 2; i ++) {
 			uint32_t bits;
 			uint32_t bnz;
-			p256_affine T;
+			BEAR_SINGLE_UNITY_FILEp256_affine T;
 			p256_BEAR_SINGLE_UNITY_FILEjacobian U;
 			uint32_t n;
 			int j;
 			uint64_t m;
 
-			p256_double(&Q);
-			p256_double(&Q);
-			p256_double(&Q);
-			p256_double(&Q);
+			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
 			bits = (bk >> 4) & 0x0F;
 			bnz = NEQ(bits, 0);
 
@@ -1315,11 +1315,11 @@ BEAR_SINGLE_UNITY_FILEpoint_mul_inner(p256_BEAR_SINGLE_UNITY_FILEjacobian *R, co
 			}
 
 			U = Q;
-			p256_add_mixed(&U, &T);
+			BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(&U, &T);
 
 			/*
 			 * If qz is still 1, then Q was all-zeros, and this
-			 * is conserved through p256_double().
+			 * is conserved through BEAR_SINGLE_UNITY_FILEp256_double().
 			 */
 			m = -(uint64_t)(bnz & qz);
 			for (j = 0; j < 4; j ++) {
@@ -1346,7 +1346,7 @@ BEAR_SINGLE_UNITY_FILEpoint_mul_inner(p256_BEAR_SINGLE_UNITY_FILEjacobian *R, co
  * modified.
  */
 static void
-window_to_affine(p256_affine *aff, p256_BEAR_SINGLE_UNITY_FILEjacobian *jac, int num)
+BEAR_SINGLE_UNITY_FILEwindow_to_affine(BEAR_SINGLE_UNITY_FILEp256_affine *aff, p256_BEAR_SINGLE_UNITY_FILEjacobian *jac, int num)
 {
 	/*
 	 * Convert the window points to affine coordinates. We use the
@@ -1418,7 +1418,7 @@ window_to_affine(p256_affine *aff, p256_BEAR_SINGLE_UNITY_FILEjacobian *jac, int
 		memcpy(zt, jac[i].z, sizeof zt);
 		memcpy(jac[i].z, jac[i + 1].z, sizeof zt);
 		memcpy(jac[i + 1].z, zt, sizeof zt);
-		f256_montymul(z[i >> 1], jac[i].z, jac[i + 1].z);
+		BEAR_SINGLE_UNITY_FILEf256_montymul(z[i >> 1], jac[i].z, jac[i + 1].z);
 	}
 	if ((num & 1) != 0) {
 		memcpy(z[num >> 1], jac[num - 1].z, sizeof zt);
@@ -1434,11 +1434,11 @@ window_to_affine(p256_affine *aff, p256_BEAR_SINGLE_UNITY_FILEjacobian *jac, int
 		int n;
 
 		for (i = 0; i < num; i ++) {
-			f256_montymul(jac[i].z, jac[i].z, z[(i >> k) ^ 1]);
+			BEAR_SINGLE_UNITY_FILEf256_montymul(jac[i].z, jac[i].z, z[(i >> k) ^ 1]);
 		}
 		n = (num + s - 1) >> k;
 		for (i = 0; i < (n >> 1); i ++) {
-			f256_montymul(z[i], z[i << 1], z[(i << 1) + 1]);
+			BEAR_SINGLE_UNITY_FILEf256_montymul(z[i], z[i << 1], z[(i << 1) + 1]);
 		}
 		if ((n & 1) != 0) {
 			memmove(z[n >> 1], z[n], sizeof zt);
@@ -1448,13 +1448,13 @@ window_to_affine(p256_affine *aff, p256_BEAR_SINGLE_UNITY_FILEjacobian *jac, int
 	/*
 	 * Invert the final result, and convert all points.
 	 */
-	f256_invert(zt, z[0]);
+	BEAR_SINGLE_UNITY_FILEf256_invert(zt, z[0]);
 	for (i = 0; i < num; i ++) {
-		f256_montymul(zv, jac[i].z, zt);
+		BEAR_SINGLE_UNITY_FILEf256_montymul(zv, jac[i].z, zt);
 		BEAR_SINGLE_UNITY_FILEf256_montysquare(zu, zv);
-		f256_montymul(zv, zv, zu);
-		f256_montymul(aff[i].x, jac[i].x, zu);
-		f256_montymul(aff[i].y, jac[i].y, zv);
+		BEAR_SINGLE_UNITY_FILEf256_montymul(zv, zv, zu);
+		BEAR_SINGLE_UNITY_FILEf256_montymul(aff[i].x, jac[i].x, zu);
+		BEAR_SINGLE_UNITY_FILEf256_montymul(aff[i].y, jac[i].y, zv);
 	}
 }
 
@@ -1468,10 +1468,10 @@ window_to_affine(p256_affine *aff, p256_BEAR_SINGLE_UNITY_FILEjacobian *jac, int
  * (but the process is still constant-time).
  */
 static void
-p256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t klen)
+BEAR_SINGLE_UNITY_FILEp256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t klen)
 {
 	union {
-		p256_affine aff[15];
+		BEAR_SINGLE_UNITY_FILEp256_affine aff[15];
 		p256_BEAR_SINGLE_UNITY_FILEjacobian jac[15];
 	} window;
 	int i;
@@ -1483,9 +1483,9 @@ p256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t 
 	for (i = 2; i < 16; i ++) {
 		window.jac[i - 1] = window.jac[(i >> 1) - 1];
 		if ((i & 1) == 0) {
-			p256_double(&window.jac[i - 1]);
+			BEAR_SINGLE_UNITY_FILEp256_double(&window.jac[i - 1]);
 		} else {
-			p256_add(&window.jac[i - 1], &window.jac[i >> 1]);
+			BEAR_SINGLE_UNITY_FILEp256_add(&window.jac[i - 1], &window.jac[i >> 1]);
 		}
 	}
 
@@ -1493,7 +1493,7 @@ p256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t 
 	 * Convert the window points to affine coordinates. Point
 	 * window[0] is the source point, already in affine coordinates.
 	 */
-	window_to_affine(window.aff, window.jac, 15);
+	BEAR_SINGLE_UNITY_FILEwindow_to_affine(window.aff, window.jac, 15);
 
 	/*
 	 * Perform point multiplication.
@@ -1505,7 +1505,7 @@ p256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t 
  * Precomputed window for the conventional generator: BEAR_SINGLE_UNITY_FILEP256_Gwin[n]
  * contains (n+1)*G (affine coordinates, in Montgomery representation).
  */
-static const p256_affine BEAR_SINGLE_UNITY_FILEP256_Gwin[] = {
+static const BEAR_SINGLE_UNITY_FILEp256_affine BEAR_SINGLE_UNITY_FILEP256_Gwin[] = {
 	{
 		{ 0x79E730D418A9143C, 0x75BA95FC5FEDB601,
 		  0x79FB732B77622510, 0x18905F76A53755C6 },
@@ -1608,7 +1608,7 @@ static const p256_affine BEAR_SINGLE_UNITY_FILEP256_Gwin[] = {
  * (but the process is still constant-time).
  */
 static void
-BEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t klen)
+BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t klen)
 {
 	BEAR_SINGLE_UNITY_FILEpoint_mul_inner(P, BEAR_SINGLE_UNITY_FILEP256_Gwin, k, klen);
 }
@@ -1660,7 +1660,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	}
 	r = BEAR_SINGLE_UNITY_FILEcheck_scalar(k, klen);
 	r &= BEAR_SINGLE_UNITY_FILEpoint_decode(&P, G);
-	p256_mul(&P, k, klen);
+	BEAR_SINGLE_UNITY_FILEp256_mul(&P, k, klen);
 	r &= BEAR_SINGLE_UNITY_FILEpoint_encode(G, &P);
 	return r;
 }
@@ -1672,7 +1672,7 @@ BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
 	p256_BEAR_SINGLE_UNITY_FILEjacobian P;
 
 	(void)curve;
-	BEAR_SINGLE_UNITY_FILEp256_mulgen(&P, k, klen);
+	BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(&P, k, klen);
 	BEAR_SINGLE_UNITY_FILEpoint_encode(R, &P);
 	return 65;
 }
@@ -1688,20 +1688,20 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 	 * into one. This, however, has some complications:
 	 *
 	 *  - During the computation, we may hit the point-at-infinity.
-	 *    Thus, we would need p256_add_complete_mixed() (complete
+	 *    Thus, we would need BEAR_SINGLE_UNITY_FILEp256_add_complete_mixed() (complete
 	 *    formulas for point addition), with a higher cost (17 muls
 	 *    instead of 11).
 	 *
 	 *  - A 4-bit window would be too large, since it would involve
 	 *    16*16-1 = 255 points. For the same window size as in the
-	 *    p256_mul() case, we would need to reduce the window size
+	 *    BEAR_SINGLE_UNITY_FILEp256_mul() case, we would need to reduce the window size
 	 *    to 2 bits, and thus perform twice as many non-doubling
 	 *    point additions.
 	 *
 	 *  - The window may itself contain the point-at-infinity, and
 	 *    thus cannot be in all generality be made of affine points.
 	 *    Instead, we would need to make it a window of points in
-	 *    Jacobian coordinates. Even p256_add_complete_mixed() would
+	 *    Jacobian coordinates. Even BEAR_SINGLE_UNITY_FILEp256_add_complete_mixed() would
 	 *    be inappropriate.
 	 *
 	 * For these reasons, the code below performs two separate
@@ -1719,22 +1719,22 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 		return 0;
 	}
 	r = BEAR_SINGLE_UNITY_FILEpoint_decode(&P, A);
-	p256_mul(&P, x, xlen);
+	BEAR_SINGLE_UNITY_FILEp256_mul(&P, x, xlen);
 	if (B == NULL) {
-		BEAR_SINGLE_UNITY_FILEp256_mulgen(&Q, y, ylen);
+		BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(&Q, y, ylen);
 	} else {
 		r &= BEAR_SINGLE_UNITY_FILEpoint_decode(&Q, B);
-		p256_mul(&Q, y, ylen);
+		BEAR_SINGLE_UNITY_FILEp256_mul(&Q, y, ylen);
 	}
 
 	/*
 	 * The final addition may fail in case both points are equal.
 	 */
-	t = p256_add(&P, &Q);
-	f256_final_reduce(P.z);
+	t = BEAR_SINGLE_UNITY_FILEp256_add(&P, &Q);
+	BEAR_SINGLE_UNITY_FILEf256_final_reduce(P.z);
 	z = P.z[0] | P.z[1] | P.z[2] | P.z[3];
 	s = EQ((uint32_t)(z | (z >> 32)), 0);
-	p256_double(&Q);
+	BEAR_SINGLE_UNITY_FILEp256_double(&Q);
 
 	/*
 	 * If s is 1 then either P+Q = 0 (t = 1) or P = Q (t = 0). So we

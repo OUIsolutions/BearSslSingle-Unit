@@ -1337,7 +1337,7 @@ p256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
  * including the point at infinity.
  */
 static void
-p256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
+BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
 {
 	/*
 	 * Doubling formulas are:
@@ -1465,7 +1465,7 @@ p256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
  *     performed.
  */
 static uint32_t
-p256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
+BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
 {
 	/*
 	 * Addtions formulas are:
@@ -1590,7 +1590,7 @@ p256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_F
  *     performed.
  */
 static uint32_t
-p256_add_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
+BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
 {
 	/*
 	 * Addtions formulas are:
@@ -1763,7 +1763,7 @@ p256_encode(void *dst, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
  * at infinity.
  */
 static void
-p256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t xlen)
+BEAR_SINGLE_UNITY_FILEp256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t xlen)
 {
 	/*
 	 * qz is a flag that is initially 1, and remains equal to 1
@@ -1779,9 +1779,9 @@ p256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t 
 	 * Compute window values.
 	 */
 	P2 = *P;
-	p256_double(&P2);
+	BEAR_SINGLE_UNITY_FILEp256_double(&P2);
 	P3 = *P;
-	p256_add(&P3, &P2);
+	BEAR_SINGLE_UNITY_FILEp256_add(&P3, &P2);
 
 	/*
 	 * We start with Q = 0. We process multiplier bits 2 by 2.
@@ -1795,15 +1795,15 @@ p256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t 
 			uint32_t bits;
 			uint32_t bnz;
 
-			p256_double(&Q);
-			p256_double(&Q);
+			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
 			T = *P;
 			U = Q;
 			bits = (*x >> k) & (uint32_t)3;
 			bnz = NEQ(bits, 0);
 			CCOPY(EQ(bits, 2), &T, &P2, sizeof T);
 			CCOPY(EQ(bits, 3), &T, &P3, sizeof T);
-			p256_add(&U, &T);
+			BEAR_SINGLE_UNITY_FILEp256_add(&U, &T);
 			CCOPY(bnz & qz, &Q, &T, sizeof Q);
 			CCOPY(bnz & ~qz, &Q, &U, sizeof Q);
 			qz &= ~bnz;
@@ -1947,7 +1947,7 @@ lookup_Gwin(p256_BEAR_SINGLE_UNITY_FILEjacobian *T, uint32_t idx)
  * and lower than the curve order.
  */
 static void
-BEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t xlen)
+BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t xlen)
 {
 	/*
 	 * qz is a flag that is initially 1, and remains equal to 1
@@ -1972,15 +1972,15 @@ BEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const 
 			uint32_t bnz;
 			p256_BEAR_SINGLE_UNITY_FILEjacobian T, U;
 
-			p256_double(&Q);
-			p256_double(&Q);
-			p256_double(&Q);
-			p256_double(&Q);
+			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
 			bits = (bx >> 4) & 0x0F;
 			bnz = NEQ(bits, 0);
 			lookup_Gwin(&T, bits);
 			U = Q;
-			p256_add_mixed(&U, &T);
+			BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(&U, &T);
 			CCOPY(bnz & qz, &Q, &T, sizeof Q);
 			CCOPY(bnz & ~qz, &Q, &U, sizeof Q);
 			qz &= ~bnz;
@@ -2043,7 +2043,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		return 0;
 	}
 	r = p256_decode(&P, G, Glen);
-	p256_mul(&P, x, xlen);
+	BEAR_SINGLE_UNITY_FILEp256_mul(&P, x, xlen);
 	p256_to_affine(&P);
 	p256_encode(G, &P);
 	return r;
@@ -2056,7 +2056,7 @@ BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
 	p256_BEAR_SINGLE_UNITY_FILEjacobian P;
 
 	(void)curve;
-	BEAR_SINGLE_UNITY_FILEp256_mulgen(&P, x, xlen);
+	BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(&P, x, xlen);
 	p256_to_affine(&P);
 	p256_encode(R, &P);
 	return 65;
@@ -2076,25 +2076,25 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 		return 0;
 	}
 	r = p256_decode(&P, A, len);
-	p256_mul(&P, x, xlen);
+	BEAR_SINGLE_UNITY_FILEp256_mul(&P, x, xlen);
 	if (B == NULL) {
-		BEAR_SINGLE_UNITY_FILEp256_mulgen(&Q, y, ylen);
+		BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(&Q, y, ylen);
 	} else {
 		r &= p256_decode(&Q, B, len);
-		p256_mul(&Q, y, ylen);
+		BEAR_SINGLE_UNITY_FILEp256_mul(&Q, y, ylen);
 	}
 
 	/*
 	 * The final addition may fail in case both points are equal.
 	 */
-	t = p256_add(&P, &Q);
+	t = BEAR_SINGLE_UNITY_FILEp256_add(&P, &Q);
 	reduce_final_f256(P.z);
 	z = 0;
 	for (i = 0; i < 20; i ++) {
 		z |= P.z[i];
 	}
 	z = EQ(z, 0);
-	p256_double(&Q);
+	BEAR_SINGLE_UNITY_FILEp256_double(&Q);
 
 	/*
 	 * If z is 1 then either P+Q = 0 (t = 1) or P = Q (t = 0). So we
