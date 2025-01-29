@@ -4,8 +4,12 @@ function main()
     
 
 
+
+
    if darwin.argv.one_of_args_exist("update_bear")  then
         update_bear()
-    end
-
+   end
+   if darwin.argv.one_of_args_exist("create_patch")  then
+    create_patch()
+   end
 end 
