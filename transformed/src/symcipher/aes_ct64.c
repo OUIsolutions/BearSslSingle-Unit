@@ -287,7 +287,7 @@ br_aes_ct64_interleave_out(uint32_t *w, uint64_t q0, uint64_t q1)
 	w[3] = (uint32_t)x3 | (uint32_t)(x3 >> 16);
 }
 
-static const unsigned char Rcon[] = {
+static const unsigned char (BEAR_SINGLE_UNITY_FILE)Rcon[] = {
 	0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1B, 0x36
 };
 
@@ -334,7 +334,7 @@ br_aes_ct64_keysched(uint64_t *comp_skey, const void *key, size_t key_len)
 	for (i = nk, j = 0, k = 0; i < nkf; i ++) {
 		if (j == 0) {
 			tmp = (tmp << 24) | (tmp >> 8);
-			tmp = (BEAR_SINGLE_UNITY_FILE)sub_word(tmp) ^ Rcon[k];
+			tmp = (BEAR_SINGLE_UNITY_FILE)sub_word(tmp) ^ (BEAR_SINGLE_UNITY_FILE)Rcon[k];
 		} else if (nk > 6 && j == 4) {
 			tmp = (BEAR_SINGLE_UNITY_FILE)sub_word(tmp);
 		}
