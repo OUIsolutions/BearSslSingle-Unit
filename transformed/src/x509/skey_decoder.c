@@ -198,7 +198,7 @@ static const unsigned char t0_codeblock[] = {
 	0x24, 0x00
 };
 
-static const uint16_t t0_caddr[] = {
+static const uint16_t (BEAR_SINGLE_UNITY_FILE)t0_caddr[] = {
 	0,
 	5,
 	10,
@@ -267,7 +267,7 @@ static const uint16_t t0_caddr[] = {
 #define (BEAR_SINGLE_UNITY_FILE)T0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
-		t0_newip = &t0_codeblock[t0_caddr[(slot) - (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED]]; \
+		t0_newip = &t0_codeblock[(BEAR_SINGLE_UNITY_FILE)t0_caddr[(slot) - (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED]]; \
 		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
 		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
