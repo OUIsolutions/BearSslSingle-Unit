@@ -30,7 +30,7 @@
 #include <intrin.h>
 #endif
 
-static const unsigned char P256_G[] = {
+static const unsigned char (BEAR_SINGLE_UNITY_FILE)P256_G[] = {
 	0x04, 0x6B, 0x17, 0xD1, 0xF2, 0xE1, 0x2C, 0x42, 0x47, 0xF8,
 	0xBC, 0xE6, 0xE5, 0x63, 0xA4, 0x40, 0xF2, 0x77, 0x03, 0x7D,
 	0x81, 0x2D, 0xEB, 0x33, 0xA0, 0xF4, 0xA1, 0x39, 0x45, 0xD8,
@@ -40,7 +40,7 @@ static const unsigned char P256_G[] = {
 	0x68, 0x37, 0xBF, 0x51, 0xF5
 };
 
-static const unsigned char P256_N[] = {
+static const unsigned char (BEAR_SINGLE_UNITY_FILE)P256_N[] = {
 	0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF,
 	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xBC, 0xE6, 0xFA, 0xAD,
 	0xA7, 0x17, 0x9E, 0x84, 0xF3, 0xB9, 0xCA, 0xC2, 0xFC, 0x63,
@@ -51,16 +51,16 @@ static const unsigned char *
 (BEAR_SINGLE_UNITY_FILE)api_generator(int curve, size_t *len)
 {
 	(void)curve;
-	*len = sizeof P256_G;
-	return P256_G;
+	*len = sizeof (BEAR_SINGLE_UNITY_FILE)P256_G;
+	return (BEAR_SINGLE_UNITY_FILE)P256_G;
 }
 
 static const unsigned char *
 (BEAR_SINGLE_UNITY_FILE)api_order(int curve, size_t *len)
 {
 	(void)curve;
-	*len = sizeof P256_N;
-	return P256_N;
+	*len = sizeof (BEAR_SINGLE_UNITY_FILE)P256_N;
+	return (BEAR_SINGLE_UNITY_FILE)P256_N;
 }
 
 static size_t
@@ -1486,10 +1486,10 @@ p256_mul(p256_jacobian *P, const unsigned char *k, size_t klen)
 }
 
 /*
- * Precomputed window for the conventional generator: P256_Gwin[n]
+ * Precomputed window for the conventional generator: (BEAR_SINGLE_UNITY_FILE)P256_Gwin[n]
  * contains (n+1)*G (affine coordinates, in Montgomery representation).
  */
-static const p256_affine P256_Gwin[] = {
+static const p256_affine (BEAR_SINGLE_UNITY_FILE)P256_Gwin[] = {
 	{
 		{ 0x30D418A9143C1, 0xC4FEDB60179E7, 0x62251075BA95F,
 		  0x5C669FB732B77, 0x08905F76B5375 },
@@ -1594,7 +1594,7 @@ static const p256_affine P256_Gwin[] = {
 static void
 (BEAR_SINGLE_UNITY_FILE)p256_mulgen(p256_jacobian *P, const unsigned char *k, size_t klen)
 {
-	point_mul_inner(P, P256_Gwin, k, klen);
+	point_mul_inner(P, (BEAR_SINGLE_UNITY_FILE)P256_Gwin, k, klen);
 }
 
 /*
@@ -1623,7 +1623,7 @@ check_scalar(const unsigned char *k, size_t klen)
 	if (klen == 32) {
 		c = 0;
 		for (u = 0; u < klen; u ++) {
-			c |= -(int32_t)EQ0(c) & CMP(k[u], P256_N[u]);
+			c |= -(int32_t)EQ0(c) & CMP(k[u], (BEAR_SINGLE_UNITY_FILE)P256_N[u]);
 		}
 	} else {
 		c = -1;
