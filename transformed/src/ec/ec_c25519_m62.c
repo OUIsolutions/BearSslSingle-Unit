@@ -187,7 +187,7 @@ f255_sub(uint64_t *d, const uint64_t *a, const uint64_t *b)
  * on 51 bits each.
  */
 static inline void
-f255_mul(uint64_t *d, uint64_t *a, uint64_t *b)
+BEAR_SINGLE_UNITY_FILEf255_mul(uint64_t *d, uint64_t *a, uint64_t *b)
 {
 	uint64_t t[10], hi, lo, w, cc;
 
@@ -282,7 +282,7 @@ f255_mul(uint64_t *d, uint64_t *a, uint64_t *b)
  * Input must have limbs of 60 bits at most.
  */
 static inline void
-f255_mul_a24(uint64_t *d, const uint64_t *a)
+BEAR_SINGLE_UNITY_FILEf255_mul_a24(uint64_t *d, const uint64_t *a)
 {
 	uint64_t t[5], cc, w;
 
@@ -334,7 +334,7 @@ f255_mul_a24(uint64_t *d, const uint64_t *a)
  * which may be slightly above 2^51.
  */
 static inline void
-f255_final_reduce(uint64_t *a)
+BEAR_SINGLE_UNITY_FILEf255_final_reduce(uint64_t *a)
 {
 	uint64_t t[5], cc, w;
 
@@ -441,9 +441,9 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		 * on at most 52 bits each.
 		 *
 		 * Each f255_add() adds one bit to the maximum range of
-		 * the values, but f255_sub() and f255_mul() bring back
+		 * the values, but f255_sub() and BEAR_SINGLE_UNITY_FILEf255_mul() bring back
 		 * the limbs into 52 bits. All f255_add() outputs are
-		 * used only as inputs for f255_mul(), which ensures
+		 * used only as inputs for BEAR_SINGLE_UNITY_FILEf255_mul(), which ensures
 		 * that limbs remain in the proper range.
 		 */
 
@@ -451,13 +451,13 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		f255_add(a, x2, z2);
 
 		/* AA = A^2 */
-		f255_mul(aa, a, a);
+		BEAR_SINGLE_UNITY_FILEf255_mul(aa, a, a);
 
 		/* B = x_2 - z_2 */
 		f255_sub(b, x2, z2);
 
 		/* BB = B^2 */
-		f255_mul(bb, b, b);
+		BEAR_SINGLE_UNITY_FILEf255_mul(bb, b, b);
 
 		/* E = AA - BB */
 		f255_sub(e, aa, bb);
@@ -469,27 +469,27 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		f255_sub(d, x3, z3);
 
 		/* DA = D * A */
-		f255_mul(da, d, a);
+		BEAR_SINGLE_UNITY_FILEf255_mul(da, d, a);
 
 		/* CB = C * B */
-		f255_mul(cb, c, b);
+		BEAR_SINGLE_UNITY_FILEf255_mul(cb, c, b);
 
 		/* x_3 = (DA + CB)^2 */
 		f255_add(x3, da, cb);
-		f255_mul(x3, x3, x3);
+		BEAR_SINGLE_UNITY_FILEf255_mul(x3, x3, x3);
 
 		/* z_3 = x_1 * (DA - CB)^2 */
 		f255_sub(z3, da, cb);
-		f255_mul(z3, z3, z3);
-		f255_mul(z3, x1, z3);
+		BEAR_SINGLE_UNITY_FILEf255_mul(z3, z3, z3);
+		BEAR_SINGLE_UNITY_FILEf255_mul(z3, x1, z3);
 
 		/* x_2 = AA * BB */
-		f255_mul(x2, aa, bb);
+		BEAR_SINGLE_UNITY_FILEf255_mul(x2, aa, bb);
 
 		/* z_2 = E * (AA + a24 * E) */
-		f255_mul_a24(z2, e);
+		BEAR_SINGLE_UNITY_FILEf255_mul_a24(z2, e);
 		f255_add(z2, aa, z2);
-		f255_mul(z2, e, z2);
+		BEAR_SINGLE_UNITY_FILEf255_mul(z2, e, z2);
 	}
 
 	f255_cswap(x2, x3, swap);
@@ -501,30 +501,30 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	 */
 	memcpy(x1, z2, sizeof z2);
 	for (i = 0; i < 15; i ++) {
-		f255_mul(x1, x1, x1);
-		f255_mul(x1, x1, z2);
+		BEAR_SINGLE_UNITY_FILEf255_mul(x1, x1, x1);
+		BEAR_SINGLE_UNITY_FILEf255_mul(x1, x1, z2);
 	}
 	memcpy(x3, x1, sizeof x1);
 	for (i = 0; i < 14; i ++) {
 		int j;
 
 		for (j = 0; j < 16; j ++) {
-			f255_mul(x3, x3, x3);
+			BEAR_SINGLE_UNITY_FILEf255_mul(x3, x3, x3);
 		}
-		f255_mul(x3, x3, x1);
+		BEAR_SINGLE_UNITY_FILEf255_mul(x3, x3, x1);
 	}
 	for (i = 14; i >= 0; i --) {
-		f255_mul(x3, x3, x3);
+		BEAR_SINGLE_UNITY_FILEf255_mul(x3, x3, x3);
 		if ((0xFFEB >> i) & 1) {
-			f255_mul(x3, z2, x3);
+			BEAR_SINGLE_UNITY_FILEf255_mul(x3, z2, x3);
 		}
 	}
 
 	/*
 	 * Compute x2/z2. We have 1/z2 in x3.
 	 */
-	f255_mul(x2, x2, x3);
-	f255_final_reduce(x2);
+	BEAR_SINGLE_UNITY_FILEf255_mul(x2, x2, x3);
+	BEAR_SINGLE_UNITY_FILEf255_final_reduce(x2);
 
 	/*
 	 * Encode the final x2 value in little-endian. We first assemble

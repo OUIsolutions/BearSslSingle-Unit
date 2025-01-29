@@ -370,7 +370,7 @@ reduce_final_f255(uint32_t *d)
  * fits on 256 bits and is lower than twice the modulus.
  */
 static void
-f255_mul(uint32_t *d, const uint32_t *a, const uint32_t *b)
+BEAR_SINGLE_UNITY_FILEf255_mul(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	uint32_t t[18], cc;
 	int i;
@@ -447,7 +447,7 @@ f255_square(uint32_t *d, const uint32_t *a)
 
 	/*
 	 * Modular reduction: each high word is added where necessary.
-	 * See f255_mul() for details on the reduction and carry limits.
+	 * See BEAR_SINGLE_UNITY_FILEf255_mul() for details on the reduction and carry limits.
 	 */
 	cc = MUL15(t[8] >> 15, 19);
 	t[8] &= 0x7FFF;
@@ -532,7 +532,7 @@ f255_sub(uint32_t *d, const uint32_t *a, const uint32_t *b)
  * is performed (down to less than twice the modulus).
  */
 static void
-f255_mul_a24(uint32_t *d, const uint32_t *a)
+BEAR_SINGLE_UNITY_FILEf255_mul_a24(uint32_t *d, const uint32_t *a)
 {
 	int i;
 	uint64_t w;
@@ -688,8 +688,8 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		f255_sub(e, aa, bb);
 		f255_add(c, x3, z3);
 		f255_sub(d, x3, z3);
-		f255_mul(da, d, a);
-		f255_mul(cb, c, b);
+		BEAR_SINGLE_UNITY_FILEf255_mul(da, d, a);
+		BEAR_SINGLE_UNITY_FILEf255_mul(cb, c, b);
 
 		/* obsolete
 		print_int("a ", a);
@@ -707,11 +707,11 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		f255_square(x3, x3);
 		f255_sub(z3, da, cb);
 		f255_square(z3, z3);
-		f255_mul(z3, z3, x1);
-		f255_mul(x2, aa, bb);
-		f255_mul_a24(z2, e);
+		BEAR_SINGLE_UNITY_FILEf255_mul(z3, z3, x1);
+		BEAR_SINGLE_UNITY_FILEf255_mul(x2, aa, bb);
+		BEAR_SINGLE_UNITY_FILEf255_mul_a24(z2, e);
 		f255_add(z2, z2, aa);
-		f255_mul(z2, e, z2);
+		BEAR_SINGLE_UNITY_FILEf255_mul(z2, e, z2);
 
 		/* obsolete
 		print_int("x2", x2);
@@ -731,7 +731,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	memcpy(a, z2, sizeof z2);
 	for (i = 0; i < 15; i ++) {
 		f255_square(a, a);
-		f255_mul(a, a, z2);
+		BEAR_SINGLE_UNITY_FILEf255_mul(a, a, z2);
 	}
 	memcpy(b, a, sizeof a);
 	for (i = 0; i < 14; i ++) {
@@ -740,15 +740,15 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		for (j = 0; j < 16; j ++) {
 			f255_square(b, b);
 		}
-		f255_mul(b, b, a);
+		BEAR_SINGLE_UNITY_FILEf255_mul(b, b, a);
 	}
 	for (i = 14; i >= 0; i --) {
 		f255_square(b, b);
 		if ((0xFFEB >> i) & 1) {
-			f255_mul(b, z2, b);
+			BEAR_SINGLE_UNITY_FILEf255_mul(b, z2, b);
 		}
 	}
-	f255_mul(x2, x2, b);
+	BEAR_SINGLE_UNITY_FILEf255_mul(x2, x2, b);
 	reduce_final_f255(x2);
 	le30_to_le8(G, 32, x2);
 	return 1;
