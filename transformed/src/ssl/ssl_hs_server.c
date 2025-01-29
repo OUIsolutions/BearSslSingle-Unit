@@ -216,7 +216,7 @@ do_static_ecdh(br_ssl_server_context *ctx, int prf_id)
 }
 
 static size_t
-hash_data(br_ssl_server_context *ctx,
+(BEAR_SINGLE_UNITY_FILE)hash_data(br_ssl_server_context *ctx,
 	void *dst, int hash_id, const void *src, size_t len)
 {
 	const br_hash_class *hf;
@@ -313,7 +313,7 @@ do_ecdhe_part1(br_ssl_server_context *ctx, int curve)
 	hv_len = 64 + 4 + ctx->eng.ecdhe_point_len;
 	algo_id = ctx->sign_hash_id;
 	if (algo_id >= (unsigned)0xFF00) {
-		hv_len = hash_data(ctx, ctx->eng.pad, algo_id & 0xFF,
+		hv_len = (BEAR_SINGLE_UNITY_FILE)hash_data(ctx, ctx->eng.pad, algo_id & 0xFF,
 			ctx->eng.pad, hv_len);
 		if (hv_len == 0) {
 			return -BR_ERR_INVALID_ALGORITHM;
