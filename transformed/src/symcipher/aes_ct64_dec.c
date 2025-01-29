@@ -82,7 +82,7 @@ aes_ct64_dec_add_round_key(uint64_t *q, const uint64_t *sk)
 }
 
 static void
-inv_shift_rows(uint64_t *q)
+aes_ct64_dec_inv_shift_rows(uint64_t *q)
 {
 	int i;
 
@@ -148,12 +148,12 @@ br_aes_ct64_bitslice_decrypt(unsigned num_rounds,
 
 	aes_ct64_dec_add_round_key(q, skey + (num_rounds << 3));
 	for (u = num_rounds - 1; u > 0; u --) {
-		inv_shift_rows(q);
+		aes_ct64_dec_inv_shift_rows(q);
 		br_aes_ct64_bitslice_invSbox(q);
 		aes_ct64_dec_add_round_key(q, skey + (u << 3));
 		aes_ct64_dec_inv_mix_columns(q);
 	}
-	inv_shift_rows(q);
+	aes_ct64_dec_inv_shift_rows(q);
 	br_aes_ct64_bitslice_invSbox(q);
 	aes_ct64_dec_add_round_key(q, skey);
 }

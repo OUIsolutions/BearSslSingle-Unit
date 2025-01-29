@@ -79,7 +79,7 @@ inv_sub_bytes(unsigned *state)
 }
 
 static void
-inv_shift_rows(unsigned *state)
+aes_samll_dec_inv_shift_rows(unsigned *state)
 {
 	unsigned tmp;
 
@@ -162,12 +162,12 @@ br_aes_small_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	}
 	aes_small_dec_add_round_key(state, skey + (num_rounds << 2));
 	for (u = num_rounds - 1; u > 0; u --) {
-		inv_shift_rows(state);
+		aes_samll_dec_inv_shift_rows(state);
 		inv_sub_bytes(state);
 		aes_small_dec_add_round_key(state, skey + (u << 2));
 		aes_samall_dec_inv_mix_columns(state);
 	}
-	inv_shift_rows(state);
+	aes_samll_dec_inv_shift_rows(state);
 	inv_sub_bytes(state);
 	aes_small_dec_add_round_key(state, skey);
 	for (u = 0; u < 16; u ++) {
