@@ -444,7 +444,7 @@ f256_montysquare(uint64_t *d, const uint64_t *a)
  * Convert to Montgomery representation.
  */
 static void
-f256_tomonty(uint64_t *d, const uint64_t *a)
+(BEAR_SINGLE_UNITY_FILE)f256_tomonty(uint64_t *d, const uint64_t *a)
 {
 	/*
 	 * R2 = 2^520 mod p.
@@ -678,8 +678,8 @@ static uint32_t
 	 */
 	f256_decode(x, buf +  1);
 	f256_decode(y, buf + 33);
-	f256_tomonty(x, x);
-	f256_tomonty(y, y);
+	(BEAR_SINGLE_UNITY_FILE)f256_tomonty(x, x);
+	(BEAR_SINGLE_UNITY_FILE)f256_tomonty(y, y);
 
 	/*
 	 * Verify y^2 = x^3 + A*x + B. In curve P-256, A = -3.
