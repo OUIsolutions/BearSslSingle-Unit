@@ -69,7 +69,7 @@ void br_pem_decoder_run(void *t0ctx);
 
 
 
-#define CTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
+#define PENDOC_CTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
 
 /* see bearssl_pem.h */
 void
@@ -432,11 +432,11 @@ br_pem_decoder_run(void *t0ctx)
 			case 21: {
 				/* flush-buf */
 
-	if (CTX->ptr > 0) {
-		if (CTX->dest) {
-			CTX->dest(CTX->dest_ctx, CTX->buf, CTX->ptr);
+	if (PENDOC_CTX->ptr > 0) {
+		if (PENDOC_CTX->dest) {
+			PENDOC_CTX->dest(PENDOC_CTX->dest_ctx, PENDOC_CTX->buf, PENDOC_CTX->ptr);
 		}
-		CTX->ptr = 0;
+		PENDOC_CTX->ptr = 0;
 	}
 
 				}
@@ -464,7 +464,7 @@ br_pem_decoder_run(void *t0ctx)
 				/* get8 */
 
 	size_t addr = T0_POP();
-	T0_PUSH(*((unsigned char *)CTX + addr));
+	T0_PUSH(*((unsigned char *)PENDOC_CTX + addr));
 
 				}
 				break;
@@ -476,9 +476,9 @@ br_pem_decoder_run(void *t0ctx)
 			case 25: {
 				/* read8-native */
 
-	if (CTX->hlen > 0) {
-		T0_PUSH(*CTX->hbuf ++);
-		CTX->hlen --;
+	if (PENDOC_CTX->hlen > 0) {
+		T0_PUSH(*PENDOC_CTX->hbuf ++);
+		PENDOC_CTX->hlen --;
 	} else {
 		T0_PUSHi(-1);
 	}
@@ -490,7 +490,7 @@ br_pem_decoder_run(void *t0ctx)
 
 	size_t addr = T0_POP();
 	unsigned x = T0_POP();
-	*((unsigned char *)CTX + addr) = x;
+	*((unsigned char *)PENDOC_CTX + addr) = x;
 
 				}
 				break;
@@ -503,12 +503,12 @@ br_pem_decoder_run(void *t0ctx)
 				/* write8 */
 
 	unsigned char x = (unsigned char)T0_POP();
-	CTX->buf[CTX->ptr ++] = x;
-	if (CTX->ptr == sizeof CTX->buf) {
-		if (CTX->dest) {
-			CTX->dest(CTX->dest_ctx, CTX->buf, sizeof CTX->buf);
+	PENDOC_CTX->buf[PENDOC_CTX->ptr ++] = x;
+	if (PENDOC_CTX->ptr == sizeof PENDOC_CTX->buf) {
+		if (PENDOC_CTX->dest) {
+			PENDOC_CTX->dest(PENDOC_CTX->dest_ctx, PENDOC_CTX->buf, sizeof PENDOC_CTX->buf);
 		}
-		CTX->ptr = 0;
+		PENDOC_CTX->ptr = 0;
 	}
 
 				}

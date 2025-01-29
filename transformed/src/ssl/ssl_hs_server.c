@@ -89,7 +89,7 @@ void br_ssl_hs_server_run(void *t0ctx);
  * appropriate cast. This also means that "addresses" computed as offsets
  * within the structure work for both kinds of context.
  */
-#define CTX  ((br_ssl_server_context *)ENG)
+#define HS_SERVER_CTX  ((br_ssl_server_context *)ENG)
 
 /*
  * Decrypt the pre-master secret (RSA key exchange).
@@ -1181,18 +1181,18 @@ br_ssl_hs_server_run(void *t0ctx)
 				/* begin-ta-name */
 
 	const br_x500_name *dn;
-	if (CTX->cur_dn_index >= CTX->num_tas) {
+	if (HS_SERVER_CTX->cur_dn_index >= HS_SERVER_CTX->num_tas) {
 		T0_PUSHi(-1);
 	} else {
-		if (CTX->ta_names == NULL) {
-			dn = &CTX->tas[CTX->cur_dn_index].dn;
+		if (HS_SERVER_CTX->ta_names == NULL) {
+			dn = &HS_SERVER_CTX->tas[HS_SERVER_CTX->cur_dn_index].dn;
 		} else {
-			dn = &CTX->ta_names[CTX->cur_dn_index];
+			dn = &HS_SERVER_CTX->ta_names[HS_SERVER_CTX->cur_dn_index];
 		}
-		CTX->cur_dn_index ++;
-		CTX->cur_dn = dn->data;
-		CTX->cur_dn_len = dn->len;
-		T0_PUSH(CTX->cur_dn_len);
+		HS_SERVER_CTX->cur_dn_index ++;
+		HS_SERVER_CTX->cur_dn = dn->data;
+		HS_SERVER_CTX->cur_dn_len = dn->len;
+		T0_PUSH(HS_SERVER_CTX->cur_dn_len);
 	}
 
 				}
@@ -1200,7 +1200,7 @@ br_ssl_hs_server_run(void *t0ctx)
 			case 22: {
 				/* begin-ta-name-list */
 
-	CTX->cur_dn_index = 0;
+	HS_SERVER_CTX->cur_dn_index = 0;
 
 				}
 				break;
@@ -1219,10 +1219,10 @@ br_ssl_hs_server_run(void *t0ctx)
 	int x;
 	br_ssl_server_choices choices;
 
-	x = (*CTX->policy_vtable)->choose(
-		CTX->policy_vtable, CTX, &choices);
+	x = (*HS_SERVER_CTX->policy_vtable)->choose(
+		HS_SERVER_CTX->policy_vtable, HS_SERVER_CTX, &choices);
 	ENG->session.cipher_suite = choices.cipher_suite;
-	CTX->sign_hash_id = choices.algo_id;
+	HS_SERVER_CTX->sign_hash_id = choices.algo_id;
 	ENG->chain = choices.chain;
 	ENG->chain_len = choices.chain_len;
 	T0_PUSHi(-(x != 0));
@@ -1240,8 +1240,8 @@ br_ssl_hs_server_run(void *t0ctx)
 				/* check-resume */
 
 	if (ENG->session.session_id_len == 32
-		&& CTX->cache_vtable != NULL && (*CTX->cache_vtable)->load(
-			CTX->cache_vtable, CTX, &ENG->session))
+		&& HS_SERVER_CTX->cache_vtable != NULL && (*HS_SERVER_CTX->cache_vtable)->load(
+			HS_SERVER_CTX->cache_vtable, HS_SERVER_CTX, &ENG->session))
 	{
 		T0_PUSHi(-1);
 	} else {
@@ -1312,13 +1312,13 @@ br_ssl_hs_server_run(void *t0ctx)
 
 	size_t clen;
 
-	clen = CTX->cur_dn_len;
+	clen = HS_SERVER_CTX->cur_dn_len;
 	if (clen > sizeof ENG->pad) {
 		clen = sizeof ENG->pad;
 	}
-	memcpy(ENG->pad, CTX->cur_dn, clen);
-	CTX->cur_dn += clen;
-	CTX->cur_dn_len -= clen;
+	memcpy(ENG->pad, HS_SERVER_CTX->cur_dn, clen);
+	HS_SERVER_CTX->cur_dn += clen;
+	HS_SERVER_CTX->cur_dn_len -= clen;
 	T0_PUSH(clen);
 
 				}
@@ -1340,9 +1340,9 @@ br_ssl_hs_server_run(void *t0ctx)
 		off = HASH_PAD_OFF[id - 1];
 		len = HASH_PAD_OFF[id] - off;
 	}
-	memcpy(CTX->hash_CV, ENG->pad + off, len);
-	CTX->hash_CV_len = len;
-	CTX->hash_CV_id = id;
+	memcpy(HS_SERVER_CTX->hash_CV, ENG->pad + off, len);
+	HS_SERVER_CTX->hash_CV_len = len;
+	HS_SERVER_CTX->hash_CV_id = id;
 	T0_PUSHi(-1);
 
 				}
@@ -1377,7 +1377,7 @@ br_ssl_hs_server_run(void *t0ctx)
 
 	int prf_id = T0_POPi();
 	size_t len = T0_POP();
-	do_ecdh(CTX, prf_id, ENG->pad, len);
+	do_ecdh(HS_SERVER_CTX, prf_id, ENG->pad, len);
 
 				}
 				break;
@@ -1385,7 +1385,7 @@ br_ssl_hs_server_run(void *t0ctx)
 				/* do-ecdhe-part1 */
 
 	int curve = T0_POPi();
-	T0_PUSHi(do_ecdhe_part1(CTX, curve));
+	T0_PUSHi(do_ecdhe_part1(HS_SERVER_CTX, curve));
 
 				}
 				break;
@@ -1394,7 +1394,7 @@ br_ssl_hs_server_run(void *t0ctx)
 
 	int prf_id = T0_POPi();
 	size_t len = T0_POP();
-	do_ecdhe_part2(CTX, prf_id, ENG->pad, len);
+	do_ecdhe_part2(HS_SERVER_CTX, prf_id, ENG->pad, len);
 
 				}
 				break;
@@ -1403,14 +1403,14 @@ br_ssl_hs_server_run(void *t0ctx)
 
 	int prf_id = T0_POPi();
 	size_t len = T0_POP();
-	do_rsa_decrypt(CTX, prf_id, ENG->pad, len);
+	do_rsa_decrypt(HS_SERVER_CTX, prf_id, ENG->pad, len);
 
 				}
 				break;
 			case 40: {
 				/* do-static-ecdh */
 
-	do_static_ecdh(CTX, T0_POP());
+	do_static_ecdh(HS_SERVER_CTX, T0_POP());
 
 				}
 				break;
@@ -1611,9 +1611,9 @@ br_ssl_hs_server_run(void *t0ctx)
 			case 62: {
 				/* save-session */
 
-	if (CTX->cache_vtable != NULL) {
-		(*CTX->cache_vtable)->save(
-			CTX->cache_vtable, CTX, &ENG->session);
+	if (HS_SERVER_CTX->cache_vtable != NULL) {
+		(*HS_SERVER_CTX->cache_vtable)->save(
+			HS_SERVER_CTX->cache_vtable, HS_SERVER_CTX, &ENG->session);
 	}
 
 				}
@@ -1825,13 +1825,13 @@ br_ssl_hs_server_run(void *t0ctx)
 	size_t u, len;
 
 	len = 0;
-	if (CTX->ta_names != NULL) {
-		for (u = 0; u < CTX->num_tas; u ++) {
-			len += CTX->ta_names[u].len + 2;
+	if (HS_SERVER_CTX->ta_names != NULL) {
+		for (u = 0; u < HS_SERVER_CTX->num_tas; u ++) {
+			len += HS_SERVER_CTX->ta_names[u].len + 2;
 		}
-	} else if (CTX->tas != NULL) {
-		for (u = 0; u < CTX->num_tas; u ++) {
-			len += CTX->tas[u].dn.len + 2;
+	} else if (HS_SERVER_CTX->tas != NULL) {
+		for (u = 0; u < HS_SERVER_CTX->num_tas; u ++) {
+			len += HS_SERVER_CTX->tas[u].dn.len + 2;
 		}
 	}
 	T0_PUSH(len);
@@ -1894,7 +1894,7 @@ br_ssl_hs_server_run(void *t0ctx)
 
 	int err;
 
-	err = verify_CV_sig(CTX, T0_POP());
+	err = verify_CV_sig(HS_SERVER_CTX, T0_POP());
 	T0_PUSHi(err);
 
 				}
