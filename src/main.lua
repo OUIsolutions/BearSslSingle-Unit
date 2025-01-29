@@ -7,7 +7,7 @@ function main()
    for i, v in ipairs(transformmed) do
        local file = transformmed[i]
        local content= darwin.dtw.load_file(file)
-       local replaced = string.gsub(content, 'process_block_unit', "(BEAR_SINGLE_UNITY_FILE)process_block_unit")
+       local replaced = string.gsub(content, 'mix_columns', "(BEAR_SINGLE_UNITY_FILE)mix_columns")
        darwin.dtw.write_file(file, replaced)
    end
 

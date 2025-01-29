@@ -63,7 +63,7 @@ rotr32(uint64_t x)
 }
 
 static inline void
-mix_columns(uint64_t *q)
+(BEAR_SINGLE_UNITY_FILE)mix_columns(uint64_t *q)
 {
 	uint64_t q0, q1, q2, q3, q4, q5, q6, q7;
 	uint64_t r0, r1, r2, r3, r4, r5, r6, r7;
@@ -106,7 +106,7 @@ br_aes_ct64_bitslice_encrypt(unsigned num_rounds,
 	for (u = 1; u < num_rounds; u ++) {
 		br_aes_ct64_bitslice_Sbox(q);
 		shift_rows(q);
-		mix_columns(q);
+		(BEAR_SINGLE_UNITY_FILE)mix_columns(q);
 		add_round_key(q, skey + (u << 3));
 	}
 	br_aes_ct64_bitslice_Sbox(q);
