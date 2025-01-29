@@ -415,7 +415,7 @@ static const unsigned char t0_datablock[] = {
 	0x04, 0x00, 0x00
 };
 
-static const unsigned char t0_codeblock[] = {
+static const unsigned char HS_CLIENT_t0_codeblock[] = {
 	0x00, 0x01, 0x00, 0x0A, 0x00, 0x00, 0x01, 0x00, 0x0D, 0x00, 0x00, 0x01,
 	0x00, 0x0E, 0x00, 0x00, 0x01, 0x00, 0x0F, 0x00, 0x00, 0x01, 0x01, 0x08,
 	0x00, 0x00, 0x01, 0x01, 0x09, 0x00, 0x00, 0x01, 0x02, 0x08, 0x00, 0x00,
@@ -881,10 +881,10 @@ static const uint16_t SSL_HS_CLIENT_t0_caddr[] = {
 #define HS_CLIENT_T0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
-		t0_newip = &t0_codeblock[SSL_HS_CLIENT_t0_caddr[(slot) - HS_CLIENT_CT0_INTERPRETED]]; \
+		t0_newip = &HS_CLIENT_t0_codeblock[SSL_HS_CLIENT_t0_caddr[(slot) - HS_CLIENT_CT0_INTERPRETED]]; \
 		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
-		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
+		*((rp) ++) = (uint32_t)((ip) - &HS_CLIENT_t0_codeblock[0]) + (t0_lnum << 16); \
 		(ip) = t0_newip; \
 	} while (0)
 
@@ -893,7 +893,7 @@ void \
 name(void *ctx) \
 { \
 	t0_context *t0ctx = ctx; \
-	t0ctx->ip = &t0_codeblock[0]; \
+	t0ctx->ip = &HS_CLIENT_t0_codeblock[0]; \
 	HS_CLIENT_T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
 
@@ -971,7 +971,7 @@ br_ssl_hs_client_run(void *t0ctx)
 					ip = NULL;
 					goto t0_exit;
 				}
-				ip = &t0_codeblock[t0x];
+				ip = &HS_CLIENT_t0_codeblock[t0x];
 				break;
 			case 1: /* literal constant */
 				T0_PUSHi(t0_parse7E_signed(&ip));
