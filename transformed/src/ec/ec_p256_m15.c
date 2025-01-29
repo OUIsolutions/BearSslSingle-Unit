@@ -1257,7 +1257,7 @@ typedef struct {
  * The coordinates are guaranteed to be lower than the modulus.
  */
 static void
-p256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
+BEAR_SINGLE_UNITY_FILEp256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 {
 	uint32_t t1[20], t2[20];
 	int i;
@@ -2044,7 +2044,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	}
 	r = BEAR_SINGLE_UNITY_FILEp256_decode(&P, G, Glen);
 	BEAR_SINGLE_UNITY_FILEp256_mul(&P, x, xlen);
-	p256_to_affine(&P);
+	BEAR_SINGLE_UNITY_FILEp256_to_affine(&P);
 	BEAR_SINGLE_UNITY_FILEp256_encode(G, &P);
 	return r;
 }
@@ -2057,7 +2057,7 @@ BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
 
 	(void)curve;
 	BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(&P, x, xlen);
-	p256_to_affine(&P);
+	BEAR_SINGLE_UNITY_FILEp256_to_affine(&P);
 	BEAR_SINGLE_UNITY_FILEp256_encode(R, &P);
 	return 65;
 }
@@ -2106,7 +2106,7 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 	 *   z = 1, t = 1   report an error (P+Q = 0)
 	 */
 	CCOPY(z & ~t, &P, &Q, sizeof Q);
-	p256_to_affine(&P);
+	BEAR_SINGLE_UNITY_FILEp256_to_affine(&P);
 	BEAR_SINGLE_UNITY_FILEp256_encode(A, &P);
 	r &= ~(z & t);
 	return r;
