@@ -113,7 +113,7 @@ gf256red(unsigned x)
 }
 
 static void
-inv_mix_columns(unsigned *state)
+aes_samall_dec_inv_mix_columns(unsigned *state)
 {
 	int i;
 
@@ -165,7 +165,7 @@ br_aes_small_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 		inv_shift_rows(state);
 		inv_sub_bytes(state);
 		aes_small_dec_add_round_key(state, skey + (u << 2));
-		inv_mix_columns(state);
+		aes_samall_dec_inv_mix_columns(state);
 	}
 	inv_shift_rows(state);
 	inv_sub_bytes(state);

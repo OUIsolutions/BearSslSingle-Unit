@@ -107,7 +107,7 @@ rotr32(uint64_t x)
 }
 
 static void
-inv_mix_columns(uint64_t *q)
+aes_ct64_dec_inv_mix_columns(uint64_t *q)
 {
 	uint64_t q0, q1, q2, q3, q4, q5, q6, q7;
 	uint64_t r0, r1, r2, r3, r4, r5, r6, r7;
@@ -151,7 +151,7 @@ br_aes_ct64_bitslice_decrypt(unsigned num_rounds,
 		inv_shift_rows(q);
 		br_aes_ct64_bitslice_invSbox(q);
 		aes_ct64_dec_add_round_key(q, skey + (u << 3));
-		inv_mix_columns(q);
+		aes_ct64_dec_inv_mix_columns(q);
 	}
 	inv_shift_rows(q);
 	br_aes_ct64_bitslice_invSbox(q);
