@@ -616,7 +616,7 @@ square_f256(uint32_t *d, const uint32_t *a)
  * returns 0.
  */
 static uint32_t
-reduce_final_f256(uint32_t *d)
+BEAR_SINGLE_UNITY_FILEreduce_final_f256(uint32_t *d)
 {
 	uint32_t t[9];
 	uint32_t cc;
@@ -726,15 +726,15 @@ BEAR_SINGLE_UNITY_FILEp256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
 	mul_f256(P->x, t1, P->x);
 	mul_f256(t1, t1, t2);
 	mul_f256(P->y, t1, P->y);
-	reduce_final_f256(P->x);
-	reduce_final_f256(P->y);
+	BEAR_SINGLE_UNITY_FILEreduce_final_f256(P->x);
+	BEAR_SINGLE_UNITY_FILEreduce_final_f256(P->y);
 
 	/*
 	 * Multiply z by 1/z. If z = 0, then this will yield 0, otherwise
 	 * this will set z to 1.
 	 */
 	mul_f256(P->z, P->z, t2);
-	reduce_final_f256(P->z);
+	BEAR_SINGLE_UNITY_FILEreduce_final_f256(P->z);
 }
 
 /*
@@ -885,7 +885,7 @@ BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p2
 	 */
 	sub_f256(t2, t2, t1);
 	sub_f256(t4, t4, t3);
-	reduce_final_f256(t4);
+	BEAR_SINGLE_UNITY_FILEreduce_final_f256(t4);
 	ret = 0;
 	for (i = 0; i < 9; i ++) {
 		ret |= t4[i];
@@ -994,7 +994,7 @@ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNIT
 	 */
 	sub_f256(t2, t2, t1);
 	sub_f256(t4, t4, t3);
-	reduce_final_f256(t4);
+	BEAR_SINGLE_UNITY_FILEreduce_final_f256(t4);
 	ret = 0;
 	for (i = 0; i < 9; i ++) {
 		ret |= t4[i];
@@ -1063,8 +1063,8 @@ BEAR_SINGLE_UNITY_FILEp256_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const 
 	 */
 	tx[8] = be8_to_le30(tx, buf + 1, 32);
 	ty[8] = be8_to_le30(ty, buf + 33, 32);
-	bad |= reduce_final_f256(tx);
-	bad |= reduce_final_f256(ty);
+	bad |= BEAR_SINGLE_UNITY_FILEreduce_final_f256(tx);
+	bad |= BEAR_SINGLE_UNITY_FILEreduce_final_f256(ty);
 
 	/*
 	 * Check curve equation.
@@ -1077,7 +1077,7 @@ BEAR_SINGLE_UNITY_FILEp256_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const 
 	sub_f256(t1, t1, tx);
 	add_f256(t1, t1, BEAR_SINGLE_UNITY_FILEP256_B);
 	sub_f256(t1, t1, t2);
-	reduce_final_f256(t1);
+	BEAR_SINGLE_UNITY_FILEreduce_final_f256(t1);
 	for (i = 0; i < 9; i ++) {
 		bad |= t1[i];
 	}
@@ -1433,7 +1433,7 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 	 * The final addition may fail in case both points are equal.
 	 */
 	t = BEAR_SINGLE_UNITY_FILEp256_add(&P, &Q);
-	reduce_final_f256(P.z);
+	BEAR_SINGLE_UNITY_FILEreduce_final_f256(P.z);
 	z = 0;
 	for (i = 0; i < 9; i ++) {
 		z |= P.z[i];

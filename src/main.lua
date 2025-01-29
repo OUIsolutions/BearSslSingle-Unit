@@ -7,7 +7,7 @@ function main()
    for i, v in ipairs(transformmed) do
        local file = transformmed[i]
        local content= darwin.dtw.load_file(file)
-      var = 'p256_to_affine'
+      var = 'reduce_final_f256'
       local replaced = string.gsub(content, var, "BEAR_SINGLE_UNITY_FILE"..var)
       darwin.dtw.write_file(file, replaced)
    end
