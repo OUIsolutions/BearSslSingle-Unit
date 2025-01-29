@@ -31,7 +31,7 @@
  *   - b*R mod p (b is the second curve equation parameter)
  */
 
-static const uint16_t P256_P[] = {
+static const uint16_t (BEAR_SINGLE_UNITY_FILE)P256_P[] = {
 	0x0111,
 	0x7FFF, 0x7FFF, 0x7FFF, 0x7FFF, 0x7FFF, 0x7FFF, 0x003F, 0x0000,
 	0x0000, 0x0000, 0x0000, 0x0000, 0x1000, 0x0000, 0x4000, 0x7FFF,
@@ -115,7 +115,7 @@ static inline const curve_params *
 id_to_curve(int curve)
 {
 	static const curve_params pp[] = {
-		{ P256_P, P256_B, (BEAR_SINGLE_UNITY_FILE)P256_R2, 0x0001,  65 },
+		{ (BEAR_SINGLE_UNITY_FILE)P256_P, P256_B, (BEAR_SINGLE_UNITY_FILE)P256_R2, 0x0001,  65 },
 		{ (BEAR_SINGLE_UNITY_FILE)P384_P, P384_B, P384_R2, 0x0001,  97 },
 		{ P521_P, P521_B, P521_R2, 0x0001, 133 }
 	};
