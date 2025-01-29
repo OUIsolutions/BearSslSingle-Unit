@@ -53,7 +53,7 @@ static const unsigned char iS[] = {
 };
 
 static void
-add_round_key(unsigned *state, const uint32_t *skeys)
+aes_small_dec_add_round_key(unsigned *state, const uint32_t *skeys)
 {
 	int i;
 
@@ -160,16 +160,16 @@ br_aes_small_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	for (u = 0; u < 16; u ++) {
 		state[u] = buf[u];
 	}
-	add_round_key(state, skey + (num_rounds << 2));
+	aes_small_dec_add_round_key(state, skey + (num_rounds << 2));
 	for (u = num_rounds - 1; u > 0; u --) {
 		inv_shift_rows(state);
 		inv_sub_bytes(state);
-		add_round_key(state, skey + (u << 2));
+		aes_small_dec_add_round_key(state, skey + (u << 2));
 		inv_mix_columns(state);
 	}
 	inv_shift_rows(state);
 	inv_sub_bytes(state);
-	add_round_key(state, skey);
+	aes_small_dec_add_round_key(state, skey);
 	for (u = 0; u < 16; u ++) {
 		buf[u] = state[u];
 	}

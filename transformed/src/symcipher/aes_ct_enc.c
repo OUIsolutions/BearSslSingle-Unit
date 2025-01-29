@@ -25,7 +25,7 @@
 
 
 static inline void
-add_round_key(uint32_t *q, const uint32_t *sk)
+aes_ct_enc_add_round_key(uint32_t *q, const uint32_t *sk)
 {
 	q[0] ^= sk[0];
 	q[1] ^= sk[1];
@@ -99,14 +99,14 @@ br_aes_ct_bitslice_encrypt(unsigned num_rounds,
 {
 	unsigned u;
 
-	add_round_key(q, skey);
+	aes_ct_enc_add_round_key(q, skey);
 	for (u = 1; u < num_rounds; u ++) {
 		br_aes_ct_bitslice_Sbox(q);
 		aes_ct_enc_shift_rows(q);
 		aest_ct_enc_mix_columns(q);
-		add_round_key(q, skey + (u << 3));
+		aes_ct_enc_add_round_key(q, skey + (u << 3));
 	}
 	br_aes_ct_bitslice_Sbox(q);
 	aes_ct_enc_shift_rows(q);
-	add_round_key(q, skey + (num_rounds << 3));
+	aes_ct_enc_add_round_key(q, skey + (num_rounds << 3));
 }
