@@ -927,12 +927,12 @@ static const uint16_t t0_caddr[] = {
 	3306
 };
 
-#define T0_INTERPRETED   93
+#define (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED   93
 
 #define T0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
-		t0_newip = &t0_codeblock[t0_caddr[(slot) - T0_INTERPRETED]]; \
+		t0_newip = &t0_codeblock[t0_caddr[(slot) - (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED]]; \
 		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
 		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
@@ -1010,7 +1010,7 @@ br_ssl_hs_server_run(void *t0ctx)
 
 	t0_next:
 		t0x = T0_NEXT(&ip);
-		if (t0x < T0_INTERPRETED) {
+		if (t0x < (BEAR_SINGLE_UNITY_FILE)T0_INTERPRETED) {
 			switch (t0x) {
 				int32_t t0off;
 
