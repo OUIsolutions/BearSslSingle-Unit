@@ -78,7 +78,7 @@ shift_rows(unsigned *state)
 }
 
 static void
-mix_columns(unsigned *state)
+aes_small_enc_mix_columns(unsigned *state)
 {
 	int i;
 
@@ -117,7 +117,7 @@ br_aes_small_encrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	for (u = 1; u < num_rounds; u ++) {
 		sub_bytes(state);
 		shift_rows(state);
-		mix_columns(state);
+		aes_small_enc_mix_columns(state);
 		add_round_key(state, skey + (u << 2));
 	}
 	sub_bytes(state);
