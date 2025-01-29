@@ -53,7 +53,7 @@ sub_bytes(unsigned *state)
 }
 
 static void
-shift_rows(unsigned *state)
+aes_small_enc_shift_rows(unsigned *state)
 {
 	unsigned tmp;
 
@@ -116,12 +116,12 @@ br_aes_small_encrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	add_round_key(state, skey);
 	for (u = 1; u < num_rounds; u ++) {
 		sub_bytes(state);
-		shift_rows(state);
+		aes_small_enc_shift_rows(state);
 		aes_small_enc_mix_columns(state);
 		add_round_key(state, skey + (u << 2));
 	}
 	sub_bytes(state);
-	shift_rows(state);
+	aes_small_enc_shift_rows(state);
 	add_round_key(state, skey + (num_rounds << 2));
 	for (u = 0; u < 16; u ++) {
 		buf[u] = state[u];
