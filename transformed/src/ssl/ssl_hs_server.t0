@@ -855,7 +855,7 @@ cc: save-session ( -- ) {
 	\ i.e. much (much) lower than that of an undetected transmission
 	\ error or hardware miscomputation, and with similar consequences
 	\ (handshake simply fails).
-	addr-session_id 32 mkrand
+	addr-session_id 32 (BEAR_SINGLE_UNITY_FILE)mkrand
 	32 addr-session_id_len set8
 
 	\ Translate common cipher suites, then squeeze out holes: there
@@ -942,7 +942,7 @@ cc: save-session ( -- ) {
 
 	\ Server random
 	addr-server_random 4 bzero
-	addr-server_random 4 + 28 mkrand
+	addr-server_random 4 + 28 (BEAR_SINGLE_UNITY_FILE)mkrand
 	addr-server_random 32 write-blob
 
 	\ Session ID

@@ -29,7 +29,7 @@
  * The header word is untouched.
  */
 static void
-mkrand(const br_prng_class **rng, uint16_t *x, uint32_t esize)
+(BEAR_SINGLE_UNITY_FILE)mkrand(const br_prng_class **rng, uint16_t *x, uint32_t esize)
 {
 	size_t u, len;
 	unsigned m;
@@ -51,7 +51,7 @@ mkrand(const br_prng_class **rng, uint16_t *x, uint32_t esize)
  * This is the big-endian unsigned representation of the product of
  * all small primes from 13 to 1481.
  */
-static const unsigned char SMALL_PRIMES[] = {
+static const unsigned char (BEAR_SINGLE_UNITY_FILE)SMALL_PRIMES[] = {
 	0x2E, 0xAB, 0x92, 0xD1, 0x8B, 0x12, 0x47, 0x31, 0x54, 0x0A,
 	0x99, 0x5D, 0x25, 0x5E, 0xE2, 0x14, 0x96, 0x29, 0x1E, 0xB7,
 	0x78, 0x70, 0xCC, 0x1F, 0xA5, 0xAB, 0x8D, 0x72, 0x11, 0x37,
@@ -84,17 +84,17 @@ static const unsigned char SMALL_PRIMES[] = {
  * We need temporary values for at least 7 integers of the same size
  * as a factor (including header word); more space helps with performance
  * (in modular exponentiations), but we much prefer to remain under
- * 2 kilobytes in total, to save stack space. The macro TEMPS below
+ * 2 kilobytes in total, to save stack space. The macro (BEAR_SINGLE_UNITY_FILE)TEMPS below
  * exceeds 1024 (which is a count in 16-bit words) when BR_MAX_RSA_SIZE
  * is greater than 4350 (default value is 4096, so the 2-kB limit is
  * maintained unless BR_MAX_RSA_SIZE was modified).
  */
 #define MAX(x, y)   ((x) > (y) ? (x) : (y))
-#define TEMPS       MAX(1024, 7 * ((((BR_MAX_RSA_SIZE + 1) >> 1) + 29) / 15))
+#define (BEAR_SINGLE_UNITY_FILE)TEMPS       MAX(1024, 7 * ((((BR_MAX_RSA_SIZE + 1) >> 1) + 29) / 15))
 
 /*
  * Perform trial division on a candidate prime. This computes
- * y = SMALL_PRIMES mod x, then tries to compute y/y mod x. The
+ * y = (BEAR_SINGLE_UNITY_FILE)SMALL_PRIMES mod x, then tries to compute y/y mod x. The
  * br_i15_moddiv() function will report an error if y is not invertible
  * modulo x. Returned value is 1 on success (none of the small primes
  * divides x), 0 on error (a non-trivial GCD is obtained).
@@ -110,7 +110,7 @@ static uint32_t
 	y = t;
 	t += 1 + ((x[0] + 15) >> 4);
 	x0i = br_i15_ninv15(x[1]);
-	br_i15_decode_reduce(y, SMALL_PRIMES, sizeof SMALL_PRIMES, x);
+	br_i15_decode_reduce(y, (BEAR_SINGLE_UNITY_FILE)SMALL_PRIMES, sizeof (BEAR_SINGLE_UNITY_FILE)SMALL_PRIMES, x);
 	return br_i15_moddiv(y, y, x, x0i, t);
 }
 
@@ -184,7 +184,7 @@ static uint32_t
 		a = t;
 		a[0] = x[0];
 		a[xlen] = 0;
-		mkrand(rng, a, asize);
+		(BEAR_SINGLE_UNITY_FILE)mkrand(rng, a, asize);
 
 		/*
 		 * Compute a^((x-1)/2) mod x. We assume here that the
@@ -234,7 +234,7 @@ static void
 		 * Generate random bits. We force the two top bits and the
 		 * two bottom bits to 1.
 		 */
-		mkrand(rng, x, esize);
+		(BEAR_SINGLE_UNITY_FILE)mkrand(rng, x, esize);
 		if ((esize & 15) == 0) {
 			x[len] |= 0x6000;
 		} else if ((esize & 15) == 1) {
@@ -442,7 +442,7 @@ br_rsa_i15_keygen(const br_prng_class **rng,
 	uint32_t esize_p, esize_q;
 	size_t plen, qlen, tlen;
 	uint16_t *p, *q, *t;
-	uint16_t tmp[TEMPS];
+	uint16_t tmp[(BEAR_SINGLE_UNITY_FILE)TEMPS];
 	uint32_t r;
 
 	if (size < BR_MIN_RSA_SIZE || size > BR_MAX_RSA_SIZE) {
