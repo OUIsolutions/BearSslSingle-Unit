@@ -449,7 +449,7 @@ static const uint16_t code_affine[] = {
 };
 
 static uint32_t
-run_code(jacobian *P1, const jacobian *P2,
+(BEAR_SINGLE_UNITY_FILE)run_code(jacobian *P1, const jacobian *P2,
 	const curve_params *cc, const uint16_t *code)
 {
 	uint32_t r;
@@ -518,7 +518,7 @@ run_code(jacobian *P1, const jacobian *P2,
 }
 
 static void
-set_one(uint32_t *x, const uint32_t *p)
+(BEAR_SINGLE_UNITY_FILE)set_one(uint32_t *x, const uint32_t *p)
 {
 	size_t plen;
 
@@ -529,22 +529,22 @@ set_one(uint32_t *x, const uint32_t *p)
 }
 
 static void
-point_zero(jacobian *P, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_zero(jacobian *P, const curve_params *cc)
 {
 	memset(P, 0, sizeof *P);
 	P->c[0][0] = P->c[1][0] = P->c[2][0] = cc->p[0];
 }
 
 static inline void
-point_double(jacobian *P, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_double(jacobian *P, const curve_params *cc)
 {
-	run_code(P, P, cc, code_double);
+	(BEAR_SINGLE_UNITY_FILE)run_code(P, P, cc, code_double);
 }
 
 static inline uint32_t
-point_add(jacobian *P1, const jacobian *P2, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_add(jacobian *P1, const jacobian *P2, const curve_params *cc)
 {
-	return run_code(P1, P2, cc, code_add);
+	return (BEAR_SINGLE_UNITY_FILE)run_code(P1, P2, cc, code_add);
 }
 
 static void
@@ -569,11 +569,11 @@ static void
 	jacobian P2, P3, Q, T, U;
 
 	memcpy(&P2, P, sizeof P2);
-	point_double(&P2, cc);
+	(BEAR_SINGLE_UNITY_FILE)point_double(&P2, cc);
 	memcpy(&P3, P, sizeof P3);
-	point_add(&P3, &P2, cc);
+	(BEAR_SINGLE_UNITY_FILE)point_add(&P3, &P2, cc);
 
-	point_zero(&Q, cc);
+	(BEAR_SINGLE_UNITY_FILE)point_zero(&Q, cc);
 	qz = 1;
 	while (xlen -- > 0) {
 		int k;
@@ -582,15 +582,15 @@ static void
 			uint32_t bits;
 			uint32_t bnz;
 
-			point_double(&Q, cc);
-			point_double(&Q, cc);
+			(BEAR_SINGLE_UNITY_FILE)point_double(&Q, cc);
+			(BEAR_SINGLE_UNITY_FILE)point_double(&Q, cc);
 			memcpy(&T, P, sizeof T);
 			memcpy(&U, &Q, sizeof U);
 			bits = (*x >> k) & (uint32_t)3;
 			bnz = NEQ(bits, 0);
 			CCOPY(EQ(bits, 2), &T, &P2, sizeof T);
 			CCOPY(EQ(bits, 3), &T, &P3, sizeof T);
-			point_add(&U, &T, cc);
+			(BEAR_SINGLE_UNITY_FILE)point_add(&U, &T, cc);
 			CCOPY(bnz & qz, &Q, &T, sizeof Q);
 			CCOPY(bnz & ~qz, &Q, &U, sizeof Q);
 			qz &= ~bnz;
@@ -631,7 +631,7 @@ static uint32_t
 	jacobian Q;
 
 	buf = src;
-	point_zero(P, cc);
+	(BEAR_SINGLE_UNITY_FILE)point_zero(P, cc);
 	plen = (cc->p[0] - (cc->p[0] >> 5) + 7) >> 3;
 	if (len != 1 + (plen << 1)) {
 		return 0;
@@ -654,8 +654,8 @@ static uint32_t
 	zlen = ((cc->p[0] + 63) >> 5) * sizeof(uint32_t);
 	memcpy(Q.c[0], cc->R2, zlen);
 	memcpy(Q.c[1], cc->b, zlen);
-	set_one(Q.c[2], cc->p);
-	r &= ~run_code(P, &Q, cc, code_check);
+	(BEAR_SINGLE_UNITY_FILE)set_one(Q.c[2], cc->p);
+	r &= ~(BEAR_SINGLE_UNITY_FILE)run_code(P, &Q, cc, code_check);
 	return r;
 }
 
@@ -678,8 +678,8 @@ static void
 	plen = (xbl + 7) >> 3;
 	buf[0] = 0x04;
 	memcpy(&Q, P, sizeof *P);
-	set_one(T.c[2], cc->p);
-	run_code(&Q, &T, cc, code_affine);
+	(BEAR_SINGLE_UNITY_FILE)set_one(T.c[2], cc->p);
+	(BEAR_SINGLE_UNITY_FILE)run_code(&Q, &T, cc, code_affine);
 	br_i31_encode(buf + 1, plen, Q.c[0]);
 	br_i31_encode(buf + 1 + plen, plen, Q.c[1]);
 }
@@ -791,11 +791,11 @@ static uint32_t
 	 * from infinity, and the multipliers are non-zero and lower than the
 	 * curve order, then we know that P and Q are non-infinity. This
 	 * leaves two special situations to test for:
-	 * -- If P = Q then we must use point_double().
+	 * -- If P = Q then we must use (BEAR_SINGLE_UNITY_FILE)point_double().
 	 * -- If P+Q = 0 then we must report an error.
 	 */
-	t = point_add(&P, &Q, cc);
-	point_double(&Q, cc);
+	t = (BEAR_SINGLE_UNITY_FILE)point_add(&P, &Q, cc);
+	(BEAR_SINGLE_UNITY_FILE)point_double(&Q, cc);
 	z = br_i31_iszero(P.c[2]);
 
 	/*
