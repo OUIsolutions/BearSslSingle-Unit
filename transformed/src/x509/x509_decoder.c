@@ -751,7 +751,7 @@ br_x509_decoder_run(void *t0ctx)
 				/* set8 */
 
 	uint32_t addr = T0_POP();
-	*((unsigned char *)CTX + addr) = (unsigned char)T0_POP();
+	*((unsigned char *)X509_DECODER_CTX + addr) = (unsigned char)T0_POP();
 
 				}
 				break;
