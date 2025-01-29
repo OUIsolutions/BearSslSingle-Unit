@@ -34,7 +34,7 @@ br_aes_big_ctrcbc_init(br_aes_big_ctrcbc_keys *ctx,
 }
 
 static void
-xorbuf(void *dst, const void *src, size_t len)
+(BEAR_SINGLE_UNITY_FILE)xorbuf(void *dst, const void *src, size_t len)
 {
 	unsigned char *d;
 	const unsigned char *s;
@@ -69,7 +69,7 @@ br_aes_big_ctrcbc_ctr(const br_aes_big_ctrcbc_keys *ctx,
 		br_enc32be(tmp +  8, cc1);
 		br_enc32be(tmp + 12, cc0);
 		br_aes_big_encrypt(ctx->num_rounds, ctx->skey, tmp);
-		xorbuf(buf, tmp, 16);
+		(BEAR_SINGLE_UNITY_FILE)xorbuf(buf, tmp, 16);
 		buf += 16;
 		len -= 16;
 		cc0 ++;
@@ -95,7 +95,7 @@ br_aes_big_ctrcbc_mac(const br_aes_big_ctrcbc_keys *ctx,
 
 	buf = data;
 	while (len > 0) {
-		xorbuf(cbcmac, buf, 16);
+		(BEAR_SINGLE_UNITY_FILE)xorbuf(cbcmac, buf, 16);
 		br_aes_big_encrypt(ctx->num_rounds, ctx->skey, cbcmac);
 		buf += 16;
 		len -= 16;

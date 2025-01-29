@@ -7,8 +7,8 @@ function main()
    for i, v in ipairs(transformmed) do
        local file = transformmed[i]
        local content= darwin.dtw.load_file(file)
-       --local replaced = string.gsub(content, 'add_round_key', "(BEAR_SINGLE_UNITY_FILE)add_round_key")
-       --darwin.dtw.write_file(file, replaced)
+       local replaced = string.gsub(content, 'xorbuf', "(BEAR_SINGLE_UNITY_FILE)xorbuf")
+       darwin.dtw.write_file(file, replaced)
    end
 
    if darwin.argv.one_of_args_exist("update_bear")  then

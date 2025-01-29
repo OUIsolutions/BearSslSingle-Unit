@@ -34,7 +34,7 @@ br_aes_ct64_ctr_init(br_aes_ct64_ctr_keys *ctx,
 }
 
 static void
-xorbuf(void *dst, const void *src, size_t len)
+(BEAR_SINGLE_UNITY_FILE)xorbuf(void *dst, const void *src, size_t len)
 {
 	unsigned char *d;
 	const unsigned char *s;
@@ -89,11 +89,11 @@ br_aes_ct64_ctr_run(const br_aes_ct64_ctr_keys *ctx,
 		}
 		br_range_enc32le(tmp, w, 16);
 		if (len <= 64) {
-			xorbuf(buf, tmp, len);
+			(BEAR_SINGLE_UNITY_FILE)xorbuf(buf, tmp, len);
 			cc += (uint32_t)len >> 4;
 			break;
 		}
-		xorbuf(buf, tmp, 64);
+		(BEAR_SINGLE_UNITY_FILE)xorbuf(buf, tmp, 64);
 		buf += 64;
 		len -= 64;
 		cc += 4;
