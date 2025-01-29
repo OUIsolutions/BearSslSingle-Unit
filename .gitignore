@@ -2,6 +2,7 @@
 *.d
 try
 origin
+debug_patches
 teste2.c
 stage2.sh
 stage1.sh
