@@ -194,12 +194,12 @@ static const uint16_t t0_caddr[] = {
 	601
 };
 
-#define T0_INTERPRETED   29
+#define PENDEC_T0_INTERPRETED   29
 
 #define T0_ENTER(ip, rp, slot)   do { \
 		const unsigned char *t0_newip; \
 		uint32_t t0_lnum; \
-		t0_newip = &t0_codeblock[t0_caddr[(slot) - T0_INTERPRETED]]; \
+		t0_newip = &t0_codeblock[t0_caddr[(slot) - PENDEC_T0_INTERPRETED]]; \
 		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
 		(rp) += t0_lnum; \
 		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
@@ -277,7 +277,7 @@ br_pem_decoder_run(void *t0ctx)
 
 	t0_next:
 		t0x = T0_NEXT(&ip);
-		if (t0x < T0_INTERPRETED) {
+		if (t0x < PENDEC_T0_INTERPRETED) {
 			switch (t0x) {
 				int32_t t0off;
 
