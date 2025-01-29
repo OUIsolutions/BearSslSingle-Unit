@@ -606,7 +606,7 @@ point_mul(jacobian *P, const unsigned char *x, size_t xlen,
  * the coordinates are still set to properly formed field elements.
  */
 static uint32_t
-point_decode(jacobian *P, const void *src, size_t len, const curve_params *cc)
+(BEAR_SINGLE_UNITY_FILE)point_decode(jacobian *P, const void *src, size_t len, const curve_params *cc)
 {
 	/*
 	 * Points must use uncompressed format:
@@ -738,7 +738,7 @@ static uint32_t
 	if (Glen != cc->point_len) {
 		return 0;
 	}
-	r = point_decode(&P, G, Glen, cc);
+	r = (BEAR_SINGLE_UNITY_FILE)point_decode(&P, G, Glen, cc);
 	point_mul(&P, x, xlen, cc);
 	(BEAR_SINGLE_UNITY_FILE)point_encode(G, &P, cc);
 	return r;
@@ -776,13 +776,13 @@ static uint32_t
 	if (len != cc->point_len) {
 		return 0;
 	}
-	r = point_decode(&P, A, len, cc);
+	r = (BEAR_SINGLE_UNITY_FILE)point_decode(&P, A, len, cc);
 	if (B == NULL) {
 		size_t Glen;
 
 		B = api_generator(curve, &Glen);
 	}
-	r &= point_decode(&Q, B, len, cc);
+	r &= (BEAR_SINGLE_UNITY_FILE)point_decode(&Q, B, len, cc);
 	point_mul(&P, x, xlen, cc);
 	point_mul(&Q, y, ylen, cc);
 

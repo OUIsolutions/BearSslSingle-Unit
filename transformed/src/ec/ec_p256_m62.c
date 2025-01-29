@@ -662,7 +662,7 @@ f256_encode(unsigned char *buf, const uint64_t *a)
  * The buffer is assumed to have length exactly 65 bytes.
  */
 static uint32_t
-point_decode(p256_jacobian *P, const unsigned char *buf)
+(BEAR_SINGLE_UNITY_FILE)point_decode(p256_jacobian *P, const unsigned char *buf)
 {
 	uint64_t x[5], y[5], t[5], x3[5], tt;
 	uint32_t r;
@@ -1643,7 +1643,7 @@ static uint32_t
 		return 0;
 	}
 	r = check_scalar(k, klen);
-	r &= point_decode(&P, G);
+	r &= (BEAR_SINGLE_UNITY_FILE)point_decode(&P, G);
 	p256_mul(&P, k, klen);
 	r &= (BEAR_SINGLE_UNITY_FILE)point_encode(G, &P);
 	return r;
@@ -1702,12 +1702,12 @@ static uint32_t
 	if (len != 65) {
 		return 0;
 	}
-	r = point_decode(&P, A);
+	r = (BEAR_SINGLE_UNITY_FILE)point_decode(&P, A);
 	p256_mul(&P, x, xlen);
 	if (B == NULL) {
 		p256_mulgen(&Q, y, ylen);
 	} else {
-		r &= point_decode(&Q, B);
+		r &= (BEAR_SINGLE_UNITY_FILE)point_decode(&Q, B);
 		p256_mul(&Q, y, ylen);
 	}
 
