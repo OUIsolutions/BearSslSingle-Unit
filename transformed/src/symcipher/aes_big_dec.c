@@ -27,7 +27,7 @@
 /*
  * Inverse S-box (used in key schedule for decryption).
  */
-static const unsigned char iS[] = {
+static const unsigned char (BEAR_SINGLE_UNITY_FILE)iS[] = {
 	0x52, 0x09, 0x6A, 0xD5, 0x30, 0x36, 0xA5, 0x38, 0xBF, 0x40, 0xA3, 0x9E,
 	0x81, 0xF3, 0xD7, 0xFB, 0x7C, 0xE3, 0x39, 0x82, 0x9B, 0x2F, 0xFF, 0x87,
 	0x34, 0x8E, 0x43, 0x44, 0xC4, 0xDE, 0xE9, 0xCB, 0x54, 0x7B, 0x94, 0x32,
@@ -227,22 +227,22 @@ br_aes_big_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 		s2 ^= skey[(u << 2) + 2];
 		s3 ^= skey[(u << 2) + 3];
 	}
-	t0 = ((uint32_t)iS[s0 >> 24] << 24)
-		| ((uint32_t)iS[(s3 >> 16) & 0xFF] << 16)
-		| ((uint32_t)iS[(s2 >> 8) & 0xFF] << 8)
-		| (uint32_t)iS[s1 & 0xFF];
-	t1 = ((uint32_t)iS[s1 >> 24] << 24)
-		| ((uint32_t)iS[(s0 >> 16) & 0xFF] << 16)
-		| ((uint32_t)iS[(s3 >> 8) & 0xFF] << 8)
-		| (uint32_t)iS[s2 & 0xFF];
-	t2 = ((uint32_t)iS[s2 >> 24] << 24)
-		| ((uint32_t)iS[(s1 >> 16) & 0xFF] << 16)
-		| ((uint32_t)iS[(s0 >> 8) & 0xFF] << 8)
-		| (uint32_t)iS[s3 & 0xFF];
-	t3 = ((uint32_t)iS[s3 >> 24] << 24)
-		| ((uint32_t)iS[(s2 >> 16) & 0xFF] << 16)
-		| ((uint32_t)iS[(s1 >> 8) & 0xFF] << 8)
-		| (uint32_t)iS[s0 & 0xFF];
+	t0 = ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[s0 >> 24] << 24)
+		| ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[(s3 >> 16) & 0xFF] << 16)
+		| ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[(s2 >> 8) & 0xFF] << 8)
+		| (uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[s1 & 0xFF];
+	t1 = ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[s1 >> 24] << 24)
+		| ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[(s0 >> 16) & 0xFF] << 16)
+		| ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[(s3 >> 8) & 0xFF] << 8)
+		| (uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[s2 & 0xFF];
+	t2 = ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[s2 >> 24] << 24)
+		| ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[(s1 >> 16) & 0xFF] << 16)
+		| ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[(s0 >> 8) & 0xFF] << 8)
+		| (uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[s3 & 0xFF];
+	t3 = ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[s3 >> 24] << 24)
+		| ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[(s2 >> 16) & 0xFF] << 16)
+		| ((uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[(s1 >> 8) & 0xFF] << 8)
+		| (uint32_t)(BEAR_SINGLE_UNITY_FILE)iS[s0 & 0xFF];
 	s0 = t0 ^ skey[0];
 	s1 = t1 ^ skey[1];
 	s2 = t2 ^ skey[2];
