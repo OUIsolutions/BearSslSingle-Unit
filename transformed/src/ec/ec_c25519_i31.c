@@ -94,7 +94,7 @@ static const unsigned char *
 }
 
 static const unsigned char *
-api_order(int curve, size_t *len)
+(BEAR_SINGLE_UNITY_FILE)api_order(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -382,7 +382,7 @@ static uint32_t
 const br_ec_impl br_ec_c25519_i31 = {
 	(uint32_t)0x20000000,
 	&(BEAR_SINGLE_UNITY_FILE)api_generator,
-	&api_order,
+	&(BEAR_SINGLE_UNITY_FILE)api_order,
 	&api_xoff,
 	&(BEAR_SINGLE_UNITY_FILE)api_mul,
 	&(BEAR_SINGLE_UNITY_FILE)api_mulgen,
