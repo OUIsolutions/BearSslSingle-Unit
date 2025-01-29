@@ -181,7 +181,7 @@ br_des_ct_keysched(uint32_t *skey, const void *key, size_t key_len)
  * 48 bits), XOR with subkey, S-boxes, and permutation P.
  */
 static inline uint32_t
-Fconf(uint32_t r0, const uint32_t *sk)
+des_ct_Fconf(uint32_t r0, const uint32_t *sk)
 {
 	/*
 	 * Each 6->4 S-box is virtually turned into four 6->1 boxes; we
@@ -354,7 +354,7 @@ des_ct_process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *sk_exp)
 	for (i = 0; i < 16; i ++) {
 		uint32_t t;
 
-		t = l ^ Fconf(r, sk_exp);
+		t = l ^ des_ct_Fconf(r, sk_exp);
 		l = r;
 		r = t;
 		sk_exp += 6;
