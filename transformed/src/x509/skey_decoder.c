@@ -27,7 +27,7 @@ t0_parse7E_unsigned(const unsigned char **p)
 }
 
 static int32_t
-t0_parse7E_signed(const unsigned char **p)
+(BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(const unsigned char **p)
 {
 	int neg;
 	uint32_t x;
@@ -360,7 +360,7 @@ br_skey_decoder_run(void *t0ctx)
 				ip = &(BEAR_SINGLE_UNITY_FILE)t0_codeblock[t0x];
 				break;
 			case 1: /* literal constant */
-				T0_PUSHi(t0_parse7E_signed(&ip));
+				T0_PUSHi((BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(&ip));
 				break;
 			case 2: /* read local */
 				T0_PUSH(T0_LOCAL(t0_parse7E_unsigned(&ip)));
@@ -369,17 +369,17 @@ br_skey_decoder_run(void *t0ctx)
 				T0_LOCAL(t0_parse7E_unsigned(&ip)) = T0_POP();
 				break;
 			case 4: /* jump */
-				t0off = t0_parse7E_signed(&ip);
+				t0off = (BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(&ip);
 				ip += t0off;
 				break;
 			case 5: /* jump if */
-				t0off = t0_parse7E_signed(&ip);
+				t0off = (BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(&ip);
 				if (T0_POP()) {
 					ip += t0off;
 				}
 				break;
 			case 6: /* jump if not */
-				t0off = t0_parse7E_signed(&ip);
+				t0off = (BEAR_SINGLE_UNITY_FILE)t0_parse7E_signed(&ip);
 				if (!T0_POP()) {
 					ip += t0off;
 				}
