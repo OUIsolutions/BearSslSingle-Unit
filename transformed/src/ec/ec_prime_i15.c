@@ -52,7 +52,7 @@ static const uint16_t P256_B[] = {
 	0x0187, 0x0000
 };
 
-static const uint16_t P384_P[] = {
+static const uint16_t (BEAR_SINGLE_UNITY_FILE)P384_P[] = {
 	0x0199,
 	0x7FFF, 0x7FFF, 0x0003, 0x0000, 0x0000, 0x0000, 0x7FC0, 0x7FFF,
 	0x7EFF, 0x7FFF, 0x7FFF, 0x7FFF, 0x7FFF, 0x7FFF, 0x7FFF, 0x7FFF,
@@ -116,7 +116,7 @@ id_to_curve(int curve)
 {
 	static const curve_params pp[] = {
 		{ P256_P, P256_B, P256_R2, 0x0001,  65 },
-		{ P384_P, P384_B, P384_R2, 0x0001,  97 },
+		{ (BEAR_SINGLE_UNITY_FILE)P384_P, P384_B, P384_R2, 0x0001,  97 },
 		{ P521_P, P521_B, P521_R2, 0x0001, 133 }
 	};
 
