@@ -92,7 +92,7 @@ br_aes_x86ni_ctrcbc_ctr(const br_aes_x86ni_ctrcbc_keys *ctx,
 		__m128i x0, x1, x2, x3;
 
 		/*
-		 * Load counter values; we need to byteswap them because
+		 * Load counter values; we need to BEAR_SINGLE_UNITY_FILEbyteswap them because
 		 * the specification says that they use big-endian.
 		 */
 		x0 = _mm_shuffle_epi8(ivx0, erev);

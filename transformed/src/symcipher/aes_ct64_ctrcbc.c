@@ -78,7 +78,7 @@ br_aes_ct64_ctrcbc_ctr(const br_aes_ct64_ctrcbc_keys *ctx,
 
 		/*
 		 * The bitslice implementation expects values in
-		 * little-endian convention, so we have to byteswap them.
+		 * little-endian convention, so we have to BEAR_SINGLE_UNITY_FILEbyteswap them.
 		 */
 		j = (len >= 64) ? 16 : (int)(len >> 2);
 		for (i = 0; i < j; i += 4) {
@@ -220,7 +220,7 @@ br_aes_ct64_ctrcbc_encrypt(const br_aes_ct64_ctrcbc_keys *ctx,
 
 		/*
 		 * The bitslice implementation expects values in
-		 * little-endian convention, so we have to byteswap them.
+		 * little-endian convention, so we have to BEAR_SINGLE_UNITY_FILEbyteswap them.
 		 */
 		w[0] = br_swap32(iv0);
 		w[1] = br_swap32(iv1);
@@ -358,7 +358,7 @@ br_aes_ct64_ctrcbc_decrypt(const br_aes_ct64_ctrcbc_keys *ctx,
 
 		/*
 		 * The bitslice implementation expects values in
-		 * little-endian convention, so we have to byteswap them.
+		 * little-endian convention, so we have to BEAR_SINGLE_UNITY_FILEbyteswap them.
 		 */
 		w[0] = br_swap32(iv0);
 		w[1] = br_swap32(iv1);

@@ -30,7 +30,7 @@
  *   - R^2 mod p (R = 2^(31k) for the smallest k such that R >= p)
  */
 
-static const uint32_t C255_P[] = {
+static const uint32_t BEAR_SINGLE_UNITY_FILEC255_P[] = {
 	0x00000107,
 	0x7FFFFFED, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF,
 	0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x0000007F
@@ -62,7 +62,7 @@ print_int_mont(const char *name, const uint32_t *x)
 
 	printf("%s = ", name);
 	memcpy(y, x, sizeof y);
-	br_i31_from_monty(y, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
+	br_i31_from_monty(y, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	br_i31_encode(tmp, sizeof tmp, y);
 	for (u = 0; u < sizeof tmp; u ++) {
 		printf("%02X", tmp[u]);
@@ -134,8 +134,8 @@ c255_add(uint32_t *d, const uint32_t *a, const uint32_t *b)
 
 	memcpy(t, a, sizeof t);
 	ctl = br_i31_add(t, b, 1);
-	ctl |= NOT(br_i31_sub(t, C255_P, 0));
-	br_i31_sub(t, C255_P, ctl);
+	ctl |= NOT(br_i31_sub(t, BEAR_SINGLE_UNITY_FILEC255_P, 0));
+	br_i31_sub(t, BEAR_SINGLE_UNITY_FILEC255_P, ctl);
 	memcpy(d, t, sizeof t);
 }
 
@@ -145,7 +145,7 @@ c255_sub(uint32_t *d, const uint32_t *a, const uint32_t *b)
 	uint32_t t[10];
 
 	memcpy(t, a, sizeof t);
-	br_i31_add(t, C255_P, br_i31_sub(t, b, 1));
+	br_i31_add(t, BEAR_SINGLE_UNITY_FILEC255_P, br_i31_sub(t, b, 1));
 	memcpy(d, t, sizeof t);
 }
 
@@ -154,12 +154,12 @@ c255_mul(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	uint32_t t[10];
 
-	br_i31_montymul(t, a, b, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
+	br_i31_montymul(t, a, b, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	memcpy(d, t, sizeof t);
 }
 
 static void
-byteswap(unsigned char *G)
+BEAR_SINGLE_UNITY_FILEbyteswap(unsigned char *G)
 {
 	int i;
 
@@ -200,7 +200,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	 * Byteswap the point encoding, because it uses little-endian, and
 	 * the generic decoding routine uses big-endian.
 	 */
-	byteswap(G);
+	BEAR_SINGLE_UNITY_FILEbyteswap(G);
 
 	/*
 	 * Decode the point ('u' coordinate). This should be reduced
@@ -211,21 +211,21 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	 * subtraction. We use br_i31_decode_mod() and not
 	 * br_i31_decode(), because the ec_prime_i31 implementation uses
 	 * the former but not the latter.
-	 *    br_i31_decode_reduce(a, G, 32, C255_P);
+	 *    br_i31_decode_reduce(a, G, 32, BEAR_SINGLE_UNITY_FILEC255_P);
 	 */
 	br_i31_zero(b, 0x108);
 	b[9] = 0x0080;
 	br_i31_decode_mod(a, G, 32, b);
 	a[0] = 0x107;
-	br_i31_sub(a, C255_P, NOT(br_i31_sub(a, C255_P, 0)));
+	br_i31_sub(a, BEAR_SINGLE_UNITY_FILEC255_P, NOT(br_i31_sub(a, BEAR_SINGLE_UNITY_FILEC255_P, 0)));
 
 	/*
 	 * Initialise variables x1, x2, z2, x3 and z3. We set all of them
 	 * into Montgomery representation.
 	 */
-	br_i31_montymul(x1, a, C255_R2, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
+	br_i31_montymul(x1, a, C255_R2, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	memcpy(x3, x1, sizeof x1);
-	br_i31_zero(z2, C255_P[0]);
+	br_i31_zero(z2, BEAR_SINGLE_UNITY_FILEC255_P[0]);
 	memcpy(x2, z2, sizeof z2);
 	x2[1] = 0x13000000;
 	memcpy(z3, x2, sizeof x2);
@@ -333,14 +333,14 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	 * To avoid a dependency on br_i31_from_monty(), we use
 	 * a Montgomery multiplication with 1.
 	 *    memcpy(x2, b, sizeof b);
-	 *    br_i31_from_monty(x2, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
+	 *    br_i31_from_monty(x2, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
 	 */
-	br_i31_zero(a, C255_P[0]);
+	br_i31_zero(a, BEAR_SINGLE_UNITY_FILEC255_P[0]);
 	a[1] = 1;
-	br_i31_montymul(x2, a, b, C255_P, BEAR_SINGLE_UNITY_FILEP0I);
+	br_i31_montymul(x2, a, b, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
 
 	br_i31_encode(G, 32, x2);
-	byteswap(G);
+	BEAR_SINGLE_UNITY_FILEbyteswap(G);
 	return 1;
 }
 

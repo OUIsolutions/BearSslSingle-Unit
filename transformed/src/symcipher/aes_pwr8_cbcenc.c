@@ -78,7 +78,7 @@ cbcenc_128(const unsigned char *sk,
 
 #if BR_POWER8_LE
 		/*
-		 * v15 = constant for byteswapping words
+		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
 		 */
 		lxvw4x(47, 0, %[idx2be])
 #endif
@@ -117,7 +117,7 @@ cbcenc_128(const unsigned char *sk,
 		vcipherlast(16, 16, 10)
 
 		/*
-		 * Store back result (with byteswap)
+		 * Store back result (with BEAR_SINGLE_UNITY_FILEbyteswap)
 		 */
 #if BR_POWER8_LE
 		vperm(17, 16, 16, 15)
@@ -186,7 +186,7 @@ cbcenc_192(const unsigned char *sk,
 
 #if BR_POWER8_LE
 		/*
-		 * v15 = constant for byteswapping words
+		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
 		 */
 		lxvw4x(47, 0, %[idx2be])
 #endif
@@ -227,7 +227,7 @@ cbcenc_192(const unsigned char *sk,
 		vcipherlast(16, 16, 12)
 
 		/*
-		 * Store back result (with byteswap)
+		 * Store back result (with BEAR_SINGLE_UNITY_FILEbyteswap)
 		 */
 #if BR_POWER8_LE
 		vperm(17, 16, 16, 15)
@@ -300,7 +300,7 @@ cbcenc_256(const unsigned char *sk,
 
 #if BR_POWER8_LE
 		/*
-		 * v15 = constant for byteswapping words
+		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
 		 */
 		lxvw4x(47, 0, %[idx2be])
 #endif
@@ -343,7 +343,7 @@ cbcenc_256(const unsigned char *sk,
 		vcipherlast(16, 16, 14)
 
 		/*
-		 * Store back result (with byteswap)
+		 * Store back result (with BEAR_SINGLE_UNITY_FILEbyteswap)
 		 */
 #if BR_POWER8_LE
 		vperm(17, 16, 16, 15)

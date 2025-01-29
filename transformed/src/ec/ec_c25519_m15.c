@@ -1041,7 +1041,7 @@ BEAR_SINGLE_UNITY_FILEsquare20(uint32_t *d, const uint32_t *a)
  * returns 0.
  */
 static uint32_t
-reduce_final_f255(uint32_t *d)
+BEAR_SINGLE_UNITY_FILEreduce_final_f255(uint32_t *d)
 {
 	uint32_t t[20];
 	uint32_t cc;
@@ -1427,7 +1427,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		}
 	}
 	BEAR_SINGLE_UNITY_FILEf255_mul(x2, x2, b);
-	reduce_final_f255(x2);
+	BEAR_SINGLE_UNITY_FILEreduce_final_f255(x2);
 	le13_to_le8(G, 32, x2);
 	return 1;
 }

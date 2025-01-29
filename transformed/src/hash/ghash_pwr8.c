@@ -40,7 +40,7 @@
  *   HB7 = 16 bytes of value 7
  *   TT0, TT1 and TT2 are temporaries
  *
- * BSW holds the pattern for byteswapping 32-bit words; this is set only
+ * BSW holds the pattern for BEAR_SINGLE_UNITY_FILEbyteswapping 32-bit words; this is set only
  * on little-endian systems. XBSW is the same register with the +32 offset
  * for access with the VSX opcodes.
  */

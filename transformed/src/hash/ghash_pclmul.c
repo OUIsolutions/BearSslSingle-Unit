@@ -91,23 +91,23 @@ BR_TARGETS_X86_UP
 #define BYTESWAP_DECL
 #define BYTESWAP_PREP   (void)0
 #define BYTESWAP(x)   do { \
-		__m128i byteswap1, byteswap2; \
-		byteswap1 = (x); \
-		byteswap2 = _mm_srli_epi16(byteswap1, 8); \
-		byteswap1 = _mm_slli_epi16(byteswap1, 8); \
-		byteswap1 = _mm_or_si128(byteswap1, byteswap2); \
-		byteswap1 = _mm_shufflelo_epi16(byteswap1, 0x1B); \
-		byteswap1 = _mm_shufflehi_epi16(byteswap1, 0x1B); \
-		(x) = _mm_shuffle_epi32(byteswap1, 0x4E); \
+		__m128i BEAR_SINGLE_UNITY_FILEbyteswap1, BEAR_SINGLE_UNITY_FILEbyteswap2; \
+		BEAR_SINGLE_UNITY_FILEbyteswap1 = (x); \
+		BEAR_SINGLE_UNITY_FILEbyteswap2 = _mm_srli_epi16(BEAR_SINGLE_UNITY_FILEbyteswap1, 8); \
+		BEAR_SINGLE_UNITY_FILEbyteswap1 = _mm_slli_epi16(BEAR_SINGLE_UNITY_FILEbyteswap1, 8); \
+		BEAR_SINGLE_UNITY_FILEbyteswap1 = _mm_or_si128(BEAR_SINGLE_UNITY_FILEbyteswap1, BEAR_SINGLE_UNITY_FILEbyteswap2); \
+		BEAR_SINGLE_UNITY_FILEbyteswap1 = _mm_shufflelo_epi16(BEAR_SINGLE_UNITY_FILEbyteswap1, 0x1B); \
+		BEAR_SINGLE_UNITY_FILEbyteswap1 = _mm_shufflehi_epi16(BEAR_SINGLE_UNITY_FILEbyteswap1, 0x1B); \
+		(x) = _mm_shuffle_epi32(BEAR_SINGLE_UNITY_FILEbyteswap1, 0x4E); \
 	} while (0)
 #else
-#define BYTESWAP_DECL   __m128i byteswap_index;
+#define BYTESWAP_DECL   __m128i BEAR_SINGLE_UNITY_FILEbyteswap_index;
 #define BYTESWAP_PREP   do { \
-		byteswap_index = _mm_set_epi8( \
+		BEAR_SINGLE_UNITY_FILEbyteswap_index = _mm_set_epi8( \
 			0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15); \
 	} while (0)
 #define BYTESWAP(x)   do { \
-		(x) = _mm_shuffle_epi8((x), byteswap_index); \
+		(x) = _mm_shuffle_epi8((x), BEAR_SINGLE_UNITY_FILEbyteswap_index); \
 	} while (0)
 #endif
 

@@ -2534,7 +2534,7 @@ BR_TARGETS_X86_DOWN
 #include <stdlib.h>
 #include <intrin.h>
 #include <immintrin.h>
-#define br_bswap32   _byteswap_ulong
+#define br_bswap32   _BEAR_SINGLE_UNITY_FILEbyteswap_ulong
 #endif
 
 static inline int
