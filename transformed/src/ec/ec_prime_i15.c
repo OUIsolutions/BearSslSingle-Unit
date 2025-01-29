@@ -179,11 +179,11 @@ typedef struct {
  */
 #define ec_prime_i15_t1     6
 #define ec_prime_i15_t2     7
-#define t3     8
-#define t4     9
-#define t5    10
-#define t6    11
-#define t7    12
+#define ec_prime_i15_t3     8
+#define ec_prime_i15_t4     9
+#define ec_prime_i15_t5    10
+#define ec_prime_i15_t6    11
+#define ec_prime_i15_t7    12
 
 /*
  * Extra scratch registers available when there is no second operand (e.g.
