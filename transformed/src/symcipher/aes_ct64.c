@@ -213,14 +213,14 @@ br_aes_ct64_ortho(uint64_t *q)
 		(y) = ((a & (uint64_t)ch) >> (s)) | (b & (uint64_t)ch); \
 	} while (0)
 
-#define SWAP2(x, y)    SWAPN(0x5555555555555555, 0xAAAAAAAAAAAAAAAA,  1, x, y)
+#define (BEAR_SINGLE_UNITY_FILE)SWAP2(x, y)    SWAPN(0x5555555555555555, 0xAAAAAAAAAAAAAAAA,  1, x, y)
 #define (BEAR_SINGLE_UNITY_FILE)SWAP4(x, y)    SWAPN(0x3333333333333333, 0xCCCCCCCCCCCCCCCC,  2, x, y)
 #define (BEAR_SINGLE_UNITY_FILE)SWAP8(x, y)    SWAPN(0x0F0F0F0F0F0F0F0F, 0xF0F0F0F0F0F0F0F0,  4, x, y)
 
-	SWAP2(q[0], q[1]);
-	SWAP2(q[2], q[3]);
-	SWAP2(q[4], q[5]);
-	SWAP2(q[6], q[7]);
+	(BEAR_SINGLE_UNITY_FILE)SWAP2(q[0], q[1]);
+	(BEAR_SINGLE_UNITY_FILE)SWAP2(q[2], q[3]);
+	(BEAR_SINGLE_UNITY_FILE)SWAP2(q[4], q[5]);
+	(BEAR_SINGLE_UNITY_FILE)SWAP2(q[6], q[7]);
 
 	(BEAR_SINGLE_UNITY_FILE)SWAP4(q[0], q[2]);
 	(BEAR_SINGLE_UNITY_FILE)SWAP4(q[1], q[3]);
