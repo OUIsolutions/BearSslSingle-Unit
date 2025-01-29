@@ -8,9 +8,9 @@ function build()
         local extension = path.get_extension()
         if extension == "c" or extension == "cpp" then
             local name = path.get_name()
-            local new_name = "fdefine"..name
+            local new_name = "fdefine."..name
             path.set_name(new_name)
-            darwin.dtw.move_any_overwriting(item,path)
+            darwin.dtw.move_any_overwriting(item,path.get_full_path())
             
         end
     end
