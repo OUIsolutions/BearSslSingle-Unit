@@ -29,7 +29,7 @@
  * The header word is untouched.
  */
 static void
-(BEAR_SINGLE_UNITY_FILE)mkrand(const br_prng_class **rng, uint32_t *x, uint32_t esize)
+(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)mkrand(const br_prng_class **rng, uint32_t *x, uint32_t esize)
 {
 	size_t u, len;
 	unsigned m;
@@ -187,7 +187,7 @@ static uint32_t
 		a = t;
 		a[0] = x[0];
 		a[xlen] = 0;
-		(BEAR_SINGLE_UNITY_FILE)mkrand(rng, a, asize);
+		(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)mkrand(rng, a, asize);
 
 		/*
 		 * Compute a^((x-1)/2) mod x. We assume here that the
@@ -248,7 +248,7 @@ static void
 		 * Generate random bits. We force the two top bits and the
 		 * two bottom bits to 1.
 		 */
-		(BEAR_SINGLE_UNITY_FILE)mkrand(rng, x, esize);
+		(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)mkrand(rng, x, esize);
 		if ((esize & 31) == 0) {
 			x[len] |= 0x60000000;
 		} else if ((esize & 31) == 1) {
