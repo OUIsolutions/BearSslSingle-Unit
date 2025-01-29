@@ -358,7 +358,7 @@ api_mulgen(unsigned char *R,
 }
 
 static uint32_t
-api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+(BEAR_SINGLE_UNITY_FILE)api_muladd(unsigned char *A, const unsigned char *B, size_t len,
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
@@ -386,5 +386,5 @@ const br_ec_impl br_ec_c25519_i31 = {
 	&api_xoff,
 	&api_mul,
 	&api_mulgen,
-	&api_muladd
+	&(BEAR_SINGLE_UNITY_FILE)api_muladd
 };
