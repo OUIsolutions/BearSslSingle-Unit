@@ -159,38 +159,38 @@ typedef struct {
 /*
  * Registers for the input operands.
  */
-#define P1x    0
-#define P1y    1
-#define P1z    2
-#define P2x    3
-#define P2y    4
-#define P2z    5
+#define (BEAR_SINGLE_UNITY_FILE)P1x    0
+#define (BEAR_SINGLE_UNITY_FILE)P1y    1
+#define (BEAR_SINGLE_UNITY_FILE)P1z    2
+#define (BEAR_SINGLE_UNITY_FILE)P2x    3
+#define (BEAR_SINGLE_UNITY_FILE)P2y    4
+#define (BEAR_SINGLE_UNITY_FILE)P2z    5
 
 /*
  * Alternate names for the first input operand.
  */
-#define Px     0
-#define Py     1
-#define Pz     2
+#define (BEAR_SINGLE_UNITY_FILE)Px     0
+#define (BEAR_SINGLE_UNITY_FILE)Py     1
+#define (BEAR_SINGLE_UNITY_FILE)Pz     2
 
 /*
  * Temporaries.
  */
-#define t1     6
-#define t2     7
-#define t3     8
-#define t4     9
-#define t5    10
-#define t6    11
-#define t7    12
+#define (BEAR_SINGLE_UNITY_FILE)t1     6
+#define (BEAR_SINGLE_UNITY_FILE)t2     7
+#define (BEAR_SINGLE_UNITY_FILE)t3     8
+#define (BEAR_SINGLE_UNITY_FILE)t4     9
+#define (BEAR_SINGLE_UNITY_FILE)t5    10
+#define (BEAR_SINGLE_UNITY_FILE)t6    11
+#define (BEAR_SINGLE_UNITY_FILE)t7    12
 
 /*
  * Extra scratch registers available when there is no second operand (e.g.
  * for "double" and "affine").
  */
-#define t8     3
-#define t9     4
-#define t10    5
+#define (BEAR_SINGLE_UNITY_FILE)t8     3
+#define (BEAR_SINGLE_UNITY_FILE)t9     4
+#define (BEAR_SINGLE_UNITY_FILE)t10    5
 
 /*
  * Doubling formulas are:
