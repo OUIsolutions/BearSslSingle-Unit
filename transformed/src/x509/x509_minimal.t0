@@ -390,7 +390,7 @@ verify_signature(br_x509_minimal_context *ctx, const br_x509_pkey *pk)
 			return BR_ERR_X509_UNSUPPORTED;
 		}
 		if (!ctx->irsa(ctx->cert_sig, ctx->cert_sig_len,
-			&t0_datablock[ctx->cert_sig_hash_oid],
+			&(BEAR_SINGLE_UNITY_FILE)t0_datablock[ctx->cert_sig_hash_oid],
 			ctx->cert_sig_hash_len, &pk->key.rsa, tmp))
 		{
 			return BR_ERR_X509_BAD_SIGNATURE;

@@ -58,7 +58,7 @@ t0_parse7E_signed(const unsigned char **p)
 #define T0_INT4(x)       T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 #define T0_INT5(x)       T0_SBYTE(x), T0_VBYTE(x, 21), T0_VBYTE(x, 14), T0_VBYTE(x, 7), T0_FBYTE(x, 0)
 
-/* static const unsigned char t0_datablock[]; */
+/* static const unsigned char (BEAR_SINGLE_UNITY_FILE)t0_datablock[]; */
 
 
 void br_pem_decoder_init_main(void *t0ctx);
@@ -109,7 +109,7 @@ br_pem_decoder_event(br_pem_decoder_context *ctx)
 
 
 
-static const unsigned char t0_datablock[] = {
+static const unsigned char (BEAR_SINGLE_UNITY_FILE)t0_datablock[] = {
 	0x00, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x42, 0x45, 0x47, 0x49, 0x4E, 0x20,
 	0x00, 0x2D, 0x2D, 0x2D, 0x2D, 0x45, 0x4E, 0x44, 0x20, 0x00
 };
@@ -415,7 +415,7 @@ br_pem_decoder_run(void *t0ctx)
 				/* data-get8 */
 
 	size_t addr = T0_POP();
-	T0_PUSH(t0_datablock[addr]);
+	T0_PUSH((BEAR_SINGLE_UNITY_FILE)t0_datablock[addr]);
 
 				}
 				break;
