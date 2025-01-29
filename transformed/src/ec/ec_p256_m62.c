@@ -435,7 +435,7 @@ f256_montymul(uint64_t *d, const uint64_t *a, const uint64_t *b)
  * TODO: see if some extra speed can be gained here.
  */
 static inline void
-f256_montysquare(uint64_t *d, const uint64_t *a)
+(BEAR_SINGLE_UNITY_FILE)f256_montysquare(uint64_t *d, const uint64_t *a)
 {
 	f256_montymul(d, a, a);
 }
@@ -500,13 +500,13 @@ f256_invert(uint64_t *d, const uint64_t *a)
 
 	memcpy(t, a, sizeof t);
 	for (i = 0; i < 30; i ++) {
-		f256_montysquare(t, t);
+		(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t, t);
 		f256_montymul(t, t, a);
 	}
 
 	memcpy(r, t, sizeof t);
 	for (i = 224; i >= 0; i --) {
-		f256_montysquare(r, r);
+		(BEAR_SINGLE_UNITY_FILE)f256_montysquare(r, r);
 		switch (i) {
 		case 0:
 		case 2:
@@ -687,8 +687,8 @@ static uint32_t
 	 * take care to apply the final reduction to make sure we have
 	 * 0 and not p.
 	 */
-	f256_montysquare(t, y);
-	f256_montysquare(x3, x);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t, y);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(x3, x);
 	f256_montymul(x3, x3, x);
 	f256_sub(t, t, x3);
 	f256_add(t, t, x);
@@ -726,7 +726,7 @@ static uint32_t
 
 	/* Set t1 = 1/z^2 and t2 = 1/z^3. */
 	f256_invert(t2, P->z);
-	f256_montysquare(t1, t2);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t1, t2);
 	f256_montymul(t2, t2, t1);
 
 	/* Compute affine coordinates x (in t1) and y (in t2). */
@@ -779,7 +779,7 @@ p256_double(p256_jacobian *P)
 	/*
 	 * Compute z^2 in t1.
 	 */
-	f256_montysquare(t1, P->z);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t1, P->z);
 
 	/*
 	 * Compute x-z^2 in t2 and x+z^2 in t1.
@@ -797,7 +797,7 @@ p256_double(p256_jacobian *P)
 	/*
 	 * Compute 4*x*y^2 (in t2) and 2*y^2 (in t3).
 	 */
-	f256_montysquare(t3, P->y);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t3, P->y);
 	f256_add(t3, t3, t3);
 	f256_montymul(t2, P->x, t3);
 	f256_add(t2, t2, t2);
@@ -805,7 +805,7 @@ p256_double(p256_jacobian *P)
 	/*
 	 * Compute x' = m^2 - 2*s.
 	 */
-	f256_montysquare(P->x, t1);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(P->x, t1);
 	f256_sub(P->x, P->x, t2);
 	f256_sub(P->x, P->x, t2);
 
@@ -822,7 +822,7 @@ p256_double(p256_jacobian *P)
 	 */
 	f256_sub(t2, t2, P->x);
 	f256_montymul(P->y, t1, t2);
-	f256_montysquare(t4, t3);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t4, t3);
 	f256_add(t4, t4, t4);
 	f256_sub(P->y, P->y, t4);
 }
@@ -882,7 +882,7 @@ p256_add(p256_jacobian *P1, const p256_jacobian *P2)
 	/*
 	 * Compute u1 = x1*z2^2 (in t1) and s1 = y1*z2^3 (in t3).
 	 */
-	f256_montysquare(t3, P2->z);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t3, P2->z);
 	f256_montymul(t1, P1->x, t3);
 	f256_montymul(t4, P2->z, t3);
 	f256_montymul(t3, P1->y, t4);
@@ -890,7 +890,7 @@ p256_add(p256_jacobian *P1, const p256_jacobian *P2)
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
-	f256_montysquare(t4, P1->z);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t4, P1->z);
 	f256_montymul(t2, P2->x, t4);
 	f256_montymul(t5, P1->z, t4);
 	f256_montymul(t4, P2->y, t5);
@@ -910,14 +910,14 @@ p256_add(p256_jacobian *P1, const p256_jacobian *P2)
 	/*
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
-	f256_montysquare(t7, t2);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t7, t2);
 	f256_montymul(t6, t1, t7);
 	f256_montymul(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
-	f256_montysquare(P1->x, t4);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(P1->x, t4);
 	f256_sub(P1->x, P1->x, t5);
 	f256_sub(P1->x, P1->x, t6);
 	f256_sub(P1->x, P1->x, t6);
@@ -1000,7 +1000,7 @@ p256_add_mixed(p256_jacobian *P1, const p256_affine *P2)
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
-	f256_montysquare(t4, P1->z);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t4, P1->z);
 	f256_montymul(t2, P2->x, t4);
 	f256_montymul(t5, P1->z, t4);
 	f256_montymul(t4, P2->y, t5);
@@ -1020,14 +1020,14 @@ p256_add_mixed(p256_jacobian *P1, const p256_affine *P2)
 	/*
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
-	f256_montysquare(t7, t2);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t7, t2);
 	f256_montymul(t6, t1, t7);
 	f256_montymul(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
-	f256_montysquare(P1->x, t4);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(P1->x, t4);
 	f256_sub(P1->x, P1->x, t5);
 	f256_sub(P1->x, P1->x, t6);
 	f256_sub(P1->x, P1->x, t6);
@@ -1123,7 +1123,7 @@ p256_add_complete_mixed(p256_jacobian *P1, const p256_affine *P2)
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
-	f256_montysquare(t4, P1->z);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t4, P1->z);
 	f256_montymul(t2, P2->x, t4);
 	f256_montymul(t5, P1->z, t4);
 	f256_montymul(t4, P2->y, t5);
@@ -1148,14 +1148,14 @@ p256_add_complete_mixed(p256_jacobian *P1, const p256_affine *P2)
 	/*
 	 * Compute u1*h^2 (in t6) and h^3 (in t5);
 	 */
-	f256_montysquare(t7, t2);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t7, t2);
 	f256_montymul(t6, t1, t7);
 	f256_montymul(t5, t7, t2);
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 */
-	f256_montysquare(P1->x, t4);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(P1->x, t4);
 	f256_sub(P1->x, P1->x, t5);
 	f256_sub(P1->x, P1->x, t6);
 	f256_sub(P1->x, P1->x, t6);
@@ -1186,7 +1186,7 @@ p256_add_complete_mixed(p256_jacobian *P1, const p256_affine *P2)
 	/*
 	 * Compute 2*(y2^2) (in t2) and s = 4*x2*(y2^2) (in t3).
 	 */
-	f256_montysquare(t2, P2->y);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t2, P2->y);
 	f256_add(t2, t2, t2);
 	f256_add(t3, t2, t2);
 	f256_montymul(t3, P2->x, t3);
@@ -1194,7 +1194,7 @@ p256_add_complete_mixed(p256_jacobian *P1, const p256_affine *P2)
 	/*
 	 * Compute m = 3*(x2^2 - 1) (in t4).
 	 */
-	f256_montysquare(t4, P2->x);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t4, P2->x);
 	f256_sub(t4, t4, F256_R);
 	f256_add(t5, t4, t4);
 	f256_add(t4, t4, t5);
@@ -1202,7 +1202,7 @@ p256_add_complete_mixed(p256_jacobian *P1, const p256_affine *P2)
 	/*
 	 * Compute x' = m^2 - 2*s (in t5).
 	 */
-	f256_montysquare(t5, t4);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t5, t4);
 	f256_sub(t5, t3);
 	f256_sub(t5, t3);
 
@@ -1211,7 +1211,7 @@ p256_add_complete_mixed(p256_jacobian *P1, const p256_affine *P2)
 	 */
 	f256_sub(t6, t3, t5);
 	f256_montymul(t6, t6, t4);
-	f256_montysquare(t7, t2);
+	(BEAR_SINGLE_UNITY_FILE)f256_montysquare(t7, t2);
 	f256_sub(t6, t6, t7);
 	f256_sub(t6, t6, t7);
 
@@ -1435,7 +1435,7 @@ window_to_affine(p256_affine *aff, p256_jacobian *jac, int num)
 	f256_invert(zt, z[0]);
 	for (i = 0; i < num; i ++) {
 		f256_montymul(zv, jac[i].z, zt);
-		f256_montysquare(zu, zv);
+		(BEAR_SINGLE_UNITY_FILE)f256_montysquare(zu, zv);
 		f256_montymul(zv, zv, zu);
 		f256_montymul(aff[i].x, jac[i].x, zu);
 		f256_montymul(aff[i].y, jac[i].y, zv);
