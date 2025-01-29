@@ -101,7 +101,7 @@ inv_(BEAR_SINGLE_UNITY_FILE)shift_rows(uint64_t *q)
 }
 
 static inline uint64_t
-(BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr32(uint64_t x)
+(BEAR_SINGLE_UNITY_FILE)rotr32(uint64_t x)
 {
 	return (x << 32) | (x >> 32);
 }
@@ -129,14 +129,14 @@ inv_(BEAR_SINGLE_UNITY_FILE)mix_columns(uint64_t *q)
 	r6 = (q6 >> 16) | (q6 << 48);
 	r7 = (q7 >> 16) | (q7 << 48);
 
-	q[0] = q5 ^ q6 ^ q7 ^ r0 ^ r5 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr32(q0 ^ q5 ^ q6 ^ r0 ^ r5);
-	q[1] = q0 ^ q5 ^ r0 ^ r1 ^ r5 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr32(q1 ^ q5 ^ q7 ^ r1 ^ r5 ^ r6);
-	q[2] = q0 ^ q1 ^ q6 ^ r1 ^ r2 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr32(q0 ^ q2 ^ q6 ^ r2 ^ r6 ^ r7);
-	q[3] = q0 ^ q1 ^ q2 ^ q5 ^ q6 ^ r0 ^ r2 ^ r3 ^ r5 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr32(q0 ^ q1 ^ q3 ^ q5 ^ q6 ^ q7 ^ r0 ^ r3 ^ r5 ^ r7);
-	q[4] = q1 ^ q2 ^ q3 ^ q5 ^ r1 ^ r3 ^ r4 ^ r5 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr32(q1 ^ q2 ^ q4 ^ q5 ^ q7 ^ r1 ^ r4 ^ r5 ^ r6);
-	q[5] = q2 ^ q3 ^ q4 ^ q6 ^ r2 ^ r4 ^ r5 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr32(q2 ^ q3 ^ q5 ^ q6 ^ r2 ^ r5 ^ r6 ^ r7);
-	q[6] = q3 ^ q4 ^ q5 ^ q7 ^ r3 ^ r5 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr32(q3 ^ q4 ^ q6 ^ q7 ^ r3 ^ r6 ^ r7);
-	q[7] = q4 ^ q5 ^ q6 ^ r4 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)(BEAR_SINGLE_UNITY_FILE)rotr32(q4 ^ q5 ^ q7 ^ r4 ^ r7);
+	q[0] = q5 ^ q6 ^ q7 ^ r0 ^ r5 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q0 ^ q5 ^ q6 ^ r0 ^ r5);
+	q[1] = q0 ^ q5 ^ r0 ^ r1 ^ r5 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q1 ^ q5 ^ q7 ^ r1 ^ r5 ^ r6);
+	q[2] = q0 ^ q1 ^ q6 ^ r1 ^ r2 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q0 ^ q2 ^ q6 ^ r2 ^ r6 ^ r7);
+	q[3] = q0 ^ q1 ^ q2 ^ q5 ^ q6 ^ r0 ^ r2 ^ r3 ^ r5 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q0 ^ q1 ^ q3 ^ q5 ^ q6 ^ q7 ^ r0 ^ r3 ^ r5 ^ r7);
+	q[4] = q1 ^ q2 ^ q3 ^ q5 ^ r1 ^ r3 ^ r4 ^ r5 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q1 ^ q2 ^ q4 ^ q5 ^ q7 ^ r1 ^ r4 ^ r5 ^ r6);
+	q[5] = q2 ^ q3 ^ q4 ^ q6 ^ r2 ^ r4 ^ r5 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q2 ^ q3 ^ q5 ^ q6 ^ r2 ^ r5 ^ r6 ^ r7);
+	q[6] = q3 ^ q4 ^ q5 ^ q7 ^ r3 ^ r5 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q3 ^ q4 ^ q6 ^ q7 ^ r3 ^ r6 ^ r7);
+	q[7] = q4 ^ q5 ^ q6 ^ r4 ^ r6 ^ r7 ^ (BEAR_SINGLE_UNITY_FILE)rotr32(q4 ^ q5 ^ q7 ^ r4 ^ r7);
 }
 
 /* see inner.h */
