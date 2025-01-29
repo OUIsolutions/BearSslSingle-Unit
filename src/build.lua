@@ -16,7 +16,7 @@ function build()
     end
     local inner_name = darwin.dtw.concat_path(OUTPUT_DIR,"src/inner.h")
     local new_inner_name = darwin.dtw.concat_path(OUTPUT_DIR,"src/fdeclare.inner.h")
-    dtw.move_any_overwriting(inner_name,new_inner_name)
+    darwin.dtw.move_any_overwriting(inner_name,new_inner_name)
  
     darwin.silverchain.generate({
         src = OUTPUT_DIR,
