@@ -40,5 +40,5 @@ br_rsa_i31_oaep_encrypt(
 	if (dlen == 0) {
 		return 0;
 	}
-	return dlen & -(size_t)br_rsa_i31_public(dst, dlen, pk);
+	return dlen & -(size_t)br_rsa_i31_public((unsigned char*)dst, dlen, pk);
 }
