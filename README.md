@@ -9,7 +9,7 @@ projects  with a single **gcc main.c** compilation
 | [BearSSLSingleUnit.zip](https://github.com/OUIsolutions/BearSslSingle-Unit/releases/download/0.0.2/BearSSLSingleUnit.zip)| Full Folder Mode  |
 | [BearSSLSingleUnitOne.c](https://github.com/OUIsolutions/BearSslSingle-Unit/releases/download/0.0.2/BearSSLSingleUnitOne.c)| Single File Version|
 | [BearSSLSingleUnit.h](https://github.com/OUIsolutions/BearSslSingle-Unit/releases/download/0.0.2/BearSSLSingleUnit.h)|Declaration |
-| [BearSSLSingleUnit.c](https://github.com/OUIsolutions/BearSslSingle-Unit/releases/download/0.0.2/BearSSLSingleUnit.c)|Declaration |
+| [BearSSLSingleUnit.c](https://github.com/OUIsolutions/BearSslSingle-Unit/releases/download/0.0.2/BearSSLSingleUnit.c)|Definition |
 
 
 
