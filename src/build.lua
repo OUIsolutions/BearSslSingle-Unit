@@ -17,13 +17,14 @@ function build()
     local itens = darwin.dtw.list_files_recursively(OUTPUT_DIR,true)
     for i, item in ipairs(itens) do
 
-
-        local new_name = string.gsub(item,"/","_")
+        local new_name = item
         new_name = string.gsub(new_name,"fdefine","")
         new_name = string.gsub(new_name,"fdeclare","")
-        new_name = string.gsub(new_name,"__","_")
-        new_name = string.gsub(new_name,"__.","_")
+        new_name = string.gsub(new_name,OUTPUT_DIR,"")
+        new_name = string.gsub(new_name,"/","_")
         new_name = string.gsub(new_name,"%.","_")
+        new_name = string.gsub(new_name,"__","_")
+        new_name = string.gsub(new_name,"__","_")
         print("saving sha for "..item.." as "..new_name)
 
         --(BEAR_SINGLE_UNITY_FILE)
