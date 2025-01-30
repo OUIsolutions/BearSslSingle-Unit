@@ -16,11 +16,19 @@ function build()
     end
     local itens = darwin.dtw.list_files_recursively(OUTPUT_DIR,true)
     for i, item in ipairs(itens) do
-        print("saving sha for "..item)
-        local sha = darwin.dtw.generate_sha_from_file(item)
+
+
+        local new_name = string.gsub(item,"/","_")
+        new_name = string.gsub(new_name,"fdefine","")
+        new_name = string.gsub(new_name,"fdeclare","")
+        new_name = string.gsub(new_name,"__","_")
+        new_name = string.gsub(new_name,"__.","_")
+        new_name = string.gsub(new_name,"%.","_")
+        print("saving sha for "..item.." as "..new_name)
+
         --(BEAR_SINGLE_UNITY_FILE)
         local content = darwin.dtw.load_file(item)
-        local new_content = string.gsub(content,"BEAR_SINGLE_UNITY_FILE","sha"..sha)
+        local new_content = string.gsub(content,"BEAR_SINGLE_UNITY_FILE",new_name)
         darwin.dtw.write_file(item,new_content)
     end
 
@@ -34,10 +42,9 @@ function build()
         tags = {"fdeclare", "fdefine" },
         implement_main=false
     })
-    
     darwin.dtw.copy_any_overwriting("one.c",darwin.dtw.concat_path(OUTPUT_DIR,"one.c"))
 
-
+    
 
 
 end 
