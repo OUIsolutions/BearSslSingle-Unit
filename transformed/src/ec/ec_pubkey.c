@@ -75,10 +75,10 @@ br_ec_compute_pub(const br_ec_impl *impl, br_ec_public_key *pk,
 	if (kbuf == NULL) {
 		return POINT_LEN[curve];
 	}
-	len = impl->mulgen(kbuf, sk->x, sk->xlen, curve);
+	len = impl->mulgen((unsigned char*)kbuf, sk->x, sk->xlen, curve);
 	if (pk != NULL) {
 		pk->curve = curve;
-		pk->q = kbuf;
+		pk->q = (unsigned char*)kbuf;
 		pk->qlen = len;
 	}
 	return len;

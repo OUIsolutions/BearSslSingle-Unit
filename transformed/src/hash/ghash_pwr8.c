@@ -131,7 +131,7 @@ br_ghash_pwr8(void *y, const void *h, const void *data, size_t len)
 	};
 #endif
 
-	buf1 = data;
+	buf1 = (unsigned char*)data;
 
 	/*
 	 * Assembly code requires data into two chunks; first chunk

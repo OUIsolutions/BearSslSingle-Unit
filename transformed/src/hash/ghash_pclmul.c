@@ -244,7 +244,7 @@ br_ghash_pclmul(void *y, const void *h, const void *data, size_t len)
 	 * starts at buf2 and contains num1 blocks of 16-byte values.
 	 * We want the first chunk to be as large as possible.
 	 */
-	buf1 = data;
+	buf1 = (unsigned char*)data;
 	num4 = len >> 6;
 	len &= 63;
 	buf2 = buf1 + (num4 << 6);

@@ -58,7 +58,7 @@ br_ecdsa_raw_to_asn1(void *sig, size_t sig_len)
 	size_t hlen, rlen, slen, zlen, off;
 	unsigned char tmp[257];
 
-	buf = sig;
+	buf = (unsigned char*)sig;
 	if ((sig_len & 1) != 0) {
 		return 0;
 	}
