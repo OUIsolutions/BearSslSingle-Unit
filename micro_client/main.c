@@ -35,7 +35,6 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
-#define BR_ENABLE_INTRINSICS   1
 
 #include "../release/BearSSLSingleUnit.c"
 
