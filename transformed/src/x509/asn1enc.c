@@ -31,7 +31,7 @@ br_asn1_uint_prepare(const void *xdata, size_t xlen)
 	const unsigned char *x;
 	br_asn1_uint t;
 
-	x = xdata;
+	x = (const unsigned char *)xdata;
 	while (xlen > 0 && *x == 0) {
 		x ++;
 		xlen --;

@@ -170,7 +170,7 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	 * Decode the clamped 'r' value. Decoding should use little-endian
 	 * so we must BEAR_SINGLE_UNITY_FILEbyteswap the value first.
 	 */
-	BEAR_SINGLE_UNITY_FILEbyteswap16(pkey);
+	BEAR_SINGLE_UNITY_FILEbyteswap16((unsigned char *)pkey);
 	br_i15_decode_mod(t, pkey, 16, P1305);
 
 	/*
@@ -196,7 +196,7 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	/*
 	 * Decode the value 's'. Again, a BEAR_SINGLE_UNITY_FILEbyteswap is needed.
 	 */
-	BEAR_SINGLE_UNITY_FILEbyteswap16(pkey + 16);
+	BEAR_SINGLE_UNITY_FILEbyteswap16((unsigned char*)pkey + 16);
 	br_i15_decode_mod(t, pkey + 16, 16, P1305);
 
 	/*
@@ -210,7 +210,7 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	 * be little-endian.
 	 */
 	br_i15_encode(tag, 16, acc);
-	BEAR_SINGLE_UNITY_FILEbyteswap16(tag);
+	BEAR_SINGLE_UNITY_FILEbyteswap16((unsigned char*)tag);
 
 	/*
 	 * If decrypting, then ChaCha20 runs _after_ Poly1305.
