@@ -84,7 +84,7 @@ br_encode_rsa_raw_der(void *dest, const br_rsa_private_key *sk,
 		unsigned char *buf;
 		size_t lenlen;
 
-		buf = dest;
+		buf = (unsigned char *)dest;
 		*buf ++ = 0x30;  /* SEQUENCE tag */
 		lenlen = br_asn1_encode_length(buf, slen);
 		buf += lenlen;

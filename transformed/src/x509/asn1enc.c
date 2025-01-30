@@ -53,7 +53,7 @@ br_asn1_encode_length(void *dest, size_t len)
 	size_t z;
 	int i, j;
 
-	buf = dest;
+	buf = (unsigned char *)dest;
 	if (len < 0x80) {
 		if (buf != NULL) {
 			*buf = len;
@@ -83,7 +83,7 @@ br_asn1_encode_uint(void *dest, br_asn1_uint pp)
 	if (dest == NULL) {
 		return 1 + br_asn1_encode_length(NULL, pp.asn1len) + pp.asn1len;
 	}
-	buf = dest;
+	buf = (unsigned char *)dest;
 	*buf ++ = 0x02;
 	lenlen = br_asn1_encode_length(buf, pp.asn1len);
 	buf += lenlen;

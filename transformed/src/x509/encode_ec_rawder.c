@@ -112,7 +112,7 @@ br_encode_ec_raw_der_inner(void *dest,
 		unsigned char *buf;
 		size_t lenlen;
 
-		buf = dest;
+		buf = (unsigned char *)dest;
 		*buf ++ = 0x30;  /* SEQUENCE tag */
 		lenlen = br_asn1_encode_length(buf, len_seq);
 		buf += lenlen;
