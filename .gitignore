@@ -7,6 +7,7 @@ debug_patches
 teste2.c
 stage2.sh
 stage1.sh
+release
 src/c/globals.lua_code.c
 src/lua/constants.lua
 build/dependencies2
