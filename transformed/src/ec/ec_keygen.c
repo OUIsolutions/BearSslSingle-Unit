@@ -58,7 +58,7 @@ br_ec_keygen(const br_prng_class **rng_ctx,
 	 * the value is strictly lower than the curve order (we also
 	 * check for all-zero values, which are invalid).
 	 */
-	buf = kbuf;
+	buf = (unsigned char*)kbuf;
 	for (;;) {
 		size_t u;
 		unsigned cc, zz;

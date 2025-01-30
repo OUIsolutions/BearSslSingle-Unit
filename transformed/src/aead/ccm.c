@@ -136,7 +136,7 @@ br_ccm_aad_inject(br_ccm_context *ctx, const void *data, size_t len)
 	const unsigned char *dbuf;
 	size_t ptr;
 
-	dbuf = data;
+	dbuf = (unsigned char*)data;
 
 	/*
 	 * Complete partial block, if needed.
@@ -202,7 +202,7 @@ br_ccm_run(br_ccm_context *ctx, int encrypt, void *data, size_t len)
 	unsigned char *dbuf;
 	size_t ptr;
 
-	dbuf = data;
+	dbuf = (unsigned char*)data;
 
 	/*
 	 * Complete a partial block, if any: ctx->buf[] contains

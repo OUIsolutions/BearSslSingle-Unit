@@ -89,7 +89,7 @@ br_pem_encode(void *dest, const void *data, size_t len,
 		return dlen;
 	}
 
-	d = dest;
+	d = (char*)dest;
 
 	/*
 	 * We always move the source data to the end of output buffer;

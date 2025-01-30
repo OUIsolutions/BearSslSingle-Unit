@@ -345,7 +345,7 @@ br_eax_run(br_eax_context *ctx, int encrypt, void *data, size_t len)
 		return;
 	}
 
-	dbuf = data;
+	dbuf = (unsigned char*)data;
 	ptr = ctx->ptr;
 
 	/*
