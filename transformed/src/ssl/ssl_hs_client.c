@@ -1592,7 +1592,7 @@ br_ssl_hs_client_run(void *t0ctx)
 				/* strlen */
 
 	void *str = (unsigned char *)ENG + (size_t)T0_POP();
-	T0_PUSH((uint32_t)strlen(str));
+	T0_PUSH((uint32_t)strlen((const char*)str));
 
 				}
 				break;

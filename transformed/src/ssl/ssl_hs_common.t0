@@ -688,7 +688,7 @@ cc: memcpy ( dst src len -- ) {
 \ the terminated 0.
 cc: strlen ( str -- len ) {
 	void *str = (unsigned char *)ENG + (size_t)T0_POP();
-	T0_PUSH((uint32_t)strlen(str));
+	T0_PUSH((uint32_t)strlen((const char*)str));
 }
 
 \ Fill a buffer with zeros. The buffer address is an offset in the context.

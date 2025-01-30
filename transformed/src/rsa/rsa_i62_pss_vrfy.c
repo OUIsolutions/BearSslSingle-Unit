@@ -38,11 +38,11 @@ br_rsa_i62_pss_vrfy(const unsigned char *x, size_t xlen,
 		return 0;
 	}
 	memcpy(sig, x, xlen);
-	if (!br_rsa_i62_public(sig, xlen, pk)) {
+	if (!br_rsa_i62_public((unsigned char*)sig, xlen, pk)) {
 		return 0;
 	}
 	return br_rsa_pss_sig_unpad(hf_data, hf_mgf1,
-		hash, salt_len, pk, sig);
+		(const unsigned char*)hash, salt_len, pk, sig);
 }
 
 /* see bearssl_rsa.h */

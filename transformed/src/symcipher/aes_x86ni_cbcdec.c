@@ -76,7 +76,7 @@ br_aes_x86ni_cbcdec_run(const br_aes_x86ni_cbcdec_keys *ctx,
 				x1 = _mm_loadu_si128((const __m128i_u*)(buf + 16));
 				if (len >= 48) {
 					x2 = _mm_loadu_si128(
-						(void *)(buf + 32));
+						(const __m128i_u*)(buf + 32));
 					x3 = x2;
 				} else {
 					x2 = x0;
@@ -189,7 +189,7 @@ br_aes_x86ni_cbcdec_run(const br_aes_x86ni_cbcdec_keys *ctx,
 				_mm_storeu_si128((__m128i_u*)(buf + 16), x1);
 				if (len >= 48) {
 					_mm_storeu_si128(
-						(void *)(buf + 32), x2);
+						(__m128i_u*)(buf + 32), x2);
 				}
 			}
 			break;

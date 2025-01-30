@@ -409,13 +409,13 @@ br_ssl_engine_set_buffers_bidi(br_ssl_engine_context *rc,
 	} else {
 		unsigned u;
 
-		rc->ibuf = ibuf;
+		rc->ibuf = (unsigned char*)ibuf;
 		rc->ibuf_len = ibuf_len;
 		if (obuf == NULL) {
 			obuf = ibuf;
 			obuf_len = ibuf_len;
 		}
-		rc->obuf = obuf;
+		rc->obuf = (unsigned char*)obuf;
 		rc->obuf_len = obuf_len;
 
 		/*

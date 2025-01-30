@@ -33,7 +33,7 @@ br_tls10_prf(void *dst, size_t len,
 	const unsigned char *s1;
 	size_t slen;
 
-	s1 = secret;
+	s1 = (const unsigned char*)secret;
 	slen = (secret_len + 1) >> 1;
 	memset(dst, 0, len);
 	br_tls_phash(dst, len, &br_md5_vtable,

@@ -42,7 +42,7 @@ br_rsa_i62_oaep_encrypt(
 	if (dlen == 0) {
 		return 0;
 	}
-	return dlen & -(size_t)br_rsa_i62_public(dst, dlen, pk);
+	return dlen & -(size_t)br_rsa_i62_public((unsigned char*)dst, dlen, pk);
 }
 
 /* see bearssl_rsa.h */

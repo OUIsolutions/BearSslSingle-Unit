@@ -38,7 +38,7 @@ br_rsa_i62_pkcs1_vrfy(const unsigned char *x, size_t xlen,
 		return 0;
 	}
 	memcpy(sig, x, xlen);
-	if (!br_rsa_i62_public(sig, xlen, pk)) {
+	if (!br_rsa_i62_public((unsigned char*)sig, xlen, pk)) {
 		return 0;
 	}
 	return br_rsa_pkcs1_sig_unpad(sig, xlen, hash_oid, hash_len, hash_out);
