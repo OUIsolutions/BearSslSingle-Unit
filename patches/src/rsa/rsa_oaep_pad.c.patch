@@ -1,0 +1,16 @@
+25c25
+< #include "inner.h"
+---
+> 
+33c33
+< hash_data(const br_hash_class *dig, void *dst, const void *src, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEhash_data(const br_hash_class *dig, void *dst, const void *src, size_t len)
+80c80
+< 	buf = dst;
+---
+> 	buf = (unsigned char*)dst;
+88c88
+< 	hash_data(dig, buf + 1 + hlen, label, label_len);
+---
+> 	BEAR_SINGLE_UNITY_FILEhash_data(dig, buf + 1 + hlen, label, label_len);

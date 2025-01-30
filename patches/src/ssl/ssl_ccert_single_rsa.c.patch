@@ -1,0 +1,88 @@
+25c25
+< #include "inner.h"
+---
+> 
+28c28
+< cc_none0(const br_ssl_client_certificate_class **pctx)
+---
+> BEAR_SINGLE_UNITY_FILEcc_none0(const br_ssl_client_certificate_class **pctx)
+34c34
+< cc_none1(const br_ssl_client_certificate_class **pctx, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEcc_none1(const br_ssl_client_certificate_class **pctx, size_t len)
+41c41
+< cc_none2(const br_ssl_client_certificate_class **pctx,
+---
+> BEAR_SINGLE_UNITY_FILEcc_none2(const br_ssl_client_certificate_class **pctx,
+50c50
+< cc_choose(const br_ssl_client_certificate_class **pctx,
+---
+> BEAR_SINGLE_UNITY_FILEcc_choose(const br_ssl_client_certificate_class **pctx,
+72c72
+< static const unsigned char HASH_OID_SHA1[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1[] = {
+76c76
+< static const unsigned char HASH_OID_SHA224[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224[] = {
+80c80
+< static const unsigned char HASH_OID_SHA256[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256[] = {
+84c84
+< static const unsigned char HASH_OID_SHA384[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384[] = {
+88c88
+< static const unsigned char HASH_OID_SHA512[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512[] = {
+92,97c92,97
+< static const unsigned char *HASH_OID[] = {
+< 	HASH_OID_SHA1,
+< 	HASH_OID_SHA224,
+< 	HASH_OID_SHA256,
+< 	HASH_OID_SHA384,
+< 	HASH_OID_SHA512
+---
+> static const unsigned char *BEAR_SINGLE_UNITY_FILEHASH_OID[] = {
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512
+101c101
+< cc_do_sign(const br_ssl_client_certificate_class **pctx,
+---
+> BEAR_SINGLE_UNITY_FILEcc_do_sign(const br_ssl_client_certificate_class **pctx,
+114c114
+< 		hash_oid = HASH_OID[hash_id - 2];
+---
+> 		hash_oid = BEAR_SINGLE_UNITY_FILEHASH_OID[hash_id - 2];
+125c125
+< static const br_ssl_client_certificate_class ccert_vtable = {
+---
+> static const br_ssl_client_certificate_class BEAR_SINGLE_UNITY_FILEccert_vtable = {
+127,132c127,132
+< 	cc_none0, /* start_name_list */
+< 	cc_none1, /* start_name */
+< 	cc_none2, /* append_name */
+< 	cc_none0, /* end_name */
+< 	cc_none0, /* end_name_list */
+< 	cc_choose,
+---
+> 	BEAR_SINGLE_UNITY_FILEcc_none0, /* start_name_list */
+> 	BEAR_SINGLE_UNITY_FILEcc_none1, /* start_name */
+> 	BEAR_SINGLE_UNITY_FILEcc_none2, /* append_name */
+> 	BEAR_SINGLE_UNITY_FILEcc_none0, /* end_name */
+> 	BEAR_SINGLE_UNITY_FILEcc_none0, /* end_name_list */
+> 	BEAR_SINGLE_UNITY_FILEcc_choose,
+134c134
+< 	cc_do_sign
+---
+> 	BEAR_SINGLE_UNITY_FILEcc_do_sign
+143c143
+< 	cc->client_auth.single_rsa.vtable = &ccert_vtable;
+---
+> 	cc->client_auth.single_rsa.vtable = &BEAR_SINGLE_UNITY_FILEccert_vtable;

@@ -1,0 +1,17 @@
+25d24
+< #include "inner.h"
+27c26,27
+< static const unsigned char GEN[] = {
+---
+> 
+> static const unsigned char BEAR_SINGLE_UNITY_FILEGEN[] = {
+34c34
+< static const unsigned char ORDER[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEORDER[] = {
+44,45c44,45
+< 	ORDER, sizeof ORDER,
+< 	GEN, sizeof GEN
+---
+> 	BEAR_SINGLE_UNITY_FILEORDER, sizeof BEAR_SINGLE_UNITY_FILEORDER,
+> 	BEAR_SINGLE_UNITY_FILEGEN, sizeof BEAR_SINGLE_UNITY_FILEGEN

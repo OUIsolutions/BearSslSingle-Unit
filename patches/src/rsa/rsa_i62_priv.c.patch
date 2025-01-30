@@ -1,0 +1,26 @@
+25c25
+< #include "inner.h"
+---
+> 
+29,30c29,30
+< #define U      (2 + ((BR_MAX_RSA_FACTOR + 30) / 31))
+< #define TLEN   (4 * U)  /* TLEN is counted in 64-bit words */
+---
+> #define BEAR_SINGLE_UNITY_FILEU      (2 + ((BR_MAX_RSA_FACTOR + 30) / 31))
+> #define BEAR_SINGLE_UNITY_FILETLEN   (4 * U)  /* BEAR_SINGLE_UNITY_FILETLEN is counted in 64-bit words */
+41c41
+< 	uint64_t tmp[TLEN];
+---
+> 	uint64_t tmp[BEAR_SINGLE_UNITY_FILETLEN];
+82c82
+< 	if (6 * fwlen > TLEN) {
+---
+> 	if (6 * fwlen > BEAR_SINGLE_UNITY_FILETLEN) {
+147c147
+< 		tmp + 3 * fwlen, TLEN - 3 * fwlen);
+---
+> 		tmp + 3 * fwlen, BEAR_SINGLE_UNITY_FILETLEN - 3 * fwlen);
+156c156
+< 		tmp + 4 * fwlen, TLEN - 4 * fwlen);
+---
+> 		tmp + 4 * fwlen, BEAR_SINGLE_UNITY_FILETLEN - 4 * fwlen);

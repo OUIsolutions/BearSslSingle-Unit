@@ -1,0 +1,20 @@
+25c25
+< #include "inner.h"
+---
+> 
+31c31
+<  * modular integer. But TLEN is expressed in 64-bit words.
+---
+>  * modular integer. But BEAR_SINGLE_UNITY_FILETLEN is expressed in 64-bit words.
+33c33
+< #define TLEN   (2 * (2 + ((BR_MAX_RSA_SIZE + 30) / 31)))
+---
+> #define BEAR_SINGLE_UNITY_FILETLEN   (2 * (2 + ((BR_MAX_RSA_SIZE + 30) / 31)))
+42c42
+< 	uint64_t tmp[TLEN];
+---
+> 	uint64_t tmp[BEAR_SINGLE_UNITY_FILETLEN];
+100c100
+< 		tmp + 2 * fwlen, TLEN - 2 * fwlen);
+---
+> 		tmp + 2 * fwlen, BEAR_SINGLE_UNITY_FILETLEN - 2 * fwlen);

@@ -1,0 +1,112 @@
+37c37
+< #define CTX  ((br_ssl_client_context *)ENG)
+---
+> #define BEAR_SINGLE_UNITY_FILECTX  ((br_ssl_client_context *)ENG)
+118,123c118,123
+< static const unsigned char *HASH_OID[] = {
+< 	BR_HASH_OID_SHA1,
+< 	BR_HASH_OID_SHA224,
+< 	BR_HASH_OID_SHA256,
+< 	BR_HASH_OID_SHA384,
+< 	BR_HASH_OID_SHA512
+---
+> static const unsigned char *BEAR_SINGLE_UNITY_FILEHASH_OID[] = {
+> 	BR_BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1,
+> 	BR_BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224,
+> 	BR_BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256,
+> 	BR_BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384,
+> 	BR_BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512
+179c179
+< 			hash_oid = HASH_OID[hash - 2];
+---
+> 			hash_oid = BEAR_SINGLE_UNITY_FILEHASH_OID[hash - 2];
+466c466
+< 	addr-client_random 4 + 28 mkrand
+---
+> 	addr-client_random 4 + 28 BEAR_SINGLE_UNITY_FILEmkrand
+635c635
+< 	unsigned char *buf = (unsigned char *)CTX + T0_POP();
+---
+> 	unsigned char *buf = (unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
+822c822
+< 	CTX->server_curve =
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->server_curve =
+847c847
+< 	T0_PUSH(verify_SKE_sig(CTX, hash, use_rsa, sig_len));
+---
+> 	T0_PUSH(verify_SKE_sig(BEAR_SINGLE_UNITY_FILECTX, hash, use_rsa, sig_len));
+906,908c906,908
+< 	if (CTX->client_auth_vtable != NULL) {
+< 		(*CTX->client_auth_vtable)->start_name_list(
+< 			CTX->client_auth_vtable);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
+> 		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->start_name_list(
+> 			BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable);
+917,919c917,919
+< 	if (CTX->client_auth_vtable != NULL) {
+< 		(*CTX->client_auth_vtable)->start_name(
+< 			CTX->client_auth_vtable, len);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
+> 		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->start_name(
+> 			BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable, len);
+928,930c928,930
+< 	if (CTX->client_auth_vtable != NULL) {
+< 		(*CTX->client_auth_vtable)->append_name(
+< 			CTX->client_auth_vtable, ENG->pad, len);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
+> 		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->append_name(
+> 			BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable, ENG->pad, len);
+936,938c936,938
+< 	if (CTX->client_auth_vtable != NULL) {
+< 		(*CTX->client_auth_vtable)->end_name(
+< 			CTX->client_auth_vtable);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
+> 		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->end_name(
+> 			BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable);
+944,946c944,946
+< 	if (CTX->client_auth_vtable != NULL) {
+< 		(*CTX->client_auth_vtable)->end_name_list(
+< 			CTX->client_auth_vtable);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
+> 		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->end_name_list(
+> 			BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable);
+955c955
+< 	if (CTX->client_auth_vtable != NULL) {
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable != NULL) {
+958,961c958,961
+< 		(*CTX->client_auth_vtable)->choose(CTX->client_auth_vtable,
+< 			CTX, auth_types, &ux);
+< 		CTX->auth_type = (unsigned char)ux.auth_type;
+< 		CTX->hash_id = (unsigned char)ux.hash_id;
+---
+> 		(*BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable)->choose(BEAR_SINGLE_UNITY_FILECTX->client_auth_vtable,
+> 			BEAR_SINGLE_UNITY_FILECTX, auth_types, &ux);
+> 		BEAR_SINGLE_UNITY_FILECTX->auth_type = (unsigned char)ux.auth_type;
+> 		BEAR_SINGLE_UNITY_FILECTX->hash_id = (unsigned char)ux.hash_id;
+965c965
+< 		CTX->hash_id = 0;
+---
+> 		BEAR_SINGLE_UNITY_FILECTX->hash_id = 0;
+1068c1068
+< 	x = make_pms_rsa(CTX, T0_POP());
+---
+> 	x = make_pms_rsa(BEAR_SINGLE_UNITY_FILECTX, T0_POP());
+1082c1082
+< 	x = make_pms_ecdh(CTX, ecdhe, prf_id);
+---
+> 	x = make_pms_ecdh(BEAR_SINGLE_UNITY_FILECTX, ecdhe, prf_id);
+1094c1094
+< 	if (make_pms_static_ecdh(CTX, prf_id) < 0) {
+---
+> 	if (make_pms_static_ecdh(BEAR_SINGLE_UNITY_FILECTX, prf_id) < 0) {
+1103c1103
+< 	sig_len = make_client_sign(CTX);
+---
+> 	sig_len = make_client_sign(BEAR_SINGLE_UNITY_FILECTX);

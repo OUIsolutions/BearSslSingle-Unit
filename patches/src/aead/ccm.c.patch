@@ -1,0 +1,12 @@
+25c25
+< #include "inner.h"
+---
+> 
+139c139
+< 	dbuf = data;
+---
+> 	dbuf = (unsigned char*)data;
+205c205
+< 	dbuf = data;
+---
+> 	dbuf = (unsigned char*)data;

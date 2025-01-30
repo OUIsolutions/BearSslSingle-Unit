@@ -1,0 +1,8 @@
+25c25
+< #include "inner.h"
+---
+> 
+36c36
+< 	return br_rsa_i32_private(x, sk);
+---
+> 	return br_rsa_i32_private((unsigned char*)x, sk);

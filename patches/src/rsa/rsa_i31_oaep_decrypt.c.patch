@@ -1,0 +1,8 @@
+25c25
+< #include "inner.h"
+---
+> 
+38c38
+< 	r = br_rsa_i31_private(data, sk);
+---
+> 	r = br_rsa_i31_private((unsigned char*)data, sk);

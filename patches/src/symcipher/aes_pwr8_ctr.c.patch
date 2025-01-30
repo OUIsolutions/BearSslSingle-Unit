@@ -1,0 +1,20 @@
+26c26
+< #include "inner.h"
+---
+> 
+88c88
+< 		 * v15 = constant for byteswapping words
+---
+> 		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+276c276
+< 		 * v15 = constant for byteswapping words
+---
+> 		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+476c476
+< 		 * v15 = constant for byteswapping words
+---
+> 		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+635c635
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;

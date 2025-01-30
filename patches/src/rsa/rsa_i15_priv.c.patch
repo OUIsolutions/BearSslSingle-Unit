@@ -1,0 +1,24 @@
+25c25
+< #include "inner.h"
+---
+> 
+28c28
+< #define TLEN   (8 * U)
+---
+> #define BEAR_SINGLE_UNITY_FILETLEN   (8 * U)
+39c39
+< 	uint16_t tmp[1 + TLEN];
+---
+> 	uint16_t tmp[1 + BEAR_SINGLE_UNITY_FILETLEN];
+79c79
+< 	if (6 * fwlen > TLEN) {
+---
+> 	if (6 * fwlen > BEAR_SINGLE_UNITY_FILETLEN) {
+151c151
+< 		mq + 3 * fwlen, TLEN - 3 * fwlen);
+---
+> 		mq + 3 * fwlen, BEAR_SINGLE_UNITY_FILETLEN - 3 * fwlen);
+160c160
+< 		mq + 4 * fwlen, TLEN - 4 * fwlen);
+---
+> 		mq + 4 * fwlen, BEAR_SINGLE_UNITY_FILETLEN - 4 * fwlen);

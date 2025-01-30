@@ -1,0 +1,16 @@
+25c25
+< #include "inner.h"
+---
+> 
+31c31
+< #define TLEN   (4 * (2 + ((BR_MAX_RSA_SIZE + 30) / 31)))
+---
+> #define BEAR_SINGLE_UNITY_FILETLEN   (4 * (2 + ((BR_MAX_RSA_SIZE + 30) / 31)))
+40c40
+< 	uint32_t tmp[1 + TLEN];
+---
+> 	uint32_t tmp[1 + BEAR_SINGLE_UNITY_FILETLEN];
+99c99
+< 	br_i31_modpow_opt(a, pk->e, pk->elen, m, m0i, t, TLEN - 2 * fwlen);
+---
+> 	br_i31_modpow_opt(a, pk->e, pk->elen, m, m0i, t, BEAR_SINGLE_UNITY_FILETLEN - 2 * fwlen);

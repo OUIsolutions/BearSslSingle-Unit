@@ -1,0 +1,12 @@
+25c25
+< #include "inner.h"
+---
+> 
+78c78
+< 	len = impl->mulgen(kbuf, sk->x, sk->xlen, curve);
+---
+> 	len = impl->mulgen((unsigned char*)kbuf, sk->x, sk->xlen, curve);
+81c81
+< 		pk->q = kbuf;
+---
+> 		pk->q = (unsigned char*)kbuf;

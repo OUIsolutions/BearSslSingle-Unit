@@ -1,0 +1,106 @@
+25c25
+< #include "inner.h"
+---
+> 
+32c32
+< mkrand(const br_prng_class **rng, uint16_t *x, uint32_t esize)
+---
+> BEAR_SINGLE_UNITY_FILEmkrand(const br_prng_class **rng, uint16_t *x, uint32_t esize)
+54c54
+< static const unsigned char SMALL_PRIMES[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILESMALL_PRIMES[] = {
+87c87
+<  * 2 kilobytes in total, to save stack space. The macro TEMPS below
+---
+>  * 2 kilobytes in total, to save stack space. The macro BEAR_SINGLE_UNITY_FILETEMPS below
+93c93
+< #define TEMPS       MAX(1024, 7 * ((((BR_MAX_RSA_SIZE + 1) >> 1) + 29) / 15))
+---
+> #define BEAR_SINGLE_UNITY_FILETEMPS       MAX(1024, 7 * ((((BR_MAX_RSA_SIZE + 1) >> 1) + 29) / 15))
+97c97
+<  * y = SMALL_PRIMES mod x, then tries to compute y/y mod x. The
+---
+>  * y = BEAR_SINGLE_UNITY_FILESMALL_PRIMES mod x, then tries to compute y/y mod x. The
+105c105
+< trial_divisions(const uint16_t *x, uint16_t *t)
+---
+> BEAR_SINGLE_UNITY_FILEtrial_divisions(const uint16_t *x, uint16_t *t)
+113c113
+< 	br_i15_decode_reduce(y, SMALL_PRIMES, sizeof SMALL_PRIMES, x);
+---
+> 	br_i15_decode_reduce(y, BEAR_SINGLE_UNITY_FILESMALL_PRIMES, sizeof BEAR_SINGLE_UNITY_FILESMALL_PRIMES, x);
+125c125
+< miller_rabin(const br_prng_class **rng, const uint16_t *x, int n,
+---
+> BEAR_SINGLE_UNITY_FILEmiller_rabin(const br_prng_class **rng, const uint16_t *x, int n,
+187c187
+< 		mkrand(rng, a, asize);
+---
+> 		BEAR_SINGLE_UNITY_FILEmkrand(rng, a, asize);
+221c221
+< mkprime(const br_prng_class **rng, uint16_t *x, uint32_t esize,
+---
+> BEAR_SINGLE_UNITY_FILEmkprime(const br_prng_class **rng, uint16_t *x, uint32_t esize,
+237c237
+< 		mkrand(rng, x, esize);
+---
+> 		BEAR_SINGLE_UNITY_FILEmkrand(rng, x, esize);
+331c331
+< 		if (!trial_divisions(x, t)) {
+---
+> 		if (!BEAR_SINGLE_UNITY_FILEtrial_divisions(x, t)) {
+363c363
+< 		if (miller_rabin(rng, x, rounds, t, tlen)) {
+---
+> 		if (BEAR_SINGLE_UNITY_FILEmiller_rabin(rng, x, rounds, t, tlen)) {
+380c380
+< invert_pubexp(uint16_t *d, const uint16_t *m, uint32_t e, uint16_t *t)
+---
+> BEAR_SINGLE_UNITY_FILEinvert_pubexp(uint16_t *d, const uint16_t *m, uint32_t e, uint16_t *t)
+419c419
+< bufswap(void *b1, void *b2, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEbufswap(void *b1, void *b2, size_t len)
+424,425c424,425
+< 	buf1 = b1;
+< 	buf2 = b2;
+---
+> 	buf1 = (unsigned char*)b1;
+> 	buf2 = (unsigned char*)b2;
+445c445
+< 	uint16_t tmp[TEMPS];
+---
+> 	uint16_t tmp[BEAR_SINGLE_UNITY_FILETEMPS];
+460c460
+< 	sk->p = kbuf_priv;
+---
+> 	sk->p = (unsigned char*)kbuf_priv;
+472c472
+< 		pk->n = kbuf_pub;
+---
+> 		pk->n = (unsigned char*)kbuf_pub;
+505c505
+< 		mkprime(rng, p, esize_p, pubexp, t, tlen);
+---
+> 		BEAR_SINGLE_UNITY_FILEmkprime(rng, p, esize_p, pubexp, t, tlen);
+507c507
+< 		if (invert_pubexp(t, p, pubexp, t + 1 + plen)) {
+---
+> 		if (BEAR_SINGLE_UNITY_FILEinvert_pubexp(t, p, pubexp, t + 1 + plen)) {
+517c517
+< 		mkprime(rng, q, esize_q, pubexp, t, tlen);
+---
+> 		BEAR_SINGLE_UNITY_FILEmkprime(rng, q, esize_q, pubexp, t, tlen);
+519c519
+< 		if (invert_pubexp(t, q, pubexp, t + 1 + qlen)) {
+---
+> 		if (BEAR_SINGLE_UNITY_FILEinvert_pubexp(t, q, pubexp, t + 1 + qlen)) {
+544,546c544,546
+< 		bufswap(p, q, (1 + plen) * sizeof *p);
+< 		bufswap(sk->p, sk->q, sk->plen);
+< 		bufswap(sk->dp, sk->dq, sk->dplen);
+---
+> 		BEAR_SINGLE_UNITY_FILEbufswap(p, q, (1 + plen) * sizeof *p);
+> 		BEAR_SINGLE_UNITY_FILEbufswap(sk->p, sk->q, sk->plen);
+> 		BEAR_SINGLE_UNITY_FILEbufswap(sk->dp, sk->dq, sk->dplen);

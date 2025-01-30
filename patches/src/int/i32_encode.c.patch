@@ -1,0 +1,8 @@
+25c25
+< #include "inner.h"
+---
+> 
+34c34
+< 	buf = dst;
+---
+> 	buf = (unsigned char*)dst;

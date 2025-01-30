@@ -1,0 +1,66 @@
+25c25
+< #include "inner.h"
+---
+> 
+37c37
+< xorbuf(void *dst, const void *src, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILExorbuf(void *dst, const void *src, size_t len)
+42,43c42,43
+< 	d = dst;
+< 	s = src;
+---
+> 	d = (unsigned char*)dst;
+> 	s = (const unsigned char*)src;
+66c66
+< 	ivbuf = ctr;
+---
+> 	ivbuf = (unsigned char*)ctr;
+72c72
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+81c81
+< 		 * little-endian convention, so we have to byteswap them.
+---
+> 		 * little-endian convention, so we have to BEAR_SINGLE_UNITY_FILEbyteswap them.
+115c115
+< 			xorbuf(buf, tmp, len);
+---
+> 			BEAR_SINGLE_UNITY_FILExorbuf(buf, tmp, len);
+118c118
+< 		xorbuf(buf, tmp, 64);
+---
+> 		BEAR_SINGLE_UNITY_FILExorbuf(buf, tmp, 64);
+145c145
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+201c201
+< 	ivbuf = ctr;
+---
+> 	ivbuf = (unsigned char*)ctr;
+215c215
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+223c223
+< 		 * little-endian convention, so we have to byteswap them.
+---
+> 		 * little-endian convention, so we have to BEAR_SINGLE_UNITY_FILEbyteswap them.
+339c339
+< 	ivbuf = ctr;
+---
+> 	ivbuf = (unsigned char*)ctr;
+353c353
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+361c361
+< 		 * little-endian convention, so we have to byteswap them.
+---
+> 		 * little-endian convention, so we have to BEAR_SINGLE_UNITY_FILEbyteswap them.
+395c395
+< 		xorbuf(buf, tmp, 16);
+---
+> 		BEAR_SINGLE_UNITY_FILExorbuf(buf, tmp, 16);

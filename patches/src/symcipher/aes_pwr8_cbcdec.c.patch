@@ -1,0 +1,32 @@
+26c26
+< #include "inner.h"
+---
+> 
+85c85
+< 		 * v15 = constant for byteswapping words
+---
+> 		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+175c175
+< 		 * Store back result (with byteswap)
+---
+> 		 * Store back result (with BEAR_SINGLE_UNITY_FILEbyteswap)
+260c260
+< 		 * v15 = constant for byteswapping words
+---
+> 		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+358c358
+< 		 * Store back result (with byteswap)
+---
+> 		 * Store back result (with BEAR_SINGLE_UNITY_FILEbyteswap)
+447c447
+< 		 * v15 = constant for byteswapping words
+---
+> 		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+553c553
+< 		 * Store back result (with byteswap)
+---
+> 		 * Store back result (with BEAR_SINGLE_UNITY_FILEbyteswap)
+599c599
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;

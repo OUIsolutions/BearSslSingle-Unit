@@ -1,0 +1,62 @@
+26c26
+< #include "inner.h"
+---
+> 
+94,101c94,101
+< 		__m128i byteswap1, byteswap2; \
+< 		byteswap1 = (x); \
+< 		byteswap2 = _mm_srli_epi16(byteswap1, 8); \
+< 		byteswap1 = _mm_slli_epi16(byteswap1, 8); \
+< 		byteswap1 = _mm_or_si128(byteswap1, byteswap2); \
+< 		byteswap1 = _mm_shufflelo_epi16(byteswap1, 0x1B); \
+< 		byteswap1 = _mm_shufflehi_epi16(byteswap1, 0x1B); \
+< 		(x) = _mm_shuffle_epi32(byteswap1, 0x4E); \
+---
+> 		__m128i BEAR_SINGLE_UNITY_FILEbyteswap1, BEAR_SINGLE_UNITY_FILEbyteswap2; \
+> 		BEAR_SINGLE_UNITY_FILEbyteswap1 = (x); \
+> 		BEAR_SINGLE_UNITY_FILEbyteswap2 = _mm_srli_epi16(BEAR_SINGLE_UNITY_FILEbyteswap1, 8); \
+> 		BEAR_SINGLE_UNITY_FILEbyteswap1 = _mm_slli_epi16(BEAR_SINGLE_UNITY_FILEbyteswap1, 8); \
+> 		BEAR_SINGLE_UNITY_FILEbyteswap1 = _mm_or_si128(BEAR_SINGLE_UNITY_FILEbyteswap1, BEAR_SINGLE_UNITY_FILEbyteswap2); \
+> 		BEAR_SINGLE_UNITY_FILEbyteswap1 = _mm_shufflelo_epi16(BEAR_SINGLE_UNITY_FILEbyteswap1, 0x1B); \
+> 		BEAR_SINGLE_UNITY_FILEbyteswap1 = _mm_shufflehi_epi16(BEAR_SINGLE_UNITY_FILEbyteswap1, 0x1B); \
+> 		(x) = _mm_shuffle_epi32(BEAR_SINGLE_UNITY_FILEbyteswap1, 0x4E); \
+104c104
+< #define BYTESWAP_DECL   __m128i byteswap_index;
+---
+> #define BYTESWAP_DECL   __m128i BEAR_SINGLE_UNITY_FILEbyteswap_index;
+106c106
+< 		byteswap_index = _mm_set_epi8( \
+---
+> 		BEAR_SINGLE_UNITY_FILEbyteswap_index = _mm_set_epi8( \
+110c110
+< 		(x) = _mm_shuffle_epi8((x), byteswap_index); \
+---
+> 		(x) = _mm_shuffle_epi8((x), BEAR_SINGLE_UNITY_FILEbyteswap_index); \
+247c247
+< 	buf1 = data;
+---
+> 	buf1 = (unsigned char*)data;
+266,267c266,267
+< 	yw = _mm_loadu_si128(y);
+< 	h1w = _mm_loadu_si128(h);
+---
+> 	yw = _mm_loadu_si128((const __m128i_u*)y);
+> 	h1w = _mm_loadu_si128((const __m128i_u*)h);
+304,307c304,307
+< 			aw0 = _mm_loadu_si128((void *)(buf1 +  0));
+< 			aw1 = _mm_loadu_si128((void *)(buf1 + 16));
+< 			aw2 = _mm_loadu_si128((void *)(buf1 + 32));
+< 			aw3 = _mm_loadu_si128((void *)(buf1 + 48));
+---
+> 			aw0 = _mm_loadu_si128((const __m128i_u*)(buf1 +  0));
+> 			aw1 = _mm_loadu_si128((const __m128i_u*)(buf1 + 16));
+> 			aw2 = _mm_loadu_si128((const __m128i_u*)(buf1 + 32));
+> 			aw3 = _mm_loadu_si128((const __m128i_u*)(buf1 + 48));
+355c355
+< 		aw = _mm_loadu_si128((void *)buf2);
+---
+> 		aw = _mm_loadu_si128((const __m128i_u*)buf2);
+375c375
+< 	_mm_storeu_si128(y, yw);
+---
+> 	_mm_storeu_si128((__m128i_u*)y, yw);

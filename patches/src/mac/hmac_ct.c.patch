@@ -1,0 +1,12 @@
+25c25
+< #include "inner.h"
+---
+> 
+35c35
+< block_size(const br_hash_class *dig)
+---
+> BEAR_SINGLE_UNITY_FILEblock_size(const br_hash_class *dig)
+88c88
+< 	bs = block_size(dig);
+---
+> 	bs = BEAR_SINGLE_UNITY_FILEblock_size(dig);

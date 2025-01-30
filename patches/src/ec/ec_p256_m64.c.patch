@@ -1,0 +1,682 @@
+25c25
+< #include "inner.h"
+---
+> 
+33c33
+< static const unsigned char P256_G[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEP256_G[] = {
+43c43
+< static const unsigned char P256_N[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEP256_N[] = {
+51c51
+< api_generator(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
+54,55c54,55
+< 	*len = sizeof P256_G;
+< 	return P256_G;
+---
+> 	*len = sizeof BEAR_SINGLE_UNITY_FILEP256_G;
+> 	return BEAR_SINGLE_UNITY_FILEP256_G;
+59c59
+< api_order(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
+62,63c62,63
+< 	*len = sizeof P256_N;
+< 	return P256_N;
+---
+> 	*len = sizeof BEAR_SINGLE_UNITY_FILEP256_N;
+> 	return BEAR_SINGLE_UNITY_FILEP256_N;
+67c67
+< api_xoff(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
+80c80
+< static const uint64_t F256_R[] = {
+---
+> static const uint64_t BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R[] = {
+87c87
+< static const uint64_t P256_B_MONTY[] = {
+---
+> static const uint64_t BEAR_SINGLE_UNITY_FILEP256_B_MONTY[] = {
+96c96
+< f256_add(uint64_t *d, const uint64_t *a, const uint64_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEf256_add(uint64_t *d, const uint64_t *a, const uint64_t *b)
+178c178
+< f256_sub(uint64_t *d, const uint64_t *a, const uint64_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEf256_sub(uint64_t *d, const uint64_t *a, const uint64_t *b)
+259c259
+< f256_montymul(uint64_t *d, const uint64_t *a, const uint64_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEf256_montymul(uint64_t *d, const uint64_t *a, const uint64_t *b)
+499c499
+< f256_montysquare(uint64_t *d, const uint64_t *a)
+---
+> BEAR_SINGLE_UNITY_FILEf256_montysquare(uint64_t *d, const uint64_t *a)
+501c501
+< 	f256_montymul(d, a, a);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(d, a, a);
+508c508
+< f256_tomonty(uint64_t *d, const uint64_t *a)
+---
+> BEAR_SINGLE_UNITY_FILEf256_tomonty(uint64_t *d, const uint64_t *a)
+523c523
+< 	f256_montymul(d, a, R2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(d, a, R2);
+530c530
+< f256_frommonty(uint64_t *d, const uint64_t *a)
+---
+> BEAR_SINGLE_UNITY_FILEf256_frommonty(uint64_t *d, const uint64_t *a)
+537c537
+< 	f256_montymul(d, a, one);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(d, a, one);
+545c545
+< f256_invert(uint64_t *d, const uint64_t *a)
+---
+> BEAR_SINGLE_UNITY_FILEf256_invert(uint64_t *d, const uint64_t *a)
+566,567c566,567
+< 		f256_montysquare(t, t);
+< 		f256_montymul(t, t, a);
+---
+> 		BEAR_SINGLE_UNITY_FILEf256_montysquare(t, t);
+> 		BEAR_SINGLE_UNITY_FILEf256_montymul(t, t, a);
+572c572
+< 		f256_montysquare(r, r);
+---
+> 		BEAR_SINGLE_UNITY_FILEf256_montysquare(r, r);
+578c578
+< 			f256_montymul(r, r, a);
+---
+> 			BEAR_SINGLE_UNITY_FILEf256_montymul(r, r, a);
+583c583
+< 			f256_montymul(r, r, t);
+---
+> 			BEAR_SINGLE_UNITY_FILEf256_montymul(r, r, t);
+596c596
+< f256_final_reduce(uint64_t *a)
+---
+> BEAR_SINGLE_UNITY_FILEf256_final_reduce(uint64_t *a)
+652c652
+< } p256_affine;
+---
+> } BEAR_SINGLE_UNITY_FILEp256_affine;
+658c658
+< } p256_jacobian;
+---
+> } p256_BEAR_SINGLE_UNITY_FILEjacobian;
+669c669
+< point_decode(p256_jacobian *P, const unsigned char *buf)
+---
+> BEAR_SINGLE_UNITY_FILEpoint_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *buf)
+691,692c691,692
+< 	f256_tomonty(x, x);
+< 	f256_tomonty(y, y);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_tomonty(x, x);
+> 	BEAR_SINGLE_UNITY_FILEf256_tomonty(y, y);
+700,708c700,708
+< 	f256_montysquare(t, y);
+< 	f256_montysquare(x3, x);
+< 	f256_montymul(x3, x3, x);
+< 	f256_sub(t, t, x3);
+< 	f256_add(t, t, x);
+< 	f256_add(t, t, x);
+< 	f256_add(t, t, x);
+< 	f256_sub(t, t, P256_B_MONTY);
+< 	f256_final_reduce(t);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t, y);
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(x3, x);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(x3, x3, x);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t, t, x3);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t, t, x);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t, t, x);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t, t, x);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t, t, BEAR_SINGLE_UNITY_FILEP256_B_MONTY);
+> 	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t);
+718c718
+< 	memcpy(P->z, F256_R, sizeof F256_R);
+---
+> 	memcpy(P->z, BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R, sizeof BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R);
+733c733
+< point_encode(unsigned char *buf, const p256_jacobian *P)
+---
+> BEAR_SINGLE_UNITY_FILEpoint_encode(unsigned char *buf, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
+738,740c738,740
+< 	f256_invert(t2, P->z);
+< 	f256_montysquare(t1, t2);
+< 	f256_montymul(t2, t2, t1);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_invert(t2, P->z);
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t1, t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, t2, t1);
+743,744c743,744
+< 	f256_montymul(t1, P->x, t1);
+< 	f256_montymul(t2, P->y, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, P->x, t1);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, P->y, t2);
+748,751c748,751
+< 	f256_frommonty(t1, t1);
+< 	f256_frommonty(t2, t2);
+< 	f256_final_reduce(t1);
+< 	f256_final_reduce(t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_frommonty(t1, t1);
+> 	BEAR_SINGLE_UNITY_FILEf256_frommonty(t2, t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t1);
+> 	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t2);
+781c781
+< p256_double(p256_jacobian *P)
+---
+> BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
+803c803
+< 	f256_montysquare(t1, P->z);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t1, P->z);
+808,809c808,809
+< 	f256_add(t2, P->x, t1);
+< 	f256_sub(t1, P->x, t1);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t2, P->x, t1);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t1, P->x, t1);
+814,816c814,816
+< 	f256_montymul(t3, t1, t2);
+< 	f256_add(t1, t3, t3);
+< 	f256_add(t1, t3, t1);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t3, t1, t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t1, t3, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t1, t3, t1);
+821,824c821,824
+< 	f256_montysquare(t3, P->y);
+< 	f256_add(t3, t3, t3);
+< 	f256_montymul(t2, P->x, t3);
+< 	f256_add(t2, t2, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t3, P->y);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t3, t3, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, P->x, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t2, t2, t2);
+829,831c829,831
+< 	f256_montysquare(P->x, t1);
+< 	f256_sub(P->x, P->x, t2);
+< 	f256_sub(P->x, P->x, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(P->x, t1);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P->x, P->x, t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P->x, P->x, t2);
+836,837c836,837
+< 	f256_montymul(t4, P->y, P->z);
+< 	f256_add(P->z, t4, t4);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t4, P->y, P->z);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(P->z, t4, t4);
+843,847c843,847
+< 	f256_sub(t2, t2, P->x);
+< 	f256_montymul(P->y, t1, t2);
+< 	f256_montysquare(t4, t3);
+< 	f256_add(t4, t4, t4);
+< 	f256_sub(P->y, P->y, t4);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t2, t2, P->x);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(P->y, t1, t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t4, t4, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P->y, P->y, t4);
+884c884
+< p256_add(p256_jacobian *P1, const p256_jacobian *P2)
+---
+> BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
+905,908c905,908
+< 	f256_montysquare(t3, P2->z);
+< 	f256_montymul(t1, P1->x, t3);
+< 	f256_montymul(t4, P2->z, t3);
+< 	f256_montymul(t3, P1->y, t4);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t3, P2->z);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, P1->x, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t4, P2->z, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t3, P1->y, t4);
+913,916c913,916
+< 	f256_montysquare(t4, P1->z);
+< 	f256_montymul(t2, P2->x, t4);
+< 	f256_montymul(t5, P1->z, t4);
+< 	f256_montymul(t4, P2->y, t5);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P1->z);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, P2->x, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, P1->z, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t4, P2->y, t5);
+923,925c923,925
+< 	f256_sub(t2, t2, t1);
+< 	f256_sub(t4, t4, t3);
+< 	f256_final_reduce(t4);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t2, t2, t1);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t4, t4, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t4);
+933,935c933,935
+< 	f256_montysquare(t7, t2);
+< 	f256_montymul(t6, t1, t7);
+< 	f256_montymul(t5, t7, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t6, t1, t7);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, t7, t2);
+940,943c940,943
+< 	f256_montysquare(P1->x, t4);
+< 	f256_sub(P1->x, P1->x, t5);
+< 	f256_sub(P1->x, P1->x, t6);
+< 	f256_sub(P1->x, P1->x, t6);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(P1->x, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t5);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
+948,951c948,951
+< 	f256_sub(t6, t6, P1->x);
+< 	f256_montymul(P1->y, t4, t6);
+< 	f256_montymul(t1, t5, t3);
+< 	f256_sub(P1->y, P1->y, t1);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t6, P1->x);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->y, t4, t6);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, t5, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->y, P1->y, t1);
+956,957c956,957
+< 	f256_montymul(t1, P1->z, P2->z);
+< 	f256_montymul(P1->z, t1, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, P1->z, P2->z);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->z, t1, t2);
+996c996
+< p256_add_mixed(p256_jacobian *P1, const p256_affine *P2)
+---
+> BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const BEAR_SINGLE_UNITY_FILEp256_affine *P2)
+1023,1026c1023,1026
+< 	f256_montysquare(t4, P1->z);
+< 	f256_montymul(t2, P2->x, t4);
+< 	f256_montymul(t5, P1->z, t4);
+< 	f256_montymul(t4, P2->y, t5);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P1->z);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, P2->x, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, P1->z, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t4, P2->y, t5);
+1033,1035c1033,1035
+< 	f256_sub(t2, t2, t1);
+< 	f256_sub(t4, t4, t3);
+< 	f256_final_reduce(t4);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t2, t2, t1);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t4, t4, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t4);
+1043,1045c1043,1045
+< 	f256_montysquare(t7, t2);
+< 	f256_montymul(t6, t1, t7);
+< 	f256_montymul(t5, t7, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t6, t1, t7);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, t7, t2);
+1050,1053c1050,1053
+< 	f256_montysquare(P1->x, t4);
+< 	f256_sub(P1->x, P1->x, t5);
+< 	f256_sub(P1->x, P1->x, t6);
+< 	f256_sub(P1->x, P1->x, t6);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(P1->x, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t5);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
+1058,1061c1058,1061
+< 	f256_sub(t6, t6, P1->x);
+< 	f256_montymul(P1->y, t4, t6);
+< 	f256_montymul(t1, t5, t3);
+< 	f256_sub(P1->y, P1->y, t1);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t6, P1->x);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->y, t4, t6);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, t5, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->y, P1->y, t1);
+1066c1066
+< 	f256_montymul(P1->z, P1->z, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->z, P1->z, t2);
+1081c1081
+< p256_add_complete_mixed(p256_jacobian *P1, const p256_affine *P2)
+---
+> BEAR_SINGLE_UNITY_FILEp256_add_complete_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const BEAR_SINGLE_UNITY_FILEp256_affine *P2)
+1116c1116
+< 	 * Using the doubling formulas in p256_double() on (x2,y2),
+---
+> 	 * Using the doubling formulas in BEAR_SINGLE_UNITY_FILEp256_double() on (x2,y2),
+1146,1149c1146,1149
+< 	f256_montysquare(t4, P1->z);
+< 	f256_montymul(t2, P2->x, t4);
+< 	f256_montymul(t5, P1->z, t4);
+< 	f256_montymul(t4, P2->y, t5);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P1->z);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t2, P2->x, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, P1->z, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t4, P2->y, t5);
+1155,1156c1155,1156
+< 	f256_sub(t2, t2, t1);
+< 	f256_sub(t4, t4, t3);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t2, t2, t1);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t4, t4, t3);
+1162,1163c1162,1163
+< 	f256_final_reduce(t2);
+< 	f256_final_reduce(t4);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_final_reduce(t4);
+1170,1172c1170,1172
+< 	f256_montysquare(t7, t2);
+< 	f256_montymul(t6, t1, t7);
+< 	f256_montymul(t5, t7, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t6, t1, t7);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t5, t7, t2);
+1177,1180c1177,1180
+< 	f256_montysquare(P1->x, t4);
+< 	f256_sub(P1->x, P1->x, t5);
+< 	f256_sub(P1->x, P1->x, t6);
+< 	f256_sub(P1->x, P1->x, t6);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(P1->x, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t5);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->x, P1->x, t6);
+1185,1188c1185,1188
+< 	f256_sub(t6, t6, P1->x);
+< 	f256_montymul(P1->y, t4, t6);
+< 	f256_montymul(t1, t5, t3);
+< 	f256_sub(P1->y, P1->y, t1);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t6, P1->x);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->y, t4, t6);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t1, t5, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(P1->y, P1->y, t1);
+1193c1193
+< 	f256_montymul(P1->z, P1->z, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(P1->z, P1->z, t2);
+1202c1202
+< 	f256_add(t1, P2->y, P2->y);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t1, P2->y, P2->y);
+1207,1210c1207,1210
+< 	f256_montysquare(t2, P2->y);
+< 	f256_add(t2, t2, t2);
+< 	f256_add(t3, t2, t2);
+< 	f256_montymul(t3, P2->x, t3);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t2, P2->y);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t2, t2, t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t3, t2, t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t3, P2->x, t3);
+1215,1218c1215,1218
+< 	f256_montysquare(t4, P2->x);
+< 	f256_sub(t4, t4, F256_R);
+< 	f256_add(t5, t4, t4);
+< 	f256_add(t4, t4, t5);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t4, P2->x);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t4, t4, BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t5, t4, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_add(t4, t4, t5);
+1223,1225c1223,1225
+< 	f256_montysquare(t5, t4);
+< 	f256_sub(t5, t3);
+< 	f256_sub(t5, t3);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t5, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t5, t3);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t5, t3);
+1230,1234c1230,1234
+< 	f256_sub(t6, t3, t5);
+< 	f256_montymul(t6, t6, t4);
+< 	f256_montysquare(t7, t2);
+< 	f256_sub(t6, t6, t7);
+< 	f256_sub(t6, t6, t7);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t3, t5);
+> 	BEAR_SINGLE_UNITY_FILEf256_montymul(t6, t6, t4);
+> 	BEAR_SINGLE_UNITY_FILEf256_montysquare(t7, t2);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t6, t7);
+> 	BEAR_SINGLE_UNITY_FILEf256_sub(t6, t6, t7);
+1254c1254
+< 		P1->z[i] ^= zz & (P1->z[i] ^ F256_R[i]);
+---
+> 		P1->z[i] ^= zz & (P1->z[i] ^ BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R[i]);
+1269c1269
+< point_mul_inner(p256_jacobian *R, const p256_affine *W,
+---
+> BEAR_SINGLE_UNITY_FILEpoint_mul_inner(p256_BEAR_SINGLE_UNITY_FILEjacobian *R, const BEAR_SINGLE_UNITY_FILEp256_affine *W,
+1272c1272
+< 	p256_jacobian Q;
+---
+> 	p256_BEAR_SINGLE_UNITY_FILEjacobian Q;
+1285,1286c1285,1286
+< 			p256_affine T;
+< 			p256_jacobian U;
+---
+> 			BEAR_SINGLE_UNITY_FILEp256_affine T;
+> 			p256_BEAR_SINGLE_UNITY_FILEjacobian U;
+1291,1294c1291,1294
+< 			p256_double(&Q);
+< 			p256_double(&Q);
+< 			p256_double(&Q);
+< 			p256_double(&Q);
+---
+> 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+> 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+> 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+> 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+1318c1318
+< 			p256_add_mixed(&U, &T);
+---
+> 			BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(&U, &T);
+1322c1322
+< 			 * is conserved through p256_double().
+---
+> 			 * is conserved through BEAR_SINGLE_UNITY_FILEp256_double().
+1328c1328
+< 				Q.z[j] |= m & F256_R[j];
+---
+> 				Q.z[j] |= m & BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R[j];
+1349c1349
+< window_to_affine(p256_affine *aff, p256_jacobian *jac, int num)
+---
+> BEAR_SINGLE_UNITY_FILEwindow_to_affine(BEAR_SINGLE_UNITY_FILEp256_affine *aff, p256_BEAR_SINGLE_UNITY_FILEjacobian *jac, int num)
+1421c1421
+< 		f256_montymul(z[i >> 1], jac[i].z, jac[i + 1].z);
+---
+> 		BEAR_SINGLE_UNITY_FILEf256_montymul(z[i >> 1], jac[i].z, jac[i + 1].z);
+1425c1425
+< 		memcpy(jac[num - 1].z, F256_R, sizeof F256_R);
+---
+> 		memcpy(jac[num - 1].z, BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R, sizeof BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEF256_R);
+1437c1437
+< 			f256_montymul(jac[i].z, jac[i].z, z[(i >> k) ^ 1]);
+---
+> 			BEAR_SINGLE_UNITY_FILEf256_montymul(jac[i].z, jac[i].z, z[(i >> k) ^ 1]);
+1441c1441
+< 			f256_montymul(z[i], z[i << 1], z[(i << 1) + 1]);
+---
+> 			BEAR_SINGLE_UNITY_FILEf256_montymul(z[i], z[i << 1], z[(i << 1) + 1]);
+1451c1451
+< 	f256_invert(zt, z[0]);
+---
+> 	BEAR_SINGLE_UNITY_FILEf256_invert(zt, z[0]);
+1453,1457c1453,1457
+< 		f256_montymul(zv, jac[i].z, zt);
+< 		f256_montysquare(zu, zv);
+< 		f256_montymul(zv, zv, zu);
+< 		f256_montymul(aff[i].x, jac[i].x, zu);
+< 		f256_montymul(aff[i].y, jac[i].y, zv);
+---
+> 		BEAR_SINGLE_UNITY_FILEf256_montymul(zv, jac[i].z, zt);
+> 		BEAR_SINGLE_UNITY_FILEf256_montysquare(zu, zv);
+> 		BEAR_SINGLE_UNITY_FILEf256_montymul(zv, zv, zu);
+> 		BEAR_SINGLE_UNITY_FILEf256_montymul(aff[i].x, jac[i].x, zu);
+> 		BEAR_SINGLE_UNITY_FILEf256_montymul(aff[i].y, jac[i].y, zv);
+1471c1471
+< p256_mul(p256_jacobian *P, const unsigned char *k, size_t klen)
+---
+> BEAR_SINGLE_UNITY_FILEp256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t klen)
+1474,1475c1474,1475
+< 		p256_affine aff[15];
+< 		p256_jacobian jac[15];
+---
+> 		BEAR_SINGLE_UNITY_FILEp256_affine aff[15];
+> 		p256_BEAR_SINGLE_UNITY_FILEjacobian jac[15];
+1486c1486
+< 			p256_double(&window.jac[i - 1]);
+---
+> 			BEAR_SINGLE_UNITY_FILEp256_double(&window.jac[i - 1]);
+1488c1488
+< 			p256_add(&window.jac[i - 1], &window.jac[i >> 1]);
+---
+> 			BEAR_SINGLE_UNITY_FILEp256_add(&window.jac[i - 1], &window.jac[i >> 1]);
+1496c1496
+< 	window_to_affine(window.aff, window.jac, 15);
+---
+> 	BEAR_SINGLE_UNITY_FILEwindow_to_affine(window.aff, window.jac, 15);
+1501c1501
+< 	point_mul_inner(P, window.aff, k, klen);
+---
+> 	BEAR_SINGLE_UNITY_FILEpoint_mul_inner(P, window.aff, k, klen);
+1505c1505
+<  * Precomputed window for the conventional generator: P256_Gwin[n]
+---
+>  * Precomputed window for the conventional generator: BEAR_SINGLE_UNITY_FILEP256_BEAR_SINGLE_UNITY_FILEGwin[n]
+1508c1508
+< static const p256_affine P256_Gwin[] = {
+---
+> static const BEAR_SINGLE_UNITY_FILEp256_affine BEAR_SINGLE_UNITY_FILEP256_BEAR_SINGLE_UNITY_FILEGwin[] = {
+1611c1611
+< p256_mulgen(p256_jacobian *P, const unsigned char *k, size_t klen)
+---
+> BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *k, size_t klen)
+1613c1613
+< 	point_mul_inner(P, P256_Gwin, k, klen);
+---
+> 	BEAR_SINGLE_UNITY_FILEpoint_mul_inner(P, BEAR_SINGLE_UNITY_FILEP256_BEAR_SINGLE_UNITY_FILEGwin, k, klen);
+1626c1626
+< check_scalar(const unsigned char *k, size_t klen)
+---
+> BEAR_SINGLE_UNITY_FILEcheck_scalar(const unsigned char *k, size_t klen)
+1642c1642
+< 			c |= -(int32_t)EQ0(c) & CMP(k[u], P256_N[u]);
+---
+> 			c |= -(int32_t)EQ0(c) & CMP(k[u], BEAR_SINGLE_UNITY_FILEP256_N[u]);
+1651c1651
+< api_mul(unsigned char *G, size_t Glen,
+---
+> BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
+1655c1655
+< 	p256_jacobian P;
+---
+> 	p256_BEAR_SINGLE_UNITY_FILEjacobian P;
+1661,1664c1661,1664
+< 	r = check_scalar(k, klen);
+< 	r &= point_decode(&P, G);
+< 	p256_mul(&P, k, klen);
+< 	r &= point_encode(G, &P);
+---
+> 	r = BEAR_SINGLE_UNITY_FILEcheck_scalar(k, klen);
+> 	r &= BEAR_SINGLE_UNITY_FILEpoint_decode(&P, G);
+> 	BEAR_SINGLE_UNITY_FILEp256_mul(&P, k, klen);
+> 	r &= BEAR_SINGLE_UNITY_FILEpoint_encode(G, &P);
+1669c1669
+< api_mulgen(unsigned char *R,
+---
+> BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
+1672c1672
+< 	p256_jacobian P;
+---
+> 	p256_BEAR_SINGLE_UNITY_FILEjacobian P;
+1675,1676c1675,1676
+< 	p256_mulgen(&P, k, klen);
+< 	point_encode(R, &P);
+---
+> 	BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(&P, k, klen);
+> 	BEAR_SINGLE_UNITY_FILEpoint_encode(R, &P);
+1681c1681
+< api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+---
+> BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
+1691c1691
+< 	 *    Thus, we would need p256_add_complete_mixed() (complete
+---
+> 	 *    Thus, we would need BEAR_SINGLE_UNITY_FILEp256_add_complete_mixed() (complete
+1697c1697
+< 	 *    p256_mul() case, we would need to reduce the window size
+---
+> 	 *    BEAR_SINGLE_UNITY_FILEp256_mul() case, we would need to reduce the window size
+1704c1704
+< 	 *    Jacobian coordinates. Even p256_add_complete_mixed() would
+---
+> 	 *    Jacobian coordinates. Even BEAR_SINGLE_UNITY_FILEp256_add_complete_mixed() would
+1713c1713
+< 	p256_jacobian P, Q;
+---
+> 	p256_BEAR_SINGLE_UNITY_FILEjacobian P, Q;
+1721,1722c1721,1722
+< 	r = point_decode(&P, A);
+< 	p256_mul(&P, x, xlen);
+---
+> 	r = BEAR_SINGLE_UNITY_FILEpoint_decode(&P, A);
+> 	BEAR_SINGLE_UNITY_FILEp256_mul(&P, x, xlen);
+1724c1724
+< 		p256_mulgen(&Q, y, ylen);
+---
+> 		BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(&Q, y, ylen);
+1726,1727c1726,1727
+< 		r &= point_decode(&Q, B);
+< 		p256_mul(&Q, y, ylen);
+---
+> 		r &= BEAR_SINGLE_UNITY_FILEpoint_decode(&Q, B);
+> 		BEAR_SINGLE_UNITY_FILEp256_mul(&Q, y, ylen);
+1733,1734c1733,1734
+< 	t = p256_add(&P, &Q);
+< 	f256_final_reduce(P.z);
+---
+> 	t = BEAR_SINGLE_UNITY_FILEp256_add(&P, &Q);
+> 	BEAR_SINGLE_UNITY_FILEf256_final_reduce(P.z);
+1737c1737
+< 	p256_double(&Q);
+---
+> 	BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+1749c1749
+< 	point_encode(A, &P);
+---
+> 	BEAR_SINGLE_UNITY_FILEpoint_encode(A, &P);
+1757,1762c1757,1762
+< 	&api_generator,
+< 	&api_order,
+< 	&api_xoff,
+< 	&api_mul,
+< 	&api_mulgen,
+< 	&api_muladd
+---
+> 	&BEAR_SINGLE_UNITY_FILEapi_generator,
+> 	&BEAR_SINGLE_UNITY_FILEapi_order,
+> 	&BEAR_SINGLE_UNITY_FILEapi_xoff,
+> 	&BEAR_SINGLE_UNITY_FILEapi_mul,
+> 	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
+> 	&BEAR_SINGLE_UNITY_FILEapi_muladd

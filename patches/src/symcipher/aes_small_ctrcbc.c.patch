@@ -1,0 +1,32 @@
+25c25
+< #include "inner.h"
+---
+> 
+37c37
+< xorbuf(void *dst, const void *src, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILExorbuf(void *dst, const void *src, size_t len)
+42,43c42,43
+< 	d = dst;
+< 	s = src;
+---
+> 	d = (unsigned char*)dst;
+> 	s = (const unsigned char*)src;
+57,58c57,58
+< 	buf = data;
+< 	bctr = ctr;
+---
+> 	buf =(unsigned char*) data;
+> 	bctr = (unsigned char*)ctr;
+72c72
+< 		xorbuf(buf, tmp, 16);
+---
+> 		BEAR_SINGLE_UNITY_FILExorbuf(buf, tmp, 16);
+96c96
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+98c98
+< 		xorbuf(cbcmac, buf, 16);
+---
+> 		BEAR_SINGLE_UNITY_FILExorbuf(cbcmac, buf, 16);

@@ -1,0 +1,48 @@
+25c25
+< #include "inner.h"
+---
+> 
+73c73
+< keysched_unit(uint32_t *skey, const void *key)
+---
+> BEAR_SINGLE_UNITY_FILEkeysched_unit(uint32_t *skey, const void *key)
+162c162
+< 		keysched_unit(skey, key);
+---
+> 		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey, key);
+165,166c165,166
+< 		keysched_unit(skey, key);
+< 		keysched_unit(skey + 32, (const unsigned char *)key + 8);
+---
+> 		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey, key);
+> 		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey + 32, (const unsigned char *)key + 8);
+171,172c171,172
+< 		keysched_unit(skey, key);
+< 		keysched_unit(skey + 32, (const unsigned char *)key + 8);
+---
+> 		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey, key);
+> 		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey + 32, (const unsigned char *)key + 8);
+174c174
+< 		keysched_unit(skey + 64, (const unsigned char *)key + 16);
+---
+> 		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey + 64, (const unsigned char *)key + 16);
+184c184
+< Fconf(uint32_t r0, const uint32_t *sk)
+---
+> BEAR_SINGLE_UNITY_FILEFconf(uint32_t r0, const uint32_t *sk)
+347c347
+< process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *sk_exp)
+---
+> BEAR_SINGLE_UNITY_FILEprocess_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *sk_exp)
+357c357
+< 		t = l ^ Fconf(r, sk_exp);
+---
+> 		t = l ^ BEAR_SINGLE_UNITY_FILEFconf(r, sk_exp);
+374c374
+< 	buf = block;
+---
+> 	buf = (unsigned char*)block;
+379c379
+< 		process_block_unit(&l, &r, sk_exp);
+---
+> 		BEAR_SINGLE_UNITY_FILEprocess_block_unit(&l, &r, sk_exp);

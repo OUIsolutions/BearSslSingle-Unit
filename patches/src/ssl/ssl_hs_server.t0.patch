@@ -1,0 +1,170 @@
+37c37
+< #define CTX  ((br_ssl_server_context *)ENG)
+---
+> #define BEAR_SINGLE_UNITY_FILECTX  ((br_ssl_server_context *)ENG)
+164c164
+< hash_data(br_ssl_server_context *ctx,
+---
+> BEAR_SINGLE_UNITY_FILEhash_data(br_ssl_server_context *ctx,
+261c261
+< 		hv_len = hash_data(ctx, ctx->eng.pad, algo_id & 0xFF,
+---
+> 		hv_len = BEAR_SINGLE_UNITY_FILEhash_data(ctx, ctx->eng.pad, algo_id & 0xFF,
+314c314
+< static const unsigned char HASH_OID_SHA1[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1[] = {
+318c318
+< static const unsigned char HASH_OID_SHA224[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224[] = {
+322c322
+< static const unsigned char HASH_OID_SHA256[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256[] = {
+326c326
+< static const unsigned char HASH_OID_SHA384[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384[] = {
+330c330
+< static const unsigned char HASH_OID_SHA512[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512[] = {
+334,339c334,339
+< static const unsigned char *HASH_OID[] = {
+< 	HASH_OID_SHA1,
+< 	HASH_OID_SHA224,
+< 	HASH_OID_SHA256,
+< 	HASH_OID_SHA384,
+< 	HASH_OID_SHA512
+---
+> static const unsigned char *BEAR_SINGLE_UNITY_FILEHASH_OID[] = {
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512
+366c366
+< 			hash_oid = HASH_OID[id - 2];
+---
+> 			hash_oid = BEAR_SINGLE_UNITY_FILEHASH_OID[id - 2];
+585,586c585,586
+< 	x = (*CTX->policy_vtable)->choose(
+< 		CTX->policy_vtable, CTX, &choices);
+---
+> 	x = (*BEAR_SINGLE_UNITY_FILECTX->policy_vtable)->choose(
+> 		BEAR_SINGLE_UNITY_FILECTX->policy_vtable, BEAR_SINGLE_UNITY_FILECTX, &choices);
+588c588
+< 	CTX->sign_hash_id = choices.algo_id;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->sign_hash_id = choices.algo_id;
+597,598c597,598
+< 		&& CTX->cache_vtable != NULL && (*CTX->cache_vtable)->load(
+< 			CTX->cache_vtable, CTX, &ENG->session))
+---
+> 		&& BEAR_SINGLE_UNITY_FILECTX->cache_vtable != NULL && (*BEAR_SINGLE_UNITY_FILECTX->cache_vtable)->load(
+> 			BEAR_SINGLE_UNITY_FILECTX->cache_vtable, BEAR_SINGLE_UNITY_FILECTX, &ENG->session))
+608,610c608,610
+< 	if (CTX->cache_vtable != NULL) {
+< 		(*CTX->cache_vtable)->save(
+< 			CTX->cache_vtable, CTX, &ENG->session);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->cache_vtable != NULL) {
+> 		(*BEAR_SINGLE_UNITY_FILECTX->cache_vtable)->save(
+> 			BEAR_SINGLE_UNITY_FILECTX->cache_vtable, BEAR_SINGLE_UNITY_FILECTX, &ENG->session);
+858c858
+< 	addr-session_id 32 mkrand
+---
+> 	addr-session_id 32 BEAR_SINGLE_UNITY_FILEmkrand
+945c945
+< 	addr-server_random 4 + 28 mkrand
+---
+> 	addr-server_random 4 + 28 BEAR_SINGLE_UNITY_FILEmkrand
+993c993
+< 	T0_PUSHi(do_ecdhe_part1(CTX, curve));
+---
+> 	T0_PUSHi(do_ecdhe_part1(BEAR_SINGLE_UNITY_FILECTX, curve));
+1068,1070c1068,1070
+< 	if (CTX->ta_names != NULL) {
+< 		for (u = 0; u < CTX->num_tas; u ++) {
+< 			len += CTX->ta_names[u].len + 2;
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->ta_names != NULL) {
+> 		for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->num_tas; u ++) {
+> 			len += BEAR_SINGLE_UNITY_FILECTX->ta_names[u].len + 2;
+1072,1074c1072,1074
+< 	} else if (CTX->tas != NULL) {
+< 		for (u = 0; u < CTX->num_tas; u ++) {
+< 			len += CTX->tas[u].dn.len + 2;
+---
+> 	} else if (BEAR_SINGLE_UNITY_FILECTX->tas != NULL) {
+> 		for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->num_tas; u ++) {
+> 			len += BEAR_SINGLE_UNITY_FILECTX->tas[u].dn.len + 2;
+1130c1130
+< 	CTX->cur_dn_index = 0;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->cur_dn_index = 0;
+1137c1137
+< 	if (CTX->cur_dn_index >= CTX->num_tas) {
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->cur_dn_index >= BEAR_SINGLE_UNITY_FILECTX->num_tas) {
+1140,1141c1140,1141
+< 		if (CTX->ta_names == NULL) {
+< 			dn = &CTX->tas[CTX->cur_dn_index].dn;
+---
+> 		if (BEAR_SINGLE_UNITY_FILECTX->ta_names == NULL) {
+> 			dn = &BEAR_SINGLE_UNITY_FILECTX->tas[BEAR_SINGLE_UNITY_FILECTX->cur_dn_index].dn;
+1143c1143
+< 			dn = &CTX->ta_names[CTX->cur_dn_index];
+---
+> 			dn = &BEAR_SINGLE_UNITY_FILECTX->ta_names[BEAR_SINGLE_UNITY_FILECTX->cur_dn_index];
+1145,1148c1145,1148
+< 		CTX->cur_dn_index ++;
+< 		CTX->cur_dn = dn->data;
+< 		CTX->cur_dn_len = dn->len;
+< 		T0_PUSH(CTX->cur_dn_len);
+---
+> 		BEAR_SINGLE_UNITY_FILECTX->cur_dn_index ++;
+> 		BEAR_SINGLE_UNITY_FILECTX->cur_dn = dn->data;
+> 		BEAR_SINGLE_UNITY_FILECTX->cur_dn_len = dn->len;
+> 		T0_PUSH(BEAR_SINGLE_UNITY_FILECTX->cur_dn_len);
+1157c1157
+< 	clen = CTX->cur_dn_len;
+---
+> 	clen = BEAR_SINGLE_UNITY_FILECTX->cur_dn_len;
+1161,1163c1161,1163
+< 	memcpy(ENG->pad, CTX->cur_dn, clen);
+< 	CTX->cur_dn += clen;
+< 	CTX->cur_dn_len -= clen;
+---
+> 	memcpy(ENG->pad, BEAR_SINGLE_UNITY_FILECTX->cur_dn, clen);
+> 	BEAR_SINGLE_UNITY_FILECTX->cur_dn += clen;
+> 	BEAR_SINGLE_UNITY_FILECTX->cur_dn_len -= clen;
+1229c1229
+< 	do_rsa_decrypt(CTX, prf_id, ENG->pad, len);
+---
+> 	do_rsa_decrypt(BEAR_SINGLE_UNITY_FILECTX, prf_id, ENG->pad, len);
+1237c1237
+< 	do_ecdh(CTX, prf_id, ENG->pad, len);
+---
+> 	do_ecdh(BEAR_SINGLE_UNITY_FILECTX, prf_id, ENG->pad, len);
+1244c1244
+< 	do_ecdhe_part2(CTX, prf_id, ENG->pad, len);
+---
+> 	do_ecdhe_part2(BEAR_SINGLE_UNITY_FILECTX, prf_id, ENG->pad, len);
+1250c1250
+< 	do_static_ecdh(CTX, T0_POP());
+---
+> 	do_static_ecdh(BEAR_SINGLE_UNITY_FILECTX, T0_POP());
+1316,1318c1316,1318
+< 	memcpy(CTX->hash_CV, ENG->pad + off, len);
+< 	CTX->hash_CV_len = len;
+< 	CTX->hash_CV_id = id;
+---
+> 	memcpy(BEAR_SINGLE_UNITY_FILECTX->hash_CV, ENG->pad + off, len);
+> 	BEAR_SINGLE_UNITY_FILECTX->hash_CV_len = len;
+> 	BEAR_SINGLE_UNITY_FILECTX->hash_CV_id = id;
+1327c1327
+< 	err = verify_CV_sig(CTX, T0_POP());
+---
+> 	err = verify_CV_sig(BEAR_SINGLE_UNITY_FILECTX, T0_POP());

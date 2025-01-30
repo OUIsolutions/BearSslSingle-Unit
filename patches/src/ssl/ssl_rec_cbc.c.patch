@@ -1,0 +1,12 @@
+25c25
+< #include "inner.h"
+---
+> 
+113c113
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+318c318
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;

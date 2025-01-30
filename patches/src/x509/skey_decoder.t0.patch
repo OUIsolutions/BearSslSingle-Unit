@@ -1,0 +1,77 @@
+25d24
+< #include "inner.h"
+27,28c26,28
+< #define CTX   ((br_skey_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_skey_decoder_context, cpu)))
+< #define CONTEXT_NAME   br_skey_decoder_context
+---
+> 
+> #define BEAR_SINGLE_UNITY_FILECTX   ((br_skey_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_skey_decoder_context, cpu)))
+> #define BEAR_SINGLE_UNITY_FILECONTEXT_NAME   br_skey_decoder_context
+46c46
+< 	ctx->hbuf = data;
+---
+> 	ctx->hbuf = (const unsigned char*)data;
+57c57
+< 	if (CTX->hlen == 0) {
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->hlen == 0) {
+60,61c60,61
+< 		CTX->hlen --;
+< 		T0_PUSH(*CTX->hbuf ++);
+---
+> 		BEAR_SINGLE_UNITY_FILECTX->hlen --;
+> 		T0_PUSH(*BEAR_SINGLE_UNITY_FILECTX->hbuf ++);
+68c68
+< 	size_t clen = CTX->hlen;
+---
+> 	size_t clen = BEAR_SINGLE_UNITY_FILECTX->hlen;
+73c73
+< 		memcpy((unsigned char *)CTX + addr, CTX->hbuf, clen);
+---
+> 		memcpy((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
+75,76c75,76
+< 	CTX->hbuf += clen;
+< 	CTX->hlen -= clen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->hbuf += clen;
+> 	BEAR_SINGLE_UNITY_FILECTX->hlen -= clen;
+99,101c99,101
+< 	CTX->key.rsa.n_bitlen = n_bitlen;
+< 	CTX->key.rsa.p = CTX->key_data;
+< 	CTX->key.rsa.plen = plen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.n_bitlen = n_bitlen;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.p = BEAR_SINGLE_UNITY_FILECTX->key_data;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.plen = plen;
+103,104c103,104
+< 	CTX->key.rsa.q = CTX->key_data + off;
+< 	CTX->key.rsa.qlen = qlen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.q = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.qlen = qlen;
+106,107c106,107
+< 	CTX->key.rsa.dp = CTX->key_data + off;
+< 	CTX->key.rsa.dplen = dplen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dp = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dplen = dplen;
+109,110c109,110
+< 	CTX->key.rsa.dq = CTX->key_data + off;
+< 	CTX->key.rsa.dqlen = dqlen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dq = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dqlen = dqlen;
+112,113c112,113
+< 	CTX->key.rsa.iq = CTX->key_data + off;
+< 	CTX->key.rsa.iqlen = iqlen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.iq = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.iqlen = iqlen;
+120,122c120,122
+< 	CTX->key.ec.curve = curve;
+< 	CTX->key.ec.x = CTX->key_data;
+< 	CTX->key.ec.xlen = xlen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.ec.curve = curve;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.ec.x = BEAR_SINGLE_UNITY_FILECTX->key_data;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.ec.xlen = xlen;

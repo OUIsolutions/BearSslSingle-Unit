@@ -1,0 +1,16 @@
+26c26
+< #include "inner.h"
+---
+> 
+64c64
+< 		 * v8 = constant for byteswapping words
+---
+> 		 * v8 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+172c172
+< 		 * v8 = constant for byteswapping words
+---
+> 		 * v8 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+310c310
+< 		 * v8 = constant for byteswapping words
+---
+> 		 * v8 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words

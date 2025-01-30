@@ -1,0 +1,12 @@
+26c26
+< #include "inner.h"
+---
+> 
+43c43
+<  * BSW holds the pattern for byteswapping 32-bit words; this is set only
+---
+>  * BSW holds the pattern for BEAR_SINGLE_UNITY_FILEbyteswapping 32-bit words; this is set only
+134c134
+< 	buf1 = data;
+---
+> 	buf1 = (unsigned char*)data;

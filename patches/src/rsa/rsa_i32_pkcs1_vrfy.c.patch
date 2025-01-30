@@ -1,0 +1,8 @@
+25c25
+< #include "inner.h"
+---
+> 
+39c39
+< 	if (!br_rsa_i32_public(sig, xlen, pk)) {
+---
+> 	if (!br_rsa_i32_public((unsigned char*)sig, xlen, pk)) {

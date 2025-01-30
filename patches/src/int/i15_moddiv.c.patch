@@ -1,0 +1,40 @@
+25c25
+< #include "inner.h"
+---
+> 
+43c43
+< cond_negate(uint16_t *a, size_t len, uint32_t ctl)
+---
+> BEAR_SINGLE_UNITY_FILEcond_negate(uint16_t *a, size_t len, uint32_t ctl)
+71c71
+< finish_mod(uint16_t *a, size_t len, const uint16_t *m, uint32_t neg)
+---
+> BEAR_SINGLE_UNITY_FILEfinish_mod(uint16_t *a, size_t len, const uint16_t *m, uint32_t neg)
+123c123
+< co_reduce(uint16_t *a, uint16_t *b, size_t len,
+---
+> BEAR_SINGLE_UNITY_FILEco_reduce(uint16_t *a, uint16_t *b, size_t len,
+166,167c166,167
+< 	cond_negate(a, len, nega);
+< 	cond_negate(b, len, negb);
+---
+> 	BEAR_SINGLE_UNITY_FILEcond_negate(a, len, nega);
+> 	BEAR_SINGLE_UNITY_FILEcond_negate(b, len, negb);
+183c183
+< co_reduce_mod(uint16_t *a, uint16_t *b, size_t len,
+---
+> BEAR_SINGLE_UNITY_FILEco_reduce_mod(uint16_t *a, uint16_t *b, size_t len,
+238,239c238,239
+< 	finish_mod(a, len, m, (uint32_t)cca >> 31);
+< 	finish_mod(b, len, m, (uint32_t)ccb >> 31);
+---
+> 	BEAR_SINGLE_UNITY_FILEfinish_mod(a, len, m, (uint32_t)cca >> 31);
+> 	BEAR_SINGLE_UNITY_FILEfinish_mod(b, len, m, (uint32_t)ccb >> 31);
+444c444
+< 		r = co_reduce(a, b, len, pa, pb, qa, qb);
+---
+> 		r = BEAR_SINGLE_UNITY_FILEco_reduce(a, b, len, pa, pb, qa, qb);
+449c449
+< 		co_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);
+---
+> 		BEAR_SINGLE_UNITY_FILEco_reduce_mod(u, v, len, pa, pb, qa, qb, m + 1, m0i);

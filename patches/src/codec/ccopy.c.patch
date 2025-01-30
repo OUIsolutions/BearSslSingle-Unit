@@ -1,0 +1,10 @@
+25c25
+< #include "inner.h"
+---
+> 
+34,35c34,35
+< 	d = dst;
+< 	s = src;
+---
+> 	d = (unsigned char*)dst;
+> 	s = (const unsigned char*)src;

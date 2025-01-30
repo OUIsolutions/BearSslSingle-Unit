@@ -1,0 +1,36 @@
+26c26
+< #include "inner.h"
+---
+> 
+152c152
+< 	kb = key;
+---
+> 	kb = (const unsigned char*)key;
+157c157
+< 		t1 = _mm_loadu_si128((const void *)kb);
+---
+> 		t1 = _mm_loadu_si128((const __m128i_u*)kb);
+172,173c172,173
+< 		t1 = _mm_loadu_si128((const void *)kb);
+< 		t3 = _mm_loadu_si128((const void *)(kb + 8));
+---
+> 		t1 = _mm_loadu_si128((const __m128i_u*)kb);
+> 		t3 = _mm_loadu_si128((const __m128i_u*)(kb + 8));
+183,184c183,184
+< 		t1 = _mm_loadu_si128((const void *)kb);
+< 		t3 = _mm_loadu_si128((const void *)(kb + 16));
+---
+> 		t1 = _mm_loadu_si128((const __m128i_u*)kb);
+> 		t3 = _mm_loadu_si128((const __m128i_u*)(kb + 16));
+229c229
+< 	_mm_storeu_si128((void *)skni, sk[num_rounds]);
+---
+> 	_mm_storeu_si128((__m128i_u*)skni, sk[num_rounds]);
+231c231
+< 		_mm_storeu_si128((void *)(skni + (u << 4)),
+---
+> 		_mm_storeu_si128((__m128i_u*)(skni + (u << 4)),
+234c234
+< 	_mm_storeu_si128((void *)(skni + (num_rounds << 4)), sk[0]);
+---
+> 	_mm_storeu_si128((__m128i_u*)(skni + (num_rounds << 4)), sk[0]);

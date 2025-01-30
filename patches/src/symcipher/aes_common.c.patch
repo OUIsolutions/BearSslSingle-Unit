@@ -1,0 +1,11 @@
+25d24
+< #include "inner.h"
+27c26,27
+< static const uint32_t Rcon[] = {
+---
+> 
+> static const uint32_t BEAR_SINGLE_UNITY_FILERcon[] = {
+101c101
+< 			tmp = SubWord(tmp) ^ Rcon[k];
+---
+> 			tmp = SubWord(tmp) ^ BEAR_SINGLE_UNITY_FILERcon[k];

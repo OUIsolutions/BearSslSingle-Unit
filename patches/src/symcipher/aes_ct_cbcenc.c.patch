@@ -1,0 +1,12 @@
+25c25
+< #include "inner.h"
+---
+> 
+51c51
+< 	ivbuf = iv;
+---
+> 	ivbuf = (unsigned char *)iv;
+56c56
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;

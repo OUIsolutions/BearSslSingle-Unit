@@ -1,0 +1,12 @@
+26c26
+< #include "inner.h"
+---
+> 
+50c50
+<  *   Register v15 contains the byteswap index register (little-endian only)
+---
+>  *   Register v15 contains the BEAR_SINGLE_UNITY_FILEbyteswap index register (little-endian only)
+59c59
+<  *   Register v15 contains the byteswap index register (little-endian only)
+---
+>  *   Register v15 contains the BEAR_SINGLE_UNITY_FILEbyteswap index register (little-endian only)

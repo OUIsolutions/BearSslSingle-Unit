@@ -1,0 +1,20 @@
+25c25
+< #include "inner.h"
+---
+> 
+76c76
+< rotr(uint32_t x, int n)
+---
+> BEAR_SINGLE_UNITY_FILErotr(uint32_t x, int n)
+82,84c82,84
+< #define SboxExt1(x)   (rotr(Ssm0[x], 8))
+< #define SboxExt2(x)   (rotr(Ssm0[x], 16))
+< #define SboxExt3(x)   (rotr(Ssm0[x], 24))
+---
+> #define SboxExt1(x)   (BEAR_SINGLE_UNITY_FILErotr(Ssm0[x], 8))
+> #define SboxExt2(x)   (BEAR_SINGLE_UNITY_FILErotr(Ssm0[x], 16))
+> #define SboxExt3(x)   (BEAR_SINGLE_UNITY_FILErotr(Ssm0[x], 24))
+96c96
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;

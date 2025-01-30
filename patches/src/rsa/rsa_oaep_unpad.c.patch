@@ -1,0 +1,20 @@
+25c25
+< #include "inner.h"
+---
+> 
+33c33
+< xor_hash_data(const br_hash_class *dig, void *dst, const void *src, size_t len)
+---
+> xor_BEAR_SINGLE_UNITY_FILEhash_data(const br_hash_class *dig, void *dst, const void *src, size_t len)
+44c44
+< 	buf = dst;
+---
+> 	buf = (unsigned char*)dst;
+63c63
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+82c82
+< 	xor_hash_data(dig, buf + 1 + hlen, label, label_len);
+---
+> 	xor_BEAR_SINGLE_UNITY_FILEhash_data(dig, buf + 1 + hlen, label, label_len);

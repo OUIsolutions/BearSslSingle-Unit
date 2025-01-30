@@ -1,0 +1,12 @@
+25c25
+< #include "inner.h"
+---
+> 
+412c412
+< 		rc->ibuf = ibuf;
+---
+> 		rc->ibuf = (unsigned char*)ibuf;
+418c418
+< 		rc->obuf = obuf;
+---
+> 		rc->obuf = (unsigned char*)obuf;

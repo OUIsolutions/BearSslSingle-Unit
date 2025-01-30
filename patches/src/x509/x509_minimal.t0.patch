@@ -1,0 +1,330 @@
+25c25
+< #include "inner.h"
+---
+> 
+294,295c294,295
+< #define CTX   ((br_x509_minimal_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_minimal_context, cpu)))
+< #define CONTEXT_NAME   br_x509_minimal_context
+---
+> #define BEAR_SINGLE_UNITY_FILECTX   ((br_x509_minimal_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_minimal_context, cpu)))
+> #define BEAR_SINGLE_UNITY_FILECONTEXT_NAME   br_x509_minimal_context
+297c297
+< #define DNHASH_LEN   ((CTX->dn_hash_impl->desc >> BR_HASHDESC_OUT_OFF) & BR_HASHDESC_OUT_MASK)
+---
+> #define DNHASH_LEN   ((BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->desc >> BR_HASHDESC_OUT_OFF) & BR_HASHDESC_OUT_MASK)
+344,345c344,345
+< 	buf1 = s1;
+< 	buf2 = s2;
+---
+> 	buf1 = (const unsigned char*)s1;
+> 	buf2 = (const unsigned char*)s2;
+393c393
+< 			&t0_datablock[ctx->cert_sig_hash_oid],
+---
+> 			&BEAR_SINGLE_UNITY_FILEt0_datablock[ctx->cert_sig_hash_oid],
+423c423
+< 	if (CTX->hlen == 0) {
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->hlen == 0) {
+426,428c426,428
+< 		unsigned char x = *CTX->hbuf ++;
+< 		if (CTX->do_mhash) {
+< 			br_multihash_update(&CTX->mhash, &x, 1);
+---
+> 		unsigned char x = *BEAR_SINGLE_UNITY_FILECTX->hbuf ++;
+> 		if (BEAR_SINGLE_UNITY_FILECTX->do_mhash) {
+> 			br_multihash_update(&BEAR_SINGLE_UNITY_FILECTX->mhash, &x, 1);
+430,431c430,431
+< 		if (CTX->do_dn_hash) {
+< 			CTX->dn_hash_impl->update(&CTX->dn_hash.vtable, &x, 1);
+---
+> 		if (BEAR_SINGLE_UNITY_FILECTX->do_dn_hash) {
+> 			BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->update(&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable, &x, 1);
+433c433
+< 		CTX->hlen --;
+---
+> 		BEAR_SINGLE_UNITY_FILECTX->hlen --;
+444c444
+< 	size_t clen = CTX->hlen;
+---
+> 	size_t clen = BEAR_SINGLE_UNITY_FILECTX->hlen;
+449c449
+< 		memcpy((unsigned char *)CTX + addr, CTX->hbuf, clen);
+---
+> 		memcpy((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
+451,452c451,452
+< 	if (CTX->do_mhash) {
+< 		br_multihash_update(&CTX->mhash, CTX->hbuf, clen);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->do_mhash) {
+> 		br_multihash_update(&BEAR_SINGLE_UNITY_FILECTX->mhash, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
+454,456c454,456
+< 	if (CTX->do_dn_hash) {
+< 		CTX->dn_hash_impl->update(
+< 			&CTX->dn_hash.vtable, CTX->hbuf, clen);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->do_dn_hash) {
+> 		BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->update(
+> 			&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
+458,459c458,459
+< 	CTX->hbuf += clen;
+< 	CTX->hlen -= clen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->hbuf += clen;
+> 	BEAR_SINGLE_UNITY_FILECTX->hlen -= clen;
+470c470
+< 	len = br_multihash_out(&CTX->mhash, id, CTX->tbs_hash);
+---
+> 	len = br_multihash_out(&BEAR_SINGLE_UNITY_FILECTX->mhash, id, BEAR_SINGLE_UNITY_FILECTX->tbs_hash);
+476c476
+< 	T0_PUSHi(-(CTX->server_name == NULL));
+---
+> 	T0_PUSHi(-(BEAR_SINGLE_UNITY_FILECTX->server_name == NULL));
+490,491c490,491
+< 	br_multihash_init(&CTX->mhash);
+< 	CTX->do_mhash = 1;
+---
+> 	br_multihash_init(&BEAR_SINGLE_UNITY_FILECTX->mhash);
+> 	BEAR_SINGLE_UNITY_FILECTX->do_mhash = 1;
+496c496
+< 	CTX->do_mhash = 0;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->do_mhash = 0;
+501,502c501,502
+< 	CTX->dn_hash_impl->init(&CTX->dn_hash.vtable);
+< 	CTX->do_dn_hash = 1;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->init(&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable);
+> 	BEAR_SINGLE_UNITY_FILECTX->do_dn_hash = 1;
+508,509c508,509
+< 	CTX->dn_hash_impl->out(&CTX->dn_hash.vtable, CTX->current_dn_hash);
+< 	CTX->do_dn_hash = 0;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->out(&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable, BEAR_SINGLE_UNITY_FILECTX->current_dn_hash);
+> 	BEAR_SINGLE_UNITY_FILECTX->do_dn_hash = 0;
+520,521c520,521
+< 	unsigned char *src = (unsigned char *)CTX + T0_POP();
+< 	unsigned char *dst = (unsigned char *)CTX + T0_POP();
+---
+> 	unsigned char *src = (unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
+> 	unsigned char *dst = (unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
+540,541c540,541
+< 	for (u = 0; u < CTX->num_name_elts; u ++) {
+< 		if (CTX->name_elts[u].status == 0) {
+---
+> 	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->num_name_elts; u ++) {
+> 		if (BEAR_SINGLE_UNITY_FILECTX->name_elts[u].status == 0) {
+545c545
+< 			oid = CTX->name_elts[u].oid;
+---
+> 			oid = BEAR_SINGLE_UNITY_FILECTX->name_elts[u].oid;
+555c555
+< 			if (len != 0 && len == CTX->pad[0]
+---
+> 			if (len != 0 && len == BEAR_SINGLE_UNITY_FILECTX->pad[0]
+557c557
+< 					CTX->pad + 1, len) == 0)
+---
+> 					BEAR_SINGLE_UNITY_FILECTX->pad + 1, len) == 0)
+573c573
+< 		br_name_element *ne = &CTX->name_elts[off];
+---
+> 		br_name_element *ne = &BEAR_SINGLE_UNITY_FILECTX->name_elts[off];
+576c576
+< 			len = CTX->pad[0];
+---
+> 			len = BEAR_SINGLE_UNITY_FILECTX->pad[0];
+578c578
+< 				memcpy(ne->buf, CTX->pad + 1, len);
+---
+> 				memcpy(ne->buf, BEAR_SINGLE_UNITY_FILECTX->pad + 1, len);
+595,596c595,596
+< 	len = CTX->pad[0];
+< 	for (u = 0; u < CTX->num_name_elts; u ++) {
+---
+> 	len = BEAR_SINGLE_UNITY_FILECTX->pad[0];
+> 	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->num_name_elts; u ++) {
+599c599
+< 		ne = &CTX->name_elts[u];
+---
+> 		ne = &BEAR_SINGLE_UNITY_FILECTX->name_elts[u];
+602c602
+< 				memcpy(ne->buf, CTX->pad + 1, len);
+---
+> 				memcpy(ne->buf, BEAR_SINGLE_UNITY_FILECTX->pad + 1, len);
+714,715c714,715
+< 	if (CTX->itime != 0) {
+< 		r = CTX->itime(CTX->itime_ctx, nbd, nbs, nad, nas);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->itime != 0) {
+> 		r = BEAR_SINGLE_UNITY_FILECTX->itime(BEAR_SINGLE_UNITY_FILECTX->itime_ctx, nbd, nbs, nad, nas);
+717c717
+< 			CTX->err = BR_ERR_X509_TIME_UNKNOWN;
+---
+> 			BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_TIME_UNKNOWN;
+721,722c721,722
+< 		uint32_t vd = CTX->days;
+< 		uint32_t vs = CTX->seconds;
+---
+> 		uint32_t vd = BEAR_SINGLE_UNITY_FILECTX->days;
+> 		uint32_t vs = BEAR_SINGLE_UNITY_FILECTX->seconds;
+740c740
+< 			CTX->err = BR_ERR_X509_TIME_UNKNOWN;
+---
+> 			BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_TIME_UNKNOWN;
+768c768
+< 	if (CTX->server_name == NULL) {
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->server_name == NULL) {
+772,774c772,774
+< 	n1 = strlen(CTX->server_name);
+< 	n2 = CTX->pad[0];
+< 	if (n1 == n2 && eqnocase(&CTX->pad[1], CTX->server_name, n1)) {
+---
+> 	n1 = strlen(BEAR_SINGLE_UNITY_FILECTX->server_name);
+> 	n2 = BEAR_SINGLE_UNITY_FILECTX->pad[0];
+> 	if (n1 == n2 && eqnocase(&BEAR_SINGLE_UNITY_FILECTX->pad[1], BEAR_SINGLE_UNITY_FILECTX->server_name, n1)) {
+778c778
+< 	if (n2 >= 2 && CTX->pad[1] == '*' && CTX->pad[2] == '.') {
+---
+> 	if (n2 >= 2 && BEAR_SINGLE_UNITY_FILECTX->pad[1] == '*' && BEAR_SINGLE_UNITY_FILECTX->pad[2] == '.') {
+782c782
+< 		while (u < n1 && CTX->server_name[u] != '.') {
+---
+> 		while (u < n1 && BEAR_SINGLE_UNITY_FILECTX->server_name[u] != '.') {
+788c788
+< 			&& eqnocase(&CTX->pad[3], CTX->server_name + u, n1))
+---
+> 			&& eqnocase(&BEAR_SINGLE_UNITY_FILECTX->pad[3], BEAR_SINGLE_UNITY_FILECTX->server_name + u, n1))
+806,811c806,811
+< 	memcpy(CTX->ee_pkey_data, CTX->pkey_data, nlen + elen);
+< 	CTX->pkey.key_type = BR_KEYTYPE_RSA;
+< 	CTX->pkey.key.rsa.n = CTX->ee_pkey_data;
+< 	CTX->pkey.key.rsa.nlen = nlen;
+< 	CTX->pkey.key.rsa.e = CTX->ee_pkey_data + nlen;
+< 	CTX->pkey.key.rsa.elen = elen;
+---
+> 	memcpy(BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data, BEAR_SINGLE_UNITY_FILECTX->pkey_data, nlen + elen);
+> 	BEAR_SINGLE_UNITY_FILECTX->pkey.key_type = BR_KEYTYPE_RSA;
+> 	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.n = BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data;
+> 	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.nlen = nlen;
+> 	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.e = BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data + nlen;
+> 	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.elen = elen;
+818,822c818,822
+< 	memcpy(CTX->ee_pkey_data, CTX->pkey_data, qlen);
+< 	CTX->pkey.key_type = BR_KEYTYPE_EC;
+< 	CTX->pkey.key.ec.curve = curve;
+< 	CTX->pkey.key.ec.q = CTX->ee_pkey_data;
+< 	CTX->pkey.key.ec.qlen = qlen;
+---
+> 	memcpy(BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data, BEAR_SINGLE_UNITY_FILECTX->pkey_data, qlen);
+> 	BEAR_SINGLE_UNITY_FILECTX->pkey.key_type = BR_KEYTYPE_EC;
+> 	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.curve = curve;
+> 	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.q = BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data;
+> 	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.qlen = qlen;
+829c829
+< 	for (u = 0; u < CTX->trust_anchors_num; u ++) {
+---
+> 	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->trust_anchors_num; u ++) {
+834c834
+< 		ta = &CTX->trust_anchors[u];
+---
+> 		ta = &BEAR_SINGLE_UNITY_FILECTX->trust_anchors[u];
+838,839c838,839
+< 		hash_dn(CTX, ta->dn.data, ta->dn.len, hashed_DN);
+< 		if (memcmp(hashed_DN, CTX->current_dn_hash, DNHASH_LEN)) {
+---
+> 		hash_dn(BEAR_SINGLE_UNITY_FILECTX, ta->dn.data, ta->dn.len, hashed_DN);
+> 		if (memcmp(hashed_DN, BEAR_SINGLE_UNITY_FILECTX->current_dn_hash, DNHASH_LEN)) {
+842c842
+< 		kt = CTX->pkey.key_type;
+---
+> 		kt = BEAR_SINGLE_UNITY_FILECTX->pkey.key_type;
+849,850c849,850
+< 			if (!eqbigint(CTX->pkey.key.rsa.n,
+< 				CTX->pkey.key.rsa.nlen,
+---
+> 			if (!eqbigint(BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.n,
+> 				BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.nlen,
+853,854c853,854
+< 				|| !eqbigint(CTX->pkey.key.rsa.e,
+< 				CTX->pkey.key.rsa.elen,
+---
+> 				|| !eqbigint(BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.e,
+> 				BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.elen,
+863,865c863,865
+< 			if (CTX->pkey.key.ec.curve != ta->pkey.key.ec.curve
+< 				|| CTX->pkey.key.ec.qlen != ta->pkey.key.ec.qlen
+< 				|| memcmp(CTX->pkey.key.ec.q,
+---
+> 			if (BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.curve != ta->pkey.key.ec.curve
+> 				|| BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.qlen != ta->pkey.key.ec.qlen
+> 				|| memcmp(BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.q,
+880c880
+< 		CTX->err = BR_ERR_X509_OK;
+---
+> 		BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_OK;
+890c890
+< 	for (u = 0; u < CTX->trust_anchors_num; u ++) {
+---
+> 	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->trust_anchors_num; u ++) {
+894c894
+< 		ta = &CTX->trust_anchors[u];
+---
+> 		ta = &BEAR_SINGLE_UNITY_FILECTX->trust_anchors[u];
+898,899c898,899
+< 		hash_dn(CTX, ta->dn.data, ta->dn.len, hashed_DN);
+< 		if (memcmp(hashed_DN, CTX->saved_dn_hash, DNHASH_LEN)) {
+---
+> 		hash_dn(BEAR_SINGLE_UNITY_FILECTX, ta->dn.data, ta->dn.len, hashed_DN);
+> 		if (memcmp(hashed_DN, BEAR_SINGLE_UNITY_FILECTX->saved_dn_hash, DNHASH_LEN)) {
+902,903c902,903
+< 		if (verify_signature(CTX, &ta->pkey) == 0) {
+< 			CTX->err = BR_ERR_X509_OK;
+---
+> 		if (verify_signature(BEAR_SINGLE_UNITY_FILECTX, &ta->pkey) == 0) {
+> 			BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_OK;
+910c910
+< \ into CTX->pkey_data; the modulus and exponent length are provided as
+---
+> \ into BEAR_SINGLE_UNITY_FILECTX->pkey_data; the modulus and exponent length are provided as
+919c919
+< 	pk.key.rsa.n = CTX->pkey_data;
+---
+> 	pk.key.rsa.n = BEAR_SINGLE_UNITY_FILECTX->pkey_data;
+921c921
+< 	pk.key.rsa.e = CTX->pkey_data + nlen;
+---
+> 	pk.key.rsa.e = BEAR_SINGLE_UNITY_FILECTX->pkey_data + nlen;
+923c923
+< 	T0_PUSH(verify_signature(CTX, &pk));
+---
+> 	T0_PUSH(verify_signature(BEAR_SINGLE_UNITY_FILECTX, &pk));
+927c927
+< \ into CTX->pkey_dayta; the curve ID and public point length are provided
+---
+> \ into BEAR_SINGLE_UNITY_FILECTX->pkey_dayta; the curve ID and public point length are provided
+937c937
+< 	pk.key.ec.q = CTX->pkey_data;
+---
+> 	pk.key.ec.q = BEAR_SINGLE_UNITY_FILECTX->pkey_data;
+939c939
+< 	T0_PUSH(verify_signature(CTX, &pk));
+---
+> 	T0_PUSH(verify_signature(BEAR_SINGLE_UNITY_FILECTX, &pk));
+945c945
+< 	unsigned char *buf = (unsigned char *)CTX + T0_POP();
+---
+> 	unsigned char *buf = (unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
+957c957
+< 	len = CTX->pad[0];
+---
+> 	len = BEAR_SINGLE_UNITY_FILECTX->pad[0];
+962c962
+< 	printf("%u.%u", CTX->pad[1] / 40, CTX->pad[1] % 40);
+---
+> 	printf("%u.%u", BEAR_SINGLE_UNITY_FILECTX->pad[1] / 40, BEAR_SINGLE_UNITY_FILECTX->pad[1] % 40);
+975c975
+< 			x = CTX->pad[u ++];
+---
+> 			x = BEAR_SINGLE_UNITY_FILECTX->pad[u ++];

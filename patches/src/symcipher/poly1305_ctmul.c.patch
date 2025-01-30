@@ -1,0 +1,20 @@
+25c25
+< #include "inner.h"
+---
+> 
+36c36
+< poly1305_inner(uint32_t *acc, const uint32_t *r, const void *data, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEpoly1305_inner(uint32_t *acc, const uint32_t *r, const void *data, size_t len)
+71c71
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+200,202c200,202
+< 	poly1305_inner(acc, r, aad, aad_len);
+< 	poly1305_inner(acc, r, data, len);
+< 	poly1305_inner(acc, r, foot, sizeof foot);
+---
+> 	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, aad, aad_len);
+> 	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, data, len);
+> 	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, foot, sizeof foot);

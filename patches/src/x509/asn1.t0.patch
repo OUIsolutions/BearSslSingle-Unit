@@ -1,0 +1,60 @@
+31c31
+< \ -- In the preamble, a macro called "CTX" that evaluates to the current
+---
+> \ -- In the preamble, a macro called "BEAR_SINGLE_UNITY_FILECTX" that evaluates to the current
+34c34
+< \ -- In the preamble, a macro called "CONTEXT_NAME" that evaluates to the
+---
+> \ -- In the preamble, a macro called "BEAR_SINGLE_UNITY_FILECONTEXT_NAME" that evaluates to the
+48c48
+< #include "inner.h"
+---
+> 
+112c112
+< 	0 8191 "offsetof(CONTEXT_NAME, " field + ")" + make-CX
+---
+> 	0 8191 "offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, " field + ")" + make-CX
+155c155
+< 	CTX->err = T0_POPi();
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->err = T0_POPi();
+196c196
+< 	*((unsigned char *)CTX + addr) = (unsigned char)T0_POP();
+---
+> 	*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = (unsigned char)T0_POP();
+201c201
+< 	*(uint16_t *)(void *)((unsigned char *)CTX + addr) = T0_POP();
+---
+> 	*(uint16_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = T0_POP();
+206c206
+< 	*(uint32_t *)(void *)((unsigned char *)CTX + addr) = T0_POP();
+---
+> 	*(uint32_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = T0_POP();
+211c211
+< 	T0_PUSH(*((unsigned char *)CTX + addr));
+---
+> 	T0_PUSH(*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
+216c216
+< 	T0_PUSH(*(uint16_t *)(void *)((unsigned char *)CTX + addr));
+---
+> 	T0_PUSH(*(uint16_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
+221c221
+< 	T0_PUSH(*(uint32_t *)(void *)((unsigned char *)CTX + addr));
+---
+> 	T0_PUSH(*(uint32_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
+583,584c583,584
+< 	const unsigned char *a2 = &t0_datablock[T0_POP()];
+< 	const unsigned char *a1 = &CTX->pad[0];
+---
+> 	const unsigned char *a2 = &BEAR_SINGLE_UNITY_FILEt0_datablock[T0_POP()];
+> 	const unsigned char *a1 = &BEAR_SINGLE_UNITY_FILECTX->pad[0];
+599,600c599,600
+< 	const unsigned char *a2 = (const unsigned char *)CTX + T0_POP();
+< 	const unsigned char *a1 = (const unsigned char *)CTX + T0_POP();
+---
+> 	const unsigned char *a2 = (const unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
+> 	const unsigned char *a1 = (const unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
+753c753
+< 	for (p = &CTX->dp_stack[0]; p != dp; p ++) {
+---
+> 	for (p = &BEAR_SINGLE_UNITY_FILECTX->dp_stack[0]; p != dp; p ++) {

@@ -1,0 +1,17 @@
+25d24
+< #include "inner.h"
+27c26,27
+< static const unsigned char P256_N[] = {
+---
+> 
+> static const unsigned char BEAR_SINGLE_UNITY_FILEP256_N[] = {
+34c34
+< static const unsigned char P256_G[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEP256_G[] = {
+49,50c49,50
+< 	P256_N, sizeof P256_N,
+< 	P256_G, sizeof P256_G
+---
+> 	BEAR_SINGLE_UNITY_FILEP256_N, sizeof BEAR_SINGLE_UNITY_FILEP256_N,
+> 	BEAR_SINGLE_UNITY_FILEP256_G, sizeof BEAR_SINGLE_UNITY_FILEP256_G

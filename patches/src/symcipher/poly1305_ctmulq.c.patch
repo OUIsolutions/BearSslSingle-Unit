@@ -1,0 +1,40 @@
+25c25
+< #include "inner.h"
+---
+> 
+108c108
+< poly1305_inner_big(uint64_t *acc, uint64_t *r, const void *data, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEpoly1305_inner_big(uint64_t *acc, uint64_t *r, const void *data, size_t len)
+137c137
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+221c221
+< poly1305_inner_small(uint64_t *acc, uint64_t *r, const void *data, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEpoly1305_inner_small(uint64_t *acc, uint64_t *r, const void *data, size_t len)
+236c236
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+299c299
+< poly1305_inner(uint64_t *acc, uint64_t *r, const void *data, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEpoly1305_inner(uint64_t *acc, uint64_t *r, const void *data, size_t len)
+305c305
+< 		poly1305_inner_big(acc, r, data, len2);
+---
+> 		BEAR_SINGLE_UNITY_FILEpoly1305_inner_big(acc, r, data, len2);
+310c310
+< 		poly1305_inner_small(acc, r, data, len);
+---
+> 		BEAR_SINGLE_UNITY_FILEpoly1305_inner_small(acc, r, data, len);
+386,388c386,388
+< 	poly1305_inner(acc, r, aad, aad_len);
+< 	poly1305_inner(acc, r, data, len);
+< 	poly1305_inner_small(acc, r, foot, sizeof foot);
+---
+> 	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, aad, aad_len);
+> 	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, data, len);
+> 	BEAR_SINGLE_UNITY_FILEpoly1305_inner_small(acc, r, foot, sizeof foot);

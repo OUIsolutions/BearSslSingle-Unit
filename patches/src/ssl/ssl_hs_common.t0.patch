@@ -1,0 +1,20 @@
+32c32
+< #include "inner.h"
+---
+> 
+86c86
+< 	fprintf(stderr, "%s\n", &t0_datablock[T0_POPi()]);
+---
+> 	fprintf(stderr, "%s\n", &BEAR_SINGLE_UNITY_FILEt0_datablock[T0_POPi()]);
+96c96
+< 		&t0_datablock[T0_POPi()], (long)x, (unsigned long)(uint32_t)x);
+---
+> 		&BEAR_SINGLE_UNITY_FILEt0_datablock[T0_POPi()], (long)x, (unsigned long)(uint32_t)x);
+691c691
+< 	T0_PUSH((uint32_t)strlen(str));
+---
+> 	T0_PUSH((uint32_t)strlen((const char*)str));
+717c717
+< cc: mkrand ( addr len -- ) {
+---
+> cc: BEAR_SINGLE_UNITY_FILEmkrand ( addr len -- ) {

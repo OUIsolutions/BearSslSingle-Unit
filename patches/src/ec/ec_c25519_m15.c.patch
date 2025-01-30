@@ -1,0 +1,232 @@
+25c25
+< #include "inner.h"
+---
+> 
+144c144
+< norm13(uint32_t *d, const uint32_t *w, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEnorm13(uint32_t *d, const uint32_t *w, size_t len)
+161c161
+<  * mul20() multiplies two 260-bit integers together. Each word must fit
+---
+>  * BEAR_SINGLE_UNITY_FILEmul20() multiplies two 260-bit integers together. Each word must fit
+165c165
+<  * square20() computes the square of a 260-bit integer. Each word must
+---
+>  * BEAR_SINGLE_UNITY_FILEsquare20() computes the square of a 260-bit integer. Each word must
+173c173
+< mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEmul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+388c388
+< 	cc = norm13(d, w, 40);
+---
+> 	cc = BEAR_SINGLE_UNITY_FILEnorm13(d, w, 40);
+399c399
+< square20(uint32_t *d, const uint32_t *a)
+---
+> BEAR_SINGLE_UNITY_FILEsquare20(uint32_t *d, const uint32_t *a)
+401c401
+< 	mul20(d, a, a);
+---
+> 	BEAR_SINGLE_UNITY_FILEmul20(d, a, a);
+407c407
+< mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEmul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+812c812
+< 	d[39] = norm13(d, t, 39);
+---
+> 	d[39] = BEAR_SINGLE_UNITY_FILEnorm13(d, t, 39);
+816c816
+< square20(uint32_t *d, const uint32_t *a)
+---
+> BEAR_SINGLE_UNITY_FILEsquare20(uint32_t *d, const uint32_t *a)
+1031c1031
+< 	d[39] = norm13(d, t, 39);
+---
+> 	d[39] = BEAR_SINGLE_UNITY_FILEnorm13(d, t, 39);
+1044c1044
+< reduce_final_f255(uint32_t *d)
+---
+> BEAR_SINGLE_UNITY_FILEreduce_final_f255(uint32_t *d)
+1066c1066
+< f255_mulgen(uint32_t *d, const uint32_t *a, const uint32_t *b, int square)
+---
+> BEAR_SINGLE_UNITY_FILEf255_mulgen(uint32_t *d, const uint32_t *a, const uint32_t *b, int square)
+1076c1076
+< 		square20(t, a);
+---
+> 		BEAR_SINGLE_UNITY_FILEsquare20(t, a);
+1078c1078
+< 		mul20(t, a, b);
+---
+> 		BEAR_SINGLE_UNITY_FILEmul20(t, a, b);
+1159c1159
+<  * f255_mul() is the general multiplication, f255_square() is specialised
+---
+>  * BEAR_SINGLE_UNITY_FILEf255_mul() is the general multiplication, BEAR_SINGLE_UNITY_FILEf255_square() is specialised
+1162,1163c1162,1163
+< #define f255_mul(d, a, b)   f255_mulgen(d, a, b, 0)
+< #define f255_square(d, a)   f255_mulgen(d, a, a, 1)
+---
+> #define BEAR_SINGLE_UNITY_FILEf255_mul(d, a, b)   BEAR_SINGLE_UNITY_FILEf255_mulgen(d, a, b, 0)
+> #define BEAR_SINGLE_UNITY_FILEf255_square(d, a)   BEAR_SINGLE_UNITY_FILEf255_mulgen(d, a, a, 1)
+1170c1170
+< f255_add(uint32_t *d, const uint32_t *a, const uint32_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEf255_add(uint32_t *d, const uint32_t *a, const uint32_t *b)
+1195c1195
+< f255_sub(uint32_t *d, const uint32_t *a, const uint32_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEf255_sub(uint32_t *d, const uint32_t *a, const uint32_t *b)
+1224c1224
+< f255_mul_a24(uint32_t *d, const uint32_t *a)
+---
+> BEAR_SINGLE_UNITY_FILEf255_mul_a24(uint32_t *d, const uint32_t *a)
+1244c1244
+< static const unsigned char GEN[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEGEN[] = {
+1251c1251
+< static const unsigned char ORDER[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEORDER[] = {
+1259c1259
+< api_generator(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
+1263c1263
+< 	return GEN;
+---
+> 	return BEAR_SINGLE_UNITY_FILEGEN;
+1267c1267
+< api_order(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
+1271c1271
+< 	return ORDER;
+---
+> 	return BEAR_SINGLE_UNITY_FILEORDER;
+1275c1275
+< api_xoff(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
+1283c1283
+< cswap(uint32_t *a, uint32_t *b, uint32_t ctl)
+---
+> BEAR_SINGLE_UNITY_FILEcswap(uint32_t *a, uint32_t *b, uint32_t ctl)
+1300c1300
+< api_mul(unsigned char *G, size_t Glen,
+---
+> BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
+1351,1352c1351,1352
+< 		cswap(x2, x3, swap);
+< 		cswap(z2, z3, swap);
+---
+> 		BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
+> 		BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
+1362,1370c1362,1370
+< 		f255_add(a, x2, z2);
+< 		f255_square(aa, a);
+< 		f255_sub(b, x2, z2);
+< 		f255_square(bb, b);
+< 		f255_sub(e, aa, bb);
+< 		f255_add(c, x3, z3);
+< 		f255_sub(d, x3, z3);
+< 		f255_mul(da, d, a);
+< 		f255_mul(cb, c, b);
+---
+> 		BEAR_SINGLE_UNITY_FILEf255_add(a, x2, z2);
+> 		BEAR_SINGLE_UNITY_FILEf255_square(aa, a);
+> 		BEAR_SINGLE_UNITY_FILEf255_sub(b, x2, z2);
+> 		BEAR_SINGLE_UNITY_FILEf255_square(bb, b);
+> 		BEAR_SINGLE_UNITY_FILEf255_sub(e, aa, bb);
+> 		BEAR_SINGLE_UNITY_FILEf255_add(c, x3, z3);
+> 		BEAR_SINGLE_UNITY_FILEf255_sub(d, x3, z3);
+> 		BEAR_SINGLE_UNITY_FILEf255_mul(da, d, a);
+> 		BEAR_SINGLE_UNITY_FILEf255_mul(cb, c, b);
+1384,1392c1384,1392
+< 		f255_add(x3, da, cb);
+< 		f255_square(x3, x3);
+< 		f255_sub(z3, da, cb);
+< 		f255_square(z3, z3);
+< 		f255_mul(z3, z3, x1);
+< 		f255_mul(x2, aa, bb);
+< 		f255_mul_a24(z2, e);
+< 		f255_add(z2, z2, aa);
+< 		f255_mul(z2, e, z2);
+---
+> 		BEAR_SINGLE_UNITY_FILEf255_add(x3, da, cb);
+> 		BEAR_SINGLE_UNITY_FILEf255_square(x3, x3);
+> 		BEAR_SINGLE_UNITY_FILEf255_sub(z3, da, cb);
+> 		BEAR_SINGLE_UNITY_FILEf255_square(z3, z3);
+> 		BEAR_SINGLE_UNITY_FILEf255_mul(z3, z3, x1);
+> 		BEAR_SINGLE_UNITY_FILEf255_mul(x2, aa, bb);
+> 		BEAR_SINGLE_UNITY_FILEf255_mul_a24(z2, e);
+> 		BEAR_SINGLE_UNITY_FILEf255_add(z2, z2, aa);
+> 		BEAR_SINGLE_UNITY_FILEf255_mul(z2, e, z2);
+1401,1402c1401,1402
+< 	cswap(x2, x3, swap);
+< 	cswap(z2, z3, swap);
+---
+> 	BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
+> 	BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
+1411,1412c1411,1412
+< 		f255_square(a, a);
+< 		f255_mul(a, a, z2);
+---
+> 		BEAR_SINGLE_UNITY_FILEf255_square(a, a);
+> 		BEAR_SINGLE_UNITY_FILEf255_mul(a, a, z2);
+1419c1419
+< 			f255_square(b, b);
+---
+> 			BEAR_SINGLE_UNITY_FILEf255_square(b, b);
+1421c1421
+< 		f255_mul(b, b, a);
+---
+> 		BEAR_SINGLE_UNITY_FILEf255_mul(b, b, a);
+1424c1424
+< 		f255_square(b, b);
+---
+> 		BEAR_SINGLE_UNITY_FILEf255_square(b, b);
+1426c1426
+< 			f255_mul(b, z2, b);
+---
+> 			BEAR_SINGLE_UNITY_FILEf255_mul(b, z2, b);
+1429,1430c1429,1430
+< 	f255_mul(x2, x2, b);
+< 	reduce_final_f255(x2);
+---
+> 	BEAR_SINGLE_UNITY_FILEf255_mul(x2, x2, b);
+> 	BEAR_SINGLE_UNITY_FILEreduce_final_f255(x2);
+1436c1436
+< api_mulgen(unsigned char *R,
+---
+> BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
+1442c1442
+< 	G = api_generator(curve, &Glen);
+---
+> 	G = BEAR_SINGLE_UNITY_FILEapi_generator(curve, &Glen);
+1444c1444
+< 	api_mul(R, Glen, x, xlen, curve);
+---
+> 	BEAR_SINGLE_UNITY_FILEapi_mul(R, Glen, x, xlen, curve);
+1449c1449
+< api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+---
+> BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
+1472,1477c1472,1477
+< 	&api_generator,
+< 	&api_order,
+< 	&api_xoff,
+< 	&api_mul,
+< 	&api_mulgen,
+< 	&api_muladd
+---
+> 	&BEAR_SINGLE_UNITY_FILEapi_generator,
+> 	&BEAR_SINGLE_UNITY_FILEapi_order,
+> 	&BEAR_SINGLE_UNITY_FILEapi_xoff,
+> 	&BEAR_SINGLE_UNITY_FILEapi_mul,
+> 	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
+> 	&BEAR_SINGLE_UNITY_FILEapi_muladd

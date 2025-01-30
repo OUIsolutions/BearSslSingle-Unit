@@ -1,0 +1,132 @@
+26c26
+< #include "inner.h"
+---
+> 
+61c61
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+64c64
+< 		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+---
+> 		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
+81c81
+< 	ivx0 = _mm_shuffle_epi8(_mm_loadu_si128((void *)ctr), erev);
+---
+> 	ivx0 = _mm_shuffle_epi8(_mm_loadu_si128((const __m128i_u*)ctr), erev);
+95c95
+< 		 * Load counter values; we need to byteswap them because
+---
+> 		 * Load counter values; we need to BEAR_SINGLE_UNITY_FILEbyteswap them because
+185c185
+< 				_mm_loadu_si128((void *)(buf +  0)));
+---
+> 				_mm_loadu_si128((const __m128i_u*)(buf +  0)));
+187c187
+< 				_mm_loadu_si128((void *)(buf + 16)));
+---
+> 				_mm_loadu_si128((const __m128i_u*)(buf + 16)));
+189c189
+< 				_mm_loadu_si128((void *)(buf + 32)));
+---
+> 				_mm_loadu_si128((const __m128i_u*)(buf + 32)));
+191,195c191,195
+< 				_mm_loadu_si128((void *)(buf + 48)));
+< 			_mm_storeu_si128((void *)(buf +  0), x0);
+< 			_mm_storeu_si128((void *)(buf + 16), x1);
+< 			_mm_storeu_si128((void *)(buf + 32), x2);
+< 			_mm_storeu_si128((void *)(buf + 48), x3);
+---
+> 				_mm_loadu_si128((const __m128i_u*)(buf + 48)));
+> 			_mm_storeu_si128((__m128i_u*)(buf +  0), x0);
+> 			_mm_storeu_si128((__m128i_u*)(buf + 16), x1);
+> 			_mm_storeu_si128((__m128i_u*)(buf + 32), x2);
+> 			_mm_storeu_si128((__m128i_u*)(buf + 48), x3);
+201,204c201,204
+< 			_mm_storeu_si128((void *)(tmp +  0), x0);
+< 			_mm_storeu_si128((void *)(tmp + 16), x1);
+< 			_mm_storeu_si128((void *)(tmp + 32), x2);
+< 			_mm_storeu_si128((void *)(tmp + 48), x3);
+---
+> 			_mm_storeu_si128((__m128i_u*)(tmp +  0), x0);
+> 			_mm_storeu_si128((__m128i_u*)(tmp + 16), x1);
+> 			_mm_storeu_si128((__m128i_u*)(tmp + 32), x2);
+> 			_mm_storeu_si128((__m128i_u*)(tmp + 48), x3);
+251c251
+< 	_mm_storeu_si128((void *)ctr, _mm_shuffle_epi8(ivx0, erev));
+---
+> 	_mm_storeu_si128((__m128i_u*)ctr, _mm_shuffle_epi8(ivx0, erev));
+265,266c265,266
+< 	buf = data;
+< 	ivx = _mm_loadu_si128(cbcmac);
+---
+> 	buf = (unsigned char*)data;
+> 	ivx = _mm_loadu_si128((const __m128i_u*)cbcmac);
+269c269
+< 		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+---
+> 		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
+274c274
+< 		x = _mm_xor_si128(_mm_loadu_si128((void *)buf), ivx);
+---
+> 		x = _mm_xor_si128(_mm_loadu_si128((const __m128i_u*)buf), ivx);
+302c302
+< 	_mm_storeu_si128(cbcmac, ivx);
+---
+> 	_mm_storeu_si128((__m128i_u*)cbcmac, ivx);
+321c321
+< 		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+---
+> 		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
+335,336c335,336
+< 	ivx = _mm_shuffle_epi8(_mm_loadu_si128(ctr), erev);
+< 	cmx = _mm_loadu_si128(cbcmac);
+---
+> 	ivx = _mm_shuffle_epi8(_mm_loadu_si128((const __m128i_u*)ctr), erev);
+> 	cmx = _mm_loadu_si128((const __m128i_u*)cbcmac);
+338c338
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+349c349
+< 		dx = _mm_loadu_si128((void *)buf);
+---
+> 		dx = _mm_loadu_si128((const __m128i_u*)buf);
+403c403
+< 		_mm_storeu_si128((void *)buf, x0);
+---
+> 		_mm_storeu_si128((__m128i_u*)buf, x0);
+450,451c450,451
+< 	_mm_storeu_si128(ctr, _mm_shuffle_epi8(ivx, erev));
+< 	_mm_storeu_si128(cbcmac, cmx);
+---
+> 	_mm_storeu_si128((__m128i_u*)ctr, _mm_shuffle_epi8(ivx, erev));
+> 	_mm_storeu_si128((__m128i_u*)cbcmac, cmx);
+469c469
+< 		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+---
+> 		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
+483,484c483,484
+< 	ivx = _mm_shuffle_epi8(_mm_loadu_si128(ctr), erev);
+< 	cmx = _mm_loadu_si128(cbcmac);
+---
+> 	ivx = _mm_shuffle_epi8(_mm_loadu_si128((const __m128i_u*)ctr), erev);
+> 	cmx = _mm_loadu_si128((const __m128i_u*)cbcmac);
+486c486
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+496c496
+< 		dx = _mm_loadu_si128((void *)buf);
+---
+> 		dx = _mm_loadu_si128((const __m128i_u*)buf);
+544c544
+< 		_mm_storeu_si128((void *)buf, x0);
+---
+> 		_mm_storeu_si128((__m128i_u*)buf, x0);
+560,561c560,561
+< 	_mm_storeu_si128(ctr, _mm_shuffle_epi8(ivx, erev));
+< 	_mm_storeu_si128(cbcmac, cmx);
+---
+> 	_mm_storeu_si128((__m128i_u*)ctr, _mm_shuffle_epi8(ivx, erev));
+> 	_mm_storeu_si128((__m128i_u*)cbcmac, cmx);

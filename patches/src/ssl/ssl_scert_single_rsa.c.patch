@@ -1,0 +1,42 @@
+25c25
+< #include "inner.h"
+---
+> 
+86c86
+< static const unsigned char HASH_OID_SHA1[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1[] = {
+90c90
+< static const unsigned char HASH_OID_SHA224[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224[] = {
+94c94
+< static const unsigned char HASH_OID_SHA256[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256[] = {
+98c98
+< static const unsigned char HASH_OID_SHA384[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384[] = {
+102c102
+< static const unsigned char HASH_OID_SHA512[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512[] = {
+106,111c106,111
+< static const unsigned char *HASH_OID[] = {
+< 	HASH_OID_SHA1,
+< 	HASH_OID_SHA224,
+< 	HASH_OID_SHA256,
+< 	HASH_OID_SHA384,
+< 	HASH_OID_SHA512
+---
+> static const unsigned char *BEAR_SINGLE_UNITY_FILEHASH_OID[] = {
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512
+129c129
+< 		hash_oid = HASH_OID[algo_id - 2];
+---
+> 		hash_oid = BEAR_SINGLE_UNITY_FILEHASH_OID[algo_id - 2];

@@ -1,0 +1,12 @@
+25c25
+< #include "inner.h"
+---
+> 
+29c29
+< #define ORDER_LEN   ((BR_MAX_EC_SIZE + 7) >> 3)
+---
+> #define BEAR_SINGLE_UNITY_FILEORDER_LEN   ((BR_MAX_EC_SIZE + 7) >> 3)
+47c47
+< 	unsigned char tt[ORDER_LEN << 1];
+---
+> 	unsigned char tt[BEAR_SINGLE_UNITY_FILEORDER_LEN << 1];

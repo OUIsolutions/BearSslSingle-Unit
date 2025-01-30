@@ -1,0 +1,60 @@
+25c25
+< #include "inner.h"
+---
+> 
+75c75
+< add_round_key(uint64_t *q, const uint64_t *sk)
+---
+> BEAR_SINGLE_UNITY_FILEadd_round_key(uint64_t *q, const uint64_t *sk)
+85c85
+< inv_shift_rows(uint64_t *q)
+---
+> inv_BEAR_SINGLE_UNITY_FILEshift_rows(uint64_t *q)
+104c104
+< rotr32(uint64_t x)
+---
+> BEAR_SINGLE_UNITY_FILErotr32(uint64_t x)
+110c110
+< inv_mix_columns(uint64_t *q)
+---
+> inv_BEAR_SINGLE_UNITY_FILEmix_columns(uint64_t *q)
+132,139c132,139
+< 	q[0] = q5 ^ q6 ^ q7 ^ r0 ^ r5 ^ r7 ^ rotr32(q0 ^ q5 ^ q6 ^ r0 ^ r5);
+< 	q[1] = q0 ^ q5 ^ r0 ^ r1 ^ r5 ^ r6 ^ r7 ^ rotr32(q1 ^ q5 ^ q7 ^ r1 ^ r5 ^ r6);
+< 	q[2] = q0 ^ q1 ^ q6 ^ r1 ^ r2 ^ r6 ^ r7 ^ rotr32(q0 ^ q2 ^ q6 ^ r2 ^ r6 ^ r7);
+< 	q[3] = q0 ^ q1 ^ q2 ^ q5 ^ q6 ^ r0 ^ r2 ^ r3 ^ r5 ^ rotr32(q0 ^ q1 ^ q3 ^ q5 ^ q6 ^ q7 ^ r0 ^ r3 ^ r5 ^ r7);
+< 	q[4] = q1 ^ q2 ^ q3 ^ q5 ^ r1 ^ r3 ^ r4 ^ r5 ^ r6 ^ r7 ^ rotr32(q1 ^ q2 ^ q4 ^ q5 ^ q7 ^ r1 ^ r4 ^ r5 ^ r6);
+< 	q[5] = q2 ^ q3 ^ q4 ^ q6 ^ r2 ^ r4 ^ r5 ^ r6 ^ r7 ^ rotr32(q2 ^ q3 ^ q5 ^ q6 ^ r2 ^ r5 ^ r6 ^ r7);
+< 	q[6] = q3 ^ q4 ^ q5 ^ q7 ^ r3 ^ r5 ^ r6 ^ r7 ^ rotr32(q3 ^ q4 ^ q6 ^ q7 ^ r3 ^ r6 ^ r7);
+< 	q[7] = q4 ^ q5 ^ q6 ^ r4 ^ r6 ^ r7 ^ rotr32(q4 ^ q5 ^ q7 ^ r4 ^ r7);
+---
+> 	q[0] = q5 ^ q6 ^ q7 ^ r0 ^ r5 ^ r7 ^ BEAR_SINGLE_UNITY_FILErotr32(q0 ^ q5 ^ q6 ^ r0 ^ r5);
+> 	q[1] = q0 ^ q5 ^ r0 ^ r1 ^ r5 ^ r6 ^ r7 ^ BEAR_SINGLE_UNITY_FILErotr32(q1 ^ q5 ^ q7 ^ r1 ^ r5 ^ r6);
+> 	q[2] = q0 ^ q1 ^ q6 ^ r1 ^ r2 ^ r6 ^ r7 ^ BEAR_SINGLE_UNITY_FILErotr32(q0 ^ q2 ^ q6 ^ r2 ^ r6 ^ r7);
+> 	q[3] = q0 ^ q1 ^ q2 ^ q5 ^ q6 ^ r0 ^ r2 ^ r3 ^ r5 ^ BEAR_SINGLE_UNITY_FILErotr32(q0 ^ q1 ^ q3 ^ q5 ^ q6 ^ q7 ^ r0 ^ r3 ^ r5 ^ r7);
+> 	q[4] = q1 ^ q2 ^ q3 ^ q5 ^ r1 ^ r3 ^ r4 ^ r5 ^ r6 ^ r7 ^ BEAR_SINGLE_UNITY_FILErotr32(q1 ^ q2 ^ q4 ^ q5 ^ q7 ^ r1 ^ r4 ^ r5 ^ r6);
+> 	q[5] = q2 ^ q3 ^ q4 ^ q6 ^ r2 ^ r4 ^ r5 ^ r6 ^ r7 ^ BEAR_SINGLE_UNITY_FILErotr32(q2 ^ q3 ^ q5 ^ q6 ^ r2 ^ r5 ^ r6 ^ r7);
+> 	q[6] = q3 ^ q4 ^ q5 ^ q7 ^ r3 ^ r5 ^ r6 ^ r7 ^ BEAR_SINGLE_UNITY_FILErotr32(q3 ^ q4 ^ q6 ^ q7 ^ r3 ^ r6 ^ r7);
+> 	q[7] = q4 ^ q5 ^ q6 ^ r4 ^ r6 ^ r7 ^ BEAR_SINGLE_UNITY_FILErotr32(q4 ^ q5 ^ q7 ^ r4 ^ r7);
+149c149
+< 	add_round_key(q, skey + (num_rounds << 3));
+---
+> 	BEAR_SINGLE_UNITY_FILEadd_round_key(q, skey + (num_rounds << 3));
+151c151
+< 		inv_shift_rows(q);
+---
+> 		inv_BEAR_SINGLE_UNITY_FILEshift_rows(q);
+153,154c153,154
+< 		add_round_key(q, skey + (u << 3));
+< 		inv_mix_columns(q);
+---
+> 		BEAR_SINGLE_UNITY_FILEadd_round_key(q, skey + (u << 3));
+> 		inv_BEAR_SINGLE_UNITY_FILEmix_columns(q);
+156c156
+< 	inv_shift_rows(q);
+---
+> 	inv_BEAR_SINGLE_UNITY_FILEshift_rows(q);
+158c158
+< 	add_round_key(q, skey);
+---
+> 	BEAR_SINGLE_UNITY_FILEadd_round_key(q, skey);

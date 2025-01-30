@@ -1,0 +1,56 @@
+25c25
+< #include "inner.h"
+---
+> 
+28c28
+< add_round_key(uint32_t *q, const uint32_t *sk)
+---
+> BEAR_SINGLE_UNITY_FILEadd_round_key(uint32_t *q, const uint32_t *sk)
+41c41
+< shift_rows(uint32_t *q)
+---
+> BEAR_SINGLE_UNITY_FILEshift_rows(uint32_t *q)
+57c57
+< rotr16(uint32_t x)
+---
+> BEAR_SINGLE_UNITY_FILErotr16(uint32_t x)
+63c63
+< mix_columns(uint32_t *q)
+---
+> BEAR_SINGLE_UNITY_FILEmix_columns(uint32_t *q)
+85,92c85,92
+< 	q[0] = q7 ^ r7 ^ r0 ^ rotr16(q0 ^ r0);
+< 	q[1] = q0 ^ r0 ^ q7 ^ r7 ^ r1 ^ rotr16(q1 ^ r1);
+< 	q[2] = q1 ^ r1 ^ r2 ^ rotr16(q2 ^ r2);
+< 	q[3] = q2 ^ r2 ^ q7 ^ r7 ^ r3 ^ rotr16(q3 ^ r3);
+< 	q[4] = q3 ^ r3 ^ q7 ^ r7 ^ r4 ^ rotr16(q4 ^ r4);
+< 	q[5] = q4 ^ r4 ^ r5 ^ rotr16(q5 ^ r5);
+< 	q[6] = q5 ^ r5 ^ r6 ^ rotr16(q6 ^ r6);
+< 	q[7] = q6 ^ r6 ^ r7 ^ rotr16(q7 ^ r7);
+---
+> 	q[0] = q7 ^ r7 ^ r0 ^ BEAR_SINGLE_UNITY_FILErotr16(q0 ^ r0);
+> 	q[1] = q0 ^ r0 ^ q7 ^ r7 ^ r1 ^ BEAR_SINGLE_UNITY_FILErotr16(q1 ^ r1);
+> 	q[2] = q1 ^ r1 ^ r2 ^ BEAR_SINGLE_UNITY_FILErotr16(q2 ^ r2);
+> 	q[3] = q2 ^ r2 ^ q7 ^ r7 ^ r3 ^ BEAR_SINGLE_UNITY_FILErotr16(q3 ^ r3);
+> 	q[4] = q3 ^ r3 ^ q7 ^ r7 ^ r4 ^ BEAR_SINGLE_UNITY_FILErotr16(q4 ^ r4);
+> 	q[5] = q4 ^ r4 ^ r5 ^ BEAR_SINGLE_UNITY_FILErotr16(q5 ^ r5);
+> 	q[6] = q5 ^ r5 ^ r6 ^ BEAR_SINGLE_UNITY_FILErotr16(q6 ^ r6);
+> 	q[7] = q6 ^ r6 ^ r7 ^ BEAR_SINGLE_UNITY_FILErotr16(q7 ^ r7);
+102c102
+< 	add_round_key(q, skey);
+---
+> 	BEAR_SINGLE_UNITY_FILEadd_round_key(q, skey);
+105,107c105,107
+< 		shift_rows(q);
+< 		mix_columns(q);
+< 		add_round_key(q, skey + (u << 3));
+---
+> 		BEAR_SINGLE_UNITY_FILEshift_rows(q);
+> 		BEAR_SINGLE_UNITY_FILEmix_columns(q);
+> 		BEAR_SINGLE_UNITY_FILEadd_round_key(q, skey + (u << 3));
+110,111c110,111
+< 	shift_rows(q);
+< 	add_round_key(q, skey + (num_rounds << 3));
+---
+> 	BEAR_SINGLE_UNITY_FILEshift_rows(q);
+> 	BEAR_SINGLE_UNITY_FILEadd_round_key(q, skey + (num_rounds << 3));

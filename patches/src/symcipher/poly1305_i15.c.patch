@@ -1,0 +1,56 @@
+25c25
+< #include "inner.h"
+---
+> 
+45c45
+< #define P0I   0x4CCD
+---
+> #define BEAR_SINGLE_UNITY_FILEP0I   0x4CCD
+61c61
+< poly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEpoly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t len)
+65c65
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+103c103
+< 		br_i15_montymul(a, b, r, P1305, P0I);
+---
+> 		br_i15_montymul(a, b, r, P1305, BEAR_SINGLE_UNITY_FILEP0I);
+114c114
+< byteswap16(unsigned char *buf)
+---
+> BEAR_SINGLE_UNITY_FILEbyteswap16(unsigned char *buf)
+171c171
+< 	 * so we must byteswap the value first.
+---
+> 	 * so we must BEAR_SINGLE_UNITY_FILEbyteswap the value first.
+173c173
+< 	byteswap16(pkey);
+---
+> 	BEAR_SINGLE_UNITY_FILEbyteswap16((unsigned char *)pkey);
+179c179
+< 	br_i15_montymul(r, t, R2, P1305, P0I);
+---
+> 	br_i15_montymul(r, t, R2, P1305, BEAR_SINGLE_UNITY_FILEP0I);
+192,194c192,194
+< 	poly1305_inner(acc, r, aad, aad_len);
+< 	poly1305_inner(acc, r, data, len);
+< 	poly1305_inner(acc, r, foot, sizeof foot);
+---
+> 	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, aad, aad_len);
+> 	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, data, len);
+> 	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, foot, sizeof foot);
+197c197
+< 	 * Decode the value 's'. Again, a byteswap is needed.
+---
+> 	 * Decode the value 's'. Again, a BEAR_SINGLE_UNITY_FILEbyteswap is needed.
+199c199
+< 	byteswap16(pkey + 16);
+---
+> 	BEAR_SINGLE_UNITY_FILEbyteswap16((unsigned char*)pkey + 16);
+213c213
+< 	byteswap16(tag);
+---
+> 	BEAR_SINGLE_UNITY_FILEbyteswap16((unsigned char*)tag);

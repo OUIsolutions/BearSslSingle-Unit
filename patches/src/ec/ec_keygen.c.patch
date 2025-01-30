@@ -1,0 +1,8 @@
+25c25
+< #include "inner.h"
+---
+> 
+61c61
+< 	buf = kbuf;
+---
+> 	buf = (unsigned char*)kbuf;

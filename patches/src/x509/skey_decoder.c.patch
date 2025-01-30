@@ -1,0 +1,220 @@
+10c10
+< } t0_context;
+---
+> } BEAR_SINGLE_UNITY_FILEt0_context;
+13c13
+< t0_parse7E_unsigned(const unsigned char **p)
+---
+> BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(const unsigned char **p)
+30c30
+< t0_parse7E_signed(const unsigned char **p)
+---
+> BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(const unsigned char **p)
+61c61
+< /* static const unsigned char t0_datablock[]; */
+---
+> /* static const unsigned char BEAR_SINGLE_UNITY_FILEt0_datablock[]; */
+70d69
+< #include "inner.h"
+76d74
+< #include "inner.h"
+78,79c76,79
+< #define CTX   ((br_skey_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_skey_decoder_context, cpu)))
+< #define CONTEXT_NAME   br_skey_decoder_context
+---
+> 
+> 
+> #define BEAR_SINGLE_UNITY_FILECTX   ((br_skey_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_skey_decoder_context, cpu)))
+> #define BEAR_SINGLE_UNITY_FILECONTEXT_NAME   br_skey_decoder_context
+97c97
+< 	ctx->hbuf = data;
+---
+> 	ctx->hbuf = (const unsigned char*)data;
+104c104
+< static const unsigned char t0_datablock[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEt0_datablock[] = {
+111c111
+< static const unsigned char t0_codeblock[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEt0_codeblock[] = {
+126,128c126,128
+< 	0x00, 0x00, 0x01, T0_INT2(offsetof(CONTEXT_NAME, key_data)), 0x00,
+< 	0x00, 0x01, T0_INT2(offsetof(CONTEXT_NAME, key_type)), 0x00, 0x00,
+< 	0x33, 0x48, 0x00, 0x00, 0x01, T0_INT2(offsetof(CONTEXT_NAME, pad)),
+---
+> 	0x00, 0x00, 0x01, T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, key_data)), 0x00,
+> 	0x00, 0x01, T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, key_type)), 0x00, 0x00,
+> 	0x33, 0x48, 0x00, 0x00, 0x01, T0_INT2(offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, pad)),
+201c201
+< static const uint16_t t0_caddr[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEt0_caddr[] = {
+265c265
+< #define T0_INTERPRETED   34
+---
+> #define BEAR_SINGLE_UNITY_FILET0_INTERPRETED   34
+267c267
+< #define T0_ENTER(ip, rp, slot)   do { \
+---
+> #define BEAR_SINGLE_UNITY_FILET0_ENTER(ip, rp, slot)   do { \
+270,271c270,271
+< 		t0_newip = &t0_codeblock[t0_caddr[(slot) - T0_INTERPRETED]]; \
+< 		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
+---
+> 		t0_newip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[BEAR_SINGLE_UNITY_FILEt0_caddr[(slot) - BEAR_SINGLE_UNITY_FILET0_INTERPRETED]]; \
+> 		t0_lnum = BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&t0_newip); \
+273c273
+< 		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
+---
+> 		*((rp) ++) = (uint32_t)((ip) - &BEAR_SINGLE_UNITY_FILEt0_codeblock[0]) + (t0_lnum << 16); \
+277c277
+< #define T0_DEFENTRY(name, slot) \
+---
+> #define BEAR_SINGLE_UNITY_FILET0_DEFENTRY(name, slot) \
+281,283c281,283
+< 	t0_context *t0ctx = ctx; \
+< 	t0ctx->ip = &t0_codeblock[0]; \
+< 	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+---
+> 	BEAR_SINGLE_UNITY_FILEt0_context *t0ctx  =(BEAR_SINGLE_UNITY_FILEt0_context*)ctx; \
+> 	t0ctx->ip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[0]; \
+> 	BEAR_SINGLE_UNITY_FILET0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+286c286
+< T0_DEFENTRY(br_skey_decoder_init_main, 73)
+---
+> BEAR_SINGLE_UNITY_FILET0_DEFENTRY(br_skey_decoder_init_main, 73)
+339,341c339,341
+< 	dp = ((t0_context *)t0ctx)->dp;
+< 	rp = ((t0_context *)t0ctx)->rp;
+< 	ip = ((t0_context *)t0ctx)->ip;
+---
+> 	dp = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->dp;
+> 	rp = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->rp;
+> 	ip = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->ip;
+348c348
+< 		if (t0x < T0_INTERPRETED) {
+---
+> 		if (t0x < BEAR_SINGLE_UNITY_FILET0_INTERPRETED) {
+360c360
+< 				ip = &t0_codeblock[t0x];
+---
+> 				ip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[t0x];
+363c363
+< 				T0_PUSHi(t0_parse7E_signed(&ip));
+---
+> 				T0_PUSHi(BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip));
+366c366
+< 				T0_PUSH(T0_LOCAL(t0_parse7E_unsigned(&ip)));
+---
+> 				T0_PUSH(T0_LOCAL(BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&ip)));
+369c369
+< 				T0_LOCAL(t0_parse7E_unsigned(&ip)) = T0_POP();
+---
+> 				T0_LOCAL(BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&ip)) = T0_POP();
+372c372
+< 				t0off = t0_parse7E_signed(&ip);
+---
+> 				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
+376c376
+< 				t0off = t0_parse7E_signed(&ip);
+---
+> 				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
+382c382
+< 				t0off = t0_parse7E_signed(&ip);
+---
+> 				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
+500,501c500,501
+< 	const unsigned char *a2 = &t0_datablock[T0_POP()];
+< 	const unsigned char *a1 = &CTX->pad[0];
+---
+> 	const unsigned char *a2 = &BEAR_SINGLE_UNITY_FILEt0_datablock[T0_POP()];
+> 	const unsigned char *a1 = &BEAR_SINGLE_UNITY_FILECTX->pad[0];
+516c516
+< 	CTX->err = T0_POPi();
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->err = T0_POPi();
+525c525
+< 	T0_PUSH(*((unsigned char *)CTX + addr));
+---
+> 	T0_PUSH(*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
+547c547
+< 	size_t clen = CTX->hlen;
+---
+> 	size_t clen = BEAR_SINGLE_UNITY_FILECTX->hlen;
+552c552
+< 		memcpy((unsigned char *)CTX + addr, CTX->hbuf, clen);
+---
+> 		memcpy((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
+554,555c554,555
+< 	CTX->hbuf += clen;
+< 	CTX->hlen -= clen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->hbuf += clen;
+> 	BEAR_SINGLE_UNITY_FILECTX->hlen -= clen;
+564c564
+< 	if (CTX->hlen == 0) {
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->hlen == 0) {
+567,568c567,568
+< 		CTX->hlen --;
+< 		T0_PUSH(*CTX->hbuf ++);
+---
+> 		BEAR_SINGLE_UNITY_FILECTX->hlen --;
+> 		T0_PUSH(*BEAR_SINGLE_UNITY_FILECTX->hbuf ++);
+583,585c583,585
+< 	CTX->key.ec.curve = curve;
+< 	CTX->key.ec.x = CTX->key_data;
+< 	CTX->key.ec.xlen = xlen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.ec.curve = curve;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.ec.x = BEAR_SINGLE_UNITY_FILECTX->key_data;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.ec.xlen = xlen;
+600,602c600,602
+< 	CTX->key.rsa.n_bitlen = n_bitlen;
+< 	CTX->key.rsa.p = CTX->key_data;
+< 	CTX->key.rsa.plen = plen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.n_bitlen = n_bitlen;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.p = BEAR_SINGLE_UNITY_FILECTX->key_data;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.plen = plen;
+604,605c604,605
+< 	CTX->key.rsa.q = CTX->key_data + off;
+< 	CTX->key.rsa.qlen = qlen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.q = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.qlen = qlen;
+607,608c607,608
+< 	CTX->key.rsa.dp = CTX->key_data + off;
+< 	CTX->key.rsa.dplen = dplen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dp = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dplen = dplen;
+610,611c610,611
+< 	CTX->key.rsa.dq = CTX->key_data + off;
+< 	CTX->key.rsa.dqlen = dqlen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dq = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.dqlen = dqlen;
+613,614c613,614
+< 	CTX->key.rsa.iq = CTX->key_data + off;
+< 	CTX->key.rsa.iqlen = iqlen;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.iq = BEAR_SINGLE_UNITY_FILECTX->key_data + off;
+> 	BEAR_SINGLE_UNITY_FILECTX->key.rsa.iqlen = iqlen;
+622c622
+< 	*((unsigned char *)CTX + addr) = (unsigned char)T0_POP();
+---
+> 	*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = (unsigned char)T0_POP();
+643c643
+< 			T0_ENTER(ip, rp, t0x);
+---
+> 			BEAR_SINGLE_UNITY_FILET0_ENTER(ip, rp, t0x);
+647,649c647,649
+< 	((t0_context *)t0ctx)->dp = dp;
+< 	((t0_context *)t0ctx)->rp = rp;
+< 	((t0_context *)t0ctx)->ip = ip;
+---
+> 	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->dp = dp;
+> 	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->rp = rp;
+> 	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->ip = ip;

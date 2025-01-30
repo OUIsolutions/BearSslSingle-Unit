@@ -1,0 +1,8 @@
+25c25
+< #include "inner.h"
+---
+> 
+348c348
+< 	dbuf = data;
+---
+> 	dbuf = (unsigned char*)data;

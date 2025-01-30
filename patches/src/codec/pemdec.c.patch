@@ -1,0 +1,171 @@
+10c10
+< } t0_context;
+---
+> } BEAR_SINGLE_UNITY_FILEt0_context;
+13c13
+< t0_parse7E_unsigned(const unsigned char **p)
+---
+> BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(const unsigned char **p)
+30c30
+< t0_parse7E_signed(const unsigned char **p)
+---
+> BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(const unsigned char **p)
+61c61
+< /* static const unsigned char t0_datablock[]; */
+---
+> /* static const unsigned char BEAR_SINGLE_UNITY_FILEt0_datablock[]; */
+70d69
+< #include "inner.h"
+72c71,72
+< #define CTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
+---
+> 
+> #define BEAR_SINGLE_UNITY_FILECTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
+93c93
+< 	ctx->hbuf = data;
+---
+> 	ctx->hbuf = (const unsigned char*)data;
+112c112
+< static const unsigned char t0_datablock[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEt0_datablock[] = {
+117c117
+< static const unsigned char t0_codeblock[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEt0_codeblock[] = {
+173c173
+< static const uint16_t t0_caddr[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEt0_caddr[] = {
+197c197
+< #define T0_INTERPRETED   29
+---
+> #define BEAR_SINGLE_UNITY_FILET0_INTERPRETED   29
+199c199
+< #define T0_ENTER(ip, rp, slot)   do { \
+---
+> #define BEAR_SINGLE_UNITY_FILET0_ENTER(ip, rp, slot)   do { \
+202,203c202,203
+< 		t0_newip = &t0_codeblock[t0_caddr[(slot) - T0_INTERPRETED]]; \
+< 		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
+---
+> 		t0_newip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[BEAR_SINGLE_UNITY_FILEt0_caddr[(slot) - BEAR_SINGLE_UNITY_FILET0_INTERPRETED]]; \
+> 		t0_lnum = BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&t0_newip); \
+205c205
+< 		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
+---
+> 		*((rp) ++) = (uint32_t)((ip) - &BEAR_SINGLE_UNITY_FILEt0_codeblock[0]) + (t0_lnum << 16); \
+209c209
+< #define T0_DEFENTRY(name, slot) \
+---
+> #define BEAR_SINGLE_UNITY_FILET0_DEFENTRY(name, slot) \
+213,215c213,215
+< 	t0_context *t0ctx = ctx; \
+< 	t0ctx->ip = &t0_codeblock[0]; \
+< 	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+---
+> 	BEAR_SINGLE_UNITY_FILEt0_context *t0ctx  =(BEAR_SINGLE_UNITY_FILEt0_context*)ctx; \
+> 	t0ctx->ip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[0]; \
+> 	BEAR_SINGLE_UNITY_FILET0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+218c218
+< T0_DEFENTRY(br_pem_decoder_init_main, 38)
+---
+> BEAR_SINGLE_UNITY_FILET0_DEFENTRY(br_pem_decoder_init_main, 38)
+271,273c271,273
+< 	dp = ((t0_context *)t0ctx)->dp;
+< 	rp = ((t0_context *)t0ctx)->rp;
+< 	ip = ((t0_context *)t0ctx)->ip;
+---
+> 	dp = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->dp;
+> 	rp = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->rp;
+> 	ip = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->ip;
+280c280
+< 		if (t0x < T0_INTERPRETED) {
+---
+> 		if (t0x < BEAR_SINGLE_UNITY_FILET0_INTERPRETED) {
+292c292
+< 				ip = &t0_codeblock[t0x];
+---
+> 				ip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[t0x];
+295c295
+< 				T0_PUSHi(t0_parse7E_signed(&ip));
+---
+> 				T0_PUSHi(BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip));
+298c298
+< 				T0_PUSH(T0_LOCAL(t0_parse7E_unsigned(&ip)));
+---
+> 				T0_PUSH(T0_LOCAL(BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&ip)));
+301c301
+< 				T0_LOCAL(t0_parse7E_unsigned(&ip)) = T0_POP();
+---
+> 				T0_LOCAL(BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&ip)) = T0_POP();
+304c304
+< 				t0off = t0_parse7E_signed(&ip);
+---
+> 				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
+308c308
+< 				t0off = t0_parse7E_signed(&ip);
+---
+> 				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
+314c314
+< 				t0off = t0_parse7E_signed(&ip);
+---
+> 				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
+418c418
+< 	T0_PUSH(t0_datablock[addr]);
+---
+> 	T0_PUSH(BEAR_SINGLE_UNITY_FILEt0_datablock[addr]);
+435,437c435,437
+< 	if (CTX->ptr > 0) {
+< 		if (CTX->dest) {
+< 			CTX->dest(CTX->dest_ctx, CTX->buf, CTX->ptr);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->ptr > 0) {
+> 		if (BEAR_SINGLE_UNITY_FILECTX->dest) {
+> 			BEAR_SINGLE_UNITY_FILECTX->dest(BEAR_SINGLE_UNITY_FILECTX->dest_ctx, BEAR_SINGLE_UNITY_FILECTX->buf, BEAR_SINGLE_UNITY_FILECTX->ptr);
+439c439
+< 		CTX->ptr = 0;
+---
+> 		BEAR_SINGLE_UNITY_FILECTX->ptr = 0;
+467c467
+< 	T0_PUSH(*((unsigned char *)CTX + addr));
+---
+> 	T0_PUSH(*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
+479,481c479,481
+< 	if (CTX->hlen > 0) {
+< 		T0_PUSH(*CTX->hbuf ++);
+< 		CTX->hlen --;
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->hlen > 0) {
+> 		T0_PUSH(*BEAR_SINGLE_UNITY_FILECTX->hbuf ++);
+> 		BEAR_SINGLE_UNITY_FILECTX->hlen --;
+493c493
+< 	*((unsigned char *)CTX + addr) = x;
+---
+> 	*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = x;
+506,509c506,509
+< 	CTX->buf[CTX->ptr ++] = x;
+< 	if (CTX->ptr == sizeof CTX->buf) {
+< 		if (CTX->dest) {
+< 			CTX->dest(CTX->dest_ctx, CTX->buf, sizeof CTX->buf);
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->buf[BEAR_SINGLE_UNITY_FILECTX->ptr ++] = x;
+> 	if (BEAR_SINGLE_UNITY_FILECTX->ptr == sizeof BEAR_SINGLE_UNITY_FILECTX->buf) {
+> 		if (BEAR_SINGLE_UNITY_FILECTX->dest) {
+> 			BEAR_SINGLE_UNITY_FILECTX->dest(BEAR_SINGLE_UNITY_FILECTX->dest_ctx, BEAR_SINGLE_UNITY_FILECTX->buf, sizeof BEAR_SINGLE_UNITY_FILECTX->buf);
+511c511
+< 		CTX->ptr = 0;
+---
+> 		BEAR_SINGLE_UNITY_FILECTX->ptr = 0;
+519c519
+< 			T0_ENTER(ip, rp, t0x);
+---
+> 			BEAR_SINGLE_UNITY_FILET0_ENTER(ip, rp, t0x);
+523,525c523,525
+< 	((t0_context *)t0ctx)->dp = dp;
+< 	((t0_context *)t0ctx)->rp = rp;
+< 	((t0_context *)t0ctx)->ip = ip;
+---
+> 	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->dp = dp;
+> 	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->rp = rp;
+> 	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->ip = ip;

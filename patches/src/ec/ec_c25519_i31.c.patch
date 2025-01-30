@@ -1,0 +1,234 @@
+25c25
+< #include "inner.h"
+---
+> 
+33c33
+< static const uint32_t C255_P[] = {
+---
+> static const uint32_t BEAR_SINGLE_UNITY_FILEC255_P[] = {
+39c39
+< #define P0I   0x286BCA1B
+---
+> #define BEAR_SINGLE_UNITY_FILEP0I   0x286BCA1B
+41c41
+< static const uint32_t C255_R2[] = {
+---
+> static const uint32_t BEAR_SINGLE_UNITY_FILEC255_R2[] = {
+47c47
+< static const uint32_t C255_A24[] = {
+---
+> static const uint32_t BEAR_SINGLE_UNITY_FILEC255_A24[] = {
+65c65
+< 	br_i31_from_monty(y, C255_P, P0I);
+---
+> 	br_i31_from_monty(y, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
+74c74
+< static const unsigned char GEN[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEGEN[] = {
+81c81
+< static const unsigned char ORDER[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEORDER[] = {
+89c89
+< api_generator(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
+93c93
+< 	return GEN;
+---
+> 	return BEAR_SINGLE_UNITY_FILEGEN;
+97c97
+< api_order(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
+101c101
+< 	return ORDER;
+---
+> 	return BEAR_SINGLE_UNITY_FILEORDER;
+105c105
+< api_xoff(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
+113c113
+< cswap(uint32_t *a, uint32_t *b, uint32_t ctl)
+---
+> BEAR_SINGLE_UNITY_FILEcswap(uint32_t *a, uint32_t *b, uint32_t ctl)
+130c130
+< c255_add(uint32_t *d, const uint32_t *a, const uint32_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEc255_add(uint32_t *d, const uint32_t *a, const uint32_t *b)
+137,138c137,138
+< 	ctl |= NOT(br_i31_sub(t, C255_P, 0));
+< 	br_i31_sub(t, C255_P, ctl);
+---
+> 	ctl |= NOT(br_i31_sub(t, BEAR_SINGLE_UNITY_FILEC255_P, 0));
+> 	br_i31_sub(t, BEAR_SINGLE_UNITY_FILEC255_P, ctl);
+143c143
+< c255_sub(uint32_t *d, const uint32_t *a, const uint32_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEc255_sub(uint32_t *d, const uint32_t *a, const uint32_t *b)
+148c148
+< 	br_i31_add(t, C255_P, br_i31_sub(t, b, 1));
+---
+> 	br_i31_add(t, BEAR_SINGLE_UNITY_FILEC255_P, br_i31_sub(t, b, 1));
+153c153
+< c255_mul(uint32_t *d, const uint32_t *a, const uint32_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEc255_mul(uint32_t *d, const uint32_t *a, const uint32_t *b)
+157c157
+< 	br_i31_montymul(t, a, b, C255_P, P0I);
+---
+> 	br_i31_montymul(t, a, b, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
+162c162
+< byteswap(unsigned char *G)
+---
+> BEAR_SINGLE_UNITY_FILEbyteswap(unsigned char *G)
+176c176
+< api_mul(unsigned char *G, size_t Glen,
+---
+> BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
+203c203
+< 	byteswap(G);
+---
+> 	BEAR_SINGLE_UNITY_FILEbyteswap(G);
+214c214
+< 	 *    br_i31_decode_reduce(a, G, 32, C255_P);
+---
+> 	 *    br_i31_decode_reduce(a, G, 32, BEAR_SINGLE_UNITY_FILEC255_P);
+220c220
+< 	br_i31_sub(a, C255_P, NOT(br_i31_sub(a, C255_P, 0)));
+---
+> 	br_i31_sub(a, BEAR_SINGLE_UNITY_FILEC255_P, NOT(br_i31_sub(a, BEAR_SINGLE_UNITY_FILEC255_P, 0)));
+226c226
+< 	br_i31_montymul(x1, a, C255_R2, C255_P, P0I);
+---
+> 	br_i31_montymul(x1, a, BEAR_SINGLE_UNITY_FILEC255_R2, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
+228c228
+< 	br_i31_zero(z2, C255_P[0]);
+---
+> 	br_i31_zero(z2, BEAR_SINGLE_UNITY_FILEC255_P[0]);
+252,253c252,253
+< 		cswap(x2, x3, swap);
+< 		cswap(z2, z3, swap);
+---
+> 		BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
+> 		BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
+263,271c263,271
+< 		c255_add(a, x2, z2);
+< 		c255_mul(aa, a, a);
+< 		c255_sub(b, x2, z2);
+< 		c255_mul(bb, b, b);
+< 		c255_sub(e, aa, bb);
+< 		c255_add(c, x3, z3);
+< 		c255_sub(d, x3, z3);
+< 		c255_mul(da, d, a);
+< 		c255_mul(cb, c, b);
+---
+> 		BEAR_SINGLE_UNITY_FILEc255_add(a, x2, z2);
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(aa, a, a);
+> 		BEAR_SINGLE_UNITY_FILEc255_sub(b, x2, z2);
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(bb, b, b);
+> 		BEAR_SINGLE_UNITY_FILEc255_sub(e, aa, bb);
+> 		BEAR_SINGLE_UNITY_FILEc255_add(c, x3, z3);
+> 		BEAR_SINGLE_UNITY_FILEc255_sub(d, x3, z3);
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(da, d, a);
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(cb, c, b);
+285,293c285,293
+< 		c255_add(x3, da, cb);
+< 		c255_mul(x3, x3, x3);
+< 		c255_sub(z3, da, cb);
+< 		c255_mul(z3, z3, z3);
+< 		c255_mul(z3, z3, x1);
+< 		c255_mul(x2, aa, bb);
+< 		c255_mul(z2, C255_A24, e);
+< 		c255_add(z2, z2, aa);
+< 		c255_mul(z2, e, z2);
+---
+> 		BEAR_SINGLE_UNITY_FILEc255_add(x3, da, cb);
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(x3, x3, x3);
+> 		BEAR_SINGLE_UNITY_FILEc255_sub(z3, da, cb);
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(z3, z3, z3);
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(z3, z3, x1);
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(x2, aa, bb);
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(z2, BEAR_SINGLE_UNITY_FILEC255_A24, e);
+> 		BEAR_SINGLE_UNITY_FILEc255_add(z2, z2, aa);
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(z2, e, z2);
+302,303c302,303
+< 	cswap(x2, x3, swap);
+< 	cswap(z2, z3, swap);
+---
+> 	BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
+> 	BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
+312,313c312,313
+< 		c255_mul(a, a, a);
+< 		c255_mul(a, a, z2);
+---
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(a, a, a);
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(a, a, z2);
+320c320
+< 			c255_mul(b, b, b);
+---
+> 			BEAR_SINGLE_UNITY_FILEc255_mul(b, b, b);
+322c322
+< 		c255_mul(b, b, a);
+---
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(b, b, a);
+325c325
+< 		c255_mul(b, b, b);
+---
+> 		BEAR_SINGLE_UNITY_FILEc255_mul(b, b, b);
+327c327
+< 			c255_mul(b, z2, b);
+---
+> 			BEAR_SINGLE_UNITY_FILEc255_mul(b, z2, b);
+330c330
+< 	c255_mul(b, x2, b);
+---
+> 	BEAR_SINGLE_UNITY_FILEc255_mul(b, x2, b);
+336c336
+< 	 *    br_i31_from_monty(x2, C255_P, P0I);
+---
+> 	 *    br_i31_from_monty(x2, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
+338c338
+< 	br_i31_zero(a, C255_P[0]);
+---
+> 	br_i31_zero(a, BEAR_SINGLE_UNITY_FILEC255_P[0]);
+340c340
+< 	br_i31_montymul(x2, a, b, C255_P, P0I);
+---
+> 	br_i31_montymul(x2, a, b, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
+343c343
+< 	byteswap(G);
+---
+> 	BEAR_SINGLE_UNITY_FILEbyteswap(G);
+348c348
+< api_mulgen(unsigned char *R,
+---
+> BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
+354c354
+< 	G = api_generator(curve, &Glen);
+---
+> 	G = BEAR_SINGLE_UNITY_FILEapi_generator(curve, &Glen);
+356c356
+< 	api_mul(R, Glen, x, xlen, curve);
+---
+> 	BEAR_SINGLE_UNITY_FILEapi_mul(R, Glen, x, xlen, curve);
+361c361
+< api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+---
+> BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
+384,389c384,389
+< 	&api_generator,
+< 	&api_order,
+< 	&api_xoff,
+< 	&api_mul,
+< 	&api_mulgen,
+< 	&api_muladd
+---
+> 	&BEAR_SINGLE_UNITY_FILEapi_generator,
+> 	&BEAR_SINGLE_UNITY_FILEapi_order,
+> 	&BEAR_SINGLE_UNITY_FILEapi_xoff,
+> 	&BEAR_SINGLE_UNITY_FILEapi_mul,
+> 	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
+> 	&BEAR_SINGLE_UNITY_FILEapi_muladd

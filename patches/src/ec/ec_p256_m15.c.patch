@@ -1,0 +1,632 @@
+25c25
+< #include "inner.h"
+---
+> 
+99c99
+< norm13(uint32_t *d, const uint32_t *w, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEnorm13(uint32_t *d, const uint32_t *w, size_t len)
+116c116
+<  * mul20() multiplies two 260-bit integers together. Each word must fit
+---
+>  * BEAR_SINGLE_UNITY_FILEmul20() multiplies two 260-bit integers together. Each word must fit
+120c120
+<  * square20() computes the square of a 260-bit integer. Each word must
+---
+>  * BEAR_SINGLE_UNITY_FILEsquare20() computes the square of a 260-bit integer. Each word must
+128c128
+< mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEmul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+343c343
+< 	cc = norm13(d, w, 40);
+---
+> 	cc = BEAR_SINGLE_UNITY_FILEnorm13(d, w, 40);
+354c354
+< square20(uint32_t *d, const uint32_t *a)
+---
+> BEAR_SINGLE_UNITY_FILEsquare20(uint32_t *d, const uint32_t *a)
+356c356
+< 	mul20(d, a, a);
+---
+> 	BEAR_SINGLE_UNITY_FILEmul20(d, a, a);
+362c362
+< mul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEmul20(uint32_t *d, const uint32_t *a, const uint32_t *b)
+766c766
+< 	d[39] = norm13(d, t, 39);
+---
+> 	d[39] = BEAR_SINGLE_UNITY_FILEnorm13(d, t, 39);
+770c770
+< square20(uint32_t *d, const uint32_t *a)
+---
+> BEAR_SINGLE_UNITY_FILEsquare20(uint32_t *d, const uint32_t *a)
+984c984
+< 	d[39] = norm13(d, t, 39);
+---
+> 	d[39] = BEAR_SINGLE_UNITY_FILEnorm13(d, t, 39);
+990c990
+<  * Modulus for field F256 (field for point coordinates in curve P-256).
+---
+>  * Modulus for field BEAR_SINGLE_UNITY_FILEF256 (field for point coordinates in curve P-256).
+992c992
+< static const uint32_t F256[] = {
+---
+> static const uint32_t BEAR_SINGLE_UNITY_FILEF256[] = {
+1001c1001
+< static const uint32_t P256_B[] = {
+---
+> static const uint32_t BEAR_SINGLE_UNITY_FILEP256_B[] = {
+1008c1008
+<  * Perform a "short reduction" in field F256 (field for curve P-256).
+---
+>  * Perform a "short reduction" in field BEAR_SINGLE_UNITY_FILEF256 (field for curve P-256).
+1023c1023
+< 	norm13(d, d, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(d, d, 20);
+1027c1027
+<  * Perform a "final reduction" in field F256 (field for curve P-256).
+---
+>  * Perform a "final reduction" in field BEAR_SINGLE_UNITY_FILEF256 (field for curve P-256).
+1034c1034
+< reduce_final_f256(uint32_t *d)
+---
+> BEAR_SINGLE_UNITY_FILEreduce_final_f256(uint32_t *d)
+1045c1045
+< 		w = t[i] - F256[i] - cc;
+---
+> 		w = t[i] - BEAR_SINGLE_UNITY_FILEF256[i] - cc;
+1062c1062
+< mul_f256(uint32_t *d, const uint32_t *a, const uint32_t *b)
+---
+> BEAR_SINGLE_UNITY_FILEmul_f256(uint32_t *d, const uint32_t *a, const uint32_t *b)
+1071c1071
+< 	mul20(t, a, b);
+---
+> 	BEAR_SINGLE_UNITY_FILEmul20(t, a, b);
+1111c1111
+< 	cc = norm13(t, t, 20);
+---
+> 	cc = BEAR_SINGLE_UNITY_FILEnorm13(t, t, 20);
+1141c1141
+< 	norm13(d, t, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(d, t, 20);
+1152c1152
+< square_f256(uint32_t *d, const uint32_t *a)
+---
+> BEAR_SINGLE_UNITY_FILEsquare_f256(uint32_t *d, const uint32_t *a)
+1160c1160
+< 	square20(t, a);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare20(t, a);
+1200c1200
+< 	cc = norm13(t, t, 20);
+---
+> 	cc = BEAR_SINGLE_UNITY_FILEnorm13(t, t, 20);
+1230c1230
+< 	norm13(d, t, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(d, t, 20);
+1249c1249
+< } p256_jacobian;
+---
+> } p256_BEAR_SINGLE_UNITY_FILEjacobian;
+1260c1260
+< p256_to_affine(p256_jacobian *P)
+---
+> BEAR_SINGLE_UNITY_FILEp256_to_affine(p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
+1290,1291c1290,1291
+< 		square_f256(t1, t1);
+< 		mul_f256(t1, t1, P->z);
+---
+> 		BEAR_SINGLE_UNITY_FILEsquare_f256(t1, t1);
+> 		BEAR_SINGLE_UNITY_FILEmul_f256(t1, t1, P->z);
+1301c1301
+< 		square_f256(t2, t2);
+---
+> 		BEAR_SINGLE_UNITY_FILEsquare_f256(t2, t2);
+1307c1307
+< 			mul_f256(t2, t2, t1);
+---
+> 			BEAR_SINGLE_UNITY_FILEmul_f256(t2, t2, t1);
+1312c1312
+< 			mul_f256(t2, t2, P->z);
+---
+> 			BEAR_SINGLE_UNITY_FILEmul_f256(t2, t2, P->z);
+1320,1325c1320,1325
+< 	mul_f256(t1, t2, t2);
+< 	mul_f256(P->x, t1, P->x);
+< 	mul_f256(t1, t1, t2);
+< 	mul_f256(P->y, t1, P->y);
+< 	reduce_final_f256(P->x);
+< 	reduce_final_f256(P->y);
+---
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t1, t2, t2);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(P->x, t1, P->x);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t1, t1, t2);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(P->y, t1, P->y);
+> 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(P->x);
+> 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(P->y);
+1331,1332c1331,1332
+< 	mul_f256(P->z, P->z, t2);
+< 	reduce_final_f256(P->z);
+---
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(P->z, P->z, t2);
+> 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(P->z);
+1340c1340
+< p256_double(p256_jacobian *Q)
+---
+> BEAR_SINGLE_UNITY_FILEp256_double(p256_BEAR_SINGLE_UNITY_FILEjacobian *Q)
+1363c1363
+< 	square_f256(t1, Q->z);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(t1, Q->z);
+1369c1369
+< 		t2[i] = (F256[i] << 1) + Q->x[i] - t1[i];
+---
+> 		t2[i] = (BEAR_SINGLE_UNITY_FILEF256[i] << 1) + Q->x[i] - t1[i];
+1372,1373c1372,1373
+< 	norm13(t1, t1, 20);
+< 	norm13(t2, t2, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t1, t1, 20);
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t2, t2, 20);
+1378c1378
+< 	mul_f256(t3, t1, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t3, t1, t2);
+1382c1382
+< 	norm13(t1, t1, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t1, t1, 20);
+1387c1387
+< 	square_f256(t3, Q->y);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(t3, Q->y);
+1391,1392c1391,1392
+< 	norm13(t3, t3, 20);
+< 	mul_f256(t2, Q->x, t3);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t3, t3, 20);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t2, Q->x, t3);
+1396c1396
+< 	norm13(t2, t2, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t2, t2, 20);
+1402c1402
+< 	square_f256(Q->x, t1);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(Q->x, t1);
+1404c1404
+< 		Q->x[i] += (F256[i] << 2) - (t2[i] << 1);
+---
+> 		Q->x[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 2) - (t2[i] << 1);
+1406c1406
+< 	norm13(Q->x, Q->x, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(Q->x, Q->x, 20);
+1412c1412
+< 	mul_f256(t4, Q->y, Q->z);
+---
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t4, Q->y, Q->z);
+1416c1416
+< 	norm13(Q->z, Q->z, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(Q->z, Q->z, 20);
+1424c1424
+< 		t2[i] += (F256[i] << 1) - Q->x[i];
+---
+> 		t2[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - Q->x[i];
+1426,1428c1426,1428
+< 	norm13(t2, t2, 20);
+< 	mul_f256(Q->y, t1, t2);
+< 	square_f256(t4, t3);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t2, t2, 20);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(Q->y, t1, t2);
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(t4, t3);
+1430c1430
+< 		Q->y[i] += (F256[i] << 2) - (t4[i] << 1);
+---
+> 		Q->y[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 2) - (t4[i] << 1);
+1432c1432
+< 	norm13(Q->y, Q->y, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(Q->y, Q->y, 20);
+1468c1468
+< p256_add(p256_jacobian *P1, const p256_jacobian *P2)
+---
+> BEAR_SINGLE_UNITY_FILEp256_add(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
+1490,1493c1490,1493
+< 	square_f256(t3, P2->z);
+< 	mul_f256(t1, P1->x, t3);
+< 	mul_f256(t4, P2->z, t3);
+< 	mul_f256(t3, P1->y, t4);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(t3, P2->z);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t1, P1->x, t3);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t4, P2->z, t3);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t3, P1->y, t4);
+1498,1501c1498,1501
+< 	square_f256(t4, P1->z);
+< 	mul_f256(t2, P2->x, t4);
+< 	mul_f256(t5, P1->z, t4);
+< 	mul_f256(t4, P2->y, t5);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(t4, P1->z);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t2, P2->x, t4);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t5, P1->z, t4);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t4, P2->y, t5);
+1509,1510c1509,1510
+< 		t2[i] += (F256[i] << 1) - t1[i];
+< 		t4[i] += (F256[i] << 1) - t3[i];
+---
+> 		t2[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
+> 		t4[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t3[i];
+1512,1513c1512,1513
+< 	norm13(t2, t2, 20);
+< 	norm13(t4, t4, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t2, t2, 20);
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t4, t4, 20);
+1515c1515
+< 	reduce_final_f256(t4);
+---
+> 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(t4);
+1525,1527c1525,1527
+< 	square_f256(t7, t2);
+< 	mul_f256(t6, t1, t7);
+< 	mul_f256(t5, t7, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(t7, t2);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t6, t1, t7);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t5, t7, t2);
+1532c1532
+< 	square_f256(P1->x, t4);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(P1->x, t4);
+1534c1534
+< 		P1->x[i] += (F256[i] << 3) - t5[i] - (t6[i] << 1);
+---
+> 		P1->x[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 3) - t5[i] - (t6[i] << 1);
+1536c1536
+< 	norm13(P1->x, P1->x, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(P1->x, P1->x, 20);
+1543c1543
+< 		t6[i] += (F256[i] << 1) - P1->x[i];
+---
+> 		t6[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - P1->x[i];
+1545,1547c1545,1547
+< 	norm13(t6, t6, 20);
+< 	mul_f256(P1->y, t4, t6);
+< 	mul_f256(t1, t5, t3);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t6, t6, 20);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(P1->y, t4, t6);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t1, t5, t3);
+1549c1549
+< 		P1->y[i] += (F256[i] << 1) - t1[i];
+---
+> 		P1->y[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
+1551c1551
+< 	norm13(P1->y, P1->y, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(P1->y, P1->y, 20);
+1557,1558c1557,1558
+< 	mul_f256(t1, P1->z, P2->z);
+< 	mul_f256(P1->z, t1, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t1, P1->z, P2->z);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(P1->z, t1, t2);
+1593c1593
+< p256_add_mixed(p256_jacobian *P1, const p256_jacobian *P2)
+---
+> BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(p256_BEAR_SINGLE_UNITY_FILEjacobian *P1, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P2)
+1621,1624c1621,1624
+< 	square_f256(t4, P1->z);
+< 	mul_f256(t2, P2->x, t4);
+< 	mul_f256(t5, P1->z, t4);
+< 	mul_f256(t4, P2->y, t5);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(t4, P1->z);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t2, P2->x, t4);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t5, P1->z, t4);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t4, P2->y, t5);
+1632,1633c1632,1633
+< 		t2[i] += (F256[i] << 1) - t1[i];
+< 		t4[i] += (F256[i] << 1) - t3[i];
+---
+> 		t2[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
+> 		t4[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t3[i];
+1635,1636c1635,1636
+< 	norm13(t2, t2, 20);
+< 	norm13(t4, t4, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t2, t2, 20);
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t4, t4, 20);
+1638c1638
+< 	reduce_final_f256(t4);
+---
+> 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(t4);
+1648,1650c1648,1650
+< 	square_f256(t7, t2);
+< 	mul_f256(t6, t1, t7);
+< 	mul_f256(t5, t7, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(t7, t2);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t6, t1, t7);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t5, t7, t2);
+1655c1655
+< 	square_f256(P1->x, t4);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(P1->x, t4);
+1657c1657
+< 		P1->x[i] += (F256[i] << 3) - t5[i] - (t6[i] << 1);
+---
+> 		P1->x[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 3) - t5[i] - (t6[i] << 1);
+1659c1659
+< 	norm13(P1->x, P1->x, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(P1->x, P1->x, 20);
+1666c1666
+< 		t6[i] += (F256[i] << 1) - P1->x[i];
+---
+> 		t6[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - P1->x[i];
+1668,1670c1668,1670
+< 	norm13(t6, t6, 20);
+< 	mul_f256(P1->y, t4, t6);
+< 	mul_f256(t1, t5, t3);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t6, t6, 20);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(P1->y, t4, t6);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t1, t5, t3);
+1672c1672
+< 		P1->y[i] += (F256[i] << 1) - t1[i];
+---
+> 		P1->y[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 1) - t1[i];
+1674c1674
+< 	norm13(P1->y, P1->y, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(P1->y, P1->y, 20);
+1680c1680
+< 	mul_f256(P1->z, P1->z, t2);
+---
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(P1->z, P1->z, t2);
+1690c1690
+< p256_decode(p256_jacobian *P, const void *src, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEp256_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const void *src, size_t len)
+1700c1700
+< 	buf = src;
+---
+> 	buf = (const unsigned char*)src;
+1716,1717c1716,1717
+< 	bad |= reduce_final_f256(tx);
+< 	bad |= reduce_final_f256(ty);
+---
+> 	bad |= BEAR_SINGLE_UNITY_FILEreduce_final_f256(tx);
+> 	bad |= BEAR_SINGLE_UNITY_FILEreduce_final_f256(ty);
+1722,1724c1722,1724
+< 	square_f256(t1, tx);
+< 	mul_f256(t1, tx, t1);
+< 	square_f256(t2, ty);
+---
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(t1, tx);
+> 	BEAR_SINGLE_UNITY_FILEmul_f256(t1, tx, t1);
+> 	BEAR_SINGLE_UNITY_FILEsquare_f256(t2, ty);
+1726c1726
+< 		t1[i] += (F256[i] << 3) - MUL15(3, tx[i]) + P256_B[i] - t2[i];
+---
+> 		t1[i] += (BEAR_SINGLE_UNITY_FILEF256[i] << 3) - MUL15(3, tx[i]) + BEAR_SINGLE_UNITY_FILEP256_B[i] - t2[i];
+1728c1728
+< 	norm13(t1, t1, 20);
+---
+> 	BEAR_SINGLE_UNITY_FILEnorm13(t1, t1, 20);
+1730c1730
+< 	reduce_final_f256(t1);
+---
+> 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(t1);
+1750c1750
+< p256_encode(void *dst, const p256_jacobian *P)
+---
+> BEAR_SINGLE_UNITY_FILEp256_encode(void *dst, const p256_BEAR_SINGLE_UNITY_FILEjacobian *P)
+1754c1754
+< 	buf = dst;
+---
+> 	buf = (unsigned char*)dst;
+1766c1766
+< p256_mul(p256_jacobian *P, const unsigned char *x, size_t xlen)
+---
+> BEAR_SINGLE_UNITY_FILEp256_mul(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t xlen)
+1776c1776
+< 	p256_jacobian P2, P3, Q, T, U;
+---
+> 	p256_BEAR_SINGLE_UNITY_FILEjacobian P2, P3, Q, T, U;
+1782c1782
+< 	p256_double(&P2);
+---
+> 	BEAR_SINGLE_UNITY_FILEp256_double(&P2);
+1784c1784
+< 	p256_add(&P3, &P2);
+---
+> 	BEAR_SINGLE_UNITY_FILEp256_add(&P3, &P2);
+1798,1799c1798,1799
+< 			p256_double(&Q);
+< 			p256_double(&Q);
+---
+> 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+> 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+1806c1806
+< 			p256_add(&U, &T);
+---
+> 			BEAR_SINGLE_UNITY_FILEp256_add(&U, &T);
+1823c1823
+< static const uint32_t Gwin[15][20] = {
+---
+> static const uint32_t BEAR_SINGLE_UNITY_FILEGwin[15][20] = {
+1917c1917
+<  * Lookup one of the Gwin[] values, by index. This is constant-time.
+---
+>  * Lookup one of the BEAR_SINGLE_UNITY_FILEGwin[] values, by index. This is constant-time.
+1920c1920
+< lookup_Gwin(p256_jacobian *T, uint32_t idx)
+---
+> BEAR_SINGLE_UNITY_FILElookup_BEAR_SINGLE_UNITY_FILEGwin(p256_BEAR_SINGLE_UNITY_FILEjacobian *T, uint32_t idx)
+1932c1932
+< 			xy[u] |= m & Gwin[k][u];
+---
+> 			xy[u] |= m & BEAR_SINGLE_UNITY_FILEGwin[k][u];
+1950c1950
+< p256_mulgen(p256_jacobian *P, const unsigned char *x, size_t xlen)
+---
+> BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t xlen)
+1960c1960
+< 	p256_jacobian Q;
+---
+> 	p256_BEAR_SINGLE_UNITY_FILEjacobian Q;
+1973c1973
+< 			p256_jacobian T, U;
+---
+> 			p256_BEAR_SINGLE_UNITY_FILEjacobian T, U;
+1975,1978c1975,1978
+< 			p256_double(&Q);
+< 			p256_double(&Q);
+< 			p256_double(&Q);
+< 			p256_double(&Q);
+---
+> 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+> 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+> 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+> 			BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+1981c1981
+< 			lookup_Gwin(&T, bits);
+---
+> 			BEAR_SINGLE_UNITY_FILElookup_BEAR_SINGLE_UNITY_FILEGwin(&T, bits);
+1983c1983
+< 			p256_add_mixed(&U, &T);
+---
+> 			BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_add_mixed(&U, &T);
+1993c1993
+< static const unsigned char P256_G[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEP256_G[] = {
+2003c2003
+< static const unsigned char P256_N[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEP256_N[] = {
+2011c2011
+< api_generator(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
+2014,2015c2014,2015
+< 	*len = sizeof P256_G;
+< 	return P256_G;
+---
+> 	*len = sizeof BEAR_SINGLE_UNITY_FILEP256_G;
+> 	return BEAR_SINGLE_UNITY_FILEP256_G;
+2019c2019
+< api_order(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
+2022,2023c2022,2023
+< 	*len = sizeof P256_N;
+< 	return P256_N;
+---
+> 	*len = sizeof BEAR_SINGLE_UNITY_FILEP256_N;
+> 	return BEAR_SINGLE_UNITY_FILEP256_N;
+2027c2027
+< api_xoff(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
+2035c2035
+< api_mul(unsigned char *G, size_t Glen,
+---
+> BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
+2039c2039
+< 	p256_jacobian P;
+---
+> 	p256_BEAR_SINGLE_UNITY_FILEjacobian P;
+2045,2048c2045,2048
+< 	r = p256_decode(&P, G, Glen);
+< 	p256_mul(&P, x, xlen);
+< 	p256_to_affine(&P);
+< 	p256_encode(G, &P);
+---
+> 	r = BEAR_SINGLE_UNITY_FILEp256_decode(&P, G, Glen);
+> 	BEAR_SINGLE_UNITY_FILEp256_mul(&P, x, xlen);
+> 	BEAR_SINGLE_UNITY_FILEp256_to_affine(&P);
+> 	BEAR_SINGLE_UNITY_FILEp256_encode(G, &P);
+2053c2053
+< api_mulgen(unsigned char *R,
+---
+> BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
+2056c2056
+< 	p256_jacobian P;
+---
+> 	p256_BEAR_SINGLE_UNITY_FILEjacobian P;
+2059,2061c2059,2061
+< 	p256_mulgen(&P, x, xlen);
+< 	p256_to_affine(&P);
+< 	p256_encode(R, &P);
+---
+> 	BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(&P, x, xlen);
+> 	BEAR_SINGLE_UNITY_FILEp256_to_affine(&P);
+> 	BEAR_SINGLE_UNITY_FILEp256_encode(R, &P);
+2066c2066
+< api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+---
+> BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
+2070c2070
+< 	p256_jacobian P, Q;
+---
+> 	p256_BEAR_SINGLE_UNITY_FILEjacobian P, Q;
+2078,2079c2078,2079
+< 	r = p256_decode(&P, A, len);
+< 	p256_mul(&P, x, xlen);
+---
+> 	r = BEAR_SINGLE_UNITY_FILEp256_decode(&P, A, len);
+> 	BEAR_SINGLE_UNITY_FILEp256_mul(&P, x, xlen);
+2081c2081
+< 		p256_mulgen(&Q, y, ylen);
+---
+> 		BEAR_SINGLE_UNITY_FILEBEAR_SINGLE_UNITY_FILEp256_mulgen(&Q, y, ylen);
+2083,2084c2083,2084
+< 		r &= p256_decode(&Q, B, len);
+< 		p256_mul(&Q, y, ylen);
+---
+> 		r &= BEAR_SINGLE_UNITY_FILEp256_decode(&Q, B, len);
+> 		BEAR_SINGLE_UNITY_FILEp256_mul(&Q, y, ylen);
+2090,2091c2090,2091
+< 	t = p256_add(&P, &Q);
+< 	reduce_final_f256(P.z);
+---
+> 	t = BEAR_SINGLE_UNITY_FILEp256_add(&P, &Q);
+> 	BEAR_SINGLE_UNITY_FILEreduce_final_f256(P.z);
+2097c2097
+< 	p256_double(&Q);
+---
+> 	BEAR_SINGLE_UNITY_FILEp256_double(&Q);
+2109,2110c2109,2110
+< 	p256_to_affine(&P);
+< 	p256_encode(A, &P);
+---
+> 	BEAR_SINGLE_UNITY_FILEp256_to_affine(&P);
+> 	BEAR_SINGLE_UNITY_FILEp256_encode(A, &P);
+2118,2123c2118,2123
+< 	&api_generator,
+< 	&api_order,
+< 	&api_xoff,
+< 	&api_mul,
+< 	&api_mulgen,
+< 	&api_muladd
+---
+> 	&BEAR_SINGLE_UNITY_FILEapi_generator,
+> 	&BEAR_SINGLE_UNITY_FILEapi_order,
+> 	&BEAR_SINGLE_UNITY_FILEapi_xoff,
+> 	&BEAR_SINGLE_UNITY_FILEapi_mul,
+> 	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
+> 	&BEAR_SINGLE_UNITY_FILEapi_muladd

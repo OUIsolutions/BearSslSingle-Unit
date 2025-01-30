@@ -1,0 +1,566 @@
+25c25
+< #include "inner.h"
+---
+> 
+34c34
+< static const uint16_t P256_P[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEP256_P[] = {
+41c41
+< static const uint16_t P256_R2[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEP256_R2[] = {
+48c48
+< static const uint16_t P256_B[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEP256_B[] = {
+55c55
+< static const uint16_t P384_P[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEP384_P[] = {
+63c63
+< static const uint16_t P384_R2[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEP384_R2[] = {
+71c71
+< static const uint16_t P384_B[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEP384_B[] = {
+79c79
+< static const uint16_t P521_P[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEP521_P[] = {
+88c88
+< static const uint16_t P521_R2[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEP521_R2[] = {
+97c97
+< static const uint16_t P521_B[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEP521_B[] = {
+112c112
+< } curve_params;
+---
+> } BEAR_SINGLE_UNITY_FILEcurve_params;
+114,115c114,115
+< static inline const curve_params *
+< id_to_curve(int curve)
+---
+> static inline const BEAR_SINGLE_UNITY_FILEcurve_params *
+> BEAR_SINGLE_UNITY_FILEid_to_curve(int curve)
+117,120c117,120
+< 	static const curve_params pp[] = {
+< 		{ P256_P, P256_B, P256_R2, 0x0001,  65 },
+< 		{ P384_P, P384_B, P384_R2, 0x0001,  97 },
+< 		{ P521_P, P521_B, P521_R2, 0x0001, 133 }
+---
+> 	static const BEAR_SINGLE_UNITY_FILEcurve_params pp[] = {
+> 		{ BEAR_SINGLE_UNITY_FILEP256_P, BEAR_SINGLE_UNITY_FILEP256_B, BEAR_SINGLE_UNITY_FILEP256_R2, 0x0001,  65 },
+> 		{ BEAR_SINGLE_UNITY_FILEP384_P, BEAR_SINGLE_UNITY_FILEP384_B, BEAR_SINGLE_UNITY_FILEP384_R2, 0x0001,  97 },
+> 		{ BEAR_SINGLE_UNITY_FILEP521_P, BEAR_SINGLE_UNITY_FILEP521_B, BEAR_SINGLE_UNITY_FILEP521_R2, 0x0001, 133 }
+136c136
+< } jacobian;
+---
+> } BEAR_SINGLE_UNITY_FILEjacobian;
+144c144
+<  *    MMUL(d, a, b)    d = a*b (Montgomery multiplication)
+---
+>  *    BEAR_SINGLE_UNITY_FILEMMUL(d, a, b)    d = a*b (Montgomery multiplication)
+147c147
+<  * Destination of MMUL (d) must be distinct from operands (a and b).
+---
+>  * Destination of BEAR_SINGLE_UNITY_FILEMMUL (d) must be distinct from operands (a and b).
+155c155
+< #define MMUL(d, a, b)   (0x3000 + ((d) << 8) + ((a) << 4) + (b))
+---
+> #define BEAR_SINGLE_UNITY_FILEMMUL(d, a, b)   (0x3000 + ((d) << 8) + ((a) << 4) + (b))
+163,168c163,168
+< #define P1x    0
+< #define P1y    1
+< #define P1z    2
+< #define P2x    3
+< #define P2y    4
+< #define P2z    5
+---
+> #define BEAR_SINGLE_UNITY_FILEP1x    0
+> #define BEAR_SINGLE_UNITY_FILEP1y    1
+> #define BEAR_SINGLE_UNITY_FILEP1z    2
+> #define BEAR_SINGLE_UNITY_FILEP2x    3
+> #define BEAR_SINGLE_UNITY_FILEP2y    4
+> #define BEAR_SINGLE_UNITY_FILEP2z    5
+173,175c173,175
+< #define Px     0
+< #define Py     1
+< #define Pz     2
+---
+> #define BEAR_SINGLE_UNITY_FILEPx     0
+> #define BEAR_SINGLE_UNITY_FILEPy     1
+> #define BEAR_SINGLE_UNITY_FILEPz     2
+180,186c180,186
+< #define t1     6
+< #define t2     7
+< #define t3     8
+< #define t4     9
+< #define t5    10
+< #define t6    11
+< #define t7    12
+---
+> #define BEAR_SINGLE_UNITY_FILEt1     6
+> #define BEAR_SINGLE_UNITY_FILEt2     7
+> #define BEAR_SINGLE_UNITY_FILEt3     8
+> #define BEAR_SINGLE_UNITY_FILEt4     9
+> #define BEAR_SINGLE_UNITY_FILEt5    10
+> #define BEAR_SINGLE_UNITY_FILEt6    11
+> #define BEAR_SINGLE_UNITY_FILEt7    12
+192,194c192,194
+< #define t8     3
+< #define t9     4
+< #define t10    5
+---
+> #define BEAR_SINGLE_UNITY_FILEt8     3
+> #define BEAR_SINGLE_UNITY_FILEt9     4
+> #define BEAR_SINGLE_UNITY_FILEt10    5
+214c214
+< static const uint16_t code_double[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEcode_double[] = {
+218c218
+< 	MMUL(t1, Pz, Pz),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEPz, BEAR_SINGLE_UNITY_FILEPz),
+223,225c223,225
+< 	MSET(t2, Px),
+< 	MSUB(t2, t1),
+< 	MADD(t1, Px),
+---
+> 	MSET(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEPx),
+> 	MSUB(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt1),
+> 	MADD(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEPx),
+230,233c230,233
+< 	MMUL(t3, t1, t2),
+< 	MSET(t1, t3),
+< 	MADD(t1, t3),
+< 	MADD(t1, t3),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt2),
+> 	MSET(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt3),
+> 	MADD(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt3),
+> 	MADD(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt3),
+238,241c238,241
+< 	MMUL(t3, Py, Py),
+< 	MADD(t3, t3),
+< 	MMUL(t2, Px, t3),
+< 	MADD(t2, t2),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEPy, BEAR_SINGLE_UNITY_FILEPy),
+> 	MADD(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEt3),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEPx, BEAR_SINGLE_UNITY_FILEt3),
+> 	MADD(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt2),
+246,248c246,248
+< 	MMUL(Px, t1, t1),
+< 	MSUB(Px, t2),
+< 	MSUB(Px, t2),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEPx, BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt1),
+> 	MSUB(BEAR_SINGLE_UNITY_FILEPx, BEAR_SINGLE_UNITY_FILEt2),
+> 	MSUB(BEAR_SINGLE_UNITY_FILEPx, BEAR_SINGLE_UNITY_FILEt2),
+253,255c253,255
+< 	MMUL(t4, Py, Pz),
+< 	MSET(Pz, t4),
+< 	MADD(Pz, t4),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEPy, BEAR_SINGLE_UNITY_FILEPz),
+> 	MSET(BEAR_SINGLE_UNITY_FILEPz, BEAR_SINGLE_UNITY_FILEt4),
+> 	MADD(BEAR_SINGLE_UNITY_FILEPz, BEAR_SINGLE_UNITY_FILEt4),
+261,265c261,265
+< 	MSUB(t2, Px),
+< 	MMUL(Py, t1, t2),
+< 	MMUL(t4, t3, t3),
+< 	MSUB(Py, t4),
+< 	MSUB(Py, t4),
+---
+> 	MSUB(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEPx),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEPy, BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt2),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEt3),
+> 	MSUB(BEAR_SINGLE_UNITY_FILEPy, BEAR_SINGLE_UNITY_FILEt4),
+> 	MSUB(BEAR_SINGLE_UNITY_FILEPy, BEAR_SINGLE_UNITY_FILEt4),
+320c320
+< static const uint16_t code_add[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEcode_add[] = {
+324,327c324,327
+< 	MMUL(t3, P2z, P2z),
+< 	MMUL(t1, P1x, t3),
+< 	MMUL(t4, P2z, t3),
+< 	MMUL(t3, P1y, t4),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEP2z, BEAR_SINGLE_UNITY_FILEP2z),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt3),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEP2z, BEAR_SINGLE_UNITY_FILEt3),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEt4),
+332,335c332,335
+< 	MMUL(t4, P1z, P1z),
+< 	MMUL(t2, P2x, t4),
+< 	MMUL(t5, P1z, t4),
+< 	MMUL(t4, P2y, t5),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEP1z),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEP2x, BEAR_SINGLE_UNITY_FILEt4),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt5, BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEt4),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEP2y, BEAR_SINGLE_UNITY_FILEt5),
+340,341c340,341
+< 	MSUB(t2, t1),
+< 	MSUB(t4, t3),
+---
+> 	MSUB(	BEAR_SINGLE_UNITY_FILEt2, 	BEAR_SINGLE_UNITY_FILEt1),
+> 	MSUB(	BEAR_SINGLE_UNITY_FILEt4, 	BEAR_SINGLE_UNITY_FILEt3),
+346c346
+< 	MTZ(t4),
+---
+> 	MTZ(	BEAR_SINGLE_UNITY_FILEt4),
+351,353c351,353
+< 	MMUL(t7, t2, t2),
+< 	MMUL(t6, t1, t7),
+< 	MMUL(t5, t7, t2),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt7, BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt2),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt6, BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt7),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt5, BEAR_SINGLE_UNITY_FILEt7, BEAR_SINGLE_UNITY_FILEt2),
+359,362c359,362
+< 	MMUL(P1x, t4, t4),
+< 	MSUB(P1x, t5),
+< 	MSUB(P1x, t6),
+< 	MSUB(P1x, t6),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEt4),
+> 	MSUB(	BEAR_SINGLE_UNITY_FILEP1x, 	BEAR_SINGLE_UNITY_FILEt5),
+> 	MSUB(	BEAR_SINGLE_UNITY_FILEP1x, 	BEAR_SINGLE_UNITY_FILEt6),
+> 	MSUB(	BEAR_SINGLE_UNITY_FILEP1x, 	BEAR_SINGLE_UNITY_FILEt6),
+367,370c367,370
+< 	MSUB(t6, P1x),
+< 	MMUL(P1y, t4, t6),
+< 	MMUL(t1, t5, t3),
+< 	MSUB(P1y, t1),
+---
+> 	MSUB(BEAR_SINGLE_UNITY_FILEt6, BEAR_SINGLE_UNITY_FILEP1x),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEt6),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt5, BEAR_SINGLE_UNITY_FILEt3),
+> 	MSUB(BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEt1),
+375,376c375,376
+< 	MMUL(t1, P1z, P2z),
+< 	MMUL(P1z, t1, t2),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEP2z),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt2),
+388c388
+< static const uint16_t code_check[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEcode_check[] = {
+391,394c391,394
+< 	MMUL(t1, P1x, P2x),
+< 	MMUL(t2, P1y, P2x),
+< 	MSET(P1x, t1),
+< 	MSET(P1y, t2),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEP2x),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEP2x),
+> 	MSET(BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt1),
+> 	MSET(BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEt2),
+397,398c397,398
+< 	MMUL(t2, P1x, P1x),
+< 	MMUL(t1, P1x, t2),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEP1x),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt2),
+401,403c401,403
+< 	MSUB(t1, P1x),
+< 	MSUB(t1, P1x),
+< 	MSUB(t1, P1x),
+---
+> 	MSUB(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x),
+> 	MSUB(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x),
+> 	MSUB(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x),
+406c406
+< 	MADD(t1, P2y),
+---
+> 	MADD(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP2y),
+409c409
+< 	MMUL(t2, P1y, P1y),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEP1y),
+412,413c412,413
+< 	MSUB(t1, t2),
+< 	MTZ(t1),
+---
+> 	MSUB(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt2),
+> 	MTZ(BEAR_SINGLE_UNITY_FILEt1),
+416c416
+< 	MMUL(P1z, P2x, P2z),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEP2x, BEAR_SINGLE_UNITY_FILEP2z),
+425c425
+< static const uint16_t code_affine[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEcode_affine[] = {
+428c428
+< 	MSET(t1, P1z),
+---
+> 	MSET(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1z),
+431,433c431,433
+< 	MMUL(t2, P1z, P1z),
+< 	MMUL(t3, P1z, t2),
+< 	MMUL(t2, t3, P2z),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEP1z),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEt2),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEP2z),
+436c436
+< 	MINV(t2, t3, t4),
+---
+> 	MINV(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEt4),
+439,440c439,440
+< 	MSET(t3, P1y),
+< 	MMUL(P1y, t2, t3),
+---
+> 	MSET(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEP1y),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt3),
+443c443
+< 	MMUL(t3, t2, t1),
+---
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt1),
+446,447c446,447
+< 	MSET(t2, P1x),
+< 	MMUL(P1x, t2, t3),
+---
+> 	MSET(	BEAR_SINGLE_UNITY_FILEt2, 	BEAR_SINGLE_UNITY_FILEP1x),
+> 	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt3),
+453,454c453,454
+< run_code(jacobian *P1, const jacobian *P2,
+< 	const curve_params *cc, const uint16_t *code)
+---
+> BEAR_SINGLE_UNITY_FILErun_code(BEAR_SINGLE_UNITY_FILEjacobian *P1, const BEAR_SINGLE_UNITY_FILEjacobian *P2,
+> 	const BEAR_SINGLE_UNITY_FILEcurve_params *cc, const uint16_t *code)
+465,466c465,466
+< 	memcpy(t[P1x], P1->c, 3 * I15_LEN * sizeof(uint16_t));
+< 	memcpy(t[P2x], P2->c, 3 * I15_LEN * sizeof(uint16_t));
+---
+> 	memcpy(t[BEAR_SINGLE_UNITY_FILEP1x], P1->c, 3 * I15_LEN * sizeof(uint16_t));
+> 	memcpy(t[BEAR_SINGLE_UNITY_FILEP2x], P2->c, 3 * I15_LEN * sizeof(uint16_t));
+517c517
+< 	memcpy(P1->c, t[P1x], 3 * I15_LEN * sizeof(uint16_t));
+---
+> 	memcpy(P1->c, t[BEAR_SINGLE_UNITY_FILEP1x], 3 * I15_LEN * sizeof(uint16_t));
+522c522
+< set_one(uint16_t *x, const uint16_t *p)
+---
+> BEAR_SINGLE_UNITY_FILEset_one(uint16_t *x, const uint16_t *p)
+533c533
+< point_zero(jacobian *P, const curve_params *cc)
+---
+> BEAR_SINGLE_UNITY_FILEpoint_zero(BEAR_SINGLE_UNITY_FILEjacobian *P, const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+540c540
+< point_double(jacobian *P, const curve_params *cc)
+---
+> BEAR_SINGLE_UNITY_FILEpoint_double(BEAR_SINGLE_UNITY_FILEjacobian *P, const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+542c542
+< 	run_code(P, P, cc, code_double);
+---
+> 	BEAR_SINGLE_UNITY_FILErun_code(P, P, cc, BEAR_SINGLE_UNITY_FILEcode_double);
+546c546
+< point_add(jacobian *P1, const jacobian *P2, const curve_params *cc)
+---
+> BEAR_SINGLE_UNITY_FILEpoint_add(BEAR_SINGLE_UNITY_FILEjacobian *P1, const BEAR_SINGLE_UNITY_FILEjacobian *P2, const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+548c548
+< 	return run_code(P1, P2, cc, code_add);
+---
+> 	return BEAR_SINGLE_UNITY_FILErun_code(P1, P2, cc, BEAR_SINGLE_UNITY_FILEcode_add);
+552,553c552,553
+< point_mul(jacobian *P, const unsigned char *x, size_t xlen,
+< 	const curve_params *cc)
+---
+> BEAR_SINGLE_UNITY_FILEpoint_mul(BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t xlen,
+> 	const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+570c570
+< 	jacobian P2, P3, Q, T, U;
+---
+> 	BEAR_SINGLE_UNITY_FILEjacobian P2, P3, Q, T, U;
+573c573
+< 	point_double(&P2, cc);
+---
+> 	BEAR_SINGLE_UNITY_FILEpoint_double(&P2, cc);
+575c575
+< 	point_add(&P3, &P2, cc);
+---
+> 	BEAR_SINGLE_UNITY_FILEpoint_add(&P3, &P2, cc);
+577c577
+< 	point_zero(&Q, cc);
+---
+> 	BEAR_SINGLE_UNITY_FILEpoint_zero(&Q, cc);
+586,587c586,587
+< 			point_double(&Q, cc);
+< 			point_double(&Q, cc);
+---
+> 			BEAR_SINGLE_UNITY_FILEpoint_double(&Q, cc);
+> 			BEAR_SINGLE_UNITY_FILEpoint_double(&Q, cc);
+594c594
+< 			point_add(&U, &T, cc);
+---
+> 			BEAR_SINGLE_UNITY_FILEpoint_add(&U, &T, cc);
+610c610
+< point_decode(jacobian *P, const void *src, size_t len, const curve_params *cc)
+---
+> BEAR_SINGLE_UNITY_FILEpoint_decode(BEAR_SINGLE_UNITY_FILEjacobian *P, const void *src, size_t len, const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+632c632
+< 	jacobian Q;
+---
+> 	BEAR_SINGLE_UNITY_FILEjacobian Q;
+634,635c634,635
+< 	buf = src;
+< 	point_zero(P, cc);
+---
+> 	buf = (const unsigned char*)src;
+> 	BEAR_SINGLE_UNITY_FILEpoint_zero(P, cc);
+658,659c658,659
+< 	set_one(Q.c[2], cc->p);
+< 	r &= ~run_code(P, &Q, cc, code_check);
+---
+> 	BEAR_SINGLE_UNITY_FILEset_one(Q.c[2], cc->p);
+> 	r &= ~BEAR_SINGLE_UNITY_FILErun_code(P, &Q, cc, BEAR_SINGLE_UNITY_FILEcode_check);
+669c669
+< point_encode(void *dst, const jacobian *P, const curve_params *cc)
+---
+> BEAR_SINGLE_UNITY_FILEpoint_encode(void *dst, const BEAR_SINGLE_UNITY_FILEjacobian *P, const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+673c673
+< 	jacobian Q, T;
+---
+> 	BEAR_SINGLE_UNITY_FILEjacobian Q, T;
+675c675
+< 	buf = dst;
+---
+> 	buf = (unsigned char*)dst;
+679,680c679,680
+< 	set_one(T.c[2], cc->p);
+< 	run_code(&Q, &T, cc, code_affine);
+---
+> 	BEAR_SINGLE_UNITY_FILEset_one(T.c[2], cc->p);
+> 	BEAR_SINGLE_UNITY_FILErun_code(&Q, &T, cc, BEAR_SINGLE_UNITY_FILEcode_affine);
+686c686
+< id_to_curve_def(int curve)
+---
+> BEAR_SINGLE_UNITY_FILEid_to_curve_def(int curve)
+700c700
+< api_generator(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
+704c704
+< 	cd = id_to_curve_def(curve);
+---
+> 	cd = BEAR_SINGLE_UNITY_FILEid_to_curve_def(curve);
+710c710
+< api_order(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
+714c714
+< 	cd = id_to_curve_def(curve);
+---
+> 	cd = BEAR_SINGLE_UNITY_FILEid_to_curve_def(curve);
+720c720
+< api_xoff(int curve, size_t *len)
+---
+> BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
+722c722
+< 	api_generator(curve, len);
+---
+> 	BEAR_SINGLE_UNITY_FILEapi_generator(curve, len);
+728c728
+< api_mul(unsigned char *G, size_t Glen,
+---
+> BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
+732,733c732,733
+< 	const curve_params *cc;
+< 	jacobian P;
+---
+> 	const BEAR_SINGLE_UNITY_FILEcurve_params *cc;
+> 	BEAR_SINGLE_UNITY_FILEjacobian P;
+735c735
+< 	cc = id_to_curve(curve);
+---
+> 	cc = BEAR_SINGLE_UNITY_FILEid_to_curve(curve);
+739,741c739,741
+< 	r = point_decode(&P, G, Glen, cc);
+< 	point_mul(&P, x, xlen, cc);
+< 	point_encode(G, &P, cc);
+---
+> 	r = BEAR_SINGLE_UNITY_FILEpoint_decode(&P, G, Glen, cc);
+> 	BEAR_SINGLE_UNITY_FILEpoint_mul(&P, x, xlen, cc);
+> 	BEAR_SINGLE_UNITY_FILEpoint_encode(G, &P, cc);
+746c746
+< api_mulgen(unsigned char *R,
+---
+> BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
+752c752
+< 	G = api_generator(curve, &Glen);
+---
+> 	G = BEAR_SINGLE_UNITY_FILEapi_generator(curve, &Glen);
+754c754
+< 	api_mul(R, Glen, x, xlen, curve);
+---
+> 	BEAR_SINGLE_UNITY_FILEapi_mul(R, Glen, x, xlen, curve);
+759c759
+< api_muladd(unsigned char *A, const unsigned char *B, size_t len,
+---
+> BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
+764,765c764,765
+< 	const curve_params *cc;
+< 	jacobian P, Q;
+---
+> 	const BEAR_SINGLE_UNITY_FILEcurve_params *cc;
+> 	BEAR_SINGLE_UNITY_FILEjacobian P, Q;
+773c773
+< 	cc = id_to_curve(curve);
+---
+> 	cc = BEAR_SINGLE_UNITY_FILEid_to_curve(curve);
+777c777
+< 	r = point_decode(&P, A, len, cc);
+---
+> 	r = BEAR_SINGLE_UNITY_FILEpoint_decode(&P, A, len, cc);
+781c781
+< 		B = api_generator(curve, &Glen);
+---
+> 		B = BEAR_SINGLE_UNITY_FILEapi_generator(curve, &Glen);
+783,785c783,785
+< 	r &= point_decode(&Q, B, len, cc);
+< 	point_mul(&P, x, xlen, cc);
+< 	point_mul(&Q, y, ylen, cc);
+---
+> 	r &= BEAR_SINGLE_UNITY_FILEpoint_decode(&Q, B, len, cc);
+> 	BEAR_SINGLE_UNITY_FILEpoint_mul(&P, x, xlen, cc);
+> 	BEAR_SINGLE_UNITY_FILEpoint_mul(&Q, y, ylen, cc);
+792c792
+< 	 * -- If P = Q then we must use point_double().
+---
+> 	 * -- If P = Q then we must use BEAR_SINGLE_UNITY_FILEpoint_double().
+795,796c795,796
+< 	t = point_add(&P, &Q, cc);
+< 	point_double(&Q, cc);
+---
+> 	t = BEAR_SINGLE_UNITY_FILEpoint_add(&P, &Q, cc);
+> 	BEAR_SINGLE_UNITY_FILEpoint_double(&Q, cc);
+809c809
+< 	point_encode(A, &P, cc);
+---
+> 	BEAR_SINGLE_UNITY_FILEpoint_encode(A, &P, cc);
+818,823c818,823
+< 	&api_generator,
+< 	&api_order,
+< 	&api_xoff,
+< 	&api_mul,
+< 	&api_mulgen,
+< 	&api_muladd
+---
+> 	&BEAR_SINGLE_UNITY_FILEapi_generator,
+> 	&BEAR_SINGLE_UNITY_FILEapi_order,
+> 	&BEAR_SINGLE_UNITY_FILEapi_xoff,
+> 	&BEAR_SINGLE_UNITY_FILEapi_mul,
+> 	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
+> 	&BEAR_SINGLE_UNITY_FILEapi_muladd

@@ -1,0 +1,48 @@
+26c26
+< #include "inner.h"
+---
+> 
+79,81c79,81
+< 	buf = data;
+< 	kw0 = _mm_loadu_si128(key);
+< 	kw1 = _mm_loadu_si128((const void *)((const unsigned char *)key + 16));
+---
+> 	buf = (unsigned char*)data;
+> 	kw0 = _mm_loadu_si128((const __m128i_u*)key);
+> 	kw1 = _mm_loadu_si128((const __m128i_u*)((const unsigned char *)key + 16));
+84,85c84,85
+< 	iw = _mm_loadu_si128((const void *)ivtmp);
+< 	cw = _mm_loadu_si128((const void *)CW);
+---
+> 	iw = _mm_loadu_si128((const __m128i_u*)ivtmp);
+> 	cw = _mm_loadu_si128((const __m128i_u*)CW);
+190,193c190,193
+< 			_mm_storeu_si128((void *)(tmp +  0), s0);
+< 			_mm_storeu_si128((void *)(tmp + 16), s1);
+< 			_mm_storeu_si128((void *)(tmp + 32), s2);
+< 			_mm_storeu_si128((void *)(tmp + 48), s3);
+---
+> 			_mm_storeu_si128((__m128i_u*)(tmp +  0), s0);
+> 			_mm_storeu_si128((__m128i_u*)(tmp + 16), s1);
+> 			_mm_storeu_si128((__m128i_u*)(tmp + 32), s2);
+> 			_mm_storeu_si128((__m128i_u*)(tmp + 48), s3);
+201,204c201,204
+< 			b0 = _mm_loadu_si128((const void *)(buf +  0));
+< 			b1 = _mm_loadu_si128((const void *)(buf + 16));
+< 			b2 = _mm_loadu_si128((const void *)(buf + 32));
+< 			b3 = _mm_loadu_si128((const void *)(buf + 48));
+---
+> 			b0 = _mm_loadu_si128((const __m128i_u*)(buf +  0));
+> 			b1 = _mm_loadu_si128((const __m128i_u*)(buf + 16));
+> 			b2 = _mm_loadu_si128((const __m128i_u*)(buf + 32));
+> 			b3 = _mm_loadu_si128((const __m128i_u*)(buf + 48));
+209,212c209,212
+< 			_mm_storeu_si128((void *)(buf +  0), b0);
+< 			_mm_storeu_si128((void *)(buf + 16), b1);
+< 			_mm_storeu_si128((void *)(buf + 32), b2);
+< 			_mm_storeu_si128((void *)(buf + 48), b3);
+---
+> 			_mm_storeu_si128((__m128i_u*)(buf +  0), b0);
+> 			_mm_storeu_si128((__m128i_u*)(buf + 16), b1);
+> 			_mm_storeu_si128((__m128i_u*)(buf + 32), b2);
+> 			_mm_storeu_si128((__m128i_u*)(buf + 48), b3);

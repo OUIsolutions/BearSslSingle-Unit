@@ -1,0 +1,12 @@
+25c25
+< #include "inner.h"
+---
+> 
+41c41
+< 	if (!br_rsa_i62_public(sig, xlen, pk)) {
+---
+> 	if (!br_rsa_i62_public((unsigned char*)sig, xlen, pk)) {
+45c45
+< 		hash, salt_len, pk, sig);
+---
+> 		(const unsigned char*)hash, salt_len, pk, sig);

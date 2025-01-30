@@ -1,0 +1,24 @@
+25c25
+< #include "inner.h"
+---
+> 
+28c28
+< block_size(const br_hash_class *dig)
+---
+> BEAR_SINGLE_UNITY_FILEblock_size(const br_hash_class *dig)
+44c44
+< 	blen = block_size(*hc);
+---
+> 	blen = BEAR_SINGLE_UNITY_FILEblock_size(*hc);
+65c65
+< 	if (key_len > block_size(dig)) {
+---
+> 	if (key_len > BEAR_SINGLE_UNITY_FILEblock_size(dig)) {
+85c85
+< 	blen = block_size(dig);
+---
+> 	blen = BEAR_SINGLE_UNITY_FILEblock_size(dig);
+114c114
+< 	blen = block_size(dig);
+---
+> 	blen = BEAR_SINGLE_UNITY_FILEblock_size(dig);

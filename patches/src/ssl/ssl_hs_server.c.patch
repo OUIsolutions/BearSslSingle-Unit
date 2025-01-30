@@ -1,0 +1,288 @@
+10c10
+< } t0_context;
+---
+> } BEAR_SINGLE_UNITY_FILEt0_context;
+13c13
+< t0_parse7E_unsigned(const unsigned char **p)
+---
+> BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(const unsigned char **p)
+30c30
+< t0_parse7E_signed(const unsigned char **p)
+---
+> BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(const unsigned char **p)
+61c61
+< /* static const unsigned char t0_datablock[]; */
+---
+> /* static const unsigned char BEAR_SINGLE_UNITY_FILEt0_datablock[]; */
+73c73
+< #include "inner.h"
+---
+> 
+92c92
+< #define CTX  ((br_ssl_server_context *)ENG)
+---
+> #define BEAR_SINGLE_UNITY_FILECTX  ((br_ssl_server_context *)ENG)
+219c219
+< hash_data(br_ssl_server_context *ctx,
+---
+> BEAR_SINGLE_UNITY_FILEhash_data(br_ssl_server_context *ctx,
+316c316
+< 		hv_len = hash_data(ctx, ctx->eng.pad, algo_id & 0xFF,
+---
+> 		hv_len = BEAR_SINGLE_UNITY_FILEhash_data(ctx, ctx->eng.pad, algo_id & 0xFF,
+369c369
+< static const unsigned char HASH_OID_SHA1[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1[] = {
+373c373
+< static const unsigned char HASH_OID_SHA224[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224[] = {
+377c377
+< static const unsigned char HASH_OID_SHA256[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256[] = {
+381c381
+< static const unsigned char HASH_OID_SHA384[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384[] = {
+385c385
+< static const unsigned char HASH_OID_SHA512[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512[] = {
+389,394c389,394
+< static const unsigned char *HASH_OID[] = {
+< 	HASH_OID_SHA1,
+< 	HASH_OID_SHA224,
+< 	HASH_OID_SHA256,
+< 	HASH_OID_SHA384,
+< 	HASH_OID_SHA512
+---
+> static const unsigned char *BEAR_SINGLE_UNITY_FILEHASH_OID[] = {
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384,
+> 	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512
+421c421
+< 			hash_oid = HASH_OID[id - 2];
+---
+> 			hash_oid = BEAR_SINGLE_UNITY_FILEHASH_OID[id - 2];
+448c448
+< static const unsigned char t0_datablock[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEt0_datablock[] = {
+467c467
+< static const unsigned char t0_codeblock[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEt0_codeblock[] = {
+793c793
+< static const uint16_t t0_caddr[] = {
+---
+> static const uint16_t BEAR_SINGLE_UNITY_FILEt0_caddr[] = {
+930c930
+< #define T0_INTERPRETED   93
+---
+> #define BEAR_SINGLE_UNITY_FILET0_INTERPRETED   93
+932c932
+< #define T0_ENTER(ip, rp, slot)   do { \
+---
+> #define BEAR_SINGLE_UNITY_FILET0_ENTER(ip, rp, slot)   do { \
+935,936c935,936
+< 		t0_newip = &t0_codeblock[t0_caddr[(slot) - T0_INTERPRETED]]; \
+< 		t0_lnum = t0_parse7E_unsigned(&t0_newip); \
+---
+> 		t0_newip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[BEAR_SINGLE_UNITY_FILEt0_caddr[(slot) - BEAR_SINGLE_UNITY_FILET0_INTERPRETED]]; \
+> 		t0_lnum = BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&t0_newip); \
+938c938
+< 		*((rp) ++) = (uint32_t)((ip) - &t0_codeblock[0]) + (t0_lnum << 16); \
+---
+> 		*((rp) ++) = (uint32_t)((ip) - &BEAR_SINGLE_UNITY_FILEt0_codeblock[0]) + (t0_lnum << 16); \
+942c942
+< #define T0_DEFENTRY(name, slot) \
+---
+> #define BEAR_SINGLE_UNITY_FILET0_DEFENTRY(name, slot) \
+946,948c946,948
+< 	t0_context *t0ctx = ctx; \
+< 	t0ctx->ip = &t0_codeblock[0]; \
+< 	T0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+---
+> 	BEAR_SINGLE_UNITY_FILEt0_context *t0ctx  =(BEAR_SINGLE_UNITY_FILEt0_context*)ctx; \
+> 	t0ctx->ip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[0]; \
+> 	BEAR_SINGLE_UNITY_FILET0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
+951c951
+< T0_DEFENTRY(br_ssl_hs_server_init_main, 166)
+---
+> BEAR_SINGLE_UNITY_FILET0_DEFENTRY(br_ssl_hs_server_init_main, 166)
+1004,1006c1004,1006
+< 	dp = ((t0_context *)t0ctx)->dp;
+< 	rp = ((t0_context *)t0ctx)->rp;
+< 	ip = ((t0_context *)t0ctx)->ip;
+---
+> 	dp = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->dp;
+> 	rp = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->rp;
+> 	ip = ((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->ip;
+1013c1013
+< 		if (t0x < T0_INTERPRETED) {
+---
+> 		if (t0x < BEAR_SINGLE_UNITY_FILET0_INTERPRETED) {
+1025c1025
+< 				ip = &t0_codeblock[t0x];
+---
+> 				ip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[t0x];
+1028c1028
+< 				T0_PUSHi(t0_parse7E_signed(&ip));
+---
+> 				T0_PUSHi(BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip));
+1031c1031
+< 				T0_PUSH(T0_LOCAL(t0_parse7E_unsigned(&ip)));
+---
+> 				T0_PUSH(T0_LOCAL(BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&ip)));
+1034c1034
+< 				T0_LOCAL(t0_parse7E_unsigned(&ip)) = T0_POP();
+---
+> 				T0_LOCAL(BEAR_SINGLE_UNITY_FILEt0_parse7E_unsigned(&ip)) = T0_POP();
+1037c1037
+< 				t0off = t0_parse7E_signed(&ip);
+---
+> 				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
+1041c1041
+< 				t0off = t0_parse7E_signed(&ip);
+---
+> 				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
+1047c1047
+< 				t0off = t0_parse7E_signed(&ip);
+---
+> 				t0off = BEAR_SINGLE_UNITY_FILEt0_parse7E_signed(&ip);
+1184c1184
+< 	if (CTX->cur_dn_index >= CTX->num_tas) {
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->cur_dn_index >= BEAR_SINGLE_UNITY_FILECTX->num_tas) {
+1187,1188c1187,1188
+< 		if (CTX->ta_names == NULL) {
+< 			dn = &CTX->tas[CTX->cur_dn_index].dn;
+---
+> 		if (BEAR_SINGLE_UNITY_FILECTX->ta_names == NULL) {
+> 			dn = &BEAR_SINGLE_UNITY_FILECTX->tas[BEAR_SINGLE_UNITY_FILECTX->cur_dn_index].dn;
+1190c1190
+< 			dn = &CTX->ta_names[CTX->cur_dn_index];
+---
+> 			dn = &BEAR_SINGLE_UNITY_FILECTX->ta_names[BEAR_SINGLE_UNITY_FILECTX->cur_dn_index];
+1192,1195c1192,1195
+< 		CTX->cur_dn_index ++;
+< 		CTX->cur_dn = dn->data;
+< 		CTX->cur_dn_len = dn->len;
+< 		T0_PUSH(CTX->cur_dn_len);
+---
+> 		BEAR_SINGLE_UNITY_FILECTX->cur_dn_index ++;
+> 		BEAR_SINGLE_UNITY_FILECTX->cur_dn = dn->data;
+> 		BEAR_SINGLE_UNITY_FILECTX->cur_dn_len = dn->len;
+> 		T0_PUSH(BEAR_SINGLE_UNITY_FILECTX->cur_dn_len);
+1203c1203
+< 	CTX->cur_dn_index = 0;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->cur_dn_index = 0;
+1222,1223c1222,1223
+< 	x = (*CTX->policy_vtable)->choose(
+< 		CTX->policy_vtable, CTX, &choices);
+---
+> 	x = (*BEAR_SINGLE_UNITY_FILECTX->policy_vtable)->choose(
+> 		BEAR_SINGLE_UNITY_FILECTX->policy_vtable, BEAR_SINGLE_UNITY_FILECTX, &choices);
+1225c1225
+< 	CTX->sign_hash_id = choices.algo_id;
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->sign_hash_id = choices.algo_id;
+1243,1244c1243,1244
+< 		&& CTX->cache_vtable != NULL && (*CTX->cache_vtable)->load(
+< 			CTX->cache_vtable, CTX, &ENG->session))
+---
+> 		&& BEAR_SINGLE_UNITY_FILECTX->cache_vtable != NULL && (*BEAR_SINGLE_UNITY_FILECTX->cache_vtable)->load(
+> 			BEAR_SINGLE_UNITY_FILECTX->cache_vtable, BEAR_SINGLE_UNITY_FILECTX, &ENG->session))
+1315c1315
+< 	clen = CTX->cur_dn_len;
+---
+> 	clen = BEAR_SINGLE_UNITY_FILECTX->cur_dn_len;
+1319,1321c1319,1321
+< 	memcpy(ENG->pad, CTX->cur_dn, clen);
+< 	CTX->cur_dn += clen;
+< 	CTX->cur_dn_len -= clen;
+---
+> 	memcpy(ENG->pad, BEAR_SINGLE_UNITY_FILECTX->cur_dn, clen);
+> 	BEAR_SINGLE_UNITY_FILECTX->cur_dn += clen;
+> 	BEAR_SINGLE_UNITY_FILECTX->cur_dn_len -= clen;
+1343,1345c1343,1345
+< 	memcpy(CTX->hash_CV, ENG->pad + off, len);
+< 	CTX->hash_CV_len = len;
+< 	CTX->hash_CV_id = id;
+---
+> 	memcpy(BEAR_SINGLE_UNITY_FILECTX->hash_CV, ENG->pad + off, len);
+> 	BEAR_SINGLE_UNITY_FILECTX->hash_CV_len = len;
+> 	BEAR_SINGLE_UNITY_FILECTX->hash_CV_id = id;
+1364c1364
+< 	T0_PUSH(t0_datablock[addr]);
+---
+> 	T0_PUSH(BEAR_SINGLE_UNITY_FILEt0_datablock[addr]);
+1380c1380
+< 	do_ecdh(CTX, prf_id, ENG->pad, len);
+---
+> 	do_ecdh(BEAR_SINGLE_UNITY_FILECTX, prf_id, ENG->pad, len);
+1388c1388
+< 	T0_PUSHi(do_ecdhe_part1(CTX, curve));
+---
+> 	T0_PUSHi(do_ecdhe_part1(BEAR_SINGLE_UNITY_FILECTX, curve));
+1397c1397
+< 	do_ecdhe_part2(CTX, prf_id, ENG->pad, len);
+---
+> 	do_ecdhe_part2(BEAR_SINGLE_UNITY_FILECTX, prf_id, ENG->pad, len);
+1406c1406
+< 	do_rsa_decrypt(CTX, prf_id, ENG->pad, len);
+---
+> 	do_rsa_decrypt(BEAR_SINGLE_UNITY_FILECTX, prf_id, ENG->pad, len);
+1413c1413
+< 	do_static_ecdh(CTX, T0_POP());
+---
+> 	do_static_ecdh(BEAR_SINGLE_UNITY_FILECTX, T0_POP());
+1512c1512
+< 				/* mkrand */
+---
+> 				/* BEAR_SINGLE_UNITY_FILEmkrand */
+1614,1616c1614,1616
+< 	if (CTX->cache_vtable != NULL) {
+< 		(*CTX->cache_vtable)->save(
+< 			CTX->cache_vtable, CTX, &ENG->session);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->cache_vtable != NULL) {
+> 		(*BEAR_SINGLE_UNITY_FILECTX->cache_vtable)->save(
+> 			BEAR_SINGLE_UNITY_FILECTX->cache_vtable, BEAR_SINGLE_UNITY_FILECTX, &ENG->session);
+1828,1834c1828,1834
+< 	if (CTX->ta_names != NULL) {
+< 		for (u = 0; u < CTX->num_tas; u ++) {
+< 			len += CTX->ta_names[u].len + 2;
+< 		}
+< 	} else if (CTX->tas != NULL) {
+< 		for (u = 0; u < CTX->num_tas; u ++) {
+< 			len += CTX->tas[u].dn.len + 2;
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->ta_names != NULL) {
+> 		for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->num_tas; u ++) {
+> 			len += BEAR_SINGLE_UNITY_FILECTX->ta_names[u].len + 2;
+> 		}
+> 	} else if (BEAR_SINGLE_UNITY_FILECTX->tas != NULL) {
+> 		for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->num_tas; u ++) {
+> 			len += BEAR_SINGLE_UNITY_FILECTX->tas[u].dn.len + 2;
+1897c1897
+< 	err = verify_CV_sig(CTX, T0_POP());
+---
+> 	err = verify_CV_sig(BEAR_SINGLE_UNITY_FILECTX, T0_POP());
+2002c2002
+< 			T0_ENTER(ip, rp, t0x);
+---
+> 			BEAR_SINGLE_UNITY_FILET0_ENTER(ip, rp, t0x);
+2006,2008c2006,2008
+< 	((t0_context *)t0ctx)->dp = dp;
+< 	((t0_context *)t0ctx)->rp = rp;
+< 	((t0_context *)t0ctx)->ip = ip;
+---
+> 	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->dp = dp;
+> 	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->rp = rp;
+> 	((BEAR_SINGLE_UNITY_FILEt0_context *)t0ctx)->ip = ip;

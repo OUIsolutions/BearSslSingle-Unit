@@ -1,0 +1,72 @@
+25c25
+< #include "inner.h"
+---
+> 
+30c30
+< static const unsigned char iS[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILEiS[] = {
+109c109
+< mul9(unsigned x)
+---
+> BEAR_SINGLE_UNITY_FILEmul9(unsigned x)
+166,169c166,169
+< 		q0 = mule(p0) ^ mulb(p1) ^ muld(p2) ^ mul9(p3);
+< 		q1 = mul9(p0) ^ mule(p1) ^ mulb(p2) ^ muld(p3);
+< 		q2 = muld(p0) ^ mul9(p1) ^ mule(p2) ^ mulb(p3);
+< 		q3 = mulb(p0) ^ muld(p1) ^ mul9(p2) ^ mule(p3);
+---
+> 		q0 = mule(p0) ^ mulb(p1) ^ muld(p2) ^ BEAR_SINGLE_UNITY_FILEmul9(p3);
+> 		q1 = BEAR_SINGLE_UNITY_FILEmul9(p0) ^ mule(p1) ^ mulb(p2) ^ muld(p3);
+> 		q2 = muld(p0) ^ BEAR_SINGLE_UNITY_FILEmul9(p1) ^ mule(p2) ^ mulb(p3);
+> 		q3 = mulb(p0) ^ muld(p1) ^ BEAR_SINGLE_UNITY_FILEmul9(p2) ^ mule(p3);
+176c176
+< rotr(uint32_t x, int n)
+---
+> BEAR_SINGLE_UNITY_FILErotr(uint32_t x, int n)
+182,184c182,184
+< #define iSboxExt1(x)   (rotr(iSsm0[x], 8))
+< #define iSboxExt2(x)   (rotr(iSsm0[x], 16))
+< #define iSboxExt3(x)   (rotr(iSsm0[x], 24))
+---
+> #define iSboxExt1(x)   (BEAR_SINGLE_UNITY_FILErotr(iSsm0[x], 8))
+> #define iSboxExt2(x)   (BEAR_SINGLE_UNITY_FILErotr(iSsm0[x], 16))
+> #define iSboxExt3(x)   (BEAR_SINGLE_UNITY_FILErotr(iSsm0[x], 24))
+195c195
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+230,245c230,245
+< 	t0 = ((uint32_t)iS[s0 >> 24] << 24)
+< 		| ((uint32_t)iS[(s3 >> 16) & 0xFF] << 16)
+< 		| ((uint32_t)iS[(s2 >> 8) & 0xFF] << 8)
+< 		| (uint32_t)iS[s1 & 0xFF];
+< 	t1 = ((uint32_t)iS[s1 >> 24] << 24)
+< 		| ((uint32_t)iS[(s0 >> 16) & 0xFF] << 16)
+< 		| ((uint32_t)iS[(s3 >> 8) & 0xFF] << 8)
+< 		| (uint32_t)iS[s2 & 0xFF];
+< 	t2 = ((uint32_t)iS[s2 >> 24] << 24)
+< 		| ((uint32_t)iS[(s1 >> 16) & 0xFF] << 16)
+< 		| ((uint32_t)iS[(s0 >> 8) & 0xFF] << 8)
+< 		| (uint32_t)iS[s3 & 0xFF];
+< 	t3 = ((uint32_t)iS[s3 >> 24] << 24)
+< 		| ((uint32_t)iS[(s2 >> 16) & 0xFF] << 16)
+< 		| ((uint32_t)iS[(s1 >> 8) & 0xFF] << 8)
+< 		| (uint32_t)iS[s0 & 0xFF];
+---
+> 	t0 = ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[s0 >> 24] << 24)
+> 		| ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[(s3 >> 16) & 0xFF] << 16)
+> 		| ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[(s2 >> 8) & 0xFF] << 8)
+> 		| (uint32_t)BEAR_SINGLE_UNITY_FILEiS[s1 & 0xFF];
+> 	t1 = ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[s1 >> 24] << 24)
+> 		| ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[(s0 >> 16) & 0xFF] << 16)
+> 		| ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[(s3 >> 8) & 0xFF] << 8)
+> 		| (uint32_t)BEAR_SINGLE_UNITY_FILEiS[s2 & 0xFF];
+> 	t2 = ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[s2 >> 24] << 24)
+> 		| ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[(s1 >> 16) & 0xFF] << 16)
+> 		| ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[(s0 >> 8) & 0xFF] << 8)
+> 		| (uint32_t)BEAR_SINGLE_UNITY_FILEiS[s3 & 0xFF];
+> 	t3 = ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[s3 >> 24] << 24)
+> 		| ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[(s2 >> 16) & 0xFF] << 16)
+> 		| ((uint32_t)BEAR_SINGLE_UNITY_FILEiS[(s1 >> 8) & 0xFF] << 8)
+> 		| (uint32_t)BEAR_SINGLE_UNITY_FILEiS[s0 & 0xFF];

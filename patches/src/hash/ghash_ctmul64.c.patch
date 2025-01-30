@@ -1,0 +1,12 @@
+25c25
+< #include "inner.h"
+---
+> 
+85,87c85,87
+< 	buf = data;
+< 	yb = y;
+< 	hb = h;
+---
+> 	buf = (unsigned char*)data;
+> 	yb = (unsigned char*)y;
+> 	hb = (const unsigned char*)h;

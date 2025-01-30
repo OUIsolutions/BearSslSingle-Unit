@@ -1,0 +1,50 @@
+26c26
+< #include "inner.h"
+---
+> 
+61c61
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+65c65
+< 		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+---
+> 		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
+67c67
+< 	ivx = _mm_loadu_si128((void *)ivbuf);
+---
+> 	ivx = _mm_loadu_si128((const __m128i_u*)ivbuf);
+157c157
+< 				_mm_loadu_si128((void *)(buf +  0)));
+---
+> 				_mm_loadu_si128((const __m128i_u*)(buf +  0)));
+159c159
+< 				_mm_loadu_si128((void *)(buf + 16)));
+---
+> 				_mm_loadu_si128((const __m128i_u*)(buf + 16)));
+161c161
+< 				_mm_loadu_si128((void *)(buf + 32)));
+---
+> 				_mm_loadu_si128((const __m128i_u*)(buf + 32)));
+163,167c163,167
+< 				_mm_loadu_si128((void *)(buf + 48)));
+< 			_mm_storeu_si128((void *)(buf +  0), x0);
+< 			_mm_storeu_si128((void *)(buf + 16), x1);
+< 			_mm_storeu_si128((void *)(buf + 32), x2);
+< 			_mm_storeu_si128((void *)(buf + 48), x3);
+---
+> 				_mm_loadu_si128((const __m128i_u*)(buf + 48)));
+> 			_mm_storeu_si128((__m128i_u*)(buf +  0), x0);
+> 			_mm_storeu_si128((__m128i_u*)(buf + 16), x1);
+> 			_mm_storeu_si128((__m128i_u*)(buf + 32), x2);
+> 			_mm_storeu_si128((__m128i_u*)(buf + 48), x3);
+174,177c174,177
+< 			_mm_storeu_si128((void *)(tmp +  0), x0);
+< 			_mm_storeu_si128((void *)(tmp + 16), x1);
+< 			_mm_storeu_si128((void *)(tmp + 32), x2);
+< 			_mm_storeu_si128((void *)(tmp + 48), x3);
+---
+> 			_mm_storeu_si128((__m128i_u*)(tmp +  0), x0);
+> 			_mm_storeu_si128((__m128i_u*)(tmp + 16), x1);
+> 			_mm_storeu_si128((__m128i_u*)(tmp + 32), x2);
+> 			_mm_storeu_si128((__m128i_u*)(tmp + 48), x3);

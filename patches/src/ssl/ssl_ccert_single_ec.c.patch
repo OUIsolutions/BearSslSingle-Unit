@@ -1,0 +1,50 @@
+25c25
+< #include "inner.h"
+---
+> 
+28c28
+< cc_none0(const br_ssl_client_certificate_class **pctx)
+---
+> BEAR_SINGLE_UNITY_FILEcc_none0(const br_ssl_client_certificate_class **pctx)
+34c34
+< cc_none1(const br_ssl_client_certificate_class **pctx, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEcc_none1(const br_ssl_client_certificate_class **pctx, size_t len)
+41c41
+< cc_none2(const br_ssl_client_certificate_class **pctx,
+---
+> BEAR_SINGLE_UNITY_FILEcc_none2(const br_ssl_client_certificate_class **pctx,
+50c50
+< cc_choose(const br_ssl_client_certificate_class **pctx,
+---
+> BEAR_SINGLE_UNITY_FILEcc_choose(const br_ssl_client_certificate_class **pctx,
+108c108
+< cc_do_sign(const br_ssl_client_certificate_class **pctx,
+---
+> BEAR_SINGLE_UNITY_FILEcc_do_sign(const br_ssl_client_certificate_class **pctx,
+127c127
+< static const br_ssl_client_certificate_class ccert_vtable = {
+---
+> static const br_ssl_client_certificate_class BEAR_SINGLE_UNITY_FILEccert_vtable = {
+129,134c129,134
+< 	cc_none0, /* start_name_list */
+< 	cc_none1, /* start_name */
+< 	cc_none2, /* append_name */
+< 	cc_none0, /* end_name */
+< 	cc_none0, /* end_name_list */
+< 	cc_choose,
+---
+> 	BEAR_SINGLE_UNITY_FILEcc_none0, /* start_name_list */
+> 	BEAR_SINGLE_UNITY_FILEcc_none1, /* start_name */
+> 	BEAR_SINGLE_UNITY_FILEcc_none2, /* append_name */
+> 	BEAR_SINGLE_UNITY_FILEcc_none0, /* end_name */
+> 	BEAR_SINGLE_UNITY_FILEcc_none0, /* end_name_list */
+> 	BEAR_SINGLE_UNITY_FILEcc_choose,
+136c136
+< 	cc_do_sign
+---
+> 	BEAR_SINGLE_UNITY_FILEcc_do_sign
+147c147
+< 	cc->client_auth.single_ec.vtable = &ccert_vtable;
+---
+> 	cc->client_auth.single_ec.vtable = &BEAR_SINGLE_UNITY_FILEccert_vtable;

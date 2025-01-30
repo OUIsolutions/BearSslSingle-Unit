@@ -1,0 +1,112 @@
+25c25
+< #include "inner.h"
+---
+> 
+32c32
+< mkrand(const br_prng_class **rng, uint32_t *x, uint32_t esize)
+---
+> BEAR_SINGLE_UNITY_FILEmkrand(const br_prng_class **rng, uint32_t *x, uint32_t esize)
+54c54
+< static const unsigned char SMALL_PRIMES[] = {
+---
+> static const unsigned char BEAR_SINGLE_UNITY_FILESMALL_PRIMES[] = {
+87c87
+<  * 2 kilobytes in total, to save stack space. The macro TEMPS below
+---
+>  * 2 kilobytes in total, to save stack space. The macro BEAR_SINGLE_UNITY_FILETEMPS below
+95c95
+< #define TEMPS   MAX(512, ROUND2(7 * ((((BR_MAX_RSA_SIZE + 1) >> 1) + 61) / 31)))
+---
+> #define BEAR_SINGLE_UNITY_FILETEMPS   MAX(512, ROUND2(7 * ((((BR_MAX_RSA_SIZE + 1) >> 1) + 61) / 31)))
+99c99
+<  * y = SMALL_PRIMES mod x, then tries to compute y/y mod x. The
+---
+>  * y = BEAR_SINGLE_UNITY_FILESMALL_PRIMES mod x, then tries to compute y/y mod x. The
+107c107
+< trial_divisions(const uint32_t *x, uint32_t *t)
+---
+> BEAR_SINGLE_UNITY_FILEtrial_divisions(const uint32_t *x, uint32_t *t)
+115c115
+< 	br_i31_decode_reduce(y, SMALL_PRIMES, sizeof SMALL_PRIMES, x);
+---
+> 	br_i31_decode_reduce(y, BEAR_SINGLE_UNITY_FILESMALL_PRIMES, sizeof BEAR_SINGLE_UNITY_FILESMALL_PRIMES, x);
+127c127
+< miller_rabin(const br_prng_class **rng, const uint32_t *x, int n,
+---
+> BEAR_SINGLE_UNITY_FILEmiller_rabin(const br_prng_class **rng, const uint32_t *x, int n,
+190c190
+< 		mkrand(rng, a, asize);
+---
+> 		BEAR_SINGLE_UNITY_FILEmkrand(rng, a, asize);
+202c202
+< 			 * has an even number of elements (TEMPS), we
+---
+> 			 * has an even number of elements (BEAR_SINGLE_UNITY_FILETEMPS), we
+235c235
+< mkprime(const br_prng_class **rng, uint32_t *x, uint32_t esize,
+---
+> BEAR_SINGLE_UNITY_FILEmkprime(const br_prng_class **rng, uint32_t *x, uint32_t esize,
+251c251
+< 		mkrand(rng, x, esize);
+---
+> 		BEAR_SINGLE_UNITY_FILEmkrand(rng, x, esize);
+353c353
+< 		if (!trial_divisions(x, t)) {
+---
+> 		if (!BEAR_SINGLE_UNITY_FILEtrial_divisions(x, t)) {
+385c385
+< 		if (miller_rabin(rng, x, rounds, t, tlen, mp31)) {
+---
+> 		if (BEAR_SINGLE_UNITY_FILEmiller_rabin(rng, x, rounds, t, tlen, mp31)) {
+402c402
+< invert_pubexp(uint32_t *d, const uint32_t *m, uint32_t e, uint32_t *t)
+---
+> BEAR_SINGLE_UNITY_FILEinvert_pubexp(uint32_t *d, const uint32_t *m, uint32_t e, uint32_t *t)
+440c440
+< bufswap(void *b1, void *b2, size_t len)
+---
+> BEAR_SINGLE_UNITY_FILEbufswap(void *b1, void *b2, size_t len)
+445,446c445,446
+< 	buf1 = b1;
+< 	buf2 = b2;
+---
+> 	buf1 = (unsigned char*)b1;
+> 	buf2 = (unsigned char*)b2;
+467,468c467,468
+< 		uint32_t t32[TEMPS];
+< 		uint64_t t64[TEMPS >> 1];  /* for 64-bit alignment */
+---
+> 		uint32_t t32[BEAR_SINGLE_UNITY_FILETEMPS];
+> 		uint64_t t64[BEAR_SINGLE_UNITY_FILETEMPS >> 1];  /* for 64-bit alignment */
+484c484
+< 	sk->p = kbuf_priv;
+---
+> 	sk->p = (unsigned char*)kbuf_priv;
+496c496
+< 		pk->n = kbuf_pub;
+---
+> 		pk->n = (unsigned char*)kbuf_pub;
+530c530
+< 		mkprime(rng, p, esize_p, pubexp, t, tlen, mp31);
+---
+> 		BEAR_SINGLE_UNITY_FILEmkprime(rng, p, esize_p, pubexp, t, tlen, mp31);
+532c532
+< 		if (invert_pubexp(t, p, pubexp, t + 1 + plen)) {
+---
+> 		if (BEAR_SINGLE_UNITY_FILEinvert_pubexp(t, p, pubexp, t + 1 + plen)) {
+542c542
+< 		mkprime(rng, q, esize_q, pubexp, t, tlen, mp31);
+---
+> 		BEAR_SINGLE_UNITY_FILEmkprime(rng, q, esize_q, pubexp, t, tlen, mp31);
+544c544
+< 		if (invert_pubexp(t, q, pubexp, t + 1 + qlen)) {
+---
+> 		if (BEAR_SINGLE_UNITY_FILEinvert_pubexp(t, q, pubexp, t + 1 + qlen)) {
+569,571c569,571
+< 		bufswap(p, q, (1 + plen) * sizeof *p);
+< 		bufswap(sk->p, sk->q, sk->plen);
+< 		bufswap(sk->dp, sk->dq, sk->dplen);
+---
+> 		BEAR_SINGLE_UNITY_FILEbufswap(p, q, (1 + plen) * sizeof *p);
+> 		BEAR_SINGLE_UNITY_FILEbufswap(sk->p, sk->q, sk->plen);
+> 		BEAR_SINGLE_UNITY_FILEbufswap(sk->dp, sk->dq, sk->dplen);

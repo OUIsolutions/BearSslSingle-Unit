@@ -1,0 +1,53 @@
+25d24
+< #include "inner.h"
+27c26,27
+< #define CTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
+---
+> 
+> #define BEAR_SINGLE_UNITY_FILECTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
+48c48
+< 	ctx->hbuf = data;
+---
+> 	ctx->hbuf = (const unsigned char*)data;
+84c84
+< 	*((unsigned char *)CTX + addr) = x;
+---
+> 	*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = x;
+90c90
+< 	T0_PUSH(*((unsigned char *)CTX + addr));
+---
+> 	T0_PUSH(*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
+100,102c100,102
+< 	if (CTX->hlen > 0) {
+< 		T0_PUSH(*CTX->hbuf ++);
+< 		CTX->hlen --;
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->hlen > 0) {
+> 		T0_PUSH(*BEAR_SINGLE_UNITY_FILECTX->hbuf ++);
+> 		BEAR_SINGLE_UNITY_FILECTX->hlen --;
+203,206c203,206
+< 	CTX->buf[CTX->ptr ++] = x;
+< 	if (CTX->ptr == sizeof CTX->buf) {
+< 		if (CTX->dest) {
+< 			CTX->dest(CTX->dest_ctx, CTX->buf, sizeof CTX->buf);
+---
+> 	BEAR_SINGLE_UNITY_FILECTX->buf[BEAR_SINGLE_UNITY_FILECTX->ptr ++] = x;
+> 	if (BEAR_SINGLE_UNITY_FILECTX->ptr == sizeof BEAR_SINGLE_UNITY_FILECTX->buf) {
+> 		if (BEAR_SINGLE_UNITY_FILECTX->dest) {
+> 			BEAR_SINGLE_UNITY_FILECTX->dest(BEAR_SINGLE_UNITY_FILECTX->dest_ctx, BEAR_SINGLE_UNITY_FILECTX->buf, sizeof BEAR_SINGLE_UNITY_FILECTX->buf);
+208c208
+< 		CTX->ptr = 0;
+---
+> 		BEAR_SINGLE_UNITY_FILECTX->ptr = 0;
+214,216c214,216
+< 	if (CTX->ptr > 0) {
+< 		if (CTX->dest) {
+< 			CTX->dest(CTX->dest_ctx, CTX->buf, CTX->ptr);
+---
+> 	if (BEAR_SINGLE_UNITY_FILECTX->ptr > 0) {
+> 		if (BEAR_SINGLE_UNITY_FILECTX->dest) {
+> 			BEAR_SINGLE_UNITY_FILECTX->dest(BEAR_SINGLE_UNITY_FILECTX->dest_ctx, BEAR_SINGLE_UNITY_FILECTX->buf, BEAR_SINGLE_UNITY_FILECTX->ptr);
+218c218
+< 		CTX->ptr = 0;
+---
+> 		BEAR_SINGLE_UNITY_FILECTX->ptr = 0;

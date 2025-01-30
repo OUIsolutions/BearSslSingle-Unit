@@ -1,0 +1,30 @@
+25c25
+< #include "inner.h"
+---
+> 
+30c30
+< #define ROTR(x, n)    (((uint32_t)(x) << (32 - (n))) | ((uint32_t)(x) >> (n)))
+---
+> #define BEAR_SINGLE_UNITY_FILEROTR(x, n)    (((uint32_t)(x) << (32 - (n))) | ((uint32_t)(x) >> (n)))
+32,35c32,35
+< #define BSG2_0(x)      (ROTR(x, 2) ^ ROTR(x, 13) ^ ROTR(x, 22))
+< #define BSG2_1(x)      (ROTR(x, 6) ^ ROTR(x, 11) ^ ROTR(x, 25))
+< #define SSG2_0(x)      (ROTR(x, 7) ^ ROTR(x, 18) ^ (uint32_t)((x) >> 3))
+< #define SSG2_1(x)      (ROTR(x, 17) ^ ROTR(x, 19) ^ (uint32_t)((x) >> 10))
+---
+> #define BSG2_0(x)      (BEAR_SINGLE_UNITY_FILEROTR(x, 2) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 13) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 22))
+> #define BSG2_1(x)      (BEAR_SINGLE_UNITY_FILEROTR(x, 6) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 11) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 25))
+> #define SSG2_0(x)      (BEAR_SINGLE_UNITY_FILEROTR(x, 7) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 18) ^ (uint32_t)((x) >> 3))
+> #define SSG2_1(x)      (BEAR_SINGLE_UNITY_FILEROTR(x, 17) ^ BEAR_SINGLE_UNITY_FILEROTR(x, 19) ^ (uint32_t)((x) >> 10))
+49c49
+< static const uint32_t K[64] = {
+---
+> static const uint32_t BEAR_SINGLE_UNITY_FILEK[64] = {
+75c75
+< 		T1 = H + BSG2_1(E) + CH(E, F, G) + K[j] + w[j]; \
+---
+> 		T1 = H + BSG2_1(E) + CH(E, F, G) + BEAR_SINGLE_UNITY_FILEK[j] + w[j]; \
+208c208
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;

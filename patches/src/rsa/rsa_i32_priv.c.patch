@@ -1,0 +1,7 @@
+25d24
+< #include "inner.h"
+27c26,27
+< #define U   (1 + (BR_MAX_RSA_FACTOR >> 5))
+---
+> 
+> #define BEAR_SINGLE_UNITY_FILEU   (1 + (BR_MAX_RSA_FACTOR >> 5))

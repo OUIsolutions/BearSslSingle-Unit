@@ -1,0 +1,64 @@
+25d24
+< #include "inner.h"
+27,30d25
+< #define F(B, C, D)     ((((C) ^ (D)) & (B)) ^ (D))
+< #define G(B, C, D)     ((((C) ^ (B)) & (D)) ^ (C))
+< #define H(B, C, D)     ((B) ^ (C) ^ (D))
+< #define I(B, C, D)     ((C) ^ ((B) | ~(D)))
+32c27,32
+< #define ROTL(x, n)    (((x) << (n)) | ((x) >> (32 - (n))))
+---
+> #define BEAR_SINGLE_UNITY_FILEF(B, C, D)     ((((C) ^ (D)) & (B)) ^ (D))
+> #define BEAR_SINGLE_UNITY_FILEG(B, C, D)     ((((C) ^ (B)) & (D)) ^ (C))
+> #define BEAR_SINGLE_UNITY_FILEH(B, C, D)     ((B) ^ (C) ^ (D))
+> #define BEAR_SINGLE_UNITY_FILEI(B, C, D)     ((C) ^ ((B) | ~(D)))
+> 
+> #define BEAR_SINGLE_UNITY_FILEROTL(x, n)    (((x) << (n)) | ((x) >> (32 - (n))))
+39c39
+< static const uint32_t K[64] = {
+---
+> static const uint32_t BEAR_SINGLE_UNITY_FILEK[64] = {
+87,90c87,90
+< 		a = b + ROTL(a + F(b, c, d) + m[i + 0] + K[i + 0],  7);
+< 		d = a + ROTL(d + F(a, b, c) + m[i + 1] + K[i + 1], 12);
+< 		c = d + ROTL(c + F(d, a, b) + m[i + 2] + K[i + 2], 17);
+< 		b = c + ROTL(b + F(c, d, a) + m[i + 3] + K[i + 3], 22);
+---
+> 		a = b + BEAR_SINGLE_UNITY_FILEROTL(a + BEAR_SINGLE_UNITY_FILEF(b, c, d) + m[i + 0] + BEAR_SINGLE_UNITY_FILEK[i + 0],  7);
+> 		d = a + BEAR_SINGLE_UNITY_FILEROTL(d + BEAR_SINGLE_UNITY_FILEF(a, b, c) + m[i + 1] + BEAR_SINGLE_UNITY_FILEK[i + 1], 12);
+> 		c = d + BEAR_SINGLE_UNITY_FILEROTL(c + BEAR_SINGLE_UNITY_FILEF(d, a, b) + m[i + 2] + BEAR_SINGLE_UNITY_FILEK[i + 2], 17);
+> 		b = c + BEAR_SINGLE_UNITY_FILEROTL(b + BEAR_SINGLE_UNITY_FILEF(c, d, a) + m[i + 3] + BEAR_SINGLE_UNITY_FILEK[i + 3], 22);
+93,96c93,96
+< 		a = b + ROTL(a + G(b, c, d) + m[MP[i - 16]] + K[i + 0],  5);
+< 		d = a + ROTL(d + G(a, b, c) + m[MP[i - 15]] + K[i + 1],  9);
+< 		c = d + ROTL(c + G(d, a, b) + m[MP[i - 14]] + K[i + 2], 14);
+< 		b = c + ROTL(b + G(c, d, a) + m[MP[i - 13]] + K[i + 3], 20);
+---
+> 		a = b + BEAR_SINGLE_UNITY_FILEROTL(a + BEAR_SINGLE_UNITY_FILEG(b, c, d) + m[MP[i - 16]] + BEAR_SINGLE_UNITY_FILEK[i + 0],  5);
+> 		d = a + BEAR_SINGLE_UNITY_FILEROTL(d +BEAR_SINGLE_UNITY_FILEG(a, b, c) + m[MP[i - 15]] + BEAR_SINGLE_UNITY_FILEK[i + 1],  9);
+> 		c = d + BEAR_SINGLE_UNITY_FILEROTL(c + BEAR_SINGLE_UNITY_FILEG(d, a, b) + m[MP[i - 14]] + BEAR_SINGLE_UNITY_FILEK[i + 2], 14);
+> 		b = c + BEAR_SINGLE_UNITY_FILEROTL(b + BEAR_SINGLE_UNITY_FILEG(c, d, a) + m[MP[i - 13]] + BEAR_SINGLE_UNITY_FILEK[i + 3], 20);
+99,102c99,102
+< 		a = b + ROTL(a + H(b, c, d) + m[MP[i - 16]] + K[i + 0],  4);
+< 		d = a + ROTL(d + H(a, b, c) + m[MP[i - 15]] + K[i + 1], 11);
+< 		c = d + ROTL(c + H(d, a, b) + m[MP[i - 14]] + K[i + 2], 16);
+< 		b = c + ROTL(b + H(c, d, a) + m[MP[i - 13]] + K[i + 3], 23);
+---
+> 		a = b + BEAR_SINGLE_UNITY_FILEROTL(a + BEAR_SINGLE_UNITY_FILEH(b, c, d) + m[MP[i - 16]] + BEAR_SINGLE_UNITY_FILEK[i + 0],  4);
+> 		d = a + BEAR_SINGLE_UNITY_FILEROTL(d + BEAR_SINGLE_UNITY_FILEH(a, b, c) + m[MP[i - 15]] + BEAR_SINGLE_UNITY_FILEK[i + 1], 11);
+> 		c = d +BEAR_SINGLE_UNITY_FILEROTL(c + BEAR_SINGLE_UNITY_FILEH(d, a, b) + m[MP[i - 14]] + BEAR_SINGLE_UNITY_FILEK[i + 2], 16);
+> 		b = c + BEAR_SINGLE_UNITY_FILEROTL(b + BEAR_SINGLE_UNITY_FILEH(c, d, a) + m[MP[i - 13]] + BEAR_SINGLE_UNITY_FILEK[i + 3], 23);
+105,108c105,108
+< 		a = b + ROTL(a + I(b, c, d) + m[MP[i - 16]] + K[i + 0],  6);
+< 		d = a + ROTL(d + I(a, b, c) + m[MP[i - 15]] + K[i + 1], 10);
+< 		c = d + ROTL(c + I(d, a, b) + m[MP[i - 14]] + K[i + 2], 15);
+< 		b = c + ROTL(b + I(c, d, a) + m[MP[i - 13]] + K[i + 3], 21);
+---
+> 		a = b + BEAR_SINGLE_UNITY_FILEROTL(a + BEAR_SINGLE_UNITY_FILEI(b, c, d) + m[MP[i - 16]] + BEAR_SINGLE_UNITY_FILEK[i + 0],  6);
+> 		d = a + BEAR_SINGLE_UNITY_FILEROTL(d + BEAR_SINGLE_UNITY_FILEI(a, b, c) + m[MP[i - 15]] + BEAR_SINGLE_UNITY_FILEK[i + 1], 10);
+> 		c = d + BEAR_SINGLE_UNITY_FILEROTL(c + BEAR_SINGLE_UNITY_FILEI(d, a, b) + m[MP[i - 14]] + BEAR_SINGLE_UNITY_FILEK[i + 2], 15);
+> 		b = c + BEAR_SINGLE_UNITY_FILEROTL(b + BEAR_SINGLE_UNITY_FILEI(c, d, a) + m[MP[i - 13]] + BEAR_SINGLE_UNITY_FILEK[i + 3], 21);
+133c133
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;

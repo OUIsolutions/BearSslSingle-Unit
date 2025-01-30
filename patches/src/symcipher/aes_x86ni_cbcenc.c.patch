@@ -1,0 +1,26 @@
+26c26
+< #include "inner.h"
+---
+> 
+59,60c59,60
+< 	buf = data;
+< 	ivx = _mm_loadu_si128(iv);
+---
+> 	buf = (unsigned char*)data;
+> 	ivx = _mm_loadu_si128((const __m128i_u*)iv);
+63c63
+< 		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+---
+> 		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
+68c68
+< 		x = _mm_xor_si128(_mm_loadu_si128((void *)buf), ivx);
+---
+> 		x = _mm_xor_si128(_mm_loadu_si128((const __m128i_u*)buf), ivx);
+93c93
+< 		_mm_storeu_si128((void *)buf, x);
+---
+> 		_mm_storeu_si128((__m128i_u*)buf, x);
+97c97
+< 	_mm_storeu_si128(iv, ivx);
+---
+> 	_mm_storeu_si128((__m128i_u*)iv, ivx);

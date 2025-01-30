@@ -1,0 +1,8 @@
+25c25
+< #include "inner.h"
+---
+> 
+36c36
+< 	s1 = secret;
+---
+> 	s1 = (const unsigned char*)secret;

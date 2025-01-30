@@ -1,0 +1,38 @@
+25c25
+< #include "inner.h"
+---
+> 
+30c30
+< add_round_key(unsigned *state, const uint32_t *skeys)
+---
+> BEAR_SINGLE_UNITY_FILEadd_round_key(unsigned *state, const uint32_t *skeys)
+56c56
+< shift_rows(unsigned *state)
+---
+> BEAR_SINGLE_UNITY_FILEshift_rows(unsigned *state)
+81c81
+< mix_columns(unsigned *state)
+---
+> BEAR_SINGLE_UNITY_FILEmix_columns(unsigned *state)
+112c112
+< 	buf = data;
+---
+> 	buf = (unsigned char*)data;
+116c116
+< 	add_round_key(state, skey);
+---
+> 	BEAR_SINGLE_UNITY_FILEadd_round_key(state, skey);
+119,121c119,121
+< 		shift_rows(state);
+< 		mix_columns(state);
+< 		add_round_key(state, skey + (u << 2));
+---
+> 		BEAR_SINGLE_UNITY_FILEshift_rows(state);
+> 		BEAR_SINGLE_UNITY_FILEmix_columns(state);
+> 		BEAR_SINGLE_UNITY_FILEadd_round_key(state, skey + (u << 2));
+124,125c124,125
+< 	shift_rows(state);
+< 	add_round_key(state, skey + (num_rounds << 2));
+---
+> 	BEAR_SINGLE_UNITY_FILEshift_rows(state);
+> 	BEAR_SINGLE_UNITY_FILEadd_round_key(state, skey + (num_rounds << 2));

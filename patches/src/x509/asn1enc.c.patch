@@ -1,0 +1,16 @@
+25c25
+< #include "inner.h"
+---
+> 
+34c34
+< 	x = xdata;
+---
+> 	x = (const unsigned char *)xdata;
+56c56
+< 	buf = dest;
+---
+> 	buf = (unsigned char *)dest;
+86c86
+< 	buf = dest;
+---
+> 	buf = (unsigned char *)dest;

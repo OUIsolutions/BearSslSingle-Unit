@@ -1,0 +1,11 @@
+25d24
+< #include "inner.h"
+27c26,27
+< #define ORDER_LEN   ((BR_MAX_EC_SIZE + 7) >> 3)
+---
+> 
+> #define BEAR_SINGLE_UNITY_FILEORDER_LEN   ((BR_MAX_EC_SIZE + 7) >> 3)
+35c35
+< 	unsigned char rsig[(ORDER_LEN << 1) + 12];
+---
+> 	unsigned char rsig[(BEAR_SINGLE_UNITY_FILEORDER_LEN << 1) + 12];
