@@ -60,8 +60,9 @@ and the [BearSSLTrustedAnchors.h](https://github.com/arduino-libraries/ArduinoBe
 was taken from the oficial arduino Github Organization
 
 ## Building From Scratch
-if you want to build the hole project from scracth you must have **diff**,**patch** and [Darwin](https://github.com/OUIsolutions/Darwin/tree/0.016) on version **0.016**
-just type:
+if you want to build the hole project from scracth you must have 
+**diff**,**patch** and [Darwin](https://github.com/OUIsolutions/Darwin/tree/0.016) on version **0.016**
+clone the repon and type:
 ```shel
  sh pre_build.sh && ./build.outs
 ```
