@@ -40,7 +40,7 @@ br_des_tab_cbcenc_run(const br_des_tab_cbcenc_keys *ctx,
 {
 	unsigned char *buf, *ivbuf;
 
-	ivbuf = iv;
+	ivbuf = (unsigned char *)iv;
 	buf = (unsigned char*)data;
 	while (len > 0) {
 		int i;

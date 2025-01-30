@@ -40,7 +40,7 @@ br_aes_small_cbcdec_run(const br_aes_small_cbcdec_keys *ctx,
 {
 	unsigned char *buf, *ivbuf;
 
-	ivbuf = iv;
+	ivbuf = (unsigned char *)iv;
 	buf = (unsigned char*)data;
 	while (len > 0) {
 		unsigned char tmp[16];

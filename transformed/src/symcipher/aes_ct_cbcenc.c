@@ -48,7 +48,7 @@ br_aes_ct_cbcenc_run(const br_aes_ct_cbcenc_keys *ctx,
 	q[5] = 0;
 	q[7] = 0;
 	br_aes_ct_skey_expand(sk_exp, ctx->num_rounds, ctx->skey);
-	ivbuf = iv;
+	ivbuf = (unsigned char *)iv;
 	iv0 = br_dec32le(ivbuf);
 	iv1 = br_dec32le(ivbuf + 4);
 	iv2 = br_dec32le(ivbuf + 8);
