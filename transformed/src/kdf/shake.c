@@ -487,7 +487,7 @@ br_shake_inject(br_shake_context *sc, const void *data, size_t len)
 	const unsigned char *buf;
 	size_t rate, dptr;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	rate = sc->rate;
 	dptr = sc->dptr;
 	while (len > 0) {

@@ -58,7 +58,7 @@ br_aes_x86ni_ctr_run(const br_aes_x86ni_ctr_keys *ctx,
 	__m128i ivx;
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	memcpy(ivbuf, iv, 12);
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {

@@ -43,7 +43,7 @@ br_des_ct_cbcenc_run(const br_des_ct_cbcenc_keys *ctx,
 
 	br_des_ct_skey_expand(sk_exp, ctx->num_rounds, ctx->skey);
 	ivbuf = iv;
-	buf = data;
+	buf = (unsigned char*)data;
 	while (len > 0) {
 		int i;
 

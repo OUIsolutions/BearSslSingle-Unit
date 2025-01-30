@@ -47,7 +47,7 @@ BEAR_SINGLE_UNITY_FILEpoly1305_inner(uint32_t *a, const uint32_t *r, const void 
 	 */
 	const unsigned char *buf;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	while (len > 0) {
 		unsigned char tmp[16];
 		uint32_t b[10];

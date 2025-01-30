@@ -56,7 +56,7 @@ br_aes_x86ni_cbcenc_run(const br_aes_x86ni_cbcenc_keys *ctx,
 	__m128i sk[15], ivx;
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	ivx = _mm_loadu_si128(iv);
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {

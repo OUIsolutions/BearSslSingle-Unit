@@ -632,7 +632,7 @@ br_aes_pwr8_ctr_run(const br_aes_pwr8_ctr_keys *ctx,
 	unsigned char *buf;
 	unsigned char ivbuf[64];
 
-	buf = data;
+	buf = (unsigned char*)data;
 	memcpy(ivbuf +  0, iv, 12);
 	memcpy(ivbuf + 16, iv, 12);
 	memcpy(ivbuf + 32, iv, 12);

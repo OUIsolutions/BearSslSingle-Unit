@@ -146,7 +146,7 @@ sha2big_update(br_sha384_context *cc, const void *data, size_t len)
 	const unsigned char *buf;
 	size_t ptr;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	ptr = (size_t)cc->count & 127;
 	cc->count += (uint64_t)len;
 	while (len > 0) {

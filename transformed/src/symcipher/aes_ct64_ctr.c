@@ -60,7 +60,7 @@ br_aes_ct64_ctr_run(const br_aes_ct64_ctr_keys *ctx,
 	memcpy(ivw + 4, ivw, 3 * sizeof(uint32_t));
 	memcpy(ivw + 8, ivw, 3 * sizeof(uint32_t));
 	memcpy(ivw + 12, ivw, 3 * sizeof(uint32_t));
-	buf = data;
+	buf = (unsigned char*)data;
 	while (len > 0) {
 		uint64_t q[8];
 		uint32_t w[16];

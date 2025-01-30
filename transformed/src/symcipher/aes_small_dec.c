@@ -156,7 +156,7 @@ br_aes_small_decrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	unsigned state[16];
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	for (u = 0; u < 16; u ++) {
 		state[u] = buf[u];
 	}

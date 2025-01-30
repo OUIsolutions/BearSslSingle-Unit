@@ -57,7 +57,7 @@ br_des_tab_cbcdec_run(const br_des_tab_cbcdec_keys *ctx,
 	unsigned char *buf, *ivbuf;
 
 	ivbuf = iv;
-	buf = data;
+	buf = (unsigned char*)data;
 	while (len > 0) {
 		unsigned char tmp[8];
 		int i;

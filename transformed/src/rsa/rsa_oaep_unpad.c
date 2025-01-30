@@ -60,7 +60,7 @@ br_rsa_oaep_unpad(const br_hash_class *dig,
 
 	hlen = br_digest_size(dig);
 	k = *len;
-	buf = data;
+	buf = (unsigned char*)data;
 
 	/*
 	 * There must be room for the padding.

@@ -166,7 +166,7 @@ br_gcm_run(br_gcm_context *ctx, int encrypt, void *data, size_t len)
 	unsigned char *buf;
 	size_t ptr, dlen;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	ptr = (size_t)ctx->count_ctr & (size_t)15;
 	if (ptr != 0) {
 		/*

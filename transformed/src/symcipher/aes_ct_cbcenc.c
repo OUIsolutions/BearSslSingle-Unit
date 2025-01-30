@@ -53,7 +53,7 @@ br_aes_ct_cbcenc_run(const br_aes_ct_cbcenc_keys *ctx,
 	iv1 = br_dec32le(ivbuf + 4);
 	iv2 = br_dec32le(ivbuf + 8);
 	iv3 = br_dec32le(ivbuf + 12);
-	buf = data;
+	buf = (unsigned char*)data;
 	while (len > 0) {
 		q[0] = iv0 ^ br_dec32le(buf);
 		q[2] = iv1 ^ br_dec32le(buf + 4);

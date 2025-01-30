@@ -53,7 +53,7 @@ br_aes_big_ctr_run(const br_aes_big_ctr_keys *ctx,
 {
 	unsigned char *buf;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	while (len > 0) {
 		unsigned char tmp[16];
 

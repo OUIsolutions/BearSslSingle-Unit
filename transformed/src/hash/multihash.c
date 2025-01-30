@@ -108,7 +108,7 @@ br_multihash_update(br_multihash_context *ctx, const void *data, size_t len)
 	const unsigned char *buf;
 	size_t ptr;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	ptr = (size_t)ctx->count & 127;
 	while (len > 0) {
 		size_t clen;

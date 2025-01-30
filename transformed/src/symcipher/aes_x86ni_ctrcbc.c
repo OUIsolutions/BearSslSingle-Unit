@@ -58,7 +58,7 @@ br_aes_x86ni_ctrcbc_ctr(const br_aes_x86ni_ctrcbc_keys *ctx,
 	__m128i erev, zero, one, four, notthree;
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
 		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
@@ -262,7 +262,7 @@ br_aes_x86ni_ctrcbc_mac(const br_aes_x86ni_ctrcbc_keys *ctx,
 	__m128i sk[15], ivx;
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	ivx = _mm_loadu_si128(cbcmac);
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
@@ -335,7 +335,7 @@ br_aes_x86ni_ctrcbc_encrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 	ivx = _mm_shuffle_epi8(_mm_loadu_si128(ctr), erev);
 	cmx = _mm_loadu_si128(cbcmac);
 
-	buf = data;
+	buf = (unsigned char*)data;
 	first_iter = 1;
 	while (len > 0) {
 		__m128i dx, x0, x1;
@@ -483,7 +483,7 @@ br_aes_x86ni_ctrcbc_decrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 	ivx = _mm_shuffle_epi8(_mm_loadu_si128(ctr), erev);
 	cmx = _mm_loadu_si128(cbcmac);
 
-	buf = data;
+	buf = (unsigned char*)data;
 	while (len > 0) {
 		__m128i dx, x0, x1;
 

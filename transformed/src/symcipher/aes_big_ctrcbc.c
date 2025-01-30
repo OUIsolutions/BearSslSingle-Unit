@@ -54,7 +54,7 @@ br_aes_big_ctrcbc_ctr(const br_aes_big_ctrcbc_keys *ctx,
 	unsigned char *buf, *bctr;
 	uint32_t cc0, cc1, cc2, cc3;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	bctr = ctr;
 	cc3 = br_dec32be(bctr +  0);
 	cc2 = br_dec32be(bctr +  4);
@@ -93,7 +93,7 @@ br_aes_big_ctrcbc_mac(const br_aes_big_ctrcbc_keys *ctx,
 {
 	const unsigned char *buf;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	while (len > 0) {
 		BEAR_SINGLE_UNITY_FILExorbuf(cbcmac, buf, 16);
 		br_aes_big_encrypt(ctx->num_rounds, ctx->skey, cbcmac);

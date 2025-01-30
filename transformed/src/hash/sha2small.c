@@ -205,7 +205,7 @@ sha2small_update(br_sha224_context *cc, const void *data, size_t len)
 	const unsigned char *buf;
 	size_t ptr;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	ptr = (size_t)cc->count & 63;
 	cc->count += (uint64_t)len;
 	while (len > 0) {

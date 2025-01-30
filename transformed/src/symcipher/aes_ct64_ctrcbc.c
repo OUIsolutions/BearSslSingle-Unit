@@ -69,7 +69,7 @@ br_aes_ct64_ctrcbc_ctr(const br_aes_ct64_ctrcbc_keys *ctx,
 	iv2 = br_dec32be(ivbuf +  8);
 	iv3 = br_dec32be(ivbuf + 12);
 
-	buf = data;
+	buf = (unsigned char*)data;
 	while (len > 0) {
 		uint64_t q[8];
 		uint32_t w[16];
@@ -142,7 +142,7 @@ br_aes_ct64_ctrcbc_mac(const br_aes_ct64_ctrcbc_keys *ctx,
 	cm2 = br_dec32le((unsigned char *)cbcmac +  8);
 	cm3 = br_dec32le((unsigned char *)cbcmac + 12);
 
-	buf = data;
+	buf = (unsigned char*)data;
 	memset(q, 0, sizeof q);
 	while (len > 0) {
 		uint32_t w[4];
@@ -212,7 +212,7 @@ br_aes_ct64_ctrcbc_encrypt(const br_aes_ct64_ctrcbc_keys *ctx,
 	cm2 = br_dec32le((unsigned char *)cbcmac +  8);
 	cm3 = br_dec32le((unsigned char *)cbcmac + 12);
 
-	buf = data;
+	buf = (unsigned char*)data;
 	first_iter = 1;
 	memset(q, 0, sizeof q);
 	while (len > 0) {
@@ -350,7 +350,7 @@ br_aes_ct64_ctrcbc_decrypt(const br_aes_ct64_ctrcbc_keys *ctx,
 	cm2 = br_dec32le((unsigned char *)cbcmac +  8);
 	cm3 = br_dec32le((unsigned char *)cbcmac + 12);
 
-	buf = data;
+	buf = (unsigned char*)data;
 	memset(q, 0, sizeof q);
 	while (len > 0) {
 		uint32_t w[8], carry;

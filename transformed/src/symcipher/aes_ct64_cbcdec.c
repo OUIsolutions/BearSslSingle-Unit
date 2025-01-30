@@ -44,7 +44,7 @@ br_aes_ct64_cbcdec_run(const br_aes_ct64_cbcdec_keys *ctx,
 
 	br_aes_ct64_skey_expand(sk_exp, ctx->num_rounds, ctx->skey);
 	br_range_dec32le(ivw, 4, iv);
-	buf = data;
+	buf = (unsigned char*)data;
 	while (len > 0) {
 		uint64_t q[8];
 		uint32_t w1[16], w2[16];

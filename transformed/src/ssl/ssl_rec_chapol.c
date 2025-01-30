@@ -88,7 +88,7 @@ chapol_decrypt(br_sslrec_chapol_context *cc,
 	unsigned char tag[16];
 	unsigned bad;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	len = *data_len - 16;
 	gen_chapol_process(cc, record_type, version, buf, len, tag, 0);
 	bad = 0;
@@ -148,7 +148,7 @@ chapol_encrypt(br_sslrec_chapol_context *cc,
 	unsigned char *buf;
 	size_t len;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	len = *data_len;
 	gen_chapol_process(cc, record_type, version, buf, len, buf + len, 1);
 	buf -= 5;

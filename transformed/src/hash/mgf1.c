@@ -33,7 +33,7 @@ br_mgf1_xor(void *data, size_t len,
 	size_t u, hlen;
 	uint32_t c;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	hlen = br_digest_size(dig);
 	for (u = 0, c = 0; u < len; u += hlen, c ++) {
 		br_hash_compat_context hc;

@@ -82,7 +82,7 @@ br_ghash_ctmul64(void *y, const void *h, const void *data, size_t len)
 	uint64_t y0, y1;
 	uint64_t h0, h1, h2, h0r, h1r, h2r;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	yb = y;
 	hb = h;
 	y1 = br_dec64be(yb);

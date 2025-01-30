@@ -596,7 +596,7 @@ br_aes_pwr8_cbcdec_run(const br_aes_pwr8_cbcdec_keys *ctx,
 	if (len == 0) {
 		return;
 	}
-	buf = data;
+	buf = (unsigned char*)data;
 	memcpy(nextiv, buf + len - 16, 16);
 	if (len >= 64) {
 		size_t num_blocks;

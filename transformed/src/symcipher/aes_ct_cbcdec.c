@@ -48,7 +48,7 @@ br_aes_ct_cbcdec_run(const br_aes_ct_cbcdec_keys *ctx,
 	iv1 = br_dec32le(ivbuf + 4);
 	iv2 = br_dec32le(ivbuf + 8);
 	iv3 = br_dec32le(ivbuf + 12);
-	buf = data;
+	buf = (unsigned char*)data;
 	while (len > 0) {
 		uint32_t q[8], sq[8];
 

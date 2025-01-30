@@ -134,7 +134,7 @@ BEAR_SINGLE_UNITY_FILEpoly1305_inner_big(uint64_t *acc, uint64_t *r, const void 
 	a0 = acc[0];
 	a1 = acc[1];
 	a2 = acc[2];
-	buf = data;
+	buf = (unsigned char*)data;
 
 	while (len > 0) {
 		uint64_t v0, v1, v2;
@@ -233,7 +233,7 @@ BEAR_SINGLE_UNITY_FILEpoly1305_inner_small(uint64_t *acc, uint64_t *r, const voi
 	a0 = acc[0];
 	a1 = acc[1];
 	a2 = acc[2];
-	buf = data;
+	buf = (unsigned char*)data;
 
 	while (len > 0) {
 		uint64_t v0, v1, v2;

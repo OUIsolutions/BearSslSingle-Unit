@@ -93,7 +93,7 @@ br_aes_big_encrypt(unsigned num_rounds, const uint32_t *skey, void *data)
 	uint32_t t0, t1, t2, t3;
 	unsigned u;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	s0 = br_dec32be(buf);
 	s1 = br_dec32be(buf + 4);
 	s2 = br_dec32be(buf + 8);

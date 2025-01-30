@@ -37,7 +37,7 @@ br_chacha20_ct_run(const void *key,
 		0x61707865, 0x3320646e, 0x79622d32, 0x6b206574
 	};
 
-	buf = data;
+	buf = (unsigned char*)data;
 	for (u = 0; u < 8; u ++) {
 		kw[u] = br_dec32le((const unsigned char *)key + (u << 2));
 	}

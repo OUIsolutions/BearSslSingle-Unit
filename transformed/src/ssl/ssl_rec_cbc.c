@@ -110,7 +110,7 @@ cbc_decrypt(br_sslrec_in_cbc_context *cc,
 	int i;
 	br_hmac_context hc;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	len = *data_len;
 	blen = cc->bc.vtable->block_size;
 
@@ -315,7 +315,7 @@ cbc_encrypt(br_sslrec_out_cbc_context *cc,
 	unsigned char tmp[13];
 	br_hmac_context hc;
 
-	buf = data;
+	buf = (unsigned char*)data;
 	len = *data_len;
 	blen = cc->bc.vtable->block_size;
 
