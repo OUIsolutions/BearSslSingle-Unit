@@ -21,6 +21,7 @@ function generate_release()
             return "include-once" 
         end
    )    
+   only_define_content = "#define BR_ENABLE_INTRINSICS   1\n"..only_define_content
    only_define_content = '#include "BearSSLSingleUnit.h"\n'..only_define_content
    darwin.dtw.write_file(darwin.dtw.concat_path(RELEASE_FOLDER,ONLY_DEFINE_NAME),only_define_content)
 
