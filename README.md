@@ -30,9 +30,7 @@ and compile with
  gcc -c BearSSL.c -o  BearSSL.o
  gcc main.c BearSSL.o
  ```
- ## [sumary_src.json](https://github.com/OUIsolutions/BearSslSingle-Unit/releases/download/v0.001/sumary_src.json)
- Its the list of functions and types that had to be renamed to not generate namespace colision
- in a single unit compilation
+
 
 ## Micro Client Example
 just for testing , you have in **micro_client_sample** a micro https client example,
