@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 try
+BearSSLSingleUnitOne.c
 BearSSlOutput
 origin
 debug_patches

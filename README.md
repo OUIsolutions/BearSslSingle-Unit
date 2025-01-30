@@ -38,13 +38,14 @@ for use, in your C code
 ``
 and compile with
 ```shell
- gcc -c BearSSL.c -o  BearSSL.o
+ gcc -c BearSSLSingleUnit.c -o  BearSSL.o
  gcc main.c BearSSL.o
  ```
 
 
 ## Micro Client Example
-just for testing , you have in **micro_client_sample** a micro https client example,
+just for testing , you have in **micro_client_sample** a micro https client example, put the 
+**BearSSLSingleUnitOne.c** in the same folder and
 you can compile with:
 ```shell
 gcc micro_client_sample/main.c -o client.o
@@ -59,11 +60,8 @@ and the [BearSSLTrustedAnchors.h](https://github.com/arduino-libraries/ArduinoBe
 was taken from the oficial arduino Github Organization
 
 ## Building From Scratch
-if you want to build the hole project from scracth you must have a gcc  Compiler
-and [CTags](https://github.com/universal-ctags/ctags) git  and curl installed and run in linux
+if you want to build the hole project from scracth you must have **diff**,**patch** and [Darwin](https://github.com/OUIsolutions/Darwin/tree/0.016) on version **0.016**
 just type:
 ```shel
  sh pre_build.sh && ./build.outs
 ```
-You can edit the **config/commands** files , and pass the
-**CTAGS_COMMAD**, **GIT_COMMAND** **CURL_COMMAND**  const  executable location if you want

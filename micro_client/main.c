@@ -36,7 +36,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-#include "../release/BearSSLSingleUnit.c"
+#include "BearSSLSingleUnitOne.c"
 
 
 /*
