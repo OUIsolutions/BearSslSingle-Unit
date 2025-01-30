@@ -103,7 +103,7 @@ void
 br_x509_decoder_push(br_x509_decoder_context *ctx,
 	const void *data, size_t len)
 {
-	ctx->hbuf = data;
+	ctx->hbuf = (const unsigned char*)data;
 	ctx->hlen = len;
 	br_x509_decoder_run(&ctx->cpu);
 }

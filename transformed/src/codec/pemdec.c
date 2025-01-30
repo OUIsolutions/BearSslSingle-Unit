@@ -90,7 +90,7 @@ br_pem_decoder_push(br_pem_decoder_context *ctx,
 	if (ctx->event) {
 		return 0;
 	}
-	ctx->hbuf = data;
+	ctx->hbuf = (const unsigned char*)data;
 	ctx->hlen = len;
 	br_pem_decoder_run(&ctx->cpu);
 	return len - ctx->hlen;

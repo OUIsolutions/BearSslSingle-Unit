@@ -392,8 +392,8 @@ eqnocase(const void *s1, const void *s2, size_t len)
 {
 	const unsigned char *buf1, *buf2;
 
-	buf1 = s1;
-	buf2 = s2;
+	buf1 = (const unsigned char*)s1;
+	buf2 = (const unsigned char*)s2;
 	while (len -- > 0) {
 		int x1, x2;
 

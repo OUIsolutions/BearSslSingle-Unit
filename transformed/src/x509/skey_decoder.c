@@ -94,7 +94,7 @@ void
 br_skey_decoder_push(br_skey_decoder_context *ctx,
 	const void *data, size_t len)
 {
-	ctx->hbuf = data;
+	ctx->hbuf = (const unsigned char*)data;
 	ctx->hlen = len;
 	br_skey_decoder_run(&ctx->cpu);
 }
