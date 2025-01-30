@@ -29,5 +29,6 @@ function generate_release()
    darwin.dtw.write_file(darwin.dtw.concat_path(RELEASE_FOLDER,ONLY_DEFINE_NAME),only_define_content)
 
    local zip_path = darwin.dtw.concat_path(RELEASE_FOLDER,ZIP_NAME)
-   os.execute("zip -r "..zip_path.." "..OUTPUT_DIR.."/")
+   os.execute( "cd "..OUTPUT_DIR.."&& zip -r ".."output.zip .")
+   darwin.dtw.move_any_overwriting(darwin.dtw.concat_path(OUTPUT_DIR,"output.zip"),zip_path)
 end 
