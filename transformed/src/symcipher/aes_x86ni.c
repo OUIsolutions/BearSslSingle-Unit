@@ -149,12 +149,12 @@ x86ni_keysched(__m128i *sk, const void *key, size_t len)
 		expand_step256_2(&t1, &t3); \
 	} while (0)
 
-	kb = key;
+	kb = (const unsigned char*)key;
 	switch (len) {
 		__m128i t1, t2, t3;
 
 	case 16:
-		t1 = _mm_loadu_si128((const void *)kb);
+		t1 = _mm_loadu_si128((const __m128i_u*)kb);
 		sk[0] = t1;
 		KEXP128(t1,  1, 0x01);
 		KEXP128(t1,  2, 0x02);
@@ -169,8 +169,8 @@ x86ni_keysched(__m128i *sk, const void *key, size_t len)
 		return 10;
 
 	case 24:
-		t1 = _mm_loadu_si128((const void *)kb);
-		t3 = _mm_loadu_si128((const void *)(kb + 8));
+		t1 = _mm_loadu_si128((const __m128i_u*)kb);
+		t3 = _mm_loadu_si128((const __m128i_u*)(kb + 8));
 		t3 = _mm_shuffle_epi32(t3, 0x4E);
 		KEXP192(0, 0x01, 0x02);
 		KEXP192(3, 0x04, 0x08);
@@ -180,8 +180,8 @@ x86ni_keysched(__m128i *sk, const void *key, size_t len)
 		return 12;
 
 	case 32:
-		t1 = _mm_loadu_si128((const void *)kb);
-		t3 = _mm_loadu_si128((const void *)(kb + 16));
+		t1 = _mm_loadu_si128((const __m128i_u*)kb);
+		t3 = _mm_loadu_si128((const __m128i_u*)(kb + 16));
 		sk[0] = t1;
 		KEXP256( 1, 0x01);
 		KEXP256( 3, 0x02);
@@ -226,12 +226,12 @@ br_aes_x86ni_keysched_dec(unsigned char *skni, const void *key, size_t len)
 	unsigned u, num_rounds;
 
 	num_rounds = x86ni_keysched(sk, key, len);
-	_mm_storeu_si128((void *)skni, sk[num_rounds]);
+	_mm_storeu_si128((__m128i_u*)skni, sk[num_rounds]);
 	for (u = 1; u < num_rounds; u ++) {
-		_mm_storeu_si128((void *)(skni + (u << 4)),
+		_mm_storeu_si128((__m128i_u*)(skni + (u << 4)),
 			_mm_aesimc_si128(sk[num_rounds - u]));
 	}
-	_mm_storeu_si128((void *)(skni + (num_rounds << 4)), sk[0]);
+	_mm_storeu_si128((__m128i_u*)(skni + (num_rounds << 4)), sk[0]);
 	return num_rounds;
 }
 

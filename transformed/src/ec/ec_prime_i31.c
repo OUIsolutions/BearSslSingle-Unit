@@ -630,7 +630,7 @@ BEAR_SINGLE_UNITY_FILEpoint_decode(BEAR_SINGLE_UNITY_FILEjacobian *P, const void
 	uint32_t r;
 	BEAR_SINGLE_UNITY_FILEjacobian Q;
 
-	buf = src;
+	buf = (const unsigned char*)src;
 	BEAR_SINGLE_UNITY_FILEpoint_zero(P, cc);
 	plen = (cc->p[0] - (cc->p[0] >> 5) + 7) >> 3;
 	if (len != 1 + (plen << 1)) {
@@ -672,7 +672,7 @@ BEAR_SINGLE_UNITY_FILEpoint_encode(void *dst, const BEAR_SINGLE_UNITY_FILEjacobi
 	size_t plen;
 	BEAR_SINGLE_UNITY_FILEjacobian Q, T;
 
-	buf = dst;
+	buf = (unsigned char*)dst;
 	xbl = cc->p[0];
 	xbl -= (xbl >> 5);
 	plen = (xbl + 7) >> 3;

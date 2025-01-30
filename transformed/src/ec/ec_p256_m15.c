@@ -1697,7 +1697,7 @@ BEAR_SINGLE_UNITY_FILEp256_decode(p256_BEAR_SINGLE_UNITY_FILEjacobian *P, const 
 	if (len != 65) {
 		return 0;
 	}
-	buf = src;
+	buf = (const unsigned char*)src;
 
 	/*
 	 * First byte must be 0x04 (uncompressed format). We could support
@@ -1751,7 +1751,7 @@ BEAR_SINGLE_UNITY_FILEp256_encode(void *dst, const p256_BEAR_SINGLE_UNITY_FILEja
 {
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (unsigned char*)dst;
 	buf[0] = 0x04;
 	le13_to_be8(buf + 1, 32, P->x);
 	le13_to_be8(buf + 33, 32, P->y);

@@ -61,7 +61,7 @@ br_aes_x86ni_ctrcbc_ctr(const br_aes_x86ni_ctrcbc_keys *ctx,
 	buf = (unsigned char*)data;
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
 	}
 
 	/*
@@ -78,7 +78,7 @@ br_aes_x86ni_ctrcbc_ctr(const br_aes_x86ni_ctrcbc_keys *ctx,
 	 * Decode the counter in big-endian and pre-increment the other
 	 * three counters.
 	 */
-	ivx0 = _mm_shuffle_epi8(_mm_loadu_si128((void *)ctr), erev);
+	ivx0 = _mm_shuffle_epi8(_mm_loadu_si128((const __m128i_u*)ctr), erev);
 	ivx1 = _mm_add_epi64(ivx0, one);
 	ivx1 = _mm_sub_epi64(ivx1,
 		_mm_slli_si128(_mm_cmpeq_epi64(ivx1, zero), 8));
@@ -182,26 +182,26 @@ br_aes_x86ni_ctrcbc_ctr(const br_aes_x86ni_ctrcbc_keys *ctx,
 		}
 		if (len >= 64) {
 			x0 = _mm_xor_si128(x0,
-				_mm_loadu_si128((void *)(buf +  0)));
+				_mm_loadu_si128((const __m128i_u*)(buf +  0)));
 			x1 = _mm_xor_si128(x1,
-				_mm_loadu_si128((void *)(buf + 16)));
+				_mm_loadu_si128((const __m128i_u*)(buf + 16)));
 			x2 = _mm_xor_si128(x2,
-				_mm_loadu_si128((void *)(buf + 32)));
+				_mm_loadu_si128((const __m128i_u*)(buf + 32)));
 			x3 = _mm_xor_si128(x3,
-				_mm_loadu_si128((void *)(buf + 48)));
-			_mm_storeu_si128((void *)(buf +  0), x0);
-			_mm_storeu_si128((void *)(buf + 16), x1);
-			_mm_storeu_si128((void *)(buf + 32), x2);
-			_mm_storeu_si128((void *)(buf + 48), x3);
+				_mm_loadu_si128((const __m128i_u*)(buf + 48)));
+			_mm_storeu_si128((__m128i_u*)(buf +  0), x0);
+			_mm_storeu_si128((__m128i_u*)(buf + 16), x1);
+			_mm_storeu_si128((__m128i_u*)(buf + 32), x2);
+			_mm_storeu_si128((__m128i_u*)(buf + 48), x3);
 			buf += 64;
 			len -= 64;
 		} else {
 			unsigned char tmp[64];
 
-			_mm_storeu_si128((void *)(tmp +  0), x0);
-			_mm_storeu_si128((void *)(tmp + 16), x1);
-			_mm_storeu_si128((void *)(tmp + 32), x2);
-			_mm_storeu_si128((void *)(tmp + 48), x3);
+			_mm_storeu_si128((__m128i_u*)(tmp +  0), x0);
+			_mm_storeu_si128((__m128i_u*)(tmp + 16), x1);
+			_mm_storeu_si128((__m128i_u*)(tmp + 32), x2);
+			_mm_storeu_si128((__m128i_u*)(tmp + 48), x3);
 			for (u = 0; u < len; u ++) {
 				buf[u] ^= tmp[u];
 			}
@@ -248,7 +248,7 @@ br_aes_x86ni_ctrcbc_ctr(const br_aes_x86ni_ctrcbc_keys *ctx,
 	 * Write back new counter value. The loop took care to put the
 	 * right counter value in ivx0.
 	 */
-	_mm_storeu_si128((void *)ctr, _mm_shuffle_epi8(ivx0, erev));
+	_mm_storeu_si128((__m128i_u*)ctr, _mm_shuffle_epi8(ivx0, erev));
 }
 
 /* see bearssl_block.h */
@@ -263,15 +263,15 @@ br_aes_x86ni_ctrcbc_mac(const br_aes_x86ni_ctrcbc_keys *ctx,
 	unsigned u;
 
 	buf = (unsigned char*)data;
-	ivx = _mm_loadu_si128(cbcmac);
+	ivx = _mm_loadu_si128((const __m128i_u*)cbcmac);
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
 	}
 	while (len > 0) {
 		__m128i x;
 
-		x = _mm_xor_si128(_mm_loadu_si128((void *)buf), ivx);
+		x = _mm_xor_si128(_mm_loadu_si128((const __m128i_u*)buf), ivx);
 		x = _mm_xor_si128(x, sk[0]);
 		x = _mm_aesenc_si128(x, sk[1]);
 		x = _mm_aesenc_si128(x, sk[2]);
@@ -299,7 +299,7 @@ br_aes_x86ni_ctrcbc_mac(const br_aes_x86ni_ctrcbc_keys *ctx,
 		buf += 16;
 		len -= 16;
 	}
-	_mm_storeu_si128(cbcmac, ivx);
+	_mm_storeu_si128((__m128i_u*)cbcmac, ivx);
 }
 
 /* see bearssl_block.h */
@@ -318,7 +318,7 @@ br_aes_x86ni_ctrcbc_encrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
 	}
 
 	/*
@@ -332,8 +332,8 @@ br_aes_x86ni_ctrcbc_encrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 	/*
 	 * Decode the counter in big-endian.
 	 */
-	ivx = _mm_shuffle_epi8(_mm_loadu_si128(ctr), erev);
-	cmx = _mm_loadu_si128(cbcmac);
+	ivx = _mm_shuffle_epi8(_mm_loadu_si128((const __m128i_u*)ctr), erev);
+	cmx = _mm_loadu_si128((const __m128i_u*)cbcmac);
 
 	buf = (unsigned char*)data;
 	first_iter = 1;
@@ -346,7 +346,7 @@ br_aes_x86ni_ctrcbc_encrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 		 *   x0   counter (for CTR encryption)
 		 *   x1   input for CBC-MAC
 		 */
-		dx = _mm_loadu_si128((void *)buf);
+		dx = _mm_loadu_si128((const __m128i_u*)buf);
 		x0 = _mm_shuffle_epi8(ivx, erev);
 		x1 = cmx;
 
@@ -400,7 +400,7 @@ br_aes_x86ni_ctrcbc_encrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 		} else {
 			cmx = _mm_xor_si128(x1, x0);
 		}
-		_mm_storeu_si128((void *)buf, x0);
+		_mm_storeu_si128((__m128i_u*)buf, x0);
 
 		buf += 16;
 		len -= 16;
@@ -447,8 +447,8 @@ br_aes_x86ni_ctrcbc_encrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 	/*
 	 * Write back new counter value and CBC-MAC value.
 	 */
-	_mm_storeu_si128(ctr, _mm_shuffle_epi8(ivx, erev));
-	_mm_storeu_si128(cbcmac, cmx);
+	_mm_storeu_si128((__m128i_u*)ctr, _mm_shuffle_epi8(ivx, erev));
+	_mm_storeu_si128((__m128i_u*)cbcmac, cmx);
 }
 
 /* see bearssl_block.h */
@@ -466,7 +466,7 @@ br_aes_x86ni_ctrcbc_decrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
 	}
 
 	/*
@@ -480,8 +480,8 @@ br_aes_x86ni_ctrcbc_decrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 	/*
 	 * Decode the counter in big-endian.
 	 */
-	ivx = _mm_shuffle_epi8(_mm_loadu_si128(ctr), erev);
-	cmx = _mm_loadu_si128(cbcmac);
+	ivx = _mm_shuffle_epi8(_mm_loadu_si128((const __m128i_u*)ctr), erev);
+	cmx = _mm_loadu_si128((const __m128i_u*)cbcmac);
 
 	buf = (unsigned char*)data;
 	while (len > 0) {
@@ -493,7 +493,7 @@ br_aes_x86ni_ctrcbc_decrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 		 *   x0   counter (for CTR encryption)
 		 *   x1   input for CBC-MAC
 		 */
-		dx = _mm_loadu_si128((void *)buf);
+		dx = _mm_loadu_si128((const __m128i_u*)buf);
 		x0 = _mm_shuffle_epi8(ivx, erev);
 		x1 = _mm_xor_si128(cmx, dx);
 
@@ -541,7 +541,7 @@ br_aes_x86ni_ctrcbc_decrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 		}
 		x0 = _mm_xor_si128(x0, dx);
 		cmx = x1;
-		_mm_storeu_si128((void *)buf, x0);
+		_mm_storeu_si128((__m128i_u*)buf, x0);
 
 		buf += 16;
 		len -= 16;
@@ -557,8 +557,8 @@ br_aes_x86ni_ctrcbc_decrypt(const br_aes_x86ni_ctrcbc_keys *ctx,
 	/*
 	 * Write back new counter value and CBC-MAC value.
 	 */
-	_mm_storeu_si128(ctr, _mm_shuffle_epi8(ivx, erev));
-	_mm_storeu_si128(cbcmac, cmx);
+	_mm_storeu_si128((__m128i_u*)ctr, _mm_shuffle_epi8(ivx, erev));
+	_mm_storeu_si128((__m128i_u*)cbcmac, cmx);
 }
 
 BR_TARGETS_X86_DOWN

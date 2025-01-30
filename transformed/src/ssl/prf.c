@@ -40,7 +40,7 @@ br_tls_phash(void *dst, size_t len,
 	if (len == 0) {
 		return;
 	}
-	buf = dst;
+	buf = (unsigned char*)dst;
 	for (label_len = 0; label[label_len]; label_len ++);
 	hlen = br_digest_size(dig);
 	br_hmac_key_init(&kc, dig, secret, secret_len);

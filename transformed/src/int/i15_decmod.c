@@ -56,7 +56,7 @@ br_i15_decode_mod(uint16_t *x, const void *src, size_t len, const uint16_t *m)
 	int pass;
 	uint32_t r;
 
-	buf = src;
+	buf = (const unsigned char*)src;
 	mlen = (m[0] + 15) >> 4;
 	tlen = (mlen << 1);
 	if (tlen < len) {

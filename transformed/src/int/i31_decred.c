@@ -66,7 +66,7 @@ br_i31_decode_reduce(uint32_t *x,
 		x[0] = m_ebitlen;
 		return;
 	}
-	buf = src;
+	buf = (const unsigned char*)src;
 	br_i31_decode(x, buf, k);
 	x[0] = m_ebitlen;
 

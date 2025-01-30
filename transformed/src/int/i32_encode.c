@@ -31,7 +31,7 @@ br_i32_encode(void *dst, size_t len, const uint32_t *x)
 	unsigned char *buf;
 	size_t k;
 
-	buf = dst;
+	buf = (unsigned char*)dst;
 
 	/*
 	 * Compute the announced size of x in bytes; extra bytes are

@@ -31,7 +31,7 @@ br_i32_decode(uint32_t *x, const void *src, size_t len)
 	const unsigned char *buf;
 	size_t u, v;
 
-	buf = src;
+	buf = (const unsigned char*)src;
 	u = len;
 	v = 1;
 	for (;;) {

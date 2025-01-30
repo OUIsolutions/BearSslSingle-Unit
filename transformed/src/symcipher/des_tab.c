@@ -244,7 +244,7 @@ br_des_tab_process_block(unsigned num_rounds, const uint32_t *skey, void *block)
 	unsigned char *buf;
 	uint32_t l, r;
 
-	buf = block;
+	buf = (unsigned char*)block;
 	l = br_dec32be(buf);
 	r = br_dec32be(buf + 4);
 	br_des_do_IP(&l, &r);

@@ -33,7 +33,7 @@ br_i15_decode(uint16_t *x, const void *src, size_t len)
 	uint32_t acc;
 	int acc_len;
 
-	buf = src;
+	buf = (const unsigned char*)src;
 	v = 1;
 	acc = 0;
 	acc_len = 0;

@@ -41,7 +41,7 @@ xor_BEAR_SINGLE_UNITY_FILEhash_data(const br_hash_class *dig, void *dst, const v
 	dig->init(&hc.vtable);
 	dig->update(&hc.vtable, src, len);
 	dig->out(&hc.vtable, tmp);
-	buf = dst;
+	buf = (unsigned char*)dst;
 	hlen = br_digest_size(dig);
 	for (u = 0; u < hlen; u ++) {
 		buf[u] ^= tmp[u];

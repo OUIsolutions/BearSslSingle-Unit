@@ -62,9 +62,9 @@ br_aes_x86ni_ctr_run(const br_aes_x86ni_ctr_keys *ctx,
 	memcpy(ivbuf, iv, 12);
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
 	}
-	ivx = _mm_loadu_si128((void *)ivbuf);
+	ivx = _mm_loadu_si128((const __m128i_u*)ivbuf);
 	while (len > 0) {
 		__m128i x0, x1, x2, x3;
 
@@ -154,27 +154,27 @@ br_aes_x86ni_ctr_run(const br_aes_x86ni_ctr_keys *ctx,
 		}
 		if (len >= 64) {
 			x0 = _mm_xor_si128(x0,
-				_mm_loadu_si128((void *)(buf +  0)));
+				_mm_loadu_si128((const __m128i_u*)(buf +  0)));
 			x1 = _mm_xor_si128(x1,
-				_mm_loadu_si128((void *)(buf + 16)));
+				_mm_loadu_si128((const __m128i_u*)(buf + 16)));
 			x2 = _mm_xor_si128(x2,
-				_mm_loadu_si128((void *)(buf + 32)));
+				_mm_loadu_si128((const __m128i_u*)(buf + 32)));
 			x3 = _mm_xor_si128(x3,
-				_mm_loadu_si128((void *)(buf + 48)));
-			_mm_storeu_si128((void *)(buf +  0), x0);
-			_mm_storeu_si128((void *)(buf + 16), x1);
-			_mm_storeu_si128((void *)(buf + 32), x2);
-			_mm_storeu_si128((void *)(buf + 48), x3);
+				_mm_loadu_si128((const __m128i_u*)(buf + 48)));
+			_mm_storeu_si128((__m128i_u*)(buf +  0), x0);
+			_mm_storeu_si128((__m128i_u*)(buf + 16), x1);
+			_mm_storeu_si128((__m128i_u*)(buf + 32), x2);
+			_mm_storeu_si128((__m128i_u*)(buf + 48), x3);
 			buf += 64;
 			len -= 64;
 			cc += 4;
 		} else {
 			unsigned char tmp[64];
 
-			_mm_storeu_si128((void *)(tmp +  0), x0);
-			_mm_storeu_si128((void *)(tmp + 16), x1);
-			_mm_storeu_si128((void *)(tmp + 32), x2);
-			_mm_storeu_si128((void *)(tmp + 48), x3);
+			_mm_storeu_si128((__m128i_u*)(tmp +  0), x0);
+			_mm_storeu_si128((__m128i_u*)(tmp + 16), x1);
+			_mm_storeu_si128((__m128i_u*)(tmp + 32), x2);
+			_mm_storeu_si128((__m128i_u*)(tmp + 48), x3);
 			for (u = 0; u < len; u ++) {
 				buf[u] ^= tmp[u];
 			}

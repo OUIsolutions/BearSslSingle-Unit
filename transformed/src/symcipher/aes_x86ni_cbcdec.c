@@ -57,23 +57,23 @@ br_aes_x86ni_cbcdec_run(const br_aes_x86ni_cbcdec_keys *ctx,
 	unsigned u;
 
 	buf = (unsigned char*)data;
-	ivx = _mm_loadu_si128(iv);
+	ivx = _mm_loadu_si128((const __m128i_u*)iv);
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
 	}
 	while (len > 0) {
 		__m128i x0, x1, x2, x3, e0, e1, e2, e3;
 
-		x0 = _mm_loadu_si128((void *)(buf +  0));
+		x0 = _mm_loadu_si128((const __m128i_u*)(buf +  0));
 		if (len >= 64) {
-			x1 = _mm_loadu_si128((void *)(buf + 16));
-			x2 = _mm_loadu_si128((void *)(buf + 32));
-			x3 = _mm_loadu_si128((void *)(buf + 48));
+			x1 = _mm_loadu_si128((const __m128i_u*)(buf + 16));
+			x2 = _mm_loadu_si128((const __m128i_u*)(buf + 32));
+			x3 = _mm_loadu_si128((const __m128i_u*)(buf + 48));
 		} else {
-			x0 = _mm_loadu_si128((void *)(buf +  0));
+			x0 = _mm_loadu_si128((const __m128i_u*)(buf +  0));
 			if (len >= 32) {
-				x1 = _mm_loadu_si128((void *)(buf + 16));
+				x1 = _mm_loadu_si128((const __m128i_u*)(buf + 16));
 				if (len >= 48) {
 					x2 = _mm_loadu_si128(
 						(void *)(buf + 32));
@@ -177,16 +177,16 @@ br_aes_x86ni_cbcdec_run(const br_aes_x86ni_cbcdec_keys *ctx,
 		x2 = _mm_xor_si128(x2, e1);
 		x3 = _mm_xor_si128(x3, e2);
 		ivx = e3;
-		_mm_storeu_si128((void *)(buf +  0), x0);
+		_mm_storeu_si128((__m128i_u*)(buf +  0), x0);
 		if (len >= 64) {
-			_mm_storeu_si128((void *)(buf + 16), x1);
-			_mm_storeu_si128((void *)(buf + 32), x2);
-			_mm_storeu_si128((void *)(buf + 48), x3);
+			_mm_storeu_si128((__m128i_u*)(buf + 16), x1);
+			_mm_storeu_si128((__m128i_u*)(buf + 32), x2);
+			_mm_storeu_si128((__m128i_u*)(buf + 48), x3);
 			buf += 64;
 			len -= 64;
 		} else {
 			if (len >= 32) {
-				_mm_storeu_si128((void *)(buf + 16), x1);
+				_mm_storeu_si128((__m128i_u*)(buf + 16), x1);
 				if (len >= 48) {
 					_mm_storeu_si128(
 						(void *)(buf + 32), x2);
@@ -195,7 +195,7 @@ br_aes_x86ni_cbcdec_run(const br_aes_x86ni_cbcdec_keys *ctx,
 			break;
 		}
 	}
-	_mm_storeu_si128(iv, ivx);
+	_mm_storeu_si128((__m128i_u*)iv, ivx);
 }
 
 BR_TARGETS_X86_DOWN

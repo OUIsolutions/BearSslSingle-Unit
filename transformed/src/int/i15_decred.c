@@ -66,7 +66,7 @@ br_i15_decode_reduce(uint16_t *x,
 		x[0] = m_ebitlen;
 		return;
 	}
-	buf = src;
+	buf = (const unsigned char*)src;
 	br_i15_decode(x, buf, k);
 	x[0] = m_ebitlen;
 

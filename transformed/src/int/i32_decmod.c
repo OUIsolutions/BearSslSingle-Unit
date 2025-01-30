@@ -32,7 +32,7 @@ br_i32_decode_mod(uint32_t *x, const void *src, size_t len, const uint32_t *m)
 	uint32_t r;
 	size_t u, v, mlen;
 
-	buf = src;
+	buf = (const unsigned char*)src;
 
 	/*
 	 * First pass: determine whether the value fits. The 'r' value

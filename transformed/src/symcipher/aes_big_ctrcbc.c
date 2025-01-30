@@ -39,8 +39,8 @@ BEAR_SINGLE_UNITY_FILExorbuf(void *dst, const void *src, size_t len)
 	unsigned char *d;
 	const unsigned char *s;
 
-	d = dst;
-	s = src;
+	d = (unsigned char*)dst;
+	s = (const unsigned char*)src;
 	while (len -- > 0) {
 		*d ++ ^= *s ++;
 	}
@@ -55,7 +55,7 @@ br_aes_big_ctrcbc_ctr(const br_aes_big_ctrcbc_keys *ctx,
 	uint32_t cc0, cc1, cc2, cc3;
 
 	buf = (unsigned char*)data;
-	bctr = ctr;
+	bctr = (unsigned char*)ctr;
 	cc3 = br_dec32be(bctr +  0);
 	cc2 = br_dec32be(bctr +  4);
 	cc1 = br_dec32be(bctr +  8);

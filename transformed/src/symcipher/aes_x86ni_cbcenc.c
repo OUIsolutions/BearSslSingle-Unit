@@ -57,15 +57,15 @@ br_aes_x86ni_cbcenc_run(const br_aes_x86ni_cbcenc_keys *ctx,
 	unsigned u;
 
 	buf = (unsigned char*)data;
-	ivx = _mm_loadu_si128(iv);
+	ivx = _mm_loadu_si128((const __m128i_u*)iv);
 	num_rounds = ctx->num_rounds;
 	for (u = 0; u <= num_rounds; u ++) {
-		sk[u] = _mm_loadu_si128((void *)(ctx->skey.skni + (u << 4)));
+		sk[u] = _mm_loadu_si128((const __m128i_u*)(ctx->skey.skni + (u << 4)));
 	}
 	while (len > 0) {
 		__m128i x;
 
-		x = _mm_xor_si128(_mm_loadu_si128((void *)buf), ivx);
+		x = _mm_xor_si128(_mm_loadu_si128((const __m128i_u*)buf), ivx);
 		x = _mm_xor_si128(x, sk[0]);
 		x = _mm_aesenc_si128(x, sk[1]);
 		x = _mm_aesenc_si128(x, sk[2]);
@@ -90,11 +90,11 @@ br_aes_x86ni_cbcenc_run(const br_aes_x86ni_cbcenc_keys *ctx,
 			x = _mm_aesenclast_si128(x, sk[14]);
 		}
 		ivx = x;
-		_mm_storeu_si128((void *)buf, x);
+		_mm_storeu_si128((__m128i_u*)buf, x);
 		buf += 16;
 		len -= 16;
 	}
-	_mm_storeu_si128(iv, ivx);
+	_mm_storeu_si128((__m128i_u*)iv, ivx);
 }
 
 BR_TARGETS_X86_DOWN

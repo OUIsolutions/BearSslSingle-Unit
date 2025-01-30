@@ -371,7 +371,7 @@ br_des_ct_process_block(unsigned num_rounds,
 	unsigned char *buf;
 	uint32_t l, r;
 
-	buf = block;
+	buf = (unsigned char*)block;
 	l = br_dec32be(buf);
 	r = br_dec32be(buf + 4);
 	br_des_do_IP(&l, &r);

@@ -301,10 +301,10 @@ br_ghash_pclmul(void *y, const void *h, const void *data, size_t len)
 			__m128i aw0, aw1, aw2, aw3;
 			__m128i ax0, ax1, ax2, ax3;
 
-			aw0 = _mm_loadu_si128((void *)(buf1 +  0));
-			aw1 = _mm_loadu_si128((void *)(buf1 + 16));
-			aw2 = _mm_loadu_si128((void *)(buf1 + 32));
-			aw3 = _mm_loadu_si128((void *)(buf1 + 48));
+			aw0 = _mm_loadu_si128((const __m128i_u*)(buf1 +  0));
+			aw1 = _mm_loadu_si128((const __m128i_u*)(buf1 + 16));
+			aw2 = _mm_loadu_si128((const __m128i_u*)(buf1 + 32));
+			aw3 = _mm_loadu_si128((const __m128i_u*)(buf1 + 48));
 			BYTESWAP(aw0);
 			BYTESWAP(aw1);
 			BYTESWAP(aw2);
@@ -352,7 +352,7 @@ br_ghash_pclmul(void *y, const void *h, const void *data, size_t len)
 		__m128i aw, ax;
 		__m128i t0, t1, t2, t3;
 
-		aw = _mm_loadu_si128((void *)buf2);
+		aw = _mm_loadu_si128((const __m128i_u*)buf2);
 		BYTESWAP(aw);
 		buf2 += 16;
 
@@ -372,7 +372,7 @@ br_ghash_pclmul(void *y, const void *h, const void *data, size_t len)
 	}
 
 	BYTESWAP(yw);
-	_mm_storeu_si128(y, yw);
+	_mm_storeu_si128((__m128i_u*)y, yw);
 }
 
 BR_TARGETS_X86_DOWN

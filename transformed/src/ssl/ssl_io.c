@@ -170,7 +170,7 @@ br_sslio_read_all(br_sslio_context *ctx, void *dst, size_t len)
 {
 	unsigned char *buf;
 
-	buf = dst;
+	buf = (unsigned char*)dst;
 	while (len > 0) {
 		int rlen;
 
@@ -212,7 +212,7 @@ br_sslio_write_all(br_sslio_context *ctx, const void *src, size_t len)
 {
 	const unsigned char *buf;
 
-	buf = src;
+	buf = (const unsigned char*)src;
 	while (len > 0) {
 		int wlen;
 

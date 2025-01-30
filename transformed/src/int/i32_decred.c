@@ -70,7 +70,7 @@ br_i32_decode_reduce(uint32_t *x,
 	 * then extra bytes by whole 32-bit words. First compute
 	 * the size that should be injected that way.
 	 */
-	buf = src;
+	buf = (const unsigned char*)src;
 	q = (len - k + 3) & ~(size_t)3;
 
 	/*

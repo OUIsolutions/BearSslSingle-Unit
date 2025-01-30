@@ -33,7 +33,7 @@ br_i31_decode(uint32_t *x, const void *src, size_t len)
 	uint32_t acc;
 	int acc_len;
 
-	buf = src;
+	buf = (const unsigned char*)src;
 	u = len;
 	v = 1;
 	acc = 0;

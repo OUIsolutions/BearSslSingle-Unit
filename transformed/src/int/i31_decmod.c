@@ -56,7 +56,7 @@ br_i31_decode_mod(uint32_t *x, const void *src, size_t len, const uint32_t *m)
 	int pass;
 	uint32_t r;
 
-	buf = src;
+	buf = (const unsigned char*)src;
 	mlen = (m[0] + 31) >> 5;
 	tlen = (mlen << 2);
 	if (tlen < len) {

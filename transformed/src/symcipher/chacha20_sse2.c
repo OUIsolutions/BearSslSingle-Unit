@@ -77,12 +77,12 @@ br_chacha20_sse2_run(const void *key,
 	};
 
 	buf = (unsigned char*)data;
-	kw0 = _mm_loadu_si128(key);
-	kw1 = _mm_loadu_si128((const void *)((const unsigned char *)key + 16));
+	kw0 = _mm_loadu_si128((const __m128i_u*)key);
+	kw1 = _mm_loadu_si128((const __m128i_u*)((const unsigned char *)key + 16));
 	ivtmp[0] = cc;
 	memcpy(ivtmp + 1, iv, 12);
-	iw = _mm_loadu_si128((const void *)ivtmp);
-	cw = _mm_loadu_si128((const void *)CW);
+	iw = _mm_loadu_si128((const __m128i_u*)ivtmp);
+	cw = _mm_loadu_si128((const __m128i_u*)CW);
 	one = _mm_set_epi32(0, 0, 0, 1);
 
 	while (len > 0) {
@@ -187,10 +187,10 @@ br_chacha20_sse2_run(const void *key,
 			unsigned char tmp[64];
 			size_t u;
 
-			_mm_storeu_si128((void *)(tmp +  0), s0);
-			_mm_storeu_si128((void *)(tmp + 16), s1);
-			_mm_storeu_si128((void *)(tmp + 32), s2);
-			_mm_storeu_si128((void *)(tmp + 48), s3);
+			_mm_storeu_si128((__m128i_u*)(tmp +  0), s0);
+			_mm_storeu_si128((__m128i_u*)(tmp + 16), s1);
+			_mm_storeu_si128((__m128i_u*)(tmp + 32), s2);
+			_mm_storeu_si128((__m128i_u*)(tmp + 48), s3);
 			for (u = 0; u < len; u ++) {
 				buf[u] ^= tmp[u];
 			}
@@ -198,18 +198,18 @@ br_chacha20_sse2_run(const void *key,
 		} else {
 			__m128i b0, b1, b2, b3;
 
-			b0 = _mm_loadu_si128((const void *)(buf +  0));
-			b1 = _mm_loadu_si128((const void *)(buf + 16));
-			b2 = _mm_loadu_si128((const void *)(buf + 32));
-			b3 = _mm_loadu_si128((const void *)(buf + 48));
+			b0 = _mm_loadu_si128((const __m128i_u*)(buf +  0));
+			b1 = _mm_loadu_si128((const __m128i_u*)(buf + 16));
+			b2 = _mm_loadu_si128((const __m128i_u*)(buf + 32));
+			b3 = _mm_loadu_si128((const __m128i_u*)(buf + 48));
 			b0 = _mm_xor_si128(b0, s0);
 			b1 = _mm_xor_si128(b1, s1);
 			b2 = _mm_xor_si128(b2, s2);
 			b3 = _mm_xor_si128(b3, s3);
-			_mm_storeu_si128((void *)(buf +  0), b0);
-			_mm_storeu_si128((void *)(buf + 16), b1);
-			_mm_storeu_si128((void *)(buf + 32), b2);
-			_mm_storeu_si128((void *)(buf + 48), b3);
+			_mm_storeu_si128((__m128i_u*)(buf +  0), b0);
+			_mm_storeu_si128((__m128i_u*)(buf + 16), b1);
+			_mm_storeu_si128((__m128i_u*)(buf + 32), b2);
+			_mm_storeu_si128((__m128i_u*)(buf + 48), b3);
 			buf += 64;
 			len -= 64;
 		}

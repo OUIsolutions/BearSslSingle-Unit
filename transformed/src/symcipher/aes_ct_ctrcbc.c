@@ -39,8 +39,8 @@ BEAR_SINGLE_UNITY_FILExorbuf(void *dst, const void *src, size_t len)
 	unsigned char *d;
 	const unsigned char *s;
 
-	d = dst;
-	s = src;
+	d = (unsigned char*)dst;
+	s = (const unsigned char*)src;
 	while (len -- > 0) {
 		*d ++ ^= *s ++;
 	}
@@ -63,7 +63,7 @@ br_aes_ct_ctrcbc_ctr(const br_aes_ct_ctrcbc_keys *ctx,
 	 * convention, because that's what is expected for purposes of
 	 * incrementing the counter value.
 	 */
-	ivbuf = ctr;
+	ivbuf = (unsigned char*)ctr;
 	iv0 = br_dec32be(ivbuf +  0);
 	iv1 = br_dec32be(ivbuf +  4);
 	iv2 = br_dec32be(ivbuf +  8);
@@ -201,7 +201,7 @@ br_aes_ct_ctrcbc_encrypt(const br_aes_ct_ctrcbc_keys *ctx,
 	 * convention, because that's what is expected for purposes of
 	 * incrementing the counter value.
 	 */
-	ivbuf = ctr;
+	ivbuf = (unsigned char*)ctr;
 	iv0 = br_dec32be(ivbuf +  0);
 	iv1 = br_dec32be(ivbuf +  4);
 	iv2 = br_dec32be(ivbuf +  8);
@@ -330,7 +330,7 @@ br_aes_ct_ctrcbc_decrypt(const br_aes_ct_ctrcbc_keys *ctx,
 	 * convention, because that's what is expected for purposes of
 	 * incrementing the counter value.
 	 */
-	ivbuf = ctr;
+	ivbuf = (unsigned char*)ctr;
 	iv0 = br_dec32be(ivbuf +  0);
 	iv1 = br_dec32be(ivbuf +  4);
 	iv2 = br_dec32be(ivbuf +  8);

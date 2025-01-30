@@ -41,7 +41,7 @@ br_i15_encode(void *dst, size_t len, const uint16_t *x)
 	u = 1;
 	acc = 0;
 	acc_len = 0;
-	buf = dst;
+	buf = (unsigned char*)dst;
 	while (len -- > 0) {
 		if (acc_len < 8) {
 			if (u <= xlen) {

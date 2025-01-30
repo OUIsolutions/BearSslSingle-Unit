@@ -77,7 +77,7 @@ br_rsa_oaep_pad(const br_prng_class **rnd, const br_hash_class *dig,
 	/*
 	 * Apply padding. At this point, things cannot fail.
 	 */
-	buf = dst;
+	buf = (unsigned char*)dst;
 
 	/*
 	 * Assemble: DB = lHash || PS || 0x01 || M
