@@ -35,7 +35,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
-#include "../BearSSlOutput/one.c"
+#include "../release/BearSSLSingleUnitOne.c"
 
 
 /*
