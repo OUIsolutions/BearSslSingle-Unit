@@ -42,6 +42,11 @@ and compile with
  gcc main.c BearSSL.o
  ```
 
+## Main Differences
+- a lot of functions and structures were renamed to avoid namespaces conflicts you can check in
+**patchs** dir 
+- some cast were added to make code valid in C++ and C
+- The flag **BR_ENABLE_INTRINSICS** its set to 1 by default to allow single unit compilation
 
 ## Micro Client Example
 just for testing , you have in **micro_client_sample** a micro https client example, put the 
@@ -58,6 +63,7 @@ and you can test with
 Note that these example was taken from the original  [BearrSSL](https://bearssl.org/)  samples page
 and the [BearSSLTrustedAnchors.h](https://github.com/arduino-libraries/ArduinoBearSSL/blob/master/src/BearSSLTrustAnchors.h)
 was taken from the oficial arduino Github Organization
+
 
 ## Building From Scratch
 if you want to build the hole project from scracth you must have 
