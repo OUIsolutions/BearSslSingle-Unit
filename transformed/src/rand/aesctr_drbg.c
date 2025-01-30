@@ -46,7 +46,7 @@ br_aesctr_drbg_generate(br_aesctr_drbg_context *ctx, void *out, size_t len)
 	unsigned char *buf;
 	unsigned char iv[12];
 
-	buf = out;
+	buf = (unsigned char*)out;
 	memset(iv, 0, sizeof iv);
 	while (len > 0) {
 		size_t clen;

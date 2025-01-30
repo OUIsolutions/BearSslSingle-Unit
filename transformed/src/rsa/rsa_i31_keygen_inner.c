@@ -442,8 +442,8 @@ BEAR_SINGLE_UNITY_FILEbufswap(void *b1, void *b2, size_t len)
 	size_t u;
 	unsigned char *buf1, *buf2;
 
-	buf1 = b1;
-	buf2 = b2;
+	buf1 = (unsigned char*)b1;
+	buf2 = (unsigned char*)b2;
 	for (u = 0; u < len; u ++) {
 		unsigned w;
 
@@ -481,7 +481,7 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	esize_p = (size + 1) >> 1;
 	esize_q = size - esize_p;
 	sk->n_bitlen = size;
-	sk->p = kbuf_priv;
+	sk->p = (unsigned char*)kbuf_priv;
 	sk->plen = (esize_p + 7) >> 3;
 	sk->q = sk->p + sk->plen;
 	sk->qlen = (esize_q + 7) >> 3;
@@ -493,7 +493,7 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	sk->iqlen = sk->plen;
 
 	if (pk != NULL) {
-		pk->n = kbuf_pub;
+		pk->n = (unsigned char*)kbuf_pub;
 		pk->nlen = (size + 7) >> 3;
 		pk->e = pk->n + pk->nlen;
 		pk->elen = 4;

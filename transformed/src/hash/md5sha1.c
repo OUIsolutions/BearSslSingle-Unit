@@ -93,7 +93,7 @@ br_md5sha1_out(const br_md5sha1_context *cc, void *dst)
 	br_md5_round(buf, val_md5);
 	br_enc64be(buf + 56, count);
 	br_sha1_round(buf, val_sha1);
-	out = dst;
+	out = (unsigned char*)dst;
 	br_range_enc32le(out, val_md5, 4);
 	br_range_enc32be(out + 16, val_sha1, 5);
 }
@@ -104,7 +104,7 @@ br_md5sha1_state(const br_md5sha1_context *cc, void *dst)
 {
 	unsigned char *out;
 
-	out = dst;
+	out = (unsigned char*)dst;
 	br_range_enc32le(out, cc->val_md5, 4);
 	br_range_enc32be(out + 16, cc->val_sha1, 5);
 	return cc->count;
@@ -116,7 +116,7 @@ br_md5sha1_set_state(br_md5sha1_context *cc, const void *stb, uint64_t count)
 {
 	const unsigned char *buf;
 
-	buf = stb;
+	buf = (unsigned char*)stb;
 	br_range_dec32le(cc->val_md5, 4, buf);
 	br_range_dec32be(cc->val_sha1, 5, buf + 16);
 	cc->count = count;

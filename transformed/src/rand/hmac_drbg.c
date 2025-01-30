@@ -53,7 +53,7 @@ br_hmac_drbg_generate(br_hmac_drbg_context *ctx, void *out, size_t len)
 	dig = ctx->digest_class;
 	hlen = br_digest_size(dig);
 	br_hmac_key_init(&kc, dig, ctx->K, hlen);
-	buf = out;
+	buf = (unsigned char*)out;
 	while (len > 0) {
 		size_t clen;
 

@@ -537,7 +537,7 @@ br_shake_produce(br_shake_context *sc, void *out, size_t len)
 	unsigned char *buf;
 	size_t dptr, rate;
 
-	buf = out;
+	buf = (unsigned char*)out;
 	dptr = sc->dptr;
 	rate = sc->rate;
 	while (len > 0) {
