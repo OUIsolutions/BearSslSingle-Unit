@@ -36,5 +36,5 @@ br_rsa_i32_pss_sign(const br_prng_class **rng,
 	{
 		return 0;
 	}
-	return br_rsa_i32_private(x, sk);
+	return br_rsa_i32_private((unsigned char*)x, sk);
 }

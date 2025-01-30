@@ -33,5 +33,5 @@ br_rsa_i32_pkcs1_sign(const unsigned char *hash_oid,
 	if (!br_rsa_pkcs1_sig_pad(hash_oid, hash, hash_len, sk->n_bitlen, x)) {
 		return 0;
 	}
-	return br_rsa_i32_private(x, sk);
+	return br_rsa_i32_private((unsigned char*)x, sk);
 }
