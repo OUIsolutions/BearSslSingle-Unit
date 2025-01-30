@@ -38,7 +38,7 @@ br_rsa_i62_pss_sign(const br_prng_class **rng,
 	{
 		return 0;
 	}
-	return br_rsa_i62_private(x, sk);
+	return br_rsa_i62_private((unsigned char*)x, sk);
 }
 
 /* see bearssl_rsa.h */

@@ -37,7 +37,7 @@ br_rsa_i62_oaep_decrypt(const br_hash_class *dig,
 	if (*len != ((sk->n_bitlen + 7) >> 3)) {
 		return 0;
 	}
-	r = br_rsa_i62_private(data, sk);
+	r = br_rsa_i62_private((unsigned char*)data, sk);
 	r &= br_rsa_oaep_unpad(dig, label, label_len, data, len);
 	return r;
 }

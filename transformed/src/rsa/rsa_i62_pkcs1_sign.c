@@ -35,7 +35,7 @@ br_rsa_i62_pkcs1_sign(const unsigned char *hash_oid,
 	if (!br_rsa_pkcs1_sig_pad(hash_oid, hash, hash_len, sk->n_bitlen, x)) {
 		return 0;
 	}
-	return br_rsa_i62_private(x, sk);
+	return br_rsa_i62_private((unsigned char*)x, sk);
 }
 
 /* see bearssl_rsa.h */
