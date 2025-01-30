@@ -15,12 +15,13 @@ function generate_release()
    local only_define_content = darwin.camalgamator.generate_amalgamation_with_callback(
         only_define_path,
         function (path,import)
-            if import == "imports.fdeclare.h" then
+             if string.find(import,"fdeclare.h") then
                 return "dont-include"
-            end
+             end 
             return "include-once" 
         end
    )    
-    darwin.dtw.write_file(darwin.dtw.concat_path(RELEASE_FOLDER,ONLY_DEFINE_NAME),only_define_content)
+   only_define_content = '#include "BearSSLSingleUnit.h"\n'..only_define_content
+   darwin.dtw.write_file(darwin.dtw.concat_path(RELEASE_FOLDER,ONLY_DEFINE_NAME),only_define_content)
 
 end 
