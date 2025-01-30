@@ -210,7 +210,7 @@ static const uint16_t BEAR_SINGLE_UNITY_FILEt0_caddr[] = {
 void \
 name(void *ctx) \
 { \
-	BEAR_SINGLE_UNITY_FILEt0_context *t0ctx = ctx; \
+	BEAR_SINGLE_UNITY_FILEt0_context *t0ctx  =(BEAR_SINGLE_UNITY_FILEt0_context*)ctx; \
 	t0ctx->ip = &BEAR_SINGLE_UNITY_FILEt0_codeblock[0]; \
 	BEAR_SINGLE_UNITY_FILET0_ENTER(t0ctx->ip, t0ctx->rp, slot); \
 }
