@@ -25,20 +25,20 @@
 
 
 static void
-BEAR_SINGLE_UNITY_FILEcc_none0(const br_ssl_client_certificate_class **pctx)
+[BEAR_SINGLE_UNITY_FILE]cc_none0(const br_ssl_client_certificate_class **pctx)
 {
 	(void)pctx;
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEcc_none1(const br_ssl_client_certificate_class **pctx, size_t len)
+[BEAR_SINGLE_UNITY_FILE]cc_none1(const br_ssl_client_certificate_class **pctx, size_t len)
 {
 	(void)pctx;
 	(void)len;
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEcc_none2(const br_ssl_client_certificate_class **pctx,
+[BEAR_SINGLE_UNITY_FILE]cc_none2(const br_ssl_client_certificate_class **pctx,
 	const unsigned char *data, size_t len)
 {
 	(void)pctx;
@@ -47,7 +47,7 @@ BEAR_SINGLE_UNITY_FILEcc_none2(const br_ssl_client_certificate_class **pctx,
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEcc_choose(const br_ssl_client_certificate_class **pctx,
+[BEAR_SINGLE_UNITY_FILE]cc_choose(const br_ssl_client_certificate_class **pctx,
 	const br_ssl_client_context *cc, uint32_t auth_types,
 	br_ssl_client_certificate *choices)
 {
@@ -69,36 +69,36 @@ BEAR_SINGLE_UNITY_FILEcc_choose(const br_ssl_client_certificate_class **pctx,
 /*
  * OID for hash functions in RSA signatures.
  */
-static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1[] = {
+static const unsigned char [BEAR_SINGLE_UNITY_FILE]HASH_OID_SHA1[] = {
 	0x05, 0x2B, 0x0E, 0x03, 0x02, 0x1A
 };
 
-static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224[] = {
+static const unsigned char [BEAR_SINGLE_UNITY_FILE]HASH_OID_SHA224[] = {
 	0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x04
 };
 
-static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256[] = {
+static const unsigned char [BEAR_SINGLE_UNITY_FILE]HASH_OID_SHA256[] = {
 	0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x01
 };
 
-static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384[] = {
+static const unsigned char [BEAR_SINGLE_UNITY_FILE]HASH_OID_SHA384[] = {
 	0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x02
 };
 
-static const unsigned char BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512[] = {
+static const unsigned char [BEAR_SINGLE_UNITY_FILE]HASH_OID_SHA512[] = {
 	0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x03
 };
 
-static const unsigned char *BEAR_SINGLE_UNITY_FILEHASH_OID[] = {
-	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA1,
-	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA224,
-	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA256,
-	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA384,
-	BEAR_SINGLE_UNITY_FILEHASH_OID_SHA512
+static const unsigned char *[BEAR_SINGLE_UNITY_FILE]HASH_OID[] = {
+	[BEAR_SINGLE_UNITY_FILE]HASH_OID_SHA1,
+	[BEAR_SINGLE_UNITY_FILE]HASH_OID_SHA224,
+	[BEAR_SINGLE_UNITY_FILE]HASH_OID_SHA256,
+	[BEAR_SINGLE_UNITY_FILE]HASH_OID_SHA384,
+	[BEAR_SINGLE_UNITY_FILE]HASH_OID_SHA512
 };
 
 static size_t
-BEAR_SINGLE_UNITY_FILEcc_do_sign(const br_ssl_client_certificate_class **pctx,
+[BEAR_SINGLE_UNITY_FILE]cc_do_sign(const br_ssl_client_certificate_class **pctx,
 	int hash_id, size_t hv_len, unsigned char *data, size_t len)
 {
 	br_ssl_client_certificate_rsa_context *zc;
@@ -111,7 +111,7 @@ BEAR_SINGLE_UNITY_FILEcc_do_sign(const br_ssl_client_certificate_class **pctx,
 	if (hash_id == 0) {
 		hash_oid = NULL;
 	} else if (hash_id >= 2 && hash_id <= 6) {
-		hash_oid = BEAR_SINGLE_UNITY_FILEHASH_OID[hash_id - 2];
+		hash_oid = [BEAR_SINGLE_UNITY_FILE]HASH_OID[hash_id - 2];
 	} else {
 		return 0;
 	}
@@ -122,16 +122,16 @@ BEAR_SINGLE_UNITY_FILEcc_do_sign(const br_ssl_client_certificate_class **pctx,
 	return zc->irsasign(hash_oid, hv, hv_len, zc->sk, data) ? sig_len : 0;
 }
 
-static const br_ssl_client_certificate_class BEAR_SINGLE_UNITY_FILEccert_vtable = {
+static const br_ssl_client_certificate_class [BEAR_SINGLE_UNITY_FILE]ccert_vtable = {
 	sizeof(br_ssl_client_certificate_rsa_context),
-	BEAR_SINGLE_UNITY_FILEcc_none0, /* start_name_list */
-	BEAR_SINGLE_UNITY_FILEcc_none1, /* start_name */
-	BEAR_SINGLE_UNITY_FILEcc_none2, /* append_name */
-	BEAR_SINGLE_UNITY_FILEcc_none0, /* end_name */
-	BEAR_SINGLE_UNITY_FILEcc_none0, /* end_name_list */
-	BEAR_SINGLE_UNITY_FILEcc_choose,
+	[BEAR_SINGLE_UNITY_FILE]cc_none0, /* start_name_list */
+	[BEAR_SINGLE_UNITY_FILE]cc_none1, /* start_name */
+	[BEAR_SINGLE_UNITY_FILE]cc_none2, /* append_name */
+	[BEAR_SINGLE_UNITY_FILE]cc_none0, /* end_name */
+	[BEAR_SINGLE_UNITY_FILE]cc_none0, /* end_name_list */
+	[BEAR_SINGLE_UNITY_FILE]cc_choose,
 	0,
-	BEAR_SINGLE_UNITY_FILEcc_do_sign
+	[BEAR_SINGLE_UNITY_FILE]cc_do_sign
 };
 
 /* see bearssl_ssl.h */
@@ -140,7 +140,7 @@ br_ssl_client_set_single_rsa(br_ssl_client_context *cc,
 	const br_x509_certificate *chain, size_t chain_len,
 	const br_rsa_private_key *sk, br_rsa_pkcs1_sign irsasign)
 {
-	cc->client_auth.single_rsa.vtable = &BEAR_SINGLE_UNITY_FILEccert_vtable;
+	cc->client_auth.single_rsa.vtable = &[BEAR_SINGLE_UNITY_FILE]ccert_vtable;
 	cc->client_auth.single_rsa.chain = chain;
 	cc->client_auth.single_rsa.chain_len = chain_len;
 	cc->client_auth.single_rsa.sk = sk;

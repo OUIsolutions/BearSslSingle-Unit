@@ -25,20 +25,20 @@
 
 
 static void
-BEAR_SINGLE_UNITY_FILEcc_none0(const br_ssl_client_certificate_class **pctx)
+[BEAR_SINGLE_UNITY_FILE]cc_none0(const br_ssl_client_certificate_class **pctx)
 {
 	(void)pctx;
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEcc_none1(const br_ssl_client_certificate_class **pctx, size_t len)
+[BEAR_SINGLE_UNITY_FILE]cc_none1(const br_ssl_client_certificate_class **pctx, size_t len)
 {
 	(void)pctx;
 	(void)len;
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEcc_none2(const br_ssl_client_certificate_class **pctx,
+[BEAR_SINGLE_UNITY_FILE]cc_none2(const br_ssl_client_certificate_class **pctx,
 	const unsigned char *data, size_t len)
 {
 	(void)pctx;
@@ -47,7 +47,7 @@ BEAR_SINGLE_UNITY_FILEcc_none2(const br_ssl_client_certificate_class **pctx,
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEcc_choose(const br_ssl_client_certificate_class **pctx,
+[BEAR_SINGLE_UNITY_FILE]cc_choose(const br_ssl_client_certificate_class **pctx,
 	const br_ssl_client_context *cc, uint32_t auth_types,
 	br_ssl_client_certificate *choices)
 {
@@ -105,7 +105,7 @@ cc_do_keyx(const br_ssl_client_certificate_class **pctx,
 }
 
 static size_t
-BEAR_SINGLE_UNITY_FILEcc_do_sign(const br_ssl_client_certificate_class **pctx,
+[BEAR_SINGLE_UNITY_FILE]cc_do_sign(const br_ssl_client_certificate_class **pctx,
 	int hash_id, size_t hv_len, unsigned char *data, size_t len)
 {
 	br_ssl_client_certificate_ec_context *zc;
@@ -124,16 +124,16 @@ BEAR_SINGLE_UNITY_FILEcc_do_sign(const br_ssl_client_certificate_class **pctx,
 	return zc->iecdsa(zc->iec, hc, hv, zc->sk, data);
 }
 
-static const br_ssl_client_certificate_class BEAR_SINGLE_UNITY_FILEccert_vtable = {
+static const br_ssl_client_certificate_class [BEAR_SINGLE_UNITY_FILE]ccert_vtable = {
 	sizeof(br_ssl_client_certificate_ec_context),
-	BEAR_SINGLE_UNITY_FILEcc_none0, /* start_name_list */
-	BEAR_SINGLE_UNITY_FILEcc_none1, /* start_name */
-	BEAR_SINGLE_UNITY_FILEcc_none2, /* append_name */
-	BEAR_SINGLE_UNITY_FILEcc_none0, /* end_name */
-	BEAR_SINGLE_UNITY_FILEcc_none0, /* end_name_list */
-	BEAR_SINGLE_UNITY_FILEcc_choose,
+	[BEAR_SINGLE_UNITY_FILE]cc_none0, /* start_name_list */
+	[BEAR_SINGLE_UNITY_FILE]cc_none1, /* start_name */
+	[BEAR_SINGLE_UNITY_FILE]cc_none2, /* append_name */
+	[BEAR_SINGLE_UNITY_FILE]cc_none0, /* end_name */
+	[BEAR_SINGLE_UNITY_FILE]cc_none0, /* end_name_list */
+	[BEAR_SINGLE_UNITY_FILE]cc_choose,
 	cc_do_keyx,
-	BEAR_SINGLE_UNITY_FILEcc_do_sign
+	[BEAR_SINGLE_UNITY_FILE]cc_do_sign
 };
 
 /* see bearssl_ssl.h */
@@ -144,7 +144,7 @@ br_ssl_client_set_single_ec(br_ssl_client_context *cc,
 	unsigned cert_issuer_key_type,
 	const br_ec_impl *iec, br_ecdsa_sign iecdsa)
 {
-	cc->client_auth.single_ec.vtable = &BEAR_SINGLE_UNITY_FILEccert_vtable;
+	cc->client_auth.single_ec.vtable = &[BEAR_SINGLE_UNITY_FILE]ccert_vtable;
 	cc->client_auth.single_ec.chain = chain;
 	cc->client_auth.single_ec.chain_len = chain_len;
 	cc->client_auth.single_ec.sk = sk;

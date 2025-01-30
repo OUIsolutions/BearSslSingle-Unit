@@ -28,7 +28,7 @@
  * As a strict minimum, we need four buffers that can hold a
  * modular integer.
  */
-#define BEAR_SINGLE_UNITY_FILETLEN   (4 * (2 + ((BR_MAX_RSA_SIZE + 30) / 31)))
+#define [BEAR_SINGLE_UNITY_FILE]TLEN   (4 * (2 + ((BR_MAX_RSA_SIZE + 30) / 31)))
 
 /* see bearssl_rsa.h */
 uint32_t
@@ -37,7 +37,7 @@ br_rsa_i31_public(unsigned char *x, size_t xlen,
 {
 	const unsigned char *n;
 	size_t nlen;
-	uint32_t tmp[1 + BEAR_SINGLE_UNITY_FILETLEN];
+	uint32_t tmp[1 + [BEAR_SINGLE_UNITY_FILE]TLEN];
 	uint32_t *m, *a, *t;
 	size_t fwlen;
 	long z;
@@ -96,7 +96,7 @@ br_rsa_i31_public(unsigned char *x, size_t xlen,
 	/*
 	 * Compute the modular exponentiation.
 	 */
-	br_i31_modpow_opt(a, pk->e, pk->elen, m, m0i, t, BEAR_SINGLE_UNITY_FILETLEN - 2 * fwlen);
+	br_i31_modpow_opt(a, pk->e, pk->elen, m, m0i, t, [BEAR_SINGLE_UNITY_FILE]TLEN - 2 * fwlen);
 
 	/*
 	 * Encode the result.

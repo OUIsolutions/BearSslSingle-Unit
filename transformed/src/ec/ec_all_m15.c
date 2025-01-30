@@ -25,7 +25,7 @@
 
 
 static const unsigned char *
-BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
+[BEAR_SINGLE_UNITY_FILE]api_generator(int curve, size_t *len)
 {
 	switch (curve) {
 	case BR_EC_secp256r1:
@@ -38,7 +38,7 @@ BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
 }
 
 static const unsigned char *
-BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
+[BEAR_SINGLE_UNITY_FILE]api_order(int curve, size_t *len)
 {
 	switch (curve) {
 	case BR_EC_secp256r1:
@@ -51,7 +51,7 @@ BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
 }
 
 static size_t
-BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
+[BEAR_SINGLE_UNITY_FILE]api_xoff(int curve, size_t *len)
 {
 	switch (curve) {
 	case BR_EC_secp256r1:
@@ -64,7 +64,7 @@ BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
 }
 
 static uint32_t
-BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
+[BEAR_SINGLE_UNITY_FILE]api_mul(unsigned char *G, size_t Glen,
 	const unsigned char *kb, size_t kblen, int curve)
 {
 	switch (curve) {
@@ -78,7 +78,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 }
 
 static size_t
-BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
+[BEAR_SINGLE_UNITY_FILE]api_mulgen(unsigned char *R,
 	const unsigned char *x, size_t xlen, int curve)
 {
 	switch (curve) {
@@ -92,7 +92,7 @@ BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
 }
 
 static uint32_t
-BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
+[BEAR_SINGLE_UNITY_FILE]api_muladd(unsigned char *A, const unsigned char *B, size_t len,
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
@@ -112,10 +112,10 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_all_m15 = {
 	(uint32_t)0x23800000,
-	&BEAR_SINGLE_UNITY_FILEapi_generator,
-	&BEAR_SINGLE_UNITY_FILEapi_order,
-	&BEAR_SINGLE_UNITY_FILEapi_xoff,
-	&BEAR_SINGLE_UNITY_FILEapi_mul,
-	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
-	&BEAR_SINGLE_UNITY_FILEapi_muladd
+	&[BEAR_SINGLE_UNITY_FILE]api_generator,
+	&[BEAR_SINGLE_UNITY_FILE]api_order,
+	&[BEAR_SINGLE_UNITY_FILE]api_xoff,
+	&[BEAR_SINGLE_UNITY_FILE]api_mul,
+	&[BEAR_SINGLE_UNITY_FILE]api_mulgen,
+	&[BEAR_SINGLE_UNITY_FILE]api_muladd
 };

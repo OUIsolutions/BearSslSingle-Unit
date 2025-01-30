@@ -47,7 +47,7 @@ br_aes_pwr8_ctrcbc_init(br_aes_pwr8_ctrcbc_keys *ctx,
  * Register conventions for CTR + CBC-MAC:
  *
  *   AES subkeys are in registers 0 to 10/12/14 (depending on keys size)
- *   Register v15 contains the BEAR_SINGLE_UNITY_FILEbyteswap index register (little-endian only)
+ *   Register v15 contains the [BEAR_SINGLE_UNITY_FILE]byteswap index register (little-endian only)
  *   Register v16 contains the CTR counter value
  *   Register v17 contains the CBC-MAC current value
  *   Registers v18 to v27 are scratch
@@ -56,7 +56,7 @@ br_aes_pwr8_ctrcbc_init(br_aes_pwr8_ctrcbc_keys *ctx,
  * For CTR alone:
  *  
  *   AES subkeys are in registers 0 to 10/12/14 (depending on keys size)
- *   Register v15 contains the BEAR_SINGLE_UNITY_FILEbyteswap index register (little-endian only)
+ *   Register v15 contains the [BEAR_SINGLE_UNITY_FILE]byteswap index register (little-endian only)
  *   Registers v16 to v19 contain the CTR counter values (four blocks)
  *   Registers v20 to v27 are scratch
  *   Counter increment uses v28, v29 and v30

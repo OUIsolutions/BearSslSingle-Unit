@@ -29,7 +29,7 @@
  * The header word is untouched.
  */
 static void
-BEAR_SINGLE_UNITY_FILEmkrand(const br_prng_class **rng, uint32_t *x, uint32_t esize)
+[BEAR_SINGLE_UNITY_FILE]mkrand(const br_prng_class **rng, uint32_t *x, uint32_t esize)
 {
 	size_t u, len;
 	unsigned m;
@@ -51,7 +51,7 @@ BEAR_SINGLE_UNITY_FILEmkrand(const br_prng_class **rng, uint32_t *x, uint32_t es
  * This is the big-endian unsigned representation of the product of
  * all small primes from 13 to 1481.
  */
-static const unsigned char BEAR_SINGLE_UNITY_FILESMALL_PRIMES[] = {
+static const unsigned char [BEAR_SINGLE_UNITY_FILE]SMALL_PRIMES[] = {
 	0x2E, 0xAB, 0x92, 0xD1, 0x8B, 0x12, 0x47, 0x31, 0x54, 0x0A,
 	0x99, 0x5D, 0x25, 0x5E, 0xE2, 0x14, 0x96, 0x29, 0x1E, 0xB7,
 	0x78, 0x70, 0xCC, 0x1F, 0xA5, 0xAB, 0x8D, 0x72, 0x11, 0x37,
@@ -84,7 +84,7 @@ static const unsigned char BEAR_SINGLE_UNITY_FILESMALL_PRIMES[] = {
  * We need temporary values for at least 7 integers of the same size
  * as a factor (including header word); more space helps with performance
  * (in modular exponentiations), but we much prefer to remain under
- * 2 kilobytes in total, to save stack space. The macro BEAR_SINGLE_UNITY_FILETEMPS below
+ * 2 kilobytes in total, to save stack space. The macro [BEAR_SINGLE_UNITY_FILE]TEMPS below
  * exceeds 512 (which is a count in 32-bit words) when BR_MAX_RSA_SIZE
  * is greater than 4464 (default value is 4096, so the 2-kB limit is
  * maintained unless BR_MAX_RSA_SIZE was modified).
@@ -92,11 +92,11 @@ static const unsigned char BEAR_SINGLE_UNITY_FILESMALL_PRIMES[] = {
 #define MAX(x, y)   ((x) > (y) ? (x) : (y))
 #define ROUND2(x)   ((((x) + 1) >> 1) << 1)
 
-#define BEAR_SINGLE_UNITY_FILETEMPS   MAX(512, ROUND2(7 * ((((BR_MAX_RSA_SIZE + 1) >> 1) + 61) / 31)))
+#define [BEAR_SINGLE_UNITY_FILE]TEMPS   MAX(512, ROUND2(7 * ((((BR_MAX_RSA_SIZE + 1) >> 1) + 61) / 31)))
 
 /*
  * Perform trial division on a candidate prime. This computes
- * y = BEAR_SINGLE_UNITY_FILESMALL_PRIMES mod x, then tries to compute y/y mod x. The
+ * y = [BEAR_SINGLE_UNITY_FILE]SMALL_PRIMES mod x, then tries to compute y/y mod x. The
  * br_i31_moddiv() function will report an error if y is not invertible
  * modulo x. Returned value is 1 on success (none of the small primes
  * divides x), 0 on error (a non-trivial GCD is obtained).
@@ -104,7 +104,7 @@ static const unsigned char BEAR_SINGLE_UNITY_FILESMALL_PRIMES[] = {
  * This function assumes that x is odd.
  */
 static uint32_t
-BEAR_SINGLE_UNITY_FILEtrial_divisions(const uint32_t *x, uint32_t *t)
+[BEAR_SINGLE_UNITY_FILE]trial_divisions(const uint32_t *x, uint32_t *t)
 {
 	uint32_t *y;
 	uint32_t x0i;
@@ -112,7 +112,7 @@ BEAR_SINGLE_UNITY_FILEtrial_divisions(const uint32_t *x, uint32_t *t)
 	y = t;
 	t += 1 + ((x[0] + 31) >> 5);
 	x0i = br_i31_ninv31(x[1]);
-	br_i31_decode_reduce(y, BEAR_SINGLE_UNITY_FILESMALL_PRIMES, sizeof BEAR_SINGLE_UNITY_FILESMALL_PRIMES, x);
+	br_i31_decode_reduce(y, [BEAR_SINGLE_UNITY_FILE]SMALL_PRIMES, sizeof [BEAR_SINGLE_UNITY_FILE]SMALL_PRIMES, x);
 	return br_i31_moddiv(y, y, x, x0i, t);
 }
 
@@ -124,7 +124,7 @@ BEAR_SINGLE_UNITY_FILEtrial_divisions(const uint32_t *x, uint32_t *t)
  * 0 otherwise.
  */
 static uint32_t
-BEAR_SINGLE_UNITY_FILEmiller_rabin(const br_prng_class **rng, const uint32_t *x, int n,
+[BEAR_SINGLE_UNITY_FILE]miller_rabin(const br_prng_class **rng, const uint32_t *x, int n,
 	uint32_t *t, size_t tlen, br_i31_modpow_opt_type mp31)
 {
 	/*
@@ -187,7 +187,7 @@ BEAR_SINGLE_UNITY_FILEmiller_rabin(const br_prng_class **rng, const uint32_t *x,
 		a = t;
 		a[0] = x[0];
 		a[xlen] = 0;
-		BEAR_SINGLE_UNITY_FILEmkrand(rng, a, asize);
+		[BEAR_SINGLE_UNITY_FILE]mkrand(rng, a, asize);
 
 		/*
 		 * Compute a^((x-1)/2) mod x. We assume here that the
@@ -199,7 +199,7 @@ BEAR_SINGLE_UNITY_FILEmiller_rabin(const br_prng_class **rng, const uint32_t *x,
 		if ((t2len & 1) != 0) {
 			/*
 			 * Since the source array is 64-bit aligned and
-			 * has an even number of elements (BEAR_SINGLE_UNITY_FILETEMPS), we
+			 * has an even number of elements ([BEAR_SINGLE_UNITY_FILE]TEMPS), we
 			 * can use the parity of the remaining length to
 			 * detect and adjust alignment.
 			 */
@@ -232,7 +232,7 @@ BEAR_SINGLE_UNITY_FILEmiller_rabin(const br_prng_class **rng, const uint32_t *x,
  * bit length. The two top bits and the two bottom bits are set to 1.
  */
 static void
-BEAR_SINGLE_UNITY_FILEmkprime(const br_prng_class **rng, uint32_t *x, uint32_t esize,
+[BEAR_SINGLE_UNITY_FILE]mkprime(const br_prng_class **rng, uint32_t *x, uint32_t esize,
 	uint32_t pubexp, uint32_t *t, size_t tlen, br_i31_modpow_opt_type mp31)
 {
 	size_t len;
@@ -248,7 +248,7 @@ BEAR_SINGLE_UNITY_FILEmkprime(const br_prng_class **rng, uint32_t *x, uint32_t e
 		 * Generate random bits. We force the two top bits and the
 		 * two bottom bits to 1.
 		 */
-		BEAR_SINGLE_UNITY_FILEmkrand(rng, x, esize);
+		[BEAR_SINGLE_UNITY_FILE]mkrand(rng, x, esize);
 		if ((esize & 31) == 0) {
 			x[len] |= 0x60000000;
 		} else if ((esize & 31) == 1) {
@@ -350,7 +350,7 @@ BEAR_SINGLE_UNITY_FILEmkprime(const br_prng_class **rng, uint32_t *x, uint32_t e
 		/*
 		 * More trial divisions.
 		 */
-		if (!BEAR_SINGLE_UNITY_FILEtrial_divisions(x, t)) {
+		if (![BEAR_SINGLE_UNITY_FILE]trial_divisions(x, t)) {
 			continue;
 		}
 
@@ -382,7 +382,7 @@ BEAR_SINGLE_UNITY_FILEmkprime(const br_prng_class **rng, uint32_t *x, uint32_t e
 			rounds = 2;
 		}
 
-		if (BEAR_SINGLE_UNITY_FILEmiller_rabin(rng, x, rounds, t, tlen, mp31)) {
+		if ([BEAR_SINGLE_UNITY_FILE]miller_rabin(rng, x, rounds, t, tlen, mp31)) {
 			return;
 		}
 	}
@@ -399,7 +399,7 @@ BEAR_SINGLE_UNITY_FILEmkprime(const br_prng_class **rng, uint32_t *x, uint32_t e
  * the size of p.
  */
 static uint32_t
-BEAR_SINGLE_UNITY_FILEinvert_pubexp(uint32_t *d, const uint32_t *m, uint32_t e, uint32_t *t)
+[BEAR_SINGLE_UNITY_FILE]invert_pubexp(uint32_t *d, const uint32_t *m, uint32_t e, uint32_t *t)
 {
 	uint32_t *f;
 	uint32_t r;
@@ -437,7 +437,7 @@ BEAR_SINGLE_UNITY_FILEinvert_pubexp(uint32_t *d, const uint32_t *m, uint32_t e, 
  * Swap two buffers in RAM. They must be disjoint.
  */
 static void
-BEAR_SINGLE_UNITY_FILEbufswap(void *b1, void *b2, size_t len)
+[BEAR_SINGLE_UNITY_FILE]bufswap(void *b1, void *b2, size_t len)
 {
 	size_t u;
 	unsigned char *buf1, *buf2;
@@ -464,8 +464,8 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	size_t plen, qlen, tlen;
 	uint32_t *p, *q, *t;
 	union {
-		uint32_t t32[BEAR_SINGLE_UNITY_FILETEMPS];
-		uint64_t t64[BEAR_SINGLE_UNITY_FILETEMPS >> 1];  /* for 64-bit alignment */
+		uint32_t t32[[BEAR_SINGLE_UNITY_FILE]TEMPS];
+		uint64_t t64[[BEAR_SINGLE_UNITY_FILE]TEMPS >> 1];  /* for 64-bit alignment */
 	} tmp;
 	uint32_t r;
 
@@ -527,9 +527,9 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	 */
 
 	for (;;) {
-		BEAR_SINGLE_UNITY_FILEmkprime(rng, p, esize_p, pubexp, t, tlen, mp31);
+		[BEAR_SINGLE_UNITY_FILE]mkprime(rng, p, esize_p, pubexp, t, tlen, mp31);
 		br_i31_rshift(p, 1);
-		if (BEAR_SINGLE_UNITY_FILEinvert_pubexp(t, p, pubexp, t + 1 + plen)) {
+		if ([BEAR_SINGLE_UNITY_FILE]invert_pubexp(t, p, pubexp, t + 1 + plen)) {
 			br_i31_add(p, p, 1);
 			p[1] |= 1;
 			br_i31_encode(sk->p, sk->plen, p);
@@ -539,9 +539,9 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	}
 
 	for (;;) {
-		BEAR_SINGLE_UNITY_FILEmkprime(rng, q, esize_q, pubexp, t, tlen, mp31);
+		[BEAR_SINGLE_UNITY_FILE]mkprime(rng, q, esize_q, pubexp, t, tlen, mp31);
 		br_i31_rshift(q, 1);
-		if (BEAR_SINGLE_UNITY_FILEinvert_pubexp(t, q, pubexp, t + 1 + qlen)) {
+		if ([BEAR_SINGLE_UNITY_FILE]invert_pubexp(t, q, pubexp, t + 1 + qlen)) {
 			br_i31_add(q, q, 1);
 			q[1] |= 1;
 			br_i31_encode(sk->q, sk->qlen, q);
@@ -566,9 +566,9 @@ br_rsa_i31_keygen_inner(const br_prng_class **rng,
 	 * returning p and q such that p > q, which is not a secret.
 	 */
 	if (esize_p == esize_q && br_i31_sub(p, q, 0) == 1) {
-		BEAR_SINGLE_UNITY_FILEbufswap(p, q, (1 + plen) * sizeof *p);
-		BEAR_SINGLE_UNITY_FILEbufswap(sk->p, sk->q, sk->plen);
-		BEAR_SINGLE_UNITY_FILEbufswap(sk->dp, sk->dq, sk->dplen);
+		[BEAR_SINGLE_UNITY_FILE]bufswap(p, q, (1 + plen) * sizeof *p);
+		[BEAR_SINGLE_UNITY_FILE]bufswap(sk->p, sk->q, sk->plen);
+		[BEAR_SINGLE_UNITY_FILE]bufswap(sk->dp, sk->dq, sk->dplen);
 	}
 
 	/*

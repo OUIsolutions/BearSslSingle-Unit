@@ -202,7 +202,7 @@ static const uint32_t S8[] = {
 };
 
 static inline uint32_t
-BEAR_SINGLE_UNITY_FILEFconf(uint32_t r0, uint32_t skl, uint32_t skr)
+[BEAR_SINGLE_UNITY_FILE]Fconf(uint32_t r0, uint32_t skl, uint32_t skr)
 {
 	uint32_t r1;
 
@@ -219,7 +219,7 @@ BEAR_SINGLE_UNITY_FILEFconf(uint32_t r0, uint32_t skl, uint32_t skr)
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEprocess_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *skey)
+[BEAR_SINGLE_UNITY_FILE]process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *skey)
 {
 	int i;
 	uint32_t l, r;
@@ -229,7 +229,7 @@ BEAR_SINGLE_UNITY_FILEprocess_block_unit(uint32_t *pl, uint32_t *pr, const uint3
 	for (i = 0; i < 16; i ++) {
 		uint32_t t;
 
-		t = l ^ BEAR_SINGLE_UNITY_FILEFconf(r, skey[(i << 1) + 0], skey[(i << 1) + 1]);
+		t = l ^ [BEAR_SINGLE_UNITY_FILE]Fconf(r, skey[(i << 1) + 0], skey[(i << 1) + 1]);
 		l = r;
 		r = t;
 	}
@@ -249,7 +249,7 @@ br_des_tab_process_block(unsigned num_rounds, const uint32_t *skey, void *block)
 	r = br_dec32be(buf + 4);
 	br_des_do_IP(&l, &r);
 	while (num_rounds -- > 0) {
-		BEAR_SINGLE_UNITY_FILEprocess_block_unit(&l, &r, skey);
+		[BEAR_SINGLE_UNITY_FILE]process_block_unit(&l, &r, skey);
 		skey += 32;
 	}
 	br_des_do_invIP(&l, &r);
@@ -258,7 +258,7 @@ br_des_tab_process_block(unsigned num_rounds, const uint32_t *skey, void *block)
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEkeysched_unit(uint32_t *skey, const void *key)
+[BEAR_SINGLE_UNITY_FILE]keysched_unit(uint32_t *skey, const void *key)
 {
 	int i;
 
@@ -292,19 +292,19 @@ br_des_tab_keysched(uint32_t *skey, const void *key, size_t key_len)
 {
 	switch (key_len) {
 	case 8:
-		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey, key);
+		[BEAR_SINGLE_UNITY_FILE]keysched_unit(skey, key);
 		return 1;
 	case 16:
-		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey, key);
-		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey + 32, (const unsigned char *)key + 8);
+		[BEAR_SINGLE_UNITY_FILE]keysched_unit(skey, key);
+		[BEAR_SINGLE_UNITY_FILE]keysched_unit(skey + 32, (const unsigned char *)key + 8);
 		br_des_rev_skey(skey + 32);
 		memcpy(skey + 64, skey, 32 * sizeof *skey);
 		return 3;
 	default:
-		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey, key);
-		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey + 32, (const unsigned char *)key + 8);
+		[BEAR_SINGLE_UNITY_FILE]keysched_unit(skey, key);
+		[BEAR_SINGLE_UNITY_FILE]keysched_unit(skey + 32, (const unsigned char *)key + 8);
 		br_des_rev_skey(skey + 32);
-		BEAR_SINGLE_UNITY_FILEkeysched_unit(skey + 64, (const unsigned char *)key + 16);
+		[BEAR_SINGLE_UNITY_FILE]keysched_unit(skey + 64, (const unsigned char *)key + 16);
 		return 3;
 	}
 }

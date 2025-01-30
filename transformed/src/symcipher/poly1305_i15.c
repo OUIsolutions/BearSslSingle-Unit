@@ -42,7 +42,7 @@ static const uint16_t P1305[] = {
 /*
  * -p mod 2^15.
  */
-#define BEAR_SINGLE_UNITY_FILEP0I   0x4CCD
+#define [BEAR_SINGLE_UNITY_FILE]P0I   0x4CCD
 
 /*
  * R^2 mod p, for conversion to Montgomery representation (R = 2^135,
@@ -58,7 +58,7 @@ static const uint16_t R2[] = {
  * is in Montgomery representation, while the "a" array is not.
  */
 static void
-BEAR_SINGLE_UNITY_FILEpoly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t len)
+[BEAR_SINGLE_UNITY_FILE]poly1305_inner(uint16_t *a, const uint16_t *r, const void *data, size_t len)
 {
 	const unsigned char *buf;
 
@@ -100,7 +100,7 @@ BEAR_SINGLE_UNITY_FILEpoly1305_inner(uint16_t *a, const uint16_t *r, const void 
 		/*
 		 * Multiply by r, result is the new accumulator value.
 		 */
-		br_i15_montymul(a, b, r, P1305, BEAR_SINGLE_UNITY_FILEP0I);
+		br_i15_montymul(a, b, r, P1305, [BEAR_SINGLE_UNITY_FILE]P0I);
 
 		buf += 16;
 		len -= 16;
@@ -111,7 +111,7 @@ BEAR_SINGLE_UNITY_FILEpoly1305_inner(uint16_t *a, const uint16_t *r, const void 
  * Byteswap a 16-byte value.
  */
 static void
-BEAR_SINGLE_UNITY_FILEbyteswap16(unsigned char *buf)
+[BEAR_SINGLE_UNITY_FILE]byteswap16(unsigned char *buf)
 {
 	int i;
 
@@ -168,15 +168,15 @@ br_poly1305_i15_run(const void *key, const void *iv,
 
 	/*
 	 * Decode the clamped 'r' value. Decoding should use little-endian
-	 * so we must BEAR_SINGLE_UNITY_FILEbyteswap the value first.
+	 * so we must [BEAR_SINGLE_UNITY_FILE]byteswap the value first.
 	 */
-	BEAR_SINGLE_UNITY_FILEbyteswap16(pkey);
+	[BEAR_SINGLE_UNITY_FILE]byteswap16(pkey);
 	br_i15_decode_mod(t, pkey, 16, P1305);
 
 	/*
 	 * Convert 'r' to Montgomery representation.
 	 */
-	br_i15_montymul(r, t, R2, P1305, BEAR_SINGLE_UNITY_FILEP0I);
+	br_i15_montymul(r, t, R2, P1305, [BEAR_SINGLE_UNITY_FILE]P0I);
 
 	/*
 	 * Accumulator is 0.
@@ -189,14 +189,14 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	 */
 	br_enc64le(foot, (uint64_t)aad_len);
 	br_enc64le(foot + 8, (uint64_t)len);
-	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, aad, aad_len);
-	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, data, len);
-	BEAR_SINGLE_UNITY_FILEpoly1305_inner(acc, r, foot, sizeof foot);
+	[BEAR_SINGLE_UNITY_FILE]poly1305_inner(acc, r, aad, aad_len);
+	[BEAR_SINGLE_UNITY_FILE]poly1305_inner(acc, r, data, len);
+	[BEAR_SINGLE_UNITY_FILE]poly1305_inner(acc, r, foot, sizeof foot);
 
 	/*
-	 * Decode the value 's'. Again, a BEAR_SINGLE_UNITY_FILEbyteswap is needed.
+	 * Decode the value 's'. Again, a [BEAR_SINGLE_UNITY_FILE]byteswap is needed.
 	 */
-	BEAR_SINGLE_UNITY_FILEbyteswap16(pkey + 16);
+	[BEAR_SINGLE_UNITY_FILE]byteswap16(pkey + 16);
 	br_i15_decode_mod(t, pkey + 16, 16, P1305);
 
 	/*
@@ -210,7 +210,7 @@ br_poly1305_i15_run(const void *key, const void *iv,
 	 * be little-endian.
 	 */
 	br_i15_encode(tag, 16, acc);
-	BEAR_SINGLE_UNITY_FILEbyteswap16(tag);
+	[BEAR_SINGLE_UNITY_FILE]byteswap16(tag);
 
 	/*
 	 * If decrypting, then ChaCha20 runs _after_ Poly1305.

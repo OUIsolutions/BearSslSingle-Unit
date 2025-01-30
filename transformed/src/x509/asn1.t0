@@ -28,10 +28,10 @@
 \
 \ Users must define several things:
 \
-\ -- In the preamble, a macro called "BEAR_SINGLE_UNITY_FILECTX" that evaluates to the current
+\ -- In the preamble, a macro called "[BEAR_SINGLE_UNITY_FILE]CTX" that evaluates to the current
 \ context structure.
 \
-\ -- In the preamble, a macro called "BEAR_SINGLE_UNITY_FILECONTEXT_NAME" that evaluates to the
+\ -- In the preamble, a macro called "[BEAR_SINGLE_UNITY_FILE]CONTEXT_NAME" that evaluates to the
 \ context structure type. This will be invoked during compilation.
 \
 \ -- A word called "read8-low" ( -- x ) that reads the next byte, or -1
@@ -109,7 +109,7 @@ preamble {
 : addr:
 	next-word { field }
 	"addr-" field + 0 1 define-word
-	0 8191 "offsetof(BEAR_SINGLE_UNITY_FILECONTEXT_NAME, " field + ")" + make-CX
+	0 8191 "offsetof([BEAR_SINGLE_UNITY_FILE]CONTEXT_NAME, " field + ")" + make-CX
 	postpone literal postpone ; ;
 
 addr: pad
@@ -152,7 +152,7 @@ err: ERR_X509_WEAK_PUBLIC_KEY
 : KEYTYPE_EC      CX 0 15 { BR_KEYTYPE_EC } ;
 
 cc: fail ( err -- ! ) {
-	BEAR_SINGLE_UNITY_FILECTX->err = T0_POPi();
+	[BEAR_SINGLE_UNITY_FILE]CTX->err = T0_POPi();
 	T0_CO();
 }
 
@@ -193,32 +193,32 @@ cc: fail ( err -- ! ) {
 
 cc: set8 ( val addr -- ) {
 	uint32_t addr = T0_POP();
-	*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = (unsigned char)T0_POP();
+	*((unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + addr) = (unsigned char)T0_POP();
 }
 
 cc: set16 ( val addr -- ) {
 	uint32_t addr = T0_POP();
-	*(uint16_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = T0_POP();
+	*(uint16_t *)(void *)((unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + addr) = T0_POP();
 }
 
 cc: set32 ( val addr -- ) {
 	uint32_t addr = T0_POP();
-	*(uint32_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = T0_POP();
+	*(uint32_t *)(void *)((unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + addr) = T0_POP();
 }
 
 cc: get8 ( addr -- val ) {
 	uint32_t addr = T0_POP();
-	T0_PUSH(*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
+	T0_PUSH(*((unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + addr));
 }
 
 cc: get16 ( addr -- val ) {
 	uint32_t addr = T0_POP();
-	T0_PUSH(*(uint16_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
+	T0_PUSH(*(uint16_t *)(void *)((unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + addr));
 }
 
 cc: get32 ( addr -- val ) {
 	uint32_t addr = T0_POP();
-	T0_PUSH(*(uint32_t *)(void *)((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
+	T0_PUSH(*(uint32_t *)(void *)((unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + addr));
 }
 
 \ Read an ASN.1 tag. This function returns the "constructed" status
@@ -580,8 +580,8 @@ OID: id-at-commonName            2.5.4.3
 \ Compare the OID in the pad with an OID in the constant data block.
 \ Returned value is -1 on equality, 0 otherwise.
 cc: eqOID ( addrConst -- bool ) {
-	const unsigned char *a2 = &BEAR_SINGLE_UNITY_FILEt0_datablock[T0_POP()];
-	const unsigned char *a1 = &BEAR_SINGLE_UNITY_FILECTX->pad[0];
+	const unsigned char *a2 = &[BEAR_SINGLE_UNITY_FILE]t0_datablock[T0_POP()];
+	const unsigned char *a1 = &[BEAR_SINGLE_UNITY_FILE]CTX->pad[0];
 	size_t len = a1[0];
 	int x;
 	if (len == a2[0]) {
@@ -596,8 +596,8 @@ cc: eqOID ( addrConst -- bool ) {
 \ otherwise.
 cc: eqblob ( addr1 addr2 len -- bool ) {
 	size_t len = T0_POP();
-	const unsigned char *a2 = (const unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
-	const unsigned char *a1 = (const unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
+	const unsigned char *a2 = (const unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + T0_POP();
+	const unsigned char *a1 = (const unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + T0_POP();
 	T0_PUSHi(-(memcmp(a1, a2, len) == 0));
 }
 
@@ -750,7 +750,7 @@ cc: DEBUG ( -- ) {
 	uint32_t *p;
 
 	printf("<stack:");
-	for (p = &BEAR_SINGLE_UNITY_FILECTX->dp_stack[0]; p != dp; p ++) {
+	for (p = &[BEAR_SINGLE_UNITY_FILE]CTX->dp_stack[0]; p != dp; p ++) {
 		printf(" %lu", (unsigned long)*p);
 	}
 	printf(" >\n");

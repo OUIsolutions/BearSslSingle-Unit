@@ -205,7 +205,7 @@ br_aes_ct64_bitslice_Sbox(uint64_t *q)
 void
 br_aes_ct64_ortho(uint64_t *q)
 {
-#define BEAR_SINGLE_UNITY_FILESWAPN(cl, ch, s, x, y)   do { \
+#define [BEAR_SINGLE_UNITY_FILE]SWAPN(cl, ch, s, x, y)   do { \
 		uint64_t a, b; \
 		a = (x); \
 		b = (y); \
@@ -213,24 +213,24 @@ br_aes_ct64_ortho(uint64_t *q)
 		(y) = ((a & (uint64_t)ch) >> (s)) | (b & (uint64_t)ch); \
 	} while (0)
 
-#define BEAR_SINGLE_UNITY_FILESWAP2(x, y)    BEAR_SINGLE_UNITY_FILESWAPN(0x5555555555555555, 0xAAAAAAAAAAAAAAAA,  1, x, y)
-#define BEAR_SINGLE_UNITY_FILESWAP4(x, y)    BEAR_SINGLE_UNITY_FILESWAPN(0x3333333333333333, 0xCCCCCCCCCCCCCCCC,  2, x, y)
-#define BEAR_SINGLE_UNITY_FILESWAP8(x, y)    BEAR_SINGLE_UNITY_FILESWAPN(0x0F0F0F0F0F0F0F0F, 0xF0F0F0F0F0F0F0F0,  4, x, y)
+#define [BEAR_SINGLE_UNITY_FILE]SWAP2(x, y)    [BEAR_SINGLE_UNITY_FILE]SWAPN(0x5555555555555555, 0xAAAAAAAAAAAAAAAA,  1, x, y)
+#define [BEAR_SINGLE_UNITY_FILE]SWAP4(x, y)    [BEAR_SINGLE_UNITY_FILE]SWAPN(0x3333333333333333, 0xCCCCCCCCCCCCCCCC,  2, x, y)
+#define [BEAR_SINGLE_UNITY_FILE]SWAP8(x, y)    [BEAR_SINGLE_UNITY_FILE]SWAPN(0x0F0F0F0F0F0F0F0F, 0xF0F0F0F0F0F0F0F0,  4, x, y)
 
-	BEAR_SINGLE_UNITY_FILESWAP2(q[0], q[1]);
-	BEAR_SINGLE_UNITY_FILESWAP2(q[2], q[3]);
-	BEAR_SINGLE_UNITY_FILESWAP2(q[4], q[5]);
-	BEAR_SINGLE_UNITY_FILESWAP2(q[6], q[7]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP2(q[0], q[1]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP2(q[2], q[3]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP2(q[4], q[5]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP2(q[6], q[7]);
 
-	BEAR_SINGLE_UNITY_FILESWAP4(q[0], q[2]);
-	BEAR_SINGLE_UNITY_FILESWAP4(q[1], q[3]);
-	BEAR_SINGLE_UNITY_FILESWAP4(q[4], q[6]);
-	BEAR_SINGLE_UNITY_FILESWAP4(q[5], q[7]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP4(q[0], q[2]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP4(q[1], q[3]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP4(q[4], q[6]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP4(q[5], q[7]);
 
-	BEAR_SINGLE_UNITY_FILESWAP8(q[0], q[4]);
-	BEAR_SINGLE_UNITY_FILESWAP8(q[1], q[5]);
-	BEAR_SINGLE_UNITY_FILESWAP8(q[2], q[6]);
-	BEAR_SINGLE_UNITY_FILESWAP8(q[3], q[7]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP8(q[0], q[4]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP8(q[1], q[5]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP8(q[2], q[6]);
+	[BEAR_SINGLE_UNITY_FILE]SWAP8(q[3], q[7]);
 }
 
 /* see inner.h */
@@ -287,12 +287,12 @@ br_aes_ct64_interleave_out(uint32_t *w, uint64_t q0, uint64_t q1)
 	w[3] = (uint32_t)x3 | (uint32_t)(x3 >> 16);
 }
 
-static const unsigned char BEAR_SINGLE_UNITY_FILERcon[] = {
+static const unsigned char [BEAR_SINGLE_UNITY_FILE]Rcon[] = {
 	0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1B, 0x36
 };
 
 static uint32_t
-BEAR_SINGLE_UNITY_FILEsub_word(uint32_t x)
+[BEAR_SINGLE_UNITY_FILE]sub_word(uint32_t x)
 {
 	uint64_t q[8];
 
@@ -334,9 +334,9 @@ br_aes_ct64_keysched(uint64_t *comp_skey, const void *key, size_t key_len)
 	for (i = nk, j = 0, k = 0; i < nkf; i ++) {
 		if (j == 0) {
 			tmp = (tmp << 24) | (tmp >> 8);
-			tmp = BEAR_SINGLE_UNITY_FILEsub_word(tmp) ^ BEAR_SINGLE_UNITY_FILERcon[k];
+			tmp = [BEAR_SINGLE_UNITY_FILE]sub_word(tmp) ^ [BEAR_SINGLE_UNITY_FILE]Rcon[k];
 		} else if (nk > 6 && j == 4) {
-			tmp = BEAR_SINGLE_UNITY_FILEsub_word(tmp);
+			tmp = [BEAR_SINGLE_UNITY_FILE]sub_word(tmp);
 		}
 		tmp ^= skey[i - nk];
 		skey[i] = tmp;

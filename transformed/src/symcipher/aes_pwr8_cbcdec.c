@@ -82,7 +82,7 @@ cbcdec_128(const unsigned char *sk,
 
 #if BR_POWER8_LE
 		/*
-		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+		 * v15 = constant for [BEAR_SINGLE_UNITY_FILE]byteswapping words
 		 */
 		lxvw4x(47, 0, %[idx2be])
 #endif
@@ -172,7 +172,7 @@ cbcdec_128(const unsigned char *sk,
 		vxor(19, 19, 22)
 
 		/*
-		 * Store back result (with BEAR_SINGLE_UNITY_FILEbyteswap)
+		 * Store back result (with [BEAR_SINGLE_UNITY_FILE]byteswap)
 		 */
 #if BR_POWER8_LE
 		vperm(16, 16, 16, 15)
@@ -257,7 +257,7 @@ cbcdec_192(const unsigned char *sk,
 
 #if BR_POWER8_LE
 		/*
-		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+		 * v15 = constant for [BEAR_SINGLE_UNITY_FILE]byteswapping words
 		 */
 		lxvw4x(47, 0, %[idx2be])
 #endif
@@ -355,7 +355,7 @@ cbcdec_192(const unsigned char *sk,
 		vxor(19, 19, 22)
 
 		/*
-		 * Store back result (with BEAR_SINGLE_UNITY_FILEbyteswap)
+		 * Store back result (with [BEAR_SINGLE_UNITY_FILE]byteswap)
 		 */
 #if BR_POWER8_LE
 		vperm(16, 16, 16, 15)
@@ -444,7 +444,7 @@ cbcdec_256(const unsigned char *sk,
 
 #if BR_POWER8_LE
 		/*
-		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+		 * v15 = constant for [BEAR_SINGLE_UNITY_FILE]byteswapping words
 		 */
 		lxvw4x(47, 0, %[idx2be])
 #endif
@@ -550,7 +550,7 @@ cbcdec_256(const unsigned char *sk,
 		vxor(19, 19, 22)
 
 		/*
-		 * Store back result (with BEAR_SINGLE_UNITY_FILEbyteswap)
+		 * Store back result (with [BEAR_SINGLE_UNITY_FILE]byteswap)
 		 */
 #if BR_POWER8_LE
 		vperm(16, 16, 16, 15)

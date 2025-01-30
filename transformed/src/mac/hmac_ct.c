@@ -32,7 +32,7 @@ hash_size(const br_hash_class *dig)
 }
 
 static inline size_t
-BEAR_SINGLE_UNITY_FILEblock_size(const br_hash_class *dig)
+[BEAR_SINGLE_UNITY_FILE]block_size(const br_hash_class *dig)
 {
 	unsigned ls;
 	
@@ -85,7 +85,7 @@ br_hmac_outCT(const br_hmac_context *ctx,
 	if (dig->desc & BR_HASHDESC_MD_PADDING_128) {
 		po += 8;
 	}
-	bs = BEAR_SINGLE_UNITY_FILEblock_size(dig);
+	bs = [BEAR_SINGLE_UNITY_FILE]block_size(dig);
 	hlen = hash_size(dig);
 
 	/*

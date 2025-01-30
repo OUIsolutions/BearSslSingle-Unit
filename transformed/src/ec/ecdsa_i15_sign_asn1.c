@@ -24,7 +24,7 @@
 
 
 
-#define BEAR_SINGLE_UNITY_FILEORDER_LEN   ((BR_MAX_EC_SIZE + 7) >> 3)
+#define [BEAR_SINGLE_UNITY_FILE]ORDER_LEN   ((BR_MAX_EC_SIZE + 7) >> 3)
 
 /* see bearssl_ec.h */
 size_t
@@ -32,7 +32,7 @@ br_ecdsa_i15_sign_asn1(const br_ec_impl *impl,
 	const br_hash_class *hf, const void *hash_value,
 	const br_ec_private_key *sk, void *sig)
 {
-	unsigned char rsig[(BEAR_SINGLE_UNITY_FILEORDER_LEN << 1) + 12];
+	unsigned char rsig[([BEAR_SINGLE_UNITY_FILE]ORDER_LEN << 1) + 12];
 	size_t sig_len;
 
 	sig_len = br_ecdsa_i15_sign_raw(impl, hf, hash_value, sk, rsig);

@@ -30,21 +30,21 @@
  *   - R^2 mod p (R = 2^(31k) for the smallest k such that R >= p)
  */
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEC255_P[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]C255_P[] = {
 	0x00000107,
 	0x7FFFFFED, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF,
 	0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x0000007F
 };
 
-#define BEAR_SINGLE_UNITY_FILEP0I   0x286BCA1B
+#define [BEAR_SINGLE_UNITY_FILE]P0I   0x286BCA1B
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEC255_R2[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]C255_R2[] = {
 	0x00000107,
 	0x00000000, 0x02D20000, 0x00000000, 0x00000000, 0x00000000,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000
 };
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEC255_A24[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]C255_A24[] = {
 	0x00000107,
 	0x53000000, 0x0000468B, 0x00000000, 0x00000000, 0x00000000,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000
@@ -62,7 +62,7 @@ print_int_mont(const char *name, const uint32_t *x)
 
 	printf("%s = ", name);
 	memcpy(y, x, sizeof y);
-	br_i31_from_monty(y, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
+	br_i31_from_monty(y, [BEAR_SINGLE_UNITY_FILE]C255_P, [BEAR_SINGLE_UNITY_FILE]P0I);
 	br_i31_encode(tmp, sizeof tmp, y);
 	for (u = 0; u < sizeof tmp; u ++) {
 		printf("%02X", tmp[u]);
@@ -71,14 +71,14 @@ print_int_mont(const char *name, const uint32_t *x)
 }
 */
 
-static const unsigned char BEAR_SINGLE_UNITY_FILEGEN[] = {
+static const unsigned char [BEAR_SINGLE_UNITY_FILE]GEN[] = {
 	0x09, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
 
-static const unsigned char BEAR_SINGLE_UNITY_FILEORDER[] = {
+static const unsigned char [BEAR_SINGLE_UNITY_FILE]ORDER[] = {
 	0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
 	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
 	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
@@ -86,23 +86,23 @@ static const unsigned char BEAR_SINGLE_UNITY_FILEORDER[] = {
 };
 
 static const unsigned char *
-BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
+[BEAR_SINGLE_UNITY_FILE]api_generator(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
-	return BEAR_SINGLE_UNITY_FILEGEN;
+	return [BEAR_SINGLE_UNITY_FILE]GEN;
 }
 
 static const unsigned char *
-BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
+[BEAR_SINGLE_UNITY_FILE]api_order(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
-	return BEAR_SINGLE_UNITY_FILEORDER;
+	return [BEAR_SINGLE_UNITY_FILE]ORDER;
 }
 
 static size_t
-BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
+[BEAR_SINGLE_UNITY_FILE]api_xoff(int curve, size_t *len)
 {
 	(void)curve;
 	*len = 32;
@@ -110,7 +110,7 @@ BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEcswap(uint32_t *a, uint32_t *b, uint32_t ctl)
+[BEAR_SINGLE_UNITY_FILE]cswap(uint32_t *a, uint32_t *b, uint32_t ctl)
 {
 	int i;
 
@@ -127,39 +127,39 @@ BEAR_SINGLE_UNITY_FILEcswap(uint32_t *a, uint32_t *b, uint32_t ctl)
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEc255_add(uint32_t *d, const uint32_t *a, const uint32_t *b)
+[BEAR_SINGLE_UNITY_FILE]c255_add(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	uint32_t ctl;
 	uint32_t t[10];
 
 	memcpy(t, a, sizeof t);
 	ctl = br_i31_add(t, b, 1);
-	ctl |= NOT(br_i31_sub(t, BEAR_SINGLE_UNITY_FILEC255_P, 0));
-	br_i31_sub(t, BEAR_SINGLE_UNITY_FILEC255_P, ctl);
+	ctl |= NOT(br_i31_sub(t, [BEAR_SINGLE_UNITY_FILE]C255_P, 0));
+	br_i31_sub(t, [BEAR_SINGLE_UNITY_FILE]C255_P, ctl);
 	memcpy(d, t, sizeof t);
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEc255_sub(uint32_t *d, const uint32_t *a, const uint32_t *b)
+[BEAR_SINGLE_UNITY_FILE]c255_sub(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	uint32_t t[10];
 
 	memcpy(t, a, sizeof t);
-	br_i31_add(t, BEAR_SINGLE_UNITY_FILEC255_P, br_i31_sub(t, b, 1));
+	br_i31_add(t, [BEAR_SINGLE_UNITY_FILE]C255_P, br_i31_sub(t, b, 1));
 	memcpy(d, t, sizeof t);
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEc255_mul(uint32_t *d, const uint32_t *a, const uint32_t *b)
+[BEAR_SINGLE_UNITY_FILE]c255_mul(uint32_t *d, const uint32_t *a, const uint32_t *b)
 {
 	uint32_t t[10];
 
-	br_i31_montymul(t, a, b, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
+	br_i31_montymul(t, a, b, [BEAR_SINGLE_UNITY_FILE]C255_P, [BEAR_SINGLE_UNITY_FILE]P0I);
 	memcpy(d, t, sizeof t);
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEbyteswap(unsigned char *G)
+[BEAR_SINGLE_UNITY_FILE]byteswap(unsigned char *G)
 {
 	int i;
 
@@ -173,7 +173,7 @@ BEAR_SINGLE_UNITY_FILEbyteswap(unsigned char *G)
 }
 
 static uint32_t
-BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
+[BEAR_SINGLE_UNITY_FILE]api_mul(unsigned char *G, size_t Glen,
 	const unsigned char *kb, size_t kblen, int curve)
 {
 	uint32_t x1[10], x2[10], x3[10], z2[10], z3[10];
@@ -200,7 +200,7 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	 * Byteswap the point encoding, because it uses little-endian, and
 	 * the generic decoding routine uses big-endian.
 	 */
-	BEAR_SINGLE_UNITY_FILEbyteswap(G);
+	[BEAR_SINGLE_UNITY_FILE]byteswap(G);
 
 	/*
 	 * Decode the point ('u' coordinate). This should be reduced
@@ -211,21 +211,21 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	 * subtraction. We use br_i31_decode_mod() and not
 	 * br_i31_decode(), because the ec_prime_i31 implementation uses
 	 * the former but not the latter.
-	 *    br_i31_decode_reduce(a, G, 32, BEAR_SINGLE_UNITY_FILEC255_P);
+	 *    br_i31_decode_reduce(a, G, 32, [BEAR_SINGLE_UNITY_FILE]C255_P);
 	 */
 	br_i31_zero(b, 0x108);
 	b[9] = 0x0080;
 	br_i31_decode_mod(a, G, 32, b);
 	a[0] = 0x107;
-	br_i31_sub(a, BEAR_SINGLE_UNITY_FILEC255_P, NOT(br_i31_sub(a, BEAR_SINGLE_UNITY_FILEC255_P, 0)));
+	br_i31_sub(a, [BEAR_SINGLE_UNITY_FILE]C255_P, NOT(br_i31_sub(a, [BEAR_SINGLE_UNITY_FILE]C255_P, 0)));
 
 	/*
 	 * Initialise variables x1, x2, z2, x3 and z3. We set all of them
 	 * into Montgomery representation.
 	 */
-	br_i31_montymul(x1, a, BEAR_SINGLE_UNITY_FILEC255_R2, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
+	br_i31_montymul(x1, a, [BEAR_SINGLE_UNITY_FILE]C255_R2, [BEAR_SINGLE_UNITY_FILE]C255_P, [BEAR_SINGLE_UNITY_FILE]P0I);
 	memcpy(x3, x1, sizeof x1);
-	br_i31_zero(z2, BEAR_SINGLE_UNITY_FILEC255_P[0]);
+	br_i31_zero(z2, [BEAR_SINGLE_UNITY_FILE]C255_P[0]);
 	memcpy(x2, z2, sizeof z2);
 	x2[1] = 0x13000000;
 	memcpy(z3, x2, sizeof x2);
@@ -249,8 +249,8 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 
 		kt = (k[31 - (i >> 3)] >> (i & 7)) & 1;
 		swap ^= kt;
-		BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
-		BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
+		[BEAR_SINGLE_UNITY_FILE]cswap(x2, x3, swap);
+		[BEAR_SINGLE_UNITY_FILE]cswap(z2, z3, swap);
 		swap = kt;
 
 		/* obsolete
@@ -260,15 +260,15 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		print_int_mont("z3", z3);
 		*/
 
-		BEAR_SINGLE_UNITY_FILEc255_add(a, x2, z2);
-		BEAR_SINGLE_UNITY_FILEc255_mul(aa, a, a);
-		BEAR_SINGLE_UNITY_FILEc255_sub(b, x2, z2);
-		BEAR_SINGLE_UNITY_FILEc255_mul(bb, b, b);
-		BEAR_SINGLE_UNITY_FILEc255_sub(e, aa, bb);
-		BEAR_SINGLE_UNITY_FILEc255_add(c, x3, z3);
-		BEAR_SINGLE_UNITY_FILEc255_sub(d, x3, z3);
-		BEAR_SINGLE_UNITY_FILEc255_mul(da, d, a);
-		BEAR_SINGLE_UNITY_FILEc255_mul(cb, c, b);
+		[BEAR_SINGLE_UNITY_FILE]c255_add(a, x2, z2);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(aa, a, a);
+		[BEAR_SINGLE_UNITY_FILE]c255_sub(b, x2, z2);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(bb, b, b);
+		[BEAR_SINGLE_UNITY_FILE]c255_sub(e, aa, bb);
+		[BEAR_SINGLE_UNITY_FILE]c255_add(c, x3, z3);
+		[BEAR_SINGLE_UNITY_FILE]c255_sub(d, x3, z3);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(da, d, a);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(cb, c, b);
 
 		/* obsolete
 		print_int_mont("a ", a);
@@ -282,15 +282,15 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		print_int_mont("cb", cb);
 		*/
 
-		BEAR_SINGLE_UNITY_FILEc255_add(x3, da, cb);
-		BEAR_SINGLE_UNITY_FILEc255_mul(x3, x3, x3);
-		BEAR_SINGLE_UNITY_FILEc255_sub(z3, da, cb);
-		BEAR_SINGLE_UNITY_FILEc255_mul(z3, z3, z3);
-		BEAR_SINGLE_UNITY_FILEc255_mul(z3, z3, x1);
-		BEAR_SINGLE_UNITY_FILEc255_mul(x2, aa, bb);
-		BEAR_SINGLE_UNITY_FILEc255_mul(z2, BEAR_SINGLE_UNITY_FILEC255_A24, e);
-		BEAR_SINGLE_UNITY_FILEc255_add(z2, z2, aa);
-		BEAR_SINGLE_UNITY_FILEc255_mul(z2, e, z2);
+		[BEAR_SINGLE_UNITY_FILE]c255_add(x3, da, cb);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(x3, x3, x3);
+		[BEAR_SINGLE_UNITY_FILE]c255_sub(z3, da, cb);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(z3, z3, z3);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(z3, z3, x1);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(x2, aa, bb);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(z2, [BEAR_SINGLE_UNITY_FILE]C255_A24, e);
+		[BEAR_SINGLE_UNITY_FILE]c255_add(z2, z2, aa);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(z2, e, z2);
 
 		/* obsolete
 		print_int_mont("x2", x2);
@@ -299,8 +299,8 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 		print_int_mont("z3", z3);
 		*/
 	}
-	BEAR_SINGLE_UNITY_FILEcswap(x2, x3, swap);
-	BEAR_SINGLE_UNITY_FILEcswap(z2, z3, swap);
+	[BEAR_SINGLE_UNITY_FILE]cswap(x2, x3, swap);
+	[BEAR_SINGLE_UNITY_FILE]cswap(z2, z3, swap);
 
 	/*
 	 * Inverse z2 with a modular exponentiation. This is a simple
@@ -309,56 +309,56 @@ BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
 	 */
 	memcpy(a, z2, sizeof z2);
 	for (i = 0; i < 15; i ++) {
-		BEAR_SINGLE_UNITY_FILEc255_mul(a, a, a);
-		BEAR_SINGLE_UNITY_FILEc255_mul(a, a, z2);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(a, a, a);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(a, a, z2);
 	}
 	memcpy(b, a, sizeof a);
 	for (i = 0; i < 14; i ++) {
 		int j;
 
 		for (j = 0; j < 16; j ++) {
-			BEAR_SINGLE_UNITY_FILEc255_mul(b, b, b);
+			[BEAR_SINGLE_UNITY_FILE]c255_mul(b, b, b);
 		}
-		BEAR_SINGLE_UNITY_FILEc255_mul(b, b, a);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(b, b, a);
 	}
 	for (i = 14; i >= 0; i --) {
-		BEAR_SINGLE_UNITY_FILEc255_mul(b, b, b);
+		[BEAR_SINGLE_UNITY_FILE]c255_mul(b, b, b);
 		if ((0xFFEB >> i) & 1) {
-			BEAR_SINGLE_UNITY_FILEc255_mul(b, z2, b);
+			[BEAR_SINGLE_UNITY_FILE]c255_mul(b, z2, b);
 		}
 	}
-	BEAR_SINGLE_UNITY_FILEc255_mul(b, x2, b);
+	[BEAR_SINGLE_UNITY_FILE]c255_mul(b, x2, b);
 
 	/*
 	 * To avoid a dependency on br_i31_from_monty(), we use
 	 * a Montgomery multiplication with 1.
 	 *    memcpy(x2, b, sizeof b);
-	 *    br_i31_from_monty(x2, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
+	 *    br_i31_from_monty(x2, [BEAR_SINGLE_UNITY_FILE]C255_P, [BEAR_SINGLE_UNITY_FILE]P0I);
 	 */
-	br_i31_zero(a, BEAR_SINGLE_UNITY_FILEC255_P[0]);
+	br_i31_zero(a, [BEAR_SINGLE_UNITY_FILE]C255_P[0]);
 	a[1] = 1;
-	br_i31_montymul(x2, a, b, BEAR_SINGLE_UNITY_FILEC255_P, BEAR_SINGLE_UNITY_FILEP0I);
+	br_i31_montymul(x2, a, b, [BEAR_SINGLE_UNITY_FILE]C255_P, [BEAR_SINGLE_UNITY_FILE]P0I);
 
 	br_i31_encode(G, 32, x2);
-	BEAR_SINGLE_UNITY_FILEbyteswap(G);
+	[BEAR_SINGLE_UNITY_FILE]byteswap(G);
 	return 1;
 }
 
 static size_t
-BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
+[BEAR_SINGLE_UNITY_FILE]api_mulgen(unsigned char *R,
 	const unsigned char *x, size_t xlen, int curve)
 {
 	const unsigned char *G;
 	size_t Glen;
 
-	G = BEAR_SINGLE_UNITY_FILEapi_generator(curve, &Glen);
+	G = [BEAR_SINGLE_UNITY_FILE]api_generator(curve, &Glen);
 	memcpy(R, G, Glen);
-	BEAR_SINGLE_UNITY_FILEapi_mul(R, Glen, x, xlen, curve);
+	[BEAR_SINGLE_UNITY_FILE]api_mul(R, Glen, x, xlen, curve);
 	return Glen;
 }
 
 static uint32_t
-BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
+[BEAR_SINGLE_UNITY_FILE]api_muladd(unsigned char *A, const unsigned char *B, size_t len,
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
@@ -381,10 +381,10 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_c25519_i31 = {
 	(uint32_t)0x20000000,
-	&BEAR_SINGLE_UNITY_FILEapi_generator,
-	&BEAR_SINGLE_UNITY_FILEapi_order,
-	&BEAR_SINGLE_UNITY_FILEapi_xoff,
-	&BEAR_SINGLE_UNITY_FILEapi_mul,
-	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
-	&BEAR_SINGLE_UNITY_FILEapi_muladd
+	&[BEAR_SINGLE_UNITY_FILE]api_generator,
+	&[BEAR_SINGLE_UNITY_FILE]api_order,
+	&[BEAR_SINGLE_UNITY_FILE]api_xoff,
+	&[BEAR_SINGLE_UNITY_FILE]api_mul,
+	&[BEAR_SINGLE_UNITY_FILE]api_mulgen,
+	&[BEAR_SINGLE_UNITY_FILE]api_muladd
 };

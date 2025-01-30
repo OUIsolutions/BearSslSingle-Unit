@@ -24,8 +24,8 @@ preamble {
 
 
 
-#define BEAR_SINGLE_UNITY_FILECTX   ((br_x509_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_decoder_context, cpu)))
-#define BEAR_SINGLE_UNITY_FILECONTEXT_NAME   br_x509_decoder_context
+#define [BEAR_SINGLE_UNITY_FILE]CTX   ((br_x509_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_decoder_context, cpu)))
+#define [BEAR_SINGLE_UNITY_FILE]CONTEXT_NAME   br_x509_decoder_context
 
 /* see bearssl_x509.h */
 void
@@ -70,14 +70,14 @@ addr: signer_key_type
 addr: signer_hash_id
 
 cc: read8-low ( -- x ) {
-	if (BEAR_SINGLE_UNITY_FILECTX->hlen == 0) {
+	if ([BEAR_SINGLE_UNITY_FILE]CTX->hlen == 0) {
 		T0_PUSHi(-1);
 	} else {
-		unsigned char x = *BEAR_SINGLE_UNITY_FILECTX->hbuf ++;
-		if (BEAR_SINGLE_UNITY_FILECTX->copy_dn && BEAR_SINGLE_UNITY_FILECTX->append_dn) {
-			BEAR_SINGLE_UNITY_FILECTX->append_dn(BEAR_SINGLE_UNITY_FILECTX->append_dn_ctx, &x, 1);
+		unsigned char x = *[BEAR_SINGLE_UNITY_FILE]CTX->hbuf ++;
+		if ([BEAR_SINGLE_UNITY_FILE]CTX->copy_dn && [BEAR_SINGLE_UNITY_FILE]CTX->append_dn) {
+			[BEAR_SINGLE_UNITY_FILE]CTX->append_dn([BEAR_SINGLE_UNITY_FILE]CTX->append_dn_ctx, &x, 1);
 		}
-		BEAR_SINGLE_UNITY_FILECTX->hlen --;
+		[BEAR_SINGLE_UNITY_FILE]CTX->hlen --;
 		T0_PUSH(x);
 	}
 }
@@ -85,18 +85,18 @@ cc: read8-low ( -- x ) {
 cc: read-blob-inner ( addr len -- addr len ) {
 	uint32_t len = T0_POP();
 	uint32_t addr = T0_POP();
-	size_t clen = BEAR_SINGLE_UNITY_FILECTX->hlen;
+	size_t clen = [BEAR_SINGLE_UNITY_FILE]CTX->hlen;
 	if (clen > len) {
 		clen = (size_t)len;
 	}
 	if (addr != 0) {
-		memcpy((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
+		memcpy((unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + addr, [BEAR_SINGLE_UNITY_FILE]CTX->hbuf, clen);
 	}
-	if (BEAR_SINGLE_UNITY_FILECTX->copy_dn && BEAR_SINGLE_UNITY_FILECTX->append_dn) {
-		BEAR_SINGLE_UNITY_FILECTX->append_dn(BEAR_SINGLE_UNITY_FILECTX->append_dn_ctx, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
+	if ([BEAR_SINGLE_UNITY_FILE]CTX->copy_dn && [BEAR_SINGLE_UNITY_FILE]CTX->append_dn) {
+		[BEAR_SINGLE_UNITY_FILE]CTX->append_dn([BEAR_SINGLE_UNITY_FILE]CTX->append_dn_ctx, [BEAR_SINGLE_UNITY_FILE]CTX->hbuf, clen);
 	}
-	BEAR_SINGLE_UNITY_FILECTX->hbuf += clen;
-	BEAR_SINGLE_UNITY_FILECTX->hlen -= clen;
+	[BEAR_SINGLE_UNITY_FILE]CTX->hbuf += clen;
+	[BEAR_SINGLE_UNITY_FILE]CTX->hlen -= clen;
 	T0_PUSH(addr + clen);
 	T0_PUSH(len - clen);
 }
@@ -110,21 +110,21 @@ cc: read-blob-inner ( addr len -- addr len ) {
 cc: copy-rsa-pkey ( nlen elen -- ) {
 	size_t elen = T0_POP();
 	size_t nlen = T0_POP();
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key_type = BR_KEYTYPE_RSA;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.n = BEAR_SINGLE_UNITY_FILECTX->pkey_data;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.nlen = nlen;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.e = BEAR_SINGLE_UNITY_FILECTX->pkey_data + nlen;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.elen = elen;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key_type = BR_KEYTYPE_RSA;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.n = [BEAR_SINGLE_UNITY_FILE]CTX->pkey_data;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.nlen = nlen;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.e = [BEAR_SINGLE_UNITY_FILE]CTX->pkey_data + nlen;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.elen = elen;
 }
 
 \ Copy the public key (EC) to the permanent buffer.
 cc: copy-ec-pkey ( curve qlen -- ) {
 	size_t qlen = T0_POP();
 	uint32_t curve = T0_POP();
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key_type = BR_KEYTYPE_EC;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.curve = curve;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.q = BEAR_SINGLE_UNITY_FILECTX->pkey_data;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.qlen = qlen;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key_type = BR_KEYTYPE_EC;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.ec.curve = curve;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.ec.q = [BEAR_SINGLE_UNITY_FILE]CTX->pkey_data;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.ec.qlen = qlen;
 }
 
 \ Extensions with specific processing.

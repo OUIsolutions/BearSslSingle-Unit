@@ -61,7 +61,7 @@ key_schedule_128(unsigned char *sk, const unsigned char *key)
 		 * v3 = Rcon (x4 words)
 		 * v6 = constant 8, copied into four words
 		 * v7 = constant 0x11B, copied into four words
-		 * v8 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+		 * v8 = constant for [BEAR_SINGLE_UNITY_FILE]byteswapping words
 		 */
 		vspltisw(0, 0)
 #if BR_POWER8_LE
@@ -169,7 +169,7 @@ key_schedule_192(unsigned char *sk, const unsigned char *key)
 		 * v2, v3 = current subkey
 		 * v5 = Rcon (x4 words) (already shifted on big-endian)
 		 * v6 = constant 8, copied into four words
-		 * v8 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+		 * v8 = constant for [BEAR_SINGLE_UNITY_FILE]byteswapping words
 		 *
 		 * The left two words of v3 are ignored.
 		 */
@@ -307,7 +307,7 @@ key_schedule_256(unsigned char *sk, const unsigned char *key)
 		 * v2, v3 = current subkey
 		 * v6 = Rcon (x4 words) (already shifted on big-endian)
 		 * v7 = constant 8, copied into four words
-		 * v8 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+		 * v8 = constant for [BEAR_SINGLE_UNITY_FILE]byteswapping words
 		 *
 		 * The left two words of v3 are ignored.
 		 */

@@ -30,28 +30,28 @@
  * representation).
  */
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEP256_P[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]P256_P[] = {
 	0x00000108,
 	0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x00000007,
 	0x00000000, 0x00000000, 0x00000040, 0x7FFFFF80,
 	0x000000FF
 };
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEP256_R2[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]P256_R2[] = {
 	0x00000108,
 	0x00014000, 0x00018000, 0x00000000, 0x7FF40000,
 	0x7FEFFFFF, 0x7FF7FFFF, 0x7FAFFFFF, 0x005FFFFF,
 	0x00000000
 };
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEP256_B[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]P256_B[] = {
 	0x00000108,
 	0x6FEE1803, 0x6229C4BD, 0x21B139BE, 0x327150AA,
 	0x3567802E, 0x3F7212ED, 0x012E4355, 0x782DD38D,
 	0x0000000E
 };
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEP384_P[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]P384_P[] = {
 	0x0000018C,
 	0x7FFFFFFF, 0x00000001, 0x00000000, 0x7FFFFFF8,
 	0x7FFFFFEF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF,
@@ -59,7 +59,7 @@ static const uint32_t BEAR_SINGLE_UNITY_FILEP384_P[] = {
 	0x00000FFF
 };
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEP384_R2[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]P384_R2[] = {
 	0x0000018C,
 	0x00000000, 0x00000080, 0x7FFFFE00, 0x000001FF,
 	0x00000800, 0x00000000, 0x7FFFE000, 0x00001FFF,
@@ -67,7 +67,7 @@ static const uint32_t BEAR_SINGLE_UNITY_FILEP384_R2[] = {
 	0x00000000
 };
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEP384_B[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]P384_B[] = {
 	0x0000018C,
 	0x6E666840, 0x070D0392, 0x5D810231, 0x7651D50C,
 	0x17E218D6, 0x1B192002, 0x44EFE441, 0x3A524E2B,
@@ -75,7 +75,7 @@ static const uint32_t BEAR_SINGLE_UNITY_FILEP384_B[] = {
 	0x000008A5
 };
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEP521_P[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]P521_P[] = {
 	0x00000219,
 	0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF,
 	0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF,
@@ -84,7 +84,7 @@ static const uint32_t BEAR_SINGLE_UNITY_FILEP521_P[] = {
 	0x01FFFFFF
 };
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEP521_R2[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]P521_R2[] = {
 	0x00000219,
 	0x00001000, 0x00000000, 0x00000000, 0x00000000,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
@@ -93,7 +93,7 @@ static const uint32_t BEAR_SINGLE_UNITY_FILEP521_R2[] = {
 	0x00000000
 };
 
-static const uint32_t BEAR_SINGLE_UNITY_FILEP521_B[] = {
+static const uint32_t [BEAR_SINGLE_UNITY_FILE]P521_B[] = {
 	0x00000219,
 	0x540FC00A, 0x228FEA35, 0x2C34F1EF, 0x67BF107A,
 	0x46FC1CD5, 0x1605E9DD, 0x6937B165, 0x272A3D8F,
@@ -108,15 +108,15 @@ typedef struct {
 	const uint32_t *R2;
 	uint32_t p0i;
 	size_t point_len;
-} BEAR_SINGLE_UNITY_FILEcurve_params;
+} [BEAR_SINGLE_UNITY_FILE]curve_params;
 
-static inline const BEAR_SINGLE_UNITY_FILEcurve_params *
-BEAR_SINGLE_UNITY_FILEid_to_curve(int curve)
+static inline const [BEAR_SINGLE_UNITY_FILE]curve_params *
+[BEAR_SINGLE_UNITY_FILE]id_to_curve(int curve)
 {
-	static const BEAR_SINGLE_UNITY_FILEcurve_params pp[] = {
-		{ BEAR_SINGLE_UNITY_FILEP256_P, BEAR_SINGLE_UNITY_FILEP256_B, BEAR_SINGLE_UNITY_FILEP256_R2, 0x00000001,  65 },
-		{ BEAR_SINGLE_UNITY_FILEP384_P, BEAR_SINGLE_UNITY_FILEP384_B, BEAR_SINGLE_UNITY_FILEP384_R2, 0x00000001,  97 },
-		{ BEAR_SINGLE_UNITY_FILEP521_P, BEAR_SINGLE_UNITY_FILEP521_B, BEAR_SINGLE_UNITY_FILEP521_R2, 0x00000001, 133 }
+	static const [BEAR_SINGLE_UNITY_FILE]curve_params pp[] = {
+		{ [BEAR_SINGLE_UNITY_FILE]P256_P, [BEAR_SINGLE_UNITY_FILE]P256_B, [BEAR_SINGLE_UNITY_FILE]P256_R2, 0x00000001,  65 },
+		{ [BEAR_SINGLE_UNITY_FILE]P384_P, [BEAR_SINGLE_UNITY_FILE]P384_B, [BEAR_SINGLE_UNITY_FILE]P384_R2, 0x00000001,  97 },
+		{ [BEAR_SINGLE_UNITY_FILE]P521_P, [BEAR_SINGLE_UNITY_FILE]P521_B, [BEAR_SINGLE_UNITY_FILE]P521_R2, 0x00000001, 133 }
 	};
 
 	return &pp[curve - BR_EC_secp256r1];
@@ -132,7 +132,7 @@ BEAR_SINGLE_UNITY_FILEid_to_curve(int curve)
  */
 typedef struct {
 	uint32_t c[3][I31_LEN];
-} BEAR_SINGLE_UNITY_FILEjacobian;
+} [BEAR_SINGLE_UNITY_FILE]jacobian;
 
 /*
  * We use a custom interpreter that uses a dozen registers, and
@@ -140,10 +140,10 @@ typedef struct {
  *    MSET(d, a)       copy a into d
  *    MADD(d, a)       d = d+a (modular)
  *    MSUB(d, a)       d = d-a (modular)
- *    BEAR_SINGLE_UNITY_FILEMMUL(d, a, b)    d = a*b (Montgomery multiplication)
+ *    [BEAR_SINGLE_UNITY_FILE]MMUL(d, a, b)    d = a*b (Montgomery multiplication)
  *    MINV(d, a, b)    invert d modulo p; a and b are used as scratch registers
  *    MTZ(d)           clear return value if d = 0
- * Destination of BEAR_SINGLE_UNITY_FILEMMUL (d) must be distinct from operands (a and b).
+ * Destination of [BEAR_SINGLE_UNITY_FILE]MMUL (d) must be distinct from operands (a and b).
  * There is no such constraint for MSUB and MADD.
  *
  * Registers include the operand coordinates, and temporaries.
@@ -151,7 +151,7 @@ typedef struct {
 #define MSET(d, a)      (0x0000 + ((d) << 8) + ((a) << 4))
 #define MADD(d, a)      (0x1000 + ((d) << 8) + ((a) << 4))
 #define MSUB(d, a)      (0x2000 + ((d) << 8) + ((a) << 4))
-#define BEAR_SINGLE_UNITY_FILEMMUL(d, a, b)   (0x3000 + ((d) << 8) + ((a) << 4) + (b))
+#define [BEAR_SINGLE_UNITY_FILE]MMUL(d, a, b)   (0x3000 + ((d) << 8) + ((a) << 4) + (b))
 #define MINV(d, a, b)   (0x4000 + ((d) << 8) + ((a) << 4) + (b))
 #define MTZ(d)          (0x5000 + ((d) << 8))
 #define ENDCODE         0
@@ -159,38 +159,38 @@ typedef struct {
 /*
  * Registers for the input operands.
  */
-#define BEAR_SINGLE_UNITY_FILEP1x    0
-#define BEAR_SINGLE_UNITY_FILEP1y    1
-#define BEAR_SINGLE_UNITY_FILEP1z    2
-#define BEAR_SINGLE_UNITY_FILEP2x    3
-#define BEAR_SINGLE_UNITY_FILEP2y    4
-#define BEAR_SINGLE_UNITY_FILEP2z    5
+#define [BEAR_SINGLE_UNITY_FILE]P1x    0
+#define [BEAR_SINGLE_UNITY_FILE]P1y    1
+#define [BEAR_SINGLE_UNITY_FILE]P1z    2
+#define [BEAR_SINGLE_UNITY_FILE]P2x    3
+#define [BEAR_SINGLE_UNITY_FILE]P2y    4
+#define [BEAR_SINGLE_UNITY_FILE]P2z    5
 
 /*
  * Alternate names for the first input operand.
  */
-#define BEAR_SINGLE_UNITY_FILEPx     0
-#define BEAR_SINGLE_UNITY_FILEPy     1
-#define BEAR_SINGLE_UNITY_FILEPz     2
+#define [BEAR_SINGLE_UNITY_FILE]Px     0
+#define [BEAR_SINGLE_UNITY_FILE]Py     1
+#define [BEAR_SINGLE_UNITY_FILE]Pz     2
 
 /*
  * Temporaries.
  */
-#define BEAR_SINGLE_UNITY_FILEt1     6
-#define BEAR_SINGLE_UNITY_FILEt2     7
-#define BEAR_SINGLE_UNITY_FILEt3     8
-#define BEAR_SINGLE_UNITY_FILEt4     9
-#define BEAR_SINGLE_UNITY_FILEt5    10
-#define BEAR_SINGLE_UNITY_FILEt6    11
-#define BEAR_SINGLE_UNITY_FILEt7    12
+#define [BEAR_SINGLE_UNITY_FILE]t1     6
+#define [BEAR_SINGLE_UNITY_FILE]t2     7
+#define [BEAR_SINGLE_UNITY_FILE]t3     8
+#define [BEAR_SINGLE_UNITY_FILE]t4     9
+#define [BEAR_SINGLE_UNITY_FILE]t5    10
+#define [BEAR_SINGLE_UNITY_FILE]t6    11
+#define [BEAR_SINGLE_UNITY_FILE]t7    12
 
 /*
  * Extra scratch registers available when there is no second operand (e.g.
  * for "double" and "affine").
  */
-#define BEAR_SINGLE_UNITY_FILEt8     3
-#define BEAR_SINGLE_UNITY_FILEt9     4
-#define BEAR_SINGLE_UNITY_FILEt10    5
+#define [BEAR_SINGLE_UNITY_FILE]t8     3
+#define [BEAR_SINGLE_UNITY_FILE]t9     4
+#define [BEAR_SINGLE_UNITY_FILE]t10    5
 
 /*
  * Doubling formulas are:
@@ -210,58 +210,58 @@ typedef struct {
  *
  * Cost: 8 multiplications
  */
-static const uint16_t BEAR_SINGLE_UNITY_FILEcode_double[] = {
+static const uint16_t [BEAR_SINGLE_UNITY_FILE]code_double[] = {
 	/*
 	 * Compute z^2 (in t1).
 	 */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEPz, BEAR_SINGLE_UNITY_FILEPz),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]Pz, [BEAR_SINGLE_UNITY_FILE]Pz),
 
 	/*
 	 * Compute x-z^2 (in t2) and then x+z^2 (in t1).
 	 */
-	MSET(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEPx),
-	MSUB(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt1),
-	MADD(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEPx),
+	MSET([BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]Px),
+	MSUB([BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]t1),
+	MADD([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]Px),
 
 	/*
 	 * Compute m = 3*(x+z^2)*(x-z^2) (in t1).
 	 */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt2),
-	MSET(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt3),
-	MADD(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt3),
-	MADD(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt3),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t3, [BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]t2),
+	MSET([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]t3),
+	MADD([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]t3),
+	MADD([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]t3),
 
 	/*
 	 * Compute s = 4*x*y^2 (in t2) and 2*y^2 (in t3).
 	 */
-	BEAR_SINGLE_UNITY_FILEMMUL(	BEAR_SINGLE_UNITY_FILEt3, 	BEAR_SINGLE_UNITY_FILEPy, 	BEAR_SINGLE_UNITY_FILEPy),
-	MADD(	BEAR_SINGLE_UNITY_FILEt3, 	BEAR_SINGLE_UNITY_FILEt3),
-	BEAR_SINGLE_UNITY_FILEMMUL(	BEAR_SINGLE_UNITY_FILEt2, 	BEAR_SINGLE_UNITY_FILEPx, 	BEAR_SINGLE_UNITY_FILEt3),
-	MADD(	BEAR_SINGLE_UNITY_FILEt2, 	BEAR_SINGLE_UNITY_FILEt2),
+	[BEAR_SINGLE_UNITY_FILE]MMUL(	[BEAR_SINGLE_UNITY_FILE]t3, 	[BEAR_SINGLE_UNITY_FILE]Py, 	[BEAR_SINGLE_UNITY_FILE]Py),
+	MADD(	[BEAR_SINGLE_UNITY_FILE]t3, 	[BEAR_SINGLE_UNITY_FILE]t3),
+	[BEAR_SINGLE_UNITY_FILE]MMUL(	[BEAR_SINGLE_UNITY_FILE]t2, 	[BEAR_SINGLE_UNITY_FILE]Px, 	[BEAR_SINGLE_UNITY_FILE]t3),
+	MADD(	[BEAR_SINGLE_UNITY_FILE]t2, 	[BEAR_SINGLE_UNITY_FILE]t2),
 
 	/*
 	 * Compute x' = m^2 - 2*s.
 	 */
-	BEAR_SINGLE_UNITY_FILEMMUL(	BEAR_SINGLE_UNITY_FILEPx, 	BEAR_SINGLE_UNITY_FILEt1, 	BEAR_SINGLE_UNITY_FILEt1),
-	MSUB(	BEAR_SINGLE_UNITY_FILEPx, 	BEAR_SINGLE_UNITY_FILEt2),
-	MSUB(	BEAR_SINGLE_UNITY_FILEPx, 	BEAR_SINGLE_UNITY_FILEt2),
+	[BEAR_SINGLE_UNITY_FILE]MMUL(	[BEAR_SINGLE_UNITY_FILE]Px, 	[BEAR_SINGLE_UNITY_FILE]t1, 	[BEAR_SINGLE_UNITY_FILE]t1),
+	MSUB(	[BEAR_SINGLE_UNITY_FILE]Px, 	[BEAR_SINGLE_UNITY_FILE]t2),
+	MSUB(	[BEAR_SINGLE_UNITY_FILE]Px, 	[BEAR_SINGLE_UNITY_FILE]t2),
 
 	/*
 	 * Compute z' = 2*y*z.
 	 */
-	BEAR_SINGLE_UNITY_FILEMMUL(	BEAR_SINGLE_UNITY_FILEt4, 	BEAR_SINGLE_UNITY_FILEPy, 	BEAR_SINGLE_UNITY_FILEPz),
-	MSET(	BEAR_SINGLE_UNITY_FILEPz, 	BEAR_SINGLE_UNITY_FILEt4),
-	MADD(	BEAR_SINGLE_UNITY_FILEPz, 	BEAR_SINGLE_UNITY_FILEt4),
+	[BEAR_SINGLE_UNITY_FILE]MMUL(	[BEAR_SINGLE_UNITY_FILE]t4, 	[BEAR_SINGLE_UNITY_FILE]Py, 	[BEAR_SINGLE_UNITY_FILE]Pz),
+	MSET(	[BEAR_SINGLE_UNITY_FILE]Pz, 	[BEAR_SINGLE_UNITY_FILE]t4),
+	MADD(	[BEAR_SINGLE_UNITY_FILE]Pz, 	[BEAR_SINGLE_UNITY_FILE]t4),
 
 	/*
 	 * Compute y' = m*(s - x') - 8*y^4. Note that we already have
 	 * 2*y^2 in t3.
 	 */
-	MSUB(	BEAR_SINGLE_UNITY_FILEt2, 	BEAR_SINGLE_UNITY_FILEPx),
-	BEAR_SINGLE_UNITY_FILEMMUL(	BEAR_SINGLE_UNITY_FILEPy, 	BEAR_SINGLE_UNITY_FILEt1, 	BEAR_SINGLE_UNITY_FILEt2),
-	BEAR_SINGLE_UNITY_FILEMMUL(	BEAR_SINGLE_UNITY_FILEt4, 	BEAR_SINGLE_UNITY_FILEt3, 	BEAR_SINGLE_UNITY_FILEt3),
-	MSUB(	BEAR_SINGLE_UNITY_FILEPy, 	BEAR_SINGLE_UNITY_FILEt4),
-	MSUB(	BEAR_SINGLE_UNITY_FILEPy, 	BEAR_SINGLE_UNITY_FILEt4),
+	MSUB(	[BEAR_SINGLE_UNITY_FILE]t2, 	[BEAR_SINGLE_UNITY_FILE]Px),
+	[BEAR_SINGLE_UNITY_FILE]MMUL(	[BEAR_SINGLE_UNITY_FILE]Py, 	[BEAR_SINGLE_UNITY_FILE]t1, 	[BEAR_SINGLE_UNITY_FILE]t2),
+	[BEAR_SINGLE_UNITY_FILE]MMUL(	[BEAR_SINGLE_UNITY_FILE]t4, 	[BEAR_SINGLE_UNITY_FILE]t3, 	[BEAR_SINGLE_UNITY_FILE]t3),
+	MSUB(	[BEAR_SINGLE_UNITY_FILE]Py, 	[BEAR_SINGLE_UNITY_FILE]t4),
+	MSUB(	[BEAR_SINGLE_UNITY_FILE]Py, 	[BEAR_SINGLE_UNITY_FILE]t4),
 
 	ENDCODE
 };
@@ -316,63 +316,63 @@ static const uint16_t BEAR_SINGLE_UNITY_FILEcode_double[] = {
  *
  * Cost: 16 multiplications
  */
-static const uint16_t BEAR_SINGLE_UNITY_FILEcode_add[] = {
+static const uint16_t [BEAR_SINGLE_UNITY_FILE]code_add[] = {
 	/*
 	 * Compute u1 = x1*z2^2 (in t1) and s1 = y1*z2^3 (in t3).
 	 */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEP2z, BEAR_SINGLE_UNITY_FILEP2z),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt3),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEP2z, BEAR_SINGLE_UNITY_FILEt3),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEt4),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t3, [BEAR_SINGLE_UNITY_FILE]P2z, [BEAR_SINGLE_UNITY_FILE]P2z),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]P1x, [BEAR_SINGLE_UNITY_FILE]t3),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t4, [BEAR_SINGLE_UNITY_FILE]P2z, [BEAR_SINGLE_UNITY_FILE]t3),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t3, [BEAR_SINGLE_UNITY_FILE]P1y, [BEAR_SINGLE_UNITY_FILE]t4),
 
 	/*
 	 * Compute u2 = x2*z1^2 (in t2) and s2 = y2*z1^3 (in t4).
 	 */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEP1z),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEP2x, BEAR_SINGLE_UNITY_FILEt4),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt5, BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEt4),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEP2y, BEAR_SINGLE_UNITY_FILEt5),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t4, [BEAR_SINGLE_UNITY_FILE]P1z, [BEAR_SINGLE_UNITY_FILE]P1z),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]P2x, [BEAR_SINGLE_UNITY_FILE]t4),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t5, [BEAR_SINGLE_UNITY_FILE]P1z, [BEAR_SINGLE_UNITY_FILE]t4),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t4, [BEAR_SINGLE_UNITY_FILE]P2y, [BEAR_SINGLE_UNITY_FILE]t5),
 
 	/*
 	 * Compute h = u2 - u1 (in t2) and r = s2 - s1 (in t4).
 	 */
-	MSUB(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt1),
-	MSUB(BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEt3),
+	MSUB([BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]t1),
+	MSUB([BEAR_SINGLE_UNITY_FILE]t4, [BEAR_SINGLE_UNITY_FILE]t3),
 
 	/*
 	 * Report cases where r = 0 through the returned flag.
 	 */
-	MTZ(BEAR_SINGLE_UNITY_FILEt4),
+	MTZ([BEAR_SINGLE_UNITY_FILE]t4),
 
 	/*
 	 * Compute u1*h^2 (in t6) and h^3 (in t5).
 	 */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt7, BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt2),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt6, BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt7),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt5, BEAR_SINGLE_UNITY_FILEt7, BEAR_SINGLE_UNITY_FILEt2),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t7, [BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]t2),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t6, [BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]t7),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t5, [BEAR_SINGLE_UNITY_FILE]t7, [BEAR_SINGLE_UNITY_FILE]t2),
 
 	/*
 	 * Compute x3 = r^2 - h^3 - 2*u1*h^2.
 	 * t1 and t7 can be used as scratch registers.
 	 */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEt4),
-	MSUB(BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt5),
-	MSUB(BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt6),
-	MSUB(BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt6),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]P1x, [BEAR_SINGLE_UNITY_FILE]t4, [BEAR_SINGLE_UNITY_FILE]t4),
+	MSUB([BEAR_SINGLE_UNITY_FILE]P1x, [BEAR_SINGLE_UNITY_FILE]t5),
+	MSUB([BEAR_SINGLE_UNITY_FILE]P1x, [BEAR_SINGLE_UNITY_FILE]t6),
+	MSUB([BEAR_SINGLE_UNITY_FILE]P1x, [BEAR_SINGLE_UNITY_FILE]t6),
 
 	/*
 	 * Compute y3 = r*(u1*h^2 - x3) - s1*h^3.
 	 */
-	MSUB(BEAR_SINGLE_UNITY_FILEt6, BEAR_SINGLE_UNITY_FILEP1x),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEt4, BEAR_SINGLE_UNITY_FILEt6),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt5, BEAR_SINGLE_UNITY_FILEt3),
-	MSUB(BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEt1),
+	MSUB([BEAR_SINGLE_UNITY_FILE]t6, [BEAR_SINGLE_UNITY_FILE]P1x),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]P1y, [BEAR_SINGLE_UNITY_FILE]t4, [BEAR_SINGLE_UNITY_FILE]t6),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]t5, [BEAR_SINGLE_UNITY_FILE]t3),
+	MSUB([BEAR_SINGLE_UNITY_FILE]P1y, [BEAR_SINGLE_UNITY_FILE]t1),
 
 	/*
 	 * Compute z3 = h*z1*z2.
 	 */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEP2z),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt2),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]P1z, [BEAR_SINGLE_UNITY_FILE]P2z),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]P1z, [BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]t2),
 
 	ENDCODE
 };
@@ -384,35 +384,35 @@ static const uint16_t BEAR_SINGLE_UNITY_FILEcode_add[] = {
  * converted to Montgomery coordinates yet).
  * -- P2x, P2y and P2z are set to, respectively, R^2, b*R and 1.
  */
-static const uint16_t BEAR_SINGLE_UNITY_FILEcode_check[] = {
+static const uint16_t [BEAR_SINGLE_UNITY_FILE]code_check[] = {
 
 	/* Convert x and y to Montgomery representation. */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEP2x),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEP2x),
-	MSET(BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt1),
-	MSET(BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEt2),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]P1x, [BEAR_SINGLE_UNITY_FILE]P2x),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]P1y, [BEAR_SINGLE_UNITY_FILE]P2x),
+	MSET([BEAR_SINGLE_UNITY_FILE]P1x, [BEAR_SINGLE_UNITY_FILE]t1),
+	MSET([BEAR_SINGLE_UNITY_FILE]P1y, [BEAR_SINGLE_UNITY_FILE]t2),
 
 	/* Compute x^3 in t1. */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEP1x),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt2),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]P1x, [BEAR_SINGLE_UNITY_FILE]P1x),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]P1x, [BEAR_SINGLE_UNITY_FILE]t2),
 
 	/* Subtract 3*x from t1. */
-	MSUB(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x),
-	MSUB(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x),
-	MSUB(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1x),
+	MSUB([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]P1x),
+	MSUB([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]P1x),
+	MSUB([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]P1x),
 
 	/* Add b. */
-	MADD(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP2y),
+	MADD([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]P2y),
 
 	/* Compute y^2 in t2. */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEP1y),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]P1y, [BEAR_SINGLE_UNITY_FILE]P1y),
 
 	/* Compare y^2 with x^3 - 3*x + b; they must match. */
-	MSUB(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEt2),
-	MTZ(BEAR_SINGLE_UNITY_FILEt1),
+	MSUB([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]t2),
+	MTZ([BEAR_SINGLE_UNITY_FILE]t1),
 
 	/* Set z to 1 (in Montgomery representation). */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEP2x, BEAR_SINGLE_UNITY_FILEP2z),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]P1z, [BEAR_SINGLE_UNITY_FILE]P2x, [BEAR_SINGLE_UNITY_FILE]P2z),
 
 	ENDCODE
 };
@@ -421,36 +421,36 @@ static const uint16_t BEAR_SINGLE_UNITY_FILEcode_check[] = {
  * Conversion back to affine coordinates. This code snippet assumes that
  * the z coordinate of P2 is set to 1 (not in Montgomery representation).
  */
-static const uint16_t BEAR_SINGLE_UNITY_FILEcode_affine[] = {
+static const uint16_t [BEAR_SINGLE_UNITY_FILE]code_affine[] = {
 
 	/* Save z*R in t1. */
-	MSET(BEAR_SINGLE_UNITY_FILEt1, BEAR_SINGLE_UNITY_FILEP1z),
+	MSET([BEAR_SINGLE_UNITY_FILE]t1, [BEAR_SINGLE_UNITY_FILE]P1z),
 
 	/* Compute z^3 in t2. */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEP1z),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEP1z, BEAR_SINGLE_UNITY_FILEt2),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEP2z),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]P1z, [BEAR_SINGLE_UNITY_FILE]P1z),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t3, [BEAR_SINGLE_UNITY_FILE]P1z, [BEAR_SINGLE_UNITY_FILE]t2),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]t3, [BEAR_SINGLE_UNITY_FILE]P2z),
 
 	/* Invert to (1/z^3) in t2. */
-	MINV(BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEt4),
+	MINV([BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]t3, [BEAR_SINGLE_UNITY_FILE]t4),
 
 	/* Compute y. */
-	MSET(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEP1y),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1y, BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt3),
+	MSET([BEAR_SINGLE_UNITY_FILE]t3, [BEAR_SINGLE_UNITY_FILE]P1y),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]P1y, [BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]t3),
 
 	/* Compute (1/z^2) in t3. */
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEt3, BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt1),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]t3, [BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]t1),
 
 	/* Compute x. */
-	MSET(	BEAR_SINGLE_UNITY_FILEt2, 	BEAR_SINGLE_UNITY_FILEP1x),
-	BEAR_SINGLE_UNITY_FILEMMUL(BEAR_SINGLE_UNITY_FILEP1x, BEAR_SINGLE_UNITY_FILEt2, BEAR_SINGLE_UNITY_FILEt3),
+	MSET(	[BEAR_SINGLE_UNITY_FILE]t2, 	[BEAR_SINGLE_UNITY_FILE]P1x),
+	[BEAR_SINGLE_UNITY_FILE]MMUL([BEAR_SINGLE_UNITY_FILE]P1x, [BEAR_SINGLE_UNITY_FILE]t2, [BEAR_SINGLE_UNITY_FILE]t3),
 
 	ENDCODE
 };
 
 static uint32_t
-BEAR_SINGLE_UNITY_FILErun_code(BEAR_SINGLE_UNITY_FILEjacobian *P1, const BEAR_SINGLE_UNITY_FILEjacobian *P2,
-	const BEAR_SINGLE_UNITY_FILEcurve_params *cc, const uint16_t *code)
+[BEAR_SINGLE_UNITY_FILE]run_code([BEAR_SINGLE_UNITY_FILE]jacobian *P1, const [BEAR_SINGLE_UNITY_FILE]jacobian *P2,
+	const [BEAR_SINGLE_UNITY_FILE]curve_params *cc, const uint16_t *code)
 {
 	uint32_t r;
 	uint32_t t[13][I31_LEN];
@@ -461,8 +461,8 @@ BEAR_SINGLE_UNITY_FILErun_code(BEAR_SINGLE_UNITY_FILEjacobian *P1, const BEAR_SI
 	/*
 	 * Copy the two operands in the dedicated registers.
 	 */
-	memcpy(t[BEAR_SINGLE_UNITY_FILEP1x], P1->c, 3 * I31_LEN * sizeof(uint32_t));
-	memcpy(t[BEAR_SINGLE_UNITY_FILEP2x], P2->c, 3 * I31_LEN * sizeof(uint32_t));
+	memcpy(t[[BEAR_SINGLE_UNITY_FILE]P1x], P1->c, 3 * I31_LEN * sizeof(uint32_t));
+	memcpy(t[[BEAR_SINGLE_UNITY_FILE]P2x], P2->c, 3 * I31_LEN * sizeof(uint32_t));
 
 	/*
 	 * Run formulas.
@@ -513,12 +513,12 @@ BEAR_SINGLE_UNITY_FILErun_code(BEAR_SINGLE_UNITY_FILEjacobian *P1, const BEAR_SI
 	/*
 	 * Copy back result.
 	 */
-	memcpy(P1->c, t[BEAR_SINGLE_UNITY_FILEP1x], 3 * I31_LEN * sizeof(uint32_t));
+	memcpy(P1->c, t[[BEAR_SINGLE_UNITY_FILE]P1x], 3 * I31_LEN * sizeof(uint32_t));
 	return r;
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEset_one(uint32_t *x, const uint32_t *p)
+[BEAR_SINGLE_UNITY_FILE]set_one(uint32_t *x, const uint32_t *p)
 {
 	size_t plen;
 
@@ -529,27 +529,27 @@ BEAR_SINGLE_UNITY_FILEset_one(uint32_t *x, const uint32_t *p)
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEpoint_zero(BEAR_SINGLE_UNITY_FILEjacobian *P, const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+[BEAR_SINGLE_UNITY_FILE]point_zero([BEAR_SINGLE_UNITY_FILE]jacobian *P, const [BEAR_SINGLE_UNITY_FILE]curve_params *cc)
 {
 	memset(P, 0, sizeof *P);
 	P->c[0][0] = P->c[1][0] = P->c[2][0] = cc->p[0];
 }
 
 static inline void
-BEAR_SINGLE_UNITY_FILEpoint_double(BEAR_SINGLE_UNITY_FILEjacobian *P, const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+[BEAR_SINGLE_UNITY_FILE]point_double([BEAR_SINGLE_UNITY_FILE]jacobian *P, const [BEAR_SINGLE_UNITY_FILE]curve_params *cc)
 {
-	BEAR_SINGLE_UNITY_FILErun_code(P, P, cc, BEAR_SINGLE_UNITY_FILEcode_double);
+	[BEAR_SINGLE_UNITY_FILE]run_code(P, P, cc, [BEAR_SINGLE_UNITY_FILE]code_double);
 }
 
 static inline uint32_t
-BEAR_SINGLE_UNITY_FILEpoint_add(BEAR_SINGLE_UNITY_FILEjacobian *P1, const BEAR_SINGLE_UNITY_FILEjacobian *P2, const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+[BEAR_SINGLE_UNITY_FILE]point_add([BEAR_SINGLE_UNITY_FILE]jacobian *P1, const [BEAR_SINGLE_UNITY_FILE]jacobian *P2, const [BEAR_SINGLE_UNITY_FILE]curve_params *cc)
 {
-	return BEAR_SINGLE_UNITY_FILErun_code(P1, P2, cc, BEAR_SINGLE_UNITY_FILEcode_add);
+	return [BEAR_SINGLE_UNITY_FILE]run_code(P1, P2, cc, [BEAR_SINGLE_UNITY_FILE]code_add);
 }
 
 static void
-BEAR_SINGLE_UNITY_FILEpoint_mul(BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigned char *x, size_t xlen,
-	const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+[BEAR_SINGLE_UNITY_FILE]point_mul([BEAR_SINGLE_UNITY_FILE]jacobian *P, const unsigned char *x, size_t xlen,
+	const [BEAR_SINGLE_UNITY_FILE]curve_params *cc)
 {
 	/*
 	 * We do a simple double-and-add ladder with a 2-bit window
@@ -566,14 +566,14 @@ BEAR_SINGLE_UNITY_FILEpoint_mul(BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigne
 	 * this situation.
 	 */
 	uint32_t qz;
-	BEAR_SINGLE_UNITY_FILEjacobian P2, P3, Q, T, U;
+	[BEAR_SINGLE_UNITY_FILE]jacobian P2, P3, Q, T, U;
 
 	memcpy(&P2, P, sizeof P2);
-	BEAR_SINGLE_UNITY_FILEpoint_double(&P2, cc);
+	[BEAR_SINGLE_UNITY_FILE]point_double(&P2, cc);
 	memcpy(&P3, P, sizeof P3);
-	BEAR_SINGLE_UNITY_FILEpoint_add(&P3, &P2, cc);
+	[BEAR_SINGLE_UNITY_FILE]point_add(&P3, &P2, cc);
 
-	BEAR_SINGLE_UNITY_FILEpoint_zero(&Q, cc);
+	[BEAR_SINGLE_UNITY_FILE]point_zero(&Q, cc);
 	qz = 1;
 	while (xlen -- > 0) {
 		int k;
@@ -582,15 +582,15 @@ BEAR_SINGLE_UNITY_FILEpoint_mul(BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigne
 			uint32_t bits;
 			uint32_t bnz;
 
-			BEAR_SINGLE_UNITY_FILEpoint_double(&Q, cc);
-			BEAR_SINGLE_UNITY_FILEpoint_double(&Q, cc);
+			[BEAR_SINGLE_UNITY_FILE]point_double(&Q, cc);
+			[BEAR_SINGLE_UNITY_FILE]point_double(&Q, cc);
 			memcpy(&T, P, sizeof T);
 			memcpy(&U, &Q, sizeof U);
 			bits = (*x >> k) & (uint32_t)3;
 			bnz = NEQ(bits, 0);
 			CCOPY(EQ(bits, 2), &T, &P2, sizeof T);
 			CCOPY(EQ(bits, 3), &T, &P3, sizeof T);
-			BEAR_SINGLE_UNITY_FILEpoint_add(&U, &T, cc);
+			[BEAR_SINGLE_UNITY_FILE]point_add(&U, &T, cc);
 			CCOPY(bnz & qz, &Q, &T, sizeof Q);
 			CCOPY(bnz & ~qz, &Q, &U, sizeof Q);
 			qz &= ~bnz;
@@ -606,7 +606,7 @@ BEAR_SINGLE_UNITY_FILEpoint_mul(BEAR_SINGLE_UNITY_FILEjacobian *P, const unsigne
  * the coordinates are still set to properly formed field elements.
  */
 static uint32_t
-BEAR_SINGLE_UNITY_FILEpoint_decode(BEAR_SINGLE_UNITY_FILEjacobian *P, const void *src, size_t len, const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+[BEAR_SINGLE_UNITY_FILE]point_decode([BEAR_SINGLE_UNITY_FILE]jacobian *P, const void *src, size_t len, const [BEAR_SINGLE_UNITY_FILE]curve_params *cc)
 {
 	/*
 	 * Points must use uncompressed format:
@@ -628,10 +628,10 @@ BEAR_SINGLE_UNITY_FILEpoint_decode(BEAR_SINGLE_UNITY_FILEjacobian *P, const void
 	const unsigned char *buf;
 	size_t plen, zlen;
 	uint32_t r;
-	BEAR_SINGLE_UNITY_FILEjacobian Q;
+	[BEAR_SINGLE_UNITY_FILE]jacobian Q;
 
 	buf = src;
-	BEAR_SINGLE_UNITY_FILEpoint_zero(P, cc);
+	[BEAR_SINGLE_UNITY_FILE]point_zero(P, cc);
 	plen = (cc->p[0] - (cc->p[0] >> 5) + 7) >> 3;
 	if (len != 1 + (plen << 1)) {
 		return 0;
@@ -654,8 +654,8 @@ BEAR_SINGLE_UNITY_FILEpoint_decode(BEAR_SINGLE_UNITY_FILEjacobian *P, const void
 	zlen = ((cc->p[0] + 63) >> 5) * sizeof(uint32_t);
 	memcpy(Q.c[0], cc->R2, zlen);
 	memcpy(Q.c[1], cc->b, zlen);
-	BEAR_SINGLE_UNITY_FILEset_one(Q.c[2], cc->p);
-	r &= ~BEAR_SINGLE_UNITY_FILErun_code(P, &Q, cc, BEAR_SINGLE_UNITY_FILEcode_check);
+	[BEAR_SINGLE_UNITY_FILE]set_one(Q.c[2], cc->p);
+	r &= ~[BEAR_SINGLE_UNITY_FILE]run_code(P, &Q, cc, [BEAR_SINGLE_UNITY_FILE]code_check);
 	return r;
 }
 
@@ -665,12 +665,12 @@ BEAR_SINGLE_UNITY_FILEpoint_decode(BEAR_SINGLE_UNITY_FILEjacobian *P, const void
  * plen is the field modulus length, in bytes.
  */
 static void
-BEAR_SINGLE_UNITY_FILEpoint_encode(void *dst, const BEAR_SINGLE_UNITY_FILEjacobian *P, const BEAR_SINGLE_UNITY_FILEcurve_params *cc)
+[BEAR_SINGLE_UNITY_FILE]point_encode(void *dst, const [BEAR_SINGLE_UNITY_FILE]jacobian *P, const [BEAR_SINGLE_UNITY_FILE]curve_params *cc)
 {
 	unsigned char *buf;
 	uint32_t xbl;
 	size_t plen;
-	BEAR_SINGLE_UNITY_FILEjacobian Q, T;
+	[BEAR_SINGLE_UNITY_FILE]jacobian Q, T;
 
 	buf = dst;
 	xbl = cc->p[0];
@@ -678,14 +678,14 @@ BEAR_SINGLE_UNITY_FILEpoint_encode(void *dst, const BEAR_SINGLE_UNITY_FILEjacobi
 	plen = (xbl + 7) >> 3;
 	buf[0] = 0x04;
 	memcpy(&Q, P, sizeof *P);
-	BEAR_SINGLE_UNITY_FILEset_one(T.c[2], cc->p);
-	BEAR_SINGLE_UNITY_FILErun_code(&Q, &T, cc, BEAR_SINGLE_UNITY_FILEcode_affine);
+	[BEAR_SINGLE_UNITY_FILE]set_one(T.c[2], cc->p);
+	[BEAR_SINGLE_UNITY_FILE]run_code(&Q, &T, cc, [BEAR_SINGLE_UNITY_FILE]code_affine);
 	br_i31_encode(buf + 1, plen, Q.c[0]);
 	br_i31_encode(buf + 1 + plen, plen, Q.c[1]);
 }
 
 static const br_ec_curve_def *
-BEAR_SINGLE_UNITY_FILEid_to_curve_def(int curve)
+[BEAR_SINGLE_UNITY_FILE]id_to_curve_def(int curve)
 {
 	switch (curve) {
 	case BR_EC_secp256r1:
@@ -699,72 +699,72 @@ BEAR_SINGLE_UNITY_FILEid_to_curve_def(int curve)
 }
 
 static const unsigned char *
-BEAR_SINGLE_UNITY_FILEapi_generator(int curve, size_t *len)
+[BEAR_SINGLE_UNITY_FILE]api_generator(int curve, size_t *len)
 {
 	const br_ec_curve_def *cd;
 
-	cd = BEAR_SINGLE_UNITY_FILEid_to_curve_def(curve);
+	cd = [BEAR_SINGLE_UNITY_FILE]id_to_curve_def(curve);
 	*len = cd->generator_len;
 	return cd->generator;
 }
 
 static const unsigned char *
-BEAR_SINGLE_UNITY_FILEapi_order(int curve, size_t *len)
+[BEAR_SINGLE_UNITY_FILE]api_order(int curve, size_t *len)
 {
 	const br_ec_curve_def *cd;
 
-	cd = BEAR_SINGLE_UNITY_FILEid_to_curve_def(curve);
+	cd = [BEAR_SINGLE_UNITY_FILE]id_to_curve_def(curve);
 	*len = cd->order_len;
 	return cd->order;
 }
 
 static size_t
-BEAR_SINGLE_UNITY_FILEapi_xoff(int curve, size_t *len)
+[BEAR_SINGLE_UNITY_FILE]api_xoff(int curve, size_t *len)
 {
-	BEAR_SINGLE_UNITY_FILEapi_generator(curve, len);
+	[BEAR_SINGLE_UNITY_FILE]api_generator(curve, len);
 	*len >>= 1;
 	return 1;
 }
 
 static uint32_t
-BEAR_SINGLE_UNITY_FILEapi_mul(unsigned char *G, size_t Glen,
+[BEAR_SINGLE_UNITY_FILE]api_mul(unsigned char *G, size_t Glen,
 	const unsigned char *x, size_t xlen, int curve)
 {
 	uint32_t r;
-	const BEAR_SINGLE_UNITY_FILEcurve_params *cc;
-	BEAR_SINGLE_UNITY_FILEjacobian P;
+	const [BEAR_SINGLE_UNITY_FILE]curve_params *cc;
+	[BEAR_SINGLE_UNITY_FILE]jacobian P;
 
-	cc = BEAR_SINGLE_UNITY_FILEid_to_curve(curve);
+	cc = [BEAR_SINGLE_UNITY_FILE]id_to_curve(curve);
 	if (Glen != cc->point_len) {
 		return 0;
 	}
-	r = BEAR_SINGLE_UNITY_FILEpoint_decode(&P, G, Glen, cc);
-	BEAR_SINGLE_UNITY_FILEpoint_mul(&P, x, xlen, cc);
-	BEAR_SINGLE_UNITY_FILEpoint_encode(G, &P, cc);
+	r = [BEAR_SINGLE_UNITY_FILE]point_decode(&P, G, Glen, cc);
+	[BEAR_SINGLE_UNITY_FILE]point_mul(&P, x, xlen, cc);
+	[BEAR_SINGLE_UNITY_FILE]point_encode(G, &P, cc);
 	return r;
 }
 
 static size_t
-BEAR_SINGLE_UNITY_FILEapi_mulgen(unsigned char *R,
+[BEAR_SINGLE_UNITY_FILE]api_mulgen(unsigned char *R,
 	const unsigned char *x, size_t xlen, int curve)
 {
 	const unsigned char *G;
 	size_t Glen;
 
-	G = BEAR_SINGLE_UNITY_FILEapi_generator(curve, &Glen);
+	G = [BEAR_SINGLE_UNITY_FILE]api_generator(curve, &Glen);
 	memcpy(R, G, Glen);
-	BEAR_SINGLE_UNITY_FILEapi_mul(R, Glen, x, xlen, curve);
+	[BEAR_SINGLE_UNITY_FILE]api_mul(R, Glen, x, xlen, curve);
 	return Glen;
 }
 
 static uint32_t
-BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_t len,
+[BEAR_SINGLE_UNITY_FILE]api_muladd(unsigned char *A, const unsigned char *B, size_t len,
 	const unsigned char *x, size_t xlen,
 	const unsigned char *y, size_t ylen, int curve)
 {
 	uint32_t r, t, z;
-	const BEAR_SINGLE_UNITY_FILEcurve_params *cc;
-	BEAR_SINGLE_UNITY_FILEjacobian P, Q;
+	const [BEAR_SINGLE_UNITY_FILE]curve_params *cc;
+	[BEAR_SINGLE_UNITY_FILE]jacobian P, Q;
 
 	/*
 	 * TODO: see about merging the two ladders. Right now, we do
@@ -772,30 +772,30 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 	 * wasteful of CPU resources (but yields short code).
 	 */
 
-	cc = BEAR_SINGLE_UNITY_FILEid_to_curve(curve);
+	cc = [BEAR_SINGLE_UNITY_FILE]id_to_curve(curve);
 	if (len != cc->point_len) {
 		return 0;
 	}
-	r = BEAR_SINGLE_UNITY_FILEpoint_decode(&P, A, len, cc);
+	r = [BEAR_SINGLE_UNITY_FILE]point_decode(&P, A, len, cc);
 	if (B == NULL) {
 		size_t Glen;
 
-		B = BEAR_SINGLE_UNITY_FILEapi_generator(curve, &Glen);
+		B = [BEAR_SINGLE_UNITY_FILE]api_generator(curve, &Glen);
 	}
-	r &= BEAR_SINGLE_UNITY_FILEpoint_decode(&Q, B, len, cc);
-	BEAR_SINGLE_UNITY_FILEpoint_mul(&P, x, xlen, cc);
-	BEAR_SINGLE_UNITY_FILEpoint_mul(&Q, y, ylen, cc);
+	r &= [BEAR_SINGLE_UNITY_FILE]point_decode(&Q, B, len, cc);
+	[BEAR_SINGLE_UNITY_FILE]point_mul(&P, x, xlen, cc);
+	[BEAR_SINGLE_UNITY_FILE]point_mul(&Q, y, ylen, cc);
 
 	/*
 	 * We want to compute P+Q. Since the base points A and B are distinct
 	 * from infinity, and the multipliers are non-zero and lower than the
 	 * curve order, then we know that P and Q are non-infinity. This
 	 * leaves two special situations to test for:
-	 * -- If P = Q then we must use BEAR_SINGLE_UNITY_FILEpoint_double().
+	 * -- If P = Q then we must use [BEAR_SINGLE_UNITY_FILE]point_double().
 	 * -- If P+Q = 0 then we must report an error.
 	 */
-	t = BEAR_SINGLE_UNITY_FILEpoint_add(&P, &Q, cc);
-	BEAR_SINGLE_UNITY_FILEpoint_double(&Q, cc);
+	t = [BEAR_SINGLE_UNITY_FILE]point_add(&P, &Q, cc);
+	[BEAR_SINGLE_UNITY_FILE]point_double(&Q, cc);
 	z = br_i31_iszero(P.c[2]);
 
 	/*
@@ -808,7 +808,7 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 	 *   z = 1, t = 1   report an error (P+Q = 0)
 	 */
 	CCOPY(z & ~t, &P, &Q, sizeof Q);
-	BEAR_SINGLE_UNITY_FILEpoint_encode(A, &P, cc);
+	[BEAR_SINGLE_UNITY_FILE]point_encode(A, &P, cc);
 	r &= ~(z & t);
 
 	return r;
@@ -817,10 +817,10 @@ BEAR_SINGLE_UNITY_FILEapi_muladd(unsigned char *A, const unsigned char *B, size_
 /* see bearssl_ec.h */
 const br_ec_impl br_ec_prime_i31 = {
 	(uint32_t)0x03800000,
-	&BEAR_SINGLE_UNITY_FILEapi_generator,
-	&BEAR_SINGLE_UNITY_FILEapi_order,
-	&BEAR_SINGLE_UNITY_FILEapi_xoff,
-	&BEAR_SINGLE_UNITY_FILEapi_mul,
-	&BEAR_SINGLE_UNITY_FILEapi_mulgen,
-	&BEAR_SINGLE_UNITY_FILEapi_muladd
+	&[BEAR_SINGLE_UNITY_FILE]api_generator,
+	&[BEAR_SINGLE_UNITY_FILE]api_order,
+	&[BEAR_SINGLE_UNITY_FILE]api_xoff,
+	&[BEAR_SINGLE_UNITY_FILE]api_mul,
+	&[BEAR_SINGLE_UNITY_FILE]api_mulgen,
+	&[BEAR_SINGLE_UNITY_FILE]api_muladd
 };

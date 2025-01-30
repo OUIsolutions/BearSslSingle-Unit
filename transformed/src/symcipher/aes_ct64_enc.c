@@ -25,7 +25,7 @@
 
 
 static inline void
-BEAR_SINGLE_UNITY_FILEadd_round_key(uint64_t *q, const uint64_t *sk)
+[BEAR_SINGLE_UNITY_FILE]add_round_key(uint64_t *q, const uint64_t *sk)
 {
 	q[0] ^= sk[0];
 	q[1] ^= sk[1];
@@ -38,7 +38,7 @@ BEAR_SINGLE_UNITY_FILEadd_round_key(uint64_t *q, const uint64_t *sk)
 }
 
 static inline void
-BEAR_SINGLE_UNITY_FILEshift_rows(uint64_t *q)
+[BEAR_SINGLE_UNITY_FILE]shift_rows(uint64_t *q)
 {
 	int i;
 
@@ -57,13 +57,13 @@ BEAR_SINGLE_UNITY_FILEshift_rows(uint64_t *q)
 }
 
 static inline uint64_t
-BEAR_SINGLE_UNITY_FILErotr32(uint64_t x)
+[BEAR_SINGLE_UNITY_FILE]rotr32(uint64_t x)
 {
 	return (x << 32) | (x >> 32);
 }
 
 static inline void
-BEAR_SINGLE_UNITY_FILEmix_columns(uint64_t *q)
+[BEAR_SINGLE_UNITY_FILE]mix_columns(uint64_t *q)
 {
 	uint64_t q0, q1, q2, q3, q4, q5, q6, q7;
 	uint64_t r0, r1, r2, r3, r4, r5, r6, r7;
@@ -85,14 +85,14 @@ BEAR_SINGLE_UNITY_FILEmix_columns(uint64_t *q)
 	r6 = (q6 >> 16) | (q6 << 48);
 	r7 = (q7 >> 16) | (q7 << 48);
 
-	q[0] = q7 ^ r7 ^ r0 ^ BEAR_SINGLE_UNITY_FILErotr32(q0 ^ r0);
-	q[1] = q0 ^ r0 ^ q7 ^ r7 ^ r1 ^ BEAR_SINGLE_UNITY_FILErotr32(q1 ^ r1);
-	q[2] = q1 ^ r1 ^ r2 ^ BEAR_SINGLE_UNITY_FILErotr32(q2 ^ r2);
-	q[3] = q2 ^ r2 ^ q7 ^ r7 ^ r3 ^ BEAR_SINGLE_UNITY_FILErotr32(q3 ^ r3);
-	q[4] = q3 ^ r3 ^ q7 ^ r7 ^ r4 ^ BEAR_SINGLE_UNITY_FILErotr32(q4 ^ r4);
-	q[5] = q4 ^ r4 ^ r5 ^ BEAR_SINGLE_UNITY_FILErotr32(q5 ^ r5);
-	q[6] = q5 ^ r5 ^ r6 ^ BEAR_SINGLE_UNITY_FILErotr32(q6 ^ r6);
-	q[7] = q6 ^ r6 ^ r7 ^ BEAR_SINGLE_UNITY_FILErotr32(q7 ^ r7);
+	q[0] = q7 ^ r7 ^ r0 ^ [BEAR_SINGLE_UNITY_FILE]rotr32(q0 ^ r0);
+	q[1] = q0 ^ r0 ^ q7 ^ r7 ^ r1 ^ [BEAR_SINGLE_UNITY_FILE]rotr32(q1 ^ r1);
+	q[2] = q1 ^ r1 ^ r2 ^ [BEAR_SINGLE_UNITY_FILE]rotr32(q2 ^ r2);
+	q[3] = q2 ^ r2 ^ q7 ^ r7 ^ r3 ^ [BEAR_SINGLE_UNITY_FILE]rotr32(q3 ^ r3);
+	q[4] = q3 ^ r3 ^ q7 ^ r7 ^ r4 ^ [BEAR_SINGLE_UNITY_FILE]rotr32(q4 ^ r4);
+	q[5] = q4 ^ r4 ^ r5 ^ [BEAR_SINGLE_UNITY_FILE]rotr32(q5 ^ r5);
+	q[6] = q5 ^ r5 ^ r6 ^ [BEAR_SINGLE_UNITY_FILE]rotr32(q6 ^ r6);
+	q[7] = q6 ^ r6 ^ r7 ^ [BEAR_SINGLE_UNITY_FILE]rotr32(q7 ^ r7);
 }
 
 /* see inner.h */
@@ -102,14 +102,14 @@ br_aes_ct64_bitslice_encrypt(unsigned num_rounds,
 {
 	unsigned u;
 
-	BEAR_SINGLE_UNITY_FILEadd_round_key(q, skey);
+	[BEAR_SINGLE_UNITY_FILE]add_round_key(q, skey);
 	for (u = 1; u < num_rounds; u ++) {
 		br_aes_ct64_bitslice_Sbox(q);
-		BEAR_SINGLE_UNITY_FILEshift_rows(q);
-		BEAR_SINGLE_UNITY_FILEmix_columns(q);
-		BEAR_SINGLE_UNITY_FILEadd_round_key(q, skey + (u << 3));
+		[BEAR_SINGLE_UNITY_FILE]shift_rows(q);
+		[BEAR_SINGLE_UNITY_FILE]mix_columns(q);
+		[BEAR_SINGLE_UNITY_FILE]add_round_key(q, skey + (u << 3));
 	}
 	br_aes_ct64_bitslice_Sbox(q);
-	BEAR_SINGLE_UNITY_FILEshift_rows(q);
-	BEAR_SINGLE_UNITY_FILEadd_round_key(q, skey + (num_rounds << 3));
+	[BEAR_SINGLE_UNITY_FILE]shift_rows(q);
+	[BEAR_SINGLE_UNITY_FILE]add_round_key(q, skey + (num_rounds << 3));
 }

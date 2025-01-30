@@ -85,7 +85,7 @@ ctr_128(const unsigned char *sk, const unsigned char *ivbuf,
 
 #if BR_POWER8_LE
 		/*
-		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+		 * v15 = constant for [BEAR_SINGLE_UNITY_FILE]byteswapping words
 		 */
 		lxvw4x(47, 0, %[idx2be])
 #endif
@@ -273,7 +273,7 @@ ctr_192(const unsigned char *sk, const unsigned char *ivbuf,
 
 #if BR_POWER8_LE
 		/*
-		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+		 * v15 = constant for [BEAR_SINGLE_UNITY_FILE]byteswapping words
 		 */
 		lxvw4x(47, 0, %[idx2be])
 #endif
@@ -473,7 +473,7 @@ ctr_256(const unsigned char *sk, const unsigned char *ivbuf,
 
 #if BR_POWER8_LE
 		/*
-		 * v15 = constant for BEAR_SINGLE_UNITY_FILEbyteswapping words
+		 * v15 = constant for [BEAR_SINGLE_UNITY_FILE]byteswapping words
 		 */
 		lxvw4x(47, 0, %[idx2be])
 #endif

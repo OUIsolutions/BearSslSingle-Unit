@@ -29,7 +29,7 @@
  * exponent dp.
  */
 static uint32_t
-BEAR_SINGLE_UNITY_FILEget_pubexp(const unsigned char *pbuf, size_t plen,
+[BEAR_SINGLE_UNITY_FILE]get_pubexp(const unsigned char *pbuf, size_t plen,
 	const unsigned char *dpbuf, size_t dplen)
 {
 	/*
@@ -146,7 +146,7 @@ br_rsa_i31_compute_pubexp(const br_rsa_private_key *sk)
 	 */
 	uint32_t ep, eq;
 
-	ep = BEAR_SINGLE_UNITY_FILEget_pubexp(sk->p, sk->plen, sk->dp, sk->dplen);
-	eq = BEAR_SINGLE_UNITY_FILEget_pubexp(sk->q, sk->qlen, sk->dq, sk->dqlen);
+	ep = [BEAR_SINGLE_UNITY_FILE]get_pubexp(sk->p, sk->plen, sk->dp, sk->dplen);
+	eq = [BEAR_SINGLE_UNITY_FILE]get_pubexp(sk->q, sk->qlen, sk->dq, sk->dqlen);
 	return ep & -EQ(ep, eq);
 }

@@ -291,10 +291,10 @@ const br_x509_class br_x509_minimal_vtable = {
 	xm_get_pkey
 };
 
-#define BEAR_SINGLE_UNITY_FILECTX   ((br_x509_minimal_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_minimal_context, cpu)))
-#define BEAR_SINGLE_UNITY_FILECONTEXT_NAME   br_x509_minimal_context
+#define [BEAR_SINGLE_UNITY_FILE]CTX   ((br_x509_minimal_context *)(void *)((unsigned char *)t0ctx - offsetof(br_x509_minimal_context, cpu)))
+#define [BEAR_SINGLE_UNITY_FILE]CONTEXT_NAME   br_x509_minimal_context
 
-#define DNHASH_LEN   ((BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->desc >> BR_HASHDESC_OUT_OFF) & BR_HASHDESC_OUT_MASK)
+#define DNHASH_LEN   (([BEAR_SINGLE_UNITY_FILE]CTX->dn_hash_impl->desc >> BR_HASHDESC_OUT_OFF) & BR_HASHDESC_OUT_MASK)
 
 /*
  * Hash a DN (from a trust anchor) into the provided buffer. This uses the
@@ -390,7 +390,7 @@ verify_signature(br_x509_minimal_context *ctx, const br_x509_pkey *pk)
 			return BR_ERR_X509_UNSUPPORTED;
 		}
 		if (!ctx->irsa(ctx->cert_sig, ctx->cert_sig_len,
-			&BEAR_SINGLE_UNITY_FILEt0_datablock[ctx->cert_sig_hash_oid],
+			&[BEAR_SINGLE_UNITY_FILE]t0_datablock[ctx->cert_sig_hash_oid],
 			ctx->cert_sig_hash_len, &pk->key.rsa, tmp))
 		{
 			return BR_ERR_X509_BAD_SIGNATURE;
@@ -420,17 +420,17 @@ verify_signature(br_x509_minimal_context *ctx, const br_x509_pkey *pk)
 }
 
 cc: read8-low ( -- x ) {
-	if (BEAR_SINGLE_UNITY_FILECTX->hlen == 0) {
+	if ([BEAR_SINGLE_UNITY_FILE]CTX->hlen == 0) {
 		T0_PUSHi(-1);
 	} else {
-		unsigned char x = *BEAR_SINGLE_UNITY_FILECTX->hbuf ++;
-		if (BEAR_SINGLE_UNITY_FILECTX->do_mhash) {
-			br_multihash_update(&BEAR_SINGLE_UNITY_FILECTX->mhash, &x, 1);
+		unsigned char x = *[BEAR_SINGLE_UNITY_FILE]CTX->hbuf ++;
+		if ([BEAR_SINGLE_UNITY_FILE]CTX->do_mhash) {
+			br_multihash_update(&[BEAR_SINGLE_UNITY_FILE]CTX->mhash, &x, 1);
 		}
-		if (BEAR_SINGLE_UNITY_FILECTX->do_dn_hash) {
-			BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->update(&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable, &x, 1);
+		if ([BEAR_SINGLE_UNITY_FILE]CTX->do_dn_hash) {
+			[BEAR_SINGLE_UNITY_FILE]CTX->dn_hash_impl->update(&[BEAR_SINGLE_UNITY_FILE]CTX->dn_hash.vtable, &x, 1);
 		}
-		BEAR_SINGLE_UNITY_FILECTX->hlen --;
+		[BEAR_SINGLE_UNITY_FILE]CTX->hlen --;
 		T0_PUSH(x);
 	}
 }
@@ -441,22 +441,22 @@ addr: num_certs
 cc: read-blob-inner ( addr len -- addr len ) {
 	uint32_t len = T0_POP();
 	uint32_t addr = T0_POP();
-	size_t clen = BEAR_SINGLE_UNITY_FILECTX->hlen;
+	size_t clen = [BEAR_SINGLE_UNITY_FILE]CTX->hlen;
 	if (clen > len) {
 		clen = (size_t)len;
 	}
 	if (addr != 0) {
-		memcpy((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
+		memcpy((unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + addr, [BEAR_SINGLE_UNITY_FILE]CTX->hbuf, clen);
 	}
-	if (BEAR_SINGLE_UNITY_FILECTX->do_mhash) {
-		br_multihash_update(&BEAR_SINGLE_UNITY_FILECTX->mhash, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
+	if ([BEAR_SINGLE_UNITY_FILE]CTX->do_mhash) {
+		br_multihash_update(&[BEAR_SINGLE_UNITY_FILE]CTX->mhash, [BEAR_SINGLE_UNITY_FILE]CTX->hbuf, clen);
 	}
-	if (BEAR_SINGLE_UNITY_FILECTX->do_dn_hash) {
-		BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->update(
-			&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable, BEAR_SINGLE_UNITY_FILECTX->hbuf, clen);
+	if ([BEAR_SINGLE_UNITY_FILE]CTX->do_dn_hash) {
+		[BEAR_SINGLE_UNITY_FILE]CTX->dn_hash_impl->update(
+			&[BEAR_SINGLE_UNITY_FILE]CTX->dn_hash.vtable, [BEAR_SINGLE_UNITY_FILE]CTX->hbuf, clen);
 	}
-	BEAR_SINGLE_UNITY_FILECTX->hbuf += clen;
-	BEAR_SINGLE_UNITY_FILECTX->hlen -= clen;
+	[BEAR_SINGLE_UNITY_FILE]CTX->hbuf += clen;
+	[BEAR_SINGLE_UNITY_FILE]CTX->hlen -= clen;
 	T0_PUSH(addr + clen);
 	T0_PUSH(len - clen);
 }
@@ -467,13 +467,13 @@ cc: read-blob-inner ( addr len -- addr len ) {
 cc: compute-tbs-hash ( id -- hashlen ) {
 	int id = T0_POPi();
 	size_t len;
-	len = br_multihash_out(&BEAR_SINGLE_UNITY_FILECTX->mhash, id, BEAR_SINGLE_UNITY_FILECTX->tbs_hash);
+	len = br_multihash_out(&[BEAR_SINGLE_UNITY_FILE]CTX->mhash, id, [BEAR_SINGLE_UNITY_FILE]CTX->tbs_hash);
 	T0_PUSH(len);
 }
 
 \ Push true (-1) if no server name is expected in the EE certificate.
 cc: zero-server-name ( -- bool ) {
-	T0_PUSHi(-(BEAR_SINGLE_UNITY_FILECTX->server_name == NULL));
+	T0_PUSHi(-([BEAR_SINGLE_UNITY_FILE]CTX->server_name == NULL));
 }
 
 addr: key_usages
@@ -487,26 +487,26 @@ addr: min_rsa_size
 
 \ Start TBS hash computation. The hash functions are reinitialised.
 cc: start-tbs-hash ( -- ) {
-	br_multihash_init(&BEAR_SINGLE_UNITY_FILECTX->mhash);
-	BEAR_SINGLE_UNITY_FILECTX->do_mhash = 1;
+	br_multihash_init(&[BEAR_SINGLE_UNITY_FILE]CTX->mhash);
+	[BEAR_SINGLE_UNITY_FILE]CTX->do_mhash = 1;
 }
 
 \ Stop TBS hash computation.
 cc: stop-tbs-hash ( -- ) {
-	BEAR_SINGLE_UNITY_FILECTX->do_mhash = 0;
+	[BEAR_SINGLE_UNITY_FILE]CTX->do_mhash = 0;
 }
 
 \ Start DN hash computation.
 cc: start-dn-hash ( -- ) {
-	BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->init(&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable);
-	BEAR_SINGLE_UNITY_FILECTX->do_dn_hash = 1;
+	[BEAR_SINGLE_UNITY_FILE]CTX->dn_hash_impl->init(&[BEAR_SINGLE_UNITY_FILE]CTX->dn_hash.vtable);
+	[BEAR_SINGLE_UNITY_FILE]CTX->do_dn_hash = 1;
 }
 
 \ Terminate DN hash computation and write the DN hash into the
 \ current_dn_hash buffer.
 cc: compute-dn-hash ( -- ) {
-	BEAR_SINGLE_UNITY_FILECTX->dn_hash_impl->out(&BEAR_SINGLE_UNITY_FILECTX->dn_hash.vtable, BEAR_SINGLE_UNITY_FILECTX->current_dn_hash);
-	BEAR_SINGLE_UNITY_FILECTX->do_dn_hash = 0;
+	[BEAR_SINGLE_UNITY_FILE]CTX->dn_hash_impl->out(&[BEAR_SINGLE_UNITY_FILE]CTX->dn_hash.vtable, [BEAR_SINGLE_UNITY_FILE]CTX->current_dn_hash);
+	[BEAR_SINGLE_UNITY_FILE]CTX->do_dn_hash = 0;
 }
 
 \ Get the length of hash values obtained with the DN hasher.
@@ -517,8 +517,8 @@ cc: dn-hash-length ( -- len ) {
 \ Copy data between two areas in the context.
 cc: blobcopy ( addr-dst addr-src len -- ) {
 	size_t len = T0_POP();
-	unsigned char *src = (unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
-	unsigned char *dst = (unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
+	unsigned char *src = (unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + T0_POP();
+	unsigned char *dst = (unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + T0_POP();
 	memcpy(dst, src, len);
 }
 
@@ -537,12 +537,12 @@ cc: offset-name-element ( san -- n ) {
 	unsigned san = T0_POP();
 	size_t u;
 
-	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->num_name_elts; u ++) {
-		if (BEAR_SINGLE_UNITY_FILECTX->name_elts[u].status == 0) {
+	for (u = 0; u < [BEAR_SINGLE_UNITY_FILE]CTX->num_name_elts; u ++) {
+		if ([BEAR_SINGLE_UNITY_FILE]CTX->name_elts[u].status == 0) {
 			const unsigned char *oid;
 			size_t len, off;
 
-			oid = BEAR_SINGLE_UNITY_FILECTX->name_elts[u].oid;
+			oid = [BEAR_SINGLE_UNITY_FILE]CTX->name_elts[u].oid;
 			if (san) {
 				if (oid[0] != 0 || oid[1] != 0) {
 					continue;
@@ -552,9 +552,9 @@ cc: offset-name-element ( san -- n ) {
 				off = 0;
 			}
 			len = oid[off];
-			if (len != 0 && len == BEAR_SINGLE_UNITY_FILECTX->pad[0]
+			if (len != 0 && len == [BEAR_SINGLE_UNITY_FILE]CTX->pad[0]
 				&& memcmp(oid + off + 1,
-					BEAR_SINGLE_UNITY_FILECTX->pad + 1, len) == 0)
+					[BEAR_SINGLE_UNITY_FILE]CTX->pad + 1, len) == 0)
 			{
 				T0_PUSH(u);
 				T0_RET();
@@ -570,12 +570,12 @@ cc: copy-name-element ( bool offbuf -- ) {
 	int ok = T0_POPi();
 
 	if (off >= 0) {
-		br_name_element *ne = &BEAR_SINGLE_UNITY_FILECTX->name_elts[off];
+		br_name_element *ne = &[BEAR_SINGLE_UNITY_FILE]CTX->name_elts[off];
 
 		if (ok) {
-			len = BEAR_SINGLE_UNITY_FILECTX->pad[0];
+			len = [BEAR_SINGLE_UNITY_FILE]CTX->pad[0];
 			if (len < ne->len) {
-				memcpy(ne->buf, BEAR_SINGLE_UNITY_FILECTX->pad + 1, len);
+				memcpy(ne->buf, [BEAR_SINGLE_UNITY_FILE]CTX->pad + 1, len);
 				ne->buf[len] = 0;
 				ne->status = 1;
 			} else {
@@ -592,14 +592,14 @@ cc: copy-name-SAN ( bool tag -- ) {
 	unsigned ok = T0_POP();
 	size_t u, len;
 
-	len = BEAR_SINGLE_UNITY_FILECTX->pad[0];
-	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->num_name_elts; u ++) {
+	len = [BEAR_SINGLE_UNITY_FILE]CTX->pad[0];
+	for (u = 0; u < [BEAR_SINGLE_UNITY_FILE]CTX->num_name_elts; u ++) {
 		br_name_element *ne;
 
-		ne = &BEAR_SINGLE_UNITY_FILECTX->name_elts[u];
+		ne = &[BEAR_SINGLE_UNITY_FILE]CTX->name_elts[u];
 		if (ne->status == 0 && ne->oid[0] == 0 && ne->oid[1] == tag) {
 			if (ok && ne->len > len) {
-				memcpy(ne->buf, BEAR_SINGLE_UNITY_FILECTX->pad + 1, len);
+				memcpy(ne->buf, [BEAR_SINGLE_UNITY_FILE]CTX->pad + 1, len);
 				ne->buf[len] = 0;
 				ne->status = 1;
 			} else {
@@ -711,15 +711,15 @@ cc: check-validity-range ( na-days na-seconds nb-days nb-seconds -- int ) {
 	uint32_t nas = T0_POP();
 	uint32_t nad = T0_POP();
 	int r;
-	if (BEAR_SINGLE_UNITY_FILECTX->itime != 0) {
-		r = BEAR_SINGLE_UNITY_FILECTX->itime(BEAR_SINGLE_UNITY_FILECTX->itime_ctx, nbd, nbs, nad, nas);
+	if ([BEAR_SINGLE_UNITY_FILE]CTX->itime != 0) {
+		r = [BEAR_SINGLE_UNITY_FILE]CTX->itime([BEAR_SINGLE_UNITY_FILE]CTX->itime_ctx, nbd, nbs, nad, nas);
 		if (r < -1 || r > 1) {
-			BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_TIME_UNKNOWN;
+			[BEAR_SINGLE_UNITY_FILE]CTX->err = BR_ERR_X509_TIME_UNKNOWN;
 			T0_CO();
 		}
 	} else {
-		uint32_t vd = BEAR_SINGLE_UNITY_FILECTX->days;
-		uint32_t vs = BEAR_SINGLE_UNITY_FILECTX->seconds;
+		uint32_t vd = [BEAR_SINGLE_UNITY_FILE]CTX->days;
+		uint32_t vs = [BEAR_SINGLE_UNITY_FILE]CTX->seconds;
 		if (vd == 0 && vs == 0) {
 #if BR_USE_UNIX_TIME
 			time_t x = time(NULL);
@@ -737,7 +737,7 @@ cc: check-validity-range ( na-days na-seconds nb-days nb-seconds -- int ) {
 			vd = (uint32_t)(x / 86400) + 584754;
 			vs = (uint32_t)(x % 86400);
 #else
-			BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_TIME_UNKNOWN;
+			[BEAR_SINGLE_UNITY_FILE]CTX->err = BR_ERR_X509_TIME_UNKNOWN;
 			T0_CO();
 #endif
 		}
@@ -765,27 +765,27 @@ cc: check-validity-range ( na-days na-seconds nb-days nb-seconds -- int ) {
 cc: match-server-name ( -- bool ) {
 	size_t n1, n2;
 
-	if (BEAR_SINGLE_UNITY_FILECTX->server_name == NULL) {
+	if ([BEAR_SINGLE_UNITY_FILE]CTX->server_name == NULL) {
 		T0_PUSH(0);
 		T0_RET();
 	}
-	n1 = strlen(BEAR_SINGLE_UNITY_FILECTX->server_name);
-	n2 = BEAR_SINGLE_UNITY_FILECTX->pad[0];
-	if (n1 == n2 && eqnocase(&BEAR_SINGLE_UNITY_FILECTX->pad[1], BEAR_SINGLE_UNITY_FILECTX->server_name, n1)) {
+	n1 = strlen([BEAR_SINGLE_UNITY_FILE]CTX->server_name);
+	n2 = [BEAR_SINGLE_UNITY_FILE]CTX->pad[0];
+	if (n1 == n2 && eqnocase(&[BEAR_SINGLE_UNITY_FILE]CTX->pad[1], [BEAR_SINGLE_UNITY_FILE]CTX->server_name, n1)) {
 		T0_PUSHi(-1);
 		T0_RET();
 	}
-	if (n2 >= 2 && BEAR_SINGLE_UNITY_FILECTX->pad[1] == '*' && BEAR_SINGLE_UNITY_FILECTX->pad[2] == '.') {
+	if (n2 >= 2 && [BEAR_SINGLE_UNITY_FILE]CTX->pad[1] == '*' && [BEAR_SINGLE_UNITY_FILE]CTX->pad[2] == '.') {
 		size_t u;
 
 		u = 0;
-		while (u < n1 && BEAR_SINGLE_UNITY_FILECTX->server_name[u] != '.') {
+		while (u < n1 && [BEAR_SINGLE_UNITY_FILE]CTX->server_name[u] != '.') {
 			u ++;
 		}
 		u ++;
 		n1 -= u;
 		if ((n2 - 2) == n1
-			&& eqnocase(&BEAR_SINGLE_UNITY_FILECTX->pad[3], BEAR_SINGLE_UNITY_FILECTX->server_name + u, n1))
+			&& eqnocase(&[BEAR_SINGLE_UNITY_FILE]CTX->pad[3], [BEAR_SINGLE_UNITY_FILE]CTX->server_name + u, n1))
 		{
 			T0_PUSHi(-1);
 			T0_RET();
@@ -803,55 +803,55 @@ cc: match-server-name ( -- bool ) {
 cc: copy-ee-rsa-pkey ( nlen elen -- ) {
 	size_t elen = T0_POP();
 	size_t nlen = T0_POP();
-	memcpy(BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data, BEAR_SINGLE_UNITY_FILECTX->pkey_data, nlen + elen);
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key_type = BR_KEYTYPE_RSA;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.n = BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.nlen = nlen;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.e = BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data + nlen;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.elen = elen;
+	memcpy([BEAR_SINGLE_UNITY_FILE]CTX->ee_pkey_data, [BEAR_SINGLE_UNITY_FILE]CTX->pkey_data, nlen + elen);
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key_type = BR_KEYTYPE_RSA;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.n = [BEAR_SINGLE_UNITY_FILE]CTX->ee_pkey_data;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.nlen = nlen;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.e = [BEAR_SINGLE_UNITY_FILE]CTX->ee_pkey_data + nlen;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.elen = elen;
 }
 
 \ Copy the EE public key to the permanent buffer (EC).
 cc: copy-ee-ec-pkey ( curve qlen -- ) {
 	size_t qlen = T0_POP();
 	uint32_t curve = T0_POP();
-	memcpy(BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data, BEAR_SINGLE_UNITY_FILECTX->pkey_data, qlen);
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key_type = BR_KEYTYPE_EC;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.curve = curve;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.q = BEAR_SINGLE_UNITY_FILECTX->ee_pkey_data;
-	BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.qlen = qlen;
+	memcpy([BEAR_SINGLE_UNITY_FILE]CTX->ee_pkey_data, [BEAR_SINGLE_UNITY_FILE]CTX->pkey_data, qlen);
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key_type = BR_KEYTYPE_EC;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.ec.curve = curve;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.ec.q = [BEAR_SINGLE_UNITY_FILE]CTX->ee_pkey_data;
+	[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.ec.qlen = qlen;
 }
 
 \ Check whether the current certificate (EE) is directly trusted.
 cc: check-direct-trust ( -- ) {
 	size_t u;
 
-	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->trust_anchors_num; u ++) {
+	for (u = 0; u < [BEAR_SINGLE_UNITY_FILE]CTX->trust_anchors_num; u ++) {
 		const br_x509_trust_anchor *ta;
 		unsigned char hashed_DN[64];
 		int kt;
 
-		ta = &BEAR_SINGLE_UNITY_FILECTX->trust_anchors[u];
+		ta = &[BEAR_SINGLE_UNITY_FILE]CTX->trust_anchors[u];
 		if (ta->flags & BR_X509_TA_CA) {
 			continue;
 		}
-		hash_dn(BEAR_SINGLE_UNITY_FILECTX, ta->dn.data, ta->dn.len, hashed_DN);
-		if (memcmp(hashed_DN, BEAR_SINGLE_UNITY_FILECTX->current_dn_hash, DNHASH_LEN)) {
+		hash_dn([BEAR_SINGLE_UNITY_FILE]CTX, ta->dn.data, ta->dn.len, hashed_DN);
+		if (memcmp(hashed_DN, [BEAR_SINGLE_UNITY_FILE]CTX->current_dn_hash, DNHASH_LEN)) {
 			continue;
 		}
-		kt = BEAR_SINGLE_UNITY_FILECTX->pkey.key_type;
+		kt = [BEAR_SINGLE_UNITY_FILE]CTX->pkey.key_type;
 		if ((ta->pkey.key_type & 0x0F) != kt) {
 			continue;
 		}
 		switch (kt) {
 
 		case BR_KEYTYPE_RSA:
-			if (!eqbigint(BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.n,
-				BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.nlen,
+			if (!eqbigint([BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.n,
+				[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.nlen,
 				ta->pkey.key.rsa.n,
 				ta->pkey.key.rsa.nlen)
-				|| !eqbigint(BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.e,
-				BEAR_SINGLE_UNITY_FILECTX->pkey.key.rsa.elen,
+				|| !eqbigint([BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.e,
+				[BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.rsa.elen,
 				ta->pkey.key.rsa.e,
 				ta->pkey.key.rsa.elen))
 			{
@@ -860,9 +860,9 @@ cc: check-direct-trust ( -- ) {
 			break;
 
 		case BR_KEYTYPE_EC:
-			if (BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.curve != ta->pkey.key.ec.curve
-				|| BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.qlen != ta->pkey.key.ec.qlen
-				|| memcmp(BEAR_SINGLE_UNITY_FILECTX->pkey.key.ec.q,
+			if ([BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.ec.curve != ta->pkey.key.ec.curve
+				|| [BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.ec.qlen != ta->pkey.key.ec.qlen
+				|| memcmp([BEAR_SINGLE_UNITY_FILE]CTX->pkey.key.ec.q,
 					ta->pkey.key.ec.q,
 					ta->pkey.key.ec.qlen) != 0)
 			{
@@ -877,7 +877,7 @@ cc: check-direct-trust ( -- ) {
 		/*
 		 * Direct trust match!
 		 */
-		BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_OK;
+		[BEAR_SINGLE_UNITY_FILE]CTX->err = BR_ERR_X509_OK;
 		T0_CO();
 	}
 }
@@ -887,27 +887,27 @@ cc: check-direct-trust ( -- ) {
 cc: check-trust-anchor-CA ( -- ) {
 	size_t u;
 
-	for (u = 0; u < BEAR_SINGLE_UNITY_FILECTX->trust_anchors_num; u ++) {
+	for (u = 0; u < [BEAR_SINGLE_UNITY_FILE]CTX->trust_anchors_num; u ++) {
 		const br_x509_trust_anchor *ta;
 		unsigned char hashed_DN[64];
 
-		ta = &BEAR_SINGLE_UNITY_FILECTX->trust_anchors[u];
+		ta = &[BEAR_SINGLE_UNITY_FILE]CTX->trust_anchors[u];
 		if (!(ta->flags & BR_X509_TA_CA)) {
 			continue;
 		}
-		hash_dn(BEAR_SINGLE_UNITY_FILECTX, ta->dn.data, ta->dn.len, hashed_DN);
-		if (memcmp(hashed_DN, BEAR_SINGLE_UNITY_FILECTX->saved_dn_hash, DNHASH_LEN)) {
+		hash_dn([BEAR_SINGLE_UNITY_FILE]CTX, ta->dn.data, ta->dn.len, hashed_DN);
+		if (memcmp(hashed_DN, [BEAR_SINGLE_UNITY_FILE]CTX->saved_dn_hash, DNHASH_LEN)) {
 			continue;
 		}
-		if (verify_signature(BEAR_SINGLE_UNITY_FILECTX, &ta->pkey) == 0) {
-			BEAR_SINGLE_UNITY_FILECTX->err = BR_ERR_X509_OK;
+		if (verify_signature([BEAR_SINGLE_UNITY_FILE]CTX, &ta->pkey) == 0) {
+			[BEAR_SINGLE_UNITY_FILE]CTX->err = BR_ERR_X509_OK;
 			T0_CO();
 		}
 	}
 }
 
 \ Verify RSA signature. This uses the public key that was just decoded
-\ into BEAR_SINGLE_UNITY_FILECTX->pkey_data; the modulus and exponent length are provided as
+\ into [BEAR_SINGLE_UNITY_FILE]CTX->pkey_data; the modulus and exponent length are provided as
 \ parameters. The resulting hash value is compared with the one in
 \ tbs_hash. Returned value is 0 on success, or a non-zero error code.
 cc: do-rsa-vrfy ( nlen elen -- err ) {
@@ -916,15 +916,15 @@ cc: do-rsa-vrfy ( nlen elen -- err ) {
 	br_x509_pkey pk;
 
 	pk.key_type = BR_KEYTYPE_RSA;
-	pk.key.rsa.n = BEAR_SINGLE_UNITY_FILECTX->pkey_data;
+	pk.key.rsa.n = [BEAR_SINGLE_UNITY_FILE]CTX->pkey_data;
 	pk.key.rsa.nlen = nlen;
-	pk.key.rsa.e = BEAR_SINGLE_UNITY_FILECTX->pkey_data + nlen;
+	pk.key.rsa.e = [BEAR_SINGLE_UNITY_FILE]CTX->pkey_data + nlen;
 	pk.key.rsa.elen = elen;
-	T0_PUSH(verify_signature(BEAR_SINGLE_UNITY_FILECTX, &pk));
+	T0_PUSH(verify_signature([BEAR_SINGLE_UNITY_FILE]CTX, &pk));
 }
 
 \ Verify ECDSA signature. This uses the public key that was just decoded
-\ into BEAR_SINGLE_UNITY_FILECTX->pkey_dayta; the curve ID and public point length are provided
+\ into [BEAR_SINGLE_UNITY_FILE]CTX->pkey_dayta; the curve ID and public point length are provided
 \ as parameters. The hash value in tbs_hash is used. Returned value is 0
 \ on success, or non-zero error code.
 cc: do-ecdsa-vrfy ( curve qlen -- err ) {
@@ -934,15 +934,15 @@ cc: do-ecdsa-vrfy ( curve qlen -- err ) {
 
 	pk.key_type = BR_KEYTYPE_EC;
 	pk.key.ec.curve = curve;
-	pk.key.ec.q = BEAR_SINGLE_UNITY_FILECTX->pkey_data;
+	pk.key.ec.q = [BEAR_SINGLE_UNITY_FILE]CTX->pkey_data;
 	pk.key.ec.qlen = qlen;
-	T0_PUSH(verify_signature(BEAR_SINGLE_UNITY_FILECTX, &pk));
+	T0_PUSH(verify_signature([BEAR_SINGLE_UNITY_FILE]CTX, &pk));
 }
 
 cc: print-bytes ( addr len -- ) {
 	extern int printf(const char *fmt, ...);
 	size_t len = T0_POP();
-	unsigned char *buf = (unsigned char *)BEAR_SINGLE_UNITY_FILECTX + T0_POP();
+	unsigned char *buf = (unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + T0_POP();
 	size_t u;
 
 	for (u = 0; u < len; u ++) {
@@ -954,12 +954,12 @@ cc: printOID ( -- ) {
 	extern int printf(const char *fmt, ...);
 	size_t u, len;
 
-	len = BEAR_SINGLE_UNITY_FILECTX->pad[0];
+	len = [BEAR_SINGLE_UNITY_FILE]CTX->pad[0];
 	if (len == 0) {
 		printf("*");
 		T0_RET();
 	}
-	printf("%u.%u", BEAR_SINGLE_UNITY_FILECTX->pad[1] / 40, BEAR_SINGLE_UNITY_FILECTX->pad[1] % 40);
+	printf("%u.%u", [BEAR_SINGLE_UNITY_FILE]CTX->pad[1] / 40, [BEAR_SINGLE_UNITY_FILE]CTX->pad[1] % 40);
 	u = 2;
 	while (u <= len) {
 		unsigned long ul;
@@ -972,7 +972,7 @@ cc: printOID ( -- ) {
 				printf("BAD");
 				T0_RET();
 			}
-			x = BEAR_SINGLE_UNITY_FILECTX->pad[u ++];
+			x = [BEAR_SINGLE_UNITY_FILE]CTX->pad[u ++];
 			ul = (ul << 7) + (x & 0x7F);
 			if (!(x & 0x80)) {
 				break;

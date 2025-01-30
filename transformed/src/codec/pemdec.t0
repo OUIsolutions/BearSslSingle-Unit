@@ -24,7 +24,7 @@ preamble {
 
 
 
-#define BEAR_SINGLE_UNITY_FILECTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
+#define [BEAR_SINGLE_UNITY_FILE]CTX   ((br_pem_decoder_context *)(void *)((unsigned char *)t0ctx - offsetof(br_pem_decoder_context, cpu)))
 
 /* see bearssl_pem.h */
 void
@@ -81,13 +81,13 @@ addr: ptr
 cc: set8 ( value addr -- ) {
 	size_t addr = T0_POP();
 	unsigned x = T0_POP();
-	*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr) = x;
+	*((unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + addr) = x;
 }
 
 \ Get a byte at a specific address (offset within the context).
 cc: get8 ( addr -- value ) {
 	size_t addr = T0_POP();
-	T0_PUSH(*((unsigned char *)BEAR_SINGLE_UNITY_FILECTX + addr));
+	T0_PUSH(*((unsigned char *)[BEAR_SINGLE_UNITY_FILE]CTX + addr));
 }
 
 \ Send an event.
@@ -97,9 +97,9 @@ cc: get8 ( addr -- value ) {
 \ Low-level function to read a single byte. Returned value is the byte
 \ (0 to 255), or -1 if there is no available data.
 cc: read8-native ( -- x ) {
-	if (BEAR_SINGLE_UNITY_FILECTX->hlen > 0) {
-		T0_PUSH(*BEAR_SINGLE_UNITY_FILECTX->hbuf ++);
-		BEAR_SINGLE_UNITY_FILECTX->hlen --;
+	if ([BEAR_SINGLE_UNITY_FILE]CTX->hlen > 0) {
+		T0_PUSH(*[BEAR_SINGLE_UNITY_FILE]CTX->hbuf ++);
+		[BEAR_SINGLE_UNITY_FILE]CTX->hlen --;
 	} else {
 		T0_PUSHi(-1);
 	}
@@ -200,22 +200,22 @@ cc: from-base64 ( char -- x ) {
 \ Write one byte in the output buffer.
 cc: write8 ( x -- ) {
 	unsigned char x = (unsigned char)T0_POP();
-	BEAR_SINGLE_UNITY_FILECTX->buf[BEAR_SINGLE_UNITY_FILECTX->ptr ++] = x;
-	if (BEAR_SINGLE_UNITY_FILECTX->ptr == sizeof BEAR_SINGLE_UNITY_FILECTX->buf) {
-		if (BEAR_SINGLE_UNITY_FILECTX->dest) {
-			BEAR_SINGLE_UNITY_FILECTX->dest(BEAR_SINGLE_UNITY_FILECTX->dest_ctx, BEAR_SINGLE_UNITY_FILECTX->buf, sizeof BEAR_SINGLE_UNITY_FILECTX->buf);
+	[BEAR_SINGLE_UNITY_FILE]CTX->buf[[BEAR_SINGLE_UNITY_FILE]CTX->ptr ++] = x;
+	if ([BEAR_SINGLE_UNITY_FILE]CTX->ptr == sizeof [BEAR_SINGLE_UNITY_FILE]CTX->buf) {
+		if ([BEAR_SINGLE_UNITY_FILE]CTX->dest) {
+			[BEAR_SINGLE_UNITY_FILE]CTX->dest([BEAR_SINGLE_UNITY_FILE]CTX->dest_ctx, [BEAR_SINGLE_UNITY_FILE]CTX->buf, sizeof [BEAR_SINGLE_UNITY_FILE]CTX->buf);
 		}
-		BEAR_SINGLE_UNITY_FILECTX->ptr = 0;
+		[BEAR_SINGLE_UNITY_FILE]CTX->ptr = 0;
 	}
 }
 
 \ Flush the output buffer.
 cc: flush-buf ( -- ) {
-	if (BEAR_SINGLE_UNITY_FILECTX->ptr > 0) {
-		if (BEAR_SINGLE_UNITY_FILECTX->dest) {
-			BEAR_SINGLE_UNITY_FILECTX->dest(BEAR_SINGLE_UNITY_FILECTX->dest_ctx, BEAR_SINGLE_UNITY_FILECTX->buf, BEAR_SINGLE_UNITY_FILECTX->ptr);
+	if ([BEAR_SINGLE_UNITY_FILE]CTX->ptr > 0) {
+		if ([BEAR_SINGLE_UNITY_FILE]CTX->dest) {
+			[BEAR_SINGLE_UNITY_FILE]CTX->dest([BEAR_SINGLE_UNITY_FILE]CTX->dest_ctx, [BEAR_SINGLE_UNITY_FILE]CTX->buf, [BEAR_SINGLE_UNITY_FILE]CTX->ptr);
 		}
-		BEAR_SINGLE_UNITY_FILECTX->ptr = 0;
+		[BEAR_SINGLE_UNITY_FILE]CTX->ptr = 0;
 	}
 }
 

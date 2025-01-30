@@ -24,7 +24,7 @@
 
 
 
-#define BEAR_SINGLE_UNITY_FILEU   (1 + (BR_MAX_RSA_FACTOR >> 5))
+#define [BEAR_SINGLE_UNITY_FILE]U   (1 + (BR_MAX_RSA_FACTOR >> 5))
 
 /* see bearssl_rsa.h */
 uint32_t
