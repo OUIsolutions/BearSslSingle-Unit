@@ -263,8 +263,8 @@ br_ghash_pclmul(void *y, const void *h, const void *data, size_t len)
 	/*
 	 * Load y and h.
 	 */
-	yw = _mm_loadu_si128(y);
-	h1w = _mm_loadu_si128(h);
+	yw = _mm_loadu_si128((const __m128i_u*)y);
+	h1w = _mm_loadu_si128((const __m128i_u*)h);
 	BYTESWAP(yw);
 	BYTESWAP(h1w);
 	BK(h1w, h1x);
