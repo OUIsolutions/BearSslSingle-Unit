@@ -4,6 +4,7 @@ try
 BearSSLSingleUnitOne.c
 BearSSlOutput
 origin
+.vscode
 debug_patches
 teste2.c
 stage2.sh
