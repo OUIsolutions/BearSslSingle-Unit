@@ -29,5 +29,5 @@ function generate_release()
    darwin.dtw.write_file(darwin.dtw.concat_path(RELEASE_FOLDER,ONLY_DEFINE_NAME),only_define_content)
 
    local zip_path = darwin.dtw.concat_path(RELEASE_FOLDER,ZIP_NAME)
-   os.execute("zip -r "..zip_path..".zip "..OUTPUT_DIR)
+   os.execute("zip -r "..zip_path.." "..OUTPUT_DIR.."/")
 end 
