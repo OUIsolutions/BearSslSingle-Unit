@@ -70,7 +70,7 @@ if you want to build the hole project from scracth you must have
 **diff**,**patch** and [Darwin](https://github.com/OUIsolutions/Darwin/tree/0.016) on version **0.016**
 clone the repon and type:
 ```shel
- darwin run_blueprint --mode folder  src/ update_bear  create_patch  build generate_release 
+ darwin run_blueprint --mode folder build/ update_bear create_patch build generate_release 
 ```
  the build code its located in **build** and uses [Darwin](https://github.com/OUIsolutions/Darwin/tree/0.016) on blueprint mode to build the project
 
