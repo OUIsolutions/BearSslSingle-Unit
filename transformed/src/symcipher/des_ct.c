@@ -61,7 +61,7 @@ static const unsigned char QR1[] = {
  * rotation and use the local architecture rotation opcode (if available).
  */
 static inline uint32_t
-rotl(uint32_t x, int n)
+Bear_rotl(uint32_t x, int n)
 {
 	return (x << n) | (x >> (32 - n));
 }
@@ -122,7 +122,7 @@ BEAR_SINGLE_UNITY_FILEkeysched_unit(uint32_t *skey, const void *key)
 		sk0 |= kr & (uint32_t)0x00000100;
 		sk0 |= (kr & (uint32_t)0x00000008) << 1;
 		sk0 |= (kr & (uint32_t)0x00000200) << 4;
-		sk0 |= rotl(kr & (uint32_t)0x08000021, 6);
+		sk0 |= Bear_rotl(kr & (uint32_t)0x08000021, 6);
 		sk0 |= (kr & (uint32_t)0x01000000) >> 24;
 		sk0 |= (kr & (uint32_t)0x00000002) << 11;
 		sk0 |= (kr & (uint32_t)0x00100000) >> 18;
@@ -319,21 +319,21 @@ BEAR_SINGLE_UNITY_FILEFconf(uint32_t r0, const uint32_t *sk)
 	 */
 	z0 = (y0 & (uint32_t)0x00000004) << 3;
 	z0 |= (y0 & (uint32_t)0x00004000) << 4;
-	z0 |= rotl(y0 & 0x12020120, 5);
+	z0 |= Bear_rotl(y0 & 0x12020120, 5);
 	z0 |= (y0 & (uint32_t)0x00100000) << 6;
 	z0 |= (y0 & (uint32_t)0x00008000) << 9;
 	z0 |= (y0 & (uint32_t)0x04000000) >> 22;
 	z0 |= (y0 & (uint32_t)0x00000001) << 11;
-	z0 |= rotl(y0 & 0x20000200, 12);
+	z0 |= Bear_rotl(y0 & 0x20000200, 12);
 	z0 |= (y0 & (uint32_t)0x00200000) >> 19;
 	z0 |= (y0 & (uint32_t)0x00000040) << 14;
 	z0 |= (y0 & (uint32_t)0x00010000) << 15;
 	z0 |= (y0 & (uint32_t)0x00000002) << 16;
-	z0 |= rotl(y0 & 0x40801800, 17);
+	z0 |= Bear_rotl(y0 & 0x40801800, 17);
 	z0 |= (y0 & (uint32_t)0x00080000) >> 13;
 	z0 |= (y0 & (uint32_t)0x00000010) << 21;
 	z0 |= (y0 & (uint32_t)0x01000000) >> 10;
-	z0 |= rotl(y0 & 0x88000008, 24);
+	z0 |= Bear_rotl(y0 & 0x88000008, 24);
 	z0 |= (y0 & (uint32_t)0x00000480) >> 7;
 	z0 |= (y0 & (uint32_t)0x00442000) >> 6;
 	return z0;

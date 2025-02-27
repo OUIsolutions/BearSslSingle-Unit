@@ -2,10 +2,18 @@
 < #include "inner.h"
 ---
 > 
+64c64
+< rotl(uint32_t x, int n)
+---
+> Bear_rotl(uint32_t x, int n)
 73c73
 < keysched_unit(uint32_t *skey, const void *key)
 ---
 > BEAR_SINGLE_UNITY_FILEkeysched_unit(uint32_t *skey, const void *key)
+125c125
+< 		sk0 |= rotl(kr & (uint32_t)0x08000021, 6);
+---
+> 		sk0 |= Bear_rotl(kr & (uint32_t)0x08000021, 6);
 162c162
 < 		keysched_unit(skey, key);
 ---
@@ -30,6 +38,22 @@
 < Fconf(uint32_t r0, const uint32_t *sk)
 ---
 > BEAR_SINGLE_UNITY_FILEFconf(uint32_t r0, const uint32_t *sk)
+322c322
+< 	z0 |= rotl(y0 & 0x12020120, 5);
+---
+> 	z0 |= Bear_rotl(y0 & 0x12020120, 5);
+327c327
+< 	z0 |= rotl(y0 & 0x20000200, 12);
+---
+> 	z0 |= Bear_rotl(y0 & 0x20000200, 12);
+332c332
+< 	z0 |= rotl(y0 & 0x40801800, 17);
+---
+> 	z0 |= Bear_rotl(y0 & 0x40801800, 17);
+336c336
+< 	z0 |= rotl(y0 & 0x88000008, 24);
+---
+> 	z0 |= Bear_rotl(y0 & 0x88000008, 24);
 347c347
 < process_block_unit(uint32_t *pl, uint32_t *pr, const uint32_t *sk_exp)
 ---
